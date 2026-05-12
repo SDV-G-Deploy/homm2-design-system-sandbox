@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOMM2 Design System · Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Reference-page specific layout only — no new design decisions here.
+     Everything visual comes from tokens.css. */
+
+  .ref-shell {
+    width: var(--page);
+    margin: 0 auto;
+    padding: var(--space-7) 0 var(--space-8);
+  }
+
+  .ref-header {
+    margin-bottom: var(--space-7);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border-thin);
+  }
+  .ref-header h1 {
+    margin: 0 0 var(--space-3);
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-h2);
+    text-shadow: none;
+  }
+  .ref-header p {
+    max-width: 60ch;
+    color: var(--ink-on-night-soft);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    margin: 0;
+  }
+
+  .ref-section {
+    margin-bottom: var(--space-8);
+  }
+  .ref-section > h2 {
+    font-size: clamp(20px, 2vw, 26px);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--accent-value);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-thin-warm);
+    font-weight: 700;
+  }
+  .ref-section > h2::first-letter { color: inherit; text-shadow: none; }
+
+  .ref-sub {
+    font-family: var(--font-display);
+    font-size: var(--text-eyebrow);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--ink-on-night-mute);
+    margin: var(--space-5) 0 var(--space-3);
+    font-weight: 600;
+  }
+
+  /* Color grid */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-3);
+  }
+  .swatch {
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    border: 1px solid var(--border-thin);
+    font-family: var(--font-body);
+    font-size: 13px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .swatch-chip {
+    height: 56px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+    box-shadow: inset 0 0 0 1px rgb(var(--parchment-50) / 0.08);
+  }
+  .swatch-name {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-on-night);
+  }
+  .swatch-meta {
+    color: var(--ink-on-night-mute);
+    font-size: 11px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    margin-top: 4px;
+  }
+
+  /* Type scale */
+  .type-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-5);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-thin);
+    align-items: baseline;
+  }
+  .type-row:last-child { border-bottom: 0; }
+  .type-label {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px;
+    color: var(--ink-on-night-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .type-sample {
+    font-family: var(--font-display);
+    color: var(--ink-on-night);
+    line-height: 1.1;
+  }
+  .type-sample.eyebrow { font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--accent-value); }
+  .type-sample.caption { font-size: var(--text-caption); }
+  .type-sample.body    { font-size: var(--text-body); font-family: var(--font-body); }
+  .type-sample.lead    { font-size: var(--text-lead); font-family: var(--font-body); }
+  .type-sample.h3      { font-size: var(--text-h3); }
+  .type-sample.h2      { font-size: var(--text-h2); letter-spacing: var(--tracking-h2); }
+  .type-sample.display { font-size: clamp(40px, 6vw, 72px); letter-spacing: var(--tracking-display); }
+
+  /* Space scale */
+  .space-grid { display: grid; gap: var(--space-3); }
+  .space-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: var(--space-5);
+  }
+  .space-bar {
+    height: 18px;
+    background: var(--accent-value-deep);
+    border-radius: 3px;
+  }
+
+  /* Radius scale */
+  .radius-grid { display: flex; flex-wrap: wrap; gap: var(--space-5); }
+  .radius-tile {
+    width: 110px;
+    height: 110px;
+    background: rgb(var(--parchment-50) / 0.08);
+    border: 1px solid var(--border-thin);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: var(--ink-on-night-mute);
+  }
+
+  /* Shadow tiles */
+  .shadow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-5); }
+  .shadow-tile {
+    height: 130px;
+    background: rgb(var(--ink-900));
+    border: 1px solid var(--border-thin);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: var(--ink-on-night-mute);
+  }
+
+  /* Surface demos */
+  .surface-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); }
+  .surface-tile {
+    min-height: 180px;
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-thin);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .surface-tile h4 {
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-display);
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .surface-tile p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .surface-tile code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: inherit;
+    opacity: 0.7;
+    margin-top: var(--space-3);
+    display: block;
+  }
+  .s-night     { background: var(--surface-night);     color: var(--ink-on-night); }
+  .s-parchment { background: var(--surface-parchment); color: var(--ink-on-parchment); border-color: var(--border-on-parchment); }
+  .s-stone     { background: var(--surface-stone);     color: var(--ink-on-night); }
+  .s-ritual    {
+    background:
+      radial-gradient(circle at 50% 30%, rgb(var(--mana-200) / 0.18), transparent 8rem),
+      var(--surface-ritual);
+    color: var(--ink-on-night);
+    border-color: var(--border-ceremonial);
+  }
+
+  /* Button state matrix */
+  .state-matrix {
+    display: grid;
+    grid-template-columns: 160px repeat(2, 1fr);
+    gap: var(--space-3);
+    align-items: center;
+  }
+  .state-matrix > .col-head,
+  .state-matrix > .row-head {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-on-night-mute);
+  }
+  .col-head { text-align: center; }
+  .state-cell {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: rgb(var(--parchment-50) / 0.02);
+    border: 1px dashed var(--border-thin);
+    display: grid;
+    place-items: center;
+  }
+
+  /* Force visual states for demo */
+  .force-hover    { transform: translateY(-1px); }
+  .force-hover.btn-quiet      { background: rgb(var(--parchment-50) / 0.1); border-color: rgb(var(--parchment-50) / 0.22); }
+  .force-hover.btn-ceremonial { box-shadow: 0 0 36px rgb(var(--gold-300) / 0.38); border-color: rgb(var(--parchment-50) / 0.6); }
+  .force-focus {
+    outline: 2px solid var(--ring-focus);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 5px var(--ring-focus-halo);
+  }
+  .force-active   { transform: translateY(0); }
+  .force-disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+  /* Component sampler */
+  .sampler-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5); }
+  .sampler-tile {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    background: rgb(var(--ink-950) / 0.4);
+    border: 1px solid var(--border-thin);
+  }
+  .sampler-tile > .sampler-label {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-on-night-mute);
+    margin-bottom: var(--space-3);
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient ambient-gold"></div>
+<div class="ambient ambient-mana"></div>
+
+<main class="ref-shell">
+
+  <header class="ref-header">
+    <div class="eyebrow">Reference · v1</div>
+    <h1>HOMM2 Design System</h1>
+    <p>
+      The contract layer of the sandbox. Every token, every scale, every surface and every
+      interactive state lives on this page. Themes / factions override the semantic layer only —
+      never the primitives.
+    </p>
+  </header>
+
+  <!-- ============================================================
+       COLOR
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Color · Primitives</h2>
+
+    <div class="ref-sub">Ink</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--ink-700));"></div><div><div class="swatch-name">ink-700</div><div class="swatch-meta">58 36 24</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--ink-800));"></div><div><div class="swatch-name">ink-800</div><div class="swatch-meta">45 29 20</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--ink-900));"></div><div><div class="swatch-name">ink-900</div><div class="swatch-meta">23 16 12</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--ink-950));"></div><div><div class="swatch-name">ink-950</div><div class="swatch-meta">12 9 7</div></div></div>
+    </div>
+
+    <div class="ref-sub">Parchment</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--parchment-50));"></div><div><div class="swatch-name">parchment-50</div><div class="swatch-meta">255 246 220</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--parchment-100));"></div><div><div class="swatch-name">parchment-100</div><div class="swatch-meta">243 226 184</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--parchment-200));"></div><div><div class="swatch-name">parchment-200</div><div class="swatch-meta">227 201 141</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--parchment-300));"></div><div><div class="swatch-name">parchment-300</div><div class="swatch-meta">189 150 88</div></div></div>
+    </div>
+
+    <div class="ref-sub">Gold</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--gold-300));"></div><div><div class="swatch-name">gold-300</div><div class="swatch-meta">244 199 90</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--gold-500));"></div><div><div class="swatch-name">gold-500</div><div class="swatch-meta">217 154 43</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--gold-700));"></div><div><div class="swatch-name">gold-700</div><div class="swatch-meta">139 85 23</div></div></div>
+    </div>
+
+    <div class="ref-sub">Mana</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--mana-200));"></div><div><div class="swatch-name">mana-200</div><div class="swatch-meta">158 215 255</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--mana-400));"></div><div><div class="swatch-name">mana-400</div><div class="swatch-meta">62 157 222</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--mana-900));"></div><div><div class="swatch-name">mana-900</div><div class="swatch-meta">11 27 58</div></div></div>
+    </div>
+
+    <div class="ref-sub">Stone</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--stone-200));"></div><div><div class="swatch-name">stone-200</div><div class="swatch-meta">201 196 182</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--stone-500));"></div><div><div class="swatch-name">stone-500</div><div class="swatch-meta">143 137 126</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--stone-700));"></div><div><div class="swatch-name">stone-700</div><div class="swatch-meta">89 84 76</div></div></div>
+    </div>
+
+    <div class="ref-sub">Accents</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--crimson-800));"></div><div><div class="swatch-name">crimson-800</div><div class="swatch-meta">wax seal · warn</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--moss-700));"></div><div><div class="swatch-name">moss-700</div><div class="swatch-meta">life · success</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--field-200));"></div><div><div class="swatch-name">field-200</div><div class="swatch-meta">tapestry</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: rgb(var(--verdigris-700));"></div><div><div class="swatch-name">verdigris-700</div><div class="swatch-meta">aged bronze</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEMANTIC TOKENS
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Color · Semantic</h2>
+    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+      Components reference only these. Themes (Knight, Wizard, Necromancer, …) will override this
+      layer, not the primitives above.
+    </p>
+
+    <div class="ref-sub">Accents</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-value);"></div><div><div class="swatch-name">accent-value</div><div class="swatch-meta">primary CTA, eyebrow</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-value-deep);"></div><div><div class="swatch-name">accent-value-deep</div><div class="swatch-meta">hover, mid-gold</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-value-mute);"></div><div><div class="swatch-name">accent-value-mute</div><div class="swatch-meta">on parchment</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-consequence);"></div><div><div class="swatch-name">accent-consequence</div><div class="swatch-meta">magic, focus</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-consequence-soft);"></div><div><div class="swatch-name">accent-consequence-soft</div><div class="swatch-meta">glow, edge</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-warning);"></div><div><div class="swatch-name">accent-warning</div><div class="swatch-meta">seal · alert</div></div></div>
+      <div class="swatch"><div class="swatch-chip" style="background: var(--accent-success);"></div><div><div class="swatch-name">accent-success</div><div class="swatch-meta">confirm</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TYPE
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Type Scale</h2>
+    <div class="type-row">
+      <div class="type-label">display</div>
+      <div class="type-sample display">Interface belongs to the world</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">h2</div>
+      <div class="type-sample h2">Archive table, not generic cards</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">h3</div>
+      <div class="type-sample h3">Warm narrative surfaces</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">lead</div>
+      <div class="type-sample lead">Not a UI kit with fantasy paint, but a place.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">body</div>
+      <div class="type-sample body">Materials carry roles: parchment for reading, stone for structure, gold for value, mana for consequence.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">caption</div>
+      <div class="type-sample caption">13px · supporting copy, list items, ledger entries</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">eyebrow</div>
+      <div class="type-sample eyebrow">Scene 02 · parchment dossier</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPACE
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Space Scale</h2>
+    <div class="space-grid">
+      <div class="space-row"><div class="type-label">space-1 · 4px</div>  <div class="space-bar" style="width: 4px;"></div></div>
+      <div class="space-row"><div class="type-label">space-2 · 8px</div>  <div class="space-bar" style="width: 8px;"></div></div>
+      <div class="space-row"><div class="type-label">space-3 · 12px</div> <div class="space-bar" style="width: 12px;"></div></div>
+      <div class="space-row"><div class="type-label">space-4 · 16px</div> <div class="space-bar" style="width: 16px;"></div></div>
+      <div class="space-row"><div class="type-label">space-5 · 24px</div> <div class="space-bar" style="width: 24px;"></div></div>
+      <div class="space-row"><div class="type-label">space-6 · 32px</div> <div class="space-bar" style="width: 32px;"></div></div>
+      <div class="space-row"><div class="type-label">space-7 · 48px</div> <div class="space-bar" style="width: 48px;"></div></div>
+      <div class="space-row"><div class="type-label">space-8 · 64px</div> <div class="space-bar" style="width: 64px;"></div></div>
+      <div class="space-row"><div class="type-label">space-9 · 96px</div> <div class="space-bar" style="width: 96px;"></div></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RADIUS
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Radius</h2>
+    <div class="radius-grid">
+      <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 12px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-md);">md · 16px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-lg);">lg · 24px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-xl);">xl · 34px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-pill);">pill</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHADOW
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Shadow</h2>
+    <div class="shadow-grid">
+      <div class="shadow-tile" style="box-shadow: var(--shadow-resting);">shadow-resting</div>
+      <div class="shadow-tile" style="box-shadow: var(--shadow-elevated);">shadow-elevated</div>
+      <div class="shadow-tile" style="box-shadow: var(--shadow-ceremonial);">shadow-ceremonial</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SURFACES
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Surfaces</h2>
+    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+      Each surface has a role. Pick one before you place content.
+    </p>
+    <div class="surface-grid">
+      <div class="surface-tile s-night">
+        <div><h4>Night</h4><p>The default. Body, navigation, scene background.</p></div>
+        <code>--surface-night</code>
+      </div>
+      <div class="surface-tile s-parchment">
+        <div><h4>Parchment</h4><p>Reading, records, plans. Use sparingly — it's an object, not a wallpaper.</p></div>
+        <code>--surface-parchment</code>
+      </div>
+      <div class="surface-tile s-stone">
+        <div><h4>Stone</h4><p>Structure, weight, boundary. Architectural elements.</p></div>
+        <code>--surface-stone</code>
+      </div>
+      <div class="surface-tile s-ritual">
+        <div><h4>Ritual</h4><p>Reserved for consequence. Only one per screen.</p></div>
+        <code>--surface-ritual</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BUTTON STATES
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Buttons · State Matrix</h2>
+    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+      Two tiers today: <strong>quiet</strong> (everywhere) and <strong>ceremonial</strong>
+      (reserved for irreversible or transformative actions).
+    </p>
+    <div class="state-matrix">
+      <div></div>
+      <div class="col-head">btn-quiet</div>
+      <div class="col-head">btn-ceremonial</div>
+
+      <div class="row-head">default</div>
+      <div class="state-cell"><button class="btn btn-quiet">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial">Begin ritual</button></div>
+
+      <div class="row-head">hover</div>
+      <div class="state-cell"><button class="btn btn-quiet force-hover">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-hover">Begin ritual</button></div>
+
+      <div class="row-head">focus-visible</div>
+      <div class="state-cell"><button class="btn btn-quiet force-focus">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-focus">Begin ritual</button></div>
+
+      <div class="row-head">active</div>
+      <div class="state-cell"><button class="btn btn-quiet force-active">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-active">Begin ritual</button></div>
+
+      <div class="row-head">disabled</div>
+      <div class="state-cell"><button class="btn btn-quiet force-disabled" aria-disabled="true">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-disabled" aria-disabled="true">Begin ritual</button></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPONENT PRIMITIVES
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Component Primitives</h2>
+    <div class="sampler-grid">
+
+      <div class="sampler-tile">
+        <div class="sampler-label">Eyebrow · .eyebrow</div>
+        <div class="eyebrow">Scene 03 · ceremonial</div>
+      </div>
+
+      <div class="sampler-tile">
+        <div class="sampler-label">Illuminated capital · h2::first-letter</div>
+        <h3 style="margin: 0;">Open the sealed passage?</h3>
+      </div>
+
+      <div class="sampler-tile">
+        <div class="sampler-label">Wax seal · .wax-seal</div>
+        <div class="wax-seal" style="font-family: var(--font-display); font-weight: 800;">II</div>
+      </div>
+
+      <div class="sampler-tile">
+        <div class="sampler-label">Rule · .rule</div>
+        <span class="rule" aria-hidden="true"></span>
+        <span class="rule gold" aria-hidden="true"></span>
+        <span class="rule stone" aria-hidden="true"></span>
+      </div>
+
+      <div class="sampler-tile" style="background: var(--surface-parchment); color: var(--ink-on-parchment); border-color: var(--border-on-parchment);">
+        <div class="sampler-label" style="color: var(--ink-on-parchment-soft);">Annotation cell · .annotation-grid div</div>
+        <div style="padding: var(--space-4); border-radius: 14px; background: rgb(var(--parchment-50) / 0.32); border: 1px solid rgb(var(--gold-700) / 0.18);">
+          <strong style="display: block; font-family: var(--font-display); font-size: var(--text-caption); letter-spacing: var(--tracking-wider); text-transform: uppercase;">Parchment</strong>
+          <small style="display: block; margin-top: 6px; color: var(--ink-on-parchment-soft); font-size: var(--text-caption); line-height: 1.4;">reading, records, plans</small>
+        </div>
+      </div>
+
+      <div class="sampler-tile">
+        <div class="sampler-label">Focus ring · :focus-visible</div>
+        <button class="btn btn-quiet force-focus">Tab here</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEXT
+       ============================================================ -->
+  <section class="ref-section">
+    <h2>Next Passes</h2>
+    <ol style="max-width: 60ch; color: var(--ink-on-night-soft); line-height: var(--leading-body); padding-left: var(--space-5);">
+      <li>Faction themes — Knight, Sorceress, Warlock, Wizard, Barbarian, Necromancer — as overrides of the semantic layer only.</li>
+      <li>HOMM1 heraldic sub-mode — harder outlines, blockier color — as <code>[data-mode="heraldic"]</code>.</li>
+      <li>Real component layer with documented props and states: Panel, Frame, Seal, Threshold, Sigil, Banner, Hoard, Scroll.</li>
+      <li>Codify ornament &amp; consequence as data attributes: <code>data-threshold</code>, <code>data-weight="ceremonial"</code>.</li>
+      <li>Accessibility audit pass on the gold-on-parchment and mana-on-dark pairings.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>

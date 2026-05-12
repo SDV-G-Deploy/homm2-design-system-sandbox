@@ -1,0 +1,1080 @@
+/* ============================================================================
+   HOMM2 Design System — Components
+   ----------------------------------------------------------------------------
+   This file references tokens.css. Make sure tokens.css is linked
+   BEFORE this file in index.html:
+
+     <link rel="stylesheet" href="tokens.css" />
+     <link rel="stylesheet" href="styles.css" />
+
+   Component sections (in order):
+     - Reset & atmosphere (body, ::before, ::after, .ambient)
+     - Site header & navigation (.site-header, .brand-mark, .scene-nav)
+     - Global focus ring
+     - Board shell & scenes
+     - Scene 01: hero / gate
+     - Scene 02: dossier / parchment
+     - Scene 03: ceremony / arcane
+     - Button system
+     - Footer
+     - Responsive overrides
+   ============================================================================ */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink-on-night);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-variant-numeric: oldstyle-nums;
+  background:
+    radial-gradient(circle at 18% 6%, rgb(var(--gold-300) / 0.2), transparent 25rem),
+    radial-gradient(circle at 82% 12%, rgb(var(--mana-400) / 0.14), transparent 22rem),
+    linear-gradient(180deg, #251810 0%, #11100c 46%, #080706 100%);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.38;
+  background-image:
+    linear-gradient(rgb(var(--parchment-50) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.025) 1px, transparent 1px);
+  background-size: 42px 42px, 42px 42px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    repeating-linear-gradient(115deg, transparent 0 19px, rgb(var(--parchment-50) / 0.035) 20px 21px, transparent 22px 46px),
+    radial-gradient(circle at 50% 100%, rgb(0 0 0 / 0.72), transparent 44rem);
+  mix-blend-mode: overlay;
+}
+
+button { font: inherit; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin-top: 0; }
+
+/* --------------------------------------------------------------------------
+   Atmospheric ambient lights
+   -------------------------------------------------------------------------- */
+
+.ambient {
+  position: fixed;
+  width: 42vmin;
+  aspect-ratio: 1;
+  border-radius: var(--radius-pill);
+  filter: blur(46px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+.ambient-gold { left: -12vmin; top: 22vmin; background: var(--accent-value-deep); }
+.ambient-mana { right: -14vmin; top: 58vmin; background: var(--accent-consequence); opacity: 0.2; }
+
+/* --------------------------------------------------------------------------
+   Site header & navigation
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: var(--page);
+  margin: 0 auto;
+  padding: 18px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  backdrop-filter: blur(14px);
+}
+
+.brand-mark { display: flex; align-items: center; gap: var(--space-3); }
+.brand-mark strong,
+.brand-mark em { display: block; }
+.brand-mark strong {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent-value);
+}
+.brand-mark em {
+  font-size: var(--text-caption);
+  color: var(--ink-on-night-mute);
+  font-style: italic;
+  letter-spacing: 0.025em;
+}
+
+.brand-sigil {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(var(--gold-300) / 0.48);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--gold-300) / 0.22), rgb(var(--ink-900) / 0.74));
+  box-shadow:
+    inset 0 0 0 3px rgb(var(--ink-950) / 0.48),
+    0 0 22px rgb(var(--gold-500) / 0.24);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
+.brand-sigil::before,
+.brand-sigil::after {
+  content: "";
+  position: absolute;
+}
+
+.scene-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+.scene-nav a {
+  padding: 9px 13px;
+  border: 1px solid var(--border-thin);
+  border-radius: var(--radius-pill);
+  background: rgb(var(--ink-950) / 0.28);
+  color: rgb(var(--parchment-50) / 0.76);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  transition:
+    border-color var(--duration-quick) var(--ease-out),
+    color        var(--duration-quick) var(--ease-out),
+    background   var(--duration-quick) var(--ease-out);
+}
+.scene-nav a:hover,
+.scene-nav a[aria-current="true"] {
+  border-color: var(--border-ceremonial);
+  color: var(--ink-on-night);
+  background: rgb(var(--gold-300) / 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   Global focus ring — every interactive element gets one
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--ring-focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 5px var(--ring-focus-halo);
+}
+
+/* --------------------------------------------------------------------------
+   Board shell & scene rhythm
+   -------------------------------------------------------------------------- */
+
+.board-shell { width: var(--page); margin: 0 auto; }
+.scene {
+  min-height: calc(100vh - 74px);
+  padding: 34px 0 74px;
+  display: grid;
+  align-items: center;
+}
+
+.scene-frame,
+.ceremony-shell,
+.desk-composition { position: relative; }
+
+/* ==========================================================================
+   SCENE 01 · GATE
+   ========================================================================== */
+
+.hero-frame {
+  min-height: 710px;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgb(var(--gold-300) / 0.3);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated), var(--shadow-inset-edge);
+  background:
+    radial-gradient(circle at 48% 40%, rgb(var(--ink-950) / 0.76), transparent 12rem),
+    linear-gradient(180deg, rgb(var(--mana-200) / 0.11), transparent 24%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.02) 0%, rgb(var(--ink-900) / 0.45) 52%, rgb(var(--ink-950) / 0.86) 100%),
+    radial-gradient(circle at 68% 28%, rgb(var(--gold-300) / 0.12), transparent 18rem),
+    linear-gradient(135deg, #16253b 0%, #2e2418 48%, #11100c 100%);
+}
+.hero-frame::before,
+.hero-frame::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: calc(var(--radius-xl) - 12px);
+  pointer-events: none;
+}
+.hero-frame::before { border: 1px solid var(--border-thin); }
+.hero-frame::after {
+  inset: auto 9% 0;
+  height: 42%;
+  background:
+    linear-gradient(90deg, transparent, rgb(var(--field-200) / 0.24), transparent),
+    repeating-linear-gradient(90deg, rgb(94 135 53 / 0.18) 0 18px, rgb(var(--moss-700) / 0.22) 18px 36px);
+  clip-path: polygon(43% 0, 58% 0, 64% 100%, 36% 100%);
+  filter: blur(0.2px);
+  opacity: 0.78;
+}
+
+/* Gate mass — castle silhouette */
+.gate-mass {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 4%;
+  width: min(620px, 70vw);
+  height: 76%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 34px 42px rgb(0 0 0 / 0.52));
+  pointer-events: none;
+}
+.gate-arch,
+.gate-spire {
+  position: absolute;
+  bottom: 0;
+  background:
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.08), transparent 18%, transparent 82%, rgb(var(--parchment-50) / 0.05)),
+    linear-gradient(180deg, #504a43, #201c18 46%, #0a0807 100%);
+  border: 1px solid rgb(var(--stone-200) / 0.16);
+  box-shadow:
+    inset 0 18px 0 rgb(var(--parchment-50) / 0.04),
+    inset 0 0 0 6px rgb(0 0 0 / 0.18);
+}
+.gate-arch {
+  left: 20%;
+  width: 60%;
+  height: 68%;
+  border-radius: 48% 48% 8% 8% / 40% 40% 6% 6%;
+  clip-path: polygon(0 100%, 0 40%, 7% 28%, 16% 18%, 29% 10%, 43% 7%, 57% 7%, 71% 10%, 84% 18%, 93% 28%, 100% 40%, 100% 100%, 70% 100%, 70% 47%, 65% 35%, 56% 28%, 44% 28%, 35% 35%, 30% 47%, 30% 100%);
+}
+.gate-arch::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  top: 14%;
+  width: 10%;
+  height: 38%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, rgb(var(--mana-200) / 0.22), transparent);
+  box-shadow: 0 0 32px rgb(var(--mana-400) / 0.26);
+}
+.gate-spire {
+  width: 22%;
+  height: 76%;
+  clip-path: polygon(0 100%, 0 26%, 18% 26%, 18% 15%, 34% 15%, 50% 0, 66% 15%, 82% 15%, 82% 26%, 100% 26%, 100% 100%);
+}
+.gate-spire-left  { left: 0; }
+.gate-spire-right { right: 0; transform: scaleX(-1); }
+
+.foreground-road {
+  position: absolute;
+  z-index: 2;
+  inset: auto -4% -2%;
+  height: 36%;
+  background:
+    linear-gradient(180deg, transparent 0%, rgb(var(--ink-950) / 0.62) 54%, rgb(4 3 3 / 0.98) 100%),
+    repeating-linear-gradient(96deg, rgb(var(--stone-200) / 0.14) 0 2px, transparent 3px 32px);
+  clip-path: polygon(31% 0, 69% 0, 103% 100%, -3% 100%);
+  opacity: 0.94;
+}
+.foreground-road span {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(180deg, rgb(var(--gold-300) / 0.34), transparent);
+  transform-origin: bottom;
+}
+.foreground-road span:nth-child(1) { left: 35%; transform: rotate(8deg); }
+.foreground-road span:nth-child(2) { left: 50%; opacity: 0.42; }
+.foreground-road span:nth-child(3) { right: 35%; transform: rotate(-8deg); }
+
+/* Horizon */
+.horizon { position: absolute; inset: 0; overflow: hidden; }
+.moon {
+  position: absolute;
+  right: 15%;
+  top: 10%;
+  width: 118px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #fff9d8, rgb(var(--gold-300)) 54%, rgb(var(--gold-500) / 0.04) 70%);
+  box-shadow:
+    0 0 44px rgb(var(--gold-300) / 0.44),
+    0 0 100px rgb(var(--gold-300) / 0.24);
+}
+.mountain {
+  position: absolute;
+  bottom: 30%;
+  width: 48%;
+  height: 36%;
+  background: linear-gradient(180deg, rgb(var(--stone-700) / 0.9), rgb(var(--ink-900) / 0.92));
+  clip-path: polygon(8% 100%, 42% 13%, 58% 54%, 72% 24%, 100% 100%);
+  opacity: 0.78;
+}
+.mountain-a { left: -6%; }
+.mountain-b { left: 26%; transform: scale(1.1); opacity: 0.58; }
+.mountain-c { right: -9%; transform: scaleX(-1); opacity: 0.66; }
+.far-keep {
+  position: absolute;
+  bottom: 35%;
+  width: 96px;
+  height: 138px;
+  background: linear-gradient(180deg, #6a6258, #2d2a27 70%);
+  clip-path: polygon(0 100%, 0 35%, 14% 35%, 14% 18%, 28% 18%, 28% 0, 72% 0, 72% 18%, 86% 18%, 86% 35%, 100% 35%, 100% 100%);
+  box-shadow: inset 0 8px 0 rgb(var(--parchment-50) / 0.08);
+}
+.keep-left  { left: 18%; transform: scale(0.84); opacity: 0.42; }
+.keep-right { right: 24%; opacity: 0.5; }
+
+/* Hero copy block */
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  max-width: 620px;
+  padding-top: 70px;
+}
+
+.eyebrow,
+.archive-label,
+.ledger-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgb(var(--gold-500) / 0.42);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  font-size: var(--text-eyebrow);
+  color: var(--accent-value);
+}
+.eyebrow::before,
+.archive-label::before,
+.ledger-kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.72;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 800;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-shadow:
+    0 3px 0   rgb(var(--ink-950) / 0.28),
+    0 18px 44px rgb(0 0 0 / 0.45);
+}
+
+/* Body type group */
+.lead,
+.scene-title-block p,
+.ceremony-copy p,
+.dossier-text,
+.ritual-panel p,
+.board-footer p {
+  color: var(--ink-on-night-soft);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+.lead {
+  max-width: 640px;
+  font-size: var(--text-lead);
+  color: rgb(var(--parchment-50) / 0.9);
+}
+
+/* Material ledger — parchment overlay in scene 01 */
+.material-ledger {
+  position: absolute;
+  z-index: 5;
+  right: clamp(22px, 4vw, 54px);
+  bottom: clamp(24px, 4vw, 56px);
+  width: min(360px, calc(100% - 44px));
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  color: var(--ink-on-parchment);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.06)),
+    var(--surface-parchment);
+  border: 1px solid var(--border-on-parchment);
+  box-shadow:
+    var(--shadow-resting),
+    inset 0 0 0 5px rgb(var(--gold-700) / 0.08);
+  transform: rotate(-1.2deg);
+}
+.material-ledger ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.material-ledger li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  gap: var(--space-3);
+}
+.material-ledger span {
+  color: var(--accent-value-mute);
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: var(--tracking-wider);
+}
+.material-ledger strong {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  line-height: 1.35;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SCENE 02 · DOSSIER
+   ========================================================================== */
+
+.scene-title-block { max-width: 720px; margin-bottom: var(--space-6); }
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: var(--leading-h3);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-h3);
+}
+
+/* Illuminated capital — gold first letter on h2/h3 */
+h2::first-letter,
+h3::first-letter {
+  color: var(--accent-value);
+  text-shadow: 0 0 22px rgb(var(--gold-500) / 0.22);
+}
+
+.desk-composition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(18px, 4vw, 42px);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(ellipse at 52% 64%, rgb(0 0 0 / 0.46), transparent 24rem),
+    radial-gradient(circle at 20% 20%, rgb(var(--gold-300) / 0.1), transparent 20rem),
+    linear-gradient(115deg, rgb(89 54 28 / 0.55), rgb(var(--ink-800) / 0.74)),
+    repeating-linear-gradient(8deg, rgb(var(--parchment-50) / 0.035) 0 2px, transparent 2px 8px);
+  border: 1px solid rgb(var(--stone-200) / 0.14);
+  box-shadow: var(--shadow-elevated);
+}
+.desk-composition::before,
+.desk-composition::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.desk-composition::before {
+  left: 2%;
+  top: 11%;
+  width: 86px;
+  height: 74%;
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.08), transparent),
+    linear-gradient(180deg, #696159, #27231f);
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--parchment-50) / 0.1),
+    16px 18px 38px rgb(0 0 0 / 0.3);
+  clip-path: polygon(0 4%, 100% 0, 88% 100%, 8% 96%);
+}
+.desk-composition::after {
+  right: 4%;
+  bottom: 8%;
+  width: 180px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, rgb(var(--gold-300) / 0.18), rgb(var(--mana-200) / 0.24), transparent);
+  filter: blur(10px);
+}
+
+.desk-knife {
+  position: absolute;
+  z-index: 1;
+  right: 20%;
+  top: 16%;
+  width: 240px;
+  height: 12px;
+  border-radius: var(--radius-pill);
+  transform: rotate(-18deg);
+  background: linear-gradient(90deg, #211916, rgb(var(--gold-700)) 18%, #d7d0c6 20% 86%, transparent 87%);
+  box-shadow: 0 16px 24px rgb(0 0 0 / 0.32);
+  opacity: 0.62;
+}
+
+.parchment-object {
+  position: relative;
+  z-index: 2;
+  min-height: 520px;
+  padding: clamp(28px, 5vw, 62px);
+  color: var(--ink-on-parchment);
+  border-radius: 28px 18px 34px 20px;
+  background:
+    repeating-linear-gradient(92deg, rgb(var(--ink-700) / 0.045) 0 1px, transparent 1px 17px),
+    linear-gradient(90deg, rgb(var(--gold-700) / 0.12), transparent 12%, transparent 88%, rgb(var(--gold-700) / 0.1)),
+    radial-gradient(circle at 22% 18%, rgb(255 255 255 / 0.42), transparent 12rem),
+    linear-gradient(180deg, #fff1c9, rgb(var(--parchment-100)) 64%, #d7bd83);
+  border: 1px solid var(--border-on-parchment);
+  box-shadow:
+    var(--shadow-resting),
+    inset 0 0 0 7px rgb(var(--gold-700) / 0.06);
+  transform: rotate(-0.7deg);
+}
+.parchment-object::before,
+.parchment-object::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.parchment-object::before {
+  inset: 18px;
+  border: 1px solid rgb(var(--gold-700) / 0.25);
+  border-radius: 22px 13px 28px 16px;
+}
+.parchment-object::after {
+  left: 36px;
+  right: 36px;
+  bottom: 34px;
+  height: 42px;
+  background:
+    linear-gradient(90deg, transparent, rgb(var(--gold-700) / 0.34), transparent),
+    repeating-linear-gradient(90deg, rgb(var(--gold-700) / 0.3) 0 1px, transparent 1px 14px);
+  opacity: 0.56;
+}
+
+.dossier-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-5);
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+}
+.archive-label {
+  color: var(--accent-value-mute);
+  font-size: 10px;
+  border-color: rgb(var(--gold-700) / 0.34);
+}
+.wax-seal {
+  width: 88px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  border-radius: 48% 52% 44% 56%;
+  display: grid;
+  place-items: center;
+  color: #ffe4c2;
+  background: radial-gradient(circle at 35% 30%, #c84e3d, rgb(var(--crimson-800)));
+  box-shadow:
+    inset 0 0 0 5px rgb(var(--parchment-50) / 0.09),
+    0 10px 24px rgb(var(--crimson-800) / 0.32);
+  transform: rotate(9deg);
+}
+.dossier-text {
+  color: var(--ink-on-parchment);
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: var(--leading-prose);
+}
+
+.annotation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-top: 34px;
+}
+.annotation-grid div {
+  padding: var(--space-4);
+  border-radius: 14px;
+  background: rgb(var(--parchment-50) / 0.32);
+  border: 1px solid rgb(var(--gold-700) / 0.18);
+}
+.annotation-grid strong,
+.annotation-grid small { display: block; }
+.annotation-grid strong {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+.annotation-grid small {
+  margin-top: 6px;
+  color: var(--ink-on-parchment-soft);
+  font-size: var(--text-caption);
+  line-height: 1.4;
+}
+
+.rule {
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin-bottom: 13px;
+  border-radius: var(--radius-pill);
+  background: rgb(var(--parchment-300));
+}
+.rule.gold  { background: var(--accent-value-deep); }
+.rule.stone { background: rgb(var(--stone-500)); }
+
+.side-notes { display: grid; gap: 18px; }
+.note-card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: rgb(var(--ink-950) / 0.56);
+  border: 1px solid var(--border-thin);
+  box-shadow: var(--shadow-resting);
+}
+.high-note { transform: rotate(1.5deg); }
+.note-card strong,
+.note-card span { display: block; }
+.note-card strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.18;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.note-card span {
+  color: var(--ink-on-night-mute);
+  line-height: 1.52;
+}
+.low-note { transform: translateX(-26px); }
+
+/* ==========================================================================
+   SCENE 03 · CEREMONY
+   ========================================================================== */
+
+.arcane-scene { min-height: 96vh; }
+
+.ceremony-shell {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 34px;
+  padding: clamp(24px, 5vw, 68px);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgb(var(--mana-200) / 0.22);
+  background:
+    radial-gradient(circle at 70% 52%, rgb(var(--mana-200) / 0.24), transparent 13rem),
+    radial-gradient(circle at 68% 50%, rgb(var(--mana-400) / 0.22), transparent 23rem),
+    radial-gradient(circle at 70% 50%, rgb(var(--gold-300) / 0.16), transparent 11rem),
+    repeating-conic-gradient(from 5deg at 70% 52%, rgb(var(--mana-200) / 0.055) 0 3deg, transparent 3deg 17deg),
+    linear-gradient(140deg, rgb(var(--mana-900) / 0.92), rgb(var(--ink-950) / 0.96) 58%, #080706);
+  box-shadow: var(--shadow-elevated), inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
+}
+
+.arcane-orbit {
+  position: absolute;
+  right: -70px;
+  top: 50%;
+  width: min(680px, 72vw);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgb(var(--mana-200) / 0.18);
+  box-shadow:
+    inset 0 0 60px rgb(var(--mana-400) / 0.1),
+    0 0 80px rgb(var(--mana-400) / 0.12);
+}
+.arcane-orbit::before { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.arcane-orbit::before,
+.arcane-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 12%;
+  border: 1px solid rgb(var(--gold-300) / 0.18);
+}
+.arcane-orbit::after { inset: 28%; border-color: rgb(var(--mana-200) / 0.26); }
+
+/* NOTE: nth-child positions are fragile if the HTML reorders.
+   Migrate to data attributes (data-node="gold" / "mana") when convenient. */
+.arcane-orbit span {
+  position: absolute;
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent-consequence-soft);
+  box-shadow: 0 0 22px var(--accent-consequence);
+}
+.arcane-orbit span:nth-child(1) { left: 48%; top: -5px; }
+.arcane-orbit span:nth-child(2) { right: 8%; top: 25%; background: var(--accent-value); box-shadow: 0 0 22px var(--accent-value-deep); }
+.arcane-orbit span:nth-child(3) { left: 18%; bottom: 11%; }
+.arcane-orbit span:nth-child(4) { right: 24%; bottom: 4%; background: var(--accent-value); box-shadow: 0 0 22px var(--accent-value-deep); }
+
+.ceremony-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+/* Altar */
+.altar-mass {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  bottom: 10%;
+  width: min(520px, 58vw);
+  height: 54%;
+  pointer-events: none;
+  filter: drop-shadow(0 34px 46px rgb(0 0 0 / 0.58));
+}
+.altar-slab,
+.altar-horn { position: absolute; bottom: 0; }
+.altar-slab {
+  left: 10%;
+  width: 80%;
+  height: 62%;
+  border-radius: 28px 28px 10px 10px;
+  background:
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.08), transparent 18%, transparent 82%, rgb(var(--mana-200) / 0.08)),
+    linear-gradient(180deg, #4d555c, #15171d 58%, #07080b);
+  border: 1px solid rgb(var(--mana-200) / 0.18);
+  box-shadow:
+    inset 0 10px 0 rgb(var(--parchment-50) / 0.05),
+    inset 0 0 0 6px rgb(0 0 0 / 0.22),
+    0 0 90px rgb(var(--mana-400) / 0.18);
+  clip-path: polygon(8% 0, 92% 0, 100% 28%, 86% 100%, 14% 100%, 0 28%);
+}
+.altar-slab::after {
+  content: "";
+  position: absolute;
+  inset: 18% 27%;
+  border: 1px solid rgb(var(--gold-300) / 0.32);
+  border-radius: 50%;
+  box-shadow:
+    0 0 38px rgb(var(--gold-300) / 0.18),
+    inset 0 0 24px rgb(var(--mana-400) / 0.14);
+}
+.altar-horn {
+  width: 25%;
+  height: 78%;
+  background: linear-gradient(180deg, #5e6569, #121319 70%);
+  clip-path: polygon(50% 0, 86% 26%, 75% 100%, 25% 100%, 14% 26%);
+  opacity: 0.92;
+}
+.horn-left  { left: 0;  transform: rotate(-8deg); }
+.horn-right { right: 0; transform: rotate(8deg); }
+
+/* Ritual panel — the "ceremonial" surface */
+.ritual-panel {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  max-width: 480px;
+  padding: clamp(26px, 4vw, 44px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgb(var(--gold-300) / 0.34);
+  background:
+    radial-gradient(circle at 68% 24%, rgb(var(--mana-200) / 0.22), transparent 9rem),
+    linear-gradient(180deg, rgb(var(--mana-200) / 0.12), rgb(var(--ink-950) / 0.44)),
+    var(--surface-ritual);
+  box-shadow:
+    0 0 0 1px rgb(var(--mana-200) / 0.11),
+    var(--shadow-ceremonial);
+}
+.ritual-panel::before,
+.ritual-panel::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.ritual-panel::before {
+  inset: 12px;
+  border: 1px solid rgb(var(--gold-300) / 0.16);
+  border-radius: calc(var(--radius-lg) - 8px);
+}
+.ritual-panel::after {
+  left: 24px;
+  right: 24px;
+  top: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-consequence-soft), var(--accent-value), transparent);
+  box-shadow: 0 0 24px rgb(var(--mana-200) / 0.54);
+}
+
+/* Consequence line — fix the !important by raising specificity */
+.ritual-panel .consequence-line {
+  margin-top: 18px;
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--accent-value);
+  color: rgb(var(--parchment-50) / 0.74);
+  font-size: 15px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.panel-crown {
+  position: absolute;
+  right: var(--space-5);
+  top: 20px;
+  color: var(--accent-value);
+  font-size: var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   Button system
+   -------------------------------------------------------------------------- */
+
+.ceremony-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: 28px;
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 13px 18px;
+  cursor: pointer;
+  transition:
+    transform    var(--duration-quick) var(--ease-out),
+    border-color var(--duration-quick) var(--ease-out),
+    box-shadow   var(--duration-quick) var(--ease-out),
+    background   var(--duration-quick) var(--ease-out);
+}
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Quiet — default, unobtrusive */
+.btn-quiet {
+  color: var(--ink-on-night);
+  background: rgb(var(--parchment-50) / 0.06);
+  border-color: rgb(var(--parchment-50) / 0.14);
+}
+.btn-quiet:hover {
+  background: rgb(var(--parchment-50) / 0.1);
+  border-color: rgb(var(--parchment-50) / 0.22);
+}
+
+/* Ceremonial — gold tier, reserved for consequence */
+.btn-ceremonial {
+  color: var(--ink-on-gold);
+  background: linear-gradient(180deg, #ffe49a, rgb(var(--gold-500)) 70%, rgb(var(--gold-700)));
+  border-color: rgb(var(--parchment-50) / 0.44);
+  box-shadow: 0 0 26px rgb(var(--gold-300) / 0.24);
+  font-weight: 700;
+}
+.btn-ceremonial:hover {
+  box-shadow: 0 0 36px rgb(var(--gold-300) / 0.38);
+  border-color: rgb(var(--parchment-50) / 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.board-footer {
+  width: var(--page);
+  margin: 0 auto;
+  padding: 0 0 46px;
+}
+.board-footer p {
+  max-width: 880px;
+  margin: 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-thin);
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+@media (max-width: 920px) {
+  .site-header {
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 14px;
+  }
+  .scene { min-height: auto; padding: 22px 0 52px; }
+  .hero-frame { min-height: 690px; }
+  .hero-copy { padding-top: 50px; }
+  .material-ledger { left: 22px; right: 22px; bottom: 26px; width: auto; }
+  .desk-composition,
+  .ceremony-shell { grid-template-columns: 1fr; }
+  .low-note { transform: none; }
+  .annotation-grid { grid-template-columns: 1fr; }
+  .ritual-panel { justify-self: stretch; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 15px; }
+  body::before { background-size: 32px 32px, 32px 32px; opacity: 0.24; }
+  .ambient { width: 58vmin; filter: blur(34px); opacity: 0.18; }
+  .site-header { gap: var(--space-3); padding-bottom: 6px; }
+  .brand-mark { gap: 10px; }
+  .brand-mark strong { font-size: 11px; letter-spacing: 0.1em; }
+  .brand-mark em     { font-size: 12px; }
+  .brand-sigil       { width: 36px; height: 36px; }
+  .scene-nav         { justify-content: flex-start; gap: 6px; }
+  .scene-nav a       { padding: 7px 10px; font-size: 12px; letter-spacing: 0.035em; }
+  .scene             { padding: 18px 0 42px; }
+  .hero-frame,
+  .desk-composition,
+  .ceremony-shell    { border-radius: 22px; }
+  .hero-frame {
+    min-height: 660px;
+    padding: var(--space-5) 20px;
+    background-position: center;
+  }
+  .hero-frame::before { inset: 10px; border-radius: var(--radius-md); }
+  .hero-frame::after  { inset-inline: -8%; height: 32%; opacity: 0.5; }
+  .hero-copy          { padding-top: 28px; }
+  .eyebrow,
+  .archive-label,
+  .ledger-kicker {
+    gap: 7px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .eyebrow::before,
+  .archive-label::before,
+  .ledger-kicker::before { width: 18px; }
+  h1 { font-size: clamp(42px, 14.5vw, 58px); line-height: 0.94; margin-bottom: var(--space-4); }
+  h2 { font-size: clamp(32px, 11vw,   46px); line-height: 1.02; margin-bottom: 14px; }
+  h3 { font-size: clamp(23px, 7vw,    30px); line-height: 1.08; margin-bottom: var(--space-3); }
+  .lead,
+  .scene-title-block p,
+  .ceremony-copy p,
+  .dossier-text,
+  .ritual-panel p,
+  .board-footer p { font-size: 16px; line-height: 1.58; }
+  .lead { font-size: 17px; line-height: 1.56; }
+  .moon { right: 9%; top: 8%; width: 68px; opacity: 0.78; }
+  .mountain { bottom: 34%; width: 62%; height: 30%; opacity: 0.5; }
+  .far-keep { bottom: 39%; width: 66px; height: 96px; opacity: 0.32; }
+  .gate-mass { bottom: 22%; width: 92vw; height: 46%; opacity: 0.82; }
+  .foreground-road { height: 28%; opacity: 0.74; }
+  .material-ledger {
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: 18px;
+    padding: var(--space-4);
+    border-radius: 18px;
+    transform: none;
+    box-shadow:
+      0 12px 28px rgb(var(--ink-900) / 0.32),
+      inset 0 0 0 4px rgb(var(--gold-700) / 0.07);
+  }
+  .material-ledger ol { gap: 9px; }
+  .material-ledger li { grid-template-columns: 34px 1fr; gap: 9px; }
+  .material-ledger strong { font-size: 11px; letter-spacing: 0.045em; }
+  .scene-title-block { margin-bottom: 20px; }
+  .desk-composition { gap: 18px; padding: 18px; }
+  .desk-composition::before,
+  .desk-composition::after,
+  .desk-knife { display: none; }
+  .parchment-object {
+    min-height: auto;
+    padding: var(--space-5) 20px var(--space-6);
+    border-radius: 20px 15px 22px 16px;
+    transform: none;
+  }
+  .parchment-object::before { inset: 10px; border-radius: 15px 10px 17px 12px; }
+  .parchment-object::after  { left: 20px; right: 20px; bottom: 18px; height: var(--space-5); opacity: 0.34; }
+  .dossier-head { flex-direction: row; gap: 14px; margin-bottom: var(--space-4); }
+  .wax-seal { width: 54px; font-size: var(--space-4); }
+  .annotation-grid { gap: 10px; margin-top: 22px; }
+  .annotation-grid div { padding: 13px; }
+  .side-notes { gap: var(--space-3); }
+  .note-card { padding: 17px; border-radius: 18px; }
+  .high-note { transform: none; }
+  .note-card strong { font-size: 18px; }
+  .ceremony-shell { min-height: auto; gap: var(--space-5); padding: var(--space-5) 20px; }
+  .arcane-orbit { right: -46%; top: 30%; width: 112vw; opacity: 0.42; }
+  .altar-mass { right: -16%; bottom: var(--space-4); width: 86vw; height: 34%; opacity: 0.42; }
+  .ceremony-copy { max-width: none; }
+  .ritual-panel { padding: var(--space-5) 18px; border-radius: 18px; }
+  .ritual-panel::before { inset: 9px; border-radius: 13px; }
+  .panel-crown { right: 18px; top: var(--space-4); font-size: 20px; }
+  .ritual-panel .consequence-line {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.45;
+    letter-spacing: 0.075em;
+  }
+  .ceremony-actions { display: grid; gap: 10px; margin-top: 20px; }
+  .btn { width: 100%; padding: var(--space-3) 15px; font-size: 12px; }
+  .board-footer { padding-bottom: var(--space-6); }
+  .board-footer p { padding-top: 18px; font-size: 14px; }
+}
+
+@media (max-width: 380px) {
+  .scene-nav a    { padding-inline: var(--space-2); }
+  .hero-frame     { min-height: 690px; padding-inline: var(--space-4); }
+  h1              { font-size: clamp(38px, 14vw, 50px); }
+  .lead,
+  .scene-title-block p,
+  .ceremony-copy p,
+  .dossier-text,
+  .ritual-panel p { font-size: 15px; }
+  .material-ledger { left: var(--space-3); right: var(--space-3); padding: 14px; }
+  .dossier-head    { flex-direction: column; }
+}
