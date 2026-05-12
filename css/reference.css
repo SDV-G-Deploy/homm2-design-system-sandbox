@@ -170,6 +170,7 @@
     min-height: 180px;
     padding: var(--space-5);
     border-radius: var(--radius-lg);
+    clip-path: var(--shape-panel);
     border: 1px solid var(--border-thin);
     display: flex;
     flex-direction: column;
@@ -225,6 +226,7 @@
   .state-cell {
     padding: var(--space-3);
     border-radius: var(--radius-md);
+    clip-path: var(--shape-interactive);
     background: rgb(var(--parchment-50) / 0.02);
     border: 1px dashed var(--border-thin);
     display: grid;
@@ -248,6 +250,7 @@
   .sampler-tile {
     padding: var(--space-5);
     border-radius: var(--radius-lg);
+    clip-path: var(--shape-panel);
     background: rgb(var(--ink-950) / 0.4);
     border: 1px solid var(--border-thin);
   }

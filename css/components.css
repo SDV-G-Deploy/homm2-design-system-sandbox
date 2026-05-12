@@ -148,26 +148,38 @@ h1, h2, h3, p { margin-top: 0; }
   gap: var(--space-2);
 }
 .scene-nav a {
-  padding: 9px 13px;
-  border: 1px solid var(--border-thin);
+  padding: 10px 14px;
+  border: 1px solid rgb(var(--gold-300) / 0.22);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
-  background: rgb(var(--ink-950) / 0.28);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 45%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.56), rgb(var(--ink-950) / 0.74));
   color: rgb(var(--parchment-50) / 0.76);
   font-family: var(--font-display);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
+    0 10px 20px rgb(var(--ink-950) / 0.16);
   transition:
     border-color var(--duration-quick) var(--ease-out),
     color        var(--duration-quick) var(--ease-out),
-    background   var(--duration-quick) var(--ease-out);
+    background   var(--duration-quick) var(--ease-out),
+    box-shadow   var(--duration-quick) var(--ease-out),
+    transform    var(--duration-quick) var(--ease-out);
 }
 .scene-nav a:hover,
 .scene-nav a[aria-current="true"] {
   border-color: var(--border-ceremonial);
   color: var(--ink-on-night);
-  background: rgb(var(--gold-300) / 0.12);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.14), rgb(var(--gold-300) / 0.06) 35%, rgb(var(--ink-900) / 0.3));
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.18),
+    0 0 24px rgb(var(--gold-300) / 0.16);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -296,7 +308,9 @@ h3::first-letter {
     linear-gradient(115deg, rgb(89 54 28 / 0.55), rgb(var(--ink-800) / 0.74)),
     repeating-linear-gradient(8deg, rgb(var(--parchment-50) / 0.035) 0 2px, transparent 2px 8px);
   border: 1px solid rgb(var(--stone-200) / 0.14);
-  box-shadow: var(--shadow-elevated);
+  box-shadow:
+    var(--shadow-elevated),
+    inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
 }
 .desk-composition::before,
 .desk-composition::after {
@@ -355,6 +369,7 @@ h3::first-letter {
     radial-gradient(circle at 22% 18%, rgb(255 255 255 / 0.42), transparent 12rem),
     linear-gradient(180deg, #fff1c9, rgb(var(--parchment-100)) 64%, #d7bd83);
   border: 1px solid var(--border-on-parchment);
+  clip-path: polygon(0 20px, 18px 0, calc(100% - 16px) 0, 100% 14px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 14px 100%, 0 calc(100% - 14px));
   box-shadow:
     var(--shadow-resting),
     inset 0 0 0 7px rgb(var(--gold-700) / 0.06);
@@ -424,8 +439,10 @@ h3::first-letter {
   padding: var(--space-4);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
-  background: rgb(var(--parchment-50) / 0.32);
-  border: 1px solid rgb(var(--gold-700) / 0.18);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.42), rgb(var(--parchment-50) / 0.2));
+  border: 1px solid rgb(var(--gold-700) / 0.24);
+  box-shadow: inset 0 1px 0 rgb(var(--parchment-50) / 0.14);
 }
 .annotation-grid strong,
 .annotation-grid small { display: block; }
@@ -458,9 +475,13 @@ h3::first-letter {
   padding: 22px;
   border-radius: var(--radius-md);
   clip-path: var(--shape-panel);
-  background: rgb(var(--ink-950) / 0.56);
-  border: 1px solid var(--border-thin);
-  box-shadow: var(--shadow-resting);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 40%),
+    rgb(var(--ink-950) / 0.64);
+  border: 1px solid rgb(var(--gold-300) / 0.14);
+  box-shadow:
+    var(--shadow-resting),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.06);
 }
 .high-note { transform: rotate(1.5deg); }
 .note-card strong,
@@ -494,11 +515,13 @@ h3::first-letter {
   font-size: var(--text-caption);
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
-  border: 1px solid transparent;
+  border: 1px solid rgb(var(--parchment-50) / 0.14);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
-  padding: 13px 18px;
+  padding: 13px 20px;
   cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgb(var(--ink-950) / 0.24);
   transition:
     transform    var(--duration-quick) var(--ease-out),
     border-color var(--duration-quick) var(--ease-out),
@@ -517,12 +540,17 @@ h3::first-letter {
 /* Quiet — default, unobtrusive */
 .btn-quiet {
   color: var(--ink-on-night);
-  background: rgb(var(--parchment-50) / 0.06);
-  border-color: rgb(var(--parchment-50) / 0.14);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.12), rgb(var(--parchment-50) / 0.04));
+  border-color: rgb(var(--parchment-50) / 0.18);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
+    0 8px 18px rgb(var(--ink-950) / 0.14);
 }
 .btn-quiet:hover {
-  background: rgb(var(--parchment-50) / 0.1);
-  border-color: rgb(var(--parchment-50) / 0.22);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.18), rgb(var(--parchment-50) / 0.08));
+  border-color: rgb(var(--gold-300) / 0.2);
 }
 
 /* Ceremonial — gold tier, reserved for consequence */
@@ -530,7 +558,10 @@ h3::first-letter {
   color: var(--ink-on-gold);
   background: linear-gradient(180deg, #ffe49a, rgb(var(--gold-500)) 70%, rgb(var(--gold-700)));
   border-color: rgb(var(--parchment-50) / 0.44);
-  box-shadow: 0 0 26px rgb(var(--gold-300) / 0.24);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.22),
+    0 0 26px rgb(var(--gold-300) / 0.24),
+    0 10px 24px rgb(var(--gold-700) / 0.16);
   font-weight: 700;
 }
 .btn-ceremonial:hover {
