@@ -865,9 +865,10 @@ h3::first-letter {
 }
 
 @media (max-width: 560px) {
+  html, body { overflow-x: clip; }
   body { font-size: 15px; }
   body::before { background-size: 32px 32px, 32px 32px; opacity: 0.24; }
-  .ambient { width: 58vmin; filter: blur(34px); opacity: 0.18; }
+  .ambient { display: none; }
   .site-header { gap: var(--space-3); padding-bottom: 6px; }
   .brand-mark { gap: 10px; }
   .brand-mark strong { font-size: 11px; letter-spacing: 0.1em; }
@@ -915,9 +916,12 @@ h3::first-letter {
   .gate-mass { bottom: 22%; width: 92vw; height: 46%; opacity: 0.82; }
   .foreground-road { height: 28%; opacity: 0.74; }
   .material-ledger {
-    left: var(--space-4);
-    right: var(--space-4);
-    bottom: 18px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    margin-top: 18px;
     padding: var(--space-4);
     border-radius: var(--radius-lg);
     transform: none;

@@ -550,4 +550,14 @@ h1 {
   .hero-frame,
   .desk-composition,
   .ceremony-shell { border-radius: var(--radius-xl); }
+
+  .material-ledger {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    margin-top: 18px;
+    transform: none;
+  }
 }
