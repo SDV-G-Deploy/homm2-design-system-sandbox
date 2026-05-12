@@ -1,6 +1,6 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board.
+Public, project-agnostic HOMM2-inspired art-direction board. Current state: **Art Direction Pass 02**.
 
 ## Goal
 
@@ -14,7 +14,7 @@ Move the sandbox away from component inventory and into atmosphere-first directi
 
 North star: **Interface belongs to the world.**
 
-This pass tests material hierarchy, composition rhythm, typographic tone, restrained ornament, and symbolic use of magic/gold accents without binding the sandbox to any specific product.
+This pass tests material hierarchy, composition rhythm, typographic tone, restrained ornament, and symbolic use of magic/gold accents without binding the sandbox to any specific product. Pass 02 specifically strengthens larger masses, foreground/midground/background depth, material grammar, and signature threshold shapes.
 
 ## Local preview
 
