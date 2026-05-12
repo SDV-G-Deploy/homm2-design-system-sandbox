@@ -154,8 +154,18 @@
 .hero-copy {
   position: relative;
   z-index: 4;
-  max-width: 620px;
-  padding-top: 70px;
+  max-width: 560px;
+  padding-top: 82px;
+  padding-left: 18px;
+}
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 84px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(180deg, rgb(var(--gold-300) / 0.48), rgb(var(--parchment-50) / 0.06));
 }
 
 .eyebrow,
@@ -285,7 +295,21 @@ h1 {
    SCENE 02 · DOSSIER
    ========================================================================== */
 
-.scene-title-block { max-width: 720px; margin-bottom: var(--space-6); }
+.scene-title-block {
+  position: relative;
+  max-width: 640px;
+  margin-bottom: 42px;
+  padding-left: 18px;
+}
+.scene-title-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, rgb(var(--gold-300) / 0.38), rgb(var(--stone-200) / 0.06));
+}
 
 
 /* ==========================================================================
@@ -356,7 +380,17 @@ h1 {
 .ceremony-copy {
   position: relative;
   z-index: 2;
-  max-width: 520px;
+  max-width: 500px;
+  padding-left: 18px;
+}
+.ceremony-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, rgb(var(--mana-200) / 0.52), rgb(var(--gold-300) / 0.1));
 }
 
 /* Altar */
@@ -488,7 +522,10 @@ h1 {
 
 @media (max-width: 920px) {
   .hero-frame { min-height: 690px; }
-  .hero-copy { padding-top: 50px; }
+  .hero-copy { padding-top: 50px; padding-left: 0; }
+  .hero-copy::before,
+  .scene-title-block::before,
+  .ceremony-copy::before { display: none; }
   .material-ledger { left: 22px; right: 22px; bottom: 26px; width: auto; }
   .desk-composition,
   .ceremony-shell { grid-template-columns: 1fr; }

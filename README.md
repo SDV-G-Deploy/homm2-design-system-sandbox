@@ -1,6 +1,6 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **closeout scenes + token contract + living reference page**.
+Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction**.
 
 ## What this is
 
@@ -15,7 +15,8 @@ North star: **Interface belongs to the world.**
 - Clarified material grammar: parchment for reading, stone for structure, gold for value, mana for rare consequence.
 - Reworked typography toward literary, legible, slightly formal tone without novelty fantasy fonts.
 - Added mobile rhythm polish so the scenes remain readable on narrow screens.
-- Final small closeout fixes: clearer closeout labeling, keyboard focus visibility, reduced-motion handling, and docs.
+- Shifted the shape language away from AI-round softness toward plaques, frames, bevels, and stronger panel anatomy.
+- Refreshed the reference page so the demo-stand documents shape language and layout rhythm, not only colors/tokens.
 
 ## Still weak
 
@@ -26,7 +27,7 @@ North star: **Interface belongs to the world.**
 
 ## Next logical pass
 
-Deepen the reusable layer: expand semantic token coverage, split more components out of scene CSS, add forms/tables/badges, run accessibility checks, and test 2-3 realistic dense screens.
+Deepen the reusable layer further: expand semantic token coverage, add forms/tables/badges, test denser archival screens, run accessibility checks, and continue reducing any leftover generic web-card thinking.
 
 ## Local preview
 

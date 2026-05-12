@@ -22,9 +22,9 @@
     <div class="eyebrow">Reference · v1</div>
     <h1>HOMM2 Design System</h1>
     <p>
-      The contract layer of the sandbox. Every token, every scale, every surface and every
+      The contract layer of the sandbox. Every token, scale, surface, shape decision, and
       interactive state lives on this page. Themes / factions override the semantic layer only —
-      never the primitives.
+      never the primitives. Current bias: less round, more plaque / frame / artifact.
     </p>
   </header>
 
@@ -161,11 +161,24 @@
   <section class="ref-section">
     <h2>Radius</h2>
     <div class="radius-grid">
-      <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 12px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-md);">md · 16px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-lg);">lg · 24px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-xl);">xl · 34px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 8px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-md);">md · 12px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-lg);">lg · 18px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-xl);">xl · 24px</div>
       <div class="radius-tile" style="border-radius: var(--radius-pill);">pill</div>
+    </div>
+  </section>
+
+  <section class="ref-section">
+    <h2>Shape Language</h2>
+    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+      The current direction is intentionally less round: interactive elements should feel like plaques,
+      panels should feel framed, and hero surfaces should feel architectural. Pills/circles are exceptions.
+    </p>
+    <div class="shape-grid">
+      <div class="shape-tile interactive">shape-interactive · bevel-sm</div>
+      <div class="shape-tile panel">shape-panel · bevel-md</div>
+      <div class="shape-tile hero">shape-hero · bevel-lg</div>
     </div>
   </section>
 
@@ -242,6 +255,24 @@
       <div class="row-head">disabled</div>
       <div class="state-cell"><button class="btn btn-quiet force-disabled" aria-disabled="true">Keep studying</button></div>
       <div class="state-cell"><button class="btn btn-ceremonial force-disabled" aria-disabled="true">Begin ritual</button></div>
+    </div>
+  </section>
+
+  <section class="ref-section">
+    <h2>Layout Rhythm</h2>
+    <div class="rhythm-grid">
+      <div class="rhythm-tile">
+        <strong>Less centered softness</strong>
+        <span>Prefer anchored copy blocks, rails, asymmetry, and structural offsets over generic centered landing composition.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Section anatomy</strong>
+        <span>Panels should read as assembled artifacts with header, body, and footer/action zones instead of one continuous soft block.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Archive density</strong>
+        <span>Use compact labels, separators, and grouped information so the interface feels authored and archival, not sparse and startup-like.</span>
+      </div>
     </div>
   </section>
 
