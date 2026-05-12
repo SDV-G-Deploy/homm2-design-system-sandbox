@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Design System Sandbox</title>
+    <meta
+      name="description"
+      content="Live sandbox for the HOMM2-inspired Fantasy Warm design system."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero surface-world ornamented">
+        <div class="hero-copy">
+          <p class="eyebrow">Fantasy Warm · Conservative Pass</p>
+          <h1>HOMM2 Design System Sandbox</h1>
+          <p class="hero-text">
+            Мини-стенд для проверки переносимой системы: тёплые поверхности,
+            материальные панели, золотые акценты и arcane depth без ретро-косплея.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-screen="landing">Hero screen</button>
+            <button class="btn btn-secondary" data-screen="workbench">Workbench</button>
+            <button class="btn btn-magic" data-screen="detail">Arcane detail</button>
+          </div>
+        </div>
+        <aside class="hero-card panel panel-treasure">
+          <p class="card-kicker">Current pass</p>
+          <h2>3 экрана</h2>
+          <ul class="stats-list">
+            <li><span>01</span><strong>Landing / Hero</strong></li>
+            <li><span>02</span><strong>Workbench / Dashboard</strong></li>
+            <li><span>03</span><strong>Modal / Reward / Danger</strong></li>
+          </ul>
+        </aside>
+      </header>
+
+      <nav class="screen-tabs panel surface-stone">
+        <button class="tab is-active" data-screen="landing">Landing</button>
+        <button class="tab" data-screen="workbench">Workbench</button>
+        <button class="tab" data-screen="detail">Detail states</button>
+      </nav>
+
+      <main>
+        <section class="demo-screen is-active" data-screen-panel="landing">
+          <div class="grid-two">
+            <article class="panel surface-parchment">
+              <p class="section-label">North Star</p>
+              <h2>Interface belongs to the world</h2>
+              <p>
+                Здесь проверяем базовую атмосферу: светлый parchment, сильная читаемость,
+                ограниченный орнамент и тёплый depth вместо стеклянного SaaS.
+              </p>
+              <div class="badge-row">
+                <span class="badge badge-gold">Treasure CTA</span>
+                <span class="badge badge-mana">Magic accent</span>
+                <span class="badge badge-stone">Stone support</span>
+              </div>
+            </article>
+
+            <article class="panel surface-stone">
+              <p class="section-label">Token probes</p>
+              <div class="token-list">
+                <div><span>surface.world</span><strong>Hero shell</strong></div>
+                <div><span>surface.parchment</span><strong>Readable content</strong></div>
+                <div><span>surface.stone</span><strong>Structural panel</strong></div>
+                <div><span>surface.magic</span><strong>Focus & special actions</strong></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="demo-screen" data-screen-panel="workbench">
+          <div class="workbench-layout">
+            <aside class="panel surface-stone sidebar">
+              <p class="section-label">Navigation</p>
+              <button class="side-link is-current">Overview</button>
+              <button class="side-link">Components</button>
+              <button class="side-link">Tokens</button>
+              <button class="side-link">Modes</button>
+            </aside>
+
+            <div class="workbench-main">
+              <section class="panel surface-parchment">
+                <div class="panel-head">
+                  <div>
+                    <p class="section-label">Workbench</p>
+                    <h2>Panel density test</h2>
+                  </div>
+                  <span class="badge badge-gold">Review ready</span>
+                </div>
+                <div class="card-grid">
+                  <article class="mini-card">
+                    <p class="mini-kicker">Buttons</p>
+                    <h3>Action hierarchy</h3>
+                    <div class="button-row">
+                      <button class="btn btn-primary">Primary</button>
+                      <button class="btn btn-secondary">Secondary</button>
+                      <button class="btn btn-magic">Magic</button>
+                    </div>
+                  </article>
+                  <article class="mini-card">
+                    <p class="mini-kicker">Status</p>
+                    <h3>Readable badges</h3>
+                    <div class="badge-row">
+                      <span class="badge badge-gold">Reward</span>
+                      <span class="badge badge-mana">Active</span>
+                      <span class="badge badge-danger">Danger</span>
+                    </div>
+                  </article>
+                  <article class="mini-card">
+                    <p class="mini-kicker">Inputs</p>
+                    <h3>Form feel</h3>
+                    <label class="field">
+                      <span>Component name</span>
+                      <input value="Treasure Button" />
+                    </label>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-screen" data-screen-panel="detail">
+          <div class="grid-two">
+            <article class="panel surface-magic glow-mana">
+              <p class="section-label">Arcane state</p>
+              <h2>Focused / special action moment</h2>
+              <p>
+                Проверка тёмной магической поверхности: читаемость светлого текста,
+                локальное свечение и неагрессивный special-state emphasis.
+              </p>
+              <button class="btn btn-magic">Run arcane action</button>
+            </article>
+
+            <article class="panel surface-parchment">
+              <p class="section-label">Danger + confirmation</p>
+              <div class="danger-card">
+                <h3>Replace live palette?</h3>
+                <p>Destructive decision should feel explicit, ceremonial and unmissable.</p>
+                <div class="button-row">
+                  <button class="btn btn-secondary">Cancel</button>
+                  <button class="btn btn-danger">Confirm replace</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
