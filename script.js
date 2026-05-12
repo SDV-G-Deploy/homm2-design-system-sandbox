@@ -1,14 +1,12 @@
-const controls = document.querySelectorAll('[data-screen]');
+const screenControls = document.querySelectorAll('[data-screen]');
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('[data-screen-panel]');
+const modeControls = document.querySelectorAll('[data-mode]');
+const body = document.body;
 
-function activate(screen) {
+function activateScreen(screen) {
   panels.forEach((panel) => {
     panel.classList.toggle('is-active', panel.dataset.screenPanel === screen);
-  });
-
-  controls.forEach((control) => {
-    control.classList.toggle('is-active', control.dataset.screen === screen && control.classList.contains('tab'));
   });
 
   tabs.forEach((tab) => {
@@ -16,6 +14,17 @@ function activate(screen) {
   });
 }
 
-controls.forEach((control) => {
-  control.addEventListener('click', () => activate(control.dataset.screen));
+function activateMode(mode) {
+  body.dataset.mode = mode;
+  modeControls.forEach((control) => {
+    control.classList.toggle('is-active', control.dataset.mode === mode);
+  });
+}
+
+screenControls.forEach((control) => {
+  control.addEventListener('click', () => activateScreen(control.dataset.screen));
+});
+
+modeControls.forEach((control) => {
+  control.addEventListener('click', () => activateMode(control.dataset.mode));
 });

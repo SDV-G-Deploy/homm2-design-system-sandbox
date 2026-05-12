@@ -3,72 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOMM2 Design System Sandbox</title>
+    <title>HOMM2 Design System Sandbox v0.2</title>
     <meta
       name="description"
       content="Live sandbox for the HOMM2-inspired Fantasy Warm design system."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body data-mode="conservative">
     <div class="page-shell">
       <header class="hero surface-world ornamented">
         <div class="hero-copy">
-          <p class="eyebrow">Fantasy Warm · Conservative Pass</p>
+          <p class="eyebrow">Fantasy Warm · v0.2 sandbox pass</p>
           <h1>HOMM2 Design System Sandbox</h1>
           <p class="hero-text">
-            Мини-стенд для проверки переносимой системы: тёплые поверхности,
-            материальные панели, золотые акценты и arcane depth без ретро-косплея.
+            Live-стенд для проверки переносимой системы: тёплые поверхности,
+            материальные панели, режимы выразительности и first-pass адаптация под игровой UI.
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" data-screen="landing">Hero screen</button>
             <button class="btn btn-secondary" data-screen="workbench">Workbench</button>
             <button class="btn btn-magic" data-screen="detail">Arcane detail</button>
+            <button class="btn btn-secondary" data-screen="lil8td">Lil8TD preview</button>
           </div>
         </div>
         <aside class="hero-card panel panel-treasure">
           <p class="card-kicker">Current pass</p>
-          <h2>3 экрана</h2>
+          <h2>4 review surfaces</h2>
           <ul class="stats-list">
             <li><span>01</span><strong>Landing / Hero</strong></li>
-            <li><span>02</span><strong>Workbench / Dashboard</strong></li>
-            <li><span>03</span><strong>Modal / Reward / Danger</strong></li>
+            <li><span>02</span><strong>Workbench / Density</strong></li>
+            <li><span>03</span><strong>Detail / Arcane / Danger</strong></li>
+            <li><span>04</span><strong>Lil8TD adaptation</strong></li>
           </ul>
         </aside>
       </header>
+
+      <section class="panel surface-stone control-deck">
+        <div>
+          <p class="section-label">Expression mode</p>
+          <div class="mode-switch" role="tablist" aria-label="Expression modes">
+            <button class="mode-chip is-active" data-mode="conservative">Conservative</button>
+            <button class="mode-chip" data-mode="expressive">Expressive</button>
+            <button class="mode-chip" data-mode="arcane">Arcane</button>
+          </div>
+        </div>
+        <div>
+          <p class="section-label">Pass criteria</p>
+          <div class="badge-row">
+            <span class="badge badge-stone">Readability</span>
+            <span class="badge badge-gold">Accent hierarchy</span>
+            <span class="badge badge-mana">Transferability</span>
+          </div>
+        </div>
+      </section>
 
       <nav class="screen-tabs panel surface-stone">
         <button class="tab is-active" data-screen="landing">Landing</button>
         <button class="tab" data-screen="workbench">Workbench</button>
         <button class="tab" data-screen="detail">Detail states</button>
+        <button class="tab" data-screen="lil8td">Lil8TD preview</button>
       </nav>
 
       <main>
         <section class="demo-screen is-active" data-screen-panel="landing">
-          <div class="grid-two">
-            <article class="panel surface-parchment">
-              <p class="section-label">North Star</p>
-              <h2>Interface belongs to the world</h2>
-              <p>
-                Здесь проверяем базовую атмосферу: светлый parchment, сильная читаемость,
-                ограниченный орнамент и тёплый depth вместо стеклянного SaaS.
-              </p>
-              <div class="badge-row">
-                <span class="badge badge-gold">Treasure CTA</span>
-                <span class="badge badge-mana">Magic accent</span>
-                <span class="badge badge-stone">Stone support</span>
-              </div>
-            </article>
+          <div class="grid-main-side">
+            <div class="stack-gap">
+              <article class="panel surface-parchment">
+                <p class="section-label">North Star</p>
+                <h2>Interface belongs to the world</h2>
+                <p>
+                  Здесь проверяем базовую атмосферу: светлый parchment, сильная читаемость,
+                  контролируемый ornament и тёплый depth вместо стеклянного SaaS.
+                </p>
+                <div class="badge-row">
+                  <span class="badge badge-gold">Treasure CTA</span>
+                  <span class="badge badge-mana">Magic accent</span>
+                  <span class="badge badge-stone">Stone support</span>
+                </div>
+              </article>
 
-            <article class="panel surface-stone">
-              <p class="section-label">Token probes</p>
-              <div class="token-list">
-                <div><span>surface.world</span><strong>Hero shell</strong></div>
-                <div><span>surface.parchment</span><strong>Readable content</strong></div>
-                <div><span>surface.stone</span><strong>Structural panel</strong></div>
-                <div><span>surface.magic</span><strong>Focus & special actions</strong></div>
+              <article class="panel surface-stone">
+                <p class="section-label">Token probes</p>
+                <div class="token-list">
+                  <div><span>surface.world</span><strong>Hero shell</strong></div>
+                  <div><span>surface.parchment</span><strong>Readable content</strong></div>
+                  <div><span>surface.stone</span><strong>Structural panel</strong></div>
+                  <div><span>surface.magic</span><strong>Focus & special actions</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <aside class="panel surface-parchment token-panel">
+              <p class="section-label">Starter tokens</p>
+              <div class="token-cards">
+                <article class="token-card">
+                  <span class="token-swatch swatch-world"></span>
+                  <div>
+                    <strong>surface.world</strong>
+                    <p>Hero, dark shell, scene base</p>
+                  </div>
+                </article>
+                <article class="token-card">
+                  <span class="token-swatch swatch-parchment"></span>
+                  <div>
+                    <strong>surface.parchment</strong>
+                    <p>Text, forms, readable cards</p>
+                  </div>
+                </article>
+                <article class="token-card">
+                  <span class="token-swatch swatch-gold"></span>
+                  <div>
+                    <strong>accent.gold</strong>
+                    <p>Primary CTA, reward, premium signal</p>
+                  </div>
+                </article>
+                <article class="token-card">
+                  <span class="token-swatch swatch-mana"></span>
+                  <div>
+                    <strong>accent.mana</strong>
+                    <p>Special action, focus, intelligence layer</p>
+                  </div>
+                </article>
               </div>
-            </article>
+            </aside>
           </div>
         </section>
 
@@ -82,7 +140,7 @@
               <button class="side-link">Modes</button>
             </aside>
 
-            <div class="workbench-main">
+            <div class="workbench-main stack-gap">
               <section class="panel surface-parchment">
                 <div class="panel-head">
                   <div>
@@ -120,6 +178,15 @@
                   </article>
                 </div>
               </section>
+
+              <section class="panel surface-stone density-notes">
+                <p class="section-label">What we check here</p>
+                <ul class="check-list">
+                  <li>Не разваливается ли читаемость в более плотном экране</li>
+                  <li>Не слишком ли “тематично” выглядят рабочие controls</li>
+                  <li>Держится ли hierarchy без перегруза ornament</li>
+                </ul>
+              </section>
             </div>
           </div>
         </section>
@@ -131,7 +198,7 @@
               <h2>Focused / special action moment</h2>
               <p>
                 Проверка тёмной магической поверхности: читаемость светлого текста,
-                локальное свечение и неагрессивный special-state emphasis.
+                локальное свечение и неагрессивный emphasis.
               </p>
               <button class="btn btn-magic">Run arcane action</button>
             </article>
@@ -147,6 +214,53 @@
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section class="demo-screen" data-screen-panel="lil8td">
+          <div class="stack-gap">
+            <section class="panel surface-world game-shell">
+              <div class="panel-head">
+                <div>
+                  <p class="section-label">Applied preview</p>
+                  <h2>Lil8TD adaptation pass</h2>
+                </div>
+                <span class="badge badge-mana">Best next target</span>
+              </div>
+              <div class="lil-layout">
+                <aside class="panel surface-stone hud-panel">
+                  <p class="mini-kicker">Match HUD</p>
+                  <div class="hud-stat"><span>Gold</span><strong>245</strong></div>
+                  <div class="hud-stat"><span>Lives</span><strong>16</strong></div>
+                  <div class="hud-stat"><span>Wave</span><strong>7 / 12</strong></div>
+                </aside>
+
+                <div class="battlefield panel surface-parchment">
+                  <p class="mini-kicker">Battlefield shell</p>
+                  <div class="battle-grid">
+                    <span></span><span class="path"></span><span></span><span></span><span></span>
+                    <span></span><span class="path tower"></span><span class="path"></span><span></span><span></span>
+                    <span></span><span></span><span class="path"></span><span class="tower"></span><span></span>
+                    <span></span><span></span><span class="path"></span><span class="path"></span><span></span>
+                    <span></span><span></span><span></span><span class="path"></span><span></span>
+                  </div>
+                </div>
+
+                <aside class="panel surface-parchment tower-panel">
+                  <p class="mini-kicker">Tower detail</p>
+                  <h3>Arcane Ballista</h3>
+                  <p>Precise single-target tower with mana-tuned burst window.</p>
+                  <div class="badge-row">
+                    <span class="badge badge-gold">Upgrade ready</span>
+                    <span class="badge badge-stone">Range stable</span>
+                  </div>
+                  <div class="button-row">
+                    <button class="btn btn-primary">Upgrade</button>
+                    <button class="btn btn-secondary">Sell</button>
+                  </div>
+                </aside>
+              </div>
+            </section>
           </div>
         </section>
       </main>
