@@ -9,6 +9,7 @@
   padding: clamp(28px, 5vw, 64px);
   border: 1px solid rgb(var(--gold-300) / 0.3);
   border-radius: var(--radius-xl);
+  clip-path: var(--shape-hero);
   overflow: hidden;
   box-shadow: var(--shadow-elevated), var(--shadow-inset-edge);
   background:
@@ -283,6 +284,7 @@ h1 {
   padding: clamp(24px, 5vw, 68px);
   overflow: hidden;
   border-radius: var(--radius-xl);
+  clip-path: var(--shape-hero);
   border: 1px solid rgb(var(--mana-200) / 0.22);
   background:
     radial-gradient(circle at 70% 52%, rgb(var(--mana-200) / 0.24), transparent 13rem),
@@ -394,6 +396,7 @@ h1 {
   max-width: 480px;
   padding: clamp(26px, 4vw, 44px);
   border-radius: var(--radius-lg);
+  clip-path: var(--shape-panel);
   border: 1px solid rgb(var(--gold-300) / 0.34);
   background:
     radial-gradient(circle at 68% 24%, rgb(var(--mana-200) / 0.22), transparent 9rem),
@@ -463,5 +466,5 @@ h1 {
 @media (max-width: 560px) {
   .hero-frame,
   .desk-composition,
-  .ceremony-shell { border-radius: 22px; }
+  .ceremony-shell { border-radius: var(--radius-xl); }
 }

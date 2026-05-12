@@ -150,7 +150,8 @@ h1, h2, h3, p { margin-top: 0; }
 .scene-nav a {
   padding: 9px 13px;
   border: 1px solid var(--border-thin);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
+  clip-path: var(--shape-interactive);
   background: rgb(var(--ink-950) / 0.28);
   color: rgb(var(--parchment-50) / 0.76);
   font-family: var(--font-display);
@@ -287,7 +288,8 @@ h3::first-letter {
   gap: 28px;
   align-items: center;
   padding: clamp(18px, 4vw, 42px);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
+  clip-path: var(--shape-panel);
   background:
     radial-gradient(ellipse at 52% 64%, rgb(0 0 0 / 0.46), transparent 24rem),
     radial-gradient(circle at 20% 20%, rgb(var(--gold-300) / 0.1), transparent 20rem),
@@ -420,7 +422,8 @@ h3::first-letter {
 }
 .annotation-grid div {
   padding: var(--space-4);
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
+  clip-path: var(--shape-interactive);
   background: rgb(var(--parchment-50) / 0.32);
   border: 1px solid rgb(var(--gold-700) / 0.18);
 }
@@ -453,7 +456,8 @@ h3::first-letter {
 .side-notes { display: grid; gap: 18px; }
 .note-card {
   padding: 22px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
+  clip-path: var(--shape-panel);
   background: rgb(var(--ink-950) / 0.56);
   border: 1px solid var(--border-thin);
   box-shadow: var(--shadow-resting);
@@ -491,7 +495,8 @@ h3::first-letter {
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   border: 1px solid transparent;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
+  clip-path: var(--shape-interactive);
   padding: 13px 18px;
   cursor: pointer;
   transition:
@@ -627,7 +632,7 @@ h3::first-letter {
     right: var(--space-4);
     bottom: 18px;
     padding: var(--space-4);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     transform: none;
     box-shadow:
       0 12px 28px rgb(var(--ink-900) / 0.32),
@@ -655,14 +660,15 @@ h3::first-letter {
   .annotation-grid div { padding: 13px; }
   .side-notes { gap: var(--space-3); }
   .note-card { padding: 17px; border-radius: 18px; }
+  .note-card { clip-path: var(--shape-panel); }
   .high-note { transform: none; }
   .note-card strong { font-size: 18px; }
   .ceremony-shell { min-height: auto; gap: var(--space-5); padding: var(--space-5) 20px; }
   .arcane-orbit { right: -46%; top: 30%; width: 112vw; opacity: 0.42; }
   .altar-mass { right: -16%; bottom: var(--space-4); width: 86vw; height: 34%; opacity: 0.42; }
   .ceremony-copy { max-width: none; }
-  .ritual-panel { padding: var(--space-5) 18px; border-radius: 18px; }
-  .ritual-panel::before { inset: 9px; border-radius: 13px; }
+  .ritual-panel { padding: var(--space-5) 18px; border-radius: var(--radius-lg); }
+  .ritual-panel::before { inset: 9px; border-radius: var(--radius-md); }
   .panel-crown { right: 18px; top: var(--space-4); font-size: 20px; }
   .ritual-panel .consequence-line {
     margin-top: 14px;

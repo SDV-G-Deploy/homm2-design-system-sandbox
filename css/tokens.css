@@ -102,12 +102,21 @@
   --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
   --ease-ceremonial: cubic-bezier(0.7, 0, 0.3, 1);
 
-  /* Radius */
-  --radius-sm:   12px;
-  --radius-md:   16px;
-  --radius-lg:   24px;
-  --radius-xl:   34px;
+  /* Radius — biased away from soft SaaS roundness */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
   --radius-pill: 999px;
+
+  /* Shape / bevel */
+  --bevel-sm: 6px;
+  --bevel-md: 10px;
+  --bevel-lg: 14px;
+  --shape-bevel-sm: polygon(0 var(--bevel-sm), var(--bevel-sm) 0, calc(100% - var(--bevel-sm)) 0, 100% var(--bevel-sm), 100% calc(100% - var(--bevel-sm)), calc(100% - var(--bevel-sm)) 100%, var(--bevel-sm) 100%, 0 calc(100% - var(--bevel-sm)));
+  --shape-bevel-md: polygon(0 var(--bevel-md), var(--bevel-md) 0, calc(100% - var(--bevel-md)) 0, 100% var(--bevel-md), 100% calc(100% - var(--bevel-md)), calc(100% - var(--bevel-md)) 100%, var(--bevel-md) 100%, 0 calc(100% - var(--bevel-md)));
+  --shape-bevel-lg: polygon(0 var(--bevel-lg), var(--bevel-lg) 0, calc(100% - var(--bevel-lg)) 0, 100% var(--bevel-lg), 100% calc(100% - var(--bevel-lg)), calc(100% - var(--bevel-lg)) 100%, var(--bevel-lg) 100%, 0 calc(100% - var(--bevel-lg)));
 
   /* Layout */
   --page: min(1180px, calc(100vw - 32px));
@@ -149,33 +158,38 @@
   --border-ceremonial:   rgb(var(--gold-300) / 0.45);
   --border-on-parchment: rgb(var(--gold-700) / 0.42);
 
-/* Product-facing surface aliases — closer to the canonical docs */
---surface-default:     var(--surface-parchment);
---surface-subtle:      rgb(var(--parchment-50) / 0.72);
---surface-elevated:    rgb(var(--stone-200));
---surface-panel:       rgb(var(--stone-700));
---surface-premium:     rgb(var(--gold-300));
---surface-focus:       rgb(var(--mana-200) / 0.14);
---surface-destructive: rgb(var(--crimson-800) / 0.18);
+  /* Product-facing surface aliases — closer to the canonical docs */
+  --surface-default:     var(--surface-parchment);
+  --surface-subtle:      rgb(var(--parchment-50) / 0.72);
+  --surface-elevated:    rgb(var(--stone-200));
+  --surface-panel:       rgb(var(--stone-700));
+  --surface-premium:     rgb(var(--gold-300));
+  --surface-focus:       rgb(var(--mana-200) / 0.14);
+  --surface-destructive: rgb(var(--crimson-800) / 0.18);
 
-/* Text aliases */
---text-primary-on-light:   var(--ink-on-parchment);
---text-secondary-on-light: var(--ink-on-parchment-soft);
---text-primary-on-dark:    var(--ink-on-night);
---text-secondary-on-dark:  var(--ink-on-night-soft);
---text-muted-on-dark:      var(--ink-on-night-mute);
+  /* Text aliases */
+  --text-primary-on-light:   var(--ink-on-parchment);
+  --text-secondary-on-light: var(--ink-on-parchment-soft);
+  --text-primary-on-dark:    var(--ink-on-night);
+  --text-secondary-on-dark:  var(--ink-on-night-soft);
+  --text-muted-on-dark:      var(--ink-on-night-mute);
 
-/* Border roles */
---border-soft:      var(--border-thin);
---border-strong:    var(--border-thin-warm);
---border-heavy:     rgb(var(--gold-700) / 0.42);
---border-ornament:  var(--border-ceremonial);
+  /* Border roles */
+  --border-soft:      var(--border-thin);
+  --border-strong:    var(--border-thin-warm);
+  --border-heavy:     rgb(var(--gold-700) / 0.42);
+  --border-ornament:  var(--border-ceremonial);
 
-/* Status roles */
---status-success: var(--accent-success);
---status-warning: var(--accent-warning);
---status-danger:  var(--accent-warning);
---status-info:    var(--accent-consequence);
+  /* Status roles */
+  --status-success: var(--accent-success);
+  --status-warning: var(--accent-warning);
+  --status-danger:  var(--accent-warning);
+  --status-info:    var(--accent-consequence);
+
+  /* Shape roles */
+  --shape-interactive: var(--shape-bevel-sm);
+  --shape-panel:       var(--shape-bevel-md);
+  --shape-hero:        var(--shape-bevel-lg);
 
   /* Shadows */
   --shadow-resting:     0 14px 34px rgb(var(--ink-900) / 0.36);
@@ -198,8 +212,8 @@
 @media (max-width: 560px) {
   :root {
     --page:      min(100vw - 20px, 1180px);
-    --radius-xl: 22px;
-    --radius-lg: 18px;
+    --radius-xl: 20px;
+    --radius-lg: 16px;
   }
 }
 
