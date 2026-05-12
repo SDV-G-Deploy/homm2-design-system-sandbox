@@ -102,21 +102,28 @@
   --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
   --ease-ceremonial: cubic-bezier(0.7, 0, 0.3, 1);
 
-  /* Radius — biased away from soft SaaS roundness */
-  --radius-xs:   4px;
-  --radius-sm:   8px;
-  --radius-md:   12px;
-  --radius-lg:   18px;
-  --radius-xl:   24px;
+  /* Radius — tighter, more plaque-like than SaaS-soft */
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   18px;
   --radius-pill: 999px;
 
   /* Shape / bevel */
-  --bevel-sm: 6px;
-  --bevel-md: 10px;
-  --bevel-lg: 14px;
+  --bevel-sm: 5px;
+  --bevel-md: 8px;
+  --bevel-lg: 12px;
   --shape-bevel-sm: polygon(0 var(--bevel-sm), var(--bevel-sm) 0, calc(100% - var(--bevel-sm)) 0, 100% var(--bevel-sm), 100% calc(100% - var(--bevel-sm)), calc(100% - var(--bevel-sm)) 100%, var(--bevel-sm) 100%, 0 calc(100% - var(--bevel-sm)));
   --shape-bevel-md: polygon(0 var(--bevel-md), var(--bevel-md) 0, calc(100% - var(--bevel-md)) 0, 100% var(--bevel-md), 100% calc(100% - var(--bevel-md)), calc(100% - var(--bevel-md)) 100%, var(--bevel-md) 100%, 0 calc(100% - var(--bevel-md)));
   --shape-bevel-lg: polygon(0 var(--bevel-lg), var(--bevel-lg) 0, calc(100% - var(--bevel-lg)) 0, 100% var(--bevel-lg), 100% calc(100% - var(--bevel-lg)), calc(100% - var(--bevel-lg)) 100%, var(--bevel-lg) 100%, 0 calc(100% - var(--bevel-lg)));
+
+  /* Frame / pixel-stepped construction */
+  --frame-outer: 2px;
+  --frame-inner: 1px;
+  --frame-inset: 10px;
+  --pixel-step: 2px;
+  --ornament-gap: 14px;
 
   /* Layout */
   --page: min(1180px, calc(100vw - 32px));
@@ -192,11 +199,15 @@
   --shape-hero:        var(--shape-bevel-lg);
 
   /* Shadows */
-  --shadow-resting:     0 14px 34px rgb(var(--ink-900) / 0.36);
-  --shadow-elevated:    0 32px 80px rgb(0 0 0 / 0.46);
-  --shadow-ceremonial:  0 0 60px rgb(var(--mana-400) / 0.16),
+  --shadow-resting:     0 10px 0 rgb(var(--ink-950) / 0.16),
+                        0 18px 34px rgb(var(--ink-900) / 0.34);
+  --shadow-elevated:    0 14px 0 rgb(var(--ink-950) / 0.18),
+                        0 34px 72px rgb(0 0 0 / 0.44);
+  --shadow-ceremonial:  0 0 44px rgb(var(--mana-400) / 0.16),
+                        0 16px 0 rgb(var(--ink-950) / 0.22),
                         0 28px 70px rgb(0 0 0 / 0.46);
-  --shadow-inset-edge:  inset 0 1px 0 rgb(var(--parchment-50) / 0.16);
+  --shadow-inset-edge:  inset 0 1px 0 rgb(var(--parchment-50) / 0.16),
+                        inset 0 -1px 0 rgb(var(--ink-950) / 0.26);
 
   /* Focus ring */
   --ring-focus:      rgb(var(--mana-200));
@@ -212,8 +223,8 @@
 @media (max-width: 560px) {
   :root {
     --page:      min(100vw - 20px, 1180px);
-    --radius-xl: 20px;
-    --radius-lg: 16px;
+    --radius-xl: 16px;
+    --radius-lg: 12px;
   }
 }
 

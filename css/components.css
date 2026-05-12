@@ -33,9 +33,9 @@ body {
   font-size: 16px;
   font-variant-numeric: oldstyle-nums;
   background:
-    radial-gradient(circle at 18% 6%, rgb(var(--gold-300) / 0.2), transparent 25rem),
-    radial-gradient(circle at 82% 12%, rgb(var(--mana-400) / 0.14), transparent 22rem),
-    linear-gradient(180deg, #251810 0%, #11100c 46%, #080706 100%);
+    radial-gradient(circle at 18% 6%, rgb(var(--gold-300) / 0.18), transparent 25rem),
+    radial-gradient(circle at 82% 12%, rgb(var(--mana-400) / 0.12), transparent 22rem),
+    linear-gradient(180deg, #2b1b12 0%, #17120e 36%, #0b0908 100%);
   overflow-x: hidden;
 }
 
@@ -46,9 +46,10 @@ body::before {
   pointer-events: none;
   opacity: 0.38;
   background-image:
-    linear-gradient(rgb(var(--parchment-50) / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(var(--parchment-50) / 0.025) 1px, transparent 1px);
-  background-size: 42px 42px, 42px 42px;
+    linear-gradient(rgb(var(--parchment-50) / 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.02) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgb(var(--gold-300) / 0.03) 47px 48px);
+  background-size: 24px 24px, 24px 24px, 48px 48px;
   mask-image: radial-gradient(circle at center, black, transparent 78%);
 }
 
@@ -59,7 +60,7 @@ body::after {
   pointer-events: none;
   opacity: 0.18;
   background:
-    repeating-linear-gradient(115deg, transparent 0 19px, rgb(var(--parchment-50) / 0.035) 20px 21px, transparent 22px 46px),
+    repeating-linear-gradient(115deg, transparent 0 19px, rgb(var(--parchment-50) / 0.026) 20px 21px, transparent 22px 46px),
     radial-gradient(circle at 50% 100%, rgb(0 0 0 / 0.72), transparent 44rem);
   mix-blend-mode: overlay;
 }
@@ -93,13 +94,30 @@ h1, h2, h3, p { margin-top: 0; }
   top: 0;
   z-index: 20;
   width: var(--page);
-  margin: 0 auto;
-  padding: 18px 0 10px;
+  margin: 0 auto 18px;
+  padding: 16px 18px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  border: 1px solid rgb(var(--gold-300) / 0.18);
+  clip-path: var(--shape-panel);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 32%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.84), rgb(var(--ink-950) / 0.92));
+  box-shadow:
+    0 8px 0 rgb(var(--ink-950) / 0.18),
+    0 18px 34px rgb(0 0 0 / 0.28),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.08);
   backdrop-filter: blur(14px);
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgb(var(--gold-700) / 0.24);
+  clip-path: var(--shape-interactive);
+  pointer-events: none;
 }
 
 .brand-mark { display: flex; align-items: center; gap: var(--space-3); }
@@ -121,16 +139,19 @@ h1, h2, h3, p { margin-top: 0; }
 
 .brand-sigil {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
-  border: 1px solid rgb(var(--gold-300) / 0.48);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgb(var(--gold-300) / 0.22), rgb(var(--ink-900) / 0.74));
+  border: 1px solid rgb(var(--gold-300) / 0.52);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.16), rgb(var(--gold-500) / 0.18) 38%, rgb(var(--ink-900) / 0.7)),
+    radial-gradient(circle, rgb(var(--gold-300) / 0.22), rgb(var(--ink-900) / 0.74));
   box-shadow:
     inset 0 0 0 3px rgb(var(--ink-950) / 0.48),
-    0 0 22px rgb(var(--gold-500) / 0.24);
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.16),
+    0 0 22px rgb(var(--gold-500) / 0.22);
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.08em;
@@ -148,13 +169,14 @@ h1, h2, h3, p { margin-top: 0; }
   gap: var(--space-2);
 }
 .scene-nav a {
-  padding: 10px 14px;
-  border: 1px solid rgb(var(--gold-300) / 0.22);
+  padding: 9px 15px 10px;
+  border: 1px solid rgb(var(--gold-300) / 0.28);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 45%),
-    linear-gradient(180deg, rgb(var(--ink-900) / 0.56), rgb(var(--ink-950) / 0.74));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.12), transparent 38%),
+    repeating-linear-gradient(90deg, rgb(var(--parchment-50) / 0.02) 0 1px, transparent 1px 16px),
+    linear-gradient(180deg, rgb(var(--ink-800) / 0.72), rgb(var(--ink-950) / 0.88));
   color: rgb(var(--parchment-50) / 0.76);
   font-family: var(--font-display);
   font-size: 14px;
@@ -162,7 +184,9 @@ h1, h2, h3, p { margin-top: 0; }
   letter-spacing: var(--tracking-wide);
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
-    0 10px 20px rgb(var(--ink-950) / 0.16);
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.3),
+    0 8px 0 rgb(var(--ink-950) / 0.14),
+    0 12px 20px rgb(var(--ink-950) / 0.16);
   transition:
     border-color var(--duration-quick) var(--ease-out),
     color        var(--duration-quick) var(--ease-out),
@@ -175,10 +199,11 @@ h1, h2, h3, p { margin-top: 0; }
   border-color: var(--border-ceremonial);
   color: var(--ink-on-night);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.14), rgb(var(--gold-300) / 0.06) 35%, rgb(var(--ink-900) / 0.3));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.18), rgb(var(--gold-300) / 0.1) 35%, rgb(var(--ink-900) / 0.34));
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.18),
-    0 0 24px rgb(var(--gold-300) / 0.16);
+    inset 0 -2px 0 rgb(var(--gold-700) / 0.34),
+    0 0 24px rgb(var(--gold-300) / 0.14);
   transform: translateY(-1px);
 }
 
@@ -305,12 +330,13 @@ h3::first-letter {
   background:
     radial-gradient(ellipse at 52% 64%, rgb(0 0 0 / 0.46), transparent 24rem),
     radial-gradient(circle at 20% 20%, rgb(var(--gold-300) / 0.1), transparent 20rem),
-    linear-gradient(115deg, rgb(89 54 28 / 0.55), rgb(var(--ink-800) / 0.74)),
-    repeating-linear-gradient(8deg, rgb(var(--parchment-50) / 0.035) 0 2px, transparent 2px 8px);
-  border: 1px solid rgb(var(--stone-200) / 0.14);
+    linear-gradient(115deg, rgb(89 54 28 / 0.6), rgb(var(--ink-800) / 0.78)),
+    repeating-linear-gradient(8deg, rgb(var(--parchment-50) / 0.03) 0 2px, transparent 2px 8px);
+  border: 1px solid rgb(var(--stone-200) / 0.18);
   box-shadow:
     var(--shadow-elevated),
-    inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
+    inset 0 0 0 1px rgb(var(--parchment-50) / 0.06),
+    inset 0 0 0 10px rgb(var(--ink-950) / 0.14);
 }
 .desk-composition::before,
 .desk-composition::after {
@@ -481,16 +507,18 @@ h3::first-letter {
 
 .side-notes { display: grid; gap: 18px; }
 .note-card {
+  position: relative;
   padding: 22px;
   border-radius: var(--radius-md);
   clip-path: var(--shape-panel);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 40%),
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 40%),
     rgb(var(--ink-950) / 0.64);
-  border: 1px solid rgb(var(--gold-300) / 0.14);
+  border: 1px solid rgb(var(--gold-300) / 0.16);
   box-shadow:
     var(--shadow-resting),
-    inset 0 1px 0 rgb(var(--parchment-50) / 0.06);
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.06),
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.28);
 }
 .note-card::before {
   content: "";
@@ -535,10 +563,11 @@ h3::first-letter {
   border: 1px solid rgb(var(--parchment-50) / 0.14);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
-  padding: 13px 20px;
+  padding: 12px 18px 13px;
   cursor: pointer;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgb(var(--ink-950) / 0.24);
+  box-shadow: inset 0 1px 0 rgb(var(--parchment-50) / 0.08), inset 0 -2px 0 rgb(var(--ink-950) / 0.24);
   transition:
     transform    var(--duration-quick) var(--ease-out),
     border-color var(--duration-quick) var(--ease-out),
@@ -558,25 +587,30 @@ h3::first-letter {
 .btn-quiet {
   color: var(--ink-on-night);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.12), rgb(var(--parchment-50) / 0.04));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.18), rgb(var(--parchment-50) / 0.05) 38%, rgb(var(--ink-950) / 0.12));
   border-color: rgb(var(--parchment-50) / 0.18);
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
-    0 8px 18px rgb(var(--ink-950) / 0.14);
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.3),
+    0 7px 0 rgb(var(--ink-950) / 0.12),
+    0 12px 18px rgb(var(--ink-950) / 0.14);
 }
 .btn-quiet:hover {
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.18), rgb(var(--parchment-50) / 0.08));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.22), rgb(var(--parchment-50) / 0.08));
   border-color: rgb(var(--gold-300) / 0.2);
 }
 
 /* Ceremonial — gold tier, reserved for consequence */
 .btn-ceremonial {
   color: var(--ink-on-gold);
-  background: linear-gradient(180deg, #ffe49a, rgb(var(--gold-500)) 70%, rgb(var(--gold-700)));
+  background:
+    linear-gradient(180deg, #ffe8ab, #f4c75a 34%, rgb(var(--gold-500)) 68%, rgb(var(--gold-700)) 100%);
   border-color: rgb(var(--parchment-50) / 0.44);
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.22),
+    inset 0 -2px 0 rgb(var(--gold-700) / 0.42),
+    0 8px 0 rgb(var(--gold-700) / 0.18),
     0 0 26px rgb(var(--gold-300) / 0.24),
     0 10px 24px rgb(var(--gold-700) / 0.16);
   font-weight: 700;
@@ -604,9 +638,82 @@ h3::first-letter {
   border: 1px solid rgb(var(--gold-300) / 0.14);
   clip-path: var(--shape-panel);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.04), transparent 38%),
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 38%),
     rgb(var(--ink-950) / 0.18);
   font-size: 16px;
+}
+
+.hero-meta-strip,
+.dossier-ledger-strip,
+.ritual-protocol {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.hero-meta-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--space-5);
+}
+
+.hero-meta-cell,
+.dossier-ledger-strip span,
+.ritual-protocol div {
+  position: relative;
+  padding: 12px 14px;
+  border: 1px solid rgb(var(--gold-300) / 0.18);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 44%),
+    rgb(var(--ink-950) / 0.28);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.07),
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.22);
+}
+
+.hero-meta-cell span,
+.ritual-protocol span {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-value);
+}
+
+.hero-meta-cell strong,
+.ritual-protocol strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.dossier-ledger-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(var(--gold-700) / 0.14);
+}
+
+.dossier-ledger-strip span {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-on-parchment);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.42), rgb(var(--parchment-50) / 0.2));
+  border-color: rgb(var(--gold-700) / 0.18);
+}
+
+.ritual-protocol {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(var(--mana-200) / 0.14);
 }
 
 /* ==========================================================================
@@ -623,6 +730,9 @@ h3::first-letter {
   .scene { min-height: auto; padding: 22px 0 52px; }
   .hero-frame { min-height: 690px; }
   .hero-copy { padding-top: 50px; }
+  .hero-meta-strip,
+  .dossier-ledger-strip,
+  .ritual-protocol { grid-template-columns: 1fr; }
   .material-ledger { left: 22px; right: 22px; bottom: 26px; width: auto; }
   .desk-composition,
   .ceremony-shell { grid-template-columns: 1fr; }
@@ -712,6 +822,10 @@ h3::first-letter {
   .wax-seal { width: 54px; font-size: var(--space-4); }
   .annotation-grid { gap: 10px; margin-top: 22px; }
   .annotation-grid div { padding: 13px; }
+  .hero-meta-strip { margin-top: 18px; }
+  .hero-meta-cell,
+  .dossier-ledger-strip span,
+  .ritual-protocol div { padding: 11px 12px; }
   .side-notes { gap: var(--space-3); }
   .note-card { padding: 17px; border-radius: 18px; }
   .note-card { clip-path: var(--shape-panel); }

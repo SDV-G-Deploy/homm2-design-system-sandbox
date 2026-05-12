@@ -161,11 +161,29 @@
   <section class="ref-section">
     <h2>Radius</h2>
     <div class="radius-grid">
-      <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 8px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-md);">md · 12px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-lg);">lg · 18px</div>
-      <div class="radius-tile" style="border-radius: var(--radius-xl);">xl · 24px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 6px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-md);">md · 10px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-lg);">lg · 14px</div>
+      <div class="radius-tile" style="border-radius: var(--radius-xl);">xl · 18px</div>
       <div class="radius-tile" style="border-radius: var(--radius-pill);">pill</div>
+    </div>
+  </section>
+
+  <section class="ref-section">
+    <h2>Frame Anatomy</h2>
+    <div class="rhythm-grid">
+      <div class="rhythm-tile">
+        <strong>Outer metal rail</strong>
+        <span>Sections should read like mounted artifacts: a visible perimeter, a darker holding shadow, then the content field inside.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Inner parchment / stone field</strong>
+        <span>Content should sit inside a second contour. One border is not enough for the HOMM2 direction.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Header · body · footer</strong>
+        <span>Panels need anatomy. Labels, separators, and action rails should feel assembled, not poured into one soft rectangle.</span>
+      </div>
     </div>
   </section>
 
@@ -276,6 +294,24 @@
     </div>
   </section>
 
+  <section class="ref-section">
+    <h2>Pixel / Old-Style Motifs</h2>
+    <div class="rhythm-grid">
+      <div class="rhythm-tile">
+        <strong>Stepped edge cues</strong>
+        <span>Not literal retro cosplay, but tiny stepped cuts, frame joints, and beveled corners should hint at pixel-era construction.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Chunky CTA silhouette</strong>
+        <span>Buttons should feel pressed from metal or carved from painted wood, not inflated like modern rounded pills.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Editorial-fantasy mix</strong>
+        <span>Borrow archival pacing and framed presentation from portfolio/editorial references, then ground it in our fantasy materials and tokens.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================
        COMPONENT PRIMITIVES
        ============================================================ -->
@@ -328,8 +364,9 @@
     <h2>Next Passes</h2>
     <ol style="max-width: 60ch; color: var(--ink-on-night-soft); line-height: var(--leading-body); padding-left: var(--space-5);">
       <li>Faction themes — Knight, Sorceress, Warlock, Wizard, Barbarian, Necromancer — as overrides of the semantic layer only.</li>
-      <li>HOMM1 heraldic sub-mode — harder outlines, blockier color — as <code>[data-mode="heraldic"]</code>.</li>
+      <li>HOMM1 heraldic sub-mode — harder outlines, blockier color, stronger pixel-step edges — as <code>[data-mode="heraldic"]</code>.</li>
       <li>Real component layer with documented props and states: Panel, Frame, Seal, Threshold, Sigil, Banner, Hoard, Scroll.</li>
+      <li>Introduce artifact navigation patterns: tab rail, chapter plaque, framed active state, compact world-map sidebar variants.</li>
       <li>Codify ornament &amp; consequence as data attributes: <code>data-threshold</code>, <code>data-weight="ceremonial"</code>.</li>
       <li>Accessibility audit pass on the gold-on-parchment and mana-on-dark pairings.</li>
     </ol>

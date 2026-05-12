@@ -64,6 +64,10 @@
     border-radius: var(--radius-md);
     padding: var(--space-3);
     border: 1px solid var(--border-thin);
+    clip-path: var(--shape-interactive);
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 38%),
+      rgb(var(--ink-950) / 0.18);
     font-family: var(--font-body);
     font-size: 13px;
     min-height: 110px;
@@ -142,6 +146,7 @@
     height: 110px;
     background: rgb(var(--parchment-50) / 0.08);
     border: 1px solid var(--border-thin);
+    clip-path: var(--shape-interactive);
     display: grid;
     place-items: center;
     text-align: center;
@@ -187,6 +192,7 @@
     background: rgb(var(--ink-900));
     border: 1px solid var(--border-thin);
     border-radius: var(--radius-md);
+    clip-path: var(--shape-interactive);
     display: grid;
     place-items: center;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
@@ -257,7 +263,9 @@
     padding: var(--space-3);
     border-radius: var(--radius-md);
     clip-path: var(--shape-interactive);
-    background: rgb(var(--parchment-50) / 0.02);
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.04), transparent 42%),
+      rgb(var(--parchment-50) / 0.02);
     border: 1px dashed var(--border-thin);
     display: grid;
     place-items: center;
@@ -311,7 +319,9 @@
     padding: var(--space-5);
     border-radius: var(--radius-lg);
     clip-path: var(--shape-panel);
-    background: rgb(var(--ink-950) / 0.4);
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 38%),
+      rgb(var(--ink-950) / 0.4);
     border: 1px solid var(--border-thin);
   }
   .sampler-tile > .sampler-label {
