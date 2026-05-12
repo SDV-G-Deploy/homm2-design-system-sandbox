@@ -1,10 +1,10 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board. Current state: **final critique closeout after Art Direction Pass 02, typography, and mobile polish**.
+Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **closeout scenes + token contract + living reference page**.
 
 ## What this is
 
-A browser-only atmosphere board, not a product UI kit. It explores how an interface can feel embedded in a fantasy world through scene composition, material hierarchy, restrained ornament, and consequence-based magic accents.
+A browser-first sandbox that now has two layers: an atmosphere board for art direction and a small production-facing system layer for tokens, surfaces, type scale, and interactive states. It explores how an interface can feel embedded in a fantasy world through scene composition, material hierarchy, restrained ornament, and consequence-based magic accents.
 
 North star: **Interface belongs to the world.**
 
@@ -19,14 +19,14 @@ North star: **Interface belongs to the world.**
 
 ## Still weak
 
-- Not yet a reusable design system: component rules and tokens are implied, not formalized.
+- Reusable system layer is now seeded, but still incomplete: tokens and shared CSS are formalized, while broader component coverage is still partial.
 - Accessibility is improved but not production-audited across contrast, states, and interaction patterns.
 - Only one art-direction slice is represented; broader flows, empty states, errors, and dense content remain untested.
 - Some visual depth relies on CSS illustration tricks that would need refinement before product use.
 
 ## Next logical pass
 
-Translate the art direction into a small production-facing kit: tokens, type scale, surface recipes, button / panel / nav states, accessibility checks, and 2-3 realistic dense screens.
+Deepen the reusable layer: expand semantic token coverage, split more components out of scene CSS, add forms/tables/badges, run accessibility checks, and test 2-3 realistic dense screens.
 
 ## Local preview
 
@@ -77,3 +77,22 @@ Recommended unfreeze order:
 GitHub Pages deployment is currently manual-only via GitHub Actions `workflow_dispatch`.
 
 Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
+
+## File structure
+
+```txt
+css/
+  tokens.css      # canonical token contract (primitives / scales / semantic roles)
+  components.css  # shared global and reusable UI layer
+  scenes.css      # scene-specific art-direction compositions
+  reference.css   # reference-page-only specimen layout
+index.html        # atmosphere board / sandbox scenes
+reference.html    # living design-system reference page
+```
+
+## How to read the repo
+
+- Start with `reference.html` when you want the token contract and system specimens.
+- Use `index.html` when you want the art-direction scenes and atmosphere pass.
+- Treat `tokens.css` as the override surface for future themes / factions.
+- Treat `components.css` as the place for reusable rules; keep scene illustration logic out of it.

@@ -149,6 +149,34 @@
   --border-ceremonial:   rgb(var(--gold-300) / 0.45);
   --border-on-parchment: rgb(var(--gold-700) / 0.42);
 
+/* Product-facing surface aliases — closer to the canonical docs */
+--surface-default:     var(--surface-parchment);
+--surface-subtle:      rgb(var(--parchment-50) / 0.72);
+--surface-elevated:    rgb(var(--stone-200));
+--surface-panel:       rgb(var(--stone-700));
+--surface-premium:     rgb(var(--gold-300));
+--surface-focus:       rgb(var(--mana-200) / 0.14);
+--surface-destructive: rgb(var(--crimson-800) / 0.18);
+
+/* Text aliases */
+--text-primary-on-light:   var(--ink-on-parchment);
+--text-secondary-on-light: var(--ink-on-parchment-soft);
+--text-primary-on-dark:    var(--ink-on-night);
+--text-secondary-on-dark:  var(--ink-on-night-soft);
+--text-muted-on-dark:      var(--ink-on-night-mute);
+
+/* Border roles */
+--border-soft:      var(--border-thin);
+--border-strong:    var(--border-thin-warm);
+--border-heavy:     rgb(var(--gold-700) / 0.42);
+--border-ornament:  var(--border-ceremonial);
+
+/* Status roles */
+--status-success: var(--accent-success);
+--status-warning: var(--accent-warning);
+--status-danger:  var(--accent-warning);
+--status-info:    var(--accent-consequence);
+
   /* Shadows */
   --shadow-resting:     0 14px 34px rgb(var(--ink-900) / 0.36);
   --shadow-elevated:    0 32px 80px rgb(0 0 0 / 0.46);
