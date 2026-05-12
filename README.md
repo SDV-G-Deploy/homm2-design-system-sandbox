@@ -36,8 +36,27 @@ Open `index.html` directly or serve the folder with any static server:
 python3 -m http.server 4173
 ```
 
+## Temporary deploy safety note (2026-05-12)
+
+During the active npm supply-chain incident review, GitHub Pages deployment was temporarily changed from automatic `push` on `main` to **manual `workflow_dispatch` only**.
+
+Reason:
+
+- reduce exposure from automatic remote workflow execution during the incident window
+- keep deploy available for explicit operator-triggered runs only
+
+Current temporary rule:
+
+- `.github/workflows/deploy-pages.yml` must stay manual-only until the incident window is considered cleared
+
+Before restoring automatic deploys:
+
+- re-check current incident status
+- confirm the repo still does not require dependency-install steps for Pages deploy
+- then restore normal triggers intentionally in git history
+
 ## Deployment
 
-GitHub Pages is published from the `main` branch.
+GitHub Pages deployment is currently manual-only via GitHub Actions `workflow_dispatch`.
 
 Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/

@@ -1,8 +1,8 @@
 name: Deploy Pages
 
+# Temporary safety freeze during active supply-chain incident review.
+# Keep manual dispatch available; re-enable push after the risk window is cleared.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
