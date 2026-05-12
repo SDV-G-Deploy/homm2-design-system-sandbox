@@ -32,6 +32,15 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 body {
   margin: 0;
   min-height: 100vh;
@@ -103,6 +112,7 @@ h1, h2, h3, p { margin-top: 0; }
 .brand-mark strong { font-family: var(--font-display); font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold-300); }
 .brand-mark em { font-size: 13px; color: rgba(255, 246, 220, 0.68); font-style: italic; letter-spacing: 0.025em; }
 .brand-sigil {
+  position: relative;
   width: 42px;
   height: 42px;
   display: grid;
@@ -137,6 +147,13 @@ h1, h2, h3, p { margin-top: 0; }
   border-color: rgba(244, 199, 90, 0.45);
   color: var(--parchment-50);
   background: rgba(244, 199, 90, 0.12);
+}
+.scene-nav a:focus-visible,
+.brand-mark:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--mana-200);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 5px rgba(62, 157, 222, 0.22);
 }
 
 .board-shell { width: var(--page); margin: 0 auto; }
