@@ -3,268 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOMM2 Design System Sandbox v0.2</title>
+    <title>HOMM2 Art Direction Pass 01</title>
     <meta
       name="description"
-      content="Live sandbox for the HOMM2-inspired Fantasy Warm design system."
+      content="Project-agnostic HOMM2-inspired art-direction board: place, materials, typography, ceremonial magic."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-mode="conservative">
-    <div class="page-shell">
-      <header class="hero surface-world ornamented">
-        <div class="hero-copy">
-          <p class="eyebrow">Fantasy Warm · v0.2 sandbox pass</p>
-          <h1>HOMM2 Design System Sandbox</h1>
-          <p class="hero-text">
-            Live-стенд для проверки переносимой системы: тёплые поверхности,
-            материальные панели, режимы выразительности и чистые дизайн-проходы без привязки к конкретному продукту.
-          </p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" data-screen="landing">Hero screen</button>
-            <button class="btn btn-secondary" data-screen="workbench">Workbench</button>
-            <button class="btn btn-magic" data-screen="detail">Arcane detail</button>
-            <button class="btn btn-secondary" data-screen="lil8td">Scene study</button>
-          </div>
-        </div>
-        <aside class="hero-card panel panel-treasure">
-          <p class="card-kicker">Current pass</p>
-          <h2>4 review surfaces</h2>
-          <ul class="stats-list">
-            <li><span>01</span><strong>Landing / Hero</strong></li>
-            <li><span>02</span><strong>Workbench / Density</strong></li>
-            <li><span>03</span><strong>Detail / Arcane / Danger</strong></li>
-            <li><span>04</span><strong>Scene / component study</strong></li>
-          </ul>
-        </aside>
-      </header>
+  <body>
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-mana"></div>
 
-      <section class="panel surface-stone control-deck">
-        <div>
-          <p class="section-label">Expression mode</p>
-          <div class="mode-switch" role="tablist" aria-label="Expression modes">
-            <button class="mode-chip is-active" data-mode="conservative">Conservative</button>
-            <button class="mode-chip" data-mode="expressive">Expressive</button>
-            <button class="mode-chip" data-mode="arcane">Arcane</button>
+    <header class="site-header" aria-label="Art direction board header">
+      <a class="brand-mark" href="#top" aria-label="Back to top">
+        <span class="brand-sigil">II</span>
+        <span>
+          <strong>HOMM2-inspired</strong>
+          <em>Art Direction Pass 01</em>
+        </span>
+      </a>
+      <nav class="scene-nav" aria-label="Scenes">
+        <a href="#hero-scene">Gate</a>
+        <a href="#dossier-scene">Dossier</a>
+        <a href="#arcane-scene">Ceremony</a>
+      </nav>
+    </header>
+
+    <main id="top" class="board-shell">
+      <section id="hero-scene" class="scene hero-scene" aria-labelledby="hero-title">
+        <div class="scene-frame hero-frame">
+          <div class="horizon">
+            <span class="moon"></span>
+            <span class="far-keep keep-left"></span>
+            <span class="far-keep keep-right"></span>
+            <span class="mountain mountain-a"></span>
+            <span class="mountain mountain-b"></span>
+            <span class="mountain mountain-c"></span>
           </div>
-        </div>
-        <div>
-          <p class="section-label">Pass criteria</p>
-          <div class="badge-row">
-            <span class="badge badge-stone">Readability</span>
-            <span class="badge badge-gold">Accent hierarchy</span>
-            <span class="badge badge-mana">Transferability</span>
+
+          <div class="hero-copy">
+            <p class="eyebrow">Browser atmosphere board · project agnostic</p>
+            <h1 id="hero-title">Interface belongs to the world.</h1>
+            <p class="lead">
+              Не UI kit с фэнтези-покраской, а место: вечерняя крепостная дорога,
+              тёплый документ на столе и редкая магия, которая появляется только там,
+              где у действия есть вес.
+            </p>
           </div>
+
+          <aside class="material-ledger" aria-label="Art direction principles">
+            <p class="ledger-kicker">Pass intent</p>
+            <ol>
+              <li><span>01</span><strong>Place before components</strong></li>
+              <li><span>02</span><strong>Material hierarchy before color theme</strong></li>
+              <li><span>03</span><strong>Ornament as signal, not wallpaper</strong></li>
+            </ol>
+          </aside>
         </div>
       </section>
 
-      <nav class="screen-tabs panel surface-stone">
-        <button class="tab is-active" data-screen="landing">Landing</button>
-        <button class="tab" data-screen="workbench">Workbench</button>
-        <button class="tab" data-screen="detail">Detail states</button>
-        <button class="tab" data-screen="lil8td">Scene study</button>
-      </nav>
+      <section id="dossier-scene" class="scene dossier-scene" aria-labelledby="dossier-title">
+        <div class="scene-title-block">
+          <p class="eyebrow">Scene 02 · parchment dossier</p>
+          <h2 id="dossier-title">Archive table, not generic cards.</h2>
+          <p>
+            Контент лежит на пергаменте как на объекте: поля, печати, заметки,
+            шероховатые границы и спокойная типографика держат характер без carnival-font.
+          </p>
+        </div>
 
-      <main>
-        <section class="demo-screen is-active" data-screen-panel="landing">
-          <div class="grid-main-side">
-            <div class="stack-gap">
-              <article class="panel surface-parchment">
-                <p class="section-label">North Star</p>
-                <h2>Interface belongs to the world</h2>
-                <p>
-                  Здесь проверяем базовую атмосферу: светлый parchment, сильная читаемость,
-                  контролируемый ornament и тёплый depth вместо стеклянного SaaS.
-                </p>
-                <div class="badge-row">
-                  <span class="badge badge-gold">Treasure CTA</span>
-                  <span class="badge badge-mana">Magic accent</span>
-                  <span class="badge badge-stone">Stone support</span>
-                </div>
-              </article>
-
-              <article class="panel surface-stone">
-                <p class="section-label">Token probes</p>
-                <div class="token-list">
-                  <div><span>surface.world</span><strong>Hero shell</strong></div>
-                  <div><span>surface.parchment</span><strong>Readable content</strong></div>
-                  <div><span>surface.stone</span><strong>Structural panel</strong></div>
-                  <div><span>surface.magic</span><strong>Focus & special actions</strong></div>
-                </div>
-              </article>
-            </div>
-
-            <aside class="panel surface-parchment token-panel">
-              <p class="section-label">Starter tokens</p>
-              <div class="token-cards">
-                <article class="token-card">
-                  <span class="token-swatch swatch-world"></span>
-                  <div>
-                    <strong>surface.world</strong>
-                    <p>Hero, dark shell, scene base</p>
-                  </div>
-                </article>
-                <article class="token-card">
-                  <span class="token-swatch swatch-parchment"></span>
-                  <div>
-                    <strong>surface.parchment</strong>
-                    <p>Text, forms, readable cards</p>
-                  </div>
-                </article>
-                <article class="token-card">
-                  <span class="token-swatch swatch-gold"></span>
-                  <div>
-                    <strong>accent.gold</strong>
-                    <p>Primary CTA, reward, premium signal</p>
-                  </div>
-                </article>
-                <article class="token-card">
-                  <span class="token-swatch swatch-mana"></span>
-                  <div>
-                    <strong>accent.mana</strong>
-                    <p>Special action, focus, intelligence layer</p>
-                  </div>
-                </article>
+        <div class="desk-composition">
+          <article class="dossier parchment-object">
+            <header class="dossier-head">
+              <div>
+                <p class="archive-label">Royal archive extract</p>
+                <h3>Warm narrative surfaces</h3>
               </div>
-            </aside>
+              <span class="wax-seal" aria-hidden="true">✦</span>
+            </header>
+            <p class="dossier-text">
+              Поверхность не просто бежевая: она несёт роль документа. Внутренний свет,
+              потёртые края и тёмные чернила создают слой мира, где интерфейс можно читать,
+              но он не выглядит как SaaS-карточка.
+            </p>
+            <div class="annotation-grid" aria-label="Material roles">
+              <div>
+                <span class="rule"></span>
+                <strong>Parchment</strong>
+                <small>reading, records, plans</small>
+              </div>
+              <div>
+                <span class="rule gold"></span>
+                <strong>Gold</strong>
+                <small>value, reward, primary choice</small>
+              </div>
+              <div>
+                <span class="rule stone"></span>
+                <strong>Stone</strong>
+                <small>structure, weight, boundary</small>
+              </div>
+            </div>
+          </article>
+
+          <aside class="side-notes">
+            <div class="note-card high-note">
+              <p class="archive-label">Typography tone</p>
+              <strong>Literary, legible, slightly formal.</strong>
+              <span>No fantasy-font theme park.</span>
+            </div>
+            <div class="note-card low-note">
+              <p class="archive-label">Ornament rule</p>
+              <strong>Only at thresholds.</strong>
+              <span>Corner, seal, divider, ceremonial emphasis.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="arcane-scene" class="scene arcane-scene" aria-labelledby="arcane-title">
+        <div class="ceremony-shell">
+          <div class="arcane-orbit" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
           </div>
-        </section>
 
-        <section class="demo-screen" data-screen-panel="workbench">
-          <div class="workbench-layout">
-            <aside class="panel surface-stone sidebar">
-              <p class="section-label">Navigation</p>
-              <button class="side-link is-current">Overview</button>
-              <button class="side-link">Components</button>
-              <button class="side-link">Tokens</button>
-              <button class="side-link">Modes</button>
-            </aside>
+          <div class="ceremony-copy">
+            <p class="eyebrow">Scene 03 · ceremonial / arcane</p>
+            <h2 id="arcane-title">Magic is reserved for consequence.</h2>
+            <p>
+              Магия перестаёт быть декоративным синим свечением. Это редкий режим:
+              фокус, irreversible action, особая награда или момент перехода.
+            </p>
+          </div>
 
-            <div class="workbench-main stack-gap">
-              <section class="panel surface-parchment">
-                <div class="panel-head">
-                  <div>
-                    <p class="section-label">Workbench</p>
-                    <h2>Panel density test</h2>
-                  </div>
-                  <span class="badge badge-gold">Review ready</span>
-                </div>
-                <div class="card-grid">
-                  <article class="mini-card">
-                    <p class="mini-kicker">Buttons</p>
-                    <h3>Action hierarchy</h3>
-                    <div class="button-row">
-                      <button class="btn btn-primary">Primary</button>
-                      <button class="btn btn-secondary">Secondary</button>
-                      <button class="btn btn-magic">Magic</button>
-                    </div>
-                  </article>
-                  <article class="mini-card">
-                    <p class="mini-kicker">Status</p>
-                    <h3>Readable badges</h3>
-                    <div class="badge-row">
-                      <span class="badge badge-gold">Reward</span>
-                      <span class="badge badge-mana">Active</span>
-                      <span class="badge badge-danger">Danger</span>
-                    </div>
-                  </article>
-                  <article class="mini-card">
-                    <p class="mini-kicker">Inputs</p>
-                    <h3>Form feel</h3>
-                    <label class="field">
-                      <span>Component name</span>
-                      <input value="Treasure Button" />
-                    </label>
-                  </article>
-                </div>
-              </section>
-
-              <section class="panel surface-stone density-notes">
-                <p class="section-label">What we check here</p>
-                <ul class="check-list">
-                  <li>Не разваливается ли читаемость в более плотном экране</li>
-                  <li>Не слишком ли “тематично” выглядят рабочие controls</li>
-                  <li>Держится ли hierarchy без перегруза ornament</li>
-                </ul>
-              </section>
+          <div class="ritual-panel" role="group" aria-label="Ceremonial action study">
+            <span class="panel-crown" aria-hidden="true">✧</span>
+            <p class="archive-label">Ceremonial threshold</p>
+            <h3>Open the sealed passage?</h3>
+            <p>
+              Тёмная материя, холодная мана и золотая грань встречаются только здесь,
+              чтобы действие ощущалось значимым, а не очередной кнопкой.
+            </p>
+            <div class="ceremony-actions">
+              <button type="button" class="btn btn-quiet">Keep studying</button>
+              <button type="button" class="btn btn-ceremonial">Begin ritual</button>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+    </main>
 
-        <section class="demo-screen" data-screen-panel="detail">
-          <div class="grid-two">
-            <article class="panel surface-magic glow-mana">
-              <p class="section-label">Arcane state</p>
-              <h2>Focused / special action moment</h2>
-              <p>
-                Проверка тёмной магической поверхности: читаемость светлого текста,
-                локальное свечение и неагрессивный emphasis.
-              </p>
-              <button class="btn btn-magic">Run arcane action</button>
-            </article>
-
-            <article class="panel surface-parchment">
-              <p class="section-label">Danger + confirmation</p>
-              <div class="danger-card">
-                <h3>Replace live palette?</h3>
-                <p>Destructive decision should feel explicit, ceremonial and unmissable.</p>
-                <div class="button-row">
-                  <button class="btn btn-secondary">Cancel</button>
-                  <button class="btn btn-danger">Confirm replace</button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="demo-screen" data-screen-panel="lil8td">
-          <div class="stack-gap">
-            <section class="panel surface-world game-shell">
-              <div class="panel-head">
-                <div>
-                  <p class="section-label">Applied preview</p>
-                  <h2>Scene and component study</h2>
-                </div>
-                <span class="badge badge-mana">Project-agnostic pass</span>
-              </div>
-              <div class="lil-layout">
-                <aside class="panel surface-stone hud-panel">
-                  <p class="mini-kicker">Compact HUD</p>
-                  <div class="hud-stat"><span>Value</span><strong>245</strong></div>
-                  <div class="hud-stat"><span>Status</span><strong>Stable</strong></div>
-                  <div class="hud-stat"><span>Layer</span><strong>Surface 02</strong></div>
-                </aside>
-
-                <div class="battlefield panel surface-parchment">
-                  <p class="mini-kicker">Scene shell</p>
-                  <div class="battle-grid">
-                    <span></span><span class="path"></span><span></span><span></span><span></span>
-                    <span></span><span class="path tower"></span><span class="path"></span><span></span><span></span>
-                    <span></span><span></span><span class="path"></span><span class="tower"></span><span></span>
-                    <span></span><span></span><span class="path"></span><span class="path"></span><span></span>
-                    <span></span><span></span><span></span><span class="path"></span><span></span>
-                  </div>
-                </div>
-
-                <aside class="panel surface-parchment tower-panel">
-                  <p class="mini-kicker">Detail panel</p>
-                  <h3>Treasure action card</h3>
-                  <p>Reusable compact panel for high-value action, status and explanatory text.</p>
-                  <div class="badge-row">
-                    <span class="badge badge-gold">Primary action</span>
-                    <span class="badge badge-stone">Secondary context</span>
-                  </div>
-                  <div class="button-row">
-                    <button class="btn btn-primary">Confirm</button>
-                    <button class="btn btn-secondary">Dismiss</button>
-                  </div>
-                </aside>
-              </div>
-            </section>
-          </div>
-        </section>
-      </main>
-    </div>
+    <footer class="board-footer">
+      <p>
+        Diagnosis: previous pass over-indexed on controls and inventory. This pass privileges atmosphere,
+        scene rhythm, material hierarchy and restrained symbolic accents.
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

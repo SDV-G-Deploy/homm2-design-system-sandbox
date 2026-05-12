@@ -1,30 +1,19 @@
-const screenControls = document.querySelectorAll('[data-screen]');
-const tabs = document.querySelectorAll('.tab');
-const panels = document.querySelectorAll('[data-screen-panel]');
-const modeControls = document.querySelectorAll('[data-mode]');
-const body = document.body;
+const sceneLinks = document.querySelectorAll('.scene-nav a');
+const sections = [...document.querySelectorAll('.scene')];
 
-function activateScreen(screen) {
-  panels.forEach((panel) => {
-    panel.classList.toggle('is-active', panel.dataset.screenPanel === screen);
-  });
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-  tabs.forEach((tab) => {
-    tab.classList.toggle('is-active', tab.dataset.screen === screen);
-  });
-}
+    if (!visible) return;
 
-function activateMode(mode) {
-  body.dataset.mode = mode;
-  modeControls.forEach((control) => {
-    control.classList.toggle('is-active', control.dataset.mode === mode);
-  });
-}
+    sceneLinks.forEach((link) => {
+      link.toggleAttribute('aria-current', link.hash === `#${visible.target.id}`);
+    });
+  },
+  { threshold: [0.36, 0.58, 0.72] }
+);
 
-screenControls.forEach((control) => {
-  control.addEventListener('click', () => activateScreen(control.dataset.screen));
-});
-
-modeControls.forEach((control) => {
-  control.addEventListener('click', () => activateMode(control.dataset.mode));
-});
+sections.forEach((section) => observer.observe(section));

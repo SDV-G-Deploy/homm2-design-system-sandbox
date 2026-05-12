@@ -1,27 +1,29 @@
-# HOMM2 Design System Sandbox
+# HOMM2 Art Direction Sandbox
 
-Public live sandbox for the HOMM2-inspired design-system test pass.
+Public, project-agnostic HOMM2-inspired art-direction board.
 
 ## Goal
 
-Create a fast Pages-hosted review surface for:
-- landing / hero atmosphere
-- workbench density
-- detail / modal / danger / magic states
+Move the sandbox away from component inventory and into atmosphere-first direction:
 
-## Live workflow
+- strong hero / sense-of-place scene
+- parchment dossier scene
+- ceremonial / arcane consequence scene
 
-This repo is intended to stay lightweight and reviewable in GitHub Pages.
+## Direction
 
-### Screens
-- Landing
-- Workbench
-- Detail states
+North star: **Interface belongs to the world.**
+
+This pass tests material hierarchy, composition rhythm, typographic tone, restrained ornament, and symbolic use of magic/gold accents without binding the sandbox to any specific product.
 
 ## Local preview
 
-Open `index.html` directly or serve the folder with any static server.
+Open `index.html` directly or serve the folder with any static server:
+
+```sh
+python3 -m http.server 4173
+```
 
 ## Deployment
 
-GitHub Pages is published via GitHub Actions from the `main` branch.
+GitHub Pages is published from the `main` branch.
