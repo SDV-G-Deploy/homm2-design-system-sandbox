@@ -650,6 +650,31 @@ h3::first-letter {
   gap: var(--space-3);
 }
 
+.scene-plaque {
+  position: absolute;
+  z-index: 6;
+  top: 18px;
+  left: 20px;
+  padding: 8px 14px 9px;
+  border: 1px solid rgb(var(--gold-300) / 0.26);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.14), rgb(var(--gold-300) / 0.08) 38%, rgb(var(--ink-950) / 0.24)),
+    rgb(var(--ink-900) / 0.72);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.12),
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.28),
+    0 8px 0 rgb(var(--ink-950) / 0.12);
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-value);
+}
+
+.scene-plaque-left { left: 20px; right: auto; }
+.scene-plaque-right { left: auto; right: 20px; }
+
 .hero-meta-strip {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: var(--space-5);
@@ -733,6 +758,16 @@ h3::first-letter {
   .hero-meta-strip,
   .dossier-ledger-strip,
   .ritual-protocol { grid-template-columns: 1fr; }
+  .scene-plaque,
+  .scene-plaque-right,
+  .scene-plaque-left {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
   .material-ledger { left: 22px; right: 22px; bottom: 26px; width: auto; }
   .desk-composition,
   .ceremony-shell { grid-template-columns: 1fr; }
