@@ -657,11 +657,11 @@ h3 { font-family: var(--font-display); font-size: clamp(24px, 2.7vw, 38px); font
 }
 
 @media (max-width: 920px) {
-  .site-header { position: relative; align-items: flex-start; flex-direction: column; }
-  .scene { min-height: auto; padding: 24px 0 56px; }
-  .hero-frame { min-height: 740px; }
+  .site-header { position: relative; align-items: flex-start; flex-direction: column; padding-top: 14px; }
+  .scene { min-height: auto; padding: 22px 0 52px; }
+  .hero-frame { min-height: 690px; }
   .hero-copy { padding-top: 50px; }
-  .material-ledger { left: 22px; right: 22px; width: auto; }
+  .material-ledger { left: 22px; right: 22px; bottom: 26px; width: auto; }
   .desk-composition,
   .ceremony-shell { grid-template-columns: 1fr; }
   .low-note { transform: none; }
@@ -670,13 +670,112 @@ h3 { font-family: var(--font-display); font-size: clamp(24px, 2.7vw, 38px); font
 }
 
 @media (max-width: 560px) {
-  :root { --page: min(100vw - 22px, 1180px); }
-  .scene-nav { justify-content: flex-start; }
+  :root {
+    --page: min(100vw - 20px, 1180px);
+    --radius-xl: 22px;
+    --radius-lg: 18px;
+  }
+  body { font-size: 15px; }
+  body::before { background-size: 32px 32px, 32px 32px; opacity: 0.24; }
+  .ambient { width: 58vmin; filter: blur(34px); opacity: 0.18; }
+  .site-header { gap: 12px; padding-bottom: 6px; }
+  .brand-mark { gap: 10px; }
+  .brand-mark strong { font-size: 11px; letter-spacing: 0.1em; }
+  .brand-mark em { font-size: 12px; }
+  .brand-sigil { width: 36px; height: 36px; }
+  .scene-nav { justify-content: flex-start; gap: 6px; }
+  .scene-nav a { padding: 7px 10px; font-size: 12px; letter-spacing: 0.035em; }
+  .scene { padding: 18px 0 42px; }
   .hero-frame,
   .desk-composition,
   .ceremony-shell { border-radius: 22px; }
-  .moon { width: 72px; }
-  h1 { font-size: clamp(48px, 16vw, 72px); }
-  h2 { font-size: clamp(36px, 13vw, 58px); }
+  .hero-frame {
+    min-height: 660px;
+    padding: 24px 20px;
+    background-position: center;
+  }
+  .hero-frame::before { inset: 10px; border-radius: 16px; }
+  .hero-frame::after { inset-inline: -8%; height: 32%; opacity: 0.5; }
+  .hero-copy { padding-top: 28px; }
+  .eyebrow,
+  .archive-label,
+  .ledger-kicker {
+    gap: 7px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .eyebrow::before,
+  .archive-label::before,
+  .ledger-kicker::before { width: 18px; }
+  h1 { font-size: clamp(42px, 14.5vw, 58px); line-height: 0.94; margin-bottom: 16px; }
+  h2 { font-size: clamp(32px, 11vw, 46px); line-height: 1.02; margin-bottom: 14px; }
+  h3 { font-size: clamp(23px, 7vw, 30px); line-height: 1.08; margin-bottom: 12px; }
+  .lead,
+  .scene-title-block p,
+  .ceremony-copy p,
+  .dossier-text,
+  .ritual-panel p,
+  .board-footer p { font-size: 16px; line-height: 1.58; }
+  .lead { font-size: 17px; line-height: 1.56; }
+  .moon { right: 9%; top: 8%; width: 68px; opacity: 0.78; }
+  .mountain { bottom: 34%; width: 62%; height: 30%; opacity: 0.5; }
+  .far-keep { bottom: 39%; width: 66px; height: 96px; opacity: 0.32; }
+  .gate-mass { bottom: 22%; width: 92vw; height: 46%; opacity: 0.82; }
+  .foreground-road { height: 28%; opacity: 0.74; }
+  .material-ledger {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+    padding: 16px;
+    border-radius: 18px;
+    transform: none;
+    box-shadow: 0 12px 28px rgba(23,16,12,0.32), inset 0 0 0 4px rgba(139,85,23,0.07);
+  }
+  .material-ledger ol { gap: 9px; }
+  .material-ledger li { grid-template-columns: 34px 1fr; gap: 9px; }
+  .material-ledger strong { font-size: 11px; letter-spacing: 0.045em; }
+  .scene-title-block { margin-bottom: 20px; }
+  .desk-composition { gap: 18px; padding: 18px; }
+  .desk-composition::before,
+  .desk-composition::after,
+  .desk-knife { display: none; }
+  .parchment-object { min-height: auto; padding: 24px 20px 32px; border-radius: 20px 15px 22px 16px; transform: none; }
+  .parchment-object::before { inset: 10px; border-radius: 15px 10px 17px 12px; }
+  .parchment-object::after { left: 20px; right: 20px; bottom: 18px; height: 24px; opacity: 0.34; }
+  .dossier-head { flex-direction: row; gap: 14px; margin-bottom: 16px; }
+  .wax-seal { width: 54px; font-size: 16px; }
+  .annotation-grid { gap: 10px; margin-top: 22px; }
+  .annotation-grid div { padding: 13px; }
+  .side-notes { gap: 12px; }
+  .note-card { padding: 17px; border-radius: 18px; }
+  .high-note { transform: none; }
+  .note-card strong { font-size: 18px; }
+  .ceremony-shell { min-height: auto; gap: 24px; padding: 24px 20px; }
+  .arcane-orbit { right: -46%; top: 30%; width: 112vw; opacity: 0.42; }
+  .altar-mass { right: -16%; bottom: 16%; width: 86vw; height: 34%; opacity: 0.42; }
+  .ceremony-copy { max-width: none; }
+  .ritual-panel { padding: 24px 18px; border-radius: 18px; }
+  .ritual-panel::before { inset: 9px; border-radius: 13px; }
+  .panel-crown { right: 18px; top: 16px; font-size: 20px; }
+  .consequence-line { margin-top: 14px; font-size: 12px !important; line-height: 1.45 !important; letter-spacing: 0.075em; }
+  .ceremony-actions { display: grid; gap: 10px; margin-top: 20px; }
+  .btn { width: 100%; padding: 12px 15px; font-size: 12px; }
+  .board-footer { padding-bottom: 32px; }
+  .board-footer p { padding-top: 18px; font-size: 14px; }
+}
+
+@media (max-width: 380px) {
+  :root { --page: min(100vw - 16px, 1180px); }
+  .scene-nav a { padding-inline: 8px; }
+  .hero-frame { min-height: 690px; padding-inline: 16px; }
+  h1 { font-size: clamp(38px, 14vw, 50px); }
+  .lead,
+  .scene-title-block p,
+  .ceremony-copy p,
+  .dossier-text,
+  .ritual-panel p { font-size: 15px; }
+  .material-ledger { left: 12px; right: 12px; padding: 14px; }
   .dossier-head { flex-direction: column; }
 }
