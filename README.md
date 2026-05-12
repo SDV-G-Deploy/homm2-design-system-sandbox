@@ -55,6 +55,23 @@ Before restoring automatic deploys:
 - confirm the repo still does not require dependency-install steps for Pages deploy
 - then restore normal triggers intentionally in git history
 
+### Unfreeze checklist
+
+Unfreeze only if all items are true:
+
+- the incident window has clearly cooled down
+- no new GitHub Actions or Pages-related abuse pattern has appeared
+- the workflow still deploys static files without dependency-install steps
+- no suspicious repo changes appeared during the freeze window
+- one manual deploy review is acceptable before restoring automation
+
+Recommended unfreeze order:
+
+1. inspect workflow diff and current repo state
+2. restore `push` on `main` in `.github/workflows/deploy-pages.yml`
+3. trigger one manual deploy and verify published output
+4. watch for another 24 hours before treating auto-deploy as routine again
+
 ## Deployment
 
 GitHub Pages deployment is currently manual-only via GitHub Actions `workflow_dispatch`.
