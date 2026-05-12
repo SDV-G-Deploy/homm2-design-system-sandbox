@@ -225,6 +225,7 @@ h1 {
   width: min(360px, calc(100% - 44px));
   padding: 22px;
   border-radius: var(--radius-lg);
+  clip-path: var(--shape-panel);
   color: var(--ink-on-parchment);
   background:
     linear-gradient(180deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.06)),
@@ -234,6 +235,24 @@ h1 {
     var(--shadow-resting),
     inset 0 0 0 5px rgb(var(--gold-700) / 0.08);
   transform: rotate(-1.2deg);
+}
+.material-ledger::before,
+.material-ledger::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.material-ledger::before {
+  inset: 10px;
+  border: 1px solid rgb(var(--gold-700) / 0.24);
+  clip-path: var(--shape-interactive);
+}
+.material-ledger::after {
+  left: 18px;
+  right: 18px;
+  top: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(var(--gold-700) / 0.34), transparent);
 }
 .material-ledger ol {
   list-style: none;
@@ -426,6 +445,19 @@ h1 {
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--accent-consequence-soft), var(--accent-value), transparent);
   box-shadow: 0 0 24px rgb(var(--mana-200) / 0.54);
+}
+.ritual-panel > .archive-label {
+  display: inline-flex;
+  margin-bottom: var(--space-3);
+}
+.ritual-panel h3 {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgb(var(--gold-300) / 0.18);
+}
+.ritual-panel .ceremony-actions {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(var(--mana-200) / 0.14);
 }
 
 /* Consequence line — fix the !important by raising specificity */
