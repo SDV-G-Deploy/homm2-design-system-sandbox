@@ -1,2 +1,11 @@
 .DS_Store
 Thumbs.db
+
+# local QA artifacts
+.tmp-qa-check.mjs
+qa-results.json
+qa-summary.json
+index-desktop.png
+index-mobile.png
+reference-desktop.png
+reference-mobile.png

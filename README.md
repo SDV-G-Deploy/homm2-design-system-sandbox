@@ -17,6 +17,7 @@ North star: **Interface belongs to the world.**
 - Added mobile rhythm polish so the scenes remain readable on narrow screens.
 - Shifted the shape language away from AI-round softness toward plaques, frames, bevels, and stronger panel anatomy.
 - Refreshed the reference page so the demo-stand documents shape language and layout rhythm, not only colors/tokens.
+- Rebalanced scene composition and spacing so hero, archive, ceremony, and reference sections hold together more cleanly across desktop and mobile.
 
 ## Still weak
 
@@ -24,6 +25,15 @@ North star: **Interface belongs to the world.**
 - Accessibility is improved but not production-audited across contrast, states, and interaction patterns.
 - Only one art-direction slice is represented; broader flows, empty states, errors, and dense content remain untested.
 - Some visual depth relies on CSS illustration tricks that would need refinement before product use.
+
+## Latest UX / UI pass
+
+A focused layout cleanup pass tightened the demo in four places:
+
+- **Hero / Gate:** separated the copy block and ledger so they no longer feel glued together.
+- **Archive / Dossier:** improved spacing between rail, parchment dossier, and side notes; reduced oversized parchment weight.
+- **Ceremony:** rebalanced copy vs ritual panel so the CTA block feels important without overpowering the scene.
+- **Reference page:** tightened vertical rhythm and mobile specimen sizing to reduce dead space and overly tall blocks.
 
 ## Next logical pass
 

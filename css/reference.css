@@ -6,12 +6,12 @@
   .ref-shell {
     width: var(--page);
     margin: 0 auto;
-    padding: var(--space-7) 0 var(--space-8);
+    padding: var(--space-6) 0 var(--space-7);
   }
 
   .ref-header {
-    margin-bottom: var(--space-7);
-    padding-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
     border-bottom: 1px solid var(--border-thin);
   }
   .ref-header h1 {
@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-3);
-    margin-top: var(--space-5);
+    margin-top: var(--space-4);
   }
   .mode-chip {
     padding: var(--space-4);
@@ -67,7 +67,7 @@
   }
 
   .ref-section {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-7);
   }
   .ref-section > h2 {
     font-size: clamp(20px, 2vw, 26px);
@@ -107,13 +107,13 @@
       rgb(var(--ink-950) / 0.18);
     font-family: var(--font-body);
     font-size: 13px;
-    min-height: 110px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .swatch-chip {
-    height: 56px;
+    height: 52px;
     border-radius: var(--radius-sm);
     margin-bottom: var(--space-3);
     box-shadow: inset 0 0 0 1px rgb(var(--parchment-50) / 0.08);
@@ -283,7 +283,7 @@
   /* Button state matrix */
   .state-matrix {
     display: grid;
-    grid-template-columns: 160px repeat(2, 1fr);
+    grid-template-columns: 140px repeat(2, 1fr);
     gap: var(--space-3);
     align-items: center;
   }
@@ -398,7 +398,7 @@
   .nav-spec-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-5);
+    gap: var(--space-4);
   }
 
   .artifact-rail-sample {
@@ -474,8 +474,54 @@
   .artifact-rail-link.muted { opacity: 0.7; }
 
   @media (max-width: 920px) {
+    .ref-shell { padding-top: var(--space-5); }
     .mode-strip { grid-template-columns: 1fr; }
   }
+
+  @media (max-width: 560px) {
+    .ref-shell { padding-top: 18px; padding-bottom: 40px; }
+    .ref-header { margin-bottom: 30px; padding-bottom: 14px; }
+    .ref-header p { font-size: 15px; line-height: 1.56; }
+    .mode-strip { margin-top: 14px; gap: 10px; }
+    .mode-chip { padding: 12px; }
+    .ref-section { margin-bottom: 40px; }
+    .swatch-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    .swatch { min-height: 92px; padding: 12px; }
+    .swatch-chip { height: 46px; margin-bottom: 10px; }
+    .shadow-grid,
+    .rhythm-grid,
+    .surface-grid,
+    .sampler-grid,
+    .nav-spec-grid { grid-template-columns: 1fr; }
+    .type-row,
+    .space-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+
+    .state-matrix {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+    .state-matrix > :first-child { display: none; }
+    .state-matrix > .row-head {
+      grid-column: 1 / -1;
+      margin-top: var(--space-2);
+      padding-top: var(--space-2);
+      border-top: 1px solid var(--border-thin);
+    }
+    .state-cell { padding: 10px; }
+    .state-cell .btn {
+      width: 100%;
+      min-width: 0;
+      white-space: normal;
+    }
+    .chapter-tabs { gap: 8px; }
+    .chapter-tab { padding: 9px 11px; font-size: 11px; }
+    .artifact-rail-link { padding: 10px 9px; }
+  }
+
   .sampler-tile > .sampler-label {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     font-size: 11px;
