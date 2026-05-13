@@ -32,12 +32,12 @@
         <strong>clear pacing · framed showcase</strong>
       </div>
       <div class="mode-chip">
-        <span>HOMM2 mood</span>
-        <strong>parchment · gold · relic surfaces</strong>
+        <span>Heraldic menu</span>
+        <strong>plaque controls · crest framing · old kingdom order</strong>
       </div>
       <div class="mode-chip">
-        <span>Pixel cues</span>
-        <strong>step edges · chunky controls · map logic</strong>
+        <span>Pixel memory</span>
+        <strong>step edges · command depth · restraint</strong>
       </div>
     </div>
   </header>
@@ -214,6 +214,37 @@
     </div>
   </section>
 
+  <section class="ref-section">
+    <h2>Heraldic Menu</h2>
+    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+      Primary controls should feel closer to an old fantasy game main menu than a web CTA row: mounted,
+      pressed, and assembled. The goal is command clarity with fantasy material weight, not retro parody.
+    </p>
+    <div class="sampler-grid">
+      <div class="sampler-tile">
+        <div class="sampler-label">Quiet plaque</div>
+        <button class="btn btn-quiet">Open archive</button>
+      </div>
+      <div class="sampler-tile">
+        <div class="sampler-label">Active plaque</div>
+        <button class="btn btn-quiet force-active">Enter chapter</button>
+      </div>
+      <div class="sampler-tile">
+        <div class="sampler-label">Ceremonial command</div>
+        <button class="btn btn-ceremonial">Seal decree</button>
+      </div>
+      <div class="sampler-tile">
+        <div class="sampler-label">Section menu plaques</div>
+        <div class="chapter-tabs chapter-tabs-wide heraldic-tabs">
+          <span class="chapter-tab active">Gate</span>
+          <span class="chapter-tab">Archive</span>
+          <span class="chapter-tab">Council</span>
+          <span class="chapter-tab">Ledger</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================
        SHADOW
        ============================================================ -->
@@ -261,7 +292,8 @@
     <h2>Buttons · State Matrix</h2>
     <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
       Two tiers today: <strong>quiet</strong> (everywhere) and <strong>ceremonial</strong>
-      (reserved for irreversible or transformative actions).
+      (reserved for irreversible or transformative actions). In the Heraldic Menu direction both should
+      read as plaques or engraved commands, not floating product CTAs.
     </p>
     <div class="state-matrix">
       <div></div>
@@ -352,6 +384,24 @@
     </div>
   </section>
 
+  <section class="ref-section">
+    <h2>Ornament Discipline</h2>
+    <div class="rhythm-grid">
+      <div class="rhythm-tile">
+        <strong>Use sigils as anchors</strong>
+        <span>Brand sigils, plaques, and wax seals should mark entry, ownership, or consequence — not decorate every container.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Frame before flourish</strong>
+        <span>Always build hierarchy with rails, insets, headers, and command depth before adding heraldic detail.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Magic is a state, not wallpaper</strong>
+        <span>Glow, mana blue, and ceremonial shimmer belong to focus, action, and transformation moments only.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================
        COMPONENT PRIMITIVES
        ============================================================ -->
@@ -412,11 +462,11 @@
   <section class="ref-section">
     <h2>Next Passes</h2>
     <ol style="max-width: 60ch; color: var(--ink-on-night-soft); line-height: var(--leading-body); padding-left: var(--space-5);">
-      <li>Faction themes — Knight, Sorceress, Warlock, Wizard, Barbarian, Necromancer — as overrides of the semantic layer only.</li>
-      <li>HOMM1 heraldic sub-mode — harder outlines, blockier color, stronger pixel-step edges — as <code>[data-mode="heraldic"]</code>.</li>
-      <li>Real component layer with documented props and states: Panel, Frame, Seal, Threshold, Sigil, Banner, Hoard, Scroll.</li>
-      <li>Introduce artifact navigation patterns: tab rail, chapter plaque, framed active state, compact world-map sidebar variants.</li>
-      <li>Codify ornament &amp; consequence as data attributes: <code>data-threshold</code>, <code>data-weight="ceremonial"</code>.</li>
+      <li>Move shared nav and button controls fully into the <strong>Heraldic Menu</strong> direction: clearer press depth, stronger plaque anatomy, stricter corner logic.</li>
+      <li>Promote frame anatomy into reusable primitives: Panel, Frame, Crest Header, Seal, Threshold, Sigil, Banner.</li>
+      <li>Test a restrained heraldic sub-mode with harder outlines and stronger step-edge cues, but keep modern typography and interaction affordance.</li>
+      <li>Introduce artifact navigation variants: chapter plaque rail, council tabs, framed active state, compact world-map sidebar logic.</li>
+      <li>Codify ornament &amp; consequence as data attributes: <code>data-threshold</code>, <code>data-weight="ceremonial"</code>, <code>data-crest</code>.</li>
       <li>Accessibility audit pass on the gold-on-parchment and mana-on-dark pairings.</li>
     </ol>
   </section>

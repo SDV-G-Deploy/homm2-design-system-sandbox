@@ -105,9 +105,9 @@
   /* Radius — tighter, more plaque-like than SaaS-soft */
   --radius-xs:   3px;
   --radius-sm:   6px;
-  --radius-md:   10px;
-  --radius-lg:   14px;
-  --radius-xl:   18px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
   --radius-pill: 999px;
 
   /* Shape / bevel */
@@ -124,6 +124,26 @@
   --frame-inset: 10px;
   --pixel-step: 2px;
   --ornament-gap: 14px;
+
+  /* Heraldic Menu — menu plaques, crest frames, command depth */
+  --menu-plaque-height: 42px;
+  --menu-plaque-padding-x: 16px;
+  --menu-plaque-border: 1px;
+  --menu-plaque-inset: 2px;
+  --menu-plaque-shadow: 0 8px 0 rgb(var(--ink-950) / 0.14),
+                        0 12px 20px rgb(var(--ink-950) / 0.16);
+
+  --frame-rail-thickness: 2px;
+  --frame-corner-cut: 10px;
+  --frame-inner-inset-deep: 14px;
+  --ornament-anchor-size: 18px;
+  --sigil-medallion-size: 48px;
+
+  --press-depth-rest: 0 3px 0 rgb(var(--ink-950) / 0.24);
+  --press-depth-hover: 0 2px 0 rgb(var(--gold-700) / 0.30);
+  --press-depth-active: 0 1px 0 rgb(var(--ink-950) / 0.18);
+  --press-highlight-top: inset 0 1px 0 rgb(var(--parchment-50) / 0.18);
+  --press-shadow-bottom: inset 0 -2px 0 rgb(var(--ink-950) / 0.30);
 
   /* Layout */
   --page: min(1180px, calc(100vw - 32px));

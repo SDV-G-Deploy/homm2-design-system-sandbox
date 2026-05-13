@@ -37,14 +37,15 @@
   }
   .mode-chip {
     padding: var(--space-4);
-    border: 1px solid var(--border-thin-warm);
+    border: var(--menu-plaque-border) solid var(--border-thin-warm);
     clip-path: var(--shape-interactive);
     background:
       linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 40%),
       rgb(var(--ink-950) / 0.24);
     box-shadow:
-      inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
-      inset 0 -2px 0 rgb(var(--ink-950) / 0.22);
+      var(--press-highlight-top),
+      var(--press-shadow-bottom),
+      var(--press-depth-rest);
   }
   .mode-chip span,
   .mode-chip strong {
@@ -78,6 +79,10 @@
     padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--border-thin-warm);
     font-weight: 700;
+  }
+  .ref-section > h2 code {
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
   }
   .ref-section > h2::first-letter { color: inherit; text-shadow: none; }
 
@@ -359,7 +364,10 @@
     background:
       linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 38%),
       rgb(var(--ink-950) / 0.4);
-    border: 1px solid var(--border-thin);
+    border: var(--frame-outer) solid rgb(var(--gold-300) / 0.14);
+    box-shadow:
+      inset 0 0 0 var(--frame-inner) rgb(var(--parchment-50) / 0.05),
+      inset 0 0 0 var(--frame-inner-inset-deep) rgb(var(--ink-950) / 0.08);
   }
 
   .chapter-tabs {
@@ -372,8 +380,9 @@
     text-align: center;
   }
   .chapter-tab {
-    padding: 10px 14px;
-    border: 1px solid var(--border-thin-warm);
+    min-height: var(--menu-plaque-height);
+    padding: 10px var(--menu-plaque-padding-x);
+    border: var(--menu-plaque-border) solid var(--border-thin-warm);
     clip-path: var(--shape-interactive);
     background:
       linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 40%),
@@ -383,6 +392,10 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-on-night-soft);
+    box-shadow:
+      var(--press-highlight-top),
+      var(--press-shadow-bottom),
+      var(--press-depth-rest);
   }
   .chapter-tab.active {
     color: var(--ink-on-gold);
@@ -392,7 +405,13 @@
     box-shadow:
       inset 0 1px 0 rgb(var(--parchment-50) / 0.18),
       inset 0 -2px 0 rgb(var(--gold-700) / 0.42),
-      0 8px 0 rgb(var(--gold-700) / 0.14);
+      var(--press-depth-hover);
+  }
+
+  .heraldic-tabs .chapter-tab:not(.active) {
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.1), transparent 34%),
+      linear-gradient(180deg, rgb(var(--ink-800) / 0.78), rgb(var(--ink-950) / 0.92));
   }
 
   .nav-spec-grid {

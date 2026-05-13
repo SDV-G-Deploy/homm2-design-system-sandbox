@@ -1,12 +1,14 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction**.
+Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction evolving toward a heraldic main-menu feel**.
 
 ## What this is
 
 A browser-first sandbox that now has two layers: an atmosphere board for art direction and a small production-facing system layer for tokens, surfaces, type scale, and interactive states. It explores how an interface can feel embedded in a fantasy world through scene composition, material hierarchy, restrained ornament, and consequence-based magic accents.
 
 North star: **Interface belongs to the world.**
+
+Current direction label: **Heraldic Menu** — an old-kingdom fantasy interface with modern readability.
 
 ## What was achieved
 
@@ -16,6 +18,7 @@ North star: **Interface belongs to the world.**
 - Reworked typography toward literary, legible, slightly formal tone without novelty fantasy fonts.
 - Added mobile rhythm polish so the scenes remain readable on narrow screens.
 - Shifted the shape language away from AI-round softness toward plaques, frames, bevels, and stronger panel anatomy.
+- Clarified the next stylistic move toward heraldic framing, menu-like controls, and stricter geometry rather than softer web-card language.
 - Refreshed the reference page so the demo-stand documents shape language and layout rhythm, not only colors/tokens.
 - Rebalanced scene composition and spacing so hero, archive, ceremony, and reference sections hold together more cleanly across desktop and mobile.
 
@@ -37,7 +40,16 @@ A focused layout cleanup pass tightened the demo in four places:
 
 ## Next logical pass
 
-Deepen the reusable layer further: expand semantic token coverage, add forms/tables/badges, test denser archival screens, run accessibility checks, and continue reducing any leftover generic web-card thinking.
+Codify the **Heraldic Menu** direction in the reusable layer: define frame anatomy tokens, tighten menu/button shape language, document heraldic anchors and ornament discipline, then move shared panels and navigation further away from generic web-card thinking.
+
+## Direction guardrails
+
+Preserve the fantasy-game menu pull, but do not drift into:
+
+- parody retro or literal pixel-art cosplay
+- glow on every interactive or premium surface
+- soft SaaS pills and over-rounded card silhouettes
+- decorative heraldry without hierarchy, state, or navigational purpose
 
 ## Local preview
 
