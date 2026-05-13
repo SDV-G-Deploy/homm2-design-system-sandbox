@@ -227,13 +227,15 @@ h1 {
 .lead,
 .scene-title-block p,
 .ceremony-copy p,
-.dossier-text,
 .ritual-panel p,
 .board-footer p {
   color: var(--ink-on-night-soft);
   font-size: var(--text-body);
   line-height: var(--leading-body);
   font-weight: 400;
+}
+.dossier-text {
+  color: var(--ink-on-parchment);
 }
 .lead {
   max-width: 640px;
