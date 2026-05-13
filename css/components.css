@@ -321,8 +321,8 @@ h3::first-letter {
 
 .desk-composition {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr) 220px;
-  gap: 36px;
+  grid-template-columns: 196px minmax(0, 1fr) 208px;
+  gap: clamp(24px, 3vw, 38px);
   align-items: stretch;
   padding: clamp(18px, 4vw, 42px);
   border-radius: var(--radius-lg);
@@ -437,6 +437,18 @@ h3::first-letter {
   padding-bottom: var(--space-4);
   border-bottom: 1px solid rgb(var(--gold-700) / 0.18);
 }
+.dossier-head > div {
+  min-width: 0;
+}
+.dossier-head h3,
+.parchment-object h3,
+.parchment-object .annotation-grid strong {
+  color: var(--ink-on-parchment);
+}
+.dossier-head h3 {
+  max-width: 14ch;
+  text-wrap: balance;
+}
 .archive-label {
   color: var(--accent-value-mute);
   font-size: 10px;
@@ -507,8 +519,9 @@ h3::first-letter {
 
 .side-notes {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   align-content: start;
+  padding-top: 10px;
 }
 .note-card {
   position: relative;
@@ -946,7 +959,7 @@ h3::first-letter {
   .material-ledger li { grid-template-columns: 34px 1fr; gap: 9px; }
   .material-ledger strong { font-size: 11px; letter-spacing: 0.045em; }
   .scene-title-block { margin-bottom: 16px; padding-left: 10px; }
-  .desk-composition { gap: 16px; padding: 16px; }
+  .desk-composition { gap: 14px; padding: 16px; }
   .desk-composition::before,
   .desk-composition::after,
   .desk-knife { display: none; }
@@ -959,6 +972,7 @@ h3::first-letter {
   .parchment-object::before { inset: 10px; border-radius: 15px 10px 17px 12px; }
   .parchment-object::after  { left: 20px; right: 20px; bottom: 18px; height: var(--space-5); opacity: 0.34; }
   .dossier-head { flex-direction: row; gap: 12px; margin-bottom: 14px; padding-bottom: 12px; }
+  .dossier-head h3 { max-width: 11ch; }
   .wax-seal { width: 48px; font-size: 14px; }
   .annotation-grid { gap: 8px; margin-top: 18px; }
   .annotation-grid div { padding: 12px; }
@@ -966,7 +980,7 @@ h3::first-letter {
   .hero-meta-cell,
   .dossier-ledger-strip span,
   .ritual-protocol div { padding: 10px 11px; }
-  .side-notes { gap: 10px; }
+  .side-notes { gap: 10px; padding-top: 0; }
   .note-card { padding: 15px; border-radius: 18px; }
   .note-card { clip-path: var(--shape-panel); }
   .high-note { transform: none; }
