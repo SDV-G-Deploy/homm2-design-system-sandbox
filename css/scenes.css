@@ -238,9 +238,11 @@ h1 {
   color: var(--ink-on-parchment);
 }
 .lead {
-  max-width: 640px;
+  max-width: 38ch;
   font-size: var(--text-lead);
+  line-height: 1.58;
   color: rgb(var(--parchment-50) / 0.9);
+  text-wrap: pretty;
 }
 
 .lead,
@@ -329,7 +331,7 @@ h1 {
 .scene-title-block {
   position: relative;
   max-width: 640px;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   padding-left: 18px;
 }
 .scene-title-block > p:not(.eyebrow) {

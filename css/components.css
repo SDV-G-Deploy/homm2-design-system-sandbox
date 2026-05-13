@@ -884,6 +884,7 @@ h3::first-letter {
 
 .hero-meta-cell strong,
 .ritual-protocol strong {
+  max-width: 18ch;
   display: block;
   font-family: var(--font-display);
   font-size: 13px;
@@ -902,6 +903,7 @@ h3::first-letter {
 .dossier-ledger-strip span {
   font-family: var(--font-display);
   font-size: 11px;
+  line-height: 1.35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-on-parchment);
@@ -1090,7 +1092,7 @@ h3::first-letter {
   .ceremony-actions { display: grid; gap: 8px; margin-top: 16px; }
   .btn { width: 100%; padding: var(--space-3) 15px; font-size: 12px; }
   .board-footer { padding-bottom: var(--space-6); }
-  .board-footer p { padding-top: 18px; font-size: 14px; }
+  .board-footer p { padding-top: 18px; font-size: 15px; line-height: 1.56; }
 }
 
 @media (max-width: 400px) {
