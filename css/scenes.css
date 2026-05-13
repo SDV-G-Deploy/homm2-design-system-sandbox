@@ -243,6 +243,15 @@ h1 {
   color: rgb(var(--parchment-50) / 0.9);
 }
 
+.lead,
+.dossier-text,
+.scene-title-block > p:not(.eyebrow),
+.ceremony-copy > p:not(.eyebrow),
+.ritual-panel > p:not(.archive-label):not(.consequence-line),
+.board-footer p {
+  margin-bottom: 0;
+}
+
 /* Material ledger — parchment overlay in scene 01 */
 .material-ledger {
   position: relative;
@@ -322,6 +331,11 @@ h1 {
   max-width: 640px;
   margin-bottom: 36px;
   padding-left: 18px;
+}
+.scene-title-block > p:not(.eyebrow) {
+  max-width: 58ch;
+  line-height: 1.62;
+  text-wrap: pretty;
 }
 .scene-title-block::before {
   content: "";
@@ -405,6 +419,11 @@ h1 {
   z-index: 2;
   max-width: 460px;
   padding-left: 18px;
+}
+.ceremony-copy > p:not(.eyebrow) {
+  max-width: 34ch;
+  line-height: 1.62;
+  text-wrap: pretty;
 }
 .ceremony-copy::before {
   content: "";
@@ -511,6 +530,11 @@ h1 {
   padding-bottom: var(--space-3);
   border-bottom: 1px solid rgb(var(--gold-300) / 0.18);
 }
+.ritual-panel > p:not(.archive-label):not(.consequence-line) {
+  max-width: 31ch;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
 .ritual-panel .ceremony-actions {
   padding-top: var(--space-4);
   border-top: 1px solid rgb(var(--mana-200) / 0.14);
@@ -569,6 +593,12 @@ h1 {
   .hero-frame,
   .desk-composition,
   .ceremony-shell { border-radius: var(--radius-xl); }
+
+  .scene-title-block > p:not(.eyebrow),
+  .ceremony-copy > p:not(.eyebrow),
+  .ritual-panel > p:not(.archive-label):not(.consequence-line) {
+    max-width: none;
+  }
 
   .material-ledger {
     position: relative;

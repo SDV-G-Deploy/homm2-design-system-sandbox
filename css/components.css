@@ -499,6 +499,7 @@ h3::first-letter {
 }
 .dossier-text {
   color: var(--ink-on-parchment);
+  max-width: 34ch;
   font-size: clamp(17px, 1.65vw, 21px);
   line-height: var(--leading-prose);
 }
@@ -507,7 +508,7 @@ h3::first-letter {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  margin-top: 34px;
+  margin-top: 28px;
   padding-top: var(--space-4);
   border-top: 1px solid rgb(var(--gold-700) / 0.14);
 }
@@ -581,11 +582,14 @@ h3::first-letter {
   font-family: var(--font-display);
   font-size: 20px;
   line-height: 1.18;
-  margin-bottom: var(--space-3);
+  max-width: 15ch;
+  margin-bottom: 10px;
   letter-spacing: -0.01em;
 }
 .note-card span {
+  max-width: 30ch;
   color: var(--ink-on-night-mute);
+  font-size: 15px;
   line-height: 1.52;
 }
 .low-note { transform: translateX(-14px); }
@@ -714,7 +718,7 @@ h3::first-letter {
   padding: 0 0 46px;
 }
 .board-footer p {
-  max-width: 880px;
+  max-width: 72ch;
   margin: 0;
   padding-top: var(--space-5);
   padding-inline: 18px;
@@ -725,6 +729,7 @@ h3::first-letter {
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 38%),
     rgb(var(--ink-950) / 0.18);
   font-size: 16px;
+  line-height: 1.62;
 }
 
 .hero-meta-strip,
@@ -1068,6 +1073,7 @@ h3::first-letter {
   .note-card { clip-path: var(--shape-panel); }
   .high-note { transform: none; }
   .note-card strong { font-size: 17px; }
+  .note-card span { max-width: none; }
   .ceremony-shell { min-height: auto; gap: 18px; padding: 18px 18px 20px; }
   .arcane-orbit { right: -46%; top: 30%; width: 112vw; opacity: 0.42; }
   .altar-mass { right: -16%; bottom: var(--space-4); width: 86vw; height: 34%; opacity: 0.42; }
