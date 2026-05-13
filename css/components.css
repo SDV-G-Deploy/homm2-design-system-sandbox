@@ -798,6 +798,7 @@ h3::first-letter {
 }
 
 .archive-rail-item strong {
+  max-width: 16ch;
   font-family: var(--font-display);
   font-size: 12px;
   line-height: 1.35;
@@ -1025,7 +1026,7 @@ h3::first-letter {
   .dossier-text,
   .ritual-panel p,
   .board-footer p { font-size: 16px; line-height: 1.58; }
-  .lead { font-size: 16px; line-height: 1.54; }
+  .lead { font-size: 16px; line-height: 1.58; }
   .moon { right: 9%; top: 8%; width: 68px; opacity: 0.78; }
   .mountain { bottom: 34%; width: 62%; height: 30%; opacity: 0.5; }
   .far-keep { bottom: 39%; width: 66px; height: 96px; opacity: 0.32; }
@@ -1070,6 +1071,7 @@ h3::first-letter {
   .hero-meta-cell,
   .dossier-ledger-strip span,
   .ritual-protocol div { padding: 10px 11px; }
+  .hero-copy { padding: 20px 17px 18px; }
   .side-notes { gap: 10px; padding-top: 0; }
   .note-card { padding: 15px; border-radius: 18px; }
   .note-card { clip-path: var(--shape-panel); }
