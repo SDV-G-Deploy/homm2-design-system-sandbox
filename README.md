@@ -58,6 +58,9 @@ Verified during the pass:
 
 Codify the **Heraldic Menu** direction in the reusable layer: define frame anatomy tokens, tighten menu/button shape language, document heraldic anchors and ornament discipline, then move shared panels and navigation further away from generic web-card thinking.
 
+For the current applied-page cleanup backlog, see:
+- `docs/fairy-journeys-codex-task-list-v2.md`
+
 ## Direction guardrails
 
 Preserve the fantasy-game menu pull, but do not drift into:
