@@ -13,6 +13,8 @@
    ============================================================================ */
 
 * { box-sizing: border-box; }
+*::before,
+*::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -69,6 +71,43 @@ button { font: inherit; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p { margin-top: 0; }
 
+img,
+svg,
+canvas { max-width: 100%; }
+
+body,
+.board-shell,
+.scene,
+.scene-frame,
+.desk-composition,
+.ceremony-shell,
+.site-header,
+.brand-mark,
+.hero-copy,
+.material-ledger,
+.parchment-object,
+.archive-rail,
+.archive-rail-item,
+.side-notes,
+.note-card,
+.ritual-panel,
+.hero-meta-cell,
+.dossier-ledger-strip span,
+.ritual-protocol div,
+.btn { min-width: 0; }
+
+h1,
+h2,
+h3,
+p,
+strong,
+small,
+span,
+a,
+button {
+  overflow-wrap: anywhere;
+}
+
 /* --------------------------------------------------------------------------
    Atmospheric ambient lights
    -------------------------------------------------------------------------- */
@@ -100,6 +139,7 @@ h1, h2, h3, p { margin-top: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  min-width: 0;
   border: 1px solid rgb(var(--gold-300) / 0.18);
   clip-path: var(--shape-panel);
   background:
@@ -120,7 +160,7 @@ h1, h2, h3, p { margin-top: 0; }
   pointer-events: none;
 }
 
-.brand-mark { display: flex; align-items: center; gap: var(--space-3); }
+.brand-mark { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
 .brand-mark strong,
 .brand-mark em { display: block; }
 .brand-mark strong {
@@ -164,15 +204,20 @@ h1, h2, h3, p { margin-top: 0; }
 
 .scene-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   gap: var(--space-2);
+  min-width: 0;
 }
 .scene-nav a {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 9px 15px 10px;
+  min-height: var(--menu-plaque-height);
+  display: inline-flex;
+  align-items: center;
+  padding: 9px var(--menu-plaque-padding-x) 10px;
+  white-space: nowrap;
   border: 1px solid rgb(var(--gold-300) / 0.28);
   border-radius: var(--radius-sm);
   clip-path: var(--shape-interactive);
@@ -191,8 +236,7 @@ h1, h2, h3, p { margin-top: 0; }
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
     inset 0 -3px 0 rgb(var(--ink-950) / 0.34),
-    0 8px 0 rgb(var(--ink-950) / 0.14),
-    0 12px 20px rgb(var(--ink-950) / 0.16);
+    var(--menu-plaque-shadow);
   transition:
     border-color var(--duration-quick) var(--ease-out),
     color        var(--duration-quick) var(--ease-out),
@@ -304,6 +348,7 @@ h1 {
   text-shadow:
     0 3px 0 rgb(var(--ink-950) / 0.28),
     0 18px 44px rgb(0 0 0 / 0.45);
+  text-wrap: balance;
 }
 
 .lead,
@@ -330,6 +375,7 @@ h2 {
   line-height: var(--leading-h2);
   letter-spacing: var(--tracking-h2);
   margin-bottom: 20px;
+  text-wrap: balance;
 }
 
 h3 {
@@ -339,6 +385,7 @@ h3 {
   line-height: var(--leading-h3);
   margin-bottom: var(--space-4);
   letter-spacing: var(--tracking-h3);
+  text-wrap: balance;
 }
 
 /* Illuminated capital — gold first letter on h2/h3 */
@@ -350,7 +397,8 @@ h3::first-letter {
 
 .desk-composition {
   display: grid;
-  grid-template-columns: 196px minmax(0, 1fr) 208px;
+  grid-template-columns: minmax(160px, 196px) minmax(0, 1fr) minmax(184px, 208px);
+  grid-template-areas: "archive dossier notes";
   gap: clamp(24px, 3vw, 38px);
   align-items: stretch;
   padding: clamp(18px, 4vw, 42px);
@@ -415,7 +463,9 @@ h3::first-letter {
   position: relative;
   z-index: 2;
   min-height: 480px;
-  padding: clamp(28px, 4vw, 56px);
+  max-width: 760px;
+  justify-self: center;
+  padding: clamp(30px, 4vw, 58px);
   color: var(--ink-on-parchment);
   border-radius: 28px 18px 34px 20px;
   background:
@@ -430,6 +480,8 @@ h3::first-letter {
     inset 0 0 0 7px rgb(var(--gold-700) / 0.06);
   transform: rotate(-0.7deg);
 }
+
+.desk-composition > .parchment-object { grid-area: dossier; }
 .parchment-object::before,
 .parchment-object::after {
   content: "";
@@ -475,7 +527,7 @@ h3::first-letter {
   color: var(--ink-on-parchment);
 }
 .dossier-head h3 {
-  max-width: 14ch;
+  max-width: 18ch;
   text-wrap: balance;
 }
 .archive-label {
@@ -499,8 +551,8 @@ h3::first-letter {
 }
 .dossier-text {
   color: var(--ink-on-parchment);
-  max-width: 34ch;
-  font-size: clamp(17px, 1.65vw, 21px);
+  max-width: var(--measure-prose);
+  font-size: clamp(17px, 1.45vw, 20px);
   line-height: var(--leading-prose);
 }
 
@@ -548,6 +600,7 @@ h3::first-letter {
 .rule.stone { background: rgb(var(--stone-500)); }
 
 .side-notes {
+  grid-area: notes;
   display: grid;
   gap: 18px;
   align-content: start;
@@ -587,7 +640,7 @@ h3::first-letter {
   letter-spacing: -0.01em;
 }
 .note-card span {
-  max-width: 30ch;
+  max-width: var(--measure-note);
   color: var(--ink-on-night-mute);
   font-size: 15px;
   line-height: 1.52;
@@ -598,11 +651,18 @@ h3::first-letter {
    Button system
    -------------------------------------------------------------------------- */
 
-.ceremony-actions {
+.ceremony-actions,
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: 28px;
+}
+
+.hero-actions {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(var(--gold-300) / 0.16);
 }
 
 .btn {
@@ -740,6 +800,7 @@ h3::first-letter {
 }
 
 .archive-rail {
+  grid-area: archive;
   position: relative;
   z-index: 2;
   align-self: stretch;
@@ -924,13 +985,41 @@ h3::first-letter {
    RESPONSIVE OVERRIDES
    ========================================================================== */
 
+@media (max-width: 1100px) {
+  .desk-composition {
+    grid-template-columns: minmax(0, 1fr) minmax(184px, 240px);
+    grid-template-areas:
+      "dossier dossier"
+      "archive notes";
+  }
+
+  .parchment-object {
+    width: min(760px, 100%);
+  }
+
+  .dossier-ledger-strip,
+  .ritual-protocol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 920px) {
   .site-header {
-    position: relative;
+    top: 8px;
     align-items: flex-start;
     flex-direction: column;
     padding-top: 14px;
   }
+  .scene-nav {
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scene-nav::-webkit-scrollbar { display: none; }
   .scene { min-height: auto; padding: 22px 0 48px; }
   .hero-frame { min-height: 690px; }
   .hero-copy { padding-top: 50px; }
@@ -958,7 +1047,13 @@ h3::first-letter {
   }
   .desk-composition,
   .ceremony-shell { grid-template-columns: 1fr; }
-  .desk-composition { gap: 22px; }
+  .desk-composition {
+    grid-template-areas:
+      "archive"
+      "dossier"
+      "notes";
+    gap: 22px;
+  }
   .archive-rail { order: -1; }
   .low-note { transform: none; }
   .annotation-grid { grid-template-columns: 1fr; }
@@ -975,20 +1070,10 @@ h3::first-letter {
   .brand-mark strong { font-size: 11px; letter-spacing: 0.1em; }
   .brand-mark em     { font-size: 12px; }
   .brand-sigil       { width: 36px; height: 36px; }
-  .scene-nav {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    gap: 5px;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 3px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .scene-nav::-webkit-scrollbar { display: none; }
+  .scene-nav { gap: 5px; padding-bottom: 3px; }
   .scene-nav a {
     flex: 0 0 auto;
+    min-height: 34px;
     padding: 6px 8px 7px;
     font-size: 11px;
     letter-spacing: 0.02em;
@@ -1101,8 +1186,9 @@ h3::first-letter {
     line-height: 1.45;
     letter-spacing: 0.075em;
   }
-  .ceremony-actions { display: grid; gap: 8px; margin-top: 16px; }
-  .btn { width: 100%; padding: var(--space-3) 15px; font-size: 12px; }
+  .ceremony-actions,
+  .hero-actions { display: grid; gap: 8px; margin-top: 16px; }
+  .btn { width: 100%; justify-content: center; padding: var(--space-3) 15px; font-size: 12px; }
   .board-footer { padding-bottom: var(--space-6); }
   .board-footer p { padding-top: 18px; font-size: 15px; line-height: 1.56; }
 }

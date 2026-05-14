@@ -70,11 +70,11 @@
   /* Type — fluid by default */
   --text-eyebrow: 12px;
   --text-caption: 13px;
-  --text-body:    clamp(17px, 1.75vw, 22px);
-  --text-lead:    clamp(18px, 1.9vw,  24px);
-  --text-h3:      clamp(24px, 2.7vw,  38px);
-  --text-h2:      clamp(38px, 5.7vw,  72px);
-  --text-display: clamp(52px, 8.2vw, 112px);
+  --text-body:    clamp(17px, 1.45vw, 21px);
+  --text-lead:    clamp(18px, 1.65vw, 23px);
+  --text-h3:      clamp(24px, 2.35vw, 36px);
+  --text-h2:      clamp(36px, 4.9vw, 68px);
+  --text-display: clamp(48px, 7.2vw, 104px);
 
   /* Tracking */
   --tracking-display: -0.048em;
@@ -145,8 +145,12 @@
   --press-highlight-top: inset 0 1px 0 rgb(var(--parchment-50) / 0.18);
   --press-shadow-bottom: inset 0 -2px 0 rgb(var(--ink-950) / 0.30);
 
-  /* Layout */
+  /* Layout / authored measures */
   --page: min(1180px, calc(100vw - 32px));
+  --measure-prose: 64ch;
+  --measure-intro: 58ch;
+  --measure-note: 30ch;
+  --measure-ritual: 34ch;
 
   /* ==========================================================================
      LAYER 3 — SEMANTIC TOKENS
@@ -228,6 +232,11 @@
                         0 28px 70px rgb(0 0 0 / 0.46);
   --shadow-inset-edge:  inset 0 1px 0 rgb(var(--parchment-50) / 0.16),
                         inset 0 -1px 0 rgb(var(--ink-950) / 0.26);
+
+  /* Glow discipline — quiet by default; consequence raises local intensity */
+  --glow-mana-restraint: rgb(var(--mana-400) / 0.12);
+  --glow-mana-focus:     rgb(var(--mana-400) / 0.22);
+  --glow-gold-reward:    rgb(var(--gold-300) / 0.24);
 
   /* Focus ring */
   --ring-focus:      rgb(var(--mana-200));

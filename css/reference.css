@@ -536,7 +536,37 @@
 
   .artifact-rail-link.muted { opacity: 0.7; }
 
-  @media (max-width: 920px) {
+
+.measure-ledger {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+.measure-ledger div {
+  padding: var(--space-4);
+  border: 1px solid rgb(var(--gold-300) / 0.16);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 44%),
+    rgb(var(--ink-950) / 0.28);
+}
+.measure-ledger strong,
+.measure-ledger span { display: block; }
+.measure-ledger strong {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wider);
+  color: var(--accent-value);
+}
+.measure-ledger span {
+  margin-top: 6px;
+  color: var(--ink-on-night-mute);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+@media (max-width: 920px) {
     .ref-shell { padding-top: var(--space-5); }
     .mode-strip { grid-template-columns: 1fr; }
   }
@@ -566,7 +596,8 @@
     .rhythm-grid,
     .surface-grid,
     .sampler-grid,
-    .nav-spec-grid { grid-template-columns: 1fr; }
+    .nav-spec-grid,
+    .measure-ledger { grid-template-columns: 1fr; }
     .type-row,
     .space-row {
       grid-template-columns: 1fr;

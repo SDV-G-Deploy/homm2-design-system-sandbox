@@ -162,7 +162,7 @@
 .hero-copy {
   position: relative;
   z-index: 4;
-  max-width: 54ch;
+  max-width: var(--measure-intro);
   margin-top: clamp(132px, 18vh, 220px);
   padding: 28px 26px 24px;
   border: 1px solid rgb(var(--gold-300) / 0.22);
@@ -238,7 +238,7 @@ h1 {
   color: var(--ink-on-parchment);
 }
 .lead {
-  max-width: 38ch;
+  max-width: 40ch;
   font-size: var(--text-lead);
   line-height: 1.58;
   color: rgb(var(--parchment-50) / 0.9);
@@ -330,12 +330,12 @@ h1 {
 
 .scene-title-block {
   position: relative;
-  max-width: 640px;
+  max-width: var(--measure-intro);
   margin-bottom: 30px;
   padding-left: 18px;
 }
 .scene-title-block > p:not(.eyebrow) {
-  max-width: 58ch;
+  max-width: var(--measure-intro);
   line-height: 1.62;
   text-wrap: pretty;
 }
@@ -368,13 +368,25 @@ h1 {
   clip-path: var(--shape-hero);
   border: 1px solid rgb(var(--mana-200) / 0.22);
   background:
-    radial-gradient(circle at 70% 52%, rgb(var(--mana-200) / 0.24), transparent 13rem),
-    radial-gradient(circle at 68% 50%, rgb(var(--mana-400) / 0.22), transparent 23rem),
-    radial-gradient(circle at 70% 50%, rgb(var(--gold-300) / 0.16), transparent 11rem),
-    repeating-conic-gradient(from 5deg at 70% 52%, rgb(var(--mana-200) / 0.055) 0 3deg, transparent 3deg 17deg),
+    radial-gradient(circle at 70% 52%, rgb(var(--mana-200) / 0.14), transparent 12rem),
+    radial-gradient(circle at 68% 50%, var(--glow-mana-restraint), transparent 22rem),
+    radial-gradient(circle at 70% 50%, rgb(var(--gold-300) / 0.07), transparent 10rem),
+    repeating-conic-gradient(from 5deg at 70% 52%, rgb(var(--mana-200) / 0.032) 0 3deg, transparent 3deg 17deg),
     repeating-linear-gradient(90deg, rgb(var(--parchment-50) / 0.02) 0 1px, transparent 1px 24px),
     linear-gradient(140deg, rgb(var(--mana-900) / 0.92), rgb(var(--ink-950) / 0.96) 58%, #080706);
   box-shadow: var(--shadow-elevated), inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
+}
+
+@media (max-width: 1100px) {
+  .ceremony-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: clamp(24px, 3vw, 34px);
+    min-height: 620px;
+  }
+
+  .ritual-panel {
+    width: min(100%, 420px);
+  }
 }
 
 .arcane-orbit {
@@ -385,10 +397,11 @@ h1 {
   aspect-ratio: 1;
   transform: translateY(-50%);
   border-radius: 50%;
-  border: 1px solid rgb(var(--mana-200) / 0.18);
+  border: 1px solid rgb(var(--mana-200) / 0.12);
+  opacity: 0.72;
   box-shadow:
-    inset 0 0 60px rgb(var(--mana-400) / 0.1),
-    0 0 80px rgb(var(--mana-400) / 0.12);
+    inset 0 0 52px rgb(var(--mana-400) / 0.055),
+    0 0 64px rgb(var(--mana-400) / 0.07);
 }
 .arcane-orbit::before { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
 .arcane-orbit::before,
@@ -401,20 +414,24 @@ h1 {
 }
 .arcane-orbit::after { inset: 28%; border-color: rgb(var(--mana-200) / 0.26); }
 
-/* NOTE: nth-child positions are fragile if the HTML reorders.
-   Migrate to data attributes (data-node="gold" / "mana") when convenient. */
+/* Orbit placement remains structural; color intensity comes from data-node roles. */
 .arcane-orbit span {
   position: absolute;
   width: 10px;
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--accent-consequence-soft);
-  box-shadow: 0 0 22px var(--accent-consequence);
+  box-shadow: 0 0 16px var(--glow-mana-focus);
 }
+.arcane-orbit span[data-node="gold"] {
+  background: var(--accent-value);
+  box-shadow: 0 0 18px var(--glow-gold-reward);
+}
+.arcane-orbit span[data-node="mana-dim"] { opacity: 0.48; }
 .arcane-orbit span:nth-child(1) { left: 48%; top: -5px; }
-.arcane-orbit span:nth-child(2) { right: 8%; top: 25%; background: var(--accent-value); box-shadow: 0 0 22px var(--accent-value-deep); }
+.arcane-orbit span:nth-child(2) { right: 8%; top: 25%; }
 .arcane-orbit span:nth-child(3) { left: 18%; bottom: 11%; }
-.arcane-orbit span:nth-child(4) { right: 24%; bottom: 4%; background: var(--accent-value); box-shadow: 0 0 22px var(--accent-value-deep); }
+.arcane-orbit span:nth-child(4) { right: 24%; bottom: 4%; }
 
 .ceremony-copy {
   position: relative;
@@ -461,7 +478,7 @@ h1 {
   box-shadow:
     inset 0 10px 0 rgb(var(--parchment-50) / 0.05),
     inset 0 0 0 6px rgb(0 0 0 / 0.22),
-    0 0 90px rgb(var(--mana-400) / 0.18);
+    0 0 58px rgb(var(--mana-400) / 0.1);
   clip-path: polygon(6% 0, 94% 0, 100% 24%, 100% 90%, 92% 100%, 8% 100%, 0 90%, 0 24%);
 }
 .altar-slab::after {
@@ -471,8 +488,8 @@ h1 {
   border: 1px solid rgb(var(--gold-300) / 0.32);
   border-radius: 50%;
   box-shadow:
-    0 0 38px rgb(var(--gold-300) / 0.18),
-    inset 0 0 24px rgb(var(--mana-400) / 0.14);
+    0 0 24px rgb(var(--gold-300) / 0.1),
+    inset 0 0 18px rgb(var(--mana-400) / 0.1);
 }
 .altar-horn {
   width: 25%;
@@ -495,7 +512,7 @@ h1 {
   clip-path: var(--shape-panel);
   border: 1px solid rgb(var(--gold-300) / 0.34);
   background:
-    radial-gradient(circle at 68% 24%, rgb(var(--mana-200) / 0.22), transparent 9rem),
+    radial-gradient(circle at 68% 24%, rgb(var(--mana-200) / 0.12), transparent 8rem),
     repeating-linear-gradient(90deg, rgb(var(--parchment-50) / 0.025) 0 1px, transparent 1px 18px),
     linear-gradient(180deg, rgb(var(--mana-200) / 0.12), rgb(var(--ink-950) / 0.44)),
     var(--surface-ritual);
@@ -521,7 +538,7 @@ h1 {
   top: -1px;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--accent-consequence-soft), var(--accent-value), transparent);
-  box-shadow: 0 0 24px rgb(var(--mana-200) / 0.54);
+  box-shadow: 0 0 18px rgb(var(--mana-200) / 0.28);
 }
 .ritual-panel > .archive-label {
   display: inline-flex;
@@ -533,7 +550,7 @@ h1 {
   border-bottom: 1px solid rgb(var(--gold-300) / 0.18);
 }
 .ritual-panel > p:not(.archive-label):not(.consequence-line) {
-  max-width: 31ch;
+  max-width: var(--measure-ritual);
   line-height: 1.6;
   text-wrap: pretty;
 }
