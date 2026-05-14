@@ -64,6 +64,9 @@ Primary plan:
 Focused page backlog:
 - `docs/fairy-journeys-codex-task-list-v2.md`
 
+Text-system guidance:
+- `docs/text-system-guidelines-2026-05.md`
+
 ## Direction guardrails
 
 Preserve the fantasy-game menu pull, but do not drift into:

@@ -335,7 +335,7 @@
 .menu-keep h1 {
   max-width: 12ch;
   margin-bottom: 18px;
-  font-size: clamp(40px, 5.2vw, 70px);
+  font-size: clamp(36px, 4.8vw, 62px);
 }
 
 .menu-keep .lead {
@@ -768,7 +768,7 @@
 
   .menu-keep h1 {
     max-width: 14ch;
-    font-size: clamp(42px, 6vw, 76px);
+    font-size: clamp(36px, 5.2vw, 66px);
   }
 
   .menu-title-cartouche {
@@ -873,6 +873,17 @@
     padding: 10px 10px 14px;
   }
 
+  .menu-keep h1 {
+    max-width: 11ch;
+    font-size: clamp(32px, 10.2vw, 42px);
+    line-height: 1;
+  }
+
+  .menu-keep .lead {
+    font-size: 15px;
+    line-height: 1.52;
+  }
+
   .game-menu-stack {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -918,7 +929,7 @@
     font-size: 11px;
     line-height: 1.36;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
   }
 
   .save-slot-strip {

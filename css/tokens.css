@@ -73,8 +73,8 @@
   --text-body:    clamp(17px, 1.45vw, 21px);
   --text-lead:    clamp(18px, 1.65vw, 23px);
   --text-h3:      clamp(24px, 2.35vw, 36px);
-  --text-h2:      clamp(36px, 4.9vw, 68px);
-  --text-display: clamp(48px, 7.2vw, 104px);
+  --text-h2:      clamp(32px, 4.4vw, 60px);
+  --text-display: clamp(44px, 6.4vw, 92px);
 
   /* Tracking */
   --tracking-display: -0.048em;
