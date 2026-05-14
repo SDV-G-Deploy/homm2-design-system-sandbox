@@ -1,6 +1,6 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction evolving toward a heraldic main-menu feel**.
+Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction evolving toward a heraldic main-menu feel, now stabilized with a menu-first adaptive layer across mobile / tablet / small desktop**.
 
 ## What this is
 
@@ -37,6 +37,22 @@ A focused layout cleanup pass tightened the demo in four places:
 - **Archive / Dossier:** improved spacing between rail, parchment dossier, and side notes; reduced oversized parchment weight.
 - **Ceremony:** rebalanced copy vs ritual panel so the CTA block feels important without overpowering the scene.
 - **Reference page:** tightened vertical rhythm and mobile specimen sizing to reduce dead space and overly tall blocks.
+
+## Latest adaptive stabilization pass
+
+The latest pass intentionally chose **adaptive stabilization over grid-first flattening**.
+
+- Added a separate **menu-first adaptive layer** so the authored HoMM2 composition survives responsive transitions.
+- Relaxed hard layout constraints that were making some states brittle.
+- Added `min-width: 0` and containment-style protections to reduce overflow and collision risk.
+- Improved transition behavior between **mobile / tablet / small desktop** widths.
+- Added `fairy-journeys.html` plus its dedicated `css/fairy-journeys.css` as a live applied branch inside the sandbox.
+
+Verified during the pass:
+
+- widths checked: `360 / 768 / 1024 / 1180 / 1366`
+- no critical horizontal overflow on the reviewed states
+- `git diff --check` clean before commit
 
 ## Next logical pass
 
@@ -105,12 +121,14 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ```txt
 css/
-  tokens.css      # canonical token contract (primitives / scales / semantic roles)
-  components.css  # shared global and reusable UI layer
-  scenes.css      # scene-specific art-direction compositions
-  reference.css   # reference-page-only specimen layout
-index.html        # atmosphere board / sandbox scenes
-reference.html    # living design-system reference page
+  tokens.css           # canonical token contract (primitives / scales / semantic roles)
+  components.css       # shared global and reusable UI layer
+  scenes.css           # scene-specific art-direction compositions
+  reference.css        # reference-page-only specimen layout
+  fairy-journeys.css   # page-specific adaptive scene rules
+index.html             # atmosphere board / sandbox scenes
+reference.html         # living design-system reference page
+fairy-journeys.html    # live applied branch / fairy-tale menu-first page
 ```
 
 ## How to read the repo
