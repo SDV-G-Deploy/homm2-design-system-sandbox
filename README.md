@@ -10,6 +10,12 @@ North star: **Interface belongs to the world.**
 
 Current direction label: **Heraldic Menu** — an old-kingdom fantasy interface with modern readability.
 
+## Applied implementation target
+
+The live applied product site is `../YourInsideQuest`.
+
+This sandbox remains the upstream design-system/reference source. Changes here should be reconciled intentionally into `YourInsideQuest`; they are not automatically synced.
+
 ## What was achieved
 
 - Reframed the sandbox from component inventory into three scenes: gate, dossier, ceremony.
