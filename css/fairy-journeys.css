@@ -748,7 +748,7 @@
   max-width: 460px;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 980px) {
   .fairy-menu-scene { min-height: auto; }
 
   .menu-stage {
@@ -794,16 +794,8 @@
 }
 
 @media (max-width: 920px) {
-  .menu-stage,
   .trail-layout {
     grid-template-columns: 1fr;
-  }
-
-  .menu-stage {
-    grid-template-areas:
-      "keep"
-      "status"
-      "command";
   }
 
   .status-rail { order: 2; }
@@ -813,6 +805,16 @@
   .menu-stage {
     min-height: auto;
     gap: 18px;
+  }
+
+  .command-entry,
+  .rail-button {
+    display: none;
+  }
+
+  .command-rail-shell {
+    align-self: start;
+    gap: 8px;
   }
 
   .backdrop-vines,
@@ -830,6 +832,11 @@
   }
 
   .menu-stage {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "keep"
+      "status"
+      "command";
     padding: 16px;
     border-radius: 22px;
   }
@@ -949,10 +956,50 @@
   }
 
   .menu-plaques {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
     margin-top: 12px;
     padding-top: 11px;
+  }
+
+  .status-rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .status-rail-head {
+    grid-column: 1 / -1;
+    padding-bottom: 7px;
+  }
+
+  .status-box {
+    padding: 9px 8px;
+  }
+
+  .status-label {
+    margin-bottom: 4px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .status-box strong {
+    font-size: 10px;
+    line-height: 1.32;
+    letter-spacing: 0.035em;
+  }
+
+  .command-rail-shell {
+    gap: 8px;
+  }
+
+  .command-entry,
+  .rail-button {
+    display: none;
+  }
+
+  .command-rail-head {
+    padding-bottom: 7px;
   }
 
   .mini-command-grid {
@@ -966,24 +1013,25 @@
   }
 
   .menu-plaque {
-    grid-template-columns: 34px minmax(0, 1fr);
-    column-gap: 10px;
-    padding: 11px 12px;
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 8px;
+    padding: 9px 9px;
   }
 
   .plaque-index {
     grid-row: 1 / span 2;
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 
   .menu-plaque strong {
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 1.28;
   }
 
   .menu-plaque small {
-    font-size: 12px;
+    display: none;
   }
 
   .trail-step {

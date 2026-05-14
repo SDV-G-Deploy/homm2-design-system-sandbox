@@ -712,14 +712,13 @@
     .ref-shell {
       width: calc(100vw - 20px);
       max-width: calc(100vw - 20px);
-      padding-top: 18px;
-      padding-bottom: 40px;
+      padding: 18px 10px 40px;
     }
     .ref-header { margin-bottom: 30px; padding-bottom: 14px; }
     .ref-header h1 {
-      max-width: 8.5ch;
-      font-size: clamp(30px, 9.4vw, 40px);
-      line-height: 0.98;
+      max-width: 9ch;
+      font-size: clamp(29px, 8.8vw, 38px);
+      line-height: 1;
       margin-bottom: 10px;
     }
     .ref-header p {

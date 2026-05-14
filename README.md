@@ -54,9 +54,28 @@ Verified during the pass:
 - no critical horizontal overflow on the reviewed states
 - `git diff --check` clean before commit
 
+## Current reality after the text pass
+
+A dedicated text-system pass improved live wording, mobile typography pressure, and command brevity — especially on `fairy-journeys.html`.
+
+That pass was intentionally pragmatic, not foundational.
+
+What is now true:
+- text in scan-first UI zones is shorter and less likely to break mobile layout
+- display / heading pressure is lower than before
+- reference/manual wording is more instructional
+
+What is **not** true yet:
+- the broader design system has not been fully hardened against future copy changes
+- component-level text limits are documented, but not yet fully enforced as reusable guardrails
+- future wording edits can still reintroduce layout stress if they ignore the text guidelines
+
+So the current state should be treated as:
+**stabilized enough for review, but not yet self-protecting by system design.**
+
 ## Next logical pass
 
-The next phase is a **design-system research refactor**: preserve the Heraldic Menu direction, but convert the current scene work into a stricter reusable system with a real operational reference, clearer component boundaries, and stronger mobile/action hierarchy.
+The next phase is still a **design-system research refactor**: preserve the Heraldic Menu direction, but convert the current scene work into a stricter reusable system with a real operational reference, clearer component boundaries, stronger mobile/action hierarchy, and better protection against text-driven regressions.
 
 Primary plan:
 - `docs/design-system-research-plan-2026-05.md`

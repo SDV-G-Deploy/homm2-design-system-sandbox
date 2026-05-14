@@ -9,6 +9,20 @@ Reviewed pages:
 
 This document defines how text should behave inside the Heraldic Menu / artifact UI direction.
 
+## Status note
+
+A first text-system implementation pass has already been applied to the live sandbox.
+That pass improved wording density, reduced heading pressure, and lowered the chance of mobile text breakage.
+
+However, this document should not be read as "the system is solved."
+
+Important limitation:
+- the current repo is **text-polished**, but not yet **text-safe by system design**
+- future copy edits can still break layouts if they ignore the rules below
+- component constraints are partly documented, but not yet fully encoded as reusable guardrails everywhere
+
+Use this file as an operating brief for future wording and typography work, not as proof that the problem is permanently closed.
+
 ---
 
 ## Short direction
