@@ -251,7 +251,7 @@
 
 @media (max-width: 560px) {
   :root {
-    --page:      min(100vw - 20px, 1180px);
+    --page:      min(1180px, calc(100vw - 20px));
     --radius-xl: 16px;
     --radius-lg: 12px;
   }
@@ -259,6 +259,6 @@
 
 @media (max-width: 380px) {
   :root {
-    --page: min(100vw - 16px, 1180px);
+    --page: min(1180px, calc(100vw - 16px));
   }
 }

@@ -34,13 +34,13 @@
       <nav class="scene-nav" aria-label="Переходы по экрану">
         <a href="#menu-shell">Меню</a>
         <a href="#trail-log">Маршрут</a>
-        <a href="#command-rail">Команда</a>
+        <a href="#final-threshold">Порог</a>
         <a href="./index.html">Sandbox</a>
       </nav>
     </header>
 
-    <main id="menu-shell" class="board-shell fairy-board">
-      <section class="scene fairy-menu-scene" aria-labelledby="fairy-menu-title">
+    <main id="fairy-board" class="board-shell fairy-board">
+      <section id="menu-shell" class="scene fairy-menu-scene" aria-labelledby="fairy-menu-title">
         <div class="menu-stage">
           <div class="scene-plaque scene-plaque-left">Главный экран · Сказочные странствия</div>
 
@@ -115,38 +115,39 @@
               <a class="game-menu-button utility" href="./index.html">
                 <span class="game-menu-glyph">V</span>
                 <span>
-                  <strong>Настройки sandbox</strong>
+                  <strong>Настройки песочницы</strong>
                   <small>вернуться к сравнению режимов</small>
                 </span>
-              </a>
-            </div>
-
-            <div class="menu-plaques" role="navigation" aria-label="Основные разделы путешествия">
-              <a class="menu-plaque active" href="#trail-log">
-                <span class="plaque-index">I</span>
-                <strong>Войти в лес дорог</strong>
-                <small>первый след и зов истории</small>
-              </a>
-              <a class="menu-plaque" href="#story-dossier">
-                <span class="plaque-index">II</span>
-                <strong>Открыть сказочный архив</strong>
-                <small>символы, роли, внутренние имена</small>
-              </a>
-              <a class="menu-plaque" href="#command-rail">
-                <span class="plaque-index">III</span>
-                <strong>Собрать команду спутников</strong>
-                <small>мудрец, трикстер, хранитель, тень</small>
-              </a>
-              <a class="menu-plaque ceremonial" href="#final-threshold">
-                <span class="plaque-index">IV</span>
-                <strong>Принять зов тропы</strong>
-                <small>ритуал перехода и личный выбор</small>
               </a>
             </div>
 
             <div class="save-slot-strip" aria-label="Текущий слот">
               <span>Слот сохранения A</span>
               <strong>лес у древних врат · глава 1 · тихая отвага</strong>
+            </div>
+
+            <div class="menu-plaques route-index" role="navigation" aria-label="Тихий указатель разделов путешествия">
+              <p class="route-index-title">Указатель разделов</p>
+              <a class="menu-plaque active" href="#trail-log">
+                <span class="plaque-index">I</span>
+                <strong>Лес дорог</strong>
+                <small>первый след и зов истории</small>
+              </a>
+              <a class="menu-plaque" href="#story-dossier">
+                <span class="plaque-index">II</span>
+                <strong>Сказочный архив</strong>
+                <small>символы и внутренние имена</small>
+              </a>
+              <a class="menu-plaque" href="#command-rail">
+                <span class="plaque-index">III</span>
+                <strong>Спутники</strong>
+                <small>мудрец, трикстер, хранитель, тень</small>
+              </a>
+              <a class="menu-plaque ceremonial" href="#final-threshold">
+                <span class="plaque-index">IV</span>
+                <strong>Порог выбора</strong>
+                <small>ритуал перехода</small>
+              </a>
             </div>
           </section>
 
@@ -306,9 +307,9 @@
 
     <footer class="board-footer">
       <p>
-        Demo page: fantasy menu interface about self-discovery through fairy-tale travel —
-        тёмное дерево, латунные рамки, пергаментные вставки, лианы, plaque-навигация
-        и статусные рейки ближе к игровому front-end, чем к обычному лендингу.
+        Демонстрационная страница: сказочное меню о поиске себя через путешествия —
+        тёмное дерево, латунные рамки, пергаментные вставки, лианы, навигационные плакетки
+        и статусные рейки ближе к игровому интерфейсу, чем к обычному лендингу.
       </p>
     </footer>
 

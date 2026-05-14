@@ -11,11 +11,11 @@
 .menu-stage {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(164px, 210px) minmax(0, 1fr) minmax(196px, 260px);
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr) minmax(178px, 238px);
   grid-template-areas: "status keep command";
-  gap: clamp(18px, 3vw, 34px);
-  min-height: 760px;
-  padding: clamp(28px, 3.4vw, 52px);
+  gap: clamp(16px, 2.6vw, 28px);
+  min-height: 700px;
+  padding: clamp(24px, 3vw, 44px);
   border: 1px solid rgb(var(--gold-300) / 0.28);
   clip-path: var(--shape-hero);
   border-radius: var(--radius-xl);
@@ -175,17 +175,18 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px 14px;
-  border: 1px solid rgb(var(--gold-300) / 0.18);
+  gap: 9px;
+  padding: 14px 12px;
+  border: 1px solid rgb(var(--gold-300) / 0.13);
   clip-path: var(--shape-panel);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 32%),
-    linear-gradient(180deg, rgb(var(--ink-900) / 0.74), rgb(var(--ink-950) / 0.86));
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.62), rgb(var(--ink-950) / 0.76));
   box-shadow:
-    inset 0 1px 0 rgb(var(--parchment-50) / 0.06),
-    inset 0 -2px 0 rgb(var(--ink-950) / 0.28),
-    0 14px 28px rgb(0 0 0 / 0.22);
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.05),
+    inset 0 -2px 0 rgb(var(--ink-950) / 0.24),
+    0 10px 22px rgb(0 0 0 / 0.18);
+  opacity: 0.78;
 }
 
 .status-rail::before,
@@ -279,9 +280,9 @@
 .menu-keep {
   align-self: center;
   width: 100%;
-  max-width: 680px;
+  max-width: 660px;
   justify-self: center;
-  padding: clamp(28px, 4vw, 42px);
+  padding: clamp(24px, 3.4vw, 38px);
   border: 1px solid rgb(var(--gold-300) / 0.24);
   clip-path: var(--shape-hero);
   background:
@@ -333,7 +334,13 @@
 
 .menu-keep h1 {
   max-width: 12ch;
-  font-size: clamp(42px, 5.7vw, 78px);
+  margin-bottom: 18px;
+  font-size: clamp(40px, 5.2vw, 70px);
+}
+
+.menu-keep .lead {
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.54;
 }
 
 .menu-title-cartouche {
@@ -481,10 +488,20 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid rgb(var(--gold-300) / 0.12);
-  opacity: 0.82;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgb(var(--gold-300) / 0.1);
+  opacity: 0.58;
+}
+
+.route-index-title {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-on-night-mute);
 }
 
 .menu-plaque {
@@ -497,8 +514,8 @@
   row-gap: 4px;
   align-items: center;
   min-width: 0;
-  padding: 10px 9px 11px;
-  border: 1px solid rgb(var(--gold-300) / 0.15);
+  padding: 8px 8px 9px;
+  border: 1px solid rgb(var(--gold-300) / 0.12);
   clip-path: var(--shape-panel);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.14), rgb(var(--gold-300) / 0.05) 30%, transparent 40%),
@@ -586,7 +603,7 @@
 .save-slot-strip {
   display: grid;
   gap: 4px;
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 11px 14px 12px;
   border: 1px solid rgb(var(--gold-300) / 0.16);
   clip-path: var(--shape-interactive);
@@ -767,6 +784,7 @@
 
   .menu-plaques {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 560px;
   }
 
   .status-rail,
@@ -804,8 +822,15 @@
 }
 
 @media (max-width: 560px) {
+  .fairy-board,
+  .fairy-menu-scene,
   .menu-stage {
-    padding: 18px;
+    width: 100%;
+    max-width: calc(100vw - 20px);
+  }
+
+  .menu-stage {
+    padding: 16px;
     border-radius: 22px;
   }
 
@@ -839,7 +864,9 @@
   .menu-keep,
   .status-rail,
   .command-rail-shell {
-    padding: 14px;
+    width: 100%;
+    max-width: calc(100vw - 52px);
+    padding: 13px;
   }
 
   .menu-title-cartouche {
@@ -847,21 +874,29 @@
   }
 
   .game-menu-stack {
+    grid-template-columns: 1fr;
     gap: 8px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
 
   .game-menu-button {
-    grid-template-columns: 38px minmax(0, 1fr);
-    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 9px;
     min-height: 58px;
-    padding: 10px 11px;
+    padding: 10px 10px;
+  }
+
+  .game-menu-button.primary,
+  .game-menu-button.utility {
+    grid-column: auto;
   }
 
   .game-menu-button.primary {
-    grid-template-columns: 42px minmax(0, 1fr);
-    min-height: 72px;
-    padding: 12px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 68px;
+    padding: 11px;
   }
 
   .game-menu-glyph {
@@ -879,7 +914,11 @@
   }
 
   .game-menu-button small {
-    font-size: 12px;
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.36;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .save-slot-strip {
@@ -900,9 +939,9 @@
 
   .menu-plaques {
     grid-template-columns: 1fr;
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 14px;
+    gap: 7px;
+    margin-top: 12px;
+    padding-top: 11px;
   }
 
   .mini-command-grid {

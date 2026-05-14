@@ -266,7 +266,7 @@ button {
   z-index: -1;
 }
 .scene-nav a:hover,
-.scene-nav a[aria-current="true"] {
+.scene-nav a[aria-current] {
   border-color: var(--border-ceremonial);
   color: var(--ink-on-night);
   background:
@@ -366,6 +366,16 @@ h1 {
   max-width: 640px;
   font-size: var(--text-lead);
   color: rgb(var(--parchment-50) / 0.9);
+  text-wrap: pretty;
+}
+
+.lead,
+.dossier-text,
+.scene-title-block > p:not(.eyebrow),
+.ceremony-copy > p:not(.eyebrow),
+.ritual-panel > p:not(.archive-label):not(.consequence-line),
+.board-footer p {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -1063,6 +1073,13 @@ h3::first-letter {
 @media (max-width: 560px) {
   html, body { overflow-x: clip; }
   body { font-size: 15px; }
+  .site-header,
+  .board-shell,
+  .board-footer {
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    margin-inline: auto;
+  }
   body::before { background-size: 32px 32px, 32px 32px; opacity: 0.24; }
   .ambient { display: none; }
   .site-header { gap: var(--space-3); padding-bottom: 6px; }
@@ -1089,7 +1106,7 @@ h3::first-letter {
   }
   .hero-frame::before { inset: 10px; border-radius: var(--radius-md); }
   .hero-frame::after  { inset-inline: -8%; height: 32%; opacity: 0.5; }
-  .hero-copy          { margin-top: 88px; padding: 22px 18px 18px; }
+  .hero-copy          { width: 100%; max-width: calc(100vw - 52px); margin-top: 48px; padding: 18px 16px 16px; }
   .eyebrow,
   .archive-label,
   .ledger-kicker {
@@ -1166,7 +1183,7 @@ h3::first-letter {
     line-height: 1.28;
     letter-spacing: 0.04em;
   }
-  .hero-copy { padding: 20px 17px 18px; }
+  .hero-copy { padding: 18px 16px 16px; }
   .side-notes { gap: 10px; padding-top: 0; }
   .note-card { padding: 15px; border-radius: 18px; }
   .note-card { clip-path: var(--shape-panel); }

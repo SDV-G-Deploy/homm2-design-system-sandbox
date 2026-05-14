@@ -18,34 +18,60 @@
 
 <main class="ref-shell">
 
-  <header class="ref-header">
+  <header class="ref-header" id="top">
     <div class="eyebrow">Reference · v1</div>
-    <h1>HOMM2 Design System</h1>
+    <h1>HOMM2 Design System Manual</h1>
     <p>
-      The contract layer of the sandbox. Every token, scale, surface, shape decision, and
-      interactive state lives on this page. Themes / factions override the semantic layer only —
-      never the primitives. Current bias: less round, more plaque / frame / artifact.
+      Operational source of truth for the sandbox: tokens, surfaces, command hierarchy,
+      component states, page recipes, and guardrails. Build new screens from this page first;
+      page CSS may compose, but should not redefine the system grammar.
     </p>
     <div class="mode-strip" aria-label="Direction blend">
       <div class="mode-chip">
-        <span>Editorial taste</span>
-        <strong>clear pacing · framed showcase</strong>
+        <span>Source order</span>
+        <strong>tokens → components → page composition</strong>
       </div>
       <div class="mode-chip">
         <span>Heraldic menu</span>
         <strong>plaque controls · crest framing · old kingdom order</strong>
       </div>
       <div class="mode-chip">
-        <span>Pixel memory</span>
-        <strong>step edges · command depth · restraint</strong>
+        <span>Material rule</span>
+        <strong>parchment reads · gold commands · mana transforms</strong>
       </div>
     </div>
   </header>
 
+  <nav class="ref-toc" aria-label="Design system contents">
+    <a href="#foundations">Foundations</a>
+    <a href="#component-inventory">Components</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#recipes">Page recipes</a>
+    <a href="#accessibility">Accessibility</a>
+  </nav>
+
+  <section class="ref-section ref-manual-section" id="source-of-truth" aria-labelledby="source-of-truth-title">
+    <h2 id="source-of-truth-title">How to use this manual</h2>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>1 · Choose a material role</strong>
+        <span>Parchment for reading, stone/night for structure, gold for the primary command, mana only for focus or consequence.</span>
+      </div>
+      <div class="manual-card">
+        <strong>2 · Assemble from components</strong>
+        <span>Use buttons, rails, parchment panels, plaques, and ritual panels before writing local scene rules.</span>
+      </div>
+      <div class="manual-card">
+        <strong>3 · Compose locally</strong>
+        <span>Scene/page CSS may set layout, backdrop, and dramaturgy. It must not invent new button, rail, or panel grammar.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================
        COLOR
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="foundations">
     <h2>Color · Primitives</h2>
 
     <div class="ref-sub">Ink</div>
@@ -97,9 +123,9 @@
   <!-- ============================================================
        SEMANTIC TOKENS
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="semantic-colors">
     <h2>Color · Semantic</h2>
-    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+    <p class="ref-note">
       Components reference only these. Themes (Knight, Wizard, Necromancer, …) will override this
       layer, not the primitives above.
     </p>
@@ -119,7 +145,7 @@
   <!-- ============================================================
        TYPE
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="type-scale">
     <h2>Type Scale</h2>
     <div class="type-row">
       <div class="type-label">display</div>
@@ -160,7 +186,7 @@
   <!-- ============================================================
        SPACE
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="space-scale">
     <h2>Space Scale</h2>
     <div class="space-grid">
       <div class="space-row"><div class="type-label">space-1 · 4px</div>  <div class="space-bar" style="width: 4px;"></div></div>
@@ -178,7 +204,7 @@
   <!-- ============================================================
        RADIUS
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="shape-radius">
     <h2>Radius</h2>
     <div class="radius-grid">
       <div class="radius-tile" style="border-radius: var(--radius-sm);">sm · 6px</div>
@@ -189,7 +215,7 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="frame-anatomy">
     <h2>Frame Anatomy</h2>
     <div class="rhythm-grid">
       <div class="rhythm-tile">
@@ -207,9 +233,9 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="shape-language">
     <h2>Shape Language</h2>
-    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+    <p class="ref-note">
       The current direction is intentionally less round: interactive elements should feel like plaques,
       panels should feel framed, and hero surfaces should feel architectural. Pills/circles are exceptions.
     </p>
@@ -220,9 +246,9 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="heraldic-menu">
     <h2>Heraldic Menu</h2>
-    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+    <p class="ref-note">
       Primary controls should feel closer to an old fantasy game main menu than a web CTA row: mounted,
       pressed, and assembled. The goal is command clarity with fantasy material weight, not retro parody.
     </p>
@@ -254,7 +280,7 @@
   <!-- ============================================================
        SHADOW
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="shadow">
     <h2>Shadow</h2>
     <div class="shadow-grid">
       <div class="shadow-tile" style="box-shadow: var(--shadow-resting);">shadow-resting</div>
@@ -266,9 +292,9 @@
   <!-- ============================================================
        SURFACES
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="surfaces">
     <h2>Surfaces</h2>
-    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+    <p class="ref-note">
       Each surface has a role. Pick one before you place content.
     </p>
     <div class="surface-grid">
@@ -294,9 +320,9 @@
   <!-- ============================================================
        BUTTON STATES
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="buttons">
     <h2>Buttons · State Matrix</h2>
-    <p style="max-width: 60ch; color: var(--ink-on-night-soft); margin: 0 0 var(--space-5);">
+    <p class="ref-note">
       Two tiers today: <strong>quiet</strong> (everywhere) and <strong>ceremonial</strong>
       (reserved for irreversible or transformative actions). In the Heraldic Menu direction both should
       read as plaques or engraved commands, not floating product CTAs.
@@ -328,7 +354,7 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="artifact-navigation">
     <h2>Artifact Navigation</h2>
     <div class="nav-spec-grid">
       <div class="sampler-tile">
@@ -354,7 +380,7 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="patterns">
     <h2>Layout Rhythm</h2>
     <div class="rhythm-grid">
       <div class="rhythm-tile">
@@ -372,7 +398,7 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="pixel-motifs">
     <h2>Pixel / Old-Style Motifs</h2>
     <div class="rhythm-grid">
       <div class="rhythm-tile">
@@ -390,7 +416,7 @@
     </div>
   </section>
 
-  <section class="ref-section">
+  <section class="ref-section" id="ornament-discipline">
     <h2>Ornament Discipline</h2>
     <div class="rhythm-grid">
       <div class="rhythm-tile">
@@ -408,10 +434,25 @@
     </div>
   </section>
 
+  <section class="ref-section" id="component-inventory">
+    <h2>Component Inventory · Use / Do not use</h2>
+    <div class="inventory-table" role="table" aria-label="Reusable component inventory">
+      <div role="row" class="inventory-head"><span>Component</span><span>Use when</span><span>Do not use when</span></div>
+      <div role="row"><strong>.btn-ceremonial</strong><span>One primary command has value, reward, or commitment.</span><span>Every link wants attention; use .btn-quiet or plaque nav instead.</span></div>
+      <div role="row"><strong>.parchment-object</strong><span>The user must read, compare, or keep a record.</span><span>The surface is only decorative background.</span></div>
+      <div role="row"><strong>.archive-rail</strong><span>A screen needs compact chapter/status navigation.</span><span>It competes with the main menu stack above the fold.</span></div>
+      <div role="row"><strong>.ritual-panel</strong><span>A threshold/commitment needs framed consequence copy.</span><span>The action is routine navigation or browsing.</span></div>
+    </div>
+    <div class="do-dont-grid">
+      <div><strong>Do</strong><span>Give every frame a job: background frame, content frame, command frame, or ritual frame.</span></div>
+      <div><strong>Don’t</strong><span>Stack equal-strength plaques, rails, CTAs, and glow on the same first screen.</span></div>
+    </div>
+  </section>
+
   <!-- ============================================================
        COMPONENT PRIMITIVES
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="component-primitives">
     <h2>Component Primitives</h2>
     <div class="sampler-grid">
 
@@ -462,10 +503,50 @@
     </div>
   </section>
 
+  <section class="ref-section" id="recipes">
+    <h2>Page Recipes</h2>
+    <div class="recipe-grid">
+      <article class="recipe-card">
+        <h3>Main menu / chapter select</h3>
+        <ol>
+          <li>Use one dominant .game-menu-stack or plaque command group.</li>
+          <li>Move status rails and route indexes below or beside it at lower contrast.</li>
+          <li>Keep gold on the single start/enter command; keep mana off until threshold states.</li>
+        </ol>
+      </article>
+      <article class="recipe-card">
+        <h3>Archive / dossier screen</h3>
+        <ol>
+          <li>Place reading content on .parchment-object.</li>
+          <li>Use .archive-rail for chapters and .note-card for secondary lore.</li>
+          <li>Do not turn every annotation into a card grid; preserve a route or reading spine.</li>
+        </ol>
+      </article>
+      <article class="recipe-card">
+        <h3>Threshold / ritual screen</h3>
+        <ol>
+          <li>Reserve .ritual-panel for the final commitment beat.</li>
+          <li>Pair one quiet escape with one ceremonial command.</li>
+          <li>Use mana glow as consequence/focus, never page wallpaper.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="ref-section" id="accessibility">
+    <h2>Accessibility Baseline</h2>
+    <div class="checklist-grid">
+      <div><strong>Keyboard</strong><span>All links/buttons use the shared :focus-visible ring. Do not remove outline locally.</span></div>
+      <div><strong>Mobile tap targets</strong><span>Command controls should stay near 40px min-height; micro labels must not drop below readable caption scale.</span></div>
+      <div><strong>Contrast</strong><span>Gold-on-parchment and mana-on-dark require visual QA after any theme/faction override.</span></div>
+      <div><strong>Motion</strong><span>Reduced-motion mode is global; page CSS should not reintroduce long mandatory animation.</span></div>
+    </div>
+  </section>
+
   <!-- ============================================================
        NEXT
        ============================================================ -->
-  <section class="ref-section">
+  <section class="ref-section" id="next-passes">
     <h2>Next Passes</h2>
     <ol style="max-width: 60ch; color: var(--ink-on-night-soft); line-height: var(--leading-body); padding-left: var(--space-5);">
       <li>Stress-test the mobile plaque rail in real devices: current pass prevents random two-row wrap, but thumb ergonomics still need visual QA.</li>

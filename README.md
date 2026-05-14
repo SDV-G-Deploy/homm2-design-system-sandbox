@@ -56,9 +56,12 @@ Verified during the pass:
 
 ## Next logical pass
 
-Codify the **Heraldic Menu** direction in the reusable layer: define frame anatomy tokens, tighten menu/button shape language, document heraldic anchors and ornament discipline, then move shared panels and navigation further away from generic web-card thinking.
+The next phase is a **design-system research refactor**: preserve the Heraldic Menu direction, but convert the current scene work into a stricter reusable system with a real operational reference, clearer component boundaries, and stronger mobile/action hierarchy.
 
-For the current applied-page cleanup backlog, see:
+Primary plan:
+- `docs/design-system-research-plan-2026-05.md`
+
+Focused page backlog:
 - `docs/fairy-journeys-codex-task-list-v2.md`
 
 ## Direction guardrails
