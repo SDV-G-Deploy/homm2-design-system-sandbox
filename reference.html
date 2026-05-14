@@ -41,7 +41,76 @@
     </div>
   </header>
 
+  <section class="ref-section ref-front-door" id="front-door" aria-labelledby="front-door-title">
+    <div class="ref-section-kicker">Build decision</div>
+    <h2 id="front-door-title">Operational Front Door</h2>
+    <p class="ref-note">
+      Start here when building a menu-like screen. Choose the recipe, assemble the required shared
+      classes, then keep local CSS limited to scene layout, copy rhythm and exact composition.
+    </p>
+    <div class="decision-table" role="table" aria-label="Screen recipe decision table">
+      <div role="row" class="decision-head">
+        <span>Recipe / family</span>
+        <span>Use when</span>
+        <span>Required shared classes</span>
+        <span>Allowed states</span>
+        <span>Page-local only</span>
+        <span>Mobile rule</span>
+      </div>
+      <div role="row">
+        <strong>Menu screen shell</strong>
+        <span>A screen needs a framed game-menu composition.</span>
+        <span><code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code></span>
+        <span>Normal, focus within, optional art layer present.</span>
+        <span>Grid areas, backdrop, exact stage height.</span>
+        <span>Dominant command visible before rails.</span>
+      </div>
+      <div role="row">
+        <strong>Command slab</strong>
+        <span>One stack owns primary navigation or commitment.</span>
+        <span><code>.command-slab</code>, <code>.btn</code>, <code>.btn-ceremonial</code> or <code>.btn-quiet</code></span>
+        <span>Default, hover, focus-visible, active, disabled.</span>
+        <span>Copy, order, grouping labels.</span>
+        <span>Compress gaps last; keep tap targets intact.</span>
+      </div>
+      <div role="row">
+        <strong>Side rail</strong>
+        <span>Status, progress or secondary commands flank the center.</span>
+        <span><code>.menu-side-rail</code> with local rail contents.</span>
+        <span>Active, muted, locked, readonly.</span>
+        <span>Rail count, icons, status vocabulary.</span>
+        <span>Downgrade before the command slab does.</span>
+      </div>
+      <div role="row">
+        <strong>Save slot</strong>
+        <span>A compact persistent state needs to sit near commands.</span>
+        <span><code>.menu-save-slot</code></span>
+        <span>Current, empty, stale, locked.</span>
+        <span>Data fields, timestamps, save naming.</span>
+        <span>Remain a single compact strip.</span>
+      </div>
+      <div role="row">
+        <strong>Route index</strong>
+        <span>Small route choices support the main journey command.</span>
+        <span><code>.menu-route-index</code>, optional <code>.route-badge</code></span>
+        <span>Active, visited, locked, disabled.</span>
+        <span>Route labels, order, destination copy.</span>
+        <span>Subordinate to the primary slab on small screens.</span>
+      </div>
+      <div role="row">
+        <strong>Parchment reading panel</strong>
+        <span>The user must read, compare or keep a record.</span>
+        <span><code>.parchment-object</code> plus local content grid.</span>
+        <span>Readable, selected, warning, archived.</span>
+        <span>Document structure, table density, prose measure.</span>
+        <span>One reading column before decorative side notes.</span>
+      </div>
+    </div>
+  </section>
+
   <nav class="ref-toc" aria-label="Design system contents">
+    <a href="#front-door">Front door</a>
+    <a href="#menu-shell-contract">Menu contract</a>
     <a href="#foundations">Foundations</a>
     <a href="#component-inventory">Components</a>
     <a href="#patterns">Patterns</a>
@@ -64,6 +133,168 @@
         <strong>3 · Compose locally</strong>
         <span>Scene CSS sets layout, backdrop and dramaturgy. It must not invent button, rail or panel grammar.</span>
       </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="menu-shell-contract" aria-labelledby="menu-shell-contract-title">
+    <h2 id="menu-shell-contract-title">Menu Shell Contract</h2>
+    <p class="ref-note">
+      These classes are the reusable menu-screen anatomy. They define hierarchy and component
+      ownership; page files may arrange them, but should not redefine their grammar.
+    </p>
+    <div class="contract-table" role="table" aria-label="Menu shell anatomy contract">
+      <div role="row" class="contract-head">
+        <span>Class</span>
+        <span>Role</span>
+        <span>Expected neighbors</span>
+        <span>Hierarchy</span>
+        <span>Must stay page-local</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-screen-shell</code></strong>
+        <span>Outermost framed menu stage and fallback surface.</span>
+        <span>Wraps <code>.menu-frame-shell</code>; may contain <code>.menu-art-layer</code>.</span>
+        <span>Backdrop foundation.</span>
+        <span>Scene background, stage proportions, page-specific grid placement.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-frame-shell</code></strong>
+        <span>Layout carrier for center, rails and subordinate state.</span>
+        <span>Inside <code>.menu-screen-shell</code>; contains center mount and optional rails.</span>
+        <span>Composition scaffold.</span>
+        <span>Column counts, named grid areas, viewport-specific choreography.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-center-mount</code></strong>
+        <span>Primary command and title anchor.</span>
+        <span>Contains the central header, <code>.command-slab</code> and save slot.</span>
+        <span>Primary focus.</span>
+        <span>Scene title copy, crest choices, vertical offsets.</span>
+      </div>
+      <div role="row">
+        <strong><code>.command-slab</code></strong>
+        <span>Shared stack surface for major menu commands.</span>
+        <span>Lives inside center mount; contains buttons or command links.</span>
+        <span>Highest interactive weight.</span>
+        <span>Command count, labels, separators and narrative ordering.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-side-rail</code></strong>
+        <span>Secondary navigation, status or utility rail.</span>
+        <span>Sibling of center mount inside frame shell.</span>
+        <span>Subordinate support.</span>
+        <span>Rail content model, local icons, collapsed ordering.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-save-slot</code></strong>
+        <span>Compact state holder near the command stack.</span>
+        <span>Usually follows command slab inside center mount.</span>
+        <span>Persistent state, below commands.</span>
+        <span>Save schema, labels, timestamp format.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-route-index</code></strong>
+        <span>Low-volume route or chapter choices.</span>
+        <span>Near center mount or below save slot; may use route badges.</span>
+        <span>Tertiary navigation.</span>
+        <span>Route taxonomy, active destination, disabled reasons.</span>
+      </div>
+      <div role="row">
+        <strong><code>.menu-art-layer</code></strong>
+        <span>Optional non-interactive image slot holder.</span>
+        <span>Direct child of screen shell, behind frame content.</span>
+        <span>Atmospheric support only.</span>
+        <span>Whether a scene includes the layer, and which approved slots appear.</span>
+      </div>
+    </div>
+
+    <div class="manual-grid contract-boundary-grid">
+      <div class="manual-card">
+        <strong>Shared grammar</strong>
+        <span>Surface roles, button weight, rail subordination, fallback art slots and focus behavior belong in shared CSS.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Allowed local override</strong>
+        <span>Pages may set grid areas, copy measure, exact ordering, backdrop treatment and scene-specific data density.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Not local</strong>
+        <span>Do not restyle command depth, invent new rail grammar, widen art slots or bake state text into images.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="art-slot-rules" aria-labelledby="art-slot-rules-title">
+    <h2 id="art-slot-rules-title">Art Slot + Fallback Rules</h2>
+    <p class="ref-note">
+      Image assets are optional assists. The component must remain readable, ordered and useful when
+      an image fails, is removed or is replaced by a theme.
+    </p>
+    <div class="slot-table" role="table" aria-label="Bounded art slot fallback table">
+      <div role="row" class="slot-head">
+        <span>Slot</span>
+        <span>Owning component</span>
+        <span>Image responsibility</span>
+        <span>CSS fallback</span>
+        <span>Responsive check</span>
+      </div>
+      <div role="row">
+        <strong><code>menu-frame-corner</code></strong>
+        <span><code>.menu-art-layer</code> inside <code>.menu-screen-shell</code></span>
+        <span>Corner weight and heraldic frame joints only.</span>
+        <span>Screen-shell border, inset glow and panel shape.</span>
+        <span>Corners must not cover commands or rail labels.</span>
+      </div>
+      <div role="row">
+        <strong><code>menu-frame-edge-x</code></strong>
+        <span><code>.menu-frame-edge.top</code>, <code>.menu-frame-edge.bottom</code></span>
+        <span>Horizontal frame rhythm between corners.</span>
+        <span>Existing shell border and shadow depth.</span>
+        <span>Edges shorten before center content compresses.</span>
+      </div>
+      <div role="row">
+        <strong><code>menu-frame-edge-y</code></strong>
+        <span><code>.menu-frame-edge.left</code>, <code>.menu-frame-edge.right</code></span>
+        <span>Vertical frame rhythm beside the layout.</span>
+        <span>Existing shell border and dark structure.</span>
+        <span>Edges must not create a new side rail.</span>
+      </div>
+      <div role="row">
+        <strong><code>route-badge-sprite</code></strong>
+        <span><code>.route-badge</code> inside <code>.menu-route-index</code></span>
+        <span>Small destination icon family, never labels.</span>
+        <span>Badge ring, inner mark, color and state frame.</span>
+        <span>Icon may shrink; route text remains HTML.</span>
+      </div>
+    </div>
+    <div class="guardrail-strip">
+      <div><strong>No-text rule</strong><span>Readable labels, state names, counts and destinations stay in HTML/CSS.</span></div>
+      <div><strong>Optional layer</strong><span>Removing <code>.menu-art-layer</code> must leave a complete menu shell.</span></div>
+      <div><strong>Bounded slots</strong><span>Do not add art outside named component slots without a new contract row.</span></div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="menu-misuse-prevention" aria-labelledby="menu-misuse-prevention-title">
+    <h2 id="menu-misuse-prevention-title">Compact Do / Do Not</h2>
+    <div class="do-dont-grid do-dont-grid-compact">
+      <div><strong>Do - command hierarchy</strong><span>One ceremonial command leads; quiet commands support or exit.</span></div>
+      <div><strong>Do not - command hierarchy</strong><span>Do not place several gold commands with equal visual pressure in one slab.</span></div>
+      <div><strong>Do - side rail density</strong><span>Keep rails scan-friendly with compact groups and muted secondary state.</span></div>
+      <div><strong>Do not - side rail density</strong><span>Do not let a rail become a second command slab or a dense dossier.</span></div>
+      <div><strong>Do - route index</strong><span>Use route badges as small anchors beside HTML route labels.</span></div>
+      <div><strong>Do not - route index</strong><span>Do not make route choices compete with the main journey command.</span></div>
+      <div><strong>Do - parchment fields</strong><span>Use parchment for reading, record keeping and comparison.</span></div>
+      <div><strong>Do not - parchment fields</strong><span>Do not use parchment panels as decorative backing for every control.</span></div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="responsive-guardrails" aria-labelledby="responsive-guardrails-title">
+    <h2 id="responsive-guardrails-title">Responsive Guardrails</h2>
+    <div class="checklist-grid">
+      <div><strong>First screen</strong><span>The dominant command must be visible immediately on desktop and mobile.</span></div>
+      <div><strong>Rail downgrade</strong><span>Side rails collapse, move or mute before primary commands lose clarity.</span></div>
+      <div><strong>Route priority</strong><span>Route index remains subordinate on small screens; it can move below save state.</span></div>
+      <div><strong>Art resilience</strong><span>The art layer is optional, non-blocking and never required for comprehension.</span></div>
     </div>
   </section>
 
@@ -419,7 +650,7 @@
     <div class="manual-grid">
       <div class="manual-card">
         <strong>Slot contract</strong>
-        <span><code>menu-frame-corner</code>, <code>menu-frame-edge-x</code>, <code>menu-frame-edge-y</code>, <code>route-badge-sprite</code>.</span>
+        <span><code>menu-frame-corner</code>, <code>menu-frame-edge-x</code>, <code>menu-frame-edge-y</code>, <code>route-badge-sprite</code>. See the <a href="#art-slot-rules">Art Slot + Fallback Rules</a> for ownership and responsive checks.</span>
       </div>
       <div class="manual-card">
         <strong>Generation rule</strong>

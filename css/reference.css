@@ -4,6 +4,7 @@
      Everything visual comes from tokens.css. */
 
   .ref-shell {
+    box-sizing: border-box;
     width: var(--page);
     margin: 0 auto;
     padding: var(--space-6) 0 var(--space-7);
@@ -579,6 +580,156 @@
   line-height: 1.62;
 }
 
+.ref-section-kicker {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-on-night-mute);
+}
+
+.ref-front-door {
+  margin-bottom: var(--space-6);
+}
+
+.ref-front-door > h2 {
+  margin-bottom: var(--space-3);
+}
+
+.decision-table,
+.contract-table,
+.slot-table {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border-thin);
+  clip-path: var(--shape-panel);
+  overflow: hidden;
+  background: rgb(var(--ink-950) / 0.22);
+}
+
+.decision-table > div,
+.contract-table > div,
+.slot-table > div {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-thin);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.045), transparent 52%),
+    rgb(var(--ink-950) / 0.18);
+}
+
+.decision-table > div {
+  grid-template-columns: minmax(120px, 0.9fr) minmax(150px, 1fr) minmax(180px, 1.25fr) minmax(140px, 0.9fr) minmax(150px, 1fr) minmax(150px, 1fr);
+}
+
+.contract-table > div {
+  grid-template-columns: minmax(170px, 0.9fr) minmax(170px, 1fr) minmax(190px, 1.15fr) minmax(120px, 0.72fr) minmax(190px, 1.15fr);
+}
+
+.slot-table > div {
+  grid-template-columns: minmax(160px, 0.9fr) minmax(190px, 1.1fr) minmax(190px, 1.1fr) minmax(170px, 1fr) minmax(170px, 1fr);
+}
+
+.decision-table > div:last-child,
+.contract-table > div:last-child,
+.slot-table > div:last-child {
+  border-bottom: 0;
+}
+
+.decision-table strong,
+.decision-table span,
+.contract-table strong,
+.contract-table span,
+.slot-table strong,
+.slot-table span {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.48;
+  color: var(--ink-on-night-soft);
+}
+
+.decision-table strong,
+.contract-table strong,
+.slot-table strong,
+.decision-head span,
+.contract-head span,
+.slot-head span {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-value);
+}
+
+.decision-table code,
+.contract-table code,
+.slot-table code,
+.manual-card code,
+.guardrail-strip code {
+  font-size: 0.92em;
+  color: var(--ink-on-night);
+}
+
+.decision-head,
+.contract-head,
+.slot-head {
+  background: rgb(var(--gold-700) / 0.16) !important;
+}
+
+.contract-boundary-grid,
+.guardrail-strip {
+  margin-top: var(--space-4);
+}
+
+.guardrail-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.guardrail-strip div {
+  padding: var(--space-4);
+  border: 1px solid rgb(var(--gold-300) / 0.14);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 40%),
+    rgb(var(--ink-950) / 0.24);
+}
+
+.guardrail-strip strong,
+.guardrail-strip span {
+  display: block;
+}
+
+.guardrail-strip strong {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--accent-value);
+}
+
+.guardrail-strip span {
+  color: var(--ink-on-night-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.do-dont-grid-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.manual-card a {
+  color: var(--accent-value);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .manual-grid,
 .inventory-table,
 .do-dont-grid,
@@ -748,6 +899,16 @@
       font-size: 15px;
       line-height: 1.56;
     }
+    .ref-section > h2 {
+      max-width: 100%;
+      font-size: 19px;
+      line-height: 1.25;
+      letter-spacing: 0.12em;
+      overflow-wrap: anywhere;
+    }
+    .ref-front-door .ref-note {
+      max-width: 32ch;
+    }
     .mode-strip { margin-top: 14px; gap: 10px; }
     .mode-chip { padding: 12px; }
     .mode-chip strong {
@@ -778,7 +939,26 @@
     .manual-grid,
     .recipe-grid,
     .checklist-grid,
+    .guardrail-strip,
     .do-dont-grid { grid-template-columns: 1fr; }
+    .decision-table,
+    .contract-table,
+    .slot-table {
+      clip-path: none;
+      border-radius: var(--radius-md);
+    }
+    .decision-table > div,
+    .contract-table > div,
+    .slot-table > div {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 13px;
+    }
+    .decision-head,
+    .contract-head,
+    .slot-head {
+      display: none !important;
+    }
     .inventory-table { clip-path: none; border-radius: var(--radius-md); }
     .inventory-table > div {
       grid-template-columns: 1fr;

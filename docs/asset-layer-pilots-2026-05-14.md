@@ -80,6 +80,8 @@ Why it matters:
 - `menu-frame-edge-y`
 - `route-badge-sprite`
 
+Operational ownership, fallback behavior and responsive checks for these slots now live in `reference.html` under "Art Slot + Fallback Rules".
+
 ## Best Next Layer
 
 Do not jump to large illustrations yet.
