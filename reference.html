@@ -396,6 +396,49 @@
     </div>
   </section>
 
+  <section class="ref-section" id="art-asset-layer">
+    <h2>Art Asset Layer</h2>
+    <p class="ref-note">
+      Generated imagery is allowed only as a bounded component slot. CSS still owns structure,
+      states, copy, responsive behavior and fallback rendering.
+    </p>
+    <div class="rhythm-grid">
+      <div class="rhythm-tile">
+        <strong>CSS-only first</strong>
+        <span>Layout, rails, buttons, labels, states and adaptive compression never move into images.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Image-assisted slots</strong>
+        <span>Use generated art only for named slots like frame corners, edge tiles, parchment grain or route badges.</span>
+      </div>
+      <div class="rhythm-tile">
+        <strong>Fallback is mandatory</strong>
+        <span>Every slot must degrade to the existing component without losing hierarchy or readability.</span>
+      </div>
+    </div>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>Slot contract</strong>
+        <span><code>menu-frame-corner</code>, <code>menu-frame-edge-x</code>, <code>menu-frame-edge-y</code>, <code>route-badge-sprite</code>.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Generation rule</strong>
+        <span>No readable text, no layout baked into art, no one-off ornaments without an owning component.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Pilot rule</strong>
+        <span>Frame corners and edge tiles are live. Route badges are now demonstrated as a small optional sprite slot.</span>
+      </div>
+    </div>
+    <div class="route-badge-specimen" aria-label="Route badge sprite slot examples">
+      <div class="sampler-label">Route badge sprite · optional asset layer</div>
+      <span class="route-badge route-badge--gate" aria-hidden="true"></span>
+      <span class="route-badge route-badge--compass" aria-hidden="true"></span>
+      <span class="route-badge route-badge--milestone" aria-hidden="true"></span>
+      <span class="route-badge route-badge--lantern" aria-hidden="true"></span>
+    </div>
+  </section>
+
   <section class="ref-section" id="pixel-motifs">
     <h2>Pixel / Old-Style Motifs</h2>
     <div class="rhythm-grid">
@@ -507,9 +550,9 @@
       <article class="recipe-card">
         <h3>Main menu / chapter select</h3>
         <ol>
-          <li>Use one dominant .game-menu-stack or plaque group.</li>
-          <li>Place rails/indexes beside or below it at lower contrast.</li>
-          <li>Keep gold on the start command; reserve mana for thresholds.</li>
+          <li>Assemble the screen from .menu-screen-shell -> .menu-center-mount -> .command-slab.</li>
+          <li>Use .menu-side-rail, .menu-save-slot, and .menu-route-index as subordinate state.</li>
+          <li>On mobile, keep the command slab first and defer route indexes before they compete.</li>
         </ol>
       </article>
       <article class="recipe-card">

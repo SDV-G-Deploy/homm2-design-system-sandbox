@@ -41,8 +41,19 @@
 
     <main id="fairy-board" class="board-shell fairy-board">
       <section id="menu-shell" class="scene fairy-menu-scene" aria-labelledby="fairy-menu-title">
-        <div class="menu-stage">
+        <div class="menu-stage menu-screen-shell">
           <div class="scene-plaque scene-plaque-left">Главный экран · Странствие</div>
+
+          <div class="menu-art-layer" aria-hidden="true">
+            <span class="menu-frame-corner tl"></span>
+            <span class="menu-frame-corner tr"></span>
+            <span class="menu-frame-corner bl"></span>
+            <span class="menu-frame-corner br"></span>
+            <span class="menu-frame-edge top"></span>
+            <span class="menu-frame-edge bottom"></span>
+            <span class="menu-frame-edge left"></span>
+            <span class="menu-frame-edge right"></span>
+          </div>
 
           <div class="menu-backdrop" aria-hidden="true">
             <span class="backdrop-moon"></span>
@@ -53,7 +64,7 @@
             <span class="backdrop-path"></span>
           </div>
 
-          <aside class="status-rail" aria-label="Статус похода">
+          <aside class="status-rail menu-side-rail" aria-label="Статус похода">
             <div class="status-rail-head">Статус пути</div>
             <div class="status-box">
               <span class="status-label">Тема</span>
@@ -69,7 +80,7 @@
             </div>
           </aside>
 
-          <section class="menu-keep" aria-labelledby="fairy-menu-title">
+          <section class="menu-keep menu-center-mount" aria-labelledby="fairy-menu-title">
             <div class="menu-crest">
               <span>⚜</span>
             </div>
@@ -77,12 +88,11 @@
               <p class="eyebrow">главное меню · поиск себя</p>
               <h1 id="fairy-menu-title">В сказку за своим именем.</h1>
               <p class="lead">
-                Главное меню сказочной игры: дерево, латунь, пергамент и дорога к главе,
-                где выбор ведёт к новой роли.
+                Дерево, латунь и пергамент: выбери главу и роль.
               </p>
             </div>
 
-            <div class="game-menu-stack" role="navigation" aria-label="Главные игровые команды">
+            <div class="game-menu-stack command-slab" role="navigation" aria-label="Главные игровые команды">
               <a class="game-menu-button primary" href="#trail-log">
                 <span class="game-menu-glyph">✦</span>
                 <span>
@@ -120,37 +130,37 @@
               </a>
             </div>
 
-            <div class="save-slot-strip" aria-label="Текущий слот">
+            <div class="save-slot-strip menu-save-slot" aria-label="Текущий слот">
               <span>Слот A</span>
               <strong>врата · глава 1 · тихая отвага</strong>
             </div>
 
-            <div class="menu-plaques route-index" role="navigation" aria-label="Тихий указатель разделов путешествия">
+            <div class="menu-plaques route-index menu-route-index" role="navigation" aria-label="Тихий указатель разделов путешествия">
               <p class="route-index-title">Разделы</p>
               <a class="menu-plaque active" href="#trail-log">
-                <span class="plaque-index">I</span>
+                <span class="route-badge route-badge--gate" aria-hidden="true"></span>
                 <strong>Лес дорог</strong>
                 <small>первый след</small>
               </a>
               <a class="menu-plaque" href="#story-dossier">
-                <span class="plaque-index">II</span>
+                <span class="route-badge route-badge--compass" aria-hidden="true"></span>
                 <strong>Сказочный архив</strong>
                 <small>символы и имена</small>
               </a>
               <a class="menu-plaque" href="#command-rail">
-                <span class="plaque-index">III</span>
+                <span class="route-badge route-badge--milestone" aria-hidden="true"></span>
                 <strong>Спутники</strong>
                 <small>4 архетипа</small>
               </a>
               <a class="menu-plaque ceremonial" href="#final-threshold">
-                <span class="plaque-index">IV</span>
+                <span class="route-badge route-badge--lantern" aria-hidden="true"></span>
                 <strong>Порог выбора</strong>
                 <small>переход</small>
               </a>
             </div>
           </section>
 
-          <aside class="command-rail-shell" id="command-rail" aria-label="Команды">
+          <aside class="command-rail-shell menu-side-rail" id="command-rail" aria-label="Команды">
             <div class="command-rail-head">Команды</div>
             <div class="command-entry">
               <span>Задание</span>

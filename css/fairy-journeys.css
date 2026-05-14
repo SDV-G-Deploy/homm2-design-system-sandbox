@@ -509,8 +509,8 @@
   isolation: isolate;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr;
-  column-gap: 0;
+  grid-template-columns: 32px minmax(0, 1fr);
+  column-gap: 8px;
   row-gap: 4px;
   align-items: center;
   min-width: 0;
@@ -557,12 +557,17 @@
 
 .menu-plaque.ceremonial strong,
 .menu-plaque.ceremonial small,
-.menu-plaque.ceremonial .plaque-index {
+.menu-plaque.ceremonial .plaque-index,
+.menu-plaque.ceremonial .route-badge {
   color: var(--ink-on-night);
 }
 
-.plaque-index {
+.plaque-index,
+.menu-plaque .route-badge {
   grid-row: auto;
+}
+
+.plaque-index {
   display: grid;
   place-items: center;
   width: 32px;
@@ -576,6 +581,11 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: -0.04em;
+  color: var(--accent-value);
+}
+
+.menu-plaque .route-badge {
+  --route-badge-size: 32px;
   color: var(--accent-value);
 }
 
@@ -1025,6 +1035,11 @@
     font-size: 12px;
   }
 
+  .menu-plaque .route-badge {
+    --route-badge-size: 28px;
+    grid-row: 1 / span 2;
+  }
+
   .menu-plaque strong {
     font-size: 10px;
     line-height: 1.28;
@@ -1052,5 +1067,243 @@
 
   .trail-step small {
     font-size: 13px;
+  }
+}
+
+/* First high-impact pass: compact the menu-first hierarchy while keeping the
+   heraldic shell intact. The shared role classes live in components.css; these
+   measurements are page-specific. */
+
+@media (min-width: 981px) {
+  .fairy-menu-scene {
+    min-height: auto;
+    padding-top: clamp(18px, 2vw, 26px);
+  }
+
+  .menu-stage {
+    align-items: start;
+    min-height: auto;
+    padding: clamp(22px, 2.4vw, 32px);
+    gap: clamp(14px, 2vw, 24px);
+  }
+
+  .menu-keep {
+    align-self: start;
+    max-width: 600px;
+    padding: clamp(18px, 2vw, 26px);
+  }
+
+  .menu-crest {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+
+  .menu-title-cartouche {
+    padding: 8px 14px 12px;
+  }
+
+  .menu-keep h1 {
+    max-width: 15ch;
+    margin-bottom: 8px;
+    font-size: clamp(30px, 3.2vw, 44px);
+    line-height: 1;
+  }
+
+  .menu-keep .lead {
+    max-width: 38ch;
+    font-size: clamp(14px, 1vw, 16px);
+    line-height: 1.38;
+  }
+
+  .game-menu-stack {
+    gap: 6px;
+    margin-top: 12px;
+    padding: 7px;
+  }
+
+  .game-menu-button {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 50px;
+    padding: 7px 10px;
+  }
+
+  .game-menu-button.primary {
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 62px;
+    padding: 10px 13px;
+  }
+
+  .game-menu-button.utility {
+    grid-column: auto;
+    min-height: 50px;
+  }
+
+  .game-menu-glyph,
+  .game-menu-button:not(.primary) .game-menu-glyph {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .game-menu-button strong {
+    font-size: 11px;
+    line-height: 1.24;
+  }
+
+  .game-menu-button small {
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .game-menu-button.primary strong {
+    font-size: 13px;
+  }
+
+  .save-slot-strip {
+    margin-top: 8px;
+    padding: 8px 12px 9px;
+  }
+
+  .menu-plaques {
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .menu-plaque {
+    grid-template-columns: 24px minmax(0, 1fr);
+    column-gap: 6px;
+    padding: 7px 8px;
+    text-align: left;
+  }
+
+  .menu-plaque small {
+    display: none;
+  }
+
+  .menu-plaque .plaque-index {
+    display: none;
+  }
+
+  .menu-plaque .route-badge {
+    --route-badge-size: 24px;
+  }
+
+  .status-rail,
+  .command-rail-shell {
+    align-self: start;
+    min-height: auto;
+    gap: 7px;
+    padding: 11px 9px;
+  }
+
+  .status-box,
+  .command-entry {
+    padding: 8px 7px;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu-stage {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .menu-keep,
+  .status-rail,
+  .command-rail-shell {
+    max-width: calc(100vw - 44px);
+    padding: 11px;
+  }
+
+  .menu-crest {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .menu-title-cartouche {
+    padding: 8px 10px 11px;
+  }
+
+  .menu-title-cartouche .eyebrow {
+    display: none;
+  }
+
+  .menu-keep h1 {
+    max-width: 12ch;
+    margin-bottom: 8px;
+    font-size: clamp(29px, 9.2vw, 38px);
+    line-height: 1;
+  }
+
+  .menu-keep .lead {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .game-menu-stack {
+    gap: 6px;
+    margin-top: 8px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .game-menu-button {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 48px;
+    padding: 8px 9px;
+  }
+
+  .game-menu-button.primary {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 56px;
+    padding: 9px;
+  }
+
+  .game-menu-glyph,
+  .game-menu-button:not(.primary) .game-menu-glyph {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .game-menu-button:not(.primary) small {
+    display: none;
+  }
+
+  .game-menu-button strong,
+  .game-menu-button.primary strong {
+    font-size: 12px;
+    line-height: 1.24;
+  }
+
+  .game-menu-button.primary small {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .save-slot-strip {
+    margin-top: 8px;
+    padding: 8px 10px;
+  }
+
+  .route-index {
+    display: none;
+  }
+
+  .status-box strong {
+    font-size: 11px;
+  }
+
+  .mini-command {
+    min-height: 42px;
+    font-size: 12px;
   }
 }
