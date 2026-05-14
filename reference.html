@@ -28,7 +28,7 @@
     <div class="mode-strip" aria-label="Direction blend">
       <div class="mode-chip">
         <span>Source order</span>
-        <strong>tokens → components → page</strong>
+        <strong>tokens → components → recipes → page</strong>
       </div>
       <div class="mode-chip">
         <span>Heraldic menu</span>
@@ -45,71 +45,57 @@
     <div class="ref-section-kicker">Build decision</div>
     <h2 id="front-door-title">Operational Front Door</h2>
     <p class="ref-note">
-      Start here when building a menu-like screen. Choose the recipe, assemble the required shared
-      classes, then keep local CSS limited to scene layout, copy rhythm and exact composition.
+      Start here when building a screen. Pick one recipe first, assemble it from shared components,
+      then keep local CSS limited to backdrop, sequencing and exact composition.
     </p>
     <div class="decision-table" role="table" aria-label="Screen recipe decision table">
       <div role="row" class="decision-head">
-        <span>Recipe / family</span>
-        <span>Use when</span>
+        <span>Recipe</span>
+        <span>Purpose</span>
         <span>Required shared classes</span>
-        <span>Allowed states</span>
-        <span>Page-local only</span>
-        <span>Mobile rule</span>
+        <span>Optional layers</span>
+        <span>Do not use when</span>
+        <span>Mobile collapse order</span>
       </div>
       <div role="row">
-        <strong>Menu screen shell</strong>
-        <span>A screen needs a framed game-menu composition.</span>
-        <span><code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code></span>
-        <span>Normal, focus within, optional art layer present.</span>
-        <span>Grid areas, backdrop, exact stage height.</span>
-        <span>Dominant command visible before rails.</span>
+        <strong>MenuScreenRecipe</strong>
+        <span>Primary menu, chapter select or world-entry screen with one dominant command mount.</span>
+        <span><code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code>, <code>.command-slab</code></span>
+        <span><code>.menu-side-rail</code>, <code>.menu-save-slot</code>, <code>.menu-route-index</code>, <code>.menu-art-layer</code></span>
+        <span>Reading-heavy content or equal-weight multi-column decisions.</span>
+        <span>Route index demotes first, rails compact second, save slot condenses last.</span>
       </div>
       <div role="row">
-        <strong>Command slab</strong>
-        <span>One stack owns primary navigation or commitment.</span>
-        <span><code>.command-slab</code>, <code>.btn</code>, <code>.btn-ceremonial</code> or <code>.btn-quiet</code></span>
-        <span>Default, hover, focus-visible, active, disabled.</span>
-        <span>Copy, order, grouping labels.</span>
-        <span>Compress gaps last; keep tap targets intact.</span>
+        <strong>DossierReadingRecipe</strong>
+        <span>Document, comparison or archive screen where reading is the main task.</span>
+        <span><code>.parchment-object</code>, <code>.archive-rail</code> or section spine</span>
+        <span><code>.note-card</code>, <code>.dossier-ledger-strip</code>, quiet supporting controls</span>
+        <span>Menu-first command stacks or decorative side columns competing with the reading field.</span>
+        <span>Side notes drop below prose first, ledgers compress second, decorative annotations last.</span>
       </div>
       <div role="row">
-        <strong>Side rail</strong>
-        <span>Status, progress or secondary commands flank the center.</span>
-        <span><code>.menu-side-rail</code> with local rail contents.</span>
-        <span>Active, muted, locked, readonly.</span>
-        <span>Rail count, icons, status vocabulary.</span>
-        <span>Downgrade before the command slab does.</span>
+        <strong>RitualThresholdRecipe</strong>
+        <span>Commitment, irreversible choice or transition screen with explicit consequence.</span>
+        <span><code>.ritual-panel</code>, one <code>.btn-ceremonial</code>, one quiet escape</span>
+        <span>Short consequence ledger, restrained mana focus, wax/seal cue</span>
+        <span>Routine navigation, dense route lists or more than one ceremonial action.</span>
+        <span>Decorative consequence cues reduce first, supporting notes stack second, primary action stays intact.</span>
       </div>
       <div role="row">
-        <strong>Save slot</strong>
-        <span>A compact persistent state needs to sit near commands.</span>
-        <span><code>.menu-save-slot</code></span>
-        <span>Current, empty, stale, locked.</span>
-        <span>Data fields, timestamps, save naming.</span>
-        <span>Remain a single compact strip.</span>
-      </div>
-      <div role="row">
-        <strong>Route index</strong>
-        <span>Small route choices support the main journey command.</span>
-        <span><code>.menu-route-index</code>, optional <code>.route-badge</code></span>
-        <span>Active, visited, locked, disabled.</span>
-        <span>Route labels, order, destination copy.</span>
-        <span>Subordinate to the primary slab on small screens.</span>
-      </div>
-      <div role="row">
-        <strong>Parchment reading panel</strong>
-        <span>The user must read, compare or keep a record.</span>
-        <span><code>.parchment-object</code> plus local content grid.</span>
-        <span>Readable, selected, warning, archived.</span>
-        <span>Document structure, table density, prose measure.</span>
-        <span>One reading column before decorative side notes.</span>
+        <strong>RouteBoardRecipe</strong>
+        <span>Progression board that shows route states, sequence and next actionable path.</span>
+        <span><code>.menu-route-index</code> or board list with <code>.route-badge</code></span>
+        <span>Compact lore note, status strip, quiet filters</span>
+        <span>Long prose panels, multiple competing CTAs or ritual framing at every row.</span>
+        <span>Lore annotations collapse first, filters compact second, route labels keep state visibility.</span>
       </div>
     </div>
   </section>
 
   <nav class="ref-toc" aria-label="Design system contents">
     <a href="#front-door">Front door</a>
+    <a href="#system-layers">System layers</a>
+    <a href="#recipe-contract">Recipe contract</a>
     <a href="#menu-shell-contract">Menu contract</a>
     <a href="#foundations">Foundations</a>
     <a href="#component-inventory">Components</a>
@@ -130,8 +116,56 @@
         <span>Use buttons, rails, parchment panels, plaques and ritual panels before local rules.</span>
       </div>
       <div class="manual-card">
-        <strong>3 · Compose locally</strong>
+        <strong>3 · Lock the recipe</strong>
+        <span>Recipe contracts decide hierarchy, optional layers and mobile collapse order before scene styling begins.</span>
+      </div>
+      <div class="manual-card">
+        <strong>4 · Compose locally</strong>
         <span>Scene CSS sets layout, backdrop and dramaturgy. It must not invent button, rail or panel grammar.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="system-layers" aria-labelledby="system-layers-title">
+    <h2 id="system-layers-title">System Layers</h2>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>Tokens</strong>
+        <span>Color, type, spacing, shape, shadow and semantic roles. Tokens never decide screen choreography.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Shared components</strong>
+        <span>Buttons, rails, parchment surfaces, ritual frames, menu shell primitives and bounded asset slots.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Screen recipes</strong>
+        <span>The missing middle layer. Recipes define which components may appear together, in what hierarchy, and what collapses first on mobile.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Page-local composition</strong>
+        <span>Backdrop, section order, copy rhythm, exact proportions and story-specific sequencing only.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="recipe-contract" aria-labelledby="recipe-contract-title">
+    <h2 id="recipe-contract-title">Recipe Contract</h2>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>One screen, one primary recipe</strong>
+        <span>Do not hybridize menu, dossier and ritual cores inside the same first-screen frame. Support patterns may appear, but one recipe owns hierarchy.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Required beats stay visible</strong>
+        <span>If a recipe requires a primary command or reading field, mobile collapse may not hide or miniaturize it before optional layers are reduced.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Bounded image policy still applies</strong>
+        <span>Art may only enter through approved slots like <code>.menu-art-layer</code> and must remain atmospheric, never structural or text-bearing.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Page CSS cannot rewrite system order</strong>
+        <span>Local composition may place and size recipe parts, but it must not promote tertiary rails above the primary command or reading task.</span>
       </div>
     </div>
   </section>
@@ -779,28 +813,185 @@
     <h2>Page Recipes</h2>
     <div class="recipe-grid">
       <article class="recipe-card">
-        <h3>Main menu / chapter select</h3>
-        <ol>
-          <li>Assemble the screen from .menu-screen-shell -> .menu-center-mount -> .command-slab.</li>
-          <li>Use .menu-side-rail, .menu-save-slot, and .menu-route-index as subordinate state.</li>
-          <li>On mobile, keep the command slab first and defer route indexes before they compete.</li>
-        </ol>
+        <h3>MenuScreenRecipe</h3>
+        <p class="recipe-purpose">Menu-first entry screen for chapter selection, world entry and primary command routing.</p>
+        <div class="recipe-rule-group">
+          <h4>Required components</h4>
+          <ul>
+            <li><code>.menu-screen-shell</code></li>
+            <li><code>.menu-frame-shell</code></li>
+            <li><code>.menu-center-mount</code></li>
+            <li><code>.command-slab</code></li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Optional layers</h4>
+          <ul>
+            <li><code>.menu-side-rail</code> for status or utility</li>
+            <li><code>.menu-save-slot</code> for persistent state</li>
+            <li><code>.menu-route-index</code> for tertiary route choices</li>
+            <li><code>.menu-art-layer</code> for bounded atmosphere</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Hierarchy order</h4>
+          <ol>
+            <li>Title and command slab own the first read.</li>
+            <li>Save slot or immediate state follows the slab.</li>
+            <li>Rails support, but never compete with, the center mount.</li>
+            <li>Route index stays tertiary.</li>
+            <li>Art remains background only.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Mobile collapse order</h4>
+          <ol>
+            <li>Demote route index into a shorter list or below the fold.</li>
+            <li>Compact rails into summaries before shrinking command labels.</li>
+            <li>Keep the primary slab visible inside the first viewport.</li>
+            <li>Condense the save slot, but keep it as one strip.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Forbidden combinations</h4>
+          <ul>
+            <li>Do not place a full dossier reading field inside the same first-screen shell.</li>
+            <li>Do not run multiple equal-weight command slabs side by side.</li>
+            <li>Do not let rails outrank the center mount through size, glow or density.</li>
+          </ul>
+        </div>
       </article>
       <article class="recipe-card">
-        <h3>Archive / dossier screen</h3>
-        <ol>
-          <li>Place reading content on .parchment-object.</li>
-          <li>Use .archive-rail for chapters and .note-card for secondary lore.</li>
-          <li>Preserve a route or reading spine; avoid all-card grids.</li>
-        </ol>
+        <h3>DossierReadingRecipe</h3>
+        <p class="recipe-purpose">Reading-first archive or dossier screen for records, comparison and retained lore.</p>
+        <div class="recipe-rule-group">
+          <h4>Required components</h4>
+          <ul>
+            <li><code>.parchment-object</code> as the main reading field</li>
+            <li><code>.archive-rail</code> or equivalent reading spine</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Optional layers</h4>
+          <ul>
+            <li><code>.note-card</code> for marginal lore</li>
+            <li><code>.dossier-ledger-strip</code> for compact metadata</li>
+            <li>Quiet utility actions outside the main parchment flow</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Hierarchy order</h4>
+          <ol>
+            <li>Parchment reading surface is the primary field.</li>
+            <li>Archive rail or chapter spine guides orientation.</li>
+            <li>Metadata strips summarize, but do not dominate.</li>
+            <li>Notes remain secondary and skimmable.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Mobile collapse order</h4>
+          <ol>
+            <li>Stack notes below the reading field.</li>
+            <li>Compress metadata strips before reducing reading measure.</li>
+            <li>Preserve one clear reading column before ornamental side matter.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Forbidden combinations</h4>
+          <ul>
+            <li>Do not replace the reading surface with card mosaics.</li>
+            <li>Do not insert a dominant ceremonial CTA above the dossier opening.</li>
+            <li>Do not flank the parchment with equal-strength side rails on both sides.</li>
+          </ul>
+        </div>
       </article>
       <article class="recipe-card">
-        <h3>Threshold / ritual screen</h3>
-        <ol>
-          <li>Reserve .ritual-panel for the final commitment beat.</li>
-          <li>Pair one quiet escape with one ceremonial command.</li>
-          <li>Use mana as consequence/focus, never wallpaper.</li>
-        </ol>
+        <h3>RitualThresholdRecipe</h3>
+        <p class="recipe-purpose">Consequence-first threshold for commitment, initiation, warning or final choice.</p>
+        <div class="recipe-rule-group">
+          <h4>Required components</h4>
+          <ul>
+            <li><code>.ritual-panel</code></li>
+            <li>One <code>.btn-ceremonial</code></li>
+            <li>One quiet return or cancel action</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Optional layers</h4>
+          <ul>
+            <li><code>.ritual-protocol</code> or short consequence ledger</li>
+            <li>Wax seal or restrained mana cue</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Hierarchy order</h4>
+          <ol>
+            <li>Threshold title and consequence copy frame the decision.</li>
+            <li>The ceremonial action leads.</li>
+            <li>The quiet escape remains obvious but subordinate.</li>
+            <li>Mana or seal cues support the threshold, never replace it.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Mobile collapse order</h4>
+          <ol>
+            <li>Reduce decorative aura and side protocol first.</li>
+            <li>Stack protocol below the ritual body.</li>
+            <li>Keep the ceremonial action and escape readable at full tap size.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Forbidden combinations</h4>
+          <ul>
+            <li>Do not present more than one ceremonial action.</li>
+            <li>Do not combine route-board density with a ritual threshold shell.</li>
+            <li>Do not use mana glow as general section decoration.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="recipe-card">
+        <h3>RouteBoardRecipe</h3>
+        <p class="recipe-purpose">Stateful route progression board that shows what is current, locked, visited and next.</p>
+        <div class="recipe-rule-group">
+          <h4>Required components</h4>
+          <ul>
+            <li><code>.menu-route-index</code> or equivalent board list</li>
+            <li><code>.route-badge</code> state marker for each path item</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Optional layers</h4>
+          <ul>
+            <li>Compact lore annotation</li>
+            <li>Short progress/status strip</li>
+            <li>Quiet filter or sort control</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Hierarchy order</h4>
+          <ol>
+            <li>Current and next route state must read first.</li>
+            <li>Badge state precedes lore.</li>
+            <li>Route label and outcome hint follow the state.</li>
+            <li>Annotations and filters stay secondary.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Mobile collapse order</h4>
+          <ol>
+            <li>Condense annotations before shortening state labels.</li>
+            <li>Move filters below the primary route list.</li>
+            <li>Keep badge state and current path visibility intact.</li>
+          </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Forbidden combinations</h4>
+          <ul>
+            <li>Do not turn every route row into a framed ritual panel.</li>
+            <li>Do not let lore blocks outweigh state labels.</li>
+            <li>Do not introduce multiple competing primary actions inside the board.</li>
+          </ul>
+        </div>
       </article>
     </div>
   </section>
