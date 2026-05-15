@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOMM2 Menu Sandbox · Сказочные странствия</title>
+    <title>HOMM2 Applied Page · Сказочные странствия</title>
     <meta
       name="description"
-      content="HOMM2-inspired menu-first demo about self-discovery through compact fairy-tale commands and chapter routes."
+      content="Applied HOMM2 article, dossier and feed page for a hostile fairy-journey record."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,306 +20,343 @@
     <link rel="stylesheet" href="./css/fairy-journeys.css" />
   </head>
   <body>
-    <div class="ambient ambient-gold"></div>
-    <div class="ambient ambient-mana"></div>
-
-    <header class="site-header" aria-label="Сказочное меню">
-      <a class="brand-mark" href="#menu-shell" aria-label="К главному меню">
-        <span class="brand-sigil">II</span>
-        <span>
+    <header
+      class="site-shell-navigation fairy-shell"
+      data-support-recipe="site-shell-navigation"
+      data-frame-rank="secondary"
+      aria-label="Навигация записи"
+    >
+      <div class="site-shell-topbar" data-shell-role="persistent-utility">
+        <a class="site-shell-brand" href="#journey-opening">
           <strong>Сказочный путь</strong>
-          <em>главное меню</em>
-        </span>
-      </a>
-      <nav class="scene-nav" aria-label="Переходы по экрану">
-        <a href="#menu-shell">Меню</a>
-        <a href="#trail-log">Маршрут</a>
-        <a href="#final-threshold">Порог</a>
-        <a href="./index.html">Песочница</a>
+          <span>прикладная запись · не канонический тест</span>
+        </a>
+        <nav class="site-shell-nav" aria-label="Разделы страницы">
+          <a href="#journey-opening" aria-current="page">Открытие</a>
+          <a href="#field-dossier">Досье</a>
+          <a href="#route-feed">Журнал</a>
+          <a href="./index.html">Песочница</a>
+        </nav>
+      </div>
+      <nav class="site-shell-breadcrumb" aria-label="Хлебные крошки">
+        <ol>
+          <li><a href="./index.html">HOMM2</a></li>
+          <li><span aria-current="page">Сказочные странствия</span></li>
+        </ol>
       </nav>
     </header>
 
     <main id="fairy-board" class="board-shell fairy-board">
-      <section id="menu-shell" class="scene fairy-menu-scene" aria-labelledby="fairy-menu-title">
-        <div class="menu-stage menu-screen-shell">
-          <div class="scene-plaque scene-plaque-left">Главный экран · Странствие</div>
+      <section id="journey-opening" class="fairy-first-screen" aria-labelledby="journey-title">
+        <article
+          class="fairy-article-hero"
+          data-recipe="article-hero"
+          data-primary-recipe="article-hero"
+          data-support-recipes="side-rail-metadata site-shell-navigation"
+          data-recipe-density="standard"
+          data-applied-state="hostile-plausible"
+        >
+          <div class="fairy-hero-stage">
+            <div class="fairy-hero-copy recipe-frame-primary" data-frame-rank="primary">
+              <p class="eyebrow">ArticleHeroRecipe · запись похода</p>
+              <h1 id="journey-title" class="recipe-title">
+                Путь, который переписывает список спутников.
+              </h1>
+              <p class="lead recipe-annotation">
+                Это не витрина приключения. Архивная запись открывает сказочный маршрут, где
+                героиня спорит с проводником, карта врёт по вторникам, а имя нельзя выбрать до
+                первой честной потери.
+              </p>
 
-          <div class="menu-art-layer" aria-hidden="true">
-            <span class="menu-frame-corner tl"></span>
-            <span class="menu-frame-corner tr"></span>
-            <span class="menu-frame-corner bl"></span>
-            <span class="menu-frame-corner br"></span>
-            <span class="menu-frame-edge top"></span>
-            <span class="menu-frame-edge bottom"></span>
-            <span class="menu-frame-edge left"></span>
-            <span class="menu-frame-edge right"></span>
-          </div>
+              <div class="fairy-hero-actions" aria-label="Основные переходы">
+                <a class="btn btn-ceremonial recipe-primary-command" href="#field-dossier">
+                  Читать досье
+                </a>
+                <a class="btn btn-quiet recipe-secondary-command" href="#route-feed">
+                  Смотреть журнал
+                </a>
+              </div>
 
-          <div class="menu-backdrop" aria-hidden="true">
-            <span class="backdrop-moon"></span>
-            <span class="backdrop-vines vine-left"></span>
-            <span class="backdrop-vines vine-right"></span>
-            <span class="backdrop-ruins ruins-left"></span>
-            <span class="backdrop-ruins ruins-right"></span>
-            <span class="backdrop-path"></span>
-          </div>
+              <div class="hero-meta-strip" aria-label="Поля записи">
+                <span class="hero-meta-cell">
+                  <span>Состояние</span>
+                  <strong class="recipe-metadata">черновик с долгами</strong>
+                </span>
+                <span class="hero-meta-cell">
+                  <span>Место</span>
+                  <strong class="recipe-metadata">переправа у ясеня</strong>
+                </span>
+                <span class="hero-meta-cell">
+                  <span>Риск</span>
+                  <strong class="recipe-metadata">спутник не совпадает с ролью</strong>
+                </span>
+              </div>
 
-          <aside class="status-rail menu-side-rail" aria-label="Статус похода">
-            <div class="status-rail-head">Статус пути</div>
-            <div class="status-box">
-              <span class="status-label">Тема</span>
-              <strong>поиск себя</strong>
-            </div>
-            <div class="status-box">
-              <span class="status-label">Локация</span>
-              <strong>древние врата</strong>
-            </div>
-            <div class="status-box">
-              <span class="status-label">Сигнал</span>
-              <strong>компас пробуждён</strong>
-            </div>
-          </aside>
-
-          <section class="menu-keep menu-center-mount" aria-labelledby="fairy-menu-title">
-            <div class="menu-crest">
-              <span>⚜</span>
-            </div>
-            <div class="menu-title-cartouche">
-              <p class="eyebrow">главное меню · поиск себя</p>
-              <h1 id="fairy-menu-title">В сказку за своим именем.</h1>
-              <p class="lead">
-                Дерево, латунь и пергамент: выбери главу и роль.
+              <div class="recipe-support-summary fairy-handoff recipe-state-cue" aria-describedby="hero-handoff-full">
+                <span>Дальше</span>
+                <strong>досье открывается первым, журнал остаётся ниже</strong>
+              </div>
+              <p id="hero-handoff-full" class="visually-hidden">
+                После ArticleHeroRecipe страница переходит к DossierReadingRecipe, затем к
+                FeedListingRecipe. Навигация и боковые сведения остаются поддержкой.
               </p>
             </div>
 
-            <div class="game-menu-stack command-slab" role="navigation" aria-label="Главные игровые команды">
-              <a class="game-menu-button primary" href="#trail-log">
-                <span class="game-menu-glyph">✦</span>
-                <span>
-                  <strong>Начать путь</strong>
-                  <small>первая развилка</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#trail-log">
-                <span class="game-menu-glyph">II</span>
-                <span>
-                  <strong>Продолжить</strong>
-                  <small>текущий след</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#story-dossier">
-                <span class="game-menu-glyph">III</span>
-                <span>
-                  <strong>Архив сказки</strong>
-                  <small>символы и имена</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#command-rail">
-                <span class="game-menu-glyph">IV</span>
-                <span>
-                  <strong>Спутники</strong>
-                  <small>четыре архетипа</small>
-                </span>
-              </a>
-              <a class="game-menu-button utility" href="./index.html">
-                <span class="game-menu-glyph">V</span>
-                <span>
-                  <strong>Песочница</strong>
-                  <small>общая доска</small>
-                </span>
-              </a>
-            </div>
+            <aside
+              class="fairy-hero-rail recipe-support-panel recipe-frame-secondary"
+              data-frame-rank="secondary"
+              data-support-recipe="side-rail-metadata"
+              data-recipe-collapse="summary"
+              aria-labelledby="hero-rail-title"
+            >
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-rail-full">
+                <span>Сводка</span>
+                <strong>5 полей · 2 спорных · 1 скрыто на узком экране</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <h2 id="hero-rail-title">Служебные поля</h2>
+                <div class="fairy-rail-list">
+                  <div class="fairy-rail-row">
+                    <span>Свидетель</span>
+                    <strong class="recipe-label">мельничиха видела только плащ</strong>
+                  </div>
+                  <div class="fairy-rail-row">
+                    <span>Долг</span>
+                    <strong class="recipe-label">три обещания и чужая лента</strong>
+                  </div>
+                  <div class="fairy-rail-row">
+                    <span>Ошибка карты</span>
+                    <strong class="recipe-label">северная тропа ведёт к прошлой версии имени</strong>
+                  </div>
+                  <div class="fairy-rail-row recipe-compact-hidden">
+                    <span>Сомнение писца</span>
+                    <strong class="recipe-label">проводник слишком быстро согласился</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-rail-full" class="visually-hidden">
+                Служебная сводка содержит пять полей, два спорных значения и одно поле, скрываемое
+                на узком экране; она не является главной задачей страницы.
+              </p>
+            </aside>
 
-            <div class="save-slot-strip menu-save-slot" aria-label="Текущий слот">
-              <span>Слот A</span>
-              <strong>врата · глава 1 · тихая отвага</strong>
+            <div class="fairy-hero-art recipe-frame-tertiary" data-frame-rank="tertiary" aria-hidden="true">
+              <span class="fairy-moon"></span>
+              <span class="fairy-road"></span>
+              <span class="fairy-gate"></span>
+              <span class="fairy-tower fairy-tower-left"></span>
+              <span class="fairy-tower fairy-tower-right"></span>
             </div>
-
-            <div class="menu-plaques route-index menu-route-index" role="navigation" aria-label="Тихий указатель разделов путешествия">
-              <p class="route-index-title">Разделы</p>
-              <a class="menu-plaque active" href="#trail-log">
-                <span class="route-badge route-badge--gate" aria-hidden="true"></span>
-                <strong>Лес дорог</strong>
-                <small>первый след</small>
-              </a>
-              <a class="menu-plaque" href="#story-dossier">
-                <span class="route-badge route-badge--compass" aria-hidden="true"></span>
-                <strong>Сказочный архив</strong>
-                <small>символы и имена</small>
-              </a>
-              <a class="menu-plaque" href="#command-rail">
-                <span class="route-badge route-badge--milestone" aria-hidden="true"></span>
-                <strong>Спутники</strong>
-                <small>4 архетипа</small>
-              </a>
-              <a class="menu-plaque ceremonial" href="#final-threshold">
-                <span class="route-badge route-badge--lantern" aria-hidden="true"></span>
-                <strong>Порог выбора</strong>
-                <small>переход</small>
-              </a>
-            </div>
-          </section>
-
-          <aside class="command-rail-shell menu-side-rail" id="command-rail" aria-label="Команды">
-            <div class="command-rail-head">Команды</div>
-            <div class="command-entry">
-              <span>Задание</span>
-              <strong>собрать карту мифа</strong>
-            </div>
-            <div class="command-entry">
-              <span>Спутники</span>
-              <strong>4 архетипа</strong>
-            </div>
-            <div class="command-entry">
-              <span>Сложность</span>
-              <strong>тихая отвага</strong>
-            </div>
-            <div class="command-entry">
-              <span>Режим</span>
-              <strong>выбор главы</strong>
-            </div>
-            <div class="mini-command-grid" aria-label="Быстрые команды">
-              <button type="button" class="mini-command">загрузка</button>
-              <button type="button" class="mini-command">карта</button>
-              <button type="button" class="mini-command">знания</button>
-              <button type="button" class="mini-command">выход</button>
-            </div>
-            <button type="button" class="btn btn-quiet rail-button">Карта команды</button>
-          </aside>
-        </div>
+          </div>
+        </article>
       </section>
 
-      <section id="trail-log" class="scene trail-log-scene" aria-labelledby="trail-log-title">
-        <div class="scene-title-block">
-          <div class="scene-plaque">Маршрут · Лес дорог</div>
-          <p class="eyebrow">журнал пути · карта глав</p>
-          <h2 id="trail-log-title">Карта сказочного выбора.</h2>
-          <p>
-            Главы собраны как маршрутный журнал: остановка, роль, урок и эмоциональная погода.
-            Рамки и плакетки ведут взгляд быстрее обычных веб-блоков.
-          </p>
-        </div>
+      <section id="field-dossier" class="fairy-section" aria-labelledby="dossier-title">
+        <article
+          class="fairy-dossier"
+          data-recipe="dossier-reading"
+          data-primary-recipe="dossier-reading"
+          data-support-recipes="side-rail-metadata"
+          data-recipe-density="standard"
+          data-applied-state="hostile-notes"
+        >
+          <div class="fairy-section-head">
+            <p class="eyebrow">DossierReadingRecipe · поле чтения</p>
+            <h2 id="dossier-title">Досье держит чтение, даже когда поля записи неприятные.</h2>
+          </div>
 
-        <div class="trail-layout">
-          <article class="trail-map parchment-object" id="story-dossier">
-            <header class="dossier-head">
-              <div>
-                <p class="archive-label">Сказочный журнал</p>
-                <h3>Четыре дороги к своему имени</h3>
+          <div class="fairy-dossier-shell">
+            <aside
+              class="archive-rail fairy-archive-rail recipe-support-panel recipe-frame-secondary"
+              data-frame-rank="secondary"
+              data-support-recipe="side-rail-metadata"
+              data-recipe-collapse="summary"
+              aria-labelledby="archive-rail-title"
+            >
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="archive-rail-full">
+                <span>Архив</span>
+                <strong>4 метки · 1 длинная · чтение первично</strong>
               </div>
-              <span class="wax-seal" aria-hidden="true">✦</span>
-            </header>
+              <div class="recipe-support-detail">
+                <div id="archive-rail-title" class="archive-rail-head">Архивные метки</div>
+                <a class="archive-rail-item active" href="#field-dossier">
+                  <span>I</span>
+                  <strong class="recipe-label">открытая запись</strong>
+                </a>
+                <a class="archive-rail-item" href="#route-feed">
+                  <span>II</span>
+                  <strong class="recipe-label">поздние правки</strong>
+                </a>
+                <a class="archive-rail-item" href="#route-feed">
+                  <span>III</span>
+                  <strong class="recipe-label">свидетельства, которым нельзя доверять полностью</strong>
+                </a>
+                <a class="archive-rail-item recipe-compact-hidden" href="#route-feed">
+                  <span>IV</span>
+                  <strong class="recipe-label">закрытые имена</strong>
+                </a>
+              </div>
+              <p id="archive-rail-full" class="visually-hidden">
+                Боковая архивная рейка содержит четыре метки; длинная третья метка должна уступать
+                чтению и сворачиваться раньше пергамента.
+              </p>
+            </aside>
 
-            <div class="trail-steps" aria-label="Этапы путешествия">
-              <div class="trail-step">
-                <span>01</span>
+            <section class="parchment-object fairy-reading recipe-frame-primary" data-frame-rank="primary" aria-labelledby="reading-title">
+              <header class="dossier-head">
                 <div>
-                  <strong>Лес шёпотов</strong>
-                  <small>распознать повторяемые истории</small>
+                  <p class="archive-label">Служебное досье</p>
+                  <h3 id="reading-title" class="recipe-title">
+                    Имя не найдено; найден способ не отдавать его первому встречному.
+                  </h3>
+                </div>
+                <span class="wax-seal" aria-hidden="true">II</span>
+              </header>
+
+              <div class="fairy-dossier-body">
+                <p class="dossier-text dossier-opening">
+                  Первая запись сухая: девочка вышла к переправе, потому что дома все называли её
+                  удобным прозвищем. Проводник предложил новое имя сразу, без цены, и этим испортил
+                  доверие к маршруту.
+                </p>
+                <p class="dossier-text">
+                  Вторая строка хуже: карта каждый раз меняла север, когда рядом появлялся человек,
+                  готовый решить за неё. Поэтому досье фиксирует не победу, а отказ принимать
+                  слишком гладкую сказку.
+                </p>
+                <div class="dossier-ledger-strip" aria-label="Проверочные поля">
+                  <span class="recipe-metadata">роль: ещё спорная</span>
+                  <span class="recipe-metadata">цена: память о доме</span>
+                  <span class="recipe-metadata">свидетель: мельничиха</span>
+                  <span class="recipe-metadata recipe-compact-hidden">ошибка: север по вторникам</span>
                 </div>
               </div>
-              <div class="trail-step">
-                <span>02</span>
-                <div>
-                  <strong>Башня отражений</strong>
-                  <small>увидеть героя, тень, проводника</small>
-                </div>
-              </div>
-              <div class="trail-step">
-                <span>03</span>
-                <div>
-                  <strong>Рынок чудес</strong>
-                  <small>отделить свои желания от навязанных</small>
-                </div>
-              </div>
-              <div class="trail-step">
-                <span>04</span>
-                <div>
-                  <strong>Мост возвращения</strong>
-                  <small>вернуться с новой ролью</small>
-                </div>
-              </div>
-            </div>
+            </section>
 
-            <div class="dossier-ledger-strip" aria-label="Сигналы карты">
-              <span>дерево · латунь · пергамент</span>
-              <span>ступенчатый край</span>
-              <span>главное меню</span>
-            </div>
-          </article>
-
-          <aside class="story-panel">
-            <div class="note-card high-note">
-              <p class="archive-label">Сказочная логика</p>
-              <strong>Архетип вместо контента.</strong>
-              <span>Мир различает маску, зов, страх и желание.</span>
-            </div>
-            <div class="note-card low-note">
-              <p class="archive-label">Правило UI</p>
-              <strong>Сначала рамка.</strong>
-              <span>Декор работает после сильной меню-структуры.</span>
-            </div>
-          </aside>
-        </div>
+            <aside class="side-notes fairy-side-notes recipe-frame-tertiary" data-frame-rank="tertiary" aria-label="Заметки писца">
+              <div class="note-card">
+                <p class="archive-label">Заметка</p>
+                <strong class="recipe-title">Проводник слишком полезен.</strong>
+                <span class="recipe-annotation">Если он знает все ответы, это не помощник, а чужой сценарий.</span>
+              </div>
+              <div class="note-card recipe-compact-hidden">
+                <p class="archive-label">Сомнение</p>
+                <strong class="recipe-title">Лента не её цвета.</strong>
+                <span class="recipe-annotation">Предмет выглядит как награда, но в реестре числится долгом.</span>
+              </div>
+            </aside>
+          </div>
+        </article>
       </section>
 
-      <section id="final-threshold" class="scene threshold-scene" aria-labelledby="threshold-title">
-        <div class="ceremony-shell threshold-shell">
-          <div class="scene-plaque scene-plaque-right">Порог · Личный выбор</div>
-          <div class="arcane-orbit" aria-hidden="true">
-            <span data-node="gold"></span><span></span><span data-node="mana-dim"></span><span></span>
-          </div>
-
-          <div class="ceremony-copy threshold-copy">
-            <p class="eyebrow">порог выбора · финальное принятие</p>
-            <h2 id="threshold-title">Отряд собран. Кем входишь в сказку?</h2>
-            <p>
-              Финальный блок — экран подтверждения: немного магии, золотое давление
-              и ощущение, что выбор меняет роль игрока.
-            </p>
-          </div>
-
-          <div class="ritual-panel threshold-panel" role="group" aria-label="Итоговый выбор">
-            <span class="panel-crown" aria-hidden="true">✧</span>
-            <p class="archive-label">Готовность отряда</p>
-            <h3>Принять сказочное имя?</h3>
-            <p>
-              Когда история, архетипы и маршрут сложились, меню становится вратами
-              в личный миф.
-            </p>
-            <p class="consequence-line">Фиксируется роль, не ссылка.</p>
-
-            <div class="ritual-protocol" aria-label="Правила перехода">
-              <div>
-                <span>01</span>
-                <strong>главная команда</strong>
+      <section id="route-feed" class="fairy-section" aria-labelledby="feed-title">
+        <article
+          class="fairy-feed"
+          data-recipe="feed-listing"
+          data-primary-recipe="feed-listing"
+          data-support-recipes="side-rail-metadata"
+          data-recipe-density="standard"
+          data-applied-state="dense-feed"
+        >
+          <div class="fairy-feed-shell">
+            <aside
+              class="fairy-feed-rail recipe-support-panel recipe-frame-secondary"
+              data-frame-rank="secondary"
+              data-support-recipe="side-rail-metadata"
+              data-recipe-collapse="summary"
+              aria-labelledby="feed-filter-title"
+            >
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-filter-full">
+                <span>Фильтр</span>
+                <strong>3 открытых · 2 скрытых · 9 записей</strong>
               </div>
-              <div>
-                <span>02</span>
-                <strong>ясная ставка</strong>
+              <div class="recipe-support-detail">
+                <h2 id="feed-filter-title">Срез журнала</h2>
+                <div class="fairy-filter-list">
+                  <div class="fairy-filter-chip">
+                    <span>Тон</span>
+                    <strong class="recipe-label">сомнительная помощь</strong>
+                  </div>
+                  <div class="fairy-filter-chip">
+                    <span>Место</span>
+                    <strong class="recipe-label">лесная переправа и рынок забытых имён</strong>
+                  </div>
+                  <div class="fairy-filter-chip">
+                    <span>Состояние</span>
+                    <strong class="recipe-label">не закрыто</strong>
+                  </div>
+                </div>
               </div>
-              <div>
-                <span>03</span>
-                <strong>магия на пороге</strong>
-              </div>
-            </div>
+              <p id="feed-filter-full" class="visually-hidden">
+                Журнал отфильтрован по сомнительной помощи, переправе и открытому состоянию; фильтр
+                вторичен относительно списка записей.
+              </p>
+            </aside>
 
-            <div class="ceremony-actions">
-              <button type="button" class="btn btn-quiet">К карте</button>
-              <button type="button" class="btn btn-ceremonial">Принять имя</button>
-            </div>
+            <section class="fairy-feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-title">
+              <div class="fairy-feed-heading">
+                <p class="eyebrow">FeedListingRecipe · журнал маршрута</p>
+                <h2 id="feed-title" class="recipe-title">
+                  Записи, которые надо просмотреть до следующего выбора.
+                </h2>
+                <p class="recipe-annotation">
+                  Один текущий след и несколько обычных строк. Список остаётся сканируемым, а не
+                  превращается в стену одинаково громких карточек.
+                </p>
+              </div>
+
+              <div class="recipe-support-summary fairy-feed-summary" aria-describedby="feed-list-full">
+                <span>Журнал</span>
+                <strong>9 записей · текущая строка первая</strong>
+              </div>
+
+              <div class="fairy-feed-list" id="feed-list-full">
+                <article class="fairy-feed-row" data-row-rank="current">
+                  <div class="fairy-feed-row-top">
+                    <h3 class="recipe-title">Проводник просит расписку за совет, который никто не просил.</h3>
+                    <span class="fairy-feed-badge">текущая</span>
+                  </div>
+                  <div class="fairy-feed-meta">
+                    <span class="recipe-metadata">переправа</span>
+                    <span class="recipe-metadata">2 свидетеля</span>
+                    <span class="recipe-metadata recipe-compact-hidden">долг спорный</span>
+                  </div>
+                  <p class="recipe-annotation">С этой строки начинается следующее решение.</p>
+                </article>
+
+                <article class="fairy-feed-row" data-row-rank="ordinary">
+                  <div class="fairy-feed-row-top">
+                    <h3 class="recipe-title">Мельничиха меняет показание после разговора с башенным писцом.</h3>
+                    <span class="fairy-feed-badge">обычная</span>
+                  </div>
+                  <div class="fairy-feed-meta">
+                    <span class="recipe-metadata">мельница</span>
+                    <span class="recipe-metadata">правка ночью</span>
+                  </div>
+                </article>
+
+                <article class="fairy-feed-row" data-row-rank="ordinary">
+                  <div class="fairy-feed-row-top">
+                    <h3 class="recipe-title">На рынке продают три имени, и все слишком хорошо подходят.</h3>
+                    <span class="fairy-feed-badge">обычная</span>
+                  </div>
+                  <div class="fairy-feed-meta">
+                    <span class="recipe-metadata">рынок</span>
+                    <span class="recipe-metadata">цена скрыта</span>
+                  </div>
+                </article>
+              </div>
+            </section>
           </div>
-        </div>
+        </article>
       </section>
     </main>
 
     <footer class="board-footer">
       <p>
-        Демо сказочного меню о поиске себя: дерево, латунь, пергамент,
-        лианы, плакетки и статусные рейки вместо обычного лендинга.
+        Applied smoke page for one fairy-journey article flow. It exercises ArticleHeroRecipe,
+        DossierReadingRecipe and FeedListingRecipe, but does not claim broad system readiness.
       </p>
     </footer>
-
-    <script src="./script.js"></script>
   </body>
 </html>

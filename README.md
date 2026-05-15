@@ -44,44 +44,41 @@ A focused layout cleanup pass tightened the demo in four places:
 - **Ceremony:** rebalanced copy vs ritual panel so the CTA block feels important without overpowering the scene.
 - **Reference page:** tightened vertical rhythm and mobile specimen sizing to reduce dead space and overly tall blocks.
 
-## Latest adaptive stabilization pass
+## Latest applied-page rebuild
 
-The latest pass intentionally chose **adaptive stabilization over grid-first flattening**.
+The latest pass moved `fairy-journeys.html` away from the older menu-first bridge composition and rebuilt it as a bounded applied page on top of the current recipe stack.
 
-- Added a separate **menu-first adaptive layer** so the authored HoMM2 composition survives responsive transitions.
-- Relaxed hard layout constraints that were making some states brittle.
-- Added `min-width: 0` and containment-style protections to reduce overflow and collision risk.
-- Improved transition behavior between **mobile / tablet / small desktop** widths.
-- Added `fairy-journeys.html` plus its dedicated `css/fairy-journeys.css` as a live applied branch inside the sandbox.
+- First screen now uses **ArticleHeroRecipe** as the primary recipe.
+- Continuation sections use **DossierReadingRecipe** and **FeedListingRecipe**.
+- **SideRailMetadataRecipe** and **SiteShellNavigationRecipe** remain support-only.
+- The page keeps its own `css/fairy-journeys.css` and does not add new shared hooks.
 
 Verified during the pass:
 
-- widths checked: `360 / 768 / 1024 / 1180 / 1366`
-- no critical horizontal overflow on the reviewed states
+- static recipe-hook sanity
+- Chromium headless smoke at `390x844` and `1024x640`
 - `git diff --check` clean before commit
 
-## Current reality after the text pass
+## Current reality after the documentation + proof program
 
-A dedicated text-system pass improved live wording, mobile typography pressure, and command brevity — especially on `fairy-journeys.html`.
-
-That pass was intentionally pragmatic, not foundational.
+The repo now has a stronger split between canonical proof surfaces and applied pages.
 
 What is now true:
-- text in scan-first UI zones is shorter and less likely to break mobile layout
-- display / heading pressure is lower than before
-- reference/manual wording is more instructional
+- canonical fixtures exist for **ArticleHeroRecipe**, **DossierReadingRecipe**, **FeedListingRecipe**, and **MenuScreenRecipe**
+- bounded host-bound proof exists for **SideRailMetadataRecipe** and **SiteShellNavigationRecipe**
+- `fairy-journeys.html` has been rebuilt as an applied smoke page that follows the ratified content-first recipe stack
 
 What is **not** true yet:
-- the broader design system has not been fully hardened against future copy changes
-- component-level text limits are documented, but not yet fully enforced as reusable guardrails
-- future wording edits can still reintroduce layout stress if they ignore the text guidelines
+- applied pages still do not replace canonical fixtures as proof
+- broad shell-heavy, dashboard-heavy, promo-heavy, or search-heavy page families are not generally proven
+- future applied pages can still drift if they ignore the documented recipe/budget rules
 
 So the current state should be treated as:
-**stabilized enough for review, but not yet self-protecting by system design.**
+**proof-backed for the covered fixture slices, with applied-page work now starting to align to that proof.**
 
 ## Next logical pass
 
-The next phase is still a **design-system research refactor**: preserve the Heraldic Menu direction, but convert the current scene work into a stricter reusable system with a real operational reference, clearer component boundaries, stronger mobile/action hierarchy, and better protection against text-driven regressions.
+The next phase is continued **applied-page rebuild and cleanup**: keep the ratified recipe system honest on real pages before expanding scope again.
 
 Primary plan:
 - `docs/design-system-research-plan-2026-05.md`
@@ -132,40 +129,24 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed system slice: **Responsive Recipe Layer for MenuScreenRecipe**.
+Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild**.
 
-This slice is now closed as a bounded design-system track. It moved from evidence gathering into contracts, implementation mapping, shared hooks, viewport QA and a short stabilization follow-up.
+Current entry point:
 
-Canonical artifact chain:
-
-- `docs/responsive-recipe-evidence-2026-05-15.md`
-- `docs/responsive-recipe-contracts-2026-05-15.md`
-- `docs/responsive-recipe-implementation-mapping-2026-05-15.md`
-- `docs/responsive-recipe-shared-hooks-pass4-2026-05-15.md`
-- `docs/responsive-recipe-viewport-qa-pass5-2026-05-15.md`
-- `docs/responsive-recipe-followup-pass6-2026-05-15.md`
+- `docs/design-system-operator-index-2026-05-15.md`
 
 What now exists at the system level:
 
-- shared responsive recipe tokens in `css/tokens.css`
+- shared tokens in `css/tokens.css`
 - shared recipe hooks in `css/components.css`
-- a canonical regression fixture at `fixtures/menu-screen-recipe.html`
-- responsive contracts and downgrade rules for MenuScreenRecipe
-- viewport/browser evidence for `1440x900`, `390x844` and `360x740`
-- a bridge smoke target in `fairy-journeys.html#menu-shell`
-
-What this slice locked:
-
-- first-screen obligations per recipe state
-- downgrade order before page-local responsive tuning
-- tap-target and visible-label floors
-- durable density and frame-rank APIs for fixtures/tests
-- forced compact/emergency hide behavior for over-budget content
+- canonical fixtures for `menu-screen`, `article-hero`, `dossier-reading`, `feed-listing`, and narrow `site-shell-navigation`
+- proof and acceptance artifacts for the documented recipe slices
+- one rebuilt applied smoke page in `fairy-journeys.html`
 
 Current recommendation:
 
-- treat this responsive recipe work as stabilized enough for normal maintenance
-- open future passes only for narrow follow-up work such as applied-page cleanup, additional recipe families or reusable viewport harness automation
+- treat canonical fixtures and pass reports as the proof source of truth
+- treat applied pages as smoke/pressure surfaces unless a later pass explicitly promotes broader proof
 
 ## File structure
 
@@ -175,18 +156,22 @@ css/
   components.css       # shared global and reusable UI layer
   scenes.css           # scene-specific art-direction compositions
   reference.css        # reference-page-only specimen layout
-  fairy-journeys.css   # page-specific adaptive scene rules
+  fairy-journeys.css   # page-specific applied-page rules for the fairy-journeys smoke surface
 fixtures/
   menu-screen-recipe.html  # canonical responsive recipe regression fixture
+  article-hero-recipe.html
+  dossier-reading-recipe.html
+  feed-listing-recipe.html
+  site-shell-navigation-recipe.html
 index.html             # atmosphere board / sandbox scenes
 reference.html         # living design-system reference page
-fairy-journeys.html    # live applied branch / fairy-tale menu-first page
+fairy-journeys.html    # bounded applied smoke page using article hero + dossier + feed stack
 ```
 
 ## How to read the repo
 
 - Start with `reference.html` when you want the token contract and system specimens.
 - Use `index.html` when you want the art-direction scenes and atmosphere pass.
-- Use `fixtures/menu-screen-recipe.html` when you want the canonical responsive recipe contract fixture.
+- Use `fixtures/*.html` when you want the canonical proof surfaces and regression fixtures.
 - Treat `tokens.css` as the override surface for future themes / factions.
 - Treat `components.css` as the place for reusable rules; keep scene illustration logic out of it.
