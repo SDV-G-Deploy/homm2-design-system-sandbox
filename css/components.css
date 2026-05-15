@@ -682,6 +682,7 @@ h3::first-letter {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  min-height: var(--tap-target-min);
   font-family: var(--font-display);
   font-size: var(--text-caption);
   font-weight: 700;
@@ -1017,6 +1018,10 @@ h3::first-letter {
 .menu-screen-shell {
   position: relative;
   isolation: isolate;
+  --recipe-first-screen-budget: var(--first-screen-menu);
+  --recipe-primary-visible: ".command-slab";
+  --recipe-secondary-visible: ".menu-save-slot";
+  --recipe-collapse-order: "art route-index rails save-slot command-slab";
   --menu-frame-corner-tl: url("../assets/generated/frame-kit/corner-top-left.png");
   --menu-frame-corner-tr: url("../assets/generated/frame-kit/corner-top-right.png");
   --menu-frame-corner-bl: url("../assets/generated/frame-kit/corner-bottom-left.png");
@@ -1073,18 +1078,21 @@ h3::first-letter {
 .menu-side-rail {
   position: relative;
   z-index: 3;
+  --recipe-collapse-rank: 3;
   align-self: start;
   border-color: rgb(var(--gold-300) / 0.14);
   opacity: 0.76;
 }
 
 .command-slab {
+  --recipe-collapse-rank: 5;
   display: grid;
   gap: 6px;
   padding: 7px;
 }
 
 .menu-save-slot {
+  --recipe-collapse-rank: 4;
   border-color: rgb(var(--gold-300) / 0.2);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 38%),
@@ -1093,11 +1101,13 @@ h3::first-letter {
 }
 
 .menu-route-index {
+  --recipe-collapse-rank: 2;
   opacity: 0.54;
 }
 
 .menu-art-layer {
   position: absolute;
+  --recipe-collapse-rank: 1;
   inset: 6px;
   z-index: 1;
   pointer-events: none;
@@ -1238,6 +1248,42 @@ h3::first-letter {
 .route-badge--milestone { --route-badge-position: 0 100%; }
 .route-badge--lantern { --route-badge-position: 100% 100%; }
 
+/* --------------------------------------------------------------------------
+   Responsive contract hooks
+   --------------------------------------------------------------------------
+   These rules define system floors. Page-local CSS may arrange recipe parts,
+   but should not lower tap targets or label legibility to solve layout pressure.
+   -------------------------------------------------------------------------- */
+
+.command-slab :is(a, button, [role="button"]),
+.menu-route-index :is(a, button, [role="button"]),
+.archive-rail :is(a, button, [role="button"]),
+.ritual-panel :is(a, button, [role="button"]) {
+  min-height: var(--tap-target-min);
+}
+
+.menu-route-index,
+.archive-rail,
+.ritual-panel,
+.parchment-object {
+  --recipe-label-floor: var(--label-legible-min);
+}
+
+.parchment-object {
+  --recipe-first-screen-budget: var(--first-screen-dossier);
+  --recipe-collapse-order: "notes side-matter metadata archive-rail parchment";
+}
+
+.ritual-panel {
+  --recipe-first-screen-budget: var(--first-screen-ritual);
+  --recipe-collapse-order: "aura protocol ledger copy actions";
+}
+
+.menu-route-index {
+  --recipe-first-screen-budget: var(--first-screen-route-board);
+  --recipe-collapse-order: "annotations filters progress secondary-routes current-next";
+}
+
 @media (max-width: 560px) {
   .menu-side-rail {
     opacity: 0.86;
@@ -1246,6 +1292,16 @@ h3::first-letter {
   .command-slab {
     gap: 6px;
     padding: 6px;
+  }
+
+  .command-slab :is(a, button, [role="button"]),
+  .ritual-panel :is(a, button, [role="button"]) {
+    min-height: var(--tap-target-min);
+  }
+
+  .menu-route-index :is(a, button, [role="button"]),
+  .archive-rail :is(a, button, [role="button"]) {
+    min-height: var(--tap-target-compact);
   }
 
   .menu-art-layer {
@@ -1456,10 +1512,10 @@ h3::first-letter {
   .archive-rail { gap: 8px; padding: 14px 12px; }
   .archive-rail-head { padding: 0 3px 8px; }
   .archive-rail-item { grid-template-columns: 30px 1fr; gap: 8px; padding: 9px 8px; }
-  .archive-rail-item span { font-size: 11px; }
+  .archive-rail-item span { font-size: var(--label-legible-min); }
   .archive-rail-item strong {
     max-width: none;
-    font-size: 11px;
+    font-size: var(--label-legible-min);
     line-height: 1.28;
     letter-spacing: 0.04em;
   }

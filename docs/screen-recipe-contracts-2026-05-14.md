@@ -11,6 +11,7 @@ The system split is now:
 - `tokens.css` -> materials, type, spacing, shape, shadows, semantic roles
 - `components.css` -> reusable UI objects and bounded art slots
 - `screen recipes` -> which components may appear together, in what hierarchy, and what collapses first on mobile
+- `responsive contracts` -> first-screen budgets, above-fold obligations, downgrade order, tap targets and label legibility per recipe
 - `page-local composition` -> backdrop, section order, story rhythm, exact proportions, copy sequence
 
 This file is the textual contract. `reference.html` is the visual manual.
@@ -22,6 +23,29 @@ This file is the textual contract. `reference.html` is the visual manual.
 3. Mobile collapse always removes tertiary layers before shrinking primary controls or reading fields.
 4. Page-local CSS may arrange recipe parts, but may not invent a different dominance order.
 5. Image assets may only appear through named bounded slots and remain atmospheric, not structural.
+
+## Responsive contract layer
+
+Responsive behavior is a system layer, not late page rescue work. A page may choose exact breakpoints
+and proportions, but it must inherit the recipe's contract for what remains above the fold, what yields
+first, and what is never allowed to become micro-text.
+
+Global responsive rules:
+
+1. The primary task of the recipe must be visible in the first viewport at 390 x 844 and 1440 x 900.
+2. Optional and tertiary layers collapse before primary controls, reading fields or consequence actions shrink.
+3. Dense atmosphere must downgrade through omission, stacking or summaries before text drops below the legibility floor.
+4. Generated images never solve responsive pressure. Images may crop, fade, disappear or move below structural content.
+5. Interactive controls keep a 44px preferred tap target, with 40px as the absolute compact floor for secondary controls.
+6. Scan labels stay at 12px or larger. If copy does not fit, shorten the label or move the layer; do not use micro-text.
+
+Layer ownership:
+
+- `tokens.css`: owns global floors such as tap target, label floor and fold spacing tokens.
+- `components.css`: owns reusable component behavior, bounded art slots, base tap sizes and legible compact states.
+- screen recipes: own required/optional layer order and first-screen obligations.
+- responsive contracts: own per-recipe budgets, downgrade order and acceptance checks.
+- page-local composition: owns exact layout, copy sequence and scene-specific proportions after the contract is satisfied.
 
 ## MenuScreenRecipe
 
@@ -53,6 +77,14 @@ Mobile collapse order:
 3. Save slot condenses into one compact strip
 4. Primary slab remains visible and readable
 
+Responsive contract:
+- First-screen budget: desktop target is one 900px viewport; mobile target is one 844px viewport with room for the next section cue.
+- Must stay above the fold: title/context mark, primary command slab, at least one secondary command, and immediate save/status strip when present.
+- Collapse / downgrade order: art layer -> route index -> side rails -> save slot -> command slab.
+- Compresses first: ornamental frame depth, rail copy, route annotations and status metadata.
+- Never solve with micro-text: command labels, utility labels, save-state labels and route state labels.
+- Minimum expectations: primary and secondary commands use 44px preferred tap targets; compact support controls may not drop below 40px or 12px labels.
+
 Forbidden combinations / misuse:
 - Do not combine with a full dossier reading field in the same first-screen shell
 - Do not run multiple equal-weight command slabs
@@ -82,6 +114,14 @@ Mobile collapse order:
 1. Notes drop below the reading field
 2. Metadata compresses before prose measure does
 3. Decorative side matter yields before the main reading column does
+
+Responsive contract:
+- First-screen budget: opening dossier field and spine orientation must fit within the first 900px desktop viewport and begin in the first mobile viewport.
+- Must stay above the fold: dossier heading, first readable paragraph or record block, and one archive/spine orientation cue.
+- Collapse / downgrade order: marginal notes -> decorative side matter -> metadata ledger -> archive rail -> parchment field.
+- Compresses first: ledger columns, note-card count, archive rail ornament and secondary metadata.
+- Never solve with micro-text: body prose, record labels, archive rail item labels or comparison field labels.
+- Minimum expectations: reading text keeps prose rhythm; rail items and utility actions keep 40px compact floor and 12px label floor.
 
 Forbidden combinations / misuse:
 - Do not replace the reading field with card mosaics
@@ -114,6 +154,14 @@ Mobile collapse order:
 2. Protocol stacks below the ritual body
 3. Primary and escape actions keep full legibility and tap size
 
+Responsive contract:
+- First-screen budget: threshold title, consequence frame and both actions must fit in the first mobile viewport unless legal/product copy requires a scroll.
+- Must stay above the fold: consequence statement, one ceremonial action and one quiet escape.
+- Collapse / downgrade order: aura/art -> protocol -> consequence ledger details -> secondary copy -> actions.
+- Compresses first: glow radius, seal scale, protocol spacing and supporting consequence bullets.
+- Never solve with micro-text: ceremonial CTA, escape action, warning/consequence labels or irreversible-choice copy.
+- Minimum expectations: both actions keep 44px preferred tap targets; labels remain 12px or larger with non-negative tracking.
+
 Forbidden combinations / misuse:
 - Do not present more than one ceremonial action
 - Do not combine route-board density with ritual threshold framing
@@ -144,6 +192,14 @@ Mobile collapse order:
 2. Filters move below the primary list
 3. Badge state and current path remain visible
 
+Responsive contract:
+- First-screen budget: current route, next route and board state legend must be visible inside the first desktop viewport; mobile must show current + next before scrolling past the board opening.
+- Must stay above the fold: current path, next available path, badge state markers and route outcome hint.
+- Collapse / downgrade order: lore annotations -> filters/sort -> progress strip -> secondary route rows -> current/next rows.
+- Compresses first: annotation length, filter chrome, row ornament and non-current route details.
+- Never solve with micro-text: current/next labels, locked/available state labels, route outcomes or badge-adjacent text.
+- Minimum expectations: route rows keep a 40px compact floor, badges remain recognizable, and labels stay at least 12px.
+
 Forbidden combinations / misuse:
 - Do not frame every row like a ritual threshold
 - Do not let lore outweigh state labels
@@ -164,13 +220,19 @@ Must not stay page-local:
 - whether a ritual screen has one or many ceremonial actions
 - whether mobile collapses rails before the primary task
 - whether art becomes structural instead of bounded support
+- first-screen budgets, label floors or tap target floors
+- per-recipe downgrade order
 
 ## Immediate next pass after recipes
 
 Recipe contracts solve the missing middle layer, but they do not yet fully protect the system.
 
+Status:
+
+- `Responsive Contract Pass` has promoted collapse rules into the contract layer above.
+
 The next pass should be:
 
-- `Responsive Contract Pass`
-
-That pass should turn recipe-level collapse rules into stricter acceptance checks and, where useful, shared responsive helpers.
+- shared responsive helper adoption in applied pages, especially menu route-index demotion and mobile rail summaries
+- screenshot QA at 1440, 1180, 1024, 920, 768, 390 and 360 widths
+- text edits where labels still need shortening instead of smaller type

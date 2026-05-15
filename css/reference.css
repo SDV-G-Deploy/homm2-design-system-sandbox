@@ -600,7 +600,8 @@
 
 .decision-table,
 .contract-table,
-.slot-table {
+.slot-table,
+.responsive-contract-table {
   display: grid;
   gap: 0;
   border: 1px solid var(--border-thin);
@@ -611,7 +612,8 @@
 
 .decision-table > div,
 .contract-table > div,
-.slot-table > div {
+.slot-table > div,
+.responsive-contract-table > div {
   display: grid;
   gap: var(--space-3);
   padding: var(--space-4);
@@ -633,9 +635,21 @@
   grid-template-columns: minmax(160px, 0.9fr) minmax(190px, 1.1fr) minmax(190px, 1.1fr) minmax(170px, 1fr) minmax(170px, 1fr);
 }
 
+.responsive-contract-table > div {
+  grid-template-columns:
+    minmax(118px, 0.75fr)
+    minmax(150px, 1fr)
+    minmax(160px, 1.1fr)
+    minmax(150px, 1fr)
+    minmax(140px, 0.9fr)
+    minmax(140px, 0.9fr)
+    minmax(130px, 0.8fr);
+}
+
 .decision-table > div:last-child,
 .contract-table > div:last-child,
-.slot-table > div:last-child {
+.slot-table > div:last-child,
+.responsive-contract-table > div:last-child {
   border-bottom: 0;
 }
 
@@ -644,7 +658,9 @@
 .contract-table strong,
 .contract-table span,
 .slot-table strong,
-.slot-table span {
+.slot-table span,
+.responsive-contract-table strong,
+.responsive-contract-table span {
   min-width: 0;
   font-size: 13px;
   line-height: 1.48;
@@ -654,9 +670,11 @@
 .decision-table strong,
 .contract-table strong,
 .slot-table strong,
+.responsive-contract-table strong,
 .decision-head span,
 .contract-head span,
-.slot-head span {
+.slot-head span,
+.responsive-contract-head span {
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 700;
@@ -668,6 +686,7 @@
 .decision-table code,
 .contract-table code,
 .slot-table code,
+.responsive-contract-table code,
 .manual-card code,
 .guardrail-strip code {
   font-size: 0.92em;
@@ -676,7 +695,8 @@
 
 .decision-head,
 .contract-head,
-.slot-head {
+.slot-head,
+.responsive-contract-head {
   background: rgb(var(--gold-700) / 0.16) !important;
 }
 
@@ -983,20 +1003,23 @@
     .do-dont-grid { grid-template-columns: 1fr; }
     .decision-table,
     .contract-table,
-    .slot-table {
+    .slot-table,
+    .responsive-contract-table {
       clip-path: none;
       border-radius: var(--radius-md);
     }
     .decision-table > div,
     .contract-table > div,
-    .slot-table > div {
+    .slot-table > div,
+    .responsive-contract-table > div {
       grid-template-columns: 1fr;
       gap: 6px;
       padding: 13px;
     }
     .decision-head,
     .contract-head,
-    .slot-head {
+    .slot-head,
+    .responsive-contract-head {
       display: none !important;
     }
     .inventory-table { clip-path: none; border-radius: var(--radius-md); }

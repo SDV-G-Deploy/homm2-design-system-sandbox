@@ -22,13 +22,13 @@
     <div class="eyebrow">Reference · v1</div>
     <h1>HOMM2 Design System Manual</h1>
     <p>
-      Operational manual for tokens, surfaces, command hierarchy, states and page recipes.
+      Operational manual for tokens, surfaces, command hierarchy, states, page recipes and responsive contracts.
       Build from this page first; page CSS composes layout, not system grammar.
     </p>
     <div class="mode-strip" aria-label="Direction blend">
       <div class="mode-chip">
         <span>Source order</span>
-        <strong>tokens → components → recipes → page</strong>
+        <strong>tokens → components → recipes → responsive → page</strong>
       </div>
       <div class="mode-chip">
         <span>Heraldic menu</span>
@@ -46,7 +46,7 @@
     <h2 id="front-door-title">Operational Front Door</h2>
     <p class="ref-note">
       Start here when building a screen. Pick one recipe first, assemble it from shared components,
-      then keep local CSS limited to backdrop, sequencing and exact composition.
+      lock its responsive contract, then keep local CSS limited to backdrop, sequencing and exact composition.
     </p>
     <div class="decision-table" role="table" aria-label="Screen recipe decision table">
       <div role="row" class="decision-head">
@@ -55,7 +55,7 @@
         <span>Required shared classes</span>
         <span>Optional layers</span>
         <span>Do not use when</span>
-        <span>Mobile collapse order</span>
+        <span>Mobile contract</span>
       </div>
       <div role="row">
         <strong>MenuScreenRecipe</strong>
@@ -63,7 +63,7 @@
         <span><code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code>, <code>.command-slab</code></span>
         <span><code>.menu-side-rail</code>, <code>.menu-save-slot</code>, <code>.menu-route-index</code>, <code>.menu-art-layer</code></span>
         <span>Reading-heavy content or equal-weight multi-column decisions.</span>
-        <span>Route index demotes first, rails compact second, save slot condenses last.</span>
+        <span>Command slab and save/status stay above the fold; route index and rails downgrade first.</span>
       </div>
       <div role="row">
         <strong>DossierReadingRecipe</strong>
@@ -71,7 +71,7 @@
         <span><code>.parchment-object</code>, <code>.archive-rail</code> or section spine</span>
         <span><code>.note-card</code>, <code>.dossier-ledger-strip</code>, quiet supporting controls</span>
         <span>Menu-first command stacks or decorative side columns competing with the reading field.</span>
-        <span>Side notes drop below prose first, ledgers compress second, decorative annotations last.</span>
+        <span>Reading field and spine cue stay visible; notes and metadata downgrade before prose.</span>
       </div>
       <div role="row">
         <strong>RitualThresholdRecipe</strong>
@@ -79,7 +79,7 @@
         <span><code>.ritual-panel</code>, one <code>.btn-ceremonial</code>, one quiet escape</span>
         <span>Short consequence ledger, restrained mana focus, wax/seal cue</span>
         <span>Routine navigation, dense route lists or more than one ceremonial action.</span>
-        <span>Decorative consequence cues reduce first, supporting notes stack second, primary action stays intact.</span>
+        <span>Consequence, one ceremonial action and one escape stay legible; aura/protocol downgrade first.</span>
       </div>
       <div role="row">
         <strong>RouteBoardRecipe</strong>
@@ -87,7 +87,7 @@
         <span><code>.menu-route-index</code> or board list with <code>.route-badge</code></span>
         <span>Compact lore note, status strip, quiet filters</span>
         <span>Long prose panels, multiple competing CTAs or ritual framing at every row.</span>
-        <span>Lore annotations collapse first, filters compact second, route labels keep state visibility.</span>
+        <span>Current/next route state stays visible; lore, filters and secondary rows downgrade first.</span>
       </div>
     </div>
   </section>
@@ -96,6 +96,7 @@
     <a href="#front-door">Front door</a>
     <a href="#system-layers">System layers</a>
     <a href="#recipe-contract">Recipe contract</a>
+    <a href="#responsive-contracts">Responsive contracts</a>
     <a href="#menu-shell-contract">Menu contract</a>
     <a href="#foundations">Foundations</a>
     <a href="#component-inventory">Components</a>
@@ -120,7 +121,11 @@
         <span>Recipe contracts decide hierarchy, optional layers and mobile collapse order before scene styling begins.</span>
       </div>
       <div class="manual-card">
-        <strong>4 · Compose locally</strong>
+        <strong>4 · Lock responsive behavior</strong>
+        <span>Use the recipe's first-screen budget, above-fold obligations and downgrade order before tuning page proportions.</span>
+      </div>
+      <div class="manual-card">
+        <strong>5 · Compose locally</strong>
         <span>Scene CSS sets layout, backdrop and dramaturgy. It must not invent button, rail or panel grammar.</span>
       </div>
     </div>
@@ -140,6 +145,10 @@
       <div class="manual-card">
         <strong>Screen recipes</strong>
         <span>The missing middle layer. Recipes define which components may appear together, in what hierarchy, and what collapses first on mobile.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Responsive contracts</strong>
+        <span>Per-recipe first-screen budgets, above-fold obligations, downgrade order, tap target floors and label legibility floors.</span>
       </div>
       <div class="manual-card">
         <strong>Page-local composition</strong>
@@ -167,6 +176,66 @@
         <strong>Page CSS cannot rewrite system order</strong>
         <span>Local composition may place and size recipe parts, but it must not promote tertiary rails above the primary command or reading task.</span>
       </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="responsive-contracts" aria-labelledby="responsive-contracts-title">
+    <h2 id="responsive-contracts-title">Responsive Contracts</h2>
+    <p class="ref-note">
+      Responsive behavior belongs between recipes and page-local composition. Local CSS may choose exact
+      proportions, but it must not re-decide what stays above the fold or shrink labels below legibility.
+    </p>
+    <div class="responsive-contract-table" role="table" aria-label="Recipe responsive contract table">
+      <div role="row" class="responsive-contract-head">
+        <span>Recipe</span>
+        <span>First-screen budget</span>
+        <span>Must stay above fold</span>
+        <span>Downgrade order</span>
+        <span>Compresses first</span>
+        <span>Never micro-text</span>
+        <span>Tap / label floor</span>
+      </div>
+      <div role="row">
+        <strong>MenuScreenRecipe</strong>
+        <span>One 900px desktop viewport; one 844px mobile viewport with a cue of the next section.</span>
+        <span>Title/context, primary command slab, one secondary command, immediate save/status strip when present.</span>
+        <span>Art layer -> route index -> side rails -> save slot -> command slab.</span>
+        <span>Frame depth, rail copy, route annotations and status metadata.</span>
+        <span>Command labels, utility labels, save-state labels and route state labels.</span>
+        <span>44px preferred controls; 40px compact floor; 12px label floor.</span>
+      </div>
+      <div role="row">
+        <strong>DossierReadingRecipe</strong>
+        <span>Dossier field and spine orientation fit in the first desktop viewport and begin in the first mobile viewport.</span>
+        <span>Dossier heading, first readable record/prose block, one archive or spine cue.</span>
+        <span>Marginal notes -> decorative side matter -> metadata ledger -> archive rail -> parchment field.</span>
+        <span>Ledger columns, note-card count, archive ornament and secondary metadata.</span>
+        <span>Body prose, record labels, archive rail item labels and comparison labels.</span>
+        <span>Prose keeps reading rhythm; controls keep 40px compact floor and 12px labels.</span>
+      </div>
+      <div role="row">
+        <strong>RitualThresholdRecipe</strong>
+        <span>Threshold title, consequence frame and both actions fit in the first mobile viewport unless required copy forces scroll.</span>
+        <span>Consequence statement, one ceremonial action and one quiet escape.</span>
+        <span>Aura/art -> protocol -> consequence ledger details -> secondary copy -> actions.</span>
+        <span>Glow radius, seal scale, protocol spacing and supporting consequence bullets.</span>
+        <span>Ceremonial CTA, escape action, warning labels and irreversible-choice copy.</span>
+        <span>44px preferred action targets; 12px labels; non-negative tracking.</span>
+      </div>
+      <div role="row">
+        <strong>RouteBoardRecipe</strong>
+        <span>Current route, next route and state legend visible in the first desktop viewport; mobile shows current + next before board scroll.</span>
+        <span>Current path, next available path, badge states and route outcome hint.</span>
+        <span>Lore annotations -> filters/sort -> progress strip -> secondary rows -> current/next rows.</span>
+        <span>Annotation length, filter chrome, row ornament and non-current route details.</span>
+        <span>Current/next labels, locked/available labels, route outcomes and badge-adjacent text.</span>
+        <span>40px route-row floor; recognizable badges; 12px label floor.</span>
+      </div>
+    </div>
+    <div class="guardrail-strip">
+      <div><strong>System-owned</strong><span>Budgets, collapse rank, tap floors and label floors belong to the responsive contract layer.</span></div>
+      <div><strong>Page-owned</strong><span>Exact grid areas, section order, story copy and local proportions are still page composition.</span></div>
+      <div><strong>No rescue text</strong><span>If a label does not fit, shorten copy or downgrade the layer instead of dropping below the floor.</span></div>
     </div>
   </section>
 
@@ -323,12 +392,12 @@
   </section>
 
   <section class="ref-section ref-manual-section" id="responsive-guardrails" aria-labelledby="responsive-guardrails-title">
-    <h2 id="responsive-guardrails-title">Responsive Guardrails</h2>
+    <h2 id="responsive-guardrails-title">Responsive Acceptance Checks</h2>
     <div class="checklist-grid">
-      <div><strong>First screen</strong><span>The dominant command must be visible immediately on desktop and mobile.</span></div>
-      <div><strong>Rail downgrade</strong><span>Side rails collapse, move or mute before primary commands lose clarity.</span></div>
-      <div><strong>Route priority</strong><span>Route index remains subordinate on small screens; it can move below save state.</span></div>
-      <div><strong>Art resilience</strong><span>The art layer is optional, non-blocking and never required for comprehension.</span></div>
+      <div><strong>First screen</strong><span>Verify each recipe at 1440 x 900 and 390 x 844 against its budget row.</span></div>
+      <div><strong>Collapse rank</strong><span>Optional art, rails, notes and annotations yield before primary tasks shrink.</span></div>
+      <div><strong>Control floor</strong><span>Interactive controls stay at 44px preferred or 40px compact minimum.</span></div>
+      <div><strong>Label floor</strong><span>Scan labels stay at 12px or larger; no mobile fix may rely on micro-text.</span></div>
     </div>
   </section>
 
@@ -853,6 +922,15 @@
           </ol>
         </div>
         <div class="recipe-rule-group">
+          <h4>Responsive contract</h4>
+          <ul>
+            <li>First-screen budget: one 900px desktop viewport; one 844px mobile viewport with a next-section cue.</li>
+            <li>Above fold: title/context, primary command slab, one secondary command and immediate save/status when present.</li>
+            <li>Never use micro-text for command, utility, save-state or route-state labels.</li>
+            <li>Tap floor: 44px preferred, 40px compact minimum, 12px label minimum.</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
           <h4>Forbidden combinations</h4>
           <ul>
             <li>Do not place a full dossier reading field inside the same first-screen shell.</li>
@@ -895,6 +973,15 @@
             <li>Compress metadata strips before reducing reading measure.</li>
             <li>Preserve one clear reading column before ornamental side matter.</li>
           </ol>
+        </div>
+        <div class="recipe-rule-group">
+          <h4>Responsive contract</h4>
+          <ul>
+            <li>Above fold: dossier heading, first readable record/prose block and one spine cue.</li>
+            <li>Notes, decorative side matter and metadata compress before prose measure.</li>
+            <li>Never use micro-text for body prose, record labels or archive rail items.</li>
+            <li>Tap floor: utility and rail actions keep 40px compact minimum and 12px labels.</li>
+          </ul>
         </div>
         <div class="recipe-rule-group">
           <h4>Forbidden combinations</h4>
@@ -941,6 +1028,15 @@
           </ol>
         </div>
         <div class="recipe-rule-group">
+          <h4>Responsive contract</h4>
+          <ul>
+            <li>Above fold: consequence statement, one ceremonial action and one quiet escape.</li>
+            <li>Aura, protocol and ledger detail compress before actions.</li>
+            <li>Never use micro-text for CTA, escape, warning or irreversible-choice copy.</li>
+            <li>Tap floor: both actions keep 44px preferred targets and 12px labels.</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
           <h4>Forbidden combinations</h4>
           <ul>
             <li>Do not present more than one ceremonial action.</li>
@@ -985,6 +1081,15 @@
           </ol>
         </div>
         <div class="recipe-rule-group">
+          <h4>Responsive contract</h4>
+          <ul>
+            <li>Above fold: current path, next path, badge states and route outcome hint.</li>
+            <li>Lore, filters, progress strips and secondary rows compress before current/next rows.</li>
+            <li>Never use micro-text for current/next, locked/available or badge-adjacent labels.</li>
+            <li>Tap floor: route rows keep 40px compact minimum and 12px labels.</li>
+          </ul>
+        </div>
+        <div class="recipe-rule-group">
           <h4>Forbidden combinations</h4>
           <ul>
             <li>Do not turn every route row into a framed ritual panel.</li>
@@ -1000,7 +1105,7 @@
     <h2>Accessibility Baseline</h2>
     <div class="checklist-grid">
       <div><strong>Keyboard</strong><span>All links/buttons use :focus-visible. Do not remove it locally.</span></div>
-      <div><strong>Mobile tap targets</strong><span>Command controls stay near 40px min-height; labels stay readable.</span></div>
+      <div><strong>Mobile tap targets</strong><span>Commands prefer 44px min-height; secondary controls may compact to 40px; labels stay 12px or larger.</span></div>
       <div><strong>Contrast</strong><span>QA gold-on-parchment and mana-on-dark after every theme override.</span></div>
       <div><strong>Motion</strong><span>Reduced-motion is global; page CSS must not reintroduce mandatory animation.</span></div>
     </div>

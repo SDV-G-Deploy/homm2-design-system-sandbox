@@ -109,47 +109,51 @@ Open `index.html` directly or serve the folder with any static server:
 python3 -m http.server 4173
 ```
 
-## Temporary deploy safety note (2026-05-12)
+## Deploy status
 
-During the active npm supply-chain incident review, GitHub Pages deployment was temporarily changed from automatic `push` on `main` to **manual `workflow_dispatch` only**.
+GitHub Pages deployment is live again on both:
 
-Reason:
+- `push` to `main`
+- manual `workflow_dispatch`
 
-- reduce exposure from automatic remote workflow execution during the incident window
-- keep deploy available for explicit operator-triggered runs only
+The workflow stays static-only:
 
-Current temporary rule:
+- no dependency install
+- artifact upload is the repo contents
+- deploy target is GitHub Pages
 
-- `.github/workflows/deploy-pages.yml` must stay manual-only until the incident window is considered cleared
-
-Before restoring automatic deploys:
-
-- re-check current incident status
-- confirm the repo still does not require dependency-install steps for Pages deploy
-- then restore normal triggers intentionally in git history
-
-### Unfreeze checklist
-
-Unfreeze only if all items are true:
-
-- the incident window has clearly cooled down
-- no new GitHub Actions or Pages-related abuse pattern has appeared
-- the workflow still deploys static files without dependency-install steps
-- no suspicious repo changes appeared during the freeze window
-- one manual deploy review is acceptable before restoring automation
-
-Recommended unfreeze order:
-
-1. inspect workflow diff and current repo state
-2. restore `push` on `main` in `.github/workflows/deploy-pages.yml`
-3. trigger one manual deploy and verify published output
-4. watch for another 24 hours before treating auto-deploy as routine again
+If deployment policy changes again, update both `.github/workflows/deploy-pages.yml` and this section in the same commit.
 
 ## Deployment
 
-GitHub Pages deployment is currently manual-only via GitHub Actions `workflow_dispatch`.
+Current default: push to `main` and wait for the Pages workflow to publish.
 
 Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
+
+## Current system checkpoint
+
+Latest completed system pass: **Responsive Contract Pass**.
+
+What now exists at the system level:
+
+- tokens
+- shared components
+- screen recipes
+- responsive contracts
+- page-local composition
+
+What this pass locked:
+
+- first-screen budgets per recipe
+- above-the-fold obligations per recipe
+- downgrade order before local responsive tuning
+- tap target and label legibility floors
+
+Recommended next pass for a fresh `/new` thread:
+
+1. apply shared responsive helpers into the live Fairy page so local CSS stops re-solving mobile degradation
+2. run screenshot QA at `1440`, `1180`, `1024`, `920`, `768`, `390`, and `360`
+3. shorten labels where pressure remains instead of reducing type below the contract floor
 
 ## File structure
 
