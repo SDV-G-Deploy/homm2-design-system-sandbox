@@ -26,7 +26,7 @@ The first regression-critical host tranche is:
 2. `DossierReadingRecipe`
 3. `FeedListingRecipe`
 
-`SideRailMetadataRecipe` remains a critical support family, but it is not regression-ready until host-bound proof shows the rail staying secondary inside hero, dossier, and/or feed hosts. Its isolated fixture can prove row budgets and summary behavior only.
+`SideRailMetadataRecipe` remains a critical support family. A bounded host-bound proof now exists for dossier-hosted and feed-hosted states, showing the rail staying secondary there; that does not by itself make broad generation credible until the wider fixture and QA gates are satisfied. Its isolated fixture can prove row budgets and summary behavior only.
 
 `SiteShellNavigationRecipe` remains important because shell navigation can compete with first-screen hierarchy, but it is not the next standalone blocker for this pass. It should be treated as surrounding support that must not become the screen recipe.
 
@@ -203,6 +203,8 @@ Broad generation is not credible until the first-tranche fixtures pass a viewpor
 - at least one reading-host state proves the rail stays secondary to `DossierReadingRecipe` or equivalent
 - at least one feed-hosted or hero-hosted state proves the rail stays secondary to rows or hero orientation
 - filter-heavy rail behavior is either bounded inside the rail contract or split into a future filter pattern
+
+The current bounded implementation/report satisfies the dossier-host and feed-host proof minimum, but it still does not replace the broader viewport/accessibility QA gates for claiming system-wide readiness.
 
 ### Gate 5: Broad Site Generation
 

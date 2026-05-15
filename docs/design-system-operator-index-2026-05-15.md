@@ -20,7 +20,7 @@ Important consolidation note:
 
 - The earlier Pass 2 protective-layer-first sequencing was reviewed during the Pass 1-4 audit.
 - The corrective sync ratified the content-first proof tranche: `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` first.
-- `SideRailMetadataRecipe` remains critical support, but it is not regression-ready until host-bound proof shows it staying secondary inside host recipes.
+- `SideRailMetadataRecipe` remains critical support. A bounded host-bound proof now exists for dossier and feed hosts, but broad reuse is still gated by the wider fixture/QA requirements and by any future hero-host decision.
 - Future readers should not treat the old sequencing question as still open unless a later pass explicitly reopens it.
 
 ## Documentation Set Overview
@@ -37,6 +37,7 @@ Use this index as the entry point before jumping into individual docs.
 | `docs/generation-playbook-2026-05-15.md` | How to assemble new sites from recipe families and gates | Normative operational playbook; broad generation remains gated by fixture and QA proof |
 | `docs/acceptance-qa-framework-2026-05-15.md` | Evidence classes, viewport matrix, blocker rules and QA checklists | Normative acceptance framework |
 | `docs/pass-1-4-audit-2026-05-15.md` | Audit that found priority drift and side-rail proof ambiguity | Historical/reference after corrective sync; useful to understand why later docs emphasize content-first and host-bound rail proof |
+| `docs/side-rail-host-bound-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded dossier+feed SideRail host-bound proof pass | Current implementation artifact; not a replacement for the normative gates |
 
 Related older or supporting docs remain useful but are not the Pass 7 core:
 
@@ -200,9 +201,9 @@ Agents should not start from `reference.html`, a visual mood board, or an applie
 | What should collapse or disappear first? | `docs/content-contracts-and-budgets-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` for failure checks |
 | Which fixtures are required? | `docs/fixture-strategy-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` proof expectations |
 | Can a generated page be accepted as on-system? | `docs/acceptance-qa-framework-2026-05-15.md` | `docs/generation-playbook-2026-05-15.md` gates |
-| Is `SideRailMetadataRecipe` ready for broad reuse? | `docs/generation-playbook-2026-05-15.md` | `docs/fixture-strategy-2026-05-15.md` and `docs/acceptance-qa-framework-2026-05-15.md` |
+| Is `SideRailMetadataRecipe` ready for broad reuse? | `docs/generation-playbook-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` and `docs/side-rail-host-bound-pass-report-2026-05-15.md` |
 | Is the old priority-sequencing concern still open? | `docs/pass-1-4-audit-2026-05-15.md` for history | Current answer lives in `docs/recipe-family-map-2026-05-15.md`, `docs/content-contracts-and-budgets-2026-05-15.md`, `docs/fixture-strategy-2026-05-15.md`, and Pass 5-6 ratification language |
-| Where is current proof strongest? | Responsive recipe artifact chain and `fixtures/menu-screen-recipe.html` | `docs/generation-playbook-2026-05-15.md` proof-status section |
+| Where is current proof strongest? | Responsive recipe artifact chain, `fixtures/menu-screen-recipe.html`, and the canonical host fixture tranche now implemented for hero/dossier/feed | `docs/generation-playbook-2026-05-15.md` proof-status section plus `docs/side-rail-host-bound-pass-report-2026-05-15.md` |
 
 ## Update / Maintenance Guidance
 
@@ -242,8 +243,8 @@ No README edit is made by this Pass 7 artifact. These are repo-level recommendat
   - `fixtures/article-hero-recipe.html`
   - `fixtures/dossier-reading-recipe.html`
   - `fixtures/feed-listing-recipe.html`
-- The next implementation-facing work should be a separate `SideRailMetadataRecipe` host-bound proof pass, not a broad host-family rewrite.
-- `SideRailMetadataRecipe` should remain support-only until isolated rail proof plus host-bound proof exists.
+- The bounded `SideRailMetadataRecipe` host-bound proof pass for dossier + feed now exists; further work should build on that artifact rather than reopen a broad host-family rewrite.
+- `SideRailMetadataRecipe` remains support-only; bounded host-bound proof exists for dossier + feed, but broad readiness still depends on the larger fixture/QA gates and any future hero-host decision.
 - `SiteShellNavigationRecipe` still deserves a later narrow contract pass before broad generated sites rely on persistent headers and breadcrumbs.
 - Promo-heavy, utility/dashboard, ecommerce-like, search-heavy, form-heavy, regulated or safety-critical screens remain outside current proof unless a future family contract and QA pass covers them.
 - Future consolidation should update this index whenever artifact names change. As of this pass, Pass 5 is `docs/generation-playbook-2026-05-15.md` and Pass 6 is `docs/acceptance-qa-framework-2026-05-15.md`.

@@ -170,6 +170,16 @@
         text-transform: uppercase;
       }
 
+      .feed-sidebar[data-support-recipe="side-rail-metadata"] .recipe-support-detail,
+      .feed-sidebar[data-support-recipe="side-rail-metadata"] .filter-chip,
+      .feed-sidebar[data-support-recipe="side-rail-metadata"] .filter-chip strong {
+        min-width: 0;
+      }
+
+      .feed-sidebar[data-support-recipe="side-rail-metadata"] [data-full-label] {
+        overflow-wrap: anywhere;
+      }
+
       .feed-list {
         display: grid;
         gap: 10px;
@@ -337,9 +347,9 @@
       <div class="fixture-grid">
         <section class="fixture-case" aria-labelledby="feed-clean-title">
           <h2 id="feed-clean-title">Clean: title, scope cue and scannable rows</h2>
-          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="clean">
+          <article class="fixture-feed" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="clean">
             <div class="feed-shell">
-              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="feed-clean-filters-head">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="clean-support" data-recipe-collapse="summary" aria-labelledby="feed-clean-filters-head">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-clean-filters-full">
                   <span>Scope</span>
                   <strong>River losses · 3 filters · 12 records</strong>
@@ -422,9 +432,9 @@
 
         <section class="fixture-case" aria-labelledby="feed-dense-title">
           <h2 id="feed-dense-title">Dense: longer titles and metadata variance without card-wall drift</h2>
-          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="dense">
+          <article class="fixture-feed" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="dense">
             <div class="feed-shell">
-              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Dense filters">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="dense-filter-support" data-hidden-count="2" data-recipe-collapse="summary" aria-label="Dense filters">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-dense-filters-full">
                   <span>Scope</span>
                   <strong>5 filters active · 18 records</strong>
@@ -524,11 +534,100 @@
           </article>
         </section>
 
+        <section class="fixture-case" aria-labelledby="feed-hostile-rail-title">
+          <h2 id="feed-hostile-rail-title">Hostile side rail: long filter labels and explicit hidden filters</h2>
+          <article class="fixture-feed" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="hostile-side-rail">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="long-value-hidden-count" data-hidden-count="4" data-recipe-collapse="summary" aria-label="Hostile side rail filters">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-hostile-rail-filters-full">
+                  <span>Scope</span>
+                  <strong>6 filters active · 4 hidden filters · 21 records</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4>Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Ward and quay jurisdiction</span>
+                      <strong class="recipe-label" data-full-label="River quarter, south quay annex, and the closed bridge toll office">River quarter, south quay annex, and the closed bridge toll office</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Record type</span>
+                      <strong class="recipe-label" data-full-label="Loss reports with disputed guard payments and unsigned witness copies">Loss reports with disputed guard payments and unsigned witness copies</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Date band</span>
+                      <strong class="recipe-label" data-full-label="Flood month through burial week after the fourth toll audit">Flood month through burial week after the fourth toll audit</strong>
+                    </div>
+                    <div class="filter-chip recipe-compact-hidden">
+                      <span>Cross-file pressure</span>
+                      <strong class="recipe-label" data-full-label="Widow rent, spoiled salt, ash levy, and reopened storage penalties">Widow rent, spoiled salt, ash levy, and reopened storage penalties</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-hostile-rail-filters-full" class="visually-hidden">Hostile side rail scope: six active filters, four hidden filters, twenty-one records, and long ward, record type, date band, and cross-file values. The feed rows remain the primary scan path.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-hostile-rail-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-hostile-rail-heading" class="recipe-title">The filter rail is ugly, but the first records still own the scan path.</h3>
+                  <p class="recipe-annotation">
+                    Long filter labels wrap in the secondary rail. The host keeps the current row and ordinary rows visually stronger than the support chrome.
+                  </p>
+                </div>
+                <div class="recipe-support-summary feed-summary-strip" aria-describedby="feed-hostile-rail-summary-full">
+                  <span>Scope</span>
+                  <strong>21 records · 4 hidden filters</strong>
+                </div>
+                <div class="feed-list" id="feed-hostile-rail-summary-full">
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Bridge toll apology filed with the burial register after two witnesses refused the guard fee.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">South quay</span>
+                      <span class="feed-meta-cell recipe-metadata">2 refusals</span>
+                    </div>
+                    <p class="recipe-annotation">Current row remains the first meaningful action surface.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Widow rent ledger copied the same escort charge under three different clerk hands.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Widow rent</span>
+                      <span class="feed-meta-cell recipe-metadata">3 hands</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Spoiled salt receipt kept the road watch mark after the watch dissolved.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Harbor annex</span>
+                      <span class="feed-meta-cell recipe-metadata">Watch dissolved</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
         <section class="fixture-case" aria-labelledby="feed-compact-title">
           <h2 id="feed-compact-title">Compact: filters summarize before rows lose scan clarity</h2>
-          <article class="fixture-feed recipe-density-compact" data-recipe="feed-listing" data-recipe-density="compact" data-fixture-state="compact">
+          <article class="fixture-feed recipe-density-compact" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="compact" data-fixture-state="compact">
             <div class="feed-shell">
-              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact scope summary">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="compact-summary" data-hidden-count="4" data-recipe-collapse="summary" aria-label="Compact scope summary">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-compact-filters-full">
                   <span>Scope</span>
                   <strong>River losses · 2 visible filters · 4 hidden</strong>
@@ -600,9 +699,9 @@
 
         <section class="fixture-case" aria-labelledby="feed-emergency-title">
           <h2 id="feed-emergency-title">Emergency: one clear current result path and one supporting item</h2>
-          <article class="fixture-feed recipe-density-emergency" data-recipe="feed-listing" data-recipe-density="emergency" data-fixture-state="emergency">
+          <article class="fixture-feed recipe-density-emergency" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="emergency" data-fixture-state="emergency">
             <div class="feed-shell">
-              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency scope cue">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="emergency-cue" data-recipe-collapse="summary" aria-label="Emergency scope cue">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-emergency-filters-full">
                   <span>Cue</span>
                   <strong>River losses · current file selected</strong>
@@ -652,9 +751,9 @@
 
         <section class="fixture-case" aria-labelledby="feed-featured-title">
           <h2 id="feed-featured-title">Featured mix: one louder item, quiet ordinary rows</h2>
-          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="featured-mix">
+          <article class="fixture-feed" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="featured-mix">
             <div class="feed-shell">
-              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Featured mix filters">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="featured-support" data-recipe-collapse="summary" aria-label="Featured mix filters">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-featured-filters-full">
                   <span>Scope</span>
                   <strong>Featured shortages · 1 loud item · 8 quiet rows</strong>

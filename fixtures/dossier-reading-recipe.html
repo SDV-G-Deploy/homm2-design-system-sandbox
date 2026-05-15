@@ -189,6 +189,10 @@
         max-width: 22ch;
       }
 
+      .fixture-dossier .archive-rail[data-support-recipe="side-rail-metadata"] [data-full-label] {
+        overflow-wrap: anywhere;
+      }
+
       .fixture-dossier[data-fixture-state="hostile-notes"] .note-card span {
         max-width: none;
       }
@@ -254,9 +258,9 @@
       <div class="fixture-grid">
         <section class="fixture-case" aria-labelledby="dossier-clean-title">
           <h2 id="dossier-clean-title">Clean: dominant reading field plus one orienting rail</h2>
-          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="clean">
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-primary-recipe="dossier-reading" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="clean">
             <div class="fixture-dossier-shell">
-              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="dossier-clean-rail-head">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="clean-support" data-recipe-collapse="summary" aria-labelledby="dossier-clean-rail-head">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-clean-rail-full">
                   <span>Archive cue</span>
                   <strong>Chapter IV · debt transfers · 6 entries</strong>
@@ -335,9 +339,9 @@
 
         <section class="fixture-case" aria-labelledby="dossier-compact-title">
           <h2 id="dossier-compact-title">Compact: rail and notes summarize before prose breaks</h2>
-          <article class="fixture-dossier recipe-density-compact" data-recipe="dossier-reading" data-recipe-density="compact" data-fixture-state="compact">
+          <article class="fixture-dossier recipe-density-compact" data-recipe="dossier-reading" data-primary-recipe="dossier-reading" data-support-recipes="side-rail-metadata" data-recipe-density="compact" data-fixture-state="compact">
             <div class="fixture-dossier-shell">
-              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact archive cue">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="compact-summary" data-hidden-count="3" data-recipe-collapse="summary" aria-label="Compact archive cue">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-compact-rail-full">
                   <span>Archive cue</span>
                   <strong>Debt transfers · chapter IV · 3 hidden rows</strong>
@@ -397,9 +401,9 @@
 
         <section class="fixture-case" aria-labelledby="dossier-emergency-title">
           <h2 id="dossier-emergency-title">Emergency: heading, opening block and one location cue only</h2>
-          <article class="fixture-dossier recipe-density-emergency" data-recipe="dossier-reading" data-recipe-density="emergency" data-fixture-state="emergency">
+          <article class="fixture-dossier recipe-density-emergency" data-recipe="dossier-reading" data-primary-recipe="dossier-reading" data-support-recipes="side-rail-metadata" data-recipe-density="emergency" data-fixture-state="emergency">
             <div class="fixture-dossier-shell">
-              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency archive cue">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="emergency-cue" data-recipe-collapse="summary" aria-label="Emergency archive cue">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-emergency-rail-full">
                   <span>Cue</span>
                   <strong>Chapter IV · debt transfer file</strong>
@@ -434,9 +438,9 @@
 
         <section class="fixture-case" aria-labelledby="dossier-hostile-rail-title">
           <h2 id="dossier-hostile-rail-title">Hostile rail: long archive labels and dense ledger metadata</h2>
-          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="hostile-rail">
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-primary-recipe="dossier-reading" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="hostile-rail">
             <div class="fixture-dossier-shell">
-              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="dossier-hostile-rail-head">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="long-label-hidden-count" data-hidden-count="5" data-recipe-collapse="summary" aria-labelledby="dossier-hostile-rail-head">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-hostile-rail-full">
                   <span>Archive cue</span>
                   <strong>Current record · 5 long labels hidden</strong>
@@ -445,15 +449,15 @@
                   <div id="dossier-hostile-rail-head" class="archive-rail-head">Filed chapters</div>
                   <a class="archive-rail-item active" href="#dossier-hostile-rail-heading">
                     <span>IV</span>
-                    <strong class="recipe-label">Debt transfers for widow rents, guard escorts, and the road watch that never formed</strong>
+                    <strong class="recipe-label" data-full-label="Debt transfers for widow rents, guard escorts, and the road watch that never formed">Debt transfers for widow rents, guard escorts, and the road watch that never formed</strong>
                   </a>
                   <a class="archive-rail-item" href="#dossier-hostile-rail-heading">
                     <span>III</span>
-                    <strong class="recipe-label">Supplemental witness list for south quay carriers and post-flood burial contractors</strong>
+                    <strong class="recipe-label" data-full-label="Supplemental witness list for south quay carriers and post-flood burial contractors">Supplemental witness list for south quay carriers and post-flood burial contractors</strong>
                   </a>
                   <a class="archive-rail-item" href="#dossier-hostile-rail-heading">
                     <span>II</span>
-                    <strong class="recipe-label">Mill ash survey with revised storage penalties and broken tally marks</strong>
+                    <strong class="recipe-label" data-full-label="Mill ash survey with revised storage penalties and broken tally marks">Mill ash survey with revised storage penalties and broken tally marks</strong>
                   </a>
                 </div>
                 <p id="dossier-hostile-rail-full" class="visually-hidden">Current selected rail item is debt transfers for widow rents, guard escorts, and the road watch that never formed. Five long labels are summarized in compact states.</p>
@@ -510,9 +514,9 @@
 
         <section class="fixture-case" aria-labelledby="dossier-hostile-notes-title">
           <h2 id="dossier-hostile-notes-title">Hostile notes: three uneven cards, but the opening block still wins</h2>
-          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="hostile-notes">
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-primary-recipe="dossier-reading" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="hostile-notes">
             <div class="fixture-dossier-shell">
-              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Hostile notes archive cue">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="clean-support-with-tertiary-notes" data-recipe-collapse="summary" aria-label="Hostile notes archive cue">
                 <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-hostile-notes-rail-full">
                   <span>Archive cue</span>
                   <strong>Chapter VII · burial week settlements</strong>

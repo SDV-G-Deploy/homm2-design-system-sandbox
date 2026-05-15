@@ -12,7 +12,7 @@ Acceptance QA inherits the ratified content-first sequencing from Pass 3 through
 2. DossierReadingRecipe
 3. FeedListingRecipe
 
-SideRailMetadataRecipe remains support-only until host-bound proof exists. Applied pages and bridge targets may reveal pressure, but they cannot replace canonical proof.
+SideRailMetadataRecipe remains support-only. Bounded host-bound proof now exists for dossier and feed hosts, but applied pages and bridge targets still cannot replace canonical proof or the broader acceptance matrix.
 
 ## QA Inheritance From Pass 1-5
 
@@ -279,5 +279,5 @@ If accepting the page would teach future generation the wrong system rule, it is
 - Re-read Pass 4 acceptance-relevant sections for canonical fixture primacy, hostile states, bridge/applied limits and SideRailMetadataRecipe host-bound proof.
 - Re-read Pass 5 readiness gates and conceptual-versus-proof-backed status language.
 - Confirmed this framework preserves the ratified content-first first-tranche proof logic.
-- Confirmed SideRailMetadataRecipe remains support-only until host-bound proof exists.
+- Confirmed SideRailMetadataRecipe remains support-only; bounded dossier/feed host-bound proof may exist without automatically promoting the family to broad-ready status.
 - Confirmed canonical fixtures remain primary proof, with applied pages and bridge targets limited to pressure evidence.
