@@ -28,7 +28,7 @@ The first regression-critical host tranche is:
 
 `SideRailMetadataRecipe` remains a critical support family. A bounded host-bound proof now exists for dossier-hosted and feed-hosted states, showing the rail staying secondary there; that does not by itself make broad generation credible until the wider fixture and QA gates are satisfied. Its isolated fixture can prove row budgets and summary behavior only.
 
-`SiteShellNavigationRecipe` remains important because shell navigation can compete with first-screen hierarchy, but it is not the next standalone blocker for this pass. It should be treated as surrounding support that must not become the screen recipe.
+`SiteShellNavigationRecipe` now has a bounded narrow host-bound proof in `fixtures/site-shell-navigation-recipe.html` for persistent utility nav, breadcrumb context, local section nav and route shortcuts around dossier/feed primary hosts. It should still be treated as surrounding support that must not become the screen recipe, and this proof does not cover shell-heavy generated sites broadly.
 
 `MenuScreenRecipe` remains the only fully proven canonical baseline. Other families may inherit its density names, frame-rank model, summary/cue philosophy, and compact-before-shrink rule, but they do not inherit its proof status.
 
@@ -214,7 +214,7 @@ Broad site generation is credible only when:
 - each page chooses one primary family
 - support combinations are legal and host-bound proof exists where needed
 - applied pages are checked against canonical fixtures rather than replacing them
-- shell navigation has enough contract coverage to avoid first-screen takeover
+- shell navigation has enough contract coverage to avoid first-screen takeover within the target host/support combination
 - unresolved utility, promo, ecommerce, dense dashboard, or compliance-heavy screens are excluded or routed to later dedicated passes
 
 ## Conceptual Versus Proof-Backed Outcomes
@@ -227,6 +227,7 @@ Current proof-backed generation scope:
 
 - `MenuScreenRecipe` within the existing canonical fixture scope only.
 - First-tranche host fixtures within the bounded evidence recorded in `docs/final-acceptance-closeout-2026-05-15.md` and `docs/broad-readiness-acceptance-pass-2026-05-15.md`, not as templates for unrelated page archetypes.
+- `SiteShellNavigationRecipe` as a secondary support layer only within the narrow dossier/feed host-bound proof recorded in `docs/site-shell-navigation-pass-report-2026-05-15.md`.
 
 Current conceptual but not proof-backed scope:
 
@@ -235,6 +236,7 @@ Current conceptual but not proof-backed scope:
 - Broad `FeedListingRecipe` archive and listing pages with filters, rows, and featured variants.
 - `SideRailMetadataRecipe` attached to hero hosts, and any side-rail use outside the bounded dossier/feed proof.
 - `TeaserCardBlockRecipe` as related/preview support.
+- Shell-heavy layouts where persistent headers, breadcrumbs, account/status strips or route navigation approach primary first-screen weight.
 
 Blocked until proof:
 

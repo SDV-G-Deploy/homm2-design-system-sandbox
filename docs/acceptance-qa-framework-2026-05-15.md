@@ -51,6 +51,7 @@ Current acceptance status:
 - DossierReadingRecipe: canonical fixture exists in `fixtures/dossier-reading-recipe.html`; `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` + `390x844`, and `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000` plus strict fixture typography sanity.
 - FeedListingRecipe: canonical fixture exists in `fixtures/feed-listing-recipe.html`; `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` + `390x844`, and `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000` plus strict fixture typography sanity.
 - SideRailMetadataRecipe: bounded host-bound secondary proof now exists for dossier and feed hosts; isolated unit proof, hero-host proof and broad reuse remain separate gates.
+- SiteShellNavigationRecipe: bounded narrow host-bound proof now exists in `fixtures/site-shell-navigation-recipe.html` for secondary shell behavior around dossier and feed hosts; shell-heavy generated sites, account/status-heavy headers and MenuScreenRecipe-primary exceptions remain separate gates.
 - Applied pages such as fairy-journeys.html surfaces: bridge-smoke only unless a bounded later pass promotes matching behavior into canonical fixtures.
 
 ## Viewport Matrix
@@ -128,7 +129,7 @@ Fail when:
 Expected correction:
 
 - keep shell navigation secondary unless the primary family is actually a navigation/menu family;
-- route shell-dominant behavior to a later narrow shell contract.
+- route shell-dominant behavior outside the current dossier/feed narrow proof to a later shell contract.
 
 ### Support-Panel Drift
 

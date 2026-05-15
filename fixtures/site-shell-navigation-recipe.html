@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Fixture - SiteShellNavigationRecipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink-on-night);
+        background:
+          radial-gradient(circle at 18% 14%, rgb(var(--gold-300) / 0.1), transparent 22rem),
+          radial-gradient(circle at 82% 18%, rgb(var(--mana-400) / 0.12), transparent 20rem),
+          linear-gradient(180deg, rgb(var(--ink-900)), rgb(var(--ink-950)));
+        overflow-x: clip;
+      }
+
+      .fixture-shell {
+        width: calc(100vw - 28px);
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 28px 0 56px;
+        overflow-x: hidden;
+      }
+
+      .fixture-header,
+      .fixture-case {
+        display: grid;
+        gap: 10px;
+      }
+
+      .fixture-header {
+        margin-bottom: 20px;
+      }
+
+      .fixture-header h1,
+      .fixture-case > h2,
+      .host-card h3 {
+        margin: 0;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .fixture-header h1 {
+        font-size: 42px;
+        line-height: 1.05;
+      }
+
+      .fixture-header p,
+      .fixture-case > p {
+        max-width: 76ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        line-height: 1.56;
+      }
+
+      .fixture-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .fixture-shell-proof {
+        min-height: min(760px, 100svh);
+        padding: clamp(14px, 2vw, 22px);
+        border: 1px solid rgb(var(--gold-300) / 0.18);
+        clip-path: var(--shape-panel);
+        background:
+          radial-gradient(circle at 78% 18%, rgb(var(--mana-400) / 0.1), transparent 18rem),
+          linear-gradient(145deg, rgb(36 25 18 / 0.86), rgb(var(--ink-950) / 0.95));
+        box-shadow:
+          var(--shadow-elevated),
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.05);
+      }
+
+      .site-shell-body {
+        display: grid;
+        grid-template-columns: minmax(168px, 0.45fr) minmax(0, 1.55fr) minmax(168px, 0.45fr);
+        grid-template-areas: "local host routes";
+        gap: 14px;
+        align-items: start;
+      }
+
+      .site-shell-local-nav {
+        grid-area: local;
+      }
+
+      .site-shell-host {
+        grid-area: host;
+      }
+
+      .site-shell-route-shortcuts {
+        grid-area: routes;
+      }
+
+      .site-shell-breadcrumb ol {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-shell-breadcrumb li {
+        display: inline-flex;
+        gap: 7px;
+        align-items: center;
+        min-width: 0;
+      }
+
+      .site-shell-breadcrumb li + li::before {
+        content: "/";
+        color: var(--ink-on-night-dim);
+      }
+
+      .host-card {
+        display: grid;
+        gap: 14px;
+        min-height: 430px;
+        padding: clamp(18px, 3vw, 32px);
+        border: 1px solid rgb(var(--gold-300) / 0.26);
+        clip-path: var(--shape-hero);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 26%),
+          linear-gradient(135deg, rgb(var(--gold-700) / 0.16), transparent 34%),
+          rgb(var(--ink-950) / 0.48);
+        box-shadow:
+          0 18px 38px rgb(0 0 0 / 0.22),
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
+      }
+
+      .host-card h3 {
+        max-width: 15ch;
+        color: var(--ink-on-night);
+        font-family: var(--font-display);
+        font-size: 44px;
+        line-height: 0.98;
+      }
+
+      .host-card p {
+        max-width: 58ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 17px;
+        line-height: 1.58;
+      }
+
+      .host-meta-grid,
+      .feed-row-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .host-meta-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .host-meta-grid span,
+      .feed-row {
+        min-height: var(--tap-target-compact);
+        padding: 10px 11px;
+        border: 1px solid rgb(var(--gold-300) / 0.14);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.24);
+      }
+
+      .host-meta-grid span {
+        display: grid;
+        gap: 3px;
+        color: var(--ink-on-night-soft);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .host-meta-grid strong,
+      .feed-row strong {
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wide);
+        text-transform: uppercase;
+      }
+
+      .feed-row {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+      }
+
+      .feed-row i {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgb(var(--gold-300) / 0.26);
+        clip-path: var(--shape-interactive);
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-style: normal;
+        background: rgb(var(--ink-950) / 0.28);
+      }
+
+      .feed-row span {
+        color: var(--ink-on-night-soft);
+        line-height: 1.35;
+      }
+
+      .site-shell-local-nav h3,
+      .site-shell-route-shortcuts h3 {
+        margin: 0 0 8px;
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+      }
+
+      .site-shell-local-nav a,
+      .site-shell-route-shortcuts a {
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .fixture-shell {
+          width: calc(100vw - 20px);
+          max-width: 720px;
+          padding-top: 18px;
+        }
+
+        .fixture-header h1 {
+          font-size: 30px;
+        }
+
+        .site-shell-body {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "host"
+            "local"
+            "routes";
+        }
+
+        .host-card {
+          min-height: 360px;
+        }
+
+        .host-card h3 {
+          font-size: 34px;
+        }
+
+        .host-meta-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .fixture-shell {
+          width: calc(100vw - 16px);
+        }
+
+        .fixture-shell-proof {
+          padding: 10px;
+        }
+
+        .site-shell-topbar,
+        .site-shell-breadcrumb,
+        .site-shell-local-nav,
+        .site-shell-route-shortcuts,
+        .host-card {
+          clip-path: var(--shape-bevel-sm);
+        }
+
+        .host-card {
+          padding: 16px;
+        }
+
+        .host-card h3 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="fixture-shell">
+      <header class="fixture-header">
+        <h1>SiteShellNavigationRecipe host-bound proof</h1>
+        <p>
+          Persistent utility navigation, breadcrumb context, local section navigation
+          and route shortcuts attach around one primary recipe host without becoming
+          a co-primary first-screen surface.
+        </p>
+      </header>
+
+      <div class="fixture-grid">
+        <section class="fixture-case" aria-labelledby="shell-standard-title">
+          <h2 id="shell-standard-title">Standard: dossier host owns the first-screen job</h2>
+          <p>
+            The shell is present and route-aware, but the primary frame remains the
+            DossierReadingRecipe host.
+          </p>
+
+          <article
+            class="fixture-shell-proof site-shell-navigation recipe-density-standard"
+            data-recipe="site-shell-navigation"
+            data-recipe-density="standard"
+            data-fixture-state="dossier-standard"
+            data-proof-level="host-bound"
+            data-primary-family="DossierReadingRecipe"
+            aria-labelledby="standard-host-title"
+          >
+            <header
+              class="site-shell-topbar recipe-frame-secondary"
+              data-frame-rank="secondary"
+              data-shell-role="persistent-utility"
+            >
+              <div class="site-shell-brand" data-shell-role="brand-context">
+                <strong>Evernight Archive</strong>
+                <span>Chapter II / active dossier</span>
+              </div>
+              <nav class="site-shell-nav" data-shell-role="utility-nav" aria-label="Utility navigation">
+                <a href="#shell-standard-title">Index</a>
+                <a href="#shell-standard-title" aria-current="page">Dossier</a>
+                <a href="#shell-standard-title">Map</a>
+              </nav>
+            </header>
+
+            <nav
+              class="site-shell-breadcrumb recipe-frame-tertiary"
+              data-frame-rank="tertiary"
+              data-shell-role="breadcrumb"
+              aria-label="Breadcrumb"
+            >
+              <ol>
+                <li><a href="#shell-standard-title">Archive</a></li>
+                <li><a href="#shell-standard-title">Gate records</a></li>
+                <li><span aria-current="page">Witness ledger</span></li>
+              </ol>
+            </nav>
+
+            <div class="site-shell-body">
+              <nav
+                class="site-shell-local-nav recipe-support-panel recipe-frame-secondary"
+                data-frame-rank="secondary"
+                data-shell-role="local-section-nav"
+                data-recipe-collapse="summary"
+                aria-labelledby="standard-local-title"
+              >
+                <h3 id="standard-local-title">Sections</h3>
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="standard-local-full">
+                  <span>Section</span><strong>3 nearby</strong>
+                </div>
+                <div class="recipe-support-detail" id="standard-local-full">
+                  <a href="#shell-standard-title" aria-current="page">Opening record</a>
+                  <a href="#shell-standard-title">Evidence</a>
+                  <a href="#shell-standard-title">Witness notes</a>
+                </div>
+              </nav>
+
+              <section
+                class="site-shell-host"
+                data-shell-role="primary-host-slot"
+                aria-labelledby="standard-host-title"
+              >
+                <article
+                  class="site-shell-primary-host host-card recipe-frame-primary"
+                  data-frame-rank="primary"
+                  data-recipe="dossier-reading"
+                  data-primary-family="DossierReadingRecipe"
+                  data-host-role="primary-family"
+                >
+                  <h3 id="standard-host-title" class="recipe-title">Witness ledger of the amber gate</h3>
+                  <p class="recipe-annotation">
+                    Reading starts here. The shell can orient the route and expose nearby
+                    sections, but the dossier title, summary and first record stay dominant.
+                  </p>
+                  <div class="host-meta-grid" aria-label="Dossier metadata">
+                    <span><strong>Phase</strong> testimony</span>
+                    <span><strong>Risk</strong> low ritual noise</span>
+                    <span><strong>Next</strong> compare seal marks</span>
+                  </div>
+                </article>
+              </section>
+
+              <nav
+                class="site-shell-route-shortcuts recipe-support-panel recipe-frame-tertiary"
+                data-frame-rank="tertiary"
+                data-shell-role="route-shortcuts"
+                data-recipe-collapse="summary"
+                aria-labelledby="standard-route-title"
+              >
+                <h3 id="standard-route-title">Routes</h3>
+                <div class="recipe-support-summary" aria-describedby="standard-route-full">
+                  <span>Routes</span><strong>2 shortcuts</strong>
+                </div>
+                <div class="recipe-support-detail" id="standard-route-full">
+                  <a href="#shell-standard-title">Previous seal</a>
+                  <a href="#shell-standard-title">Next witness</a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="shell-compact-title">
+          <h2 id="shell-compact-title">Compact: feed host keeps priority under shell pressure</h2>
+          <p>
+            Long utility labels and route context collapse to summaries before the
+            FeedListingRecipe host loses the first-screen scan path.
+          </p>
+
+          <article
+            class="fixture-shell-proof site-shell-navigation recipe-density-compact"
+            data-recipe="site-shell-navigation"
+            data-recipe-density="compact"
+            data-fixture-state="feed-compact"
+            data-proof-level="host-bound"
+            data-primary-family="FeedListingRecipe"
+            aria-labelledby="compact-host-title"
+          >
+            <header
+              class="site-shell-topbar recipe-frame-secondary"
+              data-frame-rank="secondary"
+              data-shell-role="persistent-utility"
+            >
+              <div class="site-shell-brand" data-shell-role="brand-context">
+                <strong>Evernight Archive</strong>
+                <span>Long-route compact fixture</span>
+              </div>
+              <nav class="site-shell-nav" data-shell-role="utility-nav" aria-label="Utility navigation">
+                <a href="#shell-compact-title">Chronicle index</a>
+                <a href="#shell-compact-title" aria-current="page">Current feed</a>
+                <a href="#shell-compact-title">Locked annexes</a>
+              </nav>
+            </header>
+
+            <nav
+              class="site-shell-breadcrumb recipe-frame-tertiary"
+              data-frame-rank="tertiary"
+              data-shell-role="breadcrumb"
+              aria-label="Breadcrumb"
+            >
+              <ol>
+                <li><a href="#shell-compact-title">Archive</a></li>
+                <li><a href="#shell-compact-title">Reports</a></li>
+                <li><span aria-current="page">Signal feed</span></li>
+              </ol>
+            </nav>
+
+            <div class="site-shell-body">
+              <nav
+                class="site-shell-local-nav recipe-support-panel recipe-frame-secondary"
+                data-frame-rank="secondary"
+                data-shell-role="local-section-nav"
+                data-recipe-collapse="summary"
+                aria-labelledby="compact-local-title"
+              >
+                <h3 id="compact-local-title">Sections</h3>
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="compact-local-full">
+                  <span>Scope</span><strong>Feed</strong>
+                </div>
+                <div class="recipe-support-detail" id="compact-local-full">
+                  <a href="#shell-compact-title" aria-current="page">All signals</a>
+                  <a href="#shell-compact-title">Unanswered marks</a>
+                  <a href="#shell-compact-title">Recovered fragments</a>
+                </div>
+              </nav>
+
+              <section
+                class="site-shell-host"
+                data-shell-role="primary-host-slot"
+                aria-labelledby="compact-host-title"
+              >
+                <article
+                  class="site-shell-primary-host host-card recipe-frame-primary"
+                  data-frame-rank="primary"
+                  data-recipe="feed-listing"
+                  data-primary-family="FeedListingRecipe"
+                  data-host-role="primary-family"
+                >
+                  <h3 id="compact-host-title" class="recipe-title">Signal feed after moonrise</h3>
+                  <p class="recipe-annotation">
+                    Listing rows remain the primary scan path. Shell shortcuts summarize
+                    around the host instead of becoming a second command slab.
+                  </p>
+                  <div class="feed-row-list" aria-label="Feed rows">
+                    <a class="feed-row" href="#shell-compact-title"><i>1</i><span><strong>Fresh</strong> lantern glyph found beside the gate hinge</span></a>
+                    <a class="feed-row" href="#shell-compact-title"><i>2</i><span><strong>Open</strong> scout report awaiting seal comparison</span></a>
+                    <a class="feed-row" href="#shell-compact-title"><i>3</i><span><strong>Next</strong> archive path into witness notes</span></a>
+                  </div>
+                </article>
+              </section>
+
+              <nav
+                class="site-shell-route-shortcuts recipe-support-panel recipe-frame-tertiary"
+                data-frame-rank="tertiary"
+                data-shell-role="route-shortcuts"
+                data-recipe-collapse="summary"
+                aria-labelledby="compact-route-title"
+              >
+                <h3 id="compact-route-title">Routes</h3>
+                <div class="recipe-support-summary" aria-describedby="compact-route-full">
+                  <span>Routes</span><strong>3 below</strong>
+                </div>
+                <div class="recipe-support-detail" id="compact-route-full">
+                  <a href="#shell-compact-title">Moon gate</a>
+                  <a href="#shell-compact-title">Lantern court</a>
+                  <a href="#shell-compact-title">Witness desk</a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

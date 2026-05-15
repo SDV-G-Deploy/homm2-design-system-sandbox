@@ -21,6 +21,7 @@ Important consolidation note:
 - The earlier Pass 2 protective-layer-first sequencing was reviewed during the Pass 1-4 audit.
 - The corrective sync ratified the content-first proof tranche: `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` first.
 - `SideRailMetadataRecipe` remains critical support. Bounded host-bound proof now exists for dossier and feed hosts, and the final plus broad-readiness closeouts cover the canonical host fixture viewport matrix; broad reuse is still gated by support-only status, unrelated page-family gaps, and any future hero-host decision.
+- `SiteShellNavigationRecipe` now has a narrow host-bound proof fixture for persistent utility nav, breadcrumb context, local section nav and route shortcuts around dossier/feed primary hosts. This reduces shell-takeover ambiguity but does not create broad shell-heavy site readiness.
 - Future readers should not treat the old sequencing question as still open unless a later pass explicitly reopens it.
 
 ## Documentation Set Overview
@@ -38,6 +39,7 @@ Use this index as the entry point before jumping into individual docs.
 | `docs/acceptance-qa-framework-2026-05-15.md` | Evidence classes, viewport matrix, blocker rules and QA checklists | Normative acceptance framework |
 | `docs/pass-1-4-audit-2026-05-15.md` | Audit that found priority drift and side-rail proof ambiguity | Historical/reference after corrective sync; useful to understand why later docs emphasize content-first and host-bound rail proof |
 | `docs/side-rail-host-bound-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded dossier+feed SideRail host-bound proof pass | Current implementation artifact; read with the broad-readiness acceptance pass for viewport/accessibility closure |
+| `docs/site-shell-navigation-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded SiteShellNavigationRecipe narrow host-bound proof pass | Current implementation artifact for shell takeover guardrails; not broad shell-navigation readiness |
 | `docs/broad-readiness-acceptance-pass-2026-05-15.md` | Acceptance/accessibility closeout for the remaining tranche-1 viewport matrix | Current proof artifact for canonical host fixture broad-readiness scope; not proof for uncontracted page families |
 
 Related older or supporting docs remain useful but are not the Pass 7 core:
@@ -88,6 +90,7 @@ These docs are operational, but they support a narrower layer than the full Pass
 | `README.md` | Repo orientation, file structure, local preview and deployment | Should be updated to point to this operator index as the doc entry point |
 | `reference.html` | Visual/manual reference and system specimens | Documentation surface only; does not define production proof |
 | `fixtures/menu-screen-recipe.html` | Canonical proof for `MenuScreenRecipe` | Does not prove hero, dossier, feed, teaser or side-rail families |
+| `fixtures/site-shell-navigation-recipe.html` | Narrow host-bound proof for `SiteShellNavigationRecipe` support behavior | Proves shell stays secondary only within its authored dossier/feed proof states |
 
 ## Historical / Audit / Reference Docs
 
@@ -247,7 +250,7 @@ No README edit is made by this Pass 7 artifact. These are repo-level recommendat
 - The bounded final closeout artifact is `docs/final-acceptance-closeout-2026-05-15.md`; it records `1440x900` and `390x844` fixture evidence. The follow-on broad-readiness artifact is `docs/broad-readiness-acceptance-pass-2026-05-15.md`; it records `360x740`, `1024x640`, `1728x1000` and strict fixture typography sanity closure.
 - The bounded `SideRailMetadataRecipe` host-bound proof pass for dossier + feed now exists; further work should build on that artifact and the final closeout evidence rather than reopen a broad host-family rewrite.
 - `SideRailMetadataRecipe` remains support-only; bounded host-bound proof exists for dossier + feed across the acceptance matrix, but hero-hosted side rail behavior and unrelated page-family reuse remain outside current proof.
-- `SiteShellNavigationRecipe` still deserves a later narrow contract pass before broad generated sites rely on persistent headers and breadcrumbs.
+- The bounded `SiteShellNavigationRecipe` narrow proof pass now exists for dossier + feed host states; further shell-heavy layouts still need their own proof and broad generated sites still cannot assume persistent headers/breadcrumbs are universally safe.
 - Promo-heavy, utility/dashboard, ecommerce-like, search-heavy, form-heavy, regulated or safety-critical screens remain outside current proof unless a future family contract and QA pass covers them.
 - Future consolidation should update this index whenever artifact names change. As of this pass, Pass 5 is `docs/generation-playbook-2026-05-15.md` and Pass 6 is `docs/acceptance-qa-framework-2026-05-15.md`.
 

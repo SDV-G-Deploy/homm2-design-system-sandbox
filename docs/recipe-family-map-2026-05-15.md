@@ -61,7 +61,7 @@ Other families may inherit MenuScreenRecipe's density names, frame-rank API, tap
 | Family | Screen / Job Served | Timing | Primary Mode | System Status | Inherits From Proven Slice | Fresh Contract Needed Before Scale |
 | --- | --- | --- | --- | --- | --- | --- |
 | MenuScreenRecipe | World entry, primary menu, chapter select, route entry | Critical first | Navigation | Proven canonical slice | Baseline | No for this family; yes for new variants |
-| SiteShellNavigationRecipe | Persistent header, local nav, breadcrumb/section routing around a recipe screen | Critical first | Navigation | Partially grounded bridge pattern | Tap floors, compact labels, frame rank, state cue | Yes |
+| SiteShellNavigationRecipe | Persistent header, local nav, breadcrumb/section routing around a recipe screen | Critical first | Navigation | Narrow host-bound proof for secondary shell behavior | Tap floors, compact labels, frame rank, state cue | Yes, for broad shell-heavy generation |
 | ArticleHeroRecipe | Story, record, chapter or feature opening that must orient before reading/listing | Critical first | Reading / orientation | New family, visually grounded only | Title bands, one-loud-thing rule, frame rank | Yes |
 | DossierReadingRecipe | Longform article, archive entry, record, comparison dossier | Critical first | Reading | Contracted but not fixture-proven | Parchment object, archive rail, density modes, text floors | Yes |
 | FeedListingRecipe | Archive index, story feed, chapter list, search/browse results | Critical first | Listing | New family | Route row state hooks, summary strips, label floors | Yes |
@@ -121,7 +121,7 @@ Timing: critical first.
 
 Primary mode: navigation.
 
-Status: partially grounded by `fairy-journeys.html`, README guidance and research-plan concerns about first-screen competition. No canonical fixture exists.
+Status: bounded narrow host-bound proof exists in `fixtures/site-shell-navigation-recipe.html` for dossier/feed primary hosts. `fairy-journeys.html`, README guidance and research-plan concerns remain bridge/background evidence for first-screen competition.
 
 Likely inherits:
 
@@ -132,7 +132,7 @@ Likely inherits:
 - `.recipe-state-cue` for current section or save/status orientation;
 - MenuScreenRecipe's rule that shell navigation stays secondary to the screen's primary recipe.
 
-Fresh contract needed: yes.
+Fresh contract needed: yes for broad shell-heavy generation, account/status-heavy headers and host combinations outside the narrow dossier/feed proof.
 
 Contract questions:
 
@@ -642,6 +642,7 @@ Later / separate track:
 Canonical surfaces:
 
 - `fixtures/menu-screen-recipe.html` is canonical for MenuScreenRecipe only.
+- `fixtures/site-shell-navigation-recipe.html` is a narrow host-bound SiteShellNavigationRecipe proof surface for secondary shell behavior around dossier/feed primary hosts.
 - Future canonical fixtures should live under `fixtures/` and encode clean, compact, emergency and stress states for the target family.
 - A canonical fixture must carry stable recipe, density and frame-rank selectors before it is used as proof.
 

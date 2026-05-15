@@ -85,6 +85,15 @@ body,
 .desk-composition,
 .ceremony-shell,
 .site-header,
+.site-shell-navigation,
+.site-shell-topbar,
+.site-shell-brand,
+.site-shell-nav,
+.site-shell-breadcrumb,
+.site-shell-local-nav,
+.site-shell-route-shortcuts,
+.site-shell-host,
+.site-shell-primary-host,
 .brand-mark,
 .hero-copy,
 .material-ledger,
@@ -281,6 +290,197 @@ button {
     0 6px 0 rgb(var(--ink-950) / 0.14),
     0 0 24px rgb(var(--gold-300) / 0.14);
   transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   SiteShellNavigationRecipe hooks
+   --------------------------------------------------------------------------
+   Narrow support hooks for persistent utility nav, breadcrumbs, local section
+   nav and route shortcuts around exactly one primary recipe host.
+   -------------------------------------------------------------------------- */
+
+.site-shell-navigation {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  display: grid;
+  gap: var(--space-3);
+  --recipe-label-lines: var(--recipe-secondary-label-lines);
+  --recipe-first-screen-budget: 100svh;
+  --recipe-primary-visible: "[data-shell-role='primary-host-slot']";
+  --recipe-secondary-visible: "[data-shell-role='persistent-utility']";
+  --recipe-collapse-order: "route-shortcuts local-nav breadcrumb utility primary-host";
+}
+
+.site-shell-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid rgb(var(--gold-300) / 0.16);
+  clip-path: var(--shape-panel);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 34%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.86), rgb(var(--ink-950) / 0.94));
+  box-shadow:
+    0 8px 0 rgb(var(--ink-950) / 0.14),
+    0 16px 28px rgb(0 0 0 / 0.22),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.site-shell-brand {
+  display: grid;
+  gap: 2px;
+  color: var(--ink-on-night-soft);
+}
+
+.site-shell-brand strong,
+.site-shell-breadcrumb,
+.site-shell-local-nav a,
+.site-shell-route-shortcuts a,
+.site-shell-nav a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.site-shell-brand strong {
+  color: var(--accent-value);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wider);
+}
+
+.site-shell-brand span {
+  color: var(--ink-on-night-mute);
+  font-size: var(--text-caption);
+  line-height: 1.35;
+}
+
+.site-shell-nav,
+.site-shell-breadcrumb,
+.site-shell-local-nav .recipe-support-detail,
+.site-shell-route-shortcuts .recipe-support-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.site-shell-nav {
+  justify-content: flex-end;
+}
+
+.site-shell-nav a,
+.site-shell-local-nav a,
+.site-shell-route-shortcuts a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target-compact);
+  padding: 8px 11px;
+  border: 1px solid rgb(var(--gold-300) / 0.18);
+  clip-path: var(--shape-interactive);
+  color: rgb(var(--parchment-50) / 0.78);
+  font-size: max(var(--label-legible-min), 12px);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.25;
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 42%),
+    rgb(var(--ink-950) / 0.24);
+}
+
+.site-shell-nav a[aria-current],
+.site-shell-local-nav a[aria-current],
+.site-shell-route-shortcuts a[aria-current] {
+  border-color: rgb(var(--gold-300) / 0.42);
+  color: var(--ink-on-night);
+  background:
+    linear-gradient(180deg, rgb(var(--gold-300) / 0.14), transparent 42%),
+    rgb(var(--ink-950) / 0.28);
+}
+
+.site-shell-breadcrumb {
+  align-items: center;
+  min-height: var(--tap-target-compact);
+  padding: 9px 11px;
+  border: 1px solid rgb(var(--gold-300) / 0.12);
+  clip-path: var(--shape-interactive);
+  color: var(--ink-on-night-mute);
+  font-size: max(var(--label-legible-min), 12px);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.35;
+  background: rgb(var(--ink-950) / 0.2);
+}
+
+.site-shell-breadcrumb [aria-current] {
+  color: var(--accent-value);
+}
+
+.site-shell-host {
+  display: grid;
+  align-content: start;
+}
+
+.site-shell-primary-host {
+  position: relative;
+  z-index: 2;
+}
+
+.site-shell-local-nav,
+.site-shell-route-shortcuts {
+  align-content: start;
+  padding: 12px;
+  border: 1px solid rgb(var(--gold-300) / 0.14);
+  clip-path: var(--shape-panel);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 34%),
+    rgb(var(--ink-950) / 0.26);
+}
+
+.site-shell-local-nav {
+  --recipe-collapse-rank: 3;
+}
+
+.site-shell-route-shortcuts {
+  --recipe-collapse-rank: 2;
+}
+
+.site-shell-local-nav .recipe-support-summary,
+.site-shell-route-shortcuts .recipe-support-summary {
+  margin-bottom: 0;
+}
+
+@container (max-width: 760px) {
+  .site-shell-topbar {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .site-shell-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-shell-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-shell-navigation .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-detail,
+  .site-shell-navigation .recipe-compact-hidden {
+    display: none !important;
+  }
+
+  .site-shell-navigation .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-summary {
+    display: flex;
+  }
 }
 
 /* --------------------------------------------------------------------------
