@@ -61,6 +61,16 @@
         gap: 18px;
       }
 
+      .fixture-dossier .recipe-title,
+      .fixture-dossier .note-card strong {
+        letter-spacing: 0;
+      }
+
+      .fixture-dossier :where(.archive-rail-head, .dossier-ledger-strip span) {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+
       .fixture-dossier {
         display: grid;
         gap: 16px;
@@ -240,6 +250,19 @@
         .fixture-dossier .dossier-ledger-strip {
           grid-template-columns: 1fr;
         }
+      }
+
+      .fixture-shell .eyebrow,
+      .fixture-dossier .archive-label,
+      .fixture-dossier .archive-rail-head,
+      .fixture-dossier .dossier-ledger-strip span {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+
+      .fixture-dossier .recipe-title,
+      .fixture-dossier .note-card strong {
+        letter-spacing: 0;
       }
     </style>
   </head>

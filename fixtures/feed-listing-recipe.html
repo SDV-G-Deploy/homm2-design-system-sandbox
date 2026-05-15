@@ -61,6 +61,15 @@
         gap: 18px;
       }
 
+      .fixture-feed .recipe-title {
+        letter-spacing: 0;
+      }
+
+      .fixture-feed :where(.filter-chip span, .feed-meta-cell, .feed-row-badge) {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+
       .fixture-feed {
         display: grid;
         gap: 16px;
@@ -109,7 +118,7 @@
         margin: 0;
         font-size: clamp(30px, 4.5vw, 58px);
         line-height: 0.95;
-        letter-spacing: -0.03em;
+        letter-spacing: 0;
       }
 
       .feed-heading p {
@@ -158,8 +167,8 @@
       .filter-chip span {
         color: var(--accent-value);
         font-family: var(--font-display);
-        font-size: 11px;
-        letter-spacing: var(--tracking-wide);
+        font-size: 12px;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
@@ -220,7 +229,7 @@
         font-family: var(--font-display);
         font-size: clamp(21px, 2.6vw, 29px);
         line-height: 1.05;
-        letter-spacing: -0.01em;
+        letter-spacing: 0;
       }
 
       .feed-heading .recipe-title,
@@ -249,8 +258,8 @@
         clip-path: var(--shape-interactive);
         background: rgb(var(--ink-950) / 0.18);
         font-family: var(--font-display);
-        font-size: 11px;
-        letter-spacing: 0.06em;
+        font-size: 12px;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
@@ -262,8 +271,8 @@
         background: rgb(var(--ink-950) / 0.26);
         color: var(--accent-value);
         font-family: var(--font-display);
-        font-size: 11px;
-        letter-spacing: 0.08em;
+        font-size: 12px;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
@@ -329,6 +338,20 @@
         .feed-row-top {
           grid-template-columns: 1fr;
         }
+      }
+
+      .fixture-shell .eyebrow,
+      .fixture-feed .filter-chip span,
+      .fixture-feed .feed-meta-cell,
+      .fixture-feed .feed-row-badge {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+      }
+
+      .fixture-feed .recipe-title,
+      .fixture-feed .feed-heading h3,
+      .fixture-feed .feed-row h4 {
+        letter-spacing: 0;
       }
     </style>
   </head>

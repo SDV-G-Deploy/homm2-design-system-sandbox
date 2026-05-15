@@ -20,7 +20,7 @@ Important consolidation note:
 
 - The earlier Pass 2 protective-layer-first sequencing was reviewed during the Pass 1-4 audit.
 - The corrective sync ratified the content-first proof tranche: `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` first.
-- `SideRailMetadataRecipe` remains critical support. A bounded host-bound proof now exists for dossier and feed hosts, and the final closeout pass adds `1440x900` + `390x844` fixture evidence; broad reuse is still gated by the wider fixture/QA requirements and by any future hero-host decision.
+- `SideRailMetadataRecipe` remains critical support. Bounded host-bound proof now exists for dossier and feed hosts, and the final plus broad-readiness closeouts cover the canonical host fixture viewport matrix; broad reuse is still gated by support-only status, unrelated page-family gaps, and any future hero-host decision.
 - Future readers should not treat the old sequencing question as still open unless a later pass explicitly reopens it.
 
 ## Documentation Set Overview
@@ -37,7 +37,8 @@ Use this index as the entry point before jumping into individual docs.
 | `docs/generation-playbook-2026-05-15.md` | How to assemble new sites from recipe families and gates | Normative operational playbook; broad generation remains gated by fixture and QA proof |
 | `docs/acceptance-qa-framework-2026-05-15.md` | Evidence classes, viewport matrix, blocker rules and QA checklists | Normative acceptance framework |
 | `docs/pass-1-4-audit-2026-05-15.md` | Audit that found priority drift and side-rail proof ambiguity | Historical/reference after corrective sync; useful to understand why later docs emphasize content-first and host-bound rail proof |
-| `docs/side-rail-host-bound-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded dossier+feed SideRail host-bound proof pass | Current implementation artifact; not a replacement for the normative gates |
+| `docs/side-rail-host-bound-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded dossier+feed SideRail host-bound proof pass | Current implementation artifact; read with the broad-readiness acceptance pass for viewport/accessibility closure |
+| `docs/broad-readiness-acceptance-pass-2026-05-15.md` | Acceptance/accessibility closeout for the remaining tranche-1 viewport matrix | Current proof artifact for canonical host fixture broad-readiness scope; not proof for uncontracted page families |
 
 Related older or supporting docs remain useful but are not the Pass 7 core:
 
@@ -119,7 +120,7 @@ Add `docs/fixture-strategy-2026-05-15.md` before claiming any output is proof-ba
 Operator rule:
 
 - A new site may be conceptually assembled when one primary family, legal support families, budgets, downgrade order and proof status are named.
-- Broad hero/dossier/feed generation is not proof-backed until the canonical host fixtures pass the full QA matrix. The fixtures now exist and have bounded desktop/mobile closeout evidence, but that is narrower than broad readiness.
+- Broad hero/dossier/feed generation is proof-backed only within the canonical fixture states now covered by the full acceptance viewport matrix. Do not extend that claim to unrelated page archetypes, shell-navigation-heavy layouts, applied pages, or unproven support combinations.
 - Applied pages and bridge smoke targets can reveal pressure, but they do not replace canonical fixture proof.
 
 ### 2. System Maintenance / Extension
@@ -233,7 +234,7 @@ Recommended README changes:
 2. In "How to read the repo", point humans and agents to this index before `reference.html` when the goal is system generation, maintenance or audit.
 3. Add a "Current documentation core" list with the six normative docs: constitution, recipe map, content contracts, fixture strategy, generation playbook and acceptance QA framework.
 4. Clarify that `reference.html` is a documentation/manual surface, not the source of proof for production recipes.
-5. Clarify current proof status: `MenuScreenRecipe` is the proven canonical baseline; hero, dossier and feed now have tranche-1 canonical fixtures plus bounded `1440x900`/`390x844` closeout evidence, but broader proof still depends on fuller QA and accessibility evidence.
+5. Clarify current proof status: `MenuScreenRecipe` is the proven canonical baseline; hero, dossier and feed now have tranche-1 canonical fixtures with `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000` evidence plus strict fixture typography sanity closure.
 
 No README edit is made by this Pass 7 artifact. These are repo-level recommendations for the next maintenance pass.
 
@@ -243,9 +244,9 @@ No README edit is made by this Pass 7 artifact. These are repo-level recommendat
   - `fixtures/article-hero-recipe.html`
   - `fixtures/dossier-reading-recipe.html`
   - `fixtures/feed-listing-recipe.html`
-- The bounded final closeout artifact is `docs/final-acceptance-closeout-2026-05-15.md`; it records `1440x900` and `390x844` fixture evidence plus residual blockers.
+- The bounded final closeout artifact is `docs/final-acceptance-closeout-2026-05-15.md`; it records `1440x900` and `390x844` fixture evidence. The follow-on broad-readiness artifact is `docs/broad-readiness-acceptance-pass-2026-05-15.md`; it records `360x740`, `1024x640`, `1728x1000` and strict fixture typography sanity closure.
 - The bounded `SideRailMetadataRecipe` host-bound proof pass for dossier + feed now exists; further work should build on that artifact and the final closeout evidence rather than reopen a broad host-family rewrite.
-- `SideRailMetadataRecipe` remains support-only; bounded host-bound proof exists for dossier + feed, but broad readiness still depends on the larger fixture/QA gates, strict accessibility sanity, and any future hero-host decision.
+- `SideRailMetadataRecipe` remains support-only; bounded host-bound proof exists for dossier + feed across the acceptance matrix, but hero-hosted side rail behavior and unrelated page-family reuse remain outside current proof.
 - `SiteShellNavigationRecipe` still deserves a later narrow contract pass before broad generated sites rely on persistent headers and breadcrumbs.
 - Promo-heavy, utility/dashboard, ecommerce-like, search-heavy, form-heavy, regulated or safety-critical screens remain outside current proof unless a future family contract and QA pass covers them.
 - Future consolidation should update this index whenever artifact names change. As of this pass, Pass 5 is `docs/generation-playbook-2026-05-15.md` and Pass 6 is `docs/acceptance-qa-framework-2026-05-15.md`.

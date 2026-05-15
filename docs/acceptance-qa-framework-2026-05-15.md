@@ -47,9 +47,9 @@ Use these labels in QA notes and handoffs.
 Current acceptance status:
 
 - MenuScreenRecipe: canonical-proof-backed only within the existing menu fixture scope.
-- ArticleHeroRecipe: canonical fixture exists in `fixtures/article-hero-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
-- DossierReadingRecipe: canonical fixture exists in `fixtures/dossier-reading-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
-- FeedListingRecipe: canonical fixture exists in `fixtures/feed-listing-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
+- ArticleHeroRecipe: canonical fixture exists in `fixtures/article-hero-recipe.html`; `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` + `390x844`, and `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000` plus strict fixture typography sanity.
+- DossierReadingRecipe: canonical fixture exists in `fixtures/dossier-reading-recipe.html`; `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` + `390x844`, and `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000` plus strict fixture typography sanity.
+- FeedListingRecipe: canonical fixture exists in `fixtures/feed-listing-recipe.html`; `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` + `390x844`, and `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000` plus strict fixture typography sanity.
 - SideRailMetadataRecipe: bounded host-bound secondary proof now exists for dossier and feed hosts; isolated unit proof, hero-host proof and broad reuse remain separate gates.
 - Applied pages such as fairy-journeys.html surfaces: bridge-smoke only unless a bounded later pass promotes matching behavior into canonical fixtures.
 
@@ -205,7 +205,8 @@ Implementation note:
 
 - The tranche-1 host fixtures now exist.
 - A bounded final closeout pass now covers `1440x900` and `390x844` for the tranche-1 host fixtures.
-- Broad generation should still wait for a fuller QA matrix pass across all required viewport states, plus strict accessibility sanity cleanup.
+- A broad-readiness closeout pass now covers the remaining `360x740`, `1024x640`, and `1728x1000` matrix states and closes strict fixture typography sanity for these three canonical fixtures.
+- Broad generated sites are still limited to page archetypes that map to these proof-backed surfaces; shell-navigation, promo-heavy, dashboard-heavy, search-heavy, applied-page, regulated and other uncontracted screens remain outside this proof.
 
 Each host fixture must include:
 
@@ -280,5 +281,5 @@ If accepting the page would teach future generation the wrong system rule, it is
 - Re-read Pass 4 acceptance-relevant sections for canonical fixture primacy, hostile states, bridge/applied limits and SideRailMetadataRecipe host-bound proof.
 - Re-read Pass 5 readiness gates and conceptual-versus-proof-backed status language.
 - Confirmed this framework preserves the ratified content-first first-tranche proof logic.
-- Confirmed SideRailMetadataRecipe remains support-only; bounded dossier/feed host-bound proof may exist without automatically promoting the family to broad-ready status.
+- Confirmed SideRailMetadataRecipe remains support-only; bounded dossier/feed host-bound proof exists without automatically promoting the family beyond support status.
 - Confirmed canonical fixtures remain primary proof, with applied pages and bridge targets limited to pressure evidence.

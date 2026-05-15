@@ -14,7 +14,7 @@ Sources carried forward:
 - `docs/fixture-strategy-2026-05-15.md`
 - `docs/pass-1-4-audit-2026-05-15.md`
 
-The playbook is intentionally conservative. It names what a generator may conceptually assemble, but it does not claim broad generation is credible until the regression-critical host fixtures pass the full viewport and accessibility gates. The first-tranche host fixtures now exist and have a bounded desktop/mobile closeout pass, but that is not the same as broad generation readiness.
+The playbook is intentionally conservative. It names what a generator may conceptually assemble, and the first-tranche host fixtures now have proof-backed fixture evidence across the acceptance viewport matrix plus strict fixture typography sanity. That supports broad readiness only for these canonical host recipe surfaces, not for every generated site archetype.
 
 ## Ratified Assumptions Entering Pass 5
 
@@ -64,7 +64,7 @@ The hero must not become a scenic poster. Art, captions, secondary CTAs, and met
 Proof status:
 
 - Conceptually generatable: hero-led pages, hero-to-dossier pages, and hero-to-feed pages that obey the documented budgets.
-- Proof-backed today: bounded fixture-scope evidence exists for the canonical hero fixture at `1440x900` and `390x844`; broad use remains blocked until fuller QA confirms the remaining viewport states and strict accessibility sanity.
+- Proof-backed today: fixture-scope evidence exists for the canonical hero fixture at `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000`, with strict fixture typography sanity closed.
 
 ## Host / Support Composition Rules
 
@@ -106,10 +106,10 @@ Allowed here means conceptually valid under the recipe map. It does not mean bro
 | Archetype | Primary family | Legal support | Current generation status |
 | --- | --- | --- | --- |
 | World entry / chapter select | `MenuScreenRecipe` | Shell nav, route/status cues, limited side rail | Proof-backed only for current menu fixture scope |
-| Story or record opener | `ArticleHeroRecipe` | Side rail summary, one onward action, bounded art | Conceptual until hero fixture proof exists |
-| Article / archive dossier | `DossierReadingRecipe` | Article hero opening slot, side rail summary, note cards, limited teaser block below primary reading | Conceptual until dossier fixture proof exists |
-| Archive index / story feed | `FeedListingRecipe` | Article hero opening slot, compact filters, side rail summary, teaser cards as ranked support | Conceptual until feed fixture proof exists |
-| Featured collection opener | `ArticleHeroRecipe` or `FeedListingRecipe` by first-screen job | One featured item plus quieter rows/cards | Conceptual; broad generation waits for hero and feed proof |
+| Story or record opener | `ArticleHeroRecipe` | Side rail summary, one onward action, bounded art | Proof-backed within canonical hero fixture scope; hero-hosted SideRail remains unproven |
+| Article / archive dossier | `DossierReadingRecipe` | Article hero opening slot, side rail summary, note cards, limited teaser block below primary reading | Proof-backed within canonical dossier fixture scope, including dossier-hosted SideRail |
+| Archive index / story feed | `FeedListingRecipe` | Article hero opening slot, compact filters, side rail summary, teaser cards as ranked support | Proof-backed within canonical feed fixture scope, including feed-hosted SideRail |
+| Featured collection opener | `ArticleHeroRecipe` or `FeedListingRecipe` by first-screen job | One featured item plus quieter rows/cards | Proof-backed only when it maps to the canonical hero/feed fixture states |
 | Dossier with related links | `DossierReadingRecipe` | TeaserCardBlockRecipe below or after primary reading obligation | Conceptual; teaser support still needs mixed-rank proof |
 | Route/progression state page | `RouteBoardRecipe` | Side rail/status support, shell nav | Conditional; not part of first broad-generation tranche |
 | Ritual/action threshold | `RitualThresholdRecipe` | Minimal status/context support | Conditional; only when commitment is real |
@@ -174,17 +174,17 @@ Bounded experiments should not be used to claim the design system can broadly ge
 
 ### Gate 2: Host Fixture Proof
 
-Generation of hero/dossier/feed pages remains blocked from broad proof-backed use until these canonical fixtures are QA-backed across the full matrix:
+Proof-backed generation for hero/dossier/feed pages depends on these canonical fixtures and their QA evidence:
 
 - `fixtures/article-hero-recipe.html`
 - `fixtures/dossier-reading-recipe.html`
 - `fixtures/feed-listing-recipe.html`
 
-Each now exists and includes hostile/density states, stable recipe/density/frame-rank selectors, summary/cue hooks where relevant, and accessible full-text carriers for compact states. The bounded closeout pass in `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` and `390x844`; `360x740`, `1024x640`, `1728x1000`, and strict accessibility typography sanity remain open before broad acceptance.
+Each now exists and includes hostile/density states, stable recipe/density/frame-rank selectors, summary/cue hooks where relevant, and accessible full-text carriers for compact states. The bounded closeout pass in `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` and `390x844`; `docs/broad-readiness-acceptance-pass-2026-05-15.md` covers `360x740`, `1024x640`, `1728x1000`, and strict fixture typography sanity.
 
 ### Gate 3: Viewport And Accessibility QA
 
-Broad generation is not credible until the first-tranche fixtures pass a viewport QA matrix at minimum for desktop and mobile pressure:
+Broad generation for the first-tranche host surfaces is credible only where the fixture evidence satisfies this viewport and accessibility matrix:
 
 - primary task visible in the first viewport at `1440 x 900` and `390 x 844`
 - no unintended horizontal overflow
@@ -204,7 +204,7 @@ Broad generation is not credible until the first-tranche fixtures pass a viewpor
 - at least one feed-hosted or hero-hosted state proves the rail stays secondary to rows or hero orientation
 - filter-heavy rail behavior is either bounded inside the rail contract or split into a future filter pattern
 
-The current bounded implementation/report satisfies the dossier-host and feed-host proof minimum, but it still does not replace the broader viewport/accessibility QA gates for claiming system-wide readiness.
+The current bounded implementation/report plus `docs/broad-readiness-acceptance-pass-2026-05-15.md` satisfies the dossier-host and feed-host proof minimum across the acceptance viewport matrix. It still does not prove ArticleHeroRecipe + SideRailMetadataRecipe or promote SideRailMetadataRecipe beyond support-only status.
 
 ### Gate 5: Broad Site Generation
 
@@ -226,7 +226,7 @@ Proof-backed outcomes require canonical fixtures, hostile content states, stable
 Current proof-backed generation scope:
 
 - `MenuScreenRecipe` within the existing canonical fixture scope only.
-- First-tranche host fixtures only within the bounded evidence recorded in `docs/final-acceptance-closeout-2026-05-15.md`, not as broad generation templates.
+- First-tranche host fixtures within the bounded evidence recorded in `docs/final-acceptance-closeout-2026-05-15.md` and `docs/broad-readiness-acceptance-pass-2026-05-15.md`, not as templates for unrelated page archetypes.
 
 Current conceptual but not proof-backed scope:
 
@@ -258,6 +258,6 @@ Blocked until proof:
 ## Verification
 
 - Re-read the corrective sections in Pass 2, Pass 3, and Pass 4 covering the ratified content-first pivot.
-- Confirmed this playbook agrees with SideRailMetadataRecipe as support-only until host-bound proof exists.
+- Confirmed this playbook agrees with SideRailMetadataRecipe as support-only even after bounded dossier/feed host-bound proof.
 - Confirmed hero, dossier, and feed remain the first regression-critical proof tranche.
 - Final consistency pass checked against Pass 2-4 anti-patterns, fixture gates, and proof-status language.

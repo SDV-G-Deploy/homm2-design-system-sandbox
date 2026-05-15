@@ -59,7 +59,7 @@ Out of scope for this pass: shell-navigation contract pass, broad CSS rewrite, n
 - Dossier and feed SideRailMetadataRecipe host-bound states pass the bounded secondary-behavior check. Rails keep `data-frame-rank="secondary"`, use summary/collapse hooks, carry hidden-count hooks where needed, and remain narrower than the primary frame on desktop.
 - Feed listing satisfies the mobile scan-path obligation in the rendered states checked here: the relative row pass shows 2+ rows or a featured row plus a current/ordinary row visible within `390x844`.
 - No unintended horizontal overflow was detected in the tested host states.
-- Strict accessibility sanity is not fully closed: fixtures still use negative letter spacing on display recipe titles and 10-11px uppercase/meta labels in several places. The pass did not prove whether these are purely stylistic or used to force fit, so broad accessibility acceptance remains blocked.
+- Superseded by the broad-readiness closeout: fixture-local typography fixes remove negative display-title tracking and hard-coded 10-11px uppercase/meta labels from the three canonical fixtures, and rendered typography-pressure checks now pass for that bounded fixture tranche.
 
 ## Doc Adjustments
 
@@ -74,8 +74,8 @@ Docs should also stay conservative:
 
 ## Remaining Blockers
 
-- Full viewport matrix was not run in this closeout pass: `360x740`, `1024x640`, and `1728x1000` remain required before broad proof-backed generation.
-- Strict accessibility typography sanity remains open because rendered metrics still show negative display-title tracking and sub-12px uppercase/meta labels.
+- Superseded by `docs/broad-readiness-acceptance-pass-2026-05-15.md`: the remaining `360x740`, `1024x640`, and `1728x1000` viewport matrix has now been run for the tranche-1 canonical host fixtures.
+- Superseded by `docs/broad-readiness-acceptance-pass-2026-05-15.md`: fixture-local typography fixes close the strict negative-tracking and hard-coded 10-11px uppercase/meta-label sanity issue for the three canonical fixtures.
 - ArticleHeroRecipe + SideRailMetadataRecipe remains unimplemented and unproven; only hero metadata/bridge secondary behavior was checked.
 - OpenClaw browser could not navigate to the local fixture server in this environment; local headless Chromium provided the fallback evidence.
 
@@ -83,4 +83,4 @@ Docs should also stay conservative:
 
 The remaining documentation tail can close with a conservative readiness statement:
 
-The first-tranche host fixtures now have bounded desktop/mobile acceptance evidence at `1440x900` and `390x844`. Dossier and feed SideRailMetadataRecipe host-bound states are proof-backed for staying secondary inside those canonical hosts under this bounded pass. Broad generation readiness remains blocked until the full viewport matrix and stricter accessibility sanity gaps are resolved.
+The first-tranche host fixtures have bounded desktop/mobile acceptance evidence at `1440x900` and `390x844`. A later broad-readiness closeout adds `360x740`, `1024x640`, and `1728x1000` evidence and closes the strict fixture typography sanity gap for those canonical fixtures. Dossier and feed SideRailMetadataRecipe host-bound states are proof-backed for staying secondary inside those canonical hosts. Broad site-generation readiness remains limited to the proven recipe surfaces and does not cover shell-navigation, promo-heavy, dashboard-heavy, search-heavy, applied-page, or hero-hosted SideRail combinations.
