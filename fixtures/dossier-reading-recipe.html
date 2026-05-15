@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Fixture - DossierReadingRecipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink-on-night);
+        background:
+          radial-gradient(circle at 20% 14%, rgb(var(--gold-300) / 0.1), transparent 22rem),
+          radial-gradient(circle at 80% 16%, rgb(var(--mana-400) / 0.12), transparent 20rem),
+          linear-gradient(180deg, #120f0e, #090807);
+      }
+
+      .fixture-shell {
+        width: min(1240px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .fixture-header,
+      .fixture-case {
+        display: grid;
+        gap: 10px;
+      }
+
+      .fixture-header {
+        margin-bottom: 20px;
+      }
+
+      .fixture-header h1,
+      .fixture-case > h2 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      .fixture-header h1 {
+        font-size: clamp(30px, 4vw, 52px);
+      }
+
+      .fixture-header p {
+        max-width: 72ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        line-height: 1.56;
+      }
+
+      .fixture-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .fixture-dossier {
+        display: grid;
+        gap: 16px;
+        min-height: min(760px, var(--first-screen-dossier));
+        padding: clamp(16px, 2.6vw, 28px);
+        border: 1px solid rgb(var(--gold-300) / 0.18);
+        clip-path: var(--shape-panel);
+        background:
+          radial-gradient(circle at 14% 14%, rgb(var(--gold-300) / 0.08), transparent 18rem),
+          linear-gradient(145deg, rgb(44 31 20 / 0.8), rgb(var(--ink-900) / 0.96));
+        box-shadow:
+          var(--shadow-elevated),
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.05);
+      }
+
+      .fixture-dossier-shell {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(190px, 0.64fr) minmax(0, 1.55fr) minmax(180px, 0.72fr);
+        grid-template-areas: "archive dossier notes";
+        gap: 18px;
+        align-items: start;
+      }
+
+      .fixture-dossier-shell::before {
+        content: "";
+        position: absolute;
+        left: 3%;
+        top: 10%;
+        width: 78px;
+        height: 74%;
+        border-radius: 18px;
+        background:
+          linear-gradient(90deg, rgb(var(--parchment-50) / 0.08), transparent),
+          linear-gradient(180deg, #6f6458, #2b2621);
+        box-shadow:
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.08),
+          18px 18px 38px rgb(0 0 0 / 0.28);
+        clip-path: polygon(0 4%, 100% 0, 88% 100%, 10% 96%);
+        pointer-events: none;
+      }
+
+      .fixture-dossier .archive-rail,
+      .fixture-dossier .side-notes,
+      .fixture-dossier .parchment-object {
+        min-width: 0;
+      }
+
+      .fixture-dossier .archive-rail {
+        align-self: stretch;
+      }
+
+      .fixture-dossier .recipe-support-detail {
+        display: grid;
+        gap: 8px;
+      }
+
+      .fixture-dossier .archive-rail-head {
+        margin-bottom: 4px;
+      }
+
+      .fixture-dossier .archive-rail-item {
+        text-decoration: none;
+      }
+
+      .fixture-dossier .archive-rail-item strong {
+        max-width: none;
+      }
+
+      .fixture-dossier .parchment-object {
+        max-width: none;
+        width: 100%;
+        min-height: 0;
+      }
+
+      .fixture-dossier .dossier-head h3 {
+        max-width: 15ch;
+      }
+
+      .fixture-dossier .dossier-head .recipe-title {
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+      }
+
+      .fixture-dossier .dossier-body {
+        display: grid;
+        gap: 14px;
+      }
+
+      .fixture-dossier .dossier-body p {
+        margin: 0;
+      }
+
+      .fixture-dossier .dossier-opening {
+        max-width: var(--measure-prose);
+      }
+
+      .fixture-dossier .dossier-ledger-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 0;
+      }
+
+      .dossier-ledger-summary {
+        display: none;
+        margin-top: 0;
+      }
+
+      .fixture-dossier .annotation-grid {
+        margin-top: 0;
+      }
+
+      .fixture-dossier .side-notes {
+        grid-area: notes;
+      }
+
+      .fixture-dossier .side-notes .recipe-support-detail {
+        gap: 12px;
+      }
+
+      .fixture-dossier .note-card strong {
+        max-width: none;
+      }
+
+      .fixture-dossier[data-fixture-state="hostile-rail"] .archive-rail-item strong {
+        max-width: 22ch;
+      }
+
+      .fixture-dossier[data-fixture-state="hostile-notes"] .note-card span {
+        max-width: none;
+      }
+
+      :where(.fixture-dossier.recipe-density-compact, .fixture-dossier.recipe-density-emergency, .fixture-dossier[data-recipe-density="compact"], .fixture-dossier[data-recipe-density="emergency"]) .dossier-ledger-summary {
+        display: flex;
+      }
+
+      @media (max-width: 1100px) {
+        .fixture-dossier-shell {
+          grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
+          grid-template-areas:
+            "dossier dossier"
+            "archive notes";
+        }
+
+        .fixture-dossier .dossier-ledger-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .fixture-shell {
+          width: min(100vw - 18px, 1240px);
+          padding-top: 18px;
+        }
+
+        .fixture-dossier {
+          min-height: auto;
+          padding: 12px;
+        }
+
+        .fixture-dossier-shell {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "dossier"
+            "archive"
+            "notes";
+        }
+
+        .fixture-dossier-shell::before {
+          display: none;
+        }
+
+        .fixture-dossier .dossier-ledger-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="fixture-shell">
+      <header class="fixture-header">
+        <p class="eyebrow">Canonical fixture</p>
+        <h1>DossierReadingRecipe host-proof target</h1>
+        <p>
+          This fixture keeps the parchment reading field primary under rail, ledger and note
+          pressure. Hostile states push long archive labels, uneven notes and dense metadata,
+          but the first readable block stays above fold before support surfaces.
+        </p>
+      </header>
+
+      <div class="fixture-grid">
+        <section class="fixture-case" aria-labelledby="dossier-clean-title">
+          <h2 id="dossier-clean-title">Clean: dominant reading field plus one orienting rail</h2>
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="clean">
+            <div class="fixture-dossier-shell">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="dossier-clean-rail-head">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-clean-rail-full">
+                  <span>Archive cue</span>
+                  <strong>Chapter IV · debt transfers · 6 entries</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div id="dossier-clean-rail-head" class="archive-rail-head">Filed chapters</div>
+                  <a class="archive-rail-item active" href="#dossier-clean-heading">
+                    <span>IV</span>
+                    <strong class="recipe-label">Debt transfers</strong>
+                  </a>
+                  <a class="archive-rail-item" href="#dossier-clean-heading">
+                    <span>III</span>
+                    <strong class="recipe-label">South quay witness list</strong>
+                  </a>
+                  <a class="archive-rail-item" href="#dossier-clean-heading">
+                    <span>II</span>
+                    <strong class="recipe-label">Mill accounts</strong>
+                  </a>
+                </div>
+                <p id="dossier-clean-rail-full" class="visually-hidden">Current archive location is chapter four debt transfers. Six filed entries remain in the rail.</p>
+              </aside>
+
+              <article class="parchment-object recipe-frame-primary" data-frame-rank="primary" aria-labelledby="dossier-clean-heading">
+                <header class="dossier-head">
+                  <div>
+                    <p class="archive-label">Town archive extract</p>
+                    <h3 id="dossier-clean-heading" class="recipe-title">Why the baker's widow kept paying for guards after the mill burned.</h3>
+                  </div>
+                  <span class="wax-seal" aria-hidden="true">✦</span>
+                </header>
+
+                <div class="dossier-body">
+                  <p class="dossier-text dossier-opening">
+                    The first receipt says the guards watched an empty yard. The second says they were paid to escort a flour cart that never arrived. The widow's handwriting appears only in the margins, where she notes that the mill was ash long before the escort schedule began.
+                  </p>
+                  <p class="dossier-text">
+                    The opening block stays visible before notes or rail detail. Ledger fields below refine the claim without displacing the reading measure.
+                  </p>
+                  <div class="recipe-support-summary dossier-ledger-summary" aria-describedby="dossier-clean-ledger-full">
+                    <span>Ledger summary</span>
+                    <strong>3 payments · ash verified · escort false</strong>
+                  </div>
+                  <div class="dossier-ledger-strip recipe-compact-hidden recipe-emergency-hidden" aria-label="Ledger markers">
+                    <span>Seal 04</span>
+                    <span>3 payments logged</span>
+                    <span>Ash verified at dawn</span>
+                    <span>Escort route missing</span>
+                  </div>
+                </div>
+                <p id="dossier-clean-ledger-full" class="visually-hidden">Full ledger summary: seal zero four, three payments logged, ash verified at dawn, escort route missing.</p>
+              </article>
+
+              <aside class="side-notes recipe-support-panel recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-labelledby="dossier-clean-notes-head">
+                <div class="recipe-support-summary" aria-describedby="dossier-clean-notes-full">
+                  <span>Notes</span>
+                  <strong>2 side notes below reading</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div id="dossier-clean-notes-head" class="archive-rail-head">Marginal notes</div>
+                  <div class="note-card high-note">
+                    <p class="archive-label">Clerk remark</p>
+                    <strong>Witness order changed after burial week.</strong>
+                    <span>Quiet support, not co-primary reading.</span>
+                  </div>
+                  <div class="note-card low-note">
+                    <p class="archive-label">Material cue</p>
+                    <strong>Flour dust still trapped in the wax.</strong>
+                    <span>Short note remains tertiary.</span>
+                  </div>
+                </div>
+                <p id="dossier-clean-notes-full" class="visually-hidden">Two marginal notes exist and stay below the primary reading field.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="dossier-compact-title">
+          <h2 id="dossier-compact-title">Compact: rail and notes summarize before prose breaks</h2>
+          <article class="fixture-dossier recipe-density-compact" data-recipe="dossier-reading" data-recipe-density="compact" data-fixture-state="compact">
+            <div class="fixture-dossier-shell">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact archive cue">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-compact-rail-full">
+                  <span>Archive cue</span>
+                  <strong>Debt transfers · chapter IV · 3 hidden rows</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="archive-rail-head">Filed chapters</div>
+                  <a class="archive-rail-item active" href="#dossier-compact-heading">
+                    <span>IV</span>
+                    <strong class="recipe-label">Debt transfers</strong>
+                  </a>
+                </div>
+                <p id="dossier-compact-rail-full" class="visually-hidden">Compact archive cue: chapter four debt transfers with three hidden rows.</p>
+              </aside>
+
+              <article class="parchment-object recipe-frame-primary" data-frame-rank="primary" aria-labelledby="dossier-compact-heading">
+                <header class="dossier-head">
+                  <div>
+                    <p class="archive-label">Quarter ledger</p>
+                    <h3 id="dossier-compact-heading" class="recipe-title">The widow paid for an escort after the road was already closed.</h3>
+                  </div>
+                  <span class="wax-seal" aria-hidden="true">✦</span>
+                </header>
+                <div class="dossier-body">
+                  <p class="dossier-text dossier-opening">
+                    The opening record stays intact: one escort payment, one ash survey, one clerk correction. Extra notes move below instead of squeezing the parchment copy.
+                  </p>
+                  <div class="recipe-support-summary dossier-ledger-summary" aria-describedby="dossier-compact-ledger-full">
+                    <span>Ledger summary</span>
+                    <strong>Escort paid · road closed · clerk corrected</strong>
+                  </div>
+                  <div class="dossier-ledger-strip recipe-compact-hidden recipe-emergency-hidden" aria-label="Compact ledger markers">
+                    <span>Escort paid</span>
+                    <span>Road closed</span>
+                    <span>Clerk corrected</span>
+                  </div>
+                </div>
+                <p id="dossier-compact-ledger-full" class="visually-hidden">Compact ledger summary: escort paid, road closed, clerk corrected.</p>
+              </article>
+
+              <aside class="side-notes recipe-support-panel recipe-frame-tertiary" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Compact notes">
+                <div class="recipe-support-summary" aria-describedby="dossier-compact-notes-full">
+                  <span>Notes</span>
+                  <strong>2 notes moved below</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="note-card high-note">
+                    <p class="archive-label">Schedule cue</p>
+                    <strong>Burial week renamed.</strong>
+                    <span>Compact state keeps only the summary above fold.</span>
+                  </div>
+                </div>
+                <p id="dossier-compact-notes-full" class="visually-hidden">Two notes are summarized and move below the first readable block.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="dossier-emergency-title">
+          <h2 id="dossier-emergency-title">Emergency: heading, opening block and one location cue only</h2>
+          <article class="fixture-dossier recipe-density-emergency" data-recipe="dossier-reading" data-recipe-density="emergency" data-fixture-state="emergency">
+            <div class="fixture-dossier-shell">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency archive cue">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-emergency-rail-full">
+                  <span>Cue</span>
+                  <strong>Chapter IV · debt transfer file</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="archive-rail-head">Filed chapters</div>
+                  <a class="archive-rail-item active" href="#dossier-emergency-heading">
+                    <span>IV</span>
+                    <strong class="recipe-label">Debt transfer file</strong>
+                  </a>
+                </div>
+                <p id="dossier-emergency-rail-full" class="visually-hidden">Emergency archive cue: chapter four debt transfer file.</p>
+              </aside>
+
+              <article class="parchment-object recipe-frame-primary" data-frame-rank="primary" aria-labelledby="dossier-emergency-heading">
+                <header class="dossier-head">
+                  <div>
+                    <p class="archive-label recipe-emergency-hidden">Court copy</p>
+                    <h3 id="dossier-emergency-heading" class="recipe-title">The escort was paid after the road closed.</h3>
+                  </div>
+                  <span class="wax-seal recipe-emergency-hidden" aria-hidden="true">✦</span>
+                </header>
+                <div class="dossier-body">
+                  <p class="dossier-text dossier-opening">
+                    The first payment note survived, the route did not, and the widow marked both in the same margin.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="dossier-hostile-rail-title">
+          <h2 id="dossier-hostile-rail-title">Hostile rail: long archive labels and dense ledger metadata</h2>
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="hostile-rail">
+            <div class="fixture-dossier-shell">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="dossier-hostile-rail-head">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-hostile-rail-full">
+                  <span>Archive cue</span>
+                  <strong>Current record · 5 long labels hidden</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div id="dossier-hostile-rail-head" class="archive-rail-head">Filed chapters</div>
+                  <a class="archive-rail-item active" href="#dossier-hostile-rail-heading">
+                    <span>IV</span>
+                    <strong class="recipe-label">Debt transfers for widow rents, guard escorts, and the road watch that never formed</strong>
+                  </a>
+                  <a class="archive-rail-item" href="#dossier-hostile-rail-heading">
+                    <span>III</span>
+                    <strong class="recipe-label">Supplemental witness list for south quay carriers and post-flood burial contractors</strong>
+                  </a>
+                  <a class="archive-rail-item" href="#dossier-hostile-rail-heading">
+                    <span>II</span>
+                    <strong class="recipe-label">Mill ash survey with revised storage penalties and broken tally marks</strong>
+                  </a>
+                </div>
+                <p id="dossier-hostile-rail-full" class="visually-hidden">Current selected rail item is debt transfers for widow rents, guard escorts, and the road watch that never formed. Five long labels are summarized in compact states.</p>
+              </aside>
+
+              <article class="parchment-object recipe-frame-primary" data-frame-rank="primary" aria-labelledby="dossier-hostile-rail-heading">
+                <header class="dossier-head">
+                  <div>
+                    <p class="archive-label">Annotated ledger</p>
+                    <h3 id="dossier-hostile-rail-heading" class="recipe-title">Who kept charging escort fees after the road watch dissolved.</h3>
+                  </div>
+                  <span class="wax-seal" aria-hidden="true">✦</span>
+                </header>
+                <div class="dossier-body">
+                  <p class="dossier-text dossier-opening">
+                    The opening block stays visible even while the rail grows hostile. The clerk records that three escort fees were still collected after the watch dissolved, and the widow copied each amount into the margins because the main column had already been revised.
+                  </p>
+                  <div class="recipe-support-summary dossier-ledger-summary" aria-describedby="dossier-hostile-rail-ledger-full">
+                    <span>Ledger summary</span>
+                    <strong>3 escort fees · watch dissolved · margin copy present</strong>
+                  </div>
+                  <div class="dossier-ledger-strip recipe-compact-hidden recipe-emergency-hidden" aria-label="Hostile rail ledger markers">
+                    <span>3 escort fees logged</span>
+                    <span>Watch dissolved on burial week</span>
+                    <span>Margin copy by widow</span>
+                    <span>Storage penalty reopened</span>
+                  </div>
+                </div>
+                <p id="dossier-hostile-rail-ledger-full" class="visually-hidden">Full ledger summary: three escort fees logged, watch dissolved on burial week, margin copy by widow, storage penalty reopened.</p>
+              </article>
+
+              <aside class="side-notes recipe-support-panel recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Hostile rail notes">
+                <div class="recipe-support-summary" aria-describedby="dossier-hostile-rail-notes-full">
+                  <span>Notes</span>
+                  <strong>2 notes remain tertiary</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="note-card high-note">
+                    <p class="archive-label">Cross-file cue</p>
+                    <strong>Burial contracts reference the same escort names.</strong>
+                    <span>Rail pressure must not displace this reading block.</span>
+                  </div>
+                  <div class="note-card low-note">
+                    <p class="archive-label">Ink cue</p>
+                    <strong>The revised column uses colder ink.</strong>
+                    <span>Secondary material note only.</span>
+                  </div>
+                </div>
+                <p id="dossier-hostile-rail-notes-full" class="visually-hidden">Two tertiary notes remain below the reading field.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="dossier-hostile-notes-title">
+          <h2 id="dossier-hostile-notes-title">Hostile notes: three uneven cards, but the opening block still wins</h2>
+          <article class="fixture-dossier" data-recipe="dossier-reading" data-recipe-density="standard" data-fixture-state="hostile-notes">
+            <div class="fixture-dossier-shell">
+              <aside class="archive-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Hostile notes archive cue">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="dossier-hostile-notes-rail-full">
+                  <span>Archive cue</span>
+                  <strong>Chapter VII · burial week settlements</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="archive-rail-head">Filed chapters</div>
+                  <a class="archive-rail-item active" href="#dossier-hostile-notes-heading">
+                    <span>VII</span>
+                    <strong class="recipe-label">Burial week settlements</strong>
+                  </a>
+                  <a class="archive-rail-item" href="#dossier-hostile-notes-heading">
+                    <span>VI</span>
+                    <strong class="recipe-label">North lane shortages</strong>
+                  </a>
+                </div>
+                <p id="dossier-hostile-notes-rail-full" class="visually-hidden">Current archive location is chapter seven burial week settlements.</p>
+              </aside>
+
+              <article class="parchment-object recipe-frame-primary" data-frame-rank="primary" aria-labelledby="dossier-hostile-notes-heading">
+                <header class="dossier-head">
+                  <div>
+                    <p class="archive-label">Recorder's copy</p>
+                    <h3 id="dossier-hostile-notes-heading" class="recipe-title">The burial week account was neat only until the widow added names in the gutter.</h3>
+                  </div>
+                  <span class="wax-seal" aria-hidden="true">✦</span>
+                </header>
+                <div class="dossier-body">
+                  <p class="dossier-text dossier-opening">
+                    At first the page looks orderly: three burial transfers, two cart hires, one ash levy. Then the gutter notes begin. A widow lists the names that never appeared in the clerk's column, a porter adds the road closure date, and a priest marks which sacks were buried with the dead because nobody would store them near grain. This opening paragraph sits near the upper safe bound on purpose and still has to start inside the first mobile viewport before any note card.
+                  </p>
+                  <div class="recipe-support-summary dossier-ledger-summary" aria-describedby="dossier-hostile-notes-ledger-full">
+                    <span>Ledger summary</span>
+                    <strong>3 transfers · 2 hires · ash levy noted</strong>
+                  </div>
+                  <div class="dossier-ledger-strip recipe-compact-hidden recipe-emergency-hidden" aria-label="Hostile notes ledger markers">
+                    <span>3 burial transfers</span>
+                    <span>2 cart hires</span>
+                    <span>Ash levy reopened</span>
+                    <span>Gutter notes verified</span>
+                  </div>
+                </div>
+                <p id="dossier-hostile-notes-ledger-full" class="visually-hidden">Full ledger summary: three burial transfers, two cart hires, ash levy reopened, gutter notes verified.</p>
+              </article>
+
+              <aside class="side-notes recipe-support-panel recipe-frame-tertiary" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-labelledby="dossier-hostile-notes-head">
+                <div class="recipe-support-summary" aria-describedby="dossier-hostile-notes-full">
+                  <span>Notes</span>
+                  <strong>3 uneven cards stay below the reading field</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div id="dossier-hostile-notes-head" class="archive-rail-head">Marginal notes</div>
+                  <div class="note-card high-note">
+                    <p class="archive-label">Widow note</p>
+                    <strong>The clerk omitted names from the dead-cart hire.</strong>
+                    <span>She adds six names in the gutter and marks two with flour dust, which implies they handled sacks before the burial account absorbed them.</span>
+                  </div>
+                  <div class="note-card">
+                    <p class="archive-label">Porter note</p>
+                    <strong>The road was closed before dawn.</strong>
+                    <span>Shorter note, same tertiary rank.</span>
+                  </div>
+                  <div class="note-card low-note">
+                    <p class="archive-label">Priest note</p>
+                    <strong>Salt sacks buried with the dead.</strong>
+                    <span>Ugly but plausible support copy that still cannot outrank the parchment opening.</span>
+                  </div>
+                </div>
+                <p id="dossier-hostile-notes-full" class="visually-hidden">Three side notes exist with uneven text lengths. They remain tertiary under all states.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

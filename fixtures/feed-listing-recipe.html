@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Fixture - FeedListingRecipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink-on-night);
+        background:
+          radial-gradient(circle at 18% 14%, rgb(var(--gold-300) / 0.1), transparent 22rem),
+          radial-gradient(circle at 82% 16%, rgb(var(--mana-400) / 0.1), transparent 20rem),
+          linear-gradient(180deg, #0f0d0c, #080707);
+      }
+
+      .fixture-shell {
+        width: min(1240px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .fixture-header,
+      .fixture-case {
+        display: grid;
+        gap: 10px;
+      }
+
+      .fixture-header {
+        margin-bottom: 20px;
+      }
+
+      .fixture-header h1,
+      .fixture-case > h2 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      .fixture-header h1 {
+        font-size: clamp(30px, 4vw, 52px);
+      }
+
+      .fixture-header p {
+        max-width: 72ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        line-height: 1.56;
+      }
+
+      .fixture-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .fixture-feed {
+        display: grid;
+        gap: 16px;
+        min-height: min(760px, var(--first-screen-route-board));
+        padding: clamp(16px, 2.6vw, 28px);
+        border: 1px solid rgb(var(--gold-300) / 0.18);
+        clip-path: var(--shape-panel);
+        background:
+          radial-gradient(circle at 80% 18%, rgb(var(--mana-400) / 0.12), transparent 18rem),
+          linear-gradient(150deg, rgb(34 24 18 / 0.84), rgb(var(--ink-900) / 0.96));
+        box-shadow:
+          var(--shadow-elevated),
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.05);
+      }
+
+      .feed-shell {
+        display: grid;
+        grid-template-columns: minmax(200px, 0.62fr) minmax(0, 1.6fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .feed-sidebar,
+      .feed-main {
+        min-width: 0;
+      }
+
+      .feed-main {
+        display: grid;
+        gap: 12px;
+      }
+
+      .feed-heading {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+        border: 1px solid rgb(var(--gold-300) / 0.16);
+        clip-path: var(--shape-panel);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 24%),
+          rgb(var(--ink-950) / 0.34);
+      }
+
+      .feed-heading h3 {
+        max-width: 17ch;
+        margin: 0;
+        font-size: clamp(30px, 4.5vw, 58px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+
+      .feed-heading p {
+        max-width: 58ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .feed-sidebar {
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid rgb(var(--gold-300) / 0.16);
+        clip-path: var(--shape-panel);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 30%),
+          rgb(var(--ink-950) / 0.3);
+      }
+
+      .feed-sidebar h4 {
+        margin: 0;
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+      }
+
+      .feed-filter-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .filter-chip {
+        display: grid;
+        gap: 4px;
+        min-height: var(--tap-target-compact);
+        padding: 10px 11px;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.22);
+      }
+
+      .filter-chip span {
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 11px;
+        letter-spacing: var(--tracking-wide);
+        text-transform: uppercase;
+      }
+
+      .filter-chip strong {
+        font-family: var(--font-display);
+        font-size: 13px;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      .feed-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .feed-row {
+        display: grid;
+        gap: 9px;
+        padding: 14px 16px;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-panel);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 28%),
+          rgb(var(--ink-950) / 0.22);
+      }
+
+      .feed-row[data-row-rank="featured"] {
+        border-color: rgb(var(--parchment-50) / 0.28);
+        background:
+          linear-gradient(180deg, rgb(var(--gold-300) / 0.14), transparent 38%),
+          linear-gradient(90deg, rgb(var(--gold-700) / 0.16), transparent 16%, transparent 84%, rgb(var(--gold-700) / 0.16)),
+          rgb(var(--ink-950) / 0.24);
+        box-shadow:
+          inset 0 1px 0 rgb(var(--parchment-50) / 0.12),
+          inset 0 -2px 0 rgb(var(--ink-950) / 0.2),
+          0 8px 18px rgb(0 0 0 / 0.18);
+      }
+
+      .feed-row-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .feed-row h4 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(21px, 2.6vw, 29px);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+      }
+
+      .feed-heading .recipe-title,
+      .feed-row .recipe-title {
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+      }
+
+      .feed-row p {
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .feed-row-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .feed-meta-cell {
+        padding: 7px 9px;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.18);
+        font-family: var(--font-display);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .feed-row-badge {
+        align-self: start;
+        padding: 6px 9px;
+        border: 1px solid rgb(var(--gold-300) / 0.18);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.26);
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .feed-row[data-row-rank="featured"] .feed-row-badge {
+        color: var(--ink-on-gold);
+        background:
+          linear-gradient(180deg, #ffe8aa, rgb(var(--gold-500)) 72%, rgb(var(--gold-700)));
+      }
+
+      .feed-group-head {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgb(var(--gold-300) / 0.18);
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+      }
+
+      .feed-summary-strip {
+        display: none;
+        margin: 0;
+      }
+
+      :where(.fixture-feed.recipe-density-compact, .fixture-feed.recipe-density-emergency, .fixture-feed[data-recipe-density="compact"], .fixture-feed[data-recipe-density="emergency"]) .feed-summary-strip {
+        display: flex;
+      }
+
+      @media (max-width: 920px) {
+        .feed-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .feed-main {
+          order: 1;
+        }
+
+        .feed-sidebar {
+          order: 2;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .fixture-shell {
+          width: min(100vw - 18px, 1240px);
+          padding-top: 18px;
+        }
+
+        .fixture-feed {
+          min-height: auto;
+          padding: 12px;
+        }
+
+        .feed-heading h3 {
+          max-width: none;
+          font-size: clamp(27px, 8vw, 42px);
+        }
+
+        .feed-row-top {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="fixture-shell">
+      <header class="fixture-header">
+        <p class="eyebrow">Canonical fixture</p>
+        <h1>FeedListingRecipe host-proof target</h1>
+        <p>
+          This fixture protects scan-path hierarchy. Filters stay secondary, repeated rows stay
+          quieter than the current or featured item, and hostile metadata collapses by value
+          priority instead of by tiny type or equal-strength card treatment.
+        </p>
+      </header>
+
+      <div class="fixture-grid">
+        <section class="fixture-case" aria-labelledby="feed-clean-title">
+          <h2 id="feed-clean-title">Clean: title, scope cue and scannable rows</h2>
+          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="clean">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="feed-clean-filters-head">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-clean-filters-full">
+                  <span>Scope</span>
+                  <strong>River losses · 3 filters · 12 records</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4 id="feed-clean-filters-head">Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Ward</span>
+                      <strong class="recipe-label">River quarter</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Record type</span>
+                      <strong class="recipe-label">Loss reports</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Date band</span>
+                      <strong class="recipe-label">Flood month onward</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-clean-filters-full" class="visually-hidden">Active scope: river quarter, loss reports, flood month onward, twelve records total.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-clean-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-clean-heading" class="recipe-title">Loss reports after the bridge toll stopped paying for guards.</h3>
+                  <p class="recipe-annotation">
+                    One featured result can exist, but ordinary rows remain the steady scan path. Filters help orient; they do not become the page.
+                  </p>
+                </div>
+                <div class="recipe-support-summary feed-summary-strip" aria-describedby="feed-clean-summary-full">
+                  <span>Scope</span>
+                  <strong>River losses · 12 records</strong>
+                </div>
+                <div class="feed-list" id="feed-clean-summary-full">
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Grain account listed under burial cloth instead of winter stores.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Ward 6</span>
+                      <span class="feed-meta-cell recipe-metadata">2 witnesses</span>
+                    </div>
+                    <p class="recipe-annotation">The scan starts here: plain row, one strong title, low-noise metadata.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Escort fee kept charging the widow after the road closure notice.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Road watch</span>
+                      <span class="feed-meta-cell recipe-metadata">1 margin note</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Harbor chapel stored spoiled salt beside plague receipts.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Harbor</span>
+                      <span class="feed-meta-cell recipe-metadata">3 storehouse fields</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="feed-dense-title">
+          <h2 id="feed-dense-title">Dense: longer titles and metadata variance without card-wall drift</h2>
+          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="dense">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Dense filters">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-dense-filters-full">
+                  <span>Scope</span>
+                  <strong>5 filters active · 18 records</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4>Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Ward</span>
+                      <strong class="recipe-label">River quarter</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Type</span>
+                      <strong class="recipe-label">Loss reports</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Storage</span>
+                      <strong class="recipe-label">Spoiled goods only</strong>
+                    </div>
+                    <div class="filter-chip recipe-compact-hidden">
+                      <span>Witness state</span>
+                      <strong class="recipe-label">Signed and unsigned</strong>
+                    </div>
+                    <div class="filter-chip recipe-compact-hidden">
+                      <span>Cross-file</span>
+                      <strong class="recipe-label">Burial accounts included</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-dense-filters-full" class="visually-hidden">Dense filter set contains five active filters and eighteen records.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-dense-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-dense-heading" class="recipe-title">Records that grew longer each time the clerk tried to shorten responsibility.</h3>
+                  <p class="recipe-annotation">
+                    Dense state keeps steady row rhythm: the user should still see an obvious scan path, not a decorative card mosaic.
+                  </p>
+                </div>
+                <div class="feed-list">
+                  <div class="feed-group-head">Current quarter</div>
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">The ferryman apology moved from the flood ledger into a burial register with two extra signatures.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Flood ledger</span>
+                      <span class="feed-meta-cell recipe-metadata">2 extra signatures</span>
+                      <span class="feed-meta-cell recipe-metadata recipe-compact-hidden">Unpaid bridge silver</span>
+                    </div>
+                    <p class="recipe-annotation">Visible annotation stays short even when the title grows.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Harbor annex for recovered salt, widow rents, and delayed plague receipts reopened the same cellar twice.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Harbor chapel</span>
+                      <span class="feed-meta-cell recipe-metadata">4th flood-month</span>
+                    </div>
+                    <p class="recipe-annotation">Ordinary rows stay quieter than the current item.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">The widow's gutter note named carriers the clerk never entered into the ash levy file.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Ash levy</span>
+                      <span class="feed-meta-cell recipe-metadata">6 names omitted</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Road watch payments continued for eleven days after the notice post was removed.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Road watch</span>
+                      <span class="feed-meta-cell recipe-metadata">11 late days</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="feed-compact-title">
+          <h2 id="feed-compact-title">Compact: filters summarize before rows lose scan clarity</h2>
+          <article class="fixture-feed recipe-density-compact" data-recipe="feed-listing" data-recipe-density="compact" data-fixture-state="compact">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact scope summary">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-compact-filters-full">
+                  <span>Scope</span>
+                  <strong>River losses · 2 visible filters · 4 hidden</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4>Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Ward</span>
+                      <strong class="recipe-label">River quarter</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Type</span>
+                      <strong class="recipe-label">Loss reports</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-compact-filters-full" class="visually-hidden">Compact scope summary: river quarter, loss reports, four hidden filters, twelve records.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-compact-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-compact-heading" class="recipe-title">Loss reports after the toll office started hiding names.</h3>
+                  <p class="recipe-annotation">
+                    Compact state keeps two to three scan rows visible before any extra chrome.
+                  </p>
+                </div>
+                <div class="recipe-support-summary feed-summary-strip" aria-describedby="feed-compact-summary-full">
+                  <span>Scope</span>
+                  <strong>12 records · 4 hidden filters</strong>
+                </div>
+                <div class="feed-list" id="feed-compact-summary-full">
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Grain account listed under burial cloth instead of winter stores.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Ward 6</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Escort fee kept charging after the road closure notice.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Road watch</span>
+                    </div>
+                  </article>
+                  <article class="feed-row recipe-compact-hidden" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Harbor chapel stored spoiled salt beside plague receipts.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="feed-emergency-title">
+          <h2 id="feed-emergency-title">Emergency: one clear current result path and one supporting item</h2>
+          <article class="fixture-feed recipe-density-emergency" data-recipe="feed-listing" data-recipe-density="emergency" data-fixture-state="emergency">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency scope cue">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-emergency-filters-full">
+                  <span>Cue</span>
+                  <strong>River losses · current file selected</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Ward</span>
+                      <strong class="recipe-label">River quarter</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-emergency-filters-full" class="visually-hidden">Emergency scope cue: river quarter current file selected.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-emergency-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow recipe-emergency-hidden">Archive listing</p>
+                  <h3 id="feed-emergency-heading" class="recipe-title">Current loss file after the toll office hid names.</h3>
+                </div>
+                <div class="recipe-support-summary feed-summary-strip" aria-describedby="feed-emergency-summary-full">
+                  <span>Scope</span>
+                  <strong>2 visible results only</strong>
+                </div>
+                <div class="feed-list" id="feed-emergency-summary-full">
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Grain account listed under burial cloth instead of winter stores.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Escort fee kept charging after the road closure notice.</h4>
+                      </div>
+                      <span class="feed-row-badge">Support</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="feed-featured-title">
+          <h2 id="feed-featured-title">Featured mix: one louder item, quiet ordinary rows</h2>
+          <article class="fixture-feed" data-recipe="feed-listing" data-recipe-density="standard" data-fixture-state="featured-mix">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Featured mix filters">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-featured-filters-full">
+                  <span>Scope</span>
+                  <strong>Featured shortages · 1 loud item · 8 quiet rows</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4>Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Collection</span>
+                      <strong class="recipe-label">Featured shortages</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>Cross-file</span>
+                      <strong class="recipe-label">Burial and toll links</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-featured-filters-full" class="visually-hidden">Featured mix scope summary: one featured shortage, eight quiet rows, burial and toll links active.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-featured-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-featured-heading" class="recipe-title">The loudest shortage still cannot turn the feed into a card wall.</h3>
+                  <p class="recipe-annotation">
+                    One featured row may approach primary weight. The rest must remain scan rows, not matching posters.
+                  </p>
+                </div>
+                <div class="feed-list">
+                  <article class="feed-row" data-row-rank="featured">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Featured: the harbor chapel annex stored spoiled salt beside plague receipts, widow rents, and the key ledger for the closed bridge toll.</h4>
+                      </div>
+                      <span class="feed-row-badge">Featured</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Harbor chapel annex</span>
+                      <span class="feed-meta-cell recipe-metadata">3 linked ledgers</span>
+                    </div>
+                    <p class="recipe-annotation">Louder than ordinary rows, but still one item inside a feed contract.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="current">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Current: grain account listed under burial cloth instead of winter stores.</h4>
+                      </div>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Ward 6</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Ordinary: road watch payments continued after the notice post was removed.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary">
+                    <div class="feed-row-top">
+                      <div>
+                        <h4 class="recipe-title">Ordinary: gutter notes named carriers the clerk never entered into the ash levy file.</h4>
+                      </div>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

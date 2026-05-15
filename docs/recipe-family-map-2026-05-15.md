@@ -611,17 +611,23 @@ Manual-only:
 
 ## Fresh Contract Priority
 
+Corrective ratification after the Pass 1-4 audit:
+
+- Pass 2 originally identified SiteShellNavigationRecipe and SideRailMetadataRecipe as the earliest protective layers because they guard first-screen competition and support-panel creep.
+- Pass 3 and Pass 4 intentionally pivoted the immediate next tranche to content-first hardening.
+- That pivot is now ratified: the project needs stable hero, reading and listing contracts first so shell and side-rail support patterns can be proven against real host recipes instead of becoming abstract standalone blockers.
+
 Highest priority fresh contract passes:
 
-1. SiteShellNavigationRecipe: protects every first viewport from competing nav.
-2. SideRailMetadataRecipe: protects every content family from support-panel creep.
-3. ArticleHeroRecipe: establishes record/chapter opening behavior.
-4. DossierReadingRecipe: expands the already contracted reading family into budgets and fixtures.
-5. FeedListingRecipe: unlocks larger archive and portal sites.
+1. ArticleHeroRecipe: establishes record/chapter opening behavior and first-screen orientation budgets.
+2. DossierReadingRecipe: expands the already contracted reading family into budgets and fixtures.
+3. FeedListingRecipe: unlocks larger archive and portal sites and exposes repeated-row pressure early.
+4. TeaserCardBlockRecipe: depends on feed/listing decisions but still belongs in the first content tranche.
+5. SideRailMetadataRecipe: remains an early protective support family, but its proof depends on host reading/listing or hero surfaces.
 
 Second priority:
 
-6. TeaserCardBlockRecipe: depends on feed/listing decisions.
+6. SiteShellNavigationRecipe: still protects first-view competition, but follows once the primary host families it surrounds are better contracted.
 7. RouteBoardRecipe: needed when progression is a primary site mechanic.
 8. RitualThresholdRecipe: needed when consequence actions are real.
 
@@ -666,7 +672,7 @@ Documentation surfaces:
 
 ## Unresolved Questions For Next Pass
 
-- Should ArticleHeroRecipe be a standalone production family or a required opening slot shared by DossierReadingRecipe and FeedListingRecipe?
+- ArticleHeroRecipe host-vs-opening-slot rule was formalized later in Pass 5: it may be either a standalone host or an opening slot, depending on the page's primary screen job.
 - Which side-rail forms should be contracted first: navigation rail, metadata rail, status rail or filter rail?
 - For FeedListingRecipe, does the first viewport prioritize first results, filter/search orientation, featured/current result or category routing?
 - Which budgets should become DOM/CSS hooks versus authoring-only rules for titles, summaries, metadata and annotations?
@@ -675,13 +681,18 @@ Documentation surfaces:
 
 ## Handoff To Pass 3: Content Contracts And Budgets Expansion
 
-Pass 3 should start with the critical-first families whose contracts unblock larger site generation:
+Pass 3 should start with the ratified content-first tranche whose contracts unblock larger site generation and give later support families real hosts to prove against:
 
-1. SiteShellNavigationRecipe;
-2. SideRailMetadataRecipe;
-3. ArticleHeroRecipe;
-4. DossierReadingRecipe;
-5. FeedListingRecipe.
+1. ArticleHeroRecipe;
+2. DossierReadingRecipe;
+3. FeedListingRecipe;
+4. TeaserCardBlockRecipe;
+5. SideRailMetadataRecipe.
+
+Pass 3 should treat SiteShellNavigationRecipe as a near-follow-up integration family, not as a removed concern:
+
+- its protective role still matters;
+- it is simply no longer the first standalone contract pass before hero, reading and listing budgets exist.
 
 For each family, Pass 3 should define:
 

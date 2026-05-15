@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Fixture - ArticleHeroRecipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink-on-night);
+        background:
+          radial-gradient(circle at 18% 14%, rgb(var(--gold-300) / 0.12), transparent 24rem),
+          radial-gradient(circle at 82% 18%, rgb(var(--mana-400) / 0.14), transparent 20rem),
+          linear-gradient(180deg, rgb(var(--ink-900)), rgb(var(--ink-950)));
+      }
+
+      .fixture-shell {
+        width: min(1220px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .fixture-header,
+      .fixture-case {
+        display: grid;
+        gap: 10px;
+      }
+
+      .fixture-header {
+        margin-bottom: 20px;
+      }
+
+      .fixture-header h1,
+      .fixture-case > h2 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      .fixture-header h1 {
+        font-size: clamp(30px, 4vw, 52px);
+      }
+
+      .fixture-header p {
+        max-width: 70ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        line-height: 1.56;
+      }
+
+      .fixture-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .fixture-hero {
+        display: grid;
+        gap: 16px;
+        min-height: min(720px, var(--first-screen-dossier));
+        padding: clamp(16px, 2.5vw, 28px);
+        border: 1px solid rgb(var(--gold-300) / 0.18);
+        clip-path: var(--shape-panel);
+        background:
+          radial-gradient(circle at 76% 18%, rgb(var(--mana-400) / 0.12), transparent 16rem),
+          radial-gradient(circle at 12% 14%, rgb(var(--gold-300) / 0.09), transparent 18rem),
+          linear-gradient(140deg, rgb(var(--ink-900) / 0.96), rgb(var(--ink-950)));
+        box-shadow:
+          var(--shadow-elevated),
+          inset 0 0 0 1px rgb(var(--parchment-50) / 0.05);
+      }
+
+      .hero-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.72fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .hero-copy-card {
+        display: grid;
+        gap: 14px;
+        padding: clamp(18px, 3vw, 34px);
+        border: 1px solid rgb(var(--gold-300) / 0.2);
+        clip-path: var(--shape-hero);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 24%),
+          linear-gradient(135deg, rgb(var(--gold-700) / 0.14), transparent 28%),
+          rgb(var(--ink-950) / 0.6);
+      }
+
+      .hero-copy-card h3 {
+        max-width: 14ch;
+        margin: 0;
+        font-size: clamp(34px, 5vw, 66px);
+        line-height: 0.94;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-copy-card .recipe-title {
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+      }
+
+      .hero-copy-card p {
+        margin: 0;
+      }
+
+      .hero-deck {
+        max-width: 56ch;
+        color: var(--ink-on-night-soft);
+        font-size: clamp(17px, 1.8vw, 22px);
+        line-height: 1.5;
+      }
+
+      .hero-actions {
+        margin-top: 0;
+      }
+
+      .hero-actions .btn {
+        text-decoration: none;
+      }
+
+      .hero-actions .recipe-secondary-command {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .hero-meta-panel,
+      .hero-visual,
+      .hero-bridge,
+      .bridge-listing {
+        min-width: 0;
+      }
+
+      .hero-meta-panel {
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid rgb(var(--gold-300) / 0.15);
+        clip-path: var(--shape-panel);
+        background: rgb(var(--ink-950) / 0.32);
+      }
+
+      .hero-meta-panel h4,
+      .hero-bridge h4 {
+        margin: 0;
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+      }
+
+      .hero-meta-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0;
+      }
+
+      .hero-meta-cell {
+        min-height: var(--tap-target-compact);
+      }
+
+      .hero-meta-cell strong {
+        max-width: none;
+      }
+
+      .hero-visual {
+        position: relative;
+        overflow: hidden;
+        min-height: 100%;
+        border: 1px solid rgb(var(--gold-300) / 0.14);
+        clip-path: var(--shape-panel);
+        background:
+          radial-gradient(circle at 52% 28%, rgb(var(--mana-200) / 0.3), transparent 10rem),
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.1), transparent 18%),
+          linear-gradient(180deg, #2f3f5b 0%, #17253a 36%, #0f131d 76%, #0a0908 100%);
+      }
+
+      .hero-visual::before,
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .hero-visual::before {
+        inset: 12px;
+        border: 1px solid rgb(var(--parchment-50) / 0.14);
+        clip-path: var(--shape-panel);
+      }
+
+      .hero-visual::after {
+        inset-inline: 8%;
+        bottom: 12%;
+        height: 24%;
+        background:
+          linear-gradient(90deg, transparent, rgb(var(--gold-300) / 0.18), transparent),
+          radial-gradient(circle at 50% 10%, rgb(var(--parchment-50) / 0.5), transparent 8rem);
+        filter: blur(10px);
+        opacity: 0.6;
+      }
+
+      .hero-keep,
+      .hero-road,
+      .hero-moon {
+        position: absolute;
+      }
+
+      .hero-moon {
+        top: 14%;
+        right: 18%;
+        width: 84px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 32% 28%, rgb(var(--parchment-50)), rgb(var(--mana-200)) 44%, rgb(var(--mana-900)) 100%);
+        box-shadow: 0 0 36px rgb(var(--mana-200) / 0.34);
+      }
+
+      .hero-keep {
+        left: 17%;
+        right: 15%;
+        bottom: 27%;
+        height: 40%;
+        background:
+          linear-gradient(90deg, transparent 0 10%, rgb(var(--ink-950) / 0.9) 10% 16%, transparent 16% 28%, rgb(var(--ink-950) / 0.94) 28% 44%, transparent 44% 56%, rgb(var(--ink-950) / 0.94) 56% 72%, transparent 72% 84%, rgb(var(--ink-950) / 0.88) 84% 90%, transparent 90%),
+          linear-gradient(180deg, transparent 0 30%, rgb(var(--ink-950) / 0.98) 30% 100%);
+        clip-path: polygon(0 100%, 0 50%, 12% 50%, 12% 28%, 20% 28%, 20% 44%, 34% 44%, 34% 12%, 48% 12%, 48% 38%, 62% 38%, 62% 24%, 72% 24%, 72% 48%, 84% 48%, 84% 36%, 92% 36%, 92% 100%);
+      }
+
+      .hero-road {
+        left: 50%;
+        bottom: -2%;
+        width: 54%;
+        height: 40%;
+        transform: translateX(-50%);
+        background:
+          linear-gradient(180deg, rgb(var(--gold-700) / 0.3), transparent 18%),
+          linear-gradient(180deg, rgb(var(--parchment-300) / 0.88), #55351b 50%, #22140d 100%);
+        clip-path: polygon(50% 0, 65% 8%, 74% 18%, 82% 30%, 90% 56%, 100% 100%, 0 100%, 10% 56%, 18% 30%, 26% 18%, 35% 8%);
+      }
+
+      .hero-visual-note {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .hero-bridge {
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid rgb(var(--gold-300) / 0.14);
+        clip-path: var(--shape-panel);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 32%),
+          rgb(var(--ink-950) / 0.26);
+      }
+
+      .hero-bridge-copy {
+        max-width: 68ch;
+        color: var(--ink-on-night-soft);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .bridge-listing {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .bridge-item {
+        display: grid;
+        gap: 5px;
+        padding: 12px;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.22);
+      }
+
+      .bridge-item span {
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 11px;
+        letter-spacing: var(--tracking-wide);
+        text-transform: uppercase;
+      }
+
+      .bridge-item strong {
+        font-family: var(--font-display);
+        font-size: 14px;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      .bridge-item p {
+        margin: 0;
+        color: var(--ink-on-night-mute);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .fixture-hero[data-fixture-state="hostile-title"] .hero-copy-card h3 {
+        max-width: 16ch;
+      }
+
+      .fixture-hero[data-recipe-density="emergency"] .hero-copy-card {
+        padding-bottom: 20px;
+      }
+
+      .fixture-hero[data-recipe-density="emergency"] .hero-deck {
+        max-width: 46ch;
+        font-size: 16px;
+      }
+
+      @media (max-width: 920px) {
+        .hero-stage {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: 240px;
+        }
+
+        .hero-meta-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .bridge-listing {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .fixture-shell {
+          width: min(100vw - 18px, 1220px);
+          padding-top: 18px;
+        }
+
+        .fixture-hero {
+          min-height: auto;
+          padding: 12px;
+        }
+
+        .hero-stage {
+          order: 1;
+        }
+
+        .hero-bridge {
+          order: 2;
+        }
+
+        .hero-meta-panel {
+          order: 3;
+        }
+
+        .hero-copy-card {
+          padding: 16px;
+        }
+
+        .hero-copy-card h3 {
+          max-width: none;
+          font-size: clamp(28px, 8vw, 46px);
+        }
+
+        .hero-visual {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="fixture-shell">
+      <header class="fixture-header">
+        <p class="eyebrow">Canonical fixture</p>
+        <h1>ArticleHeroRecipe host-proof target</h1>
+        <p>
+          This fixture proves hostile article hero pressure before side rails or shell-heavy
+          work. Each state keeps one primary family, one visible orientation summary and one
+          handoff into the reading or listing opening while art and metadata yield first.
+        </p>
+      </header>
+
+      <div class="fixture-grid">
+        <section class="fixture-case" aria-labelledby="hero-clean-title">
+          <h2 id="hero-clean-title">Clean: title, summary, metadata and visible handoff coexist</h2>
+          <article class="fixture-hero" data-recipe="article-hero" data-recipe-density="standard" data-fixture-state="clean">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" data-hero-slot="copy" aria-labelledby="hero-clean-heading">
+                <div>
+                  <p class="eyebrow">Field dispatch</p>
+                  <h3 id="hero-clean-heading" class="recipe-title">The watchtower kept every apology and none of the grain.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  The clerk returns to a damp hill archive where missing wagons, unpaid guards and one sealed confession explain why the town stopped lighting the north road.
+                </p>
+                <div class="hero-actions" aria-label="Clean hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-clean-bridge">Read the docket opening</a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#hero-clean-bridge">Scan related losses</a>
+                </div>
+              </section>
+
+              <aside class="hero-visual recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-hero-slot="art" data-hero-art-state="present" aria-label="Supporting keep illustration">
+                <span class="hero-moon" aria-hidden="true"></span>
+                <span class="hero-keep" aria-hidden="true"></span>
+                <span class="hero-road" aria-hidden="true"></span>
+                <p class="hero-visual-note">Art supports orientation only. It can crop or disappear before the first readable handoff does.</p>
+              </aside>
+            </div>
+
+            <aside class="hero-meta-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-hero-slot="metadata" data-recipe-collapse="summary" aria-labelledby="hero-clean-meta-head">
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-clean-meta-full">
+                <span>Metadata</span>
+                <strong>Ward 6 · missing wagons · 3 keepers</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <h4 id="hero-clean-meta-head">Hero metadata</h4>
+                <div class="hero-meta-strip">
+                  <div class="hero-meta-cell">
+                    <span>Location</span>
+                    <strong class="recipe-metadata">Ward 6 outer watch</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Losses</span>
+                    <strong class="recipe-metadata">3 grain wagons</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Witnesses</span>
+                    <strong class="recipe-metadata">2 guards, 1 clerk</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-clean-meta-full" class="visually-hidden">Full metadata: location Ward 6 outer watch, losses three grain wagons, witnesses two guards and one clerk.</p>
+            </aside>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-clean-bridge" data-handoff-target="dossier" aria-labelledby="hero-clean-bridge-head">
+              <h4 id="hero-clean-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                The first reading block below the hero repeats the full orientation in plain prose, then splits into a docket opening and one quieter archive lead so the hero never becomes a scenic poster.
+              </p>
+              <div class="bridge-listing">
+                <article class="bridge-item">
+                  <span>Dossier opening</span>
+                  <strong>The west ledger lists rain, mold, and the name of the driver nobody buried.</strong>
+                  <p>Primary onward path into body-first reading.</p>
+                </article>
+                <article class="bridge-item">
+                  <span>Archive lead</span>
+                  <strong>Eight related shortages sit below the fold.</strong>
+                  <p>Secondary listing handoff stays visible but quieter.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="hero-compact-title">
+          <h2 id="hero-compact-title">Compact: metadata collapses before the title or handoff does</h2>
+          <article class="fixture-hero recipe-density-compact" data-recipe="article-hero" data-recipe-density="compact" data-fixture-state="compact">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" aria-labelledby="hero-compact-heading">
+                <div>
+                  <p class="eyebrow">Transit report</p>
+                  <h3 id="hero-compact-heading" class="recipe-title">The inn finally named which room held the wet account book.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  The keeper admits the fire was smaller than reported, but the debt pages were already gone.
+                </p>
+                <div class="hero-actions" aria-label="Compact hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-compact-bridge">Read the first deposition</a>
+                  <a class="btn btn-quiet recipe-secondary-command recipe-compact-hidden" data-command-rank="secondary" href="#hero-compact-bridge">Compare inventory trail</a>
+                </div>
+              </section>
+
+              <aside class="hero-visual recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-hero-slot="art" data-hero-art-state="present" aria-label="Supporting inn illustration">
+                <span class="hero-moon" aria-hidden="true"></span>
+                <span class="hero-keep" aria-hidden="true"></span>
+                <span class="hero-road" aria-hidden="true"></span>
+                <p class="hero-visual-note">Compact state drops art before it risks pushing summary and handoff lower.</p>
+              </aside>
+            </div>
+
+            <aside class="hero-meta-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact metadata">
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-compact-meta-full">
+                <span>Summary</span>
+                <strong>Inn ledger · pages removed · one witness</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <div class="hero-meta-strip">
+                  <div class="hero-meta-cell">
+                    <span>Site</span>
+                    <strong class="recipe-metadata">East quay inn</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Damage</span>
+                    <strong class="recipe-metadata">Pages removed</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-compact-meta-full" class="visually-hidden">Compact metadata summary: East quay inn, pages removed, one witness remains.</p>
+            </aside>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-compact-bridge" data-handoff-target="body" aria-labelledby="hero-compact-bridge-head">
+              <h4 id="hero-compact-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                The hero still hands off into the first deposition immediately. Full summary text lives in the reading block below instead of shrinking inside the hero.
+              </p>
+            </section>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="hero-emergency-title">
+          <h2 id="hero-emergency-title">Emergency: one primary path plus one orientation cue</h2>
+          <article class="fixture-hero recipe-density-emergency" data-recipe="article-hero" data-recipe-density="emergency" data-fixture-state="emergency">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" aria-labelledby="hero-emergency-heading">
+                <div>
+                  <p class="eyebrow recipe-emergency-hidden">Night audit</p>
+                  <h3 id="hero-emergency-heading" class="recipe-title">The missing page was folded into the widow's rent notice.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  One clerk, one debt marker, one clear path into the opening paragraph.
+                </p>
+                <div class="hero-actions" aria-label="Emergency hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-emergency-bridge">Read the opening paragraph</a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="hero-meta-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency cue">
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-emergency-meta-full">
+                <span>Cue</span>
+                <strong>Rent notice · page 9 missing</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <div class="hero-meta-strip">
+                  <div class="hero-meta-cell">
+                    <span>Location</span>
+                    <strong class="recipe-metadata">North ledger room</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-emergency-meta-full" class="visually-hidden">Emergency cue: north ledger room, rent notice, page 9 missing.</p>
+            </aside>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-emergency-bridge" data-handoff-target="body" aria-labelledby="hero-emergency-bridge-head">
+              <h4 id="hero-emergency-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                The first reading block starts immediately below with the full sentence intact. No art, caption or secondary CTA competes here.
+              </p>
+            </section>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="hero-hostile-title-title">
+          <h2 id="hero-hostile-title-title">Hostile title: over-budget heading with recoverable full summary</h2>
+          <article class="fixture-hero" data-recipe="article-hero" data-recipe-density="standard" data-fixture-state="hostile-title">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" aria-labelledby="hero-hostile-title-heading">
+                <div>
+                  <p class="eyebrow">Burial account</p>
+                  <h3 id="hero-hostile-title-heading" class="recipe-title">The provisional committee for road repairs filed the ferryman's apology under flood deaths, grain spoilage, and a private debt the mayor never signed.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  Visible summary clamps to the shared hostile band, while the full reading block below preserves the whole explanation: the ferryman delayed the carts, the grain rotted in wet sacks, and the mayor moved the debt into a death register to hide the missing silver.
+                </p>
+                <div class="hero-actions" aria-label="Hostile title hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-hostile-title-bridge">Open the full docket text</a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#hero-hostile-title-bridge">Inspect related shortages</a>
+                </div>
+              </section>
+
+              <aside class="hero-visual recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-hero-slot="art" data-hero-art-state="present" aria-label="Supporting floodgate illustration">
+                <span class="hero-moon" aria-hidden="true"></span>
+                <span class="hero-keep" aria-hidden="true"></span>
+                <span class="hero-road" aria-hidden="true"></span>
+                <p class="hero-visual-note">Art stays present in the hostile title case, but title and handoff keep the louder rank.</p>
+              </aside>
+            </div>
+
+            <aside class="hero-meta-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Hostile title metadata">
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-hostile-title-meta-full">
+                <span>Metadata</span>
+                <strong>Flood ledger · 2 excuses · silver missing</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <div class="hero-meta-strip">
+                  <div class="hero-meta-cell">
+                    <span>Register</span>
+                    <strong class="recipe-metadata">Flood ledger appendix</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Damage</span>
+                    <strong class="recipe-metadata">14 sacks spoiled</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Debt mark</span>
+                    <strong class="recipe-metadata">Unreturned bridge silver</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-hostile-title-meta-full" class="visually-hidden">Full metadata: flood ledger appendix, fourteen sacks spoiled, unreturned bridge silver.</p>
+            </aside>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-hostile-title-bridge" data-handoff-target="dossier" aria-labelledby="hero-hostile-title-bridge-head">
+              <h4 id="hero-hostile-title-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                Full summary recovery lives here, not in a third hero line. The first readable block explains the ferryman delay, the rotten grain, and the hidden debt in one uninterrupted paragraph.
+              </p>
+            </section>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="hero-hostile-meta-title">
+          <h2 id="hero-hostile-meta-title">Hostile metadata: mixed lengths collapse into one summary strip</h2>
+          <article class="fixture-hero" data-recipe="article-hero" data-recipe-density="standard" data-fixture-state="hostile-meta">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" aria-labelledby="hero-hostile-meta-heading">
+                <div>
+                  <p class="eyebrow">Harbor inquiry</p>
+                  <h3 id="hero-hostile-meta-heading" class="recipe-title">Why the harbor chapel stored spoiled salt beside the plague receipts.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  The headline stays calm while metadata becomes ugly: one warehouse value is much too long, one date uses a compound translation, and one witness name includes both dock and guild titles.
+                </p>
+                <div class="hero-actions" aria-label="Hostile metadata hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-hostile-meta-bridge">Read the chapel inventory note</a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#hero-hostile-meta-bridge">List linked shortages</a>
+                </div>
+              </section>
+
+              <aside class="hero-visual recipe-frame-tertiary recipe-compact-hidden recipe-emergency-hidden" data-frame-rank="tertiary" data-hero-slot="art" data-hero-art-state="absent" aria-label="Art intentionally absent">
+                <p class="hero-visual-note">Art intentionally absent here. Hostile metadata must still read clearly without a decorative support surface.</p>
+              </aside>
+            </div>
+
+            <aside class="hero-meta-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="hero-hostile-meta-head">
+              <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-hostile-meta-full">
+                <span>Summary</span>
+                <strong>Harbor chapel · salt rot · 3 long fields hidden</strong>
+              </div>
+              <div class="recipe-support-detail">
+                <h4 id="hero-hostile-meta-head">Mixed metadata pressure</h4>
+                <div class="hero-meta-strip">
+                  <div class="hero-meta-cell">
+                    <span>Storehouse</span>
+                    <strong class="recipe-metadata">Harbor chapel annex for recovered salt, widow rents, and delayed plague receipts</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Recorded</span>
+                    <strong class="recipe-metadata">Fourth flood-month, after the bridge saint procession</strong>
+                  </div>
+                  <div class="hero-meta-cell">
+                    <span>Witness</span>
+                    <strong class="recipe-metadata">Dock reeve Maro Velen, acting guild tally keeper</strong>
+                  </div>
+                </div>
+              </div>
+              <p id="hero-hostile-meta-full" class="visually-hidden">Full metadata: storehouse Harbor chapel annex for recovered salt, widow rents, and delayed plague receipts; recorded during fourth flood-month after the bridge saint procession; witness Dock reeve Maro Velen, acting guild tally keeper.</p>
+            </aside>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-hostile-meta-bridge" data-handoff-target="feed" aria-labelledby="hero-hostile-meta-bridge-head">
+              <h4 id="hero-hostile-meta-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                The listing handoff stays readable even when metadata turns hostile. The hero summary never becomes a cramped three-column stack.
+              </p>
+              <div class="bridge-listing">
+                <article class="bridge-item">
+                  <span>First result</span>
+                  <strong>Salt sacks logged under funeral cloth, not food stores.</strong>
+                  <p>Current scan path remains stronger than metadata clutter.</p>
+                </article>
+                <article class="bridge-item">
+                  <span>Second result</span>
+                  <strong>Chapel cellar keys moved after the procession.</strong>
+                  <p>Supporting row stays visible but secondary.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

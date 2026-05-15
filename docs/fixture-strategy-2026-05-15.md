@@ -156,6 +156,12 @@ Minimum stable selectors expected for future canonical fixtures:
 
 Pass 4 should not try to fixture everything. The right order is the highest-risk content tranche first.
 
+Ratified sequencing note:
+
+- This priority order is a deliberate content-first pivot from Pass 2's earlier protective-layer-first framing.
+- The project is choosing to prove hero, reading and listing pressure first because those host families define the hierarchy that shell navigation and side rails must support.
+- SiteShellNavigationRecipe and SideRailMetadataRecipe remain early risk families, but they are not treated as standalone proof blockers ahead of the first host-family tranche.
+
 Priority order:
 
 1. ArticleHeroRecipe
@@ -332,7 +338,9 @@ Documentation-only notes:
 
 Purpose:
 
-- bounded proof surface for SideRailMetadataRecipe as a support family
+- bounded unit proof surface for SideRailMetadataRecipe as a support family
+- validates row budgets, summary behavior and support-action demotion in isolation
+- does not by itself make the family regression-ready
 
 Minimum states:
 
@@ -361,6 +369,13 @@ Regression-critical checks:
 - mobile default becomes summary/cue instead of full stacked rail
 - summary text announces hidden content meaningfully
 - rail actions remain support actions
+- isolated proof must not be treated as complete until host-bound states show the rail staying secondary inside real host recipes
+
+Host-bound proof required before regression-ready:
+
+- at least one dossier-hosted or equivalent reading-host state
+- at least one feed-hosted or hero-hosted state
+- those host-bound states are the canonical proof that the rail does not overtake the primary recipe above fold
 
 Documentation-only notes:
 
@@ -388,7 +403,7 @@ The first three fixtures exercise title pressure, reading pressure, and listing 
 Documentation-only for this pass means planned and specified, but not yet required as blocking regression targets:
 
 - teaser-card variants beyond one mixed-rank hostile block
-- isolated side-rail variants that are not attached to a host reading or listing context
+- extra isolated side-rail variants beyond the bounded unit fixture, especially variants not attached to a host reading, listing or hero context
 - promo-heavy variants until PromoFeaturedModuleRecipe is contracted
 - utility/dashboard-density fixtures
 
@@ -453,7 +468,7 @@ Expected handoff:
 
 ## Unresolved Questions
 
-- Should SideRailMetadataRecipe be proven mainly in isolation, or mainly as an attached support fixture inside hero, dossier and feed hosts?
+- After the required host-bound proof starts, what is the minimum long-term host mix for SideRailMetadataRecipe: dossier plus feed, or dossier plus hero plus feed?
 - Does ArticleHeroRecipe need two canonical handoff variants, one into dossier and one into feed, or is one canonical hero enough for now?
 - For FeedListingRecipe, should featured-mix be part of the base canonical fixture or a second-phase variant after plain row listing stabilizes?
 - When a rail becomes filter-heavy, does it remain SideRailMetadataRecipe or become a separate future fixture family?

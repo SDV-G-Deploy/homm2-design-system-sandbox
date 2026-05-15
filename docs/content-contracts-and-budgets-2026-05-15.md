@@ -92,6 +92,12 @@ Critical-first in this pass:
 4. TeaserCardBlockRecipe
 5. SideRailMetadataRecipe
 
+Ratified sequencing note:
+
+- This pass intentionally follows a content-first tranche, even though Pass 2 originally placed SiteShellNavigationRecipe and SideRailMetadataRecipe earlier as protective layers.
+- The project is consciously choosing to harden hero, reading and listing contracts first because those host families define the primary first-screen obligations that shell and rail support patterns must defer to.
+- SideRailMetadataRecipe stays in scope here because its budgets and downgrade rules can be written now, but regression-ready proof still depends on host-bound evidence in later fixture work.
+
 Later follow-up families:
 
 - PromoFeaturedModuleRecipe
@@ -463,6 +469,12 @@ Documentation-only versus likely API:
 
 - documentation-only: row ceilings, field-priority order, rule that rails demote before primary surfaces
 - likely API: rail-summary slot, hidden-row-count surface, expanded-metadata container, state-cue hooks
+
+Proof-shape note:
+
+- an isolated side-rail fixture is valid for row-budget, summary-text and compact-collapse unit proof
+- it is not sufficient to mark the family regression-ready on its own
+- regression-ready proof requires host-bound states where the rail stays secondary inside at least one reading/listing host recipe
 
 ## Cross-Family Operational Rules
 

@@ -160,7 +160,7 @@ Goal:
 Convert the system into an operational playbook for creating new themed sites from the documentation base.
 
 Artifact:
-- \`docs/site-generation-playbook-2026-05-15.md\`
+- \`docs/generation-playbook-2026-05-15.md\`
 
 Required output:
 
