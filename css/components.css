@@ -313,6 +313,140 @@ button {
    Shared typography and utility primitives
    -------------------------------------------------------------------------- */
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.recipe-line-clamp,
+.recipe-title,
+.recipe-label,
+.recipe-annotation,
+.recipe-metadata,
+.recipe-support-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--recipe-line-clamp, 1);
+  overflow: hidden;
+}
+
+.recipe-title {
+  --recipe-line-clamp: var(--recipe-title-max-lines, var(--recipe-title-lines-standard));
+}
+
+.recipe-label,
+.recipe-metadata,
+.recipe-support-summary {
+  font-size: max(var(--label-legible-min), 1em);
+}
+
+.recipe-label {
+  --recipe-line-clamp: var(--recipe-label-lines, var(--recipe-secondary-label-lines));
+}
+
+.recipe-label-primary,
+.recipe-primary-command .recipe-label {
+  --recipe-line-clamp: var(--recipe-primary-label-lines);
+}
+
+.recipe-annotation {
+  --recipe-line-clamp: var(--recipe-annotation-lines, 2);
+}
+
+.recipe-metadata {
+  --recipe-line-clamp: var(--recipe-metadata-lines);
+}
+
+.recipe-support-summary {
+  --recipe-line-clamp: var(--recipe-summary-lines);
+  min-height: var(--tap-target-compact);
+  align-items: center;
+  gap: var(--space-2);
+  padding: 9px 11px;
+  border: 1px solid rgb(var(--gold-300) / 0.16);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 38%),
+    rgb(var(--ink-950) / 0.28);
+  color: var(--ink-on-night-soft);
+  font-family: var(--font-display);
+  font-size: max(var(--label-legible-min), 12px);
+  line-height: 1.35;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.recipe-support-summary strong,
+.recipe-support-summary span {
+  min-width: 0;
+}
+
+.recipe-support-summary strong {
+  color: var(--ink-on-night);
+}
+
+.recipe-state-cue {
+  --recipe-collapse-rank: 4;
+  min-height: var(--tap-target-compact);
+}
+
+.recipe-frame-primary,
+[data-frame-rank="primary"] {
+  --recipe-frame-rank-opacity: var(--recipe-frame-primary-opacity);
+  opacity: var(--recipe-frame-rank-opacity);
+}
+
+.recipe-frame-secondary,
+[data-frame-rank="secondary"] {
+  --recipe-frame-rank-opacity: var(--recipe-frame-secondary-opacity);
+  opacity: var(--recipe-frame-rank-opacity);
+}
+
+.recipe-frame-tertiary,
+[data-frame-rank="tertiary"] {
+  --recipe-frame-rank-opacity: var(--recipe-frame-tertiary-opacity);
+  opacity: var(--recipe-frame-rank-opacity);
+}
+
+:where(.recipe-density-compact, [data-recipe-density="compact"]) {
+  --recipe-secondary-label-lines: var(--recipe-secondary-label-lines-compact);
+  --recipe-rail-label-lines: var(--recipe-rail-label-lines-compact);
+  --recipe-annotation-lines: var(--recipe-annotation-lines-compact);
+}
+
+:where(.recipe-density-emergency, [data-recipe-density="emergency"]) {
+  --recipe-secondary-label-lines: var(--recipe-secondary-label-lines-compact);
+  --recipe-rail-label-lines: var(--recipe-rail-label-lines-compact);
+  --recipe-annotation-lines: var(--recipe-annotation-lines-compact);
+  --recipe-frame-secondary-opacity: 0.7;
+  --recipe-frame-tertiary-opacity: 0.42;
+}
+
+:where(.recipe-density-compact, .recipe-density-emergency, [data-recipe-density="compact"], [data-recipe-density="emergency"]) .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-detail,
+:where(.recipe-density-compact, .recipe-density-emergency, [data-recipe-density="compact"], [data-recipe-density="emergency"]) .recipe-compact-hidden {
+  display: none !important;
+}
+
+.recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-summary {
+  display: none;
+}
+
+:where(.recipe-density-compact, .recipe-density-emergency, [data-recipe-density="compact"], [data-recipe-density="emergency"]) .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-summary {
+  display: flex;
+}
+
+:where(.recipe-density-emergency, [data-recipe-density="emergency"]) .recipe-emergency-hidden {
+  display: none !important;
+}
+
 .eyebrow,
 .archive-label,
 .ledger-kicker {
@@ -1018,6 +1152,9 @@ h3::first-letter {
 .menu-screen-shell {
   position: relative;
   isolation: isolate;
+  container-type: inline-size;
+  --recipe-title-max-lines: var(--recipe-title-lines-standard);
+  --recipe-label-lines: var(--recipe-secondary-label-lines);
   --recipe-first-screen-budget: var(--first-screen-menu);
   --recipe-primary-visible: ".command-slab";
   --recipe-secondary-visible: ".menu-save-slot";
@@ -1079,6 +1216,7 @@ h3::first-letter {
   position: relative;
   z-index: 3;
   --recipe-collapse-rank: 3;
+  --recipe-label-lines: var(--recipe-rail-label-lines);
   align-self: start;
   border-color: rgb(var(--gold-300) / 0.14);
   opacity: 0.76;
@@ -1102,6 +1240,7 @@ h3::first-letter {
 
 .menu-route-index {
   --recipe-collapse-rank: 2;
+  --recipe-label-lines: var(--recipe-rail-label-lines);
   opacity: 0.54;
 }
 
@@ -1262,6 +1401,23 @@ h3::first-letter {
   min-height: var(--tap-target-min);
 }
 
+.recipe-primary-command {
+  min-height: var(--tap-target-min);
+}
+
+.recipe-secondary-command,
+.recipe-tertiary-command {
+  min-height: var(--tap-target-compact);
+}
+
+.command-slab :is(.recipe-primary-command, [data-command-rank="primary"]) {
+  --recipe-label-lines: var(--recipe-primary-label-lines);
+}
+
+.command-slab :is(.recipe-secondary-command, .recipe-tertiary-command, [data-command-rank="secondary"], [data-command-rank="tertiary"]) {
+  --recipe-label-lines: var(--recipe-secondary-label-lines);
+}
+
 .menu-route-index,
 .archive-rail,
 .ritual-panel,
@@ -1282,6 +1438,22 @@ h3::first-letter {
 .menu-route-index {
   --recipe-first-screen-budget: var(--first-screen-route-board);
   --recipe-collapse-order: "annotations filters progress secondary-routes current-next";
+}
+
+@container (max-width: 640px) {
+  .menu-screen-shell .menu-side-rail,
+  .menu-screen-shell .menu-route-index {
+    --recipe-label-lines: var(--recipe-rail-label-lines-compact);
+  }
+
+  .menu-screen-shell .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-detail,
+  .menu-screen-shell .recipe-compact-hidden {
+    display: none !important;
+  }
+
+  .menu-screen-shell .recipe-support-panel[data-recipe-collapse="summary"] .recipe-support-summary {
+    display: flex;
+  }
 }
 
 @media (max-width: 560px) {

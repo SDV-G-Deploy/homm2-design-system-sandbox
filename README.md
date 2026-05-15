@@ -132,28 +132,40 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed system pass: **Responsive Contract Pass**.
+Latest completed system slice: **Responsive Recipe Layer for MenuScreenRecipe**.
+
+This slice is now closed as a bounded design-system track. It moved from evidence gathering into contracts, implementation mapping, shared hooks, viewport QA and a short stabilization follow-up.
+
+Canonical artifact chain:
+
+- `docs/responsive-recipe-evidence-2026-05-15.md`
+- `docs/responsive-recipe-contracts-2026-05-15.md`
+- `docs/responsive-recipe-implementation-mapping-2026-05-15.md`
+- `docs/responsive-recipe-shared-hooks-pass4-2026-05-15.md`
+- `docs/responsive-recipe-viewport-qa-pass5-2026-05-15.md`
+- `docs/responsive-recipe-followup-pass6-2026-05-15.md`
 
 What now exists at the system level:
 
-- tokens
-- shared components
-- screen recipes
-- responsive contracts
-- page-local composition
+- shared responsive recipe tokens in `css/tokens.css`
+- shared recipe hooks in `css/components.css`
+- a canonical regression fixture at `fixtures/menu-screen-recipe.html`
+- responsive contracts and downgrade rules for MenuScreenRecipe
+- viewport/browser evidence for `1440x900`, `390x844` and `360x740`
+- a bridge smoke target in `fairy-journeys.html#menu-shell`
 
-What this pass locked:
+What this slice locked:
 
-- first-screen budgets per recipe
-- above-the-fold obligations per recipe
-- downgrade order before local responsive tuning
-- tap target and label legibility floors
+- first-screen obligations per recipe state
+- downgrade order before page-local responsive tuning
+- tap-target and visible-label floors
+- durable density and frame-rank APIs for fixtures/tests
+- forced compact/emergency hide behavior for over-budget content
 
-Recommended next pass for a fresh `/new` thread:
+Current recommendation:
 
-1. apply shared responsive helpers into the live Fairy page so local CSS stops re-solving mobile degradation
-2. run screenshot QA at `1440`, `1180`, `1024`, `920`, `768`, `390`, and `360`
-3. shorten labels where pressure remains instead of reducing type below the contract floor
+- treat this responsive recipe work as stabilized enough for normal maintenance
+- open future passes only for narrow follow-up work such as applied-page cleanup, additional recipe families or reusable viewport harness automation
 
 ## File structure
 
@@ -164,6 +176,8 @@ css/
   scenes.css           # scene-specific art-direction compositions
   reference.css        # reference-page-only specimen layout
   fairy-journeys.css   # page-specific adaptive scene rules
+fixtures/
+  menu-screen-recipe.html  # canonical responsive recipe regression fixture
 index.html             # atmosphere board / sandbox scenes
 reference.html         # living design-system reference page
 fairy-journeys.html    # live applied branch / fairy-tale menu-first page
@@ -173,5 +187,6 @@ fairy-journeys.html    # live applied branch / fairy-tale menu-first page
 
 - Start with `reference.html` when you want the token contract and system specimens.
 - Use `index.html` when you want the art-direction scenes and atmosphere pass.
+- Use `fixtures/menu-screen-recipe.html` when you want the canonical responsive recipe contract fixture.
 - Treat `tokens.css` as the override surface for future themes / factions.
 - Treat `components.css` as the place for reusable rules; keep scene illustration logic out of it.

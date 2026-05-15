@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 Fixture - MenuScreenRecipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink-on-night);
+        background:
+          radial-gradient(circle at 20% 10%, rgb(var(--gold-300) / 0.12), transparent 24rem),
+          radial-gradient(circle at 84% 18%, rgb(var(--mana-400) / 0.12), transparent 22rem),
+          var(--surface-night);
+      }
+
+      .fixture-shell {
+        width: min(1180px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .fixture-header {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .fixture-header h1 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 52px);
+        letter-spacing: 0;
+      }
+
+      .fixture-header p {
+        max-width: 68ch;
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .fixture-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .fixture-case {
+        display: grid;
+        gap: 10px;
+      }
+
+      .fixture-case > h2 {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: 0;
+      }
+
+      .fixture-menu {
+        min-height: min(720px, var(--first-screen-menu));
+        padding: clamp(16px, 2.4vw, 28px);
+      }
+
+      .fixture-menu .menu-frame-shell {
+        grid-template-columns: minmax(170px, 0.7fr) minmax(300px, 1.5fr) minmax(170px, 0.7fr);
+        grid-template-areas: "left center right";
+        align-items: start;
+      }
+
+      .fixture-menu .menu-center-mount {
+        grid-area: center;
+        gap: 12px;
+      }
+
+      .fixture-menu .menu-side-rail {
+        grid-area: left;
+      }
+
+      .fixture-menu .menu-route-index {
+        grid-area: right;
+      }
+
+      .fixture-title-block {
+        padding: 14px;
+        border: 1px solid rgb(var(--gold-300) / 0.16);
+        clip-path: var(--shape-panel);
+        background: rgb(var(--ink-950) / 0.26);
+      }
+
+      .fixture-title-block h3 {
+        max-width: 18ch;
+        margin: 0 0 8px;
+        font-size: clamp(24px, 3.4vw, 42px);
+        letter-spacing: 0;
+      }
+
+      .fixture-title-block p {
+        margin: 0;
+        color: var(--ink-on-night-soft);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .fixture-menu .command-slab {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .fixture-menu .recipe-primary-command {
+        grid-column: 1 / -1;
+      }
+
+      .fixture-menu .btn {
+        display: grid;
+        align-content: center;
+        gap: 4px;
+        text-align: left;
+        text-decoration: none;
+      }
+
+      .recipe-command-note {
+        color: var(--ink-on-night-mute);
+        font-family: var(--font-body);
+        font-size: max(var(--label-legible-min), 12px);
+        line-height: 1.35;
+        text-transform: none;
+      }
+
+      .fixture-panel {
+        display: grid;
+        gap: 8px;
+        padding: 12px;
+        border: 1px solid rgb(var(--gold-300) / 0.14);
+        clip-path: var(--shape-panel);
+        background: rgb(var(--ink-950) / 0.28);
+      }
+
+      .fixture-panel h4 {
+        margin: 0;
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: var(--tracking-wider);
+        text-transform: uppercase;
+      }
+
+      .fixture-row {
+        display: grid;
+        gap: 3px;
+        padding: 8px;
+        border: 1px solid rgb(var(--gold-300) / 0.1);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.18);
+      }
+
+      .fixture-row span {
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: max(var(--label-legible-min), 12px);
+        letter-spacing: var(--tracking-wide);
+        text-transform: uppercase;
+      }
+
+      .fixture-row strong {
+        color: var(--ink-on-night);
+        font-family: var(--font-display);
+        font-size: max(var(--label-legible-min), 12px);
+        letter-spacing: 0.035em;
+        text-transform: uppercase;
+      }
+
+      .fixture-routes {
+        display: grid;
+        gap: 7px;
+      }
+
+      .fixture-route {
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 8px;
+        align-items: center;
+        min-height: var(--tap-target-compact);
+        padding: 7px;
+        color: var(--ink-on-night);
+        text-decoration: none;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.18);
+      }
+
+      .fixture-route small {
+        display: block;
+        color: var(--ink-on-night-mute);
+        font-size: 12px;
+        line-height: 1.25;
+      }
+
+      .fixture-menu[data-recipe-density="compact"] .command-slab,
+      .fixture-menu.recipe-density-compact .command-slab {
+        grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 760px) {
+        .fixture-menu {
+          min-height: auto;
+          padding: 14px;
+        }
+
+        .fixture-menu .menu-frame-shell {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "center"
+            "left"
+            "right";
+        }
+
+        .fixture-menu .command-slab {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="fixture-shell">
+      <header class="fixture-header">
+        <p class="eyebrow">Canonical fixture</p>
+        <h1>MenuScreenRecipe shared hook regression target</h1>
+        <p>
+          This fixture isolates the menu recipe API: density attributes, readable frame ranks,
+          support summaries, line clamps and accessible compact labels. Character and row
+          budgets remain authored by fixture state, not hidden in CSS.
+        </p>
+      </header>
+
+      <div class="fixture-grid">
+        <section class="fixture-case" aria-labelledby="standard-title">
+          <h2 id="standard-title">Standard: command slab plus one support rail</h2>
+          <article class="fixture-menu menu-screen-shell recipe-density-standard" data-recipe="menu-screen" data-recipe-density="standard" data-fixture-state="standard">
+            <div class="menu-art-layer" data-recipe-layer="art" aria-hidden="true">
+              <span class="menu-frame-corner tl"></span>
+              <span class="menu-frame-corner tr"></span>
+              <span class="menu-frame-corner bl"></span>
+              <span class="menu-frame-corner br"></span>
+              <span class="menu-frame-edge top"></span>
+              <span class="menu-frame-edge bottom"></span>
+              <span class="menu-frame-edge left"></span>
+              <span class="menu-frame-edge right"></span>
+            </div>
+
+            <div class="menu-frame-shell">
+              <aside class="menu-side-rail fixture-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-labelledby="standard-state-head">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="standard-state-full">
+                  <span>State</span>
+                  <strong>Gate - chapter 1</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4 id="standard-state-head">State</h4>
+                  <div class="fixture-row"><span>Theme</span><strong class="recipe-label">Self-discovery</strong></div>
+                  <div class="fixture-row"><span>Location</span><strong class="recipe-label">Ancient gate</strong></div>
+                </div>
+                <p id="standard-state-full" class="visually-hidden">Current state: ancient gate, chapter 1, quiet courage.</p>
+              </aside>
+
+              <section class="menu-center-mount" aria-labelledby="standard-menu-title">
+                <div class="fixture-title-block">
+                  <h3 id="standard-menu-title" class="recipe-title">Choose the chapter gate</h3>
+                  <p class="recipe-annotation">One dominant command, three secondary commands, one state rail and five route rows.</p>
+                </div>
+                <nav class="command-slab recipe-frame-primary" data-frame-rank="primary" aria-label="Standard menu commands">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#standard-title">
+                    <span class="recipe-label recipe-label-primary">Start path</span>
+                    <span class="recipe-command-note">first fork</span>
+                  </a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#standard-title"><span class="recipe-label">Continue</span><span class="recipe-command-note">current trace</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#standard-title"><span class="recipe-label">Archive</span><span class="recipe-command-note">symbols</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#standard-title"><span class="recipe-label">Companions</span><span class="recipe-command-note">four roles</span></a>
+                </nav>
+                <div class="menu-save-slot recipe-state-cue recipe-frame-secondary" data-frame-rank="secondary" aria-describedby="standard-save-full">
+                  <div class="recipe-support-summary">
+                    <span>Slot A</span>
+                    <strong>Chapter 1</strong>
+                  </div>
+                  <p id="standard-save-full" class="visually-hidden">Slot A, ancient gate, chapter 1, quiet courage.</p>
+                </div>
+              </section>
+
+              <aside class="menu-route-index fixture-panel recipe-support-panel recipe-frame-tertiary" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Route index">
+                <div class="recipe-support-summary" aria-describedby="standard-routes-full"><span>Routes</span><strong>5 entries</strong></div>
+                <div class="recipe-support-detail fixture-routes">
+                  <a class="fixture-route" data-route-state="current" href="#standard-title"><span class="route-badge route-badge--gate" aria-hidden="true"></span><span><strong class="recipe-label">Forest road</strong><small>current</small></span></a>
+                  <a class="fixture-route" data-route-state="next" href="#standard-title"><span class="route-badge route-badge--compass" aria-hidden="true"></span><span><strong class="recipe-label">Archive</strong><small>next</small></span></a>
+                  <a class="fixture-route" data-route-state="visited" href="#standard-title"><span class="route-badge route-badge--milestone" aria-hidden="true"></span><span><strong class="recipe-label">Companions</strong><small>visited</small></span></a>
+                  <a class="fixture-route" data-route-state="locked" href="#standard-title"><span class="route-badge route-badge--lantern" aria-hidden="true"></span><span><strong class="recipe-label">Threshold</strong><small>locked</small></span></a>
+                  <a class="fixture-route" data-route-state="locked" href="#standard-title"><span class="route-badge route-badge--gate" aria-hidden="true"></span><span><strong class="recipe-label">Return</strong><small>locked</small></span></a>
+                </div>
+                <p id="standard-routes-full" class="visually-hidden">Five route rows are available in the standard fixture.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="compact-title">
+          <h2 id="compact-title">Compact: support summarized before labels shrink</h2>
+          <article class="fixture-menu menu-screen-shell recipe-density-compact" data-recipe="menu-screen" data-recipe-density="compact" data-fixture-state="compact">
+            <div class="menu-frame-shell">
+              <aside class="menu-side-rail fixture-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Compact state">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="compact-state-full"><span>State</span><strong>Gate - 1</strong></div>
+                <div class="recipe-support-detail">
+                  <div class="fixture-row"><span>Theme</span><strong class="recipe-label">Self-discovery</strong></div>
+                  <div class="fixture-row"><span>Signal</span><strong class="recipe-label">Compass awake</strong></div>
+                </div>
+                <p id="compact-state-full" class="visually-hidden">Compact state summary: gate, chapter 1, compass awake.</p>
+              </aside>
+
+              <section class="menu-center-mount" aria-labelledby="compact-menu-title">
+                <div class="fixture-title-block">
+                  <h3 id="compact-menu-title" class="recipe-title">Choose the chapter gate</h3>
+                  <p class="recipe-annotation">Compact keeps the primary command, one fallback command and a state cue.</p>
+                </div>
+                <nav class="command-slab recipe-frame-primary" data-frame-rank="primary" aria-label="Compact menu commands">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#compact-title"><span class="recipe-label recipe-label-primary">Start path</span><span class="recipe-command-note">first fork</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#compact-title">
+                    <span class="recipe-label">Continue</span>
+                    <span class="visually-hidden">Continue current trace from the latest saved chapter.</span>
+                  </a>
+                  <a class="btn btn-quiet recipe-secondary-command recipe-compact-hidden" data-command-rank="secondary" href="#compact-title"><span class="recipe-label">Archive</span></a>
+                </nav>
+              </section>
+
+              <aside class="menu-route-index fixture-panel recipe-support-panel recipe-frame-tertiary" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Compact routes">
+                <div class="recipe-support-summary" aria-describedby="compact-routes-full"><span>Routes</span><strong>3 below</strong></div>
+                <div class="recipe-support-detail fixture-routes">
+                  <a class="fixture-route" data-route-state="current" href="#compact-title"><span class="route-badge route-badge--gate" aria-hidden="true"></span><span><strong class="recipe-label">Forest road</strong><small>current</small></span></a>
+                  <a class="fixture-route" data-route-state="next" href="#compact-title"><span class="route-badge route-badge--compass" aria-hidden="true"></span><span><strong class="recipe-label">Archive</strong><small>next</small></span></a>
+                  <a class="fixture-route" data-route-state="locked" href="#compact-title"><span class="route-badge route-badge--lantern" aria-hidden="true"></span><span><strong class="recipe-label">Threshold</strong><small>locked</small></span></a>
+                </div>
+                <p id="compact-routes-full" class="visually-hidden">Three route rows are represented by a compact route summary.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="emergency-title">
+          <h2 id="emergency-title">Emergency: primary command plus one orientation cue</h2>
+          <article class="fixture-menu menu-screen-shell recipe-density-emergency" data-recipe="menu-screen" data-recipe-density="emergency" data-fixture-state="emergency">
+            <div class="menu-frame-shell">
+              <aside class="menu-side-rail fixture-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Emergency state">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="emergency-state-full"><span>Cue</span><strong>Gate</strong></div>
+                <div class="recipe-support-detail"><div class="fixture-row"><span>Location</span><strong class="recipe-label">Ancient gate</strong></div></div>
+                <p id="emergency-state-full" class="visually-hidden">Emergency orientation cue: ancient gate.</p>
+              </aside>
+              <section class="menu-center-mount" aria-labelledby="emergency-menu-title">
+                <div class="fixture-title-block">
+                  <h3 id="emergency-menu-title" class="recipe-title">Chapter gate</h3>
+                  <p class="recipe-annotation recipe-emergency-hidden">All non-critical support can move below the fold.</p>
+                </div>
+                <nav class="command-slab recipe-frame-primary" data-frame-rank="primary" aria-label="Emergency menu commands">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#emergency-title"><span class="recipe-label recipe-label-primary">Start path</span><span class="recipe-command-note">first fork</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#emergency-title"><span class="recipe-label">Back</span><span class="visually-hidden">Return to previous route safely.</span></a>
+                </nav>
+              </section>
+              <aside class="menu-route-index fixture-panel recipe-support-panel recipe-frame-tertiary recipe-emergency-hidden" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Emergency routes">
+                <div class="recipe-support-summary"><span>Routes</span><strong>below fold</strong></div>
+              </aside>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="stress-title">
+          <h2 id="stress-title">Stress: long labels and over-budget support downgrade</h2>
+          <article class="fixture-menu menu-screen-shell recipe-density-compact" data-recipe="menu-screen" data-recipe-density="compact" data-fixture-state="stress">
+            <div class="menu-frame-shell">
+              <aside class="menu-side-rail fixture-panel recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-recipe-collapse="summary" aria-label="Stress state">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="stress-state-full"><span>State</span><strong>6 rows summarized</strong></div>
+                <div class="recipe-support-detail">
+                  <div class="fixture-row"><span>Theme</span><strong class="recipe-label">Long translated self-discovery theme</strong></div>
+                  <div class="fixture-row"><span>Location</span><strong class="recipe-label">Ancient illuminated threshold gate</strong></div>
+                  <div class="fixture-row"><span>Signal</span><strong class="recipe-label">Compass awake</strong></div>
+                  <div class="fixture-row"><span>Party</span><strong class="recipe-label">Four companions ready</strong></div>
+                  <div class="fixture-row"><span>Mode</span><strong class="recipe-label">Chapter selection</strong></div>
+                  <div class="fixture-row"><span>Risk</span><strong class="recipe-label">Quiet courage required</strong></div>
+                </div>
+                <p id="stress-state-full" class="visually-hidden">Stress state has six rail rows; compact mode summarizes them.</p>
+              </aside>
+              <section class="menu-center-mount" aria-labelledby="stress-menu-title">
+                <div class="fixture-title-block">
+                  <h3 id="stress-menu-title" class="recipe-title">Choose the chapter gate with a deliberately long translated title</h3>
+                  <p class="recipe-annotation">Stress content proves that compact mode reduces visible support before making controls illegible.</p>
+                </div>
+                <nav class="command-slab recipe-frame-primary" data-frame-rank="primary" aria-label="Stress menu commands">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#stress-title"><span class="recipe-label recipe-label-primary">Begin the first threshold path</span><span class="recipe-command-note">full label remains visible</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#stress-title"><span class="recipe-label">Continue</span><span class="visually-hidden">Continue current saved route.</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command recipe-compact-hidden" data-command-rank="secondary" href="#stress-title"><span class="recipe-label">Open symbolic archive records</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command recipe-compact-hidden" data-command-rank="secondary" href="#stress-title"><span class="recipe-label">Review all companion archetypes</span></a>
+                  <a class="btn btn-quiet recipe-secondary-command recipe-compact-hidden" data-command-rank="secondary" href="#stress-title"><span class="recipe-label">Return to sandbox overview</span></a>
+                </nav>
+              </section>
+              <aside class="menu-route-index fixture-panel recipe-support-panel recipe-frame-tertiary" data-frame-rank="tertiary" data-recipe-collapse="summary" aria-label="Stress routes">
+                <div class="recipe-support-summary" aria-describedby="stress-routes-full"><span>Routes</span><strong>12 below</strong></div>
+                <div class="recipe-support-detail fixture-routes">
+                  <a class="fixture-route" data-route-state="current" href="#stress-title"><span class="route-badge route-badge--gate" aria-hidden="true"></span><span><strong class="recipe-label">Forest road</strong><small>current</small></span></a>
+                  <a class="fixture-route" data-route-state="next" href="#stress-title"><span class="route-badge route-badge--compass" aria-hidden="true"></span><span><strong class="recipe-label">Archive of very long symbolic names</strong><small>next</small></span></a>
+                </div>
+                <p id="stress-routes-full" class="visually-hidden">Stress fixture represents twelve route rows through a compact route summary.</p>
+              </aside>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

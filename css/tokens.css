@@ -161,6 +161,18 @@
   --first-screen-dossier: 100svh;
   --first-screen-ritual: 100svh;
   --first-screen-route-board: 100svh;
+  --recipe-title-lines-standard: 2;
+  --recipe-primary-label-lines: 2;
+  --recipe-secondary-label-lines: 2;
+  --recipe-secondary-label-lines-compact: 1;
+  --recipe-rail-label-lines: 2;
+  --recipe-rail-label-lines-compact: 1;
+  --recipe-metadata-lines: 1;
+  --recipe-annotation-lines-compact: 1;
+  --recipe-summary-lines: 1;
+  --recipe-frame-primary-opacity: 1;
+  --recipe-frame-secondary-opacity: 0.78;
+  --recipe-frame-tertiary-opacity: 0.56;
 
   /* ==========================================================================
      LAYER 3 — SEMANTIC TOKENS
