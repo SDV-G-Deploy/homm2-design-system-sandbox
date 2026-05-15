@@ -44,6 +44,8 @@ Not started in this bounded pass:
 - Narrow fixture-local CSS was added only to prevent long side-rail labels/values from creating overflow: dossier `archive-rail[data-support-recipe="side-rail-metadata"] [data-full-label]` and feed sidebar `min-width: 0`/`overflow-wrap: anywhere` guards.
 - Headless Chromium smoke screenshots were generated at `1440x900` and `390x844` under `tmp/side-rail-pass/` and `tmp/side-rail-pass3/` after serving the repo with `python3 -m http.server 8765`.
 - OpenClaw browser navigation to local file/localhost was blocked by policy, so automated browser layout evaluation did not run through that tool. This pass therefore records a smoke check plus selector/static verification, not a full visual QA matrix.
+- The final closeout pass in `docs/final-acceptance-closeout-2026-05-15.md` adds local headless-Chromium DOM/layout evidence at `1440x900` and `390x844`: dossier and feed rails remain secondary, desktop rails stay narrower than their primary frames, mobile rails follow the primary frame, hidden-count/full-label hooks remain present, and no unintended host horizontal overflow was detected.
+- This still is not a full visual QA matrix: `360x740`, `1024x640`, `1728x1000`, strict accessibility typography sanity, and ArticleHeroRecipe + SideRailMetadataRecipe remain outside this bounded proof.
 
 ## Remaining Gaps / Not Yet Proven Combinations
 

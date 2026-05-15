@@ -19,7 +19,7 @@ SideRailMetadataRecipe remains support-only. Bounded host-bound proof now exists
 QA must evaluate generated work against the existing documentation chain:
 
 - Pass 1 defines the system boundary: generated work is not on-system unless it is based on recipe families, contracts, fixtures and QA rather than prompt output alone.
-- Pass 2 defines recipe-family status: MenuScreenRecipe is the proven baseline; hero, dossier and feed are critical but not proof-backed yet; side rails are support unless a later pass changes their status.
+- Pass 2 defines recipe-family status: MenuScreenRecipe is the proven baseline; hero, dossier and feed are critical first-tranche hosts; side rails are support unless a later pass changes their status.
 - Pass 3 defines content budgets, downgrade order, density modes and accessible full-text obligations for the content-first tranche.
 - Pass 4 defines canonical fixture primacy, hostile state expectations and the distinction between canonical, bridge, applied and documentation surfaces.
 - Pass 5 defines generation gates and explicitly separates conceptual assembly from proof-backed generation.
@@ -47,10 +47,10 @@ Use these labels in QA notes and handoffs.
 Current acceptance status:
 
 - MenuScreenRecipe: canonical-proof-backed only within the existing menu fixture scope.
-- ArticleHeroRecipe: canonical fixture now exists in `fixtures/article-hero-recipe.html`, but broader proof status still depends on fuller matrix QA beyond the tranche-1 sanity pass.
-- DossierReadingRecipe: canonical fixture now exists in `fixtures/dossier-reading-recipe.html`, but broader proof status still depends on fuller matrix QA beyond the tranche-1 sanity pass.
-- FeedListingRecipe: canonical fixture now exists in `fixtures/feed-listing-recipe.html`, but broader proof status still depends on fuller matrix QA beyond the tranche-1 sanity pass.
-- SideRailMetadataRecipe: conceptual or future unit-proof only until both isolated behavior and host-bound secondary behavior are proven.
+- ArticleHeroRecipe: canonical fixture exists in `fixtures/article-hero-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
+- DossierReadingRecipe: canonical fixture exists in `fixtures/dossier-reading-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
+- FeedListingRecipe: canonical fixture exists in `fixtures/feed-listing-recipe.html` and has bounded `1440x900` + `390x844` closeout evidence in `docs/final-acceptance-closeout-2026-05-15.md`; broader proof status still depends on fuller matrix QA and strict accessibility sanity.
+- SideRailMetadataRecipe: bounded host-bound secondary proof now exists for dossier and feed hosts; isolated unit proof, hero-host proof and broad reuse remain separate gates.
 - Applied pages such as fairy-journeys.html surfaces: bridge-smoke only unless a bounded later pass promotes matching behavior into canonical fixtures.
 
 ## Viewport Matrix
@@ -204,7 +204,8 @@ Required canonical host fixtures before hero/dossier/feed generation is accepted
 Implementation note:
 
 - The tranche-1 host fixtures now exist.
-- Broad generation should still wait for a fuller QA matrix pass across the required hostile and density states.
+- A bounded final closeout pass now covers `1440x900` and `390x844` for the tranche-1 host fixtures.
+- Broad generation should still wait for a fuller QA matrix pass across all required viewport states, plus strict accessibility sanity cleanup.
 
 Each host fixture must include:
 

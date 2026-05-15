@@ -14,7 +14,7 @@ Sources carried forward:
 - `docs/fixture-strategy-2026-05-15.md`
 - `docs/pass-1-4-audit-2026-05-15.md`
 
-The playbook is intentionally conservative. It names what a generator may conceptually assemble, but it does not claim broad generation is credible until the regression-critical host fixtures exist and pass viewport QA.
+The playbook is intentionally conservative. It names what a generator may conceptually assemble, but it does not claim broad generation is credible until the regression-critical host fixtures pass the full viewport and accessibility gates. The first-tranche host fixtures now exist and have a bounded desktop/mobile closeout pass, but that is not the same as broad generation readiness.
 
 ## Ratified Assumptions Entering Pass 5
 
@@ -64,7 +64,7 @@ The hero must not become a scenic poster. Art, captions, secondary CTAs, and met
 Proof status:
 
 - Conceptually generatable: hero-led pages, hero-to-dossier pages, and hero-to-feed pages that obey the documented budgets.
-- Proof-backed today: still not broad-use proof-backed. The tranche-1 canonical fixture now exists, but broader use remains blocked until fuller QA confirms the required hostile and density states.
+- Proof-backed today: bounded fixture-scope evidence exists for the canonical hero fixture at `1440x900` and `390x844`; broad use remains blocked until fuller QA confirms the remaining viewport states and strict accessibility sanity.
 
 ## Host / Support Composition Rules
 
@@ -174,13 +174,13 @@ Bounded experiments should not be used to claim the design system can broadly ge
 
 ### Gate 2: Host Fixture Proof
 
-Generation of hero/dossier/feed pages remains blocked from broad proof-backed use until these canonical fixtures are both implemented and QA-backed:
+Generation of hero/dossier/feed pages remains blocked from broad proof-backed use until these canonical fixtures are QA-backed across the full matrix:
 
 - `fixtures/article-hero-recipe.html`
 - `fixtures/dossier-reading-recipe.html`
 - `fixtures/feed-listing-recipe.html`
 
-Each must include the hostile and density states named in the fixture strategy, stable recipe/density/frame-rank selectors, summary/cue hooks where relevant, accessible full-text carriers for compact states, and viewport/QA evidence strong enough for acceptance.
+Each now exists and includes hostile/density states, stable recipe/density/frame-rank selectors, summary/cue hooks where relevant, and accessible full-text carriers for compact states. The bounded closeout pass in `docs/final-acceptance-closeout-2026-05-15.md` covers `1440x900` and `390x844`; `360x740`, `1024x640`, `1728x1000`, and strict accessibility typography sanity remain open before broad acceptance.
 
 ### Gate 3: Viewport And Accessibility QA
 
@@ -226,13 +226,14 @@ Proof-backed outcomes require canonical fixtures, hostile content states, stable
 Current proof-backed generation scope:
 
 - `MenuScreenRecipe` within the existing canonical fixture scope only.
+- First-tranche host fixtures only within the bounded evidence recorded in `docs/final-acceptance-closeout-2026-05-15.md`, not as broad generation templates.
 
 Current conceptual but not proof-backed scope:
 
-- `ArticleHeroRecipe` as standalone host or opening slot.
-- `DossierReadingRecipe` reading pages with rails/notes/ledger support.
-- `FeedListingRecipe` archive and listing pages with filters, rows, and featured variants.
-- `SideRailMetadataRecipe` attached to hero, dossier, or feed hosts.
+- Broad `ArticleHeroRecipe` generation as standalone host or opening slot.
+- Broad `DossierReadingRecipe` reading pages with rails/notes/ledger support.
+- Broad `FeedListingRecipe` archive and listing pages with filters, rows, and featured variants.
+- `SideRailMetadataRecipe` attached to hero hosts, and any side-rail use outside the bounded dossier/feed proof.
 - `TeaserCardBlockRecipe` as related/preview support.
 
 Blocked until proof:
