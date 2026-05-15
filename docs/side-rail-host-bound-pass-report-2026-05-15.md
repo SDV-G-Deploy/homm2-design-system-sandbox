@@ -13,9 +13,13 @@ Implemented in this pass:
 - `DossierReadingRecipe` + `SideRailMetadataRecipe` in `fixtures/dossier-reading-recipe.html`
 - `FeedListingRecipe` + `SideRailMetadataRecipe` in `fixtures/feed-listing-recipe.html`
 
-Not started in this bounded pass:
+Not started in the original bounded dossier/feed pass:
 
 - ArticleHeroRecipe + SideRailMetadataRecipe
+
+Follow-up note:
+
+- ArticleHeroRecipe + SideRailMetadataRecipe was implemented later as a separate bounded proof in docs/article-hero-side-rail-host-bound-pass-report-2026-05-15.md. The original dossier/feed evidence and scope remain unchanged.
 
 ## Selectors / Hooks Added Or Reused
 
@@ -46,11 +50,11 @@ Not started in this bounded pass:
 - OpenClaw browser navigation to local file/localhost was blocked by policy, so automated browser layout evaluation did not run through that tool. This pass therefore records a smoke check plus selector/static verification, not a full visual QA matrix.
 - The final closeout pass in `docs/final-acceptance-closeout-2026-05-15.md` adds local headless-Chromium DOM/layout evidence at `1440x900` and `390x844`: dossier and feed rails remain secondary, desktop rails stay narrower than their primary frames, mobile rails follow the primary frame, hidden-count/full-label hooks remain present, and no unintended host horizontal overflow was detected.
 - The broad-readiness closeout pass in `docs/broad-readiness-acceptance-pass-2026-05-15.md` adds `360x740`, `1024x640`, and `1728x1000` evidence plus strict fixture typography sanity closure. Dossier has 5 host-bound side rails and feed has 6; all remain secondary/collapsed-summary. Desktop/tablet rails are narrower than primary frames, and mobile rails become equal-width single-column support after the primary.
-- ArticleHeroRecipe + SideRailMetadataRecipe remains outside this bounded proof.
+- ArticleHeroRecipe + SideRailMetadataRecipe remains outside the original dossier/feed bounded proof. See docs/article-hero-side-rail-host-bound-pass-report-2026-05-15.md for the later ArticleHero host-bound proof artifact.
 
 ## Remaining Gaps / Not Yet Proven Combinations
 
-- `ArticleHeroRecipe` + `SideRailMetadataRecipe` was not implemented in this bounded pass.
+- `ArticleHeroRecipe` + `SideRailMetadataRecipe` was not implemented in the original dossier/feed bounded pass; it is covered by the later ArticleHero host-bound proof artifact.
 - No applied-page proof substitution was attempted.
 - No shell-navigation contract pass was attempted.
 - No promo-heavy, dashboard-heavy or search-heavy rail expansion was attempted.

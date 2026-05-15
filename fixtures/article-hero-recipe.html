@@ -159,7 +159,21 @@
         background: rgb(var(--ink-950) / 0.32);
       }
 
+      .hero-side-rail {
+        display: grid;
+        align-content: start;
+        gap: 10px;
+        min-width: 0;
+        padding: 14px;
+        border: 1px solid rgb(var(--gold-300) / 0.15);
+        clip-path: var(--shape-panel);
+        background:
+          linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 32%),
+          rgb(var(--ink-950) / 0.34);
+      }
+
       .hero-meta-panel h4,
+      .hero-side-rail h4,
       .hero-bridge h4 {
         margin: 0;
         color: var(--accent-value);
@@ -176,6 +190,40 @@
 
       .hero-meta-cell {
         min-height: var(--tap-target-compact);
+      }
+
+      .hero-side-rail-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .hero-side-rail-row {
+        display: grid;
+        gap: 4px;
+        min-height: var(--tap-target-compact);
+        min-width: 0;
+        padding: 10px;
+        border: 1px solid rgb(var(--gold-300) / 0.12);
+        clip-path: var(--shape-interactive);
+        background: rgb(var(--ink-950) / 0.2);
+      }
+
+      .hero-side-rail-row span {
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      .hero-side-rail-row strong {
+        min-width: 0;
+        font-family: var(--font-display);
+        font-size: 14px;
+        line-height: 1.35;
+        text-transform: uppercase;
+        overflow-wrap: anywhere;
       }
 
       .hero-meta-cell strong {
@@ -328,6 +376,14 @@
         max-width: 16ch;
       }
 
+      .fixture-hero[data-fixture-state="hostile-side-rail"] .hero-copy-card h3 {
+        max-width: 15ch;
+      }
+
+      .fixture-hero[data-fixture-state="hostile-side-rail"] .hero-side-rail [data-full-label] {
+        overflow-wrap: anywhere;
+      }
+
       .fixture-hero[data-recipe-density="emergency"] .hero-copy-card {
         padding-bottom: 20px;
       }
@@ -378,6 +434,14 @@
           order: 3;
         }
 
+        .hero-side-rail[data-recipe-collapse="summary"] .recipe-support-summary {
+          display: flex;
+        }
+
+        .hero-side-rail[data-recipe-collapse="summary"] .recipe-support-detail {
+          display: none;
+        }
+
         .hero-copy-card {
           padding: 16px;
         }
@@ -394,6 +458,7 @@
 
       .fixture-shell .eyebrow,
       .fixture-hero .hero-meta-cell span,
+      .fixture-hero .hero-side-rail-row span,
       .fixture-hero .bridge-item span {
         font-size: 12px;
         letter-spacing: 0.04em;
@@ -710,6 +775,75 @@
                   <span>Second result</span>
                   <strong>Chapel cellar keys moved after the procession.</strong>
                   <p>Supporting row stays visible but secondary.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="hero-hostile-side-rail-title">
+          <h2 id="hero-hostile-side-rail-title">Hostile side rail: support rail stays secondary to the hero opening</h2>
+          <article class="fixture-hero" data-recipe="article-hero" data-primary-recipe="article-hero" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="hostile-side-rail">
+            <div class="hero-stage">
+              <section class="hero-copy-card recipe-frame-primary" data-frame-rank="primary" data-hero-slot="copy" aria-labelledby="hero-hostile-side-rail-heading">
+                <div>
+                  <p class="eyebrow">Border testimony</p>
+                  <h3 id="hero-hostile-side-rail-heading" class="recipe-title">The border shrine receipt named every unpaid bell ringer before it named the missing baron.</h3>
+                </div>
+                <p class="hero-deck recipe-annotation">
+                  The hero keeps the story opening dominant while a long companion rail records hostile but plausible archive status, hidden context and translated custody labels.
+                </p>
+                <div class="hero-actions" aria-label="Hostile side rail hero actions">
+                  <a class="btn btn-ceremonial recipe-primary-command" data-command-rank="primary" href="#hero-hostile-side-rail-bridge">Read the shrine testimony</a>
+                  <a class="btn btn-quiet recipe-secondary-command" data-command-rank="secondary" href="#hero-hostile-side-rail-bridge">Open related custody notes</a>
+                </div>
+              </section>
+
+              <aside class="hero-side-rail recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-hero-slot="side-rail" data-support-recipe="side-rail-metadata" data-side-rail-state="long-label-hidden-count" data-hidden-count="4" data-recipe-collapse="summary" aria-labelledby="hero-hostile-side-rail-head">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="hero-hostile-side-rail-full">
+                  <span>Rail</span>
+                  <strong>Border shrine · 4 hidden rows · custody disputed</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4 id="hero-hostile-side-rail-head">Companion rail</h4>
+                  <div class="hero-side-rail-list">
+                    <div class="hero-side-rail-row">
+                      <span>Current archive location</span>
+                      <strong class="recipe-metadata" data-full-label="Border shrine bell-tower annex, south stair custody shelf">Border shrine bell-tower annex, south stair custody shelf</strong>
+                    </div>
+                    <div class="hero-side-rail-row">
+                      <span>Translated custody status</span>
+                      <strong class="recipe-metadata" data-full-label="Held by reeve, challenged by abbey clerk, unsigned by baronial guard">Held by reeve, challenged by abbey clerk, unsigned by baronial guard</strong>
+                    </div>
+                    <div class="hero-side-rail-row">
+                      <span>Witness group</span>
+                      <strong class="recipe-metadata" data-full-label="Bell ringers, candle steward, missing baron's toll deputy">Bell ringers, candle steward, missing baron's toll deputy</strong>
+                    </div>
+                    <div class="hero-side-rail-row recipe-compact-hidden">
+                      <span>Hidden context</span>
+                      <strong class="recipe-metadata" data-full-label="Four lower-priority custody notes move below the hero before the title or handoff shrinks">Four lower-priority custody notes move below the hero before the title or handoff shrinks</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="hero-hostile-side-rail-full" class="visually-hidden">Hostile side rail summary: Border shrine bell-tower annex, four hidden rows, custody disputed by reeve, abbey clerk, and baronial guard. The ArticleHeroRecipe title, deck, primary command, and visible handoff remain the host primary surface.</p>
+              </aside>
+            </div>
+
+            <section class="hero-bridge recipe-frame-secondary" data-frame-rank="secondary" id="hero-hostile-side-rail-bridge" data-handoff-target="dossier" aria-labelledby="hero-hostile-side-rail-bridge-head">
+              <h4 id="hero-hostile-side-rail-bridge-head">Visible handoff</h4>
+              <p class="hero-bridge-copy">
+                The first reading block carries the complete custody story. The side rail summarizes location and status only; it does not contain page-primary actions or replace the hero's reading path.
+              </p>
+              <div class="bridge-listing">
+                <article class="bridge-item">
+                  <span>Dossier opening</span>
+                  <strong>The shrine ledger opens with bells, unpaid oil, and a baronial seal found under wax scraps.</strong>
+                  <p>Primary onward path stays in the article flow.</p>
+                </article>
+                <article class="bridge-item">
+                  <span>Rail overflow</span>
+                  <strong>Four custody notes move into the reading block below.</strong>
+                  <p>Support detail demotes before hero copy changes rank.</p>
                 </article>
               </div>
             </section>
