@@ -15,11 +15,52 @@ body {
 
 .fairy-shell .site-shell-topbar {
   position: relative;
+  gap: 10px;
+  padding-block: 10px 11px;
+  border-color: rgb(var(--gold-300) / 0.12);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 34%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.72), rgb(var(--ink-950) / 0.88));
+  box-shadow:
+    0 6px 0 rgb(var(--ink-950) / 0.1),
+    0 12px 24px rgb(0 0 0 / 0.16),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.05);
 }
 
 .fairy-shell .site-shell-breadcrumb {
   width: fit-content;
   max-width: 100%;
+  border-color: rgb(var(--gold-300) / 0.1);
+  background: rgb(var(--ink-950) / 0.14);
+  color: rgb(var(--parchment-50) / 0.62);
+}
+
+.fairy-shell .site-shell-brand span {
+  color: rgb(var(--parchment-50) / 0.54);
+}
+
+.fairy-shell .site-shell-nav a {
+  min-height: 34px;
+  padding: 7px 10px 8px;
+  border-color: rgb(var(--gold-300) / 0.12);
+  color: rgb(var(--parchment-50) / 0.68);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 42%),
+    rgb(var(--ink-950) / 0.18);
+}
+
+.fairy-shell .site-shell-nav a[aria-current] {
+  border-color: rgb(var(--gold-300) / 0.22);
+  color: rgb(var(--parchment-50) / 0.82);
+  background:
+    linear-gradient(180deg, rgb(var(--gold-300) / 0.08), transparent 42%),
+    rgb(var(--ink-950) / 0.22);
+}
+
+.fairy-shell .site-shell-nav a:last-child {
+  opacity: 0.78;
 }
 
 .fairy-shell .site-shell-breadcrumb ol {
@@ -581,7 +622,7 @@ body {
   .fairy-shell .site-shell-nav a {
     min-height: 38px;
     padding: 9px 12px;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.04em;
   }
 
