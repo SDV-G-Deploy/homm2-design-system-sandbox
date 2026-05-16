@@ -67,7 +67,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | 04 | launch + 75m | completed | \`0f177f6\` | applied-copy cleanup for visible proof labels on \`fairy-journeys.html\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; source grep confirmed visible strings \`ArticleHeroRecipe ·\`, \`DossierReadingRecipe ·\`, \`FeedListingRecipe ·\`, and \`не канонический тест\` were removed from the applied page UI | pass 05 if clean |
 | 05 | launch + 100m | completed | \`d99c027\` | copy-only sequencing split between launch/read and later commit beat | \`git diff --check\`; \`node tools/regression-smoke.js\`; source check confirmed hero copy now frames reading first and the first route row now frames the later choice/price beat | pass 06 if clean |
 | 06 | launch + 125m | completed | \`7d3d337\` | final alignment QA across touched pages plus minimal fact sync | \`git diff --check\`; \`node --check tools/regression-smoke.js\`; \`node tools/regression-smoke.js\`; targeted live browser checks on \`fairy-journeys.html\` and \`reference.html\` at \`1440x900\`, \`390x844\`, and \`768px\` | closeout |
-| closeout | launch + 150m | completed | pending closeout commit | closeout report | `git diff --check`; git/github state inspection; GitHub status lookup (no checks/runs exposed) | done |
+| closeout | launch + 150m | completed | `f9db53b` | closeout report | `git diff --check`; git/github state inspection; GitHub status lookup (no checks/runs exposed) | done |
 
 ## Closeout
 
