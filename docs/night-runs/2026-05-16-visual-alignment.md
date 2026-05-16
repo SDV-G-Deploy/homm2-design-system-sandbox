@@ -66,7 +66,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | 03 | launch + 50m | completed | \`56a86a3\` | tablet-safe stack breakpoint for reference manual tables | \`git diff --check\`; \`node tools/regression-smoke.js\`; source re-check showed wide table stack rules previously started only at \`560px\`, leaving desktop multi-column table grids active at \`768px\` | pass 04 if clean |
 | 04 | launch + 75m | completed | \`0f177f6\` | applied-copy cleanup for visible proof labels on \`fairy-journeys.html\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; source grep confirmed visible strings \`ArticleHeroRecipe ·\`, \`DossierReadingRecipe ·\`, \`FeedListingRecipe ·\`, and \`не канонический тест\` were removed from the applied page UI | pass 05 if clean |
 | 05 | launch + 100m | completed | \`d99c027\` | copy-only sequencing split between launch/read and later commit beat | \`git diff --check\`; \`node tools/regression-smoke.js\`; source check confirmed hero copy now frames reading first and the first route row now frames the later choice/price beat | pass 06 if clean |
-| 06 | launch + 125m | planned | - | alignment QA/docs sync | - | closeout |
+| 06 | launch + 125m | completed | pending | final alignment QA across touched pages plus minimal fact sync | \`git diff --check\`; \`node --check tools/regression-smoke.js\`; \`node tools/regression-smoke.js\`; targeted live browser checks on \`fairy-journeys.html\` and \`reference.html\` at \`1440x900\`, \`390x844\`, and \`768px\` | closeout |
 | closeout | launch + 150m | planned | - | closeout report | - | done |
 
 ## Closeout
@@ -115,3 +115,14 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 - Applied changes: hero secondary link now points to where the choice starts; the handoff summary now says \`сначала чтение, затем выбор имени\`; the route summary, current-row badge, and current-row annotation now frame the first route step as the choice/price beat rather than another generic continuation cue.
 - Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports; source check confirmed the new sequencing strings in the hero and route sections.
 - Next best step: pass 06 alignment QA + minimal docs sync.
+
+## Pass 06 Notes
+
+- Result: final alignment QA passed for the touched surfaces; no additional page/code changes were needed beyond syncing the ledger facts for this wake.
+- Changed files: this ledger only.
+- Regression gate: \`git diff --check\` clean; \`node --check tools/regression-smoke.js\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports.
+- Targeted browser checks on the deployed sandbox:
+  - \`fairy-journeys.html#route-ledger\` at \`1440x900\` and \`390x844\`: no page overflow, anchor present, nav labels one line, subtitle \`маршрутная проверка\`, handoff \`сначала чтение, затем выбор имени\`, route summary \`3 записи · выбор начинается с первой строки\`, badge \`момент выбора\`.
+  - \`fairy-journeys.html#field-dossier\` at \`768px\`: no page overflow and both \`#field-dossier\` and \`#route-ledger\` present.
+  - \`reference.html#operator-mode\` at \`1440x900\`, \`390x844\`, and \`768px\`: no page overflow, operator mode present, and no detected overflow in \`.decision-table\`, \`.contract-table\`, \`.slot-table\`, or \`.responsive-contract-table\`; the first table templates stacked to \`1fr\` at \`390px\` and \`768px\`.
+- Next best step: closeout wake.
