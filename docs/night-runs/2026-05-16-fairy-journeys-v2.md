@@ -65,7 +65,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 04 | confirmation + 75m | completed | `a4022de` | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
 | 05 | confirmation + 100m | completed | `7cd2fd8` | `docs/fairy-journeys-bounded-prompt-2026-05-16.md`; this ledger | targeted doc inspection; `git diff --check` | stop after bounded wake |
 | 06 | confirmation + 125m | completed | `0768da5` | no-op cleanup review; this ledger | targeted cleanup sweep; `git diff --check` | closeout |
-| closeout | manual 2026-05-16 15:33 UTC | completed | `f3e3821` | this ledger | git status, local/upstream HEAD, Pages success on HEAD | done manually; cron closeout removed |
+| closeout | manual 2026-05-16 15:33 UTC | completed | `3df4b70` | this ledger | git status, local/upstream HEAD, Pages success on pre-closeout HEAD | done manually; cron closeout removed |
 
 ## Closeout
 - Commits:
@@ -82,12 +82,13 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
   - `b9d6ace` Finalize HOMM2 night pass 05 ledger
   - `0768da5` Record HOMM2 night pass 06 result
   - `d4dd261` Finalize HOMM2 night pass 06 ledger
-  - `f3e3821` Close HOMM2 night run v2 manually
+  - `3df4b70` Close HOMM2 night run v2 manually
 - Verification/deploy:
   - `git status --short --branch`: clean, `main...origin/main`
   - local HEAD and `origin/main`: `d4dd2614cc404027f0a26fe74362f7dc5d8a9387`
   - lock check: no lock present
-  - latest GitHub Pages workflow for HEAD: `Deploy Pages` run `25964628743`, `success`
+  - latest GitHub Pages workflow before manual closeout commit: `Deploy Pages` run `25964628743`, `success`
+  - manual closeout commit was pushed afterward and should receive its own static Pages run
   - closeout cron job was removed manually; no active HOMM2 night-run cron jobs remain
 - Morning report sent: manual closeout requested and reported on 2026-05-16 instead of waiting for the scheduled morning cron.
 - Residual risks:
