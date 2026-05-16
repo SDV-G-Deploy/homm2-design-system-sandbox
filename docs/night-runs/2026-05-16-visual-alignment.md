@@ -67,15 +67,15 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | 04 | launch + 75m | completed | \`0f177f6\` | applied-copy cleanup for visible proof labels on \`fairy-journeys.html\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; source grep confirmed visible strings \`ArticleHeroRecipe ·\`, \`DossierReadingRecipe ·\`, \`FeedListingRecipe ·\`, and \`не канонический тест\` were removed from the applied page UI | pass 05 if clean |
 | 05 | launch + 100m | completed | \`d99c027\` | copy-only sequencing split between launch/read and later commit beat | \`git diff --check\`; \`node tools/regression-smoke.js\`; source check confirmed hero copy now frames reading first and the first route row now frames the later choice/price beat | pass 06 if clean |
 | 06 | launch + 125m | completed | \`7d3d337\` | final alignment QA across touched pages plus minimal fact sync | \`git diff --check\`; \`node --check tools/regression-smoke.js\`; \`node tools/regression-smoke.js\`; targeted live browser checks on \`fairy-journeys.html\` and \`reference.html\` at \`1440x900\`, \`390x844\`, and \`768px\` | closeout |
-| closeout | launch + 150m | planned | - | closeout report | - | done |
+| closeout | launch + 150m | completed | pending closeout commit | closeout report | `git diff --check`; git/github state inspection; GitHub status lookup (no checks/runs exposed) | done |
 
 ## Closeout
 
-- Commits:
-- Verification/deploy:
-- Report sent:
-- Residual risks:
-- Best next step:
+- Commits: `dc7c528` anchor alias, `5054599` ledger sync, `9805102` mobile nav rail padding, `0825f2b` ledger sync, `56a86a3` reference tablet table stack, `9b9cca7` ledger sync, `0f177f6` applied proof-label cleanup, `c860d41` ledger sync, `d99c027` launch-vs-commit copy split, `1d9e0b6` ledger sync, `7d3d337` alignment QA record, `8a6cd4e` ledger sync.
+- Verification/deploy: local repo clean at closeout start with `HEAD == origin/main == 8a6cd4e`; GitHub connector returned no combined-status checks and no workflow runs for `8a6cd4e`, so deploy/CI could not be positively confirmed from available tooling in this wake; prior pass-06 regression/browser checks remain the last successful verification gate.
+- Report sent: pending manual closeout delivery.
+- Residual risks: no connector-visible CI/deploy signal was available for the final pushed commit; pass 02 also lacked a local host-browser re-measurement after the nav fix because host-browser navigation to local `127.0.0.1` was blocked in that wake, though the later deployed browser QA in pass 06 was clean.
+- Best next step: no further autonomous implementation pass is needed; if additional confidence is wanted, do a human spot-check of the deployed `fairy-journeys.html` and `reference.html` surfaces on tablet/mobile.
 
 ## Pass 01 Notes
 
