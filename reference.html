@@ -13,8 +13,8 @@
 </head>
 <body>
 
-<div class="ambient ambient-gold"></div>
-<div class="ambient ambient-mana"></div>
+<div class="ambient ambient-gold" aria-hidden="true"></div>
+<div class="ambient ambient-mana" aria-hidden="true"></div>
 
 <main class="ref-shell">
 
@@ -83,8 +83,8 @@
       Start here when building a screen. Pick one recipe first, assemble it from shared components,
       lock its responsive contract, then keep local CSS limited to backdrop, sequencing and exact composition.
     </p>
-    <div class="decision-table" role="table" aria-label="Screen recipe decision table">
-      <div role="row" class="decision-head">
+    <div class="decision-table">
+      <div class="decision-head">
         <span>Recipe</span>
         <span>Purpose</span>
         <span>Required shared classes</span>
@@ -92,7 +92,7 @@
         <span>Do not use when</span>
         <span>Mobile contract</span>
       </div>
-      <div role="row">
+      <div>
         <strong>MenuScreenRecipe</strong>
         <span>Primary menu, chapter select or world-entry screen with one dominant command mount.</span>
         <span><code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code>, <code>.command-slab</code></span>
@@ -100,7 +100,7 @@
         <span>Reading-heavy content or equal-weight multi-column decisions.</span>
         <span>Command slab and save/status stay above the fold; route index and rails downgrade first.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>DossierReadingRecipe</strong>
         <span>Document, comparison or archive screen where reading is the main task.</span>
         <span><code>.parchment-object</code>, <code>.archive-rail</code> or section spine</span>
@@ -108,7 +108,7 @@
         <span>Menu-first command stacks or decorative side columns competing with the reading field.</span>
         <span>Reading field and spine cue stay visible; notes and metadata downgrade before prose.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>RitualThresholdRecipe</strong>
         <span>Commitment, irreversible choice or transition screen with explicit consequence.</span>
         <span><code>.ritual-panel</code>, one <code>.btn-ceremonial</code>, one quiet escape</span>
@@ -116,7 +116,7 @@
         <span>Routine navigation, dense route lists or more than one ceremonial action.</span>
         <span>Consequence, one ceremonial action and one escape stay legible; aura/protocol downgrade first.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>RouteBoardRecipe</strong>
         <span>Progression board that shows route states, sequence and next actionable path.</span>
         <span><code>.menu-route-index</code> or board list with <code>.route-badge</code></span>
@@ -232,8 +232,8 @@
       Responsive behavior belongs between recipes and page-local composition. Local CSS may choose exact
       proportions, but it must not re-decide what stays above the fold or shrink labels below legibility.
     </p>
-    <div class="responsive-contract-table" role="table" aria-label="Recipe responsive contract table">
-      <div role="row" class="responsive-contract-head">
+    <div class="responsive-contract-table">
+      <div class="responsive-contract-head">
         <span>Recipe</span>
         <span>First-screen budget</span>
         <span>Must stay above fold</span>
@@ -242,7 +242,7 @@
         <span>Never micro-text</span>
         <span>Tap / label floor</span>
       </div>
-      <div role="row">
+      <div>
         <strong>MenuScreenRecipe</strong>
         <span>One 900px desktop viewport; one 844px mobile viewport with a cue of the next section.</span>
         <span>Title/context, primary command slab, one secondary command, immediate save/status strip when present.</span>
@@ -251,7 +251,7 @@
         <span>Command labels, utility labels, save-state labels and route state labels.</span>
         <span>44px preferred controls; 40px compact floor; 12px label floor.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>DossierReadingRecipe</strong>
         <span>Dossier field and spine orientation fit in the first desktop viewport and begin in the first mobile viewport.</span>
         <span>Dossier heading, first readable record/prose block, one archive or spine cue.</span>
@@ -260,7 +260,7 @@
         <span>Body prose, record labels, archive rail item labels and comparison labels.</span>
         <span>Prose keeps reading rhythm; controls keep 40px compact floor and 12px labels.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>RitualThresholdRecipe</strong>
         <span>Threshold title, consequence frame and both actions fit in the first mobile viewport unless required copy forces scroll.</span>
         <span>Consequence statement, one ceremonial action and one quiet escape.</span>
@@ -269,7 +269,7 @@
         <span>Ceremonial CTA, escape action, warning labels and irreversible-choice copy.</span>
         <span>44px preferred action targets; 12px labels; non-negative tracking.</span>
       </div>
-      <div role="row">
+      <div>
         <strong>RouteBoardRecipe</strong>
         <span>Current route, next route and state legend visible in the first desktop viewport; mobile shows current + next before board scroll.</span>
         <span>Current path, next available path, badge states and route outcome hint.</span>
@@ -569,30 +569,30 @@
       Two tiers: <strong>quiet</strong> for routine movement, <strong>ceremonial</strong> for commitment.
       Both read as plaques or engraved commands, not floating product CTAs.
     </p>
-    <div class="state-matrix">
+    <div class="state-matrix" aria-label="Visual button state specimens">
       <div></div>
       <div class="col-head">btn-quiet</div>
       <div class="col-head">btn-ceremonial</div>
 
       <div class="row-head">default</div>
-      <div class="state-cell"><button class="btn btn-quiet">Keep studying</button></div>
-      <div class="state-cell"><button class="btn btn-ceremonial">Begin ritual</button></div>
+      <div class="state-cell"><button class="btn btn-quiet" type="button" tabindex="-1" aria-label="Visual specimen: quiet button default state">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial" type="button" tabindex="-1" aria-label="Visual specimen: ceremonial button default state">Begin ritual</button></div>
 
       <div class="row-head">hover</div>
-      <div class="state-cell"><button class="btn btn-quiet force-hover">Keep studying</button></div>
-      <div class="state-cell"><button class="btn btn-ceremonial force-hover">Begin ritual</button></div>
+      <div class="state-cell"><button class="btn btn-quiet force-hover" type="button" tabindex="-1" aria-label="Visual specimen: quiet button hover state">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-hover" type="button" tabindex="-1" aria-label="Visual specimen: ceremonial button hover state">Begin ritual</button></div>
 
       <div class="row-head">focus-visible</div>
-      <div class="state-cell"><button class="btn btn-quiet force-focus">Keep studying</button></div>
-      <div class="state-cell"><button class="btn btn-ceremonial force-focus">Begin ritual</button></div>
+      <div class="state-cell"><button class="btn btn-quiet force-focus" type="button" tabindex="-1" aria-label="Visual specimen: quiet button focus-visible state">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-focus" type="button" tabindex="-1" aria-label="Visual specimen: ceremonial button focus-visible state">Begin ritual</button></div>
 
       <div class="row-head">active</div>
-      <div class="state-cell"><button class="btn btn-quiet force-active">Keep studying</button></div>
-      <div class="state-cell"><button class="btn btn-ceremonial force-active">Begin ritual</button></div>
+      <div class="state-cell"><button class="btn btn-quiet force-active" type="button" tabindex="-1" aria-label="Visual specimen: quiet button active state">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-active" type="button" tabindex="-1" aria-label="Visual specimen: ceremonial button active state">Begin ritual</button></div>
 
       <div class="row-head">disabled</div>
-      <div class="state-cell"><button class="btn btn-quiet force-disabled" aria-disabled="true">Keep studying</button></div>
-      <div class="state-cell"><button class="btn btn-ceremonial force-disabled" aria-disabled="true">Begin ritual</button></div>
+      <div class="state-cell"><button class="btn btn-quiet force-disabled" type="button" tabindex="-1" aria-disabled="true" aria-label="Visual specimen: quiet button disabled state">Keep studying</button></div>
+      <div class="state-cell"><button class="btn btn-ceremonial force-disabled" type="button" tabindex="-1" aria-disabled="true" aria-label="Visual specimen: ceremonial button disabled state">Begin ritual</button></div>
     </div>
   </section>
 
@@ -667,12 +667,12 @@
 
   <section class="ref-section" id="component-inventory">
     <h2>Component Inventory · Use / Avoid</h2>
-    <div class="inventory-table" role="table" aria-label="Reusable component inventory">
-      <div role="row" class="inventory-head"><span>Component</span><span>Use when</span><span>Avoid when</span></div>
-      <div role="row"><strong>.btn-ceremonial</strong><span>One command carries reward or commitment.</span><span>Several links want attention; use .btn-quiet or plaque nav.</span></div>
-      <div role="row"><strong>.parchment-object</strong><span>The user reads, compares or keeps a record.</span><span>The surface is only decoration.</span></div>
-      <div role="row"><strong>.archive-rail</strong><span>A screen needs compact chapter/status navigation.</span><span>It competes with the first-screen command stack.</span></div>
-      <div role="row"><strong>.ritual-panel</strong><span>A threshold needs framed consequence copy.</span><span>The action is routine navigation.</span></div>
+    <div class="inventory-table">
+      <div class="inventory-head"><span>Component</span><span>Use when</span><span>Avoid when</span></div>
+      <div><strong>.btn-ceremonial</strong><span>One command carries reward or commitment.</span><span>Several links want attention; use .btn-quiet or plaque nav.</span></div>
+      <div><strong>.parchment-object</strong><span>The user reads, compares or keeps a record.</span><span>The surface is only decoration.</span></div>
+      <div><strong>.archive-rail</strong><span>A screen needs compact chapter/status navigation.</span><span>It competes with the first-screen command stack.</span></div>
+      <div><strong>.ritual-panel</strong><span>A threshold needs framed consequence copy.</span><span>The action is routine navigation.</span></div>
     </div>
     <div class="do-dont-grid">
       <div><strong>Do</strong><span>Give every frame one job: background, content, command or ritual.</span></div>
@@ -705,7 +705,7 @@
         <ul>
           <li><strong>Key classes:</strong> <code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code>, <code>.command-slab</code>.</li>
           <li><strong>Mobile:</strong> route index and rails downgrade before command slab and save/status.</li>
-          <li><strong>Proof:</strong> <a href="./fixtures/menu-screen-recipe.html">fixture</a> and <a href="./docs/design-system-operator-index-2026-05-15.md">operator index</a>.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/menu-screen-recipe.html">MenuScreenRecipe fixture</a> and <a href="./docs/design-system-operator-index-2026-05-15.md">current operator index</a>.</li>
         </ul>
       </article>
       <article class="recipe-card">
@@ -714,7 +714,7 @@
         <ul>
           <li><strong>Key classes:</strong> <code>.parchment-object</code>, <code>.archive-rail</code>, notes or metadata strips as support.</li>
           <li><strong>Mobile:</strong> notes, side matter and metadata compress before prose and reading measure.</li>
-          <li><strong>Proof:</strong> <a href="./fixtures/dossier-reading-recipe.html">fixture</a> and current proof index.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/dossier-reading-recipe.html">DossierReadingRecipe fixture</a> and current proof index.</li>
         </ul>
       </article>
       <article class="recipe-card">
@@ -723,7 +723,7 @@
         <ul>
           <li><strong>Key classes:</strong> article hero host, primary frame, support rail only when it does not outrank the hero.</li>
           <li><strong>Mobile:</strong> hero reading task stays first; support notes move after the primary field.</li>
-          <li><strong>Proof:</strong> <a href="./fixtures/article-hero-recipe.html">fixture</a> and current proof index.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/article-hero-recipe.html">ArticleHeroRecipe fixture</a> and current proof index.</li>
         </ul>
       </article>
       <article class="recipe-card">
@@ -732,7 +732,7 @@
         <ul>
           <li><strong>Key classes:</strong> feed host, stable row track, optional <code>.feed-row-index</code> markers.</li>
           <li><strong>Mobile:</strong> row badges keep a stable square track; route titles keep the readable column.</li>
-          <li><strong>Proof:</strong> <a href="./fixtures/feed-listing-recipe.html">fixture</a> with indexed route rows.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/feed-listing-recipe.html">FeedListingRecipe fixture</a> with indexed route rows.</li>
         </ul>
       </article>
       <article class="recipe-card">
@@ -758,7 +758,7 @@
   <section class="ref-section" id="accessibility">
     <h2>Accessibility Baseline</h2>
     <div class="checklist-grid">
-      <div><strong>Keyboard</strong><span>All links/buttons use :focus-visible. Do not remove it locally.</span></div>
+      <div><strong>Keyboard</strong><span>All real links/buttons use :focus-visible. Visual state specimens stay out of the tab order.</span></div>
       <div><strong>Mobile tap targets</strong><span>Commands prefer 44px min-height; secondary controls may compact to 40px; labels stay 12px or larger.</span></div>
       <div><strong>Contrast</strong><span>QA gold-on-parchment and mana-on-dark after every theme override.</span></div>
       <div><strong>Motion</strong><span>Reduced-motion is global; page CSS must not reintroduce mandatory animation.</span></div>
@@ -773,7 +773,7 @@
     <div class="checklist-grid">
       <div><strong>Fixture expansion</strong><span>Add broader proof only through fixtures or explicit pass reports.</span></div>
       <div><strong>Primitive naming</strong><span>Promote frame, crest, seal, threshold and banner primitives only after use stabilizes.</span></div>
-      <div><strong>Accessibility audit</strong><span>Gold-on-parchment, mana-on-dark, keyboard and screen-reader checks remain outside this slimming pass.</span></div>
+      <div><strong>Accessibility audit</strong><span>Initial reference audit is recorded; full WCAG/screen-reader certification remains a separate pass.</span></div>
     </div>
   </section>
 
