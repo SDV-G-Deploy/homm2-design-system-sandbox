@@ -60,7 +60,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
-| 02 | confirmation + 25m | completed | pending | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
+| 02 | confirmation + 25m | completed | `b559434` | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
 | 03 | confirmation + 50m | planned | - | TBD | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js` when relevant | pass 04 or stop |
 | 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
 | 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
@@ -97,5 +97,5 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 - Verification:
   - `git diff --check`
   - targeted reference/link sanity for cited pass documents in the reconciliation note
-- Commit: pending
+- Commit: `b559434` (`Reconcile Fairy Journeys task list`)
 - Next best step: if a later wake is explicitly resumed, use a narrow verification-oriented polish pass or a bounded Task 5 dramaturgy note/pass; otherwise stop here.
