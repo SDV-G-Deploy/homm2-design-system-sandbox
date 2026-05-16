@@ -232,36 +232,6 @@
     color: var(--ink-on-night-mute);
   }
 
-  .shape-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: var(--space-4);
-  }
-  .shape-tile {
-    min-height: 120px;
-    padding: var(--space-4);
-    background: rgb(var(--ink-950) / 0.32);
-    border: 1px solid var(--border-thin);
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px;
-    color: var(--ink-on-night-mute);
-  }
-  .shape-tile.interactive {
-    clip-path: var(--shape-interactive);
-    border-radius: var(--radius-sm);
-  }
-  .shape-tile.panel {
-    clip-path: var(--shape-panel);
-    border-radius: var(--radius-md);
-  }
-  .shape-tile.hero {
-    clip-path: var(--shape-hero);
-    border-radius: var(--radius-lg);
-  }
-
   /* Shadow tiles */
   .shadow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-5); }
   .shadow-tile {
@@ -676,8 +646,6 @@
 }
 
 .decision-table,
-.contract-table,
-.slot-table,
 .responsive-contract-table {
   display: grid;
   gap: 0;
@@ -688,8 +656,6 @@
 }
 
 .decision-table > div,
-.contract-table > div,
-.slot-table > div,
 .responsive-contract-table > div {
   display: grid;
   gap: var(--space-3);
@@ -704,14 +670,6 @@
   grid-template-columns: minmax(120px, 0.9fr) minmax(150px, 1fr) minmax(180px, 1.25fr) minmax(140px, 0.9fr) minmax(150px, 1fr) minmax(150px, 1fr);
 }
 
-.contract-table > div {
-  grid-template-columns: minmax(170px, 0.9fr) minmax(170px, 1fr) minmax(190px, 1.15fr) minmax(120px, 0.72fr) minmax(190px, 1.15fr);
-}
-
-.slot-table > div {
-  grid-template-columns: minmax(160px, 0.9fr) minmax(190px, 1.1fr) minmax(190px, 1.1fr) minmax(170px, 1fr) minmax(170px, 1fr);
-}
-
 .responsive-contract-table > div {
   grid-template-columns:
     minmax(118px, 0.75fr)
@@ -724,18 +682,12 @@
 }
 
 .decision-table > div:last-child,
-.contract-table > div:last-child,
-.slot-table > div:last-child,
 .responsive-contract-table > div:last-child {
   border-bottom: 0;
 }
 
 .decision-table strong,
 .decision-table span,
-.contract-table strong,
-.contract-table span,
-.slot-table strong,
-.slot-table span,
 .responsive-contract-table strong,
 .responsive-contract-table span {
   min-width: 0;
@@ -745,12 +697,8 @@
 }
 
 .decision-table strong,
-.contract-table strong,
-.slot-table strong,
 .responsive-contract-table strong,
 .decision-head span,
-.contract-head span,
-.slot-head span,
 .responsive-contract-head span {
   font-family: var(--font-display);
   font-size: 11px;
@@ -761,8 +709,6 @@
 }
 
 .decision-table code,
-.contract-table code,
-.slot-table code,
 .responsive-contract-table code,
 .manual-card code,
 .guardrail-strip code {
@@ -771,23 +717,17 @@
 }
 
 .decision-head,
-.contract-head,
-.slot-head,
 .responsive-contract-head {
   background: rgb(var(--gold-700) / 0.16) !important;
 }
 
 .decision-table > div:not(.decision-head) > *,
-.contract-table > div:not(.contract-head) > *,
-.slot-table > div:not(.slot-head) > *,
 .responsive-contract-table > div:not(.responsive-contract-head) > *,
 .inventory-table > div:not(.inventory-head) > * {
   position: relative;
 }
 
 .decision-table > div:not(.decision-head) > *::before,
-.contract-table > div:not(.contract-head) > *::before,
-.slot-table > div:not(.slot-head) > *::before,
 .responsive-contract-table > div:not(.responsive-contract-head) > *::before,
 .inventory-table > div:not(.inventory-head) > *::before {
   display: none;
@@ -807,16 +747,6 @@
 .decision-table > div:not(.decision-head) > :nth-child(4)::before { content: "Optional"; }
 .decision-table > div:not(.decision-head) > :nth-child(5)::before { content: "Avoid when"; }
 .decision-table > div:not(.decision-head) > :nth-child(6)::before { content: "Mobile"; }
-.contract-table > div:not(.contract-head) > :nth-child(1)::before { content: "Class"; }
-.contract-table > div:not(.contract-head) > :nth-child(2)::before { content: "Role"; }
-.contract-table > div:not(.contract-head) > :nth-child(3)::before { content: "Neighbors"; }
-.contract-table > div:not(.contract-head) > :nth-child(4)::before { content: "Hierarchy"; }
-.contract-table > div:not(.contract-head) > :nth-child(5)::before { content: "Page-local"; }
-.slot-table > div:not(.slot-head) > :nth-child(1)::before { content: "Slot"; }
-.slot-table > div:not(.slot-head) > :nth-child(2)::before { content: "Owner"; }
-.slot-table > div:not(.slot-head) > :nth-child(3)::before { content: "Image job"; }
-.slot-table > div:not(.slot-head) > :nth-child(4)::before { content: "Fallback"; }
-.slot-table > div:not(.slot-head) > :nth-child(5)::before { content: "Responsive"; }
 .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(1)::before { content: "Recipe"; }
 .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(2)::before { content: "Budget"; }
 .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(3)::before { content: "Above fold"; }
@@ -828,12 +758,8 @@
 .inventory-table > div:not(.inventory-head) > :nth-child(2)::before { content: "Use when"; }
 .inventory-table > div:not(.inventory-head) > :nth-child(3)::before { content: "Avoid when"; }
 
-.contract-boundary-grid,
 .guardrail-strip {
   margin-top: var(--space-4);
-}
-
-.guardrail-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
@@ -955,28 +881,12 @@
   line-height: 1.6;
 }
 
-.recipe-rule-group + .recipe-rule-group {
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-thin);
-}
-
-.recipe-rule-group h4 {
-  margin: 0 0 var(--space-2);
-  font-family: var(--font-display);
-  font-size: 12px;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--accent-value);
-}
-
-.recipe-rule-group ul,
-.recipe-rule-group ol {
+.recipe-card ul {
   margin: 0;
   padding-left: 1.15rem;
 }
 
-.recipe-rule-group li + li {
+.recipe-card li + li {
   margin-top: var(--space-2);
 }
 
@@ -1071,29 +981,21 @@
 
   @media (max-width: 820px) {
     .decision-table,
-    .contract-table,
-    .slot-table,
     .responsive-contract-table {
       clip-path: none;
       border-radius: var(--radius-md);
     }
     .decision-table > div,
-    .contract-table > div,
-    .slot-table > div,
     .responsive-contract-table > div {
       grid-template-columns: 1fr;
       gap: 10px;
       padding: 13px;
     }
     .decision-table > div:not(.decision-head) > *::before,
-    .contract-table > div:not(.contract-head) > *::before,
-    .slot-table > div:not(.slot-head) > *::before,
     .responsive-contract-table > div:not(.responsive-contract-head) > *::before {
       display: block;
     }
     .decision-head,
-    .contract-head,
-    .slot-head,
     .responsive-contract-head {
       display: none !important;
     }

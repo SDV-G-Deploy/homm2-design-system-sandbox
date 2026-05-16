@@ -22,8 +22,8 @@
     <div class="eyebrow">Reference · v1</div>
     <h1>HOMM2 Design System Manual</h1>
     <p>
-      Operational manual for tokens, surfaces, command hierarchy, states, page recipes and responsive contracts.
-      Build from this page first; page CSS composes layout, not system grammar.
+      Manual/operator reference for tokens, surfaces, command hierarchy, states, page recipes and responsive contracts.
+      Build from this page first; proof stays in fixtures and pass reports.
     </p>
     <div class="mode-strip" aria-label="Direction blend">
       <div class="mode-chip">
@@ -130,6 +130,7 @@
   <nav class="ref-toc" aria-label="Design system contents">
     <a href="#operator-mode">Quick mode</a>
     <a href="#front-door">Front door</a>
+    <a href="#proof-links">Proof links</a>
     <a href="#system-layers">System layers</a>
     <a href="#recipe-contract">Recipe contract</a>
     <a href="#responsive-contracts">Responsive contracts</a>
@@ -145,24 +146,38 @@
     <h2 id="source-of-truth-title">How to use this manual</h2>
     <div class="manual-grid">
       <div class="manual-card">
-        <strong>1 · Choose a material role</strong>
-        <span>Parchment reads, stone/night structures, gold commands, mana marks consequence.</span>
+        <strong>1 · Start operator-first</strong>
+        <span>Choose one primary recipe, then use this page for token/specimen lookup and manual reminders.</span>
       </div>
       <div class="manual-card">
-        <strong>2 · Assemble from components</strong>
-        <span>Use buttons, rails, parchment panels, plaques and ritual panels before local rules.</span>
+        <strong>2 · Verify elsewhere</strong>
+        <span>Canonical proof lives in fixtures and pass reports. This reference is not the proof store.</span>
       </div>
       <div class="manual-card">
-        <strong>3 · Lock the recipe</strong>
-        <span>Recipe contracts decide hierarchy, optional layers and mobile collapse order before scene styling begins.</span>
-      </div>
-      <div class="manual-card">
-        <strong>4 · Lock responsive behavior</strong>
-        <span>Use the recipe's first-screen budget, above-fold obligations and downgrade order before tuning page proportions.</span>
-      </div>
-      <div class="manual-card">
-        <strong>5 · Compose locally</strong>
+        <strong>3 · Compose locally</strong>
         <span>Scene CSS sets layout, backdrop and dramaturgy. It must not invent button, rail or panel grammar.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="proof-links" aria-labelledby="proof-links-title">
+    <h2 id="proof-links-title">Proof and Fixture Links</h2>
+    <p class="ref-note">
+      Use these as navigation targets when a manual reminder needs evidence. Do not copy proof claims back
+      into this page unless a fixture or pass report owns them.
+    </p>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>Current operator index</strong>
+        <span><a href="./docs/design-system-operator-index-2026-05-15.md">docs/design-system-operator-index-2026-05-15.md</a></span>
+      </div>
+      <div class="manual-card">
+        <strong>Canonical fixtures</strong>
+        <span><a href="./fixtures/menu-screen-recipe.html">Menu</a> · <a href="./fixtures/article-hero-recipe.html">Article hero</a> · <a href="./fixtures/dossier-reading-recipe.html">Dossier</a> · <a href="./fixtures/feed-listing-recipe.html">Feed</a> · <a href="./fixtures/site-shell-navigation-recipe.html">Site shell</a></span>
+      </div>
+      <div class="manual-card">
+        <strong>Reference pass reports</strong>
+        <span><a href="./docs/reference-operator-mode-pass-2026-05-16.md">operator mode</a> · <a href="./docs/reference-manual-optimization-pass-2026-05-16.md">manual optimization</a> · <a href="./docs/night-runs/2026-05-16-visual-alignment.md">visual alignment closeout</a></span>
       </div>
     </div>
   </section>
@@ -175,16 +190,12 @@
         <span>Color, type, spacing, shape, shadow and semantic roles. Tokens never decide screen choreography.</span>
       </div>
       <div class="manual-card">
-        <strong>Shared components</strong>
-        <span>Buttons, rails, parchment surfaces, ritual frames, menu shell primitives and bounded asset slots.</span>
-      </div>
-      <div class="manual-card">
-        <strong>Screen recipes</strong>
-        <span>The missing middle layer. Recipes define which components may appear together, in what hierarchy, and what collapses first on mobile.</span>
+        <strong>Components and recipes</strong>
+        <span>Shared primitives supply grammar; recipes decide hierarchy, allowed neighbors and collapse order.</span>
       </div>
       <div class="manual-card">
         <strong>Responsive contracts</strong>
-        <span>Per-recipe first-screen budgets, above-fold obligations, downgrade order, tap target floors and label legibility floors.</span>
+        <span>First-screen budgets, above-fold obligations, downgrade order, tap floors and label floors.</span>
       </div>
       <div class="manual-card">
         <strong>Page-local composition</strong>
@@ -278,89 +289,27 @@
   <section class="ref-section ref-manual-section" id="menu-shell-contract" aria-labelledby="menu-shell-contract-title">
     <h2 id="menu-shell-contract-title">Menu Shell Contract</h2>
     <p class="ref-note">
-      These classes are the reusable menu-screen anatomy. They define hierarchy and component
-      ownership; page files may arrange them, but should not redefine their grammar.
+      Reusable menu anatomy stays in shared CSS. Page files may arrange these pieces, but should
+      not redefine command weight, rail grammar or art-slot behavior.
     </p>
-    <div class="contract-table" role="table" aria-label="Menu shell anatomy contract">
-      <div role="row" class="contract-head">
-        <span>Class</span>
-        <span>Role</span>
-        <span>Expected neighbors</span>
-        <span>Hierarchy</span>
-        <span>Must stay page-local</span>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <strong>Core shell</strong>
+        <span><code>.menu-screen-shell</code> wraps <code>.menu-frame-shell</code>; page CSS owns only backdrop, stage proportions and grid placement.</span>
       </div>
-      <div role="row">
-        <strong><code>.menu-screen-shell</code></strong>
-        <span>Outermost framed menu stage and fallback surface.</span>
-        <span>Wraps <code>.menu-frame-shell</code>; may contain <code>.menu-art-layer</code>.</span>
-        <span>Backdrop foundation.</span>
-        <span>Scene background, stage proportions, page-specific grid placement.</span>
+      <div class="manual-card">
+        <strong>Primary mount</strong>
+        <span><code>.menu-center-mount</code> and <code>.command-slab</code> own title and command hierarchy. Rails remain support.</span>
       </div>
-      <div role="row">
-        <strong><code>.menu-frame-shell</code></strong>
-        <span>Layout carrier for center, rails and subordinate state.</span>
-        <span>Inside <code>.menu-screen-shell</code>; contains center mount and optional rails.</span>
-        <span>Composition scaffold.</span>
-        <span>Column counts, named grid areas, viewport-specific choreography.</span>
-      </div>
-      <div role="row">
-        <strong><code>.menu-center-mount</code></strong>
-        <span>Primary command and title anchor.</span>
-        <span>Contains the central header, <code>.command-slab</code> and save slot.</span>
-        <span>Primary focus.</span>
-        <span>Scene title copy, crest choices, vertical offsets.</span>
-      </div>
-      <div role="row">
-        <strong><code>.command-slab</code></strong>
-        <span>Shared stack surface for major menu commands.</span>
-        <span>Lives inside center mount; contains buttons or command links.</span>
-        <span>Highest interactive weight.</span>
-        <span>Command count, labels, separators and narrative ordering.</span>
-      </div>
-      <div role="row">
-        <strong><code>.menu-side-rail</code></strong>
-        <span>Secondary navigation, status or utility rail.</span>
-        <span>Sibling of center mount inside frame shell.</span>
-        <span>Subordinate support.</span>
-        <span>Rail content model, local icons, collapsed ordering.</span>
-      </div>
-      <div role="row">
-        <strong><code>.menu-save-slot</code></strong>
-        <span>Compact state holder near the command stack.</span>
-        <span>Usually follows command slab inside center mount.</span>
-        <span>Persistent state, below commands.</span>
-        <span>Save schema, labels, timestamp format.</span>
-      </div>
-      <div role="row">
-        <strong><code>.menu-route-index</code></strong>
-        <span>Low-volume route or chapter choices.</span>
-        <span>Near center mount or below save slot; may use route badges.</span>
-        <span>Tertiary navigation.</span>
-        <span>Route taxonomy, active destination, disabled reasons.</span>
-      </div>
-      <div role="row">
-        <strong><code>.menu-art-layer</code></strong>
-        <span>Optional non-interactive image slot holder.</span>
-        <span>Direct child of screen shell, behind frame content.</span>
-        <span>Atmospheric support only.</span>
-        <span>Whether a scene includes the layer, and which approved slots appear.</span>
+      <div class="manual-card">
+        <strong>Support layers</strong>
+        <span><code>.menu-side-rail</code>, <code>.menu-save-slot</code>, <code>.menu-route-index</code> and <code>.menu-art-layer</code> downgrade before the command slab.</span>
       </div>
     </div>
-
-    <div class="manual-grid contract-boundary-grid">
-      <div class="manual-card">
-        <strong>Shared grammar</strong>
-        <span>Surface roles, button weight, rail subordination, fallback art slots and focus behavior belong in shared CSS.</span>
-      </div>
-      <div class="manual-card">
-        <strong>Allowed local override</strong>
-        <span>Pages may set grid areas, copy measure, exact ordering, backdrop treatment and scene-specific data density.</span>
-      </div>
-      <div class="manual-card">
-        <strong>Not local</strong>
-        <span>Do not restyle command depth, invent new rail grammar, widen art slots or bake state text into images.</span>
-      </div>
-    </div>
+    <p class="ref-note">
+      Proof path: <a href="./fixtures/menu-screen-recipe.html">MenuScreenRecipe fixture</a> and
+      <a href="./docs/design-system-operator-index-2026-05-15.md">current operator index</a>.
+    </p>
   </section>
 
   <section class="ref-section ref-manual-section" id="art-slot-rules" aria-labelledby="art-slot-rules-title">
@@ -369,47 +318,15 @@
       Image assets are optional assists. The component must remain readable, ordered and useful when
       an image fails, is removed or is replaced by a theme.
     </p>
-    <div class="slot-table" role="table" aria-label="Bounded art slot fallback table">
-      <div role="row" class="slot-head">
-        <span>Slot</span>
-        <span>Owning component</span>
-        <span>Image responsibility</span>
-        <span>CSS fallback</span>
-        <span>Responsive check</span>
-      </div>
-      <div role="row">
-        <strong><code>menu-frame-corner</code></strong>
-        <span><code>.menu-art-layer</code> inside <code>.menu-screen-shell</code></span>
-        <span>Corner weight and heraldic frame joints only.</span>
-        <span>Screen-shell border, inset glow and panel shape.</span>
-        <span>Corners must not cover commands or rail labels.</span>
-      </div>
-      <div role="row">
-        <strong><code>menu-frame-edge-x</code></strong>
-        <span><code>.menu-frame-edge.top</code>, <code>.menu-frame-edge.bottom</code></span>
-        <span>Horizontal frame rhythm between corners.</span>
-        <span>Existing shell border and shadow depth.</span>
-        <span>Edges shorten before center content compresses.</span>
-      </div>
-      <div role="row">
-        <strong><code>menu-frame-edge-y</code></strong>
-        <span><code>.menu-frame-edge.left</code>, <code>.menu-frame-edge.right</code></span>
-        <span>Vertical frame rhythm beside the layout.</span>
-        <span>Existing shell border and dark structure.</span>
-        <span>Edges must not create a new side rail.</span>
-      </div>
-      <div role="row">
-        <strong><code>route-badge-sprite</code></strong>
-        <span><code>.route-badge</code> inside <code>.menu-route-index</code></span>
-        <span>Small destination icon family, never labels.</span>
-        <span>Badge ring, inner mark, color and state frame.</span>
-        <span>Icon may shrink; route text remains HTML.</span>
-      </div>
-    </div>
     <div class="guardrail-strip">
       <div><strong>No-text rule</strong><span>Readable labels, state names, counts and destinations stay in HTML/CSS.</span></div>
       <div><strong>Optional layer</strong><span>Removing <code>.menu-art-layer</code> must leave a complete menu shell.</span></div>
       <div><strong>Bounded slots</strong><span>Do not add art outside named component slots without a new contract row.</span></div>
+    </div>
+    <div class="manual-grid">
+      <div class="manual-card"><strong>Frame slots</strong><span><code>menu-frame-corner</code>, <code>menu-frame-edge-x</code>, and <code>menu-frame-edge-y</code> may add frame weight, never layout or labels.</span></div>
+      <div class="manual-card"><strong>Route badge slot</strong><span><code>route-badge-sprite</code> may supply small destination marks; route text remains HTML.</span></div>
+      <div class="manual-card"><strong>Strategy source</strong><span>Use <a href="./docs/asset-layer-pilots-2026-05-14.md">asset-layer pilots</a> and the operator index for proof status.</span></div>
     </div>
   </section>
 
@@ -588,65 +505,18 @@
     </div>
   </section>
 
-  <section class="ref-section" id="frame-anatomy">
-    <h2>Frame Anatomy</h2>
+  <section class="ref-section" id="patterns">
+    <h2>Visual Grammar</h2>
+    <p class="ref-note">
+      Keep this as a manual reminder, not proof. Fixtures own acceptance evidence.
+    </p>
     <div class="rhythm-grid">
-      <div class="rhythm-tile">
-        <strong>Outer metal rail</strong>
-        <span>Sections read as artifacts: perimeter, shadow, content field.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Inner parchment / stone field</strong>
-        <span>Use a second contour. One border is too flat for this direction.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Header · body · footer</strong>
-        <span>Panels need anatomy: label, separator, body, action rail.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="ref-section" id="shape-language">
-    <h2>Shape Language</h2>
-    <p class="ref-note">
-      The direction is deliberately less round: controls are plaques, panels are framed,
-      hero surfaces are architectural. Pills are exceptions.
-    </p>
-    <div class="shape-grid">
-      <div class="shape-tile interactive">shape-interactive · bevel-sm</div>
-      <div class="shape-tile panel">shape-panel · bevel-md</div>
-      <div class="shape-tile hero">shape-hero · bevel-lg</div>
-    </div>
-  </section>
-
-  <section class="ref-section" id="heraldic-menu">
-    <h2>Heraldic Menu</h2>
-    <p class="ref-note">
-      Primary controls behave like an old fantasy game menu: mounted, pressed, assembled.
-      Aim for command clarity with material weight, not retro parody.
-    </p>
-    <div class="sampler-grid">
-      <div class="sampler-tile">
-        <div class="sampler-label">Quiet plaque</div>
-        <button class="btn btn-quiet">Open archive</button>
-      </div>
-      <div class="sampler-tile">
-        <div class="sampler-label">Active plaque</div>
-        <button class="btn btn-quiet force-active">Enter chapter</button>
-      </div>
-      <div class="sampler-tile">
-        <div class="sampler-label">Ceremonial command</div>
-        <button class="btn btn-ceremonial">Seal decree</button>
-      </div>
-      <div class="sampler-tile">
-        <div class="sampler-label">Section menu plaques</div>
-        <div class="chapter-tabs chapter-tabs-wide heraldic-tabs">
-          <span class="chapter-tab active">Gate</span>
-          <span class="chapter-tab">Archive</span>
-          <span class="chapter-tab">Council</span>
-          <span class="chapter-tab">Ledger</span>
-        </div>
-      </div>
+      <div class="rhythm-tile"><strong>Frame anatomy</strong><span>Use perimeter, shadow, content field, label, separator, body and action rail.</span></div>
+      <div class="rhythm-tile"><strong>Shape language</strong><span>Controls are plaques, panels are framed, hero surfaces are architectural. Pills are exceptions.</span></div>
+      <div class="rhythm-tile"><strong>Heraldic menu</strong><span>Primary controls feel mounted and pressed. Command clarity matters more than ornament.</span></div>
+      <div class="rhythm-tile"><strong>Layout rhythm</strong><span>Prefer anchored copy, rails, asymmetry, section anatomy and compact archive density.</span></div>
+      <div class="rhythm-tile"><strong>Old-style motifs</strong><span>Use subtle stepped cuts, joints and bevels. Avoid retro cosplay.</span></div>
+      <div class="rhythm-tile"><strong>Ornament discipline</strong><span>Sigils, seals and mana mark ownership, consequence or state, not every box.</span></div>
     </div>
   </section>
 
@@ -752,24 +622,6 @@
     </div>
   </section>
 
-  <section class="ref-section" id="patterns">
-    <h2>Layout Rhythm</h2>
-    <div class="rhythm-grid">
-      <div class="rhythm-tile">
-        <strong>Less centered softness</strong>
-        <span>Prefer anchored copy, rails, asymmetry and structural offsets.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Section anatomy</strong>
-        <span>Use header, body and footer/action zones; avoid one soft block.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Archive density</strong>
-        <span>Use compact labels, separators and grouped information.</span>
-      </div>
-    </div>
-  </section>
-
   <section class="ref-section" id="art-asset-layer">
     <h2>Art Asset Layer</h2>
     <p class="ref-note">
@@ -813,42 +665,6 @@
     </div>
   </section>
 
-  <section class="ref-section" id="pixel-motifs">
-    <h2>Pixel / Old-Style Motifs</h2>
-    <div class="rhythm-grid">
-      <div class="rhythm-tile">
-        <strong>Stepped edge cues</strong>
-        <span>Use subtle stepped cuts, frame joints and bevels — not retro cosplay.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Chunky CTA silhouette</strong>
-        <span>Buttons feel pressed or carved, not inflated pills.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Editorial-fantasy mix</strong>
-        <span>Borrow archival pacing, then ground it in fantasy materials and tokens.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="ref-section" id="ornament-discipline">
-    <h2>Ornament Discipline</h2>
-    <div class="rhythm-grid">
-      <div class="rhythm-tile">
-        <strong>Use sigils as anchors</strong>
-        <span>Sigils, plaques and seals mark entry, ownership or consequence — not every box.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Frame before flourish</strong>
-        <span>Build hierarchy with rails, insets, headers and command depth before flourish.</span>
-      </div>
-      <div class="rhythm-tile">
-        <strong>Magic is a state, not wallpaper</strong>
-        <span>Glow and mana belong to focus, action and transformation only.</span>
-      </div>
-    </div>
-  </section>
-
   <section class="ref-section" id="component-inventory">
     <h2>Component Inventory · Use / Avoid</h2>
     <div class="inventory-table" role="table" aria-label="Reusable component inventory">
@@ -869,278 +685,76 @@
        ============================================================ -->
   <section class="ref-section" id="component-primitives">
     <h2>Component Primitives</h2>
-    <div class="sampler-grid">
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Eyebrow · .eyebrow</div>
-        <div class="eyebrow">Scene 03 · ceremonial</div>
-      </div>
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Illuminated capital · h2::first-letter</div>
-        <h3 style="margin: 0;">Open the sealed passage?</h3>
-      </div>
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Wax seal · .wax-seal</div>
-        <div class="wax-seal" style="font-family: var(--font-display); font-weight: 800;">II</div>
-      </div>
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Rule · .rule</div>
-        <span class="rule" aria-hidden="true"></span>
-        <span class="rule gold" aria-hidden="true"></span>
-        <span class="rule stone" aria-hidden="true"></span>
-      </div>
-
-      <div class="sampler-tile" style="background: var(--surface-parchment); color: var(--ink-on-parchment); border-color: var(--border-on-parchment);">
-        <div class="sampler-label" style="color: var(--ink-on-parchment-soft);">Annotation cell · .annotation-grid div</div>
-        <div style="padding: var(--space-4); border-radius: 14px; background: rgb(var(--parchment-50) / 0.32); border: 1px solid rgb(var(--gold-700) / 0.18);">
-          <strong style="display: block; font-family: var(--font-display); font-size: var(--text-caption); letter-spacing: var(--tracking-wider); text-transform: uppercase;">Parchment</strong>
-          <small style="display: block; margin-top: 6px; color: var(--ink-on-parchment-soft); font-size: var(--text-caption); line-height: 1.4;">reading, records, plans</small>
-        </div>
-      </div>
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Focus ring · :focus-visible</div>
-        <button class="btn btn-quiet force-focus">Tab here</button>
-      </div>
-
-      <div class="sampler-tile">
-        <div class="sampler-label">Chapter rail · hybrid best</div>
-        <div class="chapter-tabs">
-          <span class="chapter-tab active">Gate</span>
-          <span class="chapter-tab">Archive</span>
-          <span class="chapter-tab">Threshold</span>
-        </div>
-      </div>
-
+    <div class="manual-grid">
+      <div class="manual-card"><strong>Labels and marks</strong><span><code>.eyebrow</code>, illuminated headings, <code>.wax-seal</code>, <code>.rule</code>.</span></div>
+      <div class="manual-card"><strong>Controls</strong><span><code>.btn-quiet</code>, <code>.btn-ceremonial</code>, <code>:focus-visible</code>, active and disabled states.</span></div>
+      <div class="manual-card"><strong>Navigation</strong><span><code>.chapter-tabs</code>, <code>.archive-rail</code>, <code>.menu-route-index</code>, <code>.route-badge</code>.</span></div>
+      <div class="manual-card"><strong>Surfaces</strong><span><code>.parchment-object</code>, annotation cells, stone/night frames and ritual panels.</span></div>
     </div>
   </section>
 
   <section class="ref-section" id="recipes">
     <h2>Page Recipes</h2>
+    <p class="ref-note">
+      This is the operator map. Detailed proof stays in fixtures and current pass reports.
+    </p>
     <div class="recipe-grid">
       <article class="recipe-card">
         <h3>MenuScreenRecipe</h3>
         <p class="recipe-purpose">Menu-first entry screen for chapter selection, world entry and primary command routing.</p>
-        <div class="recipe-rule-group">
-          <h4>Required components</h4>
-          <ul>
-            <li><code>.menu-screen-shell</code></li>
-            <li><code>.menu-frame-shell</code></li>
-            <li><code>.menu-center-mount</code></li>
-            <li><code>.command-slab</code></li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Optional layers</h4>
-          <ul>
-            <li><code>.menu-side-rail</code> for status or utility</li>
-            <li><code>.menu-save-slot</code> for persistent state</li>
-            <li><code>.menu-route-index</code> for tertiary route choices</li>
-            <li><code>.menu-art-layer</code> for bounded atmosphere</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Hierarchy order</h4>
-          <ol>
-            <li>Title and command slab own the first read.</li>
-            <li>Save slot or immediate state follows the slab.</li>
-            <li>Rails support, but never compete with, the center mount.</li>
-            <li>Route index stays tertiary.</li>
-            <li>Art remains background only.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Mobile collapse order</h4>
-          <ol>
-            <li>Demote route index into a shorter list or below the fold.</li>
-            <li>Compact rails into summaries before shrinking command labels.</li>
-            <li>Keep the primary slab visible inside the first viewport.</li>
-            <li>Condense the save slot, but keep it as one strip.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Responsive contract</h4>
-          <ul>
-            <li>First-screen budget: one 900px desktop viewport; one 844px mobile viewport with a next-section cue.</li>
-            <li>Above fold: title/context, primary command slab, one secondary command and immediate save/status when present.</li>
-            <li>Never use micro-text for command, utility, save-state or route-state labels.</li>
-            <li>Tap floor: 44px preferred, 40px compact minimum, 12px label minimum.</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Forbidden combinations</h4>
-          <ul>
-            <li>Do not place a full dossier reading field inside the same first-screen shell.</li>
-            <li>Do not run multiple equal-weight command slabs side by side.</li>
-            <li>Do not let rails outrank the center mount through size, glow or density.</li>
-          </ul>
-        </div>
+        <ul>
+          <li><strong>Key classes:</strong> <code>.menu-screen-shell</code>, <code>.menu-frame-shell</code>, <code>.menu-center-mount</code>, <code>.command-slab</code>.</li>
+          <li><strong>Mobile:</strong> route index and rails downgrade before command slab and save/status.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/menu-screen-recipe.html">fixture</a> and <a href="./docs/design-system-operator-index-2026-05-15.md">operator index</a>.</li>
+        </ul>
       </article>
       <article class="recipe-card">
         <h3>DossierReadingRecipe</h3>
         <p class="recipe-purpose">Reading-first archive or dossier screen for records, comparison and retained lore.</p>
-        <div class="recipe-rule-group">
-          <h4>Required components</h4>
-          <ul>
-            <li><code>.parchment-object</code> as the main reading field</li>
-            <li><code>.archive-rail</code> or equivalent reading spine</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Optional layers</h4>
-          <ul>
-            <li><code>.note-card</code> for marginal lore</li>
-            <li><code>.dossier-ledger-strip</code> for compact metadata</li>
-            <li>Quiet utility actions outside the main parchment flow</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Hierarchy order</h4>
-          <ol>
-            <li>Parchment reading surface is the primary field.</li>
-            <li>Archive rail or chapter spine guides orientation.</li>
-            <li>Metadata strips summarize, but do not dominate.</li>
-            <li>Notes remain secondary and skimmable.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Mobile collapse order</h4>
-          <ol>
-            <li>Stack notes below the reading field.</li>
-            <li>Compress metadata strips before reducing reading measure.</li>
-            <li>Preserve one clear reading column before ornamental side matter.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Responsive contract</h4>
-          <ul>
-            <li>Above fold: dossier heading, first readable record/prose block and one spine cue.</li>
-            <li>Notes, decorative side matter and metadata compress before prose measure.</li>
-            <li>Never use micro-text for body prose, record labels or archive rail items.</li>
-            <li>Tap floor: utility and rail actions keep 40px compact minimum and 12px labels.</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Forbidden combinations</h4>
-          <ul>
-            <li>Do not replace the reading surface with card mosaics.</li>
-            <li>Do not insert a dominant ceremonial CTA above the dossier opening.</li>
-            <li>Do not flank the parchment with equal-strength side rails on both sides.</li>
-          </ul>
-        </div>
+        <ul>
+          <li><strong>Key classes:</strong> <code>.parchment-object</code>, <code>.archive-rail</code>, notes or metadata strips as support.</li>
+          <li><strong>Mobile:</strong> notes, side matter and metadata compress before prose and reading measure.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/dossier-reading-recipe.html">fixture</a> and current proof index.</li>
+        </ul>
+      </article>
+      <article class="recipe-card">
+        <h3>ArticleHeroRecipe</h3>
+        <p class="recipe-purpose">Content-first first screen for longform or applied pages with one clear reading/launch beat.</p>
+        <ul>
+          <li><strong>Key classes:</strong> article hero host, primary frame, support rail only when it does not outrank the hero.</li>
+          <li><strong>Mobile:</strong> hero reading task stays first; support notes move after the primary field.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/article-hero-recipe.html">fixture</a> and current proof index.</li>
+        </ul>
+      </article>
+      <article class="recipe-card">
+        <h3>FeedListingRecipe</h3>
+        <p class="recipe-purpose">Scan-first listing for ordered routes, indexed rows and compact outcome comparison.</p>
+        <ul>
+          <li><strong>Key classes:</strong> feed host, stable row track, optional <code>.feed-row-index</code> markers.</li>
+          <li><strong>Mobile:</strong> row badges keep a stable square track; route titles keep the readable column.</li>
+          <li><strong>Proof:</strong> <a href="./fixtures/feed-listing-recipe.html">fixture</a> with indexed route rows.</li>
+        </ul>
       </article>
       <article class="recipe-card">
         <h3>RitualThresholdRecipe</h3>
         <p class="recipe-purpose">Consequence-first threshold for commitment, initiation, warning or final choice.</p>
-        <div class="recipe-rule-group">
-          <h4>Required components</h4>
-          <ul>
-            <li><code>.ritual-panel</code></li>
-            <li>One <code>.btn-ceremonial</code></li>
-            <li>One quiet return or cancel action</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Optional layers</h4>
-          <ul>
-            <li><code>.ritual-protocol</code> or short consequence ledger</li>
-            <li>Wax seal or restrained mana cue</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Hierarchy order</h4>
-          <ol>
-            <li>Threshold title and consequence copy frame the decision.</li>
-            <li>The ceremonial action leads.</li>
-            <li>The quiet escape remains obvious but subordinate.</li>
-            <li>Mana or seal cues support the threshold, never replace it.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Mobile collapse order</h4>
-          <ol>
-            <li>Reduce decorative aura and side protocol first.</li>
-            <li>Stack protocol below the ritual body.</li>
-            <li>Keep the ceremonial action and escape readable at full tap size.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Responsive contract</h4>
-          <ul>
-            <li>Above fold: consequence statement, one ceremonial action and one quiet escape.</li>
-            <li>Aura, protocol and ledger detail compress before actions.</li>
-            <li>Never use micro-text for CTA, escape, warning or irreversible-choice copy.</li>
-            <li>Tap floor: both actions keep 44px preferred targets and 12px labels.</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Forbidden combinations</h4>
-          <ul>
-            <li>Do not present more than one ceremonial action.</li>
-            <li>Do not combine route-board density with a ritual threshold shell.</li>
-            <li>Do not use mana glow as general section decoration.</li>
-          </ul>
-        </div>
+        <ul>
+          <li><strong>Key classes:</strong> <code>.ritual-panel</code>, one <code>.btn-ceremonial</code>, one quiet escape.</li>
+          <li><strong>Mobile:</strong> aura and protocol compress before actions or warning copy.</li>
+          <li><strong>Status:</strong> manual recipe; add fixture proof before promoting broad claims.</li>
+        </ul>
       </article>
       <article class="recipe-card">
         <h3>RouteBoardRecipe</h3>
         <p class="recipe-purpose">Stateful route progression board that shows what is current, locked, visited and next.</p>
-        <div class="recipe-rule-group">
-          <h4>Required components</h4>
-          <ul>
-            <li><code>.menu-route-index</code> or equivalent board list</li>
-            <li><code>.route-badge</code> state marker for each path item</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Optional layers</h4>
-          <ul>
-            <li>Compact lore annotation</li>
-            <li>Short progress/status strip</li>
-            <li>Quiet filter or sort control</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Hierarchy order</h4>
-          <ol>
-            <li>Current and next route state must read first.</li>
-            <li>Badge state precedes lore.</li>
-            <li>Route label and outcome hint follow the state.</li>
-            <li>Annotations and filters stay secondary.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Mobile collapse order</h4>
-          <ol>
-            <li>Condense annotations before shortening state labels.</li>
-            <li>Move filters below the primary route list.</li>
-            <li>Keep badge state and current path visibility intact.</li>
-          </ol>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Responsive contract</h4>
-          <ul>
-            <li>Above fold: current path, next path, badge states and route outcome hint.</li>
-            <li>Lore, filters, progress strips and secondary rows compress before current/next rows.</li>
-            <li>Never use micro-text for current/next, locked/available or badge-adjacent labels.</li>
-            <li>Tap floor: route rows keep 40px compact minimum and 12px labels.</li>
-          </ul>
-        </div>
-        <div class="recipe-rule-group">
-          <h4>Forbidden combinations</h4>
-          <ul>
-            <li>Do not turn every route row into a framed ritual panel.</li>
-            <li>Do not let lore blocks outweigh state labels.</li>
-            <li>Do not introduce multiple competing primary actions inside the board.</li>
-          </ul>
-        </div>
+        <ul>
+          <li><strong>Key classes:</strong> <code>.menu-route-index</code>, <code>.route-badge</code>, compact state labels.</li>
+          <li><strong>Mobile:</strong> annotations and filters downgrade before current/next state rows.</li>
+          <li><strong>Status:</strong> manual recipe; use FeedListing or MenuScreen fixtures for adjacent proven behavior.</li>
+        </ul>
       </article>
     </div>
   </section>
-
   <section class="ref-section" id="accessibility">
     <h2>Accessibility Baseline</h2>
     <div class="checklist-grid">
@@ -1155,15 +769,12 @@
        NEXT
        ============================================================ -->
   <section class="ref-section" id="next-passes">
-    <h2>Next Passes</h2>
-    <ol style="max-width: 60ch; color: var(--ink-on-night-soft); line-height: var(--leading-body); padding-left: var(--space-5);">
-      <li>Stress-test mobile plaque rails on real devices.</li>
-      <li>Promote frame anatomy into primitives: Panel, Frame, Crest Header, Seal, Threshold, Sigil, Banner.</li>
-      <li>Test a restrained heraldic sub-mode with harder outlines and stronger step-edge cues.</li>
-      <li>Introduce artifact navigation variants: plaque rail, council tabs, framed active state, compact map sidebar.</li>
-      <li>Codify ornament/consequence as data attributes: <code>data-threshold</code>, <code>data-weight="ceremonial"</code>, <code>data-crest</code>.</li>
-      <li>Audit gold-on-parchment and mana-on-dark contrast after glow restraint.</li>
-    </ol>
+    <h2>Remaining Reference Debt</h2>
+    <div class="checklist-grid">
+      <div><strong>Fixture expansion</strong><span>Add broader proof only through fixtures or explicit pass reports.</span></div>
+      <div><strong>Primitive naming</strong><span>Promote frame, crest, seal, threshold and banner primitives only after use stabilizes.</span></div>
+      <div><strong>Accessibility audit</strong><span>Gold-on-parchment, mana-on-dark, keyboard and screen-reader checks remain outside this slimming pass.</span></div>
+    </div>
   </section>
 
 </main>
