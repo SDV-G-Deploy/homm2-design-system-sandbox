@@ -59,7 +59,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | confirmation + 00m | completed | pending | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
+| 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
 | 02 | confirmation + 25m | planned | - | TBD | `git diff --check`; link/reference sanity if docs changed | pass 03 or stop |
 | 03 | confirmation + 50m | planned | - | TBD | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js` when relevant | pass 04 or stop |
 | 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
@@ -84,5 +84,5 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 - Verification:
   - `git diff --check`
   - targeted doc inspection against `docs/new-session-handoff-2026-05-16.md`, `docs/design-system-operator-index-2026-05-15.md`, `docs/fairy-journeys-closeout-pass-2026-05-16.md`, and `docs/feed-listing-indexed-route-row-pass-2026-05-16.md`
-- Commit: pending
+- Commit: `c7e32f8` (`Refresh HOMM2 docs for night pass 01`)
 - Next best step: if a later wake is explicitly resumed, use the task-list reconciliation pass; otherwise stop here.
