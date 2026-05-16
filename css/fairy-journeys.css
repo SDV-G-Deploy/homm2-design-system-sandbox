@@ -464,6 +464,10 @@ body {
   gap: 12px;
 }
 
+.fairy-side-notes .note-card {
+  opacity: 0.88;
+}
+
 .fairy-side-notes .note-card strong {
   letter-spacing: 0;
 }
@@ -754,6 +758,27 @@ body {
       "notes";
   }
 
+  .fairy-side-notes {
+    gap: 8px;
+    opacity: 0.82;
+  }
+
+  .fairy-side-notes .note-card {
+    padding: 12px 13px;
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.04), transparent 38%),
+      rgb(var(--ink-950) / 0.16);
+  }
+
+  .fairy-side-notes .note-card strong {
+    font-size: 18px;
+    line-height: 1.08;
+  }
+
+  .fairy-side-notes .recipe-annotation {
+    --recipe-annotation-lines: 2;
+  }
+
   .fairy-hero-copy {
     gap: 10px;
     padding: 16px;
@@ -997,6 +1022,23 @@ body {
   .fairy-feed-rail {
     padding: 9px;
     opacity: 0.68;
+  }
+
+  .fairy-side-notes {
+    gap: 0;
+    opacity: 0.72;
+  }
+
+  .fairy-side-notes .note-card.recipe-compact-hidden {
+    display: none;
+  }
+
+  .fairy-side-notes .note-card {
+    padding: 11px 12px;
+  }
+
+  .fairy-side-notes .note-card strong {
+    font-size: 16px;
   }
 
   .fairy-moon {
