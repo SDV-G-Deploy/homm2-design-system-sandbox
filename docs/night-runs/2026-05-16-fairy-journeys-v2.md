@@ -63,7 +63,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 02 | confirmation + 25m | completed | `b559434` | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
 | 03 | confirmation + 50m | completed | `3d883e6` | smoke baseline; this ledger | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js`; `git diff --check` | stop after bounded wake |
 | 04 | confirmation + 75m | completed | `a4022de` | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
-| 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
+| 05 | confirmation + 100m | completed | pending | `docs/fairy-journeys-bounded-prompt-2026-05-16.md`; this ledger | targeted doc inspection; `git diff --check` | stop after bounded wake |
 | 06 | confirmation + 125m | planned | - | TBD | smallest relevant gate from changed files | closeout or stop |
 | closeout | confirmation + 150m or next morning slot | planned | - | this ledger | git status, local/upstream HEAD, Pages/CI if pushed | morning report |
 
@@ -125,3 +125,16 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
   - `git diff --check`
 - Commit: `a4022de` (`Clarify Fairy Journeys proof boundary`)
 - Next best step: if a later wake is explicitly resumed, prepare the operator prompt handoff artifact or stop if the remaining bounded value is too low.
+
+## Pass 05 Notes
+- Status: completed
+- Step: operator prompt handoff
+- Result: added a small reusable bounded prompt artifact for future Fairy Journeys applied-page polish. It stays explicitly scoped to one bounded pass, keeps `fairy-journeys.html` in applied-smoke status, and points future work back to the reconciliation note before inventing new objectives.
+- Files changed:
+  - `docs/fairy-journeys-bounded-prompt-2026-05-16.md`
+  - `docs/night-runs/2026-05-16-fairy-journeys-v2.md`
+- Verification:
+  - targeted doc inspection against README, operator index, new-session handoff, and the reconciliation note
+  - `git diff --check`
+- Commit: pending
+- Next best step: if a later wake is explicitly resumed, use a final bounded cleanup pass or move to closeout if no higher-signal doc cleanup remains.
