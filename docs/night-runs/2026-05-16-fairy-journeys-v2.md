@@ -61,7 +61,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
 | 02 | confirmation + 25m | completed | `b559434` | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
-| 03 | confirmation + 50m | planned | - | TBD | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js` when relevant | pass 04 or stop |
+| 03 | confirmation + 50m | completed | pending | smoke baseline; this ledger | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js`; `git diff --check` | stop after bounded wake |
 | 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
 | 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
 | 06 | confirmation + 125m | planned | - | TBD | smallest relevant gate from changed files | closeout or stop |
@@ -99,3 +99,16 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
   - targeted reference/link sanity for cited pass documents in the reconciliation note
 - Commit: `b559434` (`Reconcile Fairy Journeys task list`)
 - Next best step: if a later wake is explicitly resumed, use a narrow verification-oriented polish pass or a bounded Task 5 dramaturgy note/pass; otherwise stop here.
+
+## Pass 03 Notes
+- Status: completed
+- Step: verification-oriented polish
+- Result: local regression smoke baseline passed cleanly, and targeted follow-up inspection found no single evidence-backed Fairy Journeys documentation or CSS issue that justified a bounded fix. This pass is therefore a verified no-op aside from the ledger record.
+- Files changed:
+  - `docs/night-runs/2026-05-16-fairy-journeys-v2.md`
+- Verification:
+  - `node --check tools/regression-smoke.js`
+  - `node tools/regression-smoke.js`
+  - `git diff --check`
+- Commit: pending
+- Next best step: if a later wake is explicitly resumed, use the applied-page proof boundary pass or stop if no additional bounded doc task is needed.
