@@ -590,6 +590,83 @@
   color: var(--ink-on-night-mute);
 }
 
+.ref-operator-mode {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid rgb(var(--gold-300) / 0.2);
+  clip-path: var(--shape-panel);
+  background:
+    radial-gradient(circle at 92% 14%, rgb(var(--mana-400) / 0.12), transparent 16rem),
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.055), transparent 44%),
+    rgb(var(--ink-950) / 0.24);
+  box-shadow:
+    var(--press-highlight-top),
+    var(--press-shadow-bottom),
+    0 14px 30px rgb(0 0 0 / 0.14);
+}
+
+.ref-operator-mode > h2 {
+  margin-bottom: var(--space-3);
+}
+
+.operator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.operator-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid rgb(var(--gold-300) / 0.14);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.055), transparent 46%),
+    rgb(var(--ink-950) / 0.25);
+}
+
+.operator-card span,
+.operator-card strong,
+.operator-card a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.operator-card span {
+  color: var(--accent-value);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+}
+
+.operator-card strong {
+  color: var(--ink-on-night);
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+}
+
+.operator-card p {
+  margin: 0;
+  color: var(--ink-on-night-soft);
+  font-size: 14px;
+  line-height: 1.48;
+}
+
+.operator-card a {
+  width: fit-content;
+  margin-top: var(--space-2);
+  color: var(--accent-value);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
 .ref-front-door {
   margin-bottom: var(--space-6);
 }
@@ -1028,6 +1105,31 @@
       line-height: 1.35;
       white-space: normal;
       overflow-wrap: anywhere;
+    }
+    .ref-operator-mode {
+      padding: 14px;
+      clip-path: none;
+      border-radius: var(--radius-md);
+    }
+    .operator-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .operator-card {
+      padding: 13px;
+      clip-path: none;
+      border-radius: var(--radius-sm);
+    }
+    .operator-card strong {
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .operator-card p {
+      display: none;
+    }
+    .operator-card a {
+      font-size: 10px;
+      line-height: 1.25;
     }
     .ref-section { margin-bottom: 40px; }
     .swatch-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
