@@ -62,7 +62,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
 | 02 | confirmation + 25m | completed | `b559434` | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
 | 03 | confirmation + 50m | completed | `3d883e6` | smoke baseline; this ledger | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js`; `git diff --check` | stop after bounded wake |
-| 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
+| 04 | confirmation + 75m | completed | pending | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
 | 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
 | 06 | confirmation + 125m | planned | - | TBD | smallest relevant gate from changed files | closeout or stop |
 | closeout | confirmation + 150m or next morning slot | planned | - | this ledger | git status, local/upstream HEAD, Pages/CI if pushed | morning report |
@@ -112,3 +112,16 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
   - `git diff --check`
 - Commit: `3d883e6` (`Record HOMM2 night pass 03 result`)
 - Next best step: if a later wake is explicitly resumed, use the applied-page proof boundary pass or stop if no additional bounded doc task is needed.
+
+## Pass 04 Notes
+- Status: completed
+- Step: applied-page proof boundary pass
+- Result: main docs were already mostly aligned; README received one boundary clarification so the promoted indexed FeedListing fixture state is named explicitly as canonical proof while `fairy-journeys.html` remains described only as an applied smoke page.
+- Files changed:
+  - `README.md`
+  - `docs/night-runs/2026-05-16-fairy-journeys-v2.md`
+- Verification:
+  - targeted docs grep for Fairy Journeys/proof wording across README, handoff, operator index, and recent pass artifacts
+  - `git diff --check`
+- Commit: pending
+- Next best step: if a later wake is explicitly resumed, prepare the operator prompt handoff artifact or stop if the remaining bounded value is too low.

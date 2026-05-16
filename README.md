@@ -73,6 +73,7 @@ What is now true:
 - canonical fixtures exist for **ArticleHeroRecipe**, **DossierReadingRecipe**, **FeedListingRecipe**, and **MenuScreenRecipe**
 - bounded host-bound proof exists for **SideRailMetadataRecipe** and **SiteShellNavigationRecipe**
 - `fairy-journeys.html` has been rebuilt as an applied smoke page that follows the ratified content-first recipe stack
+- the only Fairy Journeys behavior promoted into canonical proof so far is the indexed FeedListing row state, and that promotion now lives in `fixtures/feed-listing-recipe.html`, not in `fairy-journeys.html` itself
 
 What is **not** true yet:
 - applied pages still do not replace canonical fixtures as proof
