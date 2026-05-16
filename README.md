@@ -106,6 +106,16 @@ Open `index.html` directly or serve the folder with any static server:
 python3 -m http.server 4173
 ```
 
+## Regression smoke
+
+Run the dependency-free smoke harness before/after recipe or applied-page layout changes:
+
+```sh
+node tools/regression-smoke.js
+```
+
+It starts a local static server, launches headless Chromium, checks static ARIA references, page-level overflow, primary-surface placement, Fairy nav one-line labels, and the indexed FeedListing row track across `1440x900`, `390x844`, and `360x740`.
+
 ## Deploy status
 
 GitHub Pages deployment is live again on both:

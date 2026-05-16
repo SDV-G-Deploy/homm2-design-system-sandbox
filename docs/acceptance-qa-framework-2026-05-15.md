@@ -269,7 +269,7 @@ If accepting the page would teach future generation the wrong system rule, it is
 
 ## Open Questions For Later Implementation Or Audit Passes
 
-- Which exact automation harness should capture and store viewport evidence for the matrix states?
+- A first local viewport/static smoke harness exists at `tools/regression-smoke.js`; remaining automation question is whether to expand it into stored screenshot evidence and CI gating.
 - Should ArticleHeroRecipe require separate canonical handoff variants into dossier and feed, or can one host fixture cover both until pressure says otherwise?
 - What is the long-term minimum host mix for SideRailMetadataRecipe: dossier plus feed, or dossier plus hero plus feed?
 - When filter-heavy rail behavior appears, what threshold reclassifies it into a future scoped filter family?
