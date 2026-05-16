@@ -65,14 +65,37 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 04 | confirmation + 75m | completed | `a4022de` | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
 | 05 | confirmation + 100m | completed | `7cd2fd8` | `docs/fairy-journeys-bounded-prompt-2026-05-16.md`; this ledger | targeted doc inspection; `git diff --check` | stop after bounded wake |
 | 06 | confirmation + 125m | completed | `0768da5` | no-op cleanup review; this ledger | targeted cleanup sweep; `git diff --check` | closeout |
-| closeout | confirmation + 150m or next morning slot | planned | - | this ledger | git status, local/upstream HEAD, Pages/CI if pushed | morning report |
+| closeout | manual 2026-05-16 15:33 UTC | completed | `f3e3821` | this ledger | git status, local/upstream HEAD, Pages success on HEAD | done manually; cron closeout removed |
 
 ## Closeout
 - Commits:
+  - `b4b1a22` Prepare Fairy Journeys night run v2
+  - `c7e32f8` Refresh HOMM2 docs for night pass 01
+  - `b51e54b` Record HOMM2 night pass 01 result
+  - `b559434` Reconcile Fairy Journeys task list
+  - `ddbbed2` Record HOMM2 night pass 02 result
+  - `3d883e6` Record HOMM2 night pass 03 result
+  - `cadf69a` Finalize HOMM2 night pass 03 ledger
+  - `a4022de` Clarify Fairy Journeys proof boundary
+  - `5197f48` Finalize HOMM2 night pass 04 ledger
+  - `7cd2fd8` Add Fairy Journeys bounded prompt handoff
+  - `b9d6ace` Finalize HOMM2 night pass 05 ledger
+  - `0768da5` Record HOMM2 night pass 06 result
+  - `d4dd261` Finalize HOMM2 night pass 06 ledger
+  - `f3e3821` Close HOMM2 night run v2 manually
 - Verification/deploy:
-- Morning report sent:
+  - `git status --short --branch`: clean, `main...origin/main`
+  - local HEAD and `origin/main`: `d4dd2614cc404027f0a26fe74362f7dc5d8a9387`
+  - lock check: no lock present
+  - latest GitHub Pages workflow for HEAD: `Deploy Pages` run `25964628743`, `success`
+  - closeout cron job was removed manually; no active HOMM2 night-run cron jobs remain
+- Morning report sent: manual closeout requested and reported on 2026-05-16 instead of waiting for the scheduled morning cron.
 - Residual risks:
+  - Task 5 launch/commit dramaturgy remains the one clearly open Fairy Journeys source-audit item.
+  - `fairy-journeys.html` remains an applied smoke page, not canonical proof.
+  - No broad visual redesign or new fixture proof was attempted in this run.
 - Best next step:
+  - If continuing Fairy Journeys, use `docs/fairy-journeys-bounded-prompt-2026-05-16.md` for one bounded Task 5 dramaturgy pass, then verify with the regression smoke harness.
 
 ## Pass 01 Notes
 - Status: completed
