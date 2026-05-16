@@ -91,9 +91,9 @@ Reference/manual use:
 
 ## Remaining Work In Order
 
-1. Fixture debt: promote reusable patterns exposed by Fairy Journeys only through canonical fixtures, starting with the indexed FeedListing row/badge pattern if it should outlive the applied page.
+1. Fixture debt: continue promoting reusable patterns exposed by applied pages only through canonical fixtures. The Fairy Journeys indexed FeedListing row/badge pattern now has a canonical fixture state; keep looking for other applied-only behaviors before turning them into shared hooks.
 2. Host-bound support: keep SideRail and SiteShell support-only; add broader host mixes only when a real page need requires them and verify with fixture evidence.
-3. Prompt kit: turn the current recipe/budget/proof workflow into reusable generation prompts only after the fixture debt above is closed enough to avoid prompt-only claims.
+3. Prompt kit: turn the current recipe/budget/proof workflow into reusable generation prompts only after fixture debt is closed enough to avoid prompt-only claims.
 4. Regression harness: build a repeatable viewport/static harness for the canonical fixtures and selected smoke pages; current evidence is pass-ledger based, not a unified suite.
 
 ## Maintenance Rules

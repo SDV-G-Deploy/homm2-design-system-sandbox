@@ -224,6 +224,30 @@
         align-items: start;
       }
 
+      .feed-row[data-row-indexed] .feed-row-top {
+        grid-template-columns: 42px minmax(0, 1fr) auto;
+        gap: 8px 12px;
+      }
+
+      .feed-row-index {
+        display: grid;
+        place-items: center;
+        inline-size: 38px;
+        block-size: 38px;
+        min-inline-size: 38px;
+        border: 1px solid rgb(var(--gold-300) / 0.24);
+        clip-path: var(--shape-interactive);
+        background:
+          linear-gradient(180deg, rgb(var(--gold-300) / 0.16), transparent 62%),
+          rgb(var(--ink-950) / 0.34);
+        color: var(--accent-value);
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1;
+      }
+
       .feed-row h4 {
         margin: 0;
         font-family: var(--font-display);
@@ -337,6 +361,16 @@
 
         .feed-row-top {
           grid-template-columns: 1fr;
+        }
+
+        .feed-row[data-row-indexed] .feed-row-top {
+          grid-template-columns: 40px minmax(0, 1fr);
+          gap: 8px 11px;
+        }
+
+        .feed-row[data-row-indexed] .feed-row-badge {
+          grid-column: 2;
+          justify-self: start;
         }
       }
 
@@ -549,6 +583,84 @@
                     <div class="feed-row-meta">
                       <span class="feed-meta-cell recipe-metadata">Road watch</span>
                       <span class="feed-meta-cell recipe-metadata">11 late days</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="fixture-case" aria-labelledby="feed-indexed-title">
+          <h2 id="feed-indexed-title">Indexed route rows: stable number track, title track and status badge</h2>
+          <article class="fixture-feed" data-recipe="feed-listing" data-primary-recipe="feed-listing" data-support-recipes="side-rail-metadata" data-recipe-density="standard" data-fixture-state="indexed-route-rows">
+            <div class="feed-shell">
+              <aside class="feed-sidebar recipe-support-panel recipe-frame-secondary" data-frame-rank="secondary" data-support-recipe="side-rail-metadata" data-side-rail-state="indexed-filter-support" data-recipe-collapse="summary" aria-label="Indexed route scope">
+                <div class="recipe-support-summary recipe-state-cue" aria-describedby="feed-indexed-filters-full">
+                  <span>Scope</span>
+                  <strong>3 route rows · current item first</strong>
+                </div>
+                <div class="recipe-support-detail">
+                  <h4>Filter and scope</h4>
+                  <div class="feed-filter-list">
+                    <div class="filter-chip">
+                      <span>Route</span>
+                      <strong class="recipe-label">River crossing</strong>
+                    </div>
+                    <div class="filter-chip">
+                      <span>State</span>
+                      <strong class="recipe-label">Open records</strong>
+                    </div>
+                  </div>
+                </div>
+                <p id="feed-indexed-filters-full" class="visually-hidden">Indexed route scope: three visible route rows, first row current, filters stay secondary to the list.</p>
+              </aside>
+
+              <section class="feed-main recipe-frame-primary" data-frame-rank="primary" aria-labelledby="feed-indexed-heading">
+                <div class="feed-heading">
+                  <p class="eyebrow">Archive listing</p>
+                  <h3 id="feed-indexed-heading" class="recipe-title">Route records that need a visible sequence without turning into big step cards.</h3>
+                  <p class="recipe-annotation">
+                    The index is a stable scan aid. It gets a fixed square track, the title keeps the main column, and the badge wraps beneath the title on mobile.
+                  </p>
+                </div>
+                <div class="recipe-support-summary feed-summary-strip" aria-describedby="feed-indexed-summary-full">
+                  <span>Route</span>
+                  <strong>3 indexed rows · 1 current</strong>
+                </div>
+                <div class="feed-list" id="feed-indexed-summary-full">
+                  <article class="feed-row" data-row-rank="current" data-row-indexed="true">
+                    <div class="feed-row-top">
+                      <span class="feed-row-index" aria-hidden="true">01</span>
+                      <h4 class="recipe-title">Bridge record asks for a witness mark before the toll office admits the crossing is closed.</h4>
+                      <span class="feed-row-badge">Current</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">River gate</span>
+                      <span class="feed-meta-cell recipe-metadata">2 witnesses</span>
+                    </div>
+                    <p class="recipe-annotation">The number helps route order but never becomes the row's loudest object.</p>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary" data-row-indexed="true">
+                    <div class="feed-row-top">
+                      <span class="feed-row-index" aria-hidden="true">02</span>
+                      <h4 class="recipe-title">Market clerk keeps the missing name open because the ferry receipt names the wrong guard.</h4>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Market ledger</span>
+                      <span class="feed-meta-cell recipe-metadata">Guard mismatch</span>
+                    </div>
+                  </article>
+                  <article class="feed-row" data-row-rank="ordinary" data-row-indexed="true">
+                    <div class="feed-row-top">
+                      <span class="feed-row-index" aria-hidden="true">03</span>
+                      <h4 class="recipe-title">Old road note sends the reader back to the river gate instead of opening a new branch.</h4>
+                      <span class="feed-row-badge">Ordinary</span>
+                    </div>
+                    <div class="feed-row-meta">
+                      <span class="feed-meta-cell recipe-metadata">Old road</span>
+                      <span class="feed-meta-cell recipe-metadata">Return path</span>
                     </div>
                   </article>
                 </div>

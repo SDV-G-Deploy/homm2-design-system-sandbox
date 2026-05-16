@@ -27,4 +27,4 @@ Closeout verification for the applied `fairy-journeys.html` cycle after the mobi
 
 ## Remaining Risk
 
-This pass verifies the applied page and existing contract notes. It does not add a canonical FeedListing fixture variant for indexed rows; that remains the next reusable-system step if the pattern should graduate beyond `fairy-journeys`.
+This pass verified the applied page and existing contract notes. Follow-up fixture work later promoted the indexed FeedListing row pattern into `fixtures/feed-listing-recipe.html`; see `docs/feed-listing-indexed-route-row-pass-2026-05-16.md`.

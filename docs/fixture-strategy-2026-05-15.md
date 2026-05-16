@@ -269,6 +269,7 @@ Minimum states:
 
 - clean
 - dense
+- indexed-route-rows
 - compact
 - emergency
 - featured-mix
@@ -286,12 +287,14 @@ Required hostile content cases:
 - mixed featured and ordinary rows
 - dense filter set with hidden-filter summary
 - rows with metadata variance and optional annotation
+- indexed route rows with a fixed number track, title track and status badge
 
 Regression-critical checks:
 
 - first results remain the scan path
 - filter chrome stays secondary
 - repeated rows remain quieter than the selected or featured item
+- row indexes stay stable scan aids and do not become oversized step cards
 - row metadata collapses by value priority, not by tiny type
 
 Documentation-only notes:

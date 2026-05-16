@@ -309,6 +309,7 @@ Downgrade order:
 Truncation and summarization rules:
 
 - row titles may wrap to 2 lines but should not be ellipsized if they are the primary selection surface
+- optional indexed route rows use a stable compact track; on mobile the status badge wraps under the title column before the index is allowed to stretch the row
 - visible annotation text is optional support, not guaranteed copy
 - metadata stacks should prefer one strong value over several abbreviated fragments
 - filter summaries should state hidden count or active scope, not a vague more label
@@ -329,7 +330,7 @@ Inherited versus family-specific:
 Documentation-only versus likely API:
 
 - documentation-only: visible-row budgets, group-header ceilings, and rule for when a row should graduate into teaser-card treatment
-- likely API: feed-listing slot hooks, feed summary strip, hidden-filter count surface, row-rank hooks, compact row-meta slots
+- likely API: feed-listing slot hooks, feed summary strip, hidden-filter count surface, row-rank hooks, compact row-meta slots, optional row-index slot
 
 ### TeaserCardBlockRecipe
 
