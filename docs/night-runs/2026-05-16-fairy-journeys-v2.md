@@ -64,7 +64,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 03 | confirmation + 50m | completed | `3d883e6` | smoke baseline; this ledger | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js`; `git diff --check` | stop after bounded wake |
 | 04 | confirmation + 75m | completed | `a4022de` | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
 | 05 | confirmation + 100m | completed | `7cd2fd8` | `docs/fairy-journeys-bounded-prompt-2026-05-16.md`; this ledger | targeted doc inspection; `git diff --check` | stop after bounded wake |
-| 06 | confirmation + 125m | completed | pending | no-op cleanup review; this ledger | targeted cleanup sweep; `git diff --check` | closeout |
+| 06 | confirmation + 125m | completed | `0768da5` | no-op cleanup review; this ledger | targeted cleanup sweep; `git diff --check` | closeout |
 | closeout | confirmation + 150m or next morning slot | planned | - | this ledger | git status, local/upstream HEAD, Pages/CI if pushed | morning report |
 
 ## Closeout
@@ -148,5 +148,5 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 - Verification:
   - targeted cleanup sweep across README, operator index, new-session handoff, bounded prompt artifact, reconciliation note, and this ledger
   - `git diff --check`
-- Commit: pending
+- Commit: `0768da5` (`Record HOMM2 night pass 06 result`)
 - Next best step: proceed to morning closeout.
