@@ -377,6 +377,7 @@ button {
 .site-shell-local-nav a,
 .site-shell-route-shortcuts a {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   min-height: var(--tap-target-compact);
   padding: 8px 11px;
@@ -387,6 +388,9 @@ button {
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
   line-height: 1.25;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 42%),
     rgb(var(--ink-950) / 0.24);

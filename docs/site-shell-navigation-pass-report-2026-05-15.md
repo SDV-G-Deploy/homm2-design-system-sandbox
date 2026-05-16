@@ -66,6 +66,7 @@ The pass may show that a shell-navigation support layer can surround a primary r
   - `data-proof-level="host-bound"`
   - `data-primary-family="DossierReadingRecipe|FeedListingRecipe"`
   - `data-shell-role="persistent-utility|utility-nav|breadcrumb|local-section-nav|primary-host-slot|route-shortcuts|brand-context"`
+- Follow-up rule from the 2026-05-16 applied bugcheck: mobile utility nav plaques must keep labels on one visual line. At narrow widths, prefer horizontal scroll or summary/collapse; do not let short labels split mid-word inside the plaque.
 - Synced current status in:
   - `docs/recipe-family-map-2026-05-15.md`
   - `docs/generation-playbook-2026-05-15.md`
@@ -108,5 +109,4 @@ The pass may show that a shell-navigation support layer can surround a primary r
 - This does not prove the MenuScreenRecipe-primary exception where navigation/menu behavior may own the first viewport.
 - This does not cover promo-heavy, utility/dashboard, ecommerce-like, search-heavy, form-heavy, regulated or safety-critical screens.
 - This does not reopen or expand hero/dossier/feed broad readiness work; it only adds a narrow shell support proof around dossier/feed host states.
-
 

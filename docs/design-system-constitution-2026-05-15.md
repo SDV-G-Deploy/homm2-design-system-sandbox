@@ -239,6 +239,7 @@ The system supports thematic variation, but only inside the boundary below.
 Allowed theme-level adaptations:
 
 - palette within semantic roles: crown/gold, mana/magic, parchment/reading, stone/shell, danger/warning, reward/value;
+- applied pages must show some role-based contrast beyond brown/sand/gold monotone when the content has state, focus, warning, success or magic; use semantic tokens for meaning, not random decoration;
 - faction, setting or brand names for the same material roles;
 - surface texture, illustration style, background scenery and world props;
 - icon and motif sets, provided they remain object-like and legible;
@@ -253,6 +254,7 @@ Not theme-adaptable without a new contract or constitution update:
 - replacing material hierarchy with generic flat cards;
 - making mana/glow the default treatment for ordinary content;
 - using gold for every important-looking thing until value hierarchy disappears;
+- reducing the palette to only brown, parchment and gold when the page contains explicit focus, state, warning, success or magical consequence roles that should be legible;
 - changing first-screen obligations, tap floors, label floors or downgrade order;
 - treating page-local CSS as the owner of collapse logic;
 - promoting an applied page smoke target into canonical proof;
@@ -401,4 +403,3 @@ Required Pass 2 behavior:
 The key question for Pass 2:
 
 Which recipe families are needed so future themed sites can be generated from documented screen jobs instead of improvised page-by-page composition?
-

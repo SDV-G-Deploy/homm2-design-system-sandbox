@@ -281,6 +281,22 @@ Examples of the desired pattern:
 4. Do not use rich atmospheric microcopy inside dense control stacks.
 5. Hero titles may be dramatic, but supporting copy must tighten as screens narrow.
 6. Avoid solving overflow with emergency wrapping everywhere; fix the wording or the component role.
+7. Site-shell nav plaques are a special case: short nav labels must stay one visual line. Use no-wrap horizontal scroll or summarize/collapse the nav instead of splitting words.
+8. Feed/listing index badges must stay badges, not text columns. A numeric step marker should occupy a stable square track and leave the row title with the readable measure.
+
+## Color text and state rules
+
+The HOMM2 palette is semantic, not decorative. Brown, parchment and gold are the material base; mana, wax/crimson, moss and verdigris are state/focus/consequence accents.
+
+Rules:
+- use gold/brass for value, primary action and selected route;
+- use mana/blue for focus, magic, current scan state or supernatural consequence;
+- use crimson/wax for warning, debt, danger or irreversible commitment;
+- use moss/verdigris for living route, alternate state, success or aged-bronze support;
+- do not spread every accent everywhere, but also do not let applied pages collapse into only brown/sand/gold when the content contains meaningful states.
+
+Acceptance check:
+- On a finished applied page, at least one non-gold semantic accent should mark a real role if the page has state, focus, warning, success, magic or route consequence.
 
 ---
 

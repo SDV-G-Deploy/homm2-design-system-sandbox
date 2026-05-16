@@ -3,7 +3,9 @@
 body {
   background:
     radial-gradient(circle at 18% 8%, rgb(var(--gold-300) / 0.14), transparent 22rem),
-    radial-gradient(circle at 84% 18%, rgb(var(--mana-400) / 0.1), transparent 20rem),
+    radial-gradient(circle at 84% 18%, rgb(var(--mana-400) / 0.16), transparent 20rem),
+    radial-gradient(circle at 12% 72%, rgb(var(--moss-700) / 0.16), transparent 18rem),
+    radial-gradient(circle at 88% 74%, rgb(var(--verdigris-700) / 0.14), transparent 19rem),
     linear-gradient(180deg, #20140f 0%, #100d0b 48%, #090807 100%);
 }
 
@@ -40,12 +42,16 @@ body {
 }
 
 .fairy-shell .site-shell-nav a {
-  min-height: 34px;
-  padding: 7px 10px 8px;
+  flex: 0 0 auto;
+  min-height: var(--tap-target-compact);
+  padding: 8px 11px;
   border-color: rgb(var(--gold-300) / 0.12);
   color: rgb(var(--parchment-50) / 0.68);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 42%),
     rgb(var(--ink-950) / 0.18);
@@ -488,6 +494,7 @@ body {
   border: 1px solid rgb(var(--gold-300) / 0.14);
   clip-path: var(--shape-panel);
   background:
+    radial-gradient(circle at 88% 12%, rgb(var(--mana-400) / 0.12), transparent 8rem),
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 32%),
     rgb(var(--ink-950) / 0.28);
   opacity: 0.88;
@@ -498,9 +505,10 @@ body {
   gap: 14px;
   min-width: 0;
   padding: clamp(18px, 3vw, 32px);
-  border: 1px solid rgb(var(--gold-300) / 0.24);
+  border: 1px solid rgb(var(--mana-400) / 0.22);
   clip-path: var(--shape-hero);
   background:
+    radial-gradient(circle at 94% 10%, rgb(var(--mana-400) / 0.1), transparent 16rem),
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.07), transparent 24%),
     rgb(var(--ink-950) / 0.42);
 }
@@ -538,12 +546,13 @@ body {
 }
 
 .fairy-feed-row[data-row-rank="current"] {
-  border-color: rgb(var(--gold-300) / 0.34);
+  border-color: rgb(var(--mana-400) / 0.34);
   background:
-    linear-gradient(180deg, rgb(var(--gold-300) / 0.13), transparent 40%),
+    linear-gradient(180deg, rgb(var(--mana-400) / 0.12), transparent 40%),
+    linear-gradient(90deg, rgb(var(--gold-300) / 0.08), transparent 28%),
     rgb(var(--ink-950) / 0.27);
   box-shadow:
-    inset 4px 0 0 rgb(var(--gold-300) / 0.46),
+    inset 4px 0 0 rgb(var(--mana-400) / 0.5),
     0 10px 18px rgb(0 0 0 / 0.14);
 }
 
@@ -556,6 +565,9 @@ body {
 
 .fairy-feed-step {
   display: inline-flex;
+  inline-size: 38px;
+  flex: 0 0 38px;
+  justify-self: start;
   align-items: center;
   justify-content: center;
   min-width: 38px;
@@ -575,10 +587,11 @@ body {
 }
 
 .fairy-feed-row[data-row-rank="current"] .fairy-feed-step {
-  border-color: rgb(var(--gold-300) / 0.34);
-  color: var(--ink-on-gold);
+  border-color: rgb(var(--mana-200) / 0.45);
+  color: var(--ink-on-night);
   background:
-    linear-gradient(180deg, #ffe8aa, rgb(var(--gold-500)) 72%, rgb(var(--gold-700)));
+    linear-gradient(180deg, rgb(var(--mana-200) / 0.34), rgb(var(--mana-400) / 0.34)),
+    rgb(var(--ink-950) / 0.34);
 }
 
 .fairy-feed-row h3 {
@@ -617,6 +630,11 @@ body {
   color: var(--ink-on-gold);
   background:
     linear-gradient(180deg, #ffe8aa, rgb(var(--gold-500)) 72%, rgb(var(--gold-700)));
+}
+
+.fairy-feed-row[data-row-rank="ordinary"] .fairy-feed-badge {
+  border-color: rgb(var(--moss-700) / 0.32);
+  color: rgb(var(--parchment-50) / 0.76);
 }
 
 .board-footer {
@@ -859,12 +877,24 @@ body {
   }
 
   .fairy-feed-row-top {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px 12px;
+  }
+
+  .fairy-feed-step {
+    inline-size: 38px;
+    min-width: 38px;
+  }
+
+  .fairy-feed-row h3 {
+    font-size: 19px;
+    line-height: 1.12;
   }
 
   .fairy-feed-badge {
+    grid-column: 2;
     justify-self: start;
-    margin-left: calc(38px + 10px);
+    margin-left: 0;
   }
 
   .fairy-hero-rail h2,

@@ -73,8 +73,15 @@ Label line rules:
 
 - Primary action labels: 1 line preferred, 2 lines allowed, never hidden truncation.
 - Secondary action labels: 1 line preferred, 2 lines allowed in standard/spacious, 1 line plus accessible full label in compact/emergency.
+- Site-shell utility nav labels: one visual line in compact/mobile. Use horizontal scroll, summarization or collapse before allowing individual words to break inside plaques.
 - Rail labels: 1 line in compact/emergency, 2 lines maximum in spacious/standard.
 - Metadata values: 1 line visible; longer values summarize with the full value available below the primary first-screen area.
+
+Mobile control wrapping rule:
+
+- Compact framed controls may wrap between words only when the label has multiple words and the component remains balanced.
+- Never rely on `overflow-wrap:anywhere`, mid-word breaks, negative tracking or sub-12px type for ordinary nav plaques.
+- If a one-word label does not fit, widen/scroll/collapse the nav or shorten the label; do not split the word.
 
 ## Production Recipes
 
@@ -358,6 +365,24 @@ Acceptance checks:
 - Test route row counts at 3, 5, 8 and 12.
 - Test translated-length route labels.
 - Verify badge state remains recognizable at compact width.
+
+## FeedListingRecipe Addendum - Applied Step/Index Rows
+
+This addendum records the 2026-05-16 applied-page bug found in `fairy-journeys.html`: a page-local leading step badge expanded into a wide first grid track on mobile, leaving the row title in a narrow column.
+
+If a `FeedListingRecipe` row adds a step/index badge before the title:
+
+- the badge must live in a stable square track, normally `38-44px`;
+- the badge cannot size the row's main title column;
+- the status badge must use a defined trailing column on desktop or move to the title column on mobile;
+- mobile layout may become `step | title` plus status below title, but must not use magic offsets such as `margin-left: calc(...)` to imitate alignment;
+- the row title must retain a readable measure before metadata or badges are placed.
+
+Acceptance checks:
+
+- At `360 x 740` and `390 x 844`, the step badge width remains near the intended square size.
+- The row title column is wider than the step track and does not collapse into a thin vertical strip.
+- Current/ordinary state remains recognizable without making the badge the dominant object in the row.
 
 ## Documentation / Manual Recipe
 
