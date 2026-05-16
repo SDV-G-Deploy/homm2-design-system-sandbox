@@ -60,7 +60,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
-| 02 | confirmation + 25m | planned | - | TBD | `git diff --check`; link/reference sanity if docs changed | pass 03 or stop |
+| 02 | confirmation + 25m | completed | pending | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
 | 03 | confirmation + 50m | planned | - | TBD | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js` when relevant | pass 04 or stop |
 | 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
 | 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
@@ -86,3 +86,16 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
   - targeted doc inspection against `docs/new-session-handoff-2026-05-16.md`, `docs/design-system-operator-index-2026-05-15.md`, `docs/fairy-journeys-closeout-pass-2026-05-16.md`, and `docs/feed-listing-indexed-route-row-pass-2026-05-16.md`
 - Commit: `c7e32f8` (`Refresh HOMM2 docs for night pass 01`)
 - Next best step: if a later wake is explicitly resumed, use the task-list reconciliation pass; otherwise stop here.
+
+## Pass 02 Notes
+- Status: completed
+- Step: Fairy Journeys task-list reconciliation
+- Result: kept `docs/fairy-journeys-codex-task-list-v2.md` unchanged because it functions as the source browser-audit artifact; wrote a separate reconciliation note mapping source tasks to completed Fairy Journeys passes and leaving Task 5 clearly open.
+- Files changed:
+  - `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`
+  - `docs/night-runs/2026-05-16-fairy-journeys-v2.md`
+- Verification:
+  - `git diff --check`
+  - targeted reference/link sanity for cited pass documents in the reconciliation note
+- Commit: pending
+- Next best step: if a later wake is explicitly resumed, use a narrow verification-oriented polish pass or a bounded Task 5 dramaturgy note/pass; otherwise stop here.
