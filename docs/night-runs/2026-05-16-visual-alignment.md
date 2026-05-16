@@ -62,7 +62,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | launch + 00m | completed | \`dc7c528\` | alias anchor on \`fairy-journeys.html#route-ledger\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; static anchor re-check for \`#field-dossier\`, \`#route-feed\`, \`#route-ledger\`; no \`#threshold\` target claimed on page | pass 02 if clean |
-| 02 | launch + 25m | planned | - | mobile nav | - | pass 03 if clean |
+| 02 | launch + 25m | completed | pending | mobile nav trailing rail budget on \`fairy-journeys.html\` shell | \`git diff --check\`; \`node tools/regression-smoke.js\`; targeted browser reproduction on live page at \`390x844\` showed nav rail \`348px\`, content \`379px\`, and \`Песочница\` ending at \`x=392\` before local CSS fix | pass 03 if clean |
 | 03 | launch + 50m | planned | - | reference tablet overflow | - | pass 04 if clean |
 | 04 | launch + 75m | planned | - | applied proof-label copy | - | pass 05 if clean |
 | 05 | launch + 100m | planned | - | Task 5 dramaturgy | - | pass 06 if clean |
@@ -83,3 +83,11 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 - Changed files: \`fairy-journeys.html\`, this ledger.
 - Anchor re-check: \`#field-dossier\` present, \`#route-feed\` present, \`#route-ledger\` now present, and no \`#threshold\` target is present or claimed in \`fairy-journeys.html\`.
 - Next best step: pass 02 mobile-nav clipping check for \`ПЕСОЧНИЦА\` at \`390x844\`.
+
+## Pass 02 Notes
+
+- Result: added narrow-screen trailing inline padding and matching scroll padding to the Fairy page shell nav so the last plaque no longer dies against the clipped shell edge while preserving the existing horizontal scroller behavior and shell identity.
+- Changed files: \`css/fairy-journeys.css\`, this ledger.
+- Bug evidence before fix: live browser check at \`390x844\` measured the nav rail at \`348px\` wide with \`379px\` of scroll content; the last item \`Песочница\` stayed one line but ended at \`x=392\`, past the viewport edge.
+- Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports; browser policy blocked loading the local \`127.0.0.1\` page in the host browser, so local browser re-measurement was not available in this wake.
+- Next best step: pass 03 reference tablet overflow at \`768px\`.

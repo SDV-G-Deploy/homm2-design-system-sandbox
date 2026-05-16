@@ -727,6 +727,8 @@ body {
 
   .fairy-shell .site-shell-nav {
     gap: 8px;
+    padding-inline-end: 12px;
+    scroll-padding-inline-end: 12px;
     padding-bottom: 4px;
   }
 
@@ -1019,6 +1021,8 @@ body {
 
   .fairy-shell .site-shell-nav {
     gap: 7px;
+    padding-inline-end: 10px;
+    scroll-padding-inline-end: 10px;
   }
 
   .fairy-shell .site-shell-nav a {
