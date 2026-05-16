@@ -819,6 +819,20 @@ body {
     padding: 18px;
   }
 
+  .fairy-feed-summary {
+    display: flex;
+    max-width: 34rem;
+    border-color: rgb(var(--gold-300) / 0.12);
+    background:
+      linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 38%),
+      rgb(var(--ink-950) / 0.18);
+    color: rgb(var(--parchment-50) / 0.66);
+  }
+
+  .fairy-feed-summary strong {
+    color: rgb(var(--parchment-50) / 0.88);
+  }
+
   .fairy-feed-row-top {
     grid-template-columns: auto 1fr;
   }
@@ -831,6 +845,20 @@ body {
   .fairy-hero-rail h2,
   .fairy-feed-rail h2 {
     font-size: 13px;
+  }
+
+  .fairy-feed-rail[data-recipe-collapse="summary"] .recipe-support-detail {
+    display: none;
+  }
+
+  .fairy-feed-rail[data-recipe-collapse="summary"] .recipe-support-summary {
+    display: flex;
+  }
+
+  .fairy-feed-rail {
+    gap: 0;
+    padding: 10px;
+    opacity: 0.74;
   }
 
   .fairy-hero-art::before {
@@ -959,6 +987,16 @@ body {
 
   .fairy-hero-art {
     min-height: 112px;
+  }
+
+  .fairy-feed-summary {
+    max-width: none;
+    padding: 8px 10px;
+  }
+
+  .fairy-feed-rail {
+    padding: 9px;
+    opacity: 0.68;
   }
 
   .fairy-moon {
