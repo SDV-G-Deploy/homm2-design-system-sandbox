@@ -61,7 +61,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | launch + 00m | planned | - | anchor contract | - | pass 02 if clean |
+| 01 | launch + 00m | completed | pending | alias anchor on \`fairy-journeys.html#route-ledger\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; static anchor re-check for \`#field-dossier\`, \`#route-feed\`, \`#route-ledger\`; no \`#threshold\` target claimed on page | pass 02 if clean |
 | 02 | launch + 25m | planned | - | mobile nav | - | pass 03 if clean |
 | 03 | launch + 50m | planned | - | reference tablet overflow | - | pass 04 if clean |
 | 04 | launch + 75m | planned | - | applied proof-label copy | - | pass 05 if clean |
@@ -76,3 +76,10 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 - Report sent:
 - Residual risks:
 - Best next step:
+
+## Pass 01 Notes
+
+- Result: added a backward-compatible \`id="route-ledger"\` alias on the Fairy Journeys feed heading while preserving the existing \`#route-feed\` section id and all current internal links.
+- Changed files: \`fairy-journeys.html\`, this ledger.
+- Anchor re-check: \`#field-dossier\` present, \`#route-feed\` present, \`#route-ledger\` now present, and no \`#threshold\` target is present or claimed in \`fairy-journeys.html\`.
+- Next best step: pass 02 mobile-nav clipping check for \`ПЕСОЧНИЦА\` at \`390x844\`.
