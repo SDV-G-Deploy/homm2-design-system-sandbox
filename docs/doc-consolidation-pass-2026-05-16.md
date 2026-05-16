@@ -50,3 +50,11 @@ Bounded documentation-only consolidation after:
 - Commit and push sandbox documentation updates from the clean sandbox repo.
 - Commit and push YIQ documentation updates from the clean YIQ repo.
 - Do not push the dirty workspace root from this pass; doing so would also publish pre-existing unrelated work. Leave the external roadmap edit visible in the working tree and report the root push as blocked by pre-existing workspace state.
+
+## Closeout
+
+- sandbox commit: `81f0f0410cd014f87f7c9f212b12d558c14140f1`
+- YIQ commit: `8938baa6767fb395e9d1b58ce87194f84563dd3d`
+- sandbox final state after push: clean and synced with `origin/main`.
+- YIQ final state after push: clean and synced with `origin/main`.
+- workspace external roadmap: edited and verified, but intentionally not committed/pushed because the workspace root started dirty, untracked, and ahead of origin with unrelated changes.
