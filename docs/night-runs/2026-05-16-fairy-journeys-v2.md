@@ -59,7 +59,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | confirmation + 00m | planned | - | TBD | `git diff --check`; targeted doc inspection | pass 02 or stop |
+| 01 | confirmation + 00m | completed | pending | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
 | 02 | confirmation + 25m | planned | - | TBD | `git diff --check`; link/reference sanity if docs changed | pass 03 or stop |
 | 03 | confirmation + 50m | planned | - | TBD | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js` when relevant | pass 04 or stop |
 | 04 | confirmation + 75m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 05 or stop |
@@ -73,3 +73,16 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 - Morning report sent:
 - Residual risks:
 - Best next step:
+
+## Pass 01 Notes
+- Status: completed
+- Step: documentation freshness sweep
+- Result: operator index and new-session handoff were already aligned with the current ledger and recent committed docs; README had one stale narrow-smoke wording block, now clarified so the rebuild-pass note stays historical and the current regression baseline points to `tools/regression-smoke.js`.
+- Files changed:
+  - `README.md`
+  - `docs/night-runs/2026-05-16-fairy-journeys-v2.md`
+- Verification:
+  - `git diff --check`
+  - targeted doc inspection against `docs/new-session-handoff-2026-05-16.md`, `docs/design-system-operator-index-2026-05-15.md`, `docs/fairy-journeys-closeout-pass-2026-05-16.md`, and `docs/feed-listing-indexed-route-row-pass-2026-05-16.md`
+- Commit: pending
+- Next best step: if a later wake is explicitly resumed, use the task-list reconciliation pass; otherwise stop here.

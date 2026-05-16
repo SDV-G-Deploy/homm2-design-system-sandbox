@@ -53,11 +53,17 @@ The latest pass moved `fairy-journeys.html` away from the older menu-first bridg
 - **SideRailMetadataRecipe** and **SiteShellNavigationRecipe** remain support-only.
 - The page keeps its own `css/fairy-journeys.css` and does not add new shared hooks.
 
-Verified during the pass:
+Verified during the rebuild pass:
 
 - static recipe-hook sanity
-- Chromium headless smoke at `390x844` and `1024x640`
+- targeted Chromium headless smoke at `390x844` and `1024x640`
 - `git diff --check` clean before commit
+
+Current regression baseline for ongoing doc/proof work:
+
+- dependency-free local smoke at `tools/regression-smoke.js`
+- 6 checked targets across `1440x900`, `390x844`, and `360x740`
+- page-level overflow, Fairy nav one-line labels, and indexed FeedListing row-track checks
 
 ## Current reality after the documentation + proof program
 
