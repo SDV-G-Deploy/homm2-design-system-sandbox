@@ -1,6 +1,6 @@
 # HOMM2 Art Direction Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + less-round fantasy direction evolving toward a heraldic main-menu feel, now stabilized with a menu-first adaptive layer across mobile / tablet / small desktop**.
+Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + canonical fixtures, with Fairy Journeys kept as applied smoke/reference pressure after the latest visual-alignment run**.
 
 ## What this is
 
@@ -64,6 +64,18 @@ Current regression baseline for ongoing doc/proof work:
 - dependency-free local smoke at `tools/regression-smoke.js`
 - 6 checked targets across `1440x900`, `390x844`, and `360x740`
 - page-level overflow, Fairy nav one-line labels, and indexed FeedListing row-track checks
+
+## Latest visual-alignment closeout
+
+The latest sandbox night run closed at `9c57cb6` after bounded fixes to Fairy Journeys and the reference manual:
+
+- `fairy-journeys.html#route-ledger` now resolves while preserving `#route-feed`
+- mobile Fairy nav no longer clips the final `Песочница` item in the checked narrow surface
+- reference manual tables stack safely at tablet width
+- visible internal recipe/proof labels were removed from the Fairy applied UI
+- launch/read copy is separated from the later commit/choose beat
+
+This did **not** promote Fairy Journeys to canonical proof. It remains an applied smoke/reference-pressure page; canonical evidence still comes from fixtures and pass reports.
 
 ## Current reality after the documentation + proof program
 
@@ -147,7 +159,7 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness**.
+Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness + Fairy/reference visual-alignment closeout**.
 
 Current entry point:
 

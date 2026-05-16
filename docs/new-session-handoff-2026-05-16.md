@@ -20,6 +20,9 @@ Then choose the narrow task. Do not restart the whole design-system program.
 
 Recent commits:
 
+- `9c57cb6` - Mark visual alignment closeout report sent
+- `f9db53b` - Close visual alignment night run
+- `7d3d337` - Record visual alignment QA pass
 - `0534208` - Add HOMM2 regression smoke harness
 - `9a75f85` - Promote indexed feed rows to fixture proof
 - `6697620` - Refresh HOMM2 operator docs index
@@ -31,8 +34,8 @@ Current proof:
 
 - canonical fixtures exist for `MenuScreenRecipe`, `ArticleHeroRecipe`, `DossierReadingRecipe`, `FeedListingRecipe`, and narrow `SiteShellNavigationRecipe`
 - `FeedListingRecipe` now includes `indexed-route-rows` fixture proof
-- `fairy-journeys.html` is an applied smoke page, not canonical proof
-- `reference.html` is manual/quick operator reference, not production proof
+- `fairy-journeys.html` is an applied smoke/reference-pressure page, not canonical proof; the latest visual-alignment run fixed anchors, mobile nav clipping, visible internal labels, and launch/read vs commit/choose copy
+- `reference.html` is manual/quick operator reference, not production proof; the latest visual-alignment run also tightened tablet manual table stacking
 - local regression smoke exists at `tools/regression-smoke.js`
 
 ## Verification Baseline
@@ -57,10 +60,10 @@ Expected smoke scope:
 
 Keep documentation current before expanding implementation.
 
-For the next `/new` session, the best default task is documentation cleanup and alignment:
+For the next `/new` session, the best default task is narrow proof expansion or reference-page slimming only after checking whether docs are already current:
 
 1. Re-read operator index and README checkpoint.
-2. Update any stale docs that still describe completed fixture debt or missing harness work.
+2. Update any stale docs that still describe completed fixture debt, missing harness work, or pre-visual-alignment Fairy/reference issues.
 3. If implementation work is needed, make it one bounded proof pass and record it immediately.
 4. Commit, push, wait for Pages deploy, and report the commit hash plus deploy status.
 
@@ -77,4 +80,3 @@ For the next `/new` session, the best default task is documentation cleanup and 
 - Do not promote page-local CSS into shared hooks without fixture evidence.
 - Do not wire the smoke harness into CI until local signal is stable enough.
 - Do not reopen old Pass 1-4 sequencing unless a newer doc explicitly says it is unresolved.
-

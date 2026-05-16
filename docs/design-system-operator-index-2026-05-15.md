@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is the current entry point for humans and agents working on the HOMM2 design-system sandbox. It consolidates the Pass 1-7 documentation set, the first-tranche fixture proof, the host-bound support passes, the Fairy Journeys applied-page cycle, and the recent `reference.html` quick operator mode.
+This is the current entry point for humans and agents working on the HOMM2 design-system sandbox. It consolidates the Pass 1-7 documentation set, the first-tranche fixture proof, the host-bound support passes, the Fairy Journeys applied-page cycle, the recent `reference.html` quick operator mode, and the 2026-05-16 Fairy/reference visual-alignment closeout.
 
 It is an index, not a new contract. If this file and a normative doc disagree, update the normative doc first, then this index.
 
@@ -26,7 +26,7 @@ For a fast visual/manual orientation, open `reference.html#operator-mode` after 
 | --- | --- | --- |
 | Normative core | `docs/design-system-constitution-2026-05-15.md`, `docs/recipe-family-map-2026-05-15.md`, `docs/content-contracts-and-budgets-2026-05-15.md`, `docs/fixture-strategy-2026-05-15.md`, `docs/generation-playbook-2026-05-15.md`, `docs/acceptance-qa-framework-2026-05-15.md` | Source of current rules, budgets, proof gates, and rejection criteria |
 | Current proof / closeout | `docs/final-acceptance-closeout-2026-05-15.md`, `docs/broad-readiness-acceptance-pass-2026-05-15.md`, `docs/side-rail-host-bound-pass-report-2026-05-15.md`, `docs/article-hero-side-rail-host-bound-pass-report-2026-05-15.md`, `docs/site-shell-navigation-pass-report-2026-05-15.md` | Evidence ledgers for what has actually been checked |
-| Applied-page notes | `docs/fairy-journeys-*-pass-2026-05-16.md`, especially `docs/fairy-journeys-closeout-pass-2026-05-16.md` and `docs/fairy-journeys-bugcheck-pass-2026-05-16.md` | Page-local applied smoke evidence; useful pressure, not canonical proof |
+| Applied-page notes | `docs/fairy-journeys-*-pass-2026-05-16.md`, `docs/night-runs/2026-05-16-visual-alignment.md`, especially `docs/fairy-journeys-closeout-pass-2026-05-16.md` and `docs/fairy-journeys-bugcheck-pass-2026-05-16.md` | Page-local applied smoke evidence; useful pressure, not canonical proof |
 | Fixture / responsive history | `docs/responsive-recipe-*.md`, `docs/fixture-tranche1-viewport-notes-2026-05-15.md`, `docs/screen-recipe-contracts-2026-05-14.md` | Proven MenuScreenRecipe lineage and earlier contract/evidence trail; defer to current core on conflicts |
 | Reference/manual notes | `docs/reference-operator-mode-pass-2026-05-16.md`, `docs/reference-manual-optimization-pass-2026-05-16.md` | Documentation-surface improvements; not production recipe proof |
 | Research / visual strategy | `docs/design-system-research-plan-2026-05.md`, `docs/deep-design-pass-2026-05-14.md`, `docs/asset-layer-pilots-2026-05-14.md`, `docs/images-2-strategy-2026-05-14.md`, `docs/text-system-guidelines-2026-05.md` | Background, art direction, copy pressure, and future asset guidance |
@@ -40,8 +40,8 @@ Proven now, within limits:
 - `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` have canonical fixtures with acceptance evidence at `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000`, with strict fixture typography sanity closed. `FeedListingRecipe` also has an indexed route-row state promoted from Fairy Journeys applied pressure.
 - `SideRailMetadataRecipe` is proof-backed as support inside dossier, feed, and article-hero canonical host states. It remains support-only and is not a primary recipe.
 - `SiteShellNavigationRecipe` has narrow host-bound proof around dossier/feed hosts for persistent utility nav, breadcrumb context, local section nav, and route shortcuts. It remains support-only outside true menu/navigation primary screens.
-- `fairy-journeys.html` is a rebuilt applied smoke page using ArticleHero + DossierReading + FeedListing with page-local CSS. Its latest closeout verifies local/live parity, mobile nav no-wrap, stable feed index tracks, no checked page-level overflow, and a broader palette.
-- `reference.html` now has quick operator mode plus manual table/guardrail fixes. It is a documentation/manual surface, not a production proof surface.
+- `fairy-journeys.html` is a rebuilt applied smoke page using ArticleHero + DossierReading + FeedListing with page-local CSS. Its latest visual-alignment closeout verifies anchor compatibility, mobile nav clipping cleanup, removal of visible internal proof labels, launch/read vs commit/choose copy separation, no checked page-level overflow, and stable smoke behavior.
+- `reference.html` now has quick operator mode plus manual table/guardrail fixes, including the latest tablet table-stack cleanup. It is a documentation/manual surface, not a production proof surface.
 - `tools/regression-smoke.js` is the first local static/viewport smoke harness for canonical fixtures and selected smoke pages.
 
 Limits that still matter:
