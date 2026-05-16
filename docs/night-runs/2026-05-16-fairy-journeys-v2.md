@@ -62,7 +62,7 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 | 01 | confirmation + 00m | completed | `c7e32f8` | README freshness sweep; this ledger | `git diff --check`; targeted doc inspection of README, operator index, handoff, closeout, bugcheck, feed-index pass | stop after bounded wake |
 | 02 | confirmation + 25m | completed | `b559434` | `docs/fairy-journeys-task-list-reconciliation-2026-05-16.md`; this ledger | `git diff --check`; targeted reference/link sanity for reconciliation evidence paths | stop after bounded wake |
 | 03 | confirmation + 50m | completed | `3d883e6` | smoke baseline; this ledger | `node --check tools/regression-smoke.js`; `node tools/regression-smoke.js`; `git diff --check` | stop after bounded wake |
-| 04 | confirmation + 75m | completed | pending | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
+| 04 | confirmation + 75m | completed | `a4022de` | README proof-boundary clarification; this ledger | targeted docs grep for Fairy Journeys/proof wording; `git diff --check` | stop after bounded wake |
 | 05 | confirmation + 100m | planned | - | TBD | targeted docs grep + `git diff --check` | pass 06 or stop |
 | 06 | confirmation + 125m | planned | - | TBD | smallest relevant gate from changed files | closeout or stop |
 | closeout | confirmation + 150m or next morning slot | planned | - | this ledger | git status, local/upstream HEAD, Pages/CI if pushed | morning report |
@@ -123,5 +123,5 @@ These are launch-time defaults. Each wake must still inspect actual repo state a
 - Verification:
   - targeted docs grep for Fairy Journeys/proof wording across README, handoff, operator index, and recent pass artifacts
   - `git diff --check`
-- Commit: pending
+- Commit: `a4022de` (`Clarify Fairy Journeys proof boundary`)
 - Next best step: if a later wake is explicitly resumed, prepare the operator prompt handoff artifact or stop if the remaining bounded value is too low.
