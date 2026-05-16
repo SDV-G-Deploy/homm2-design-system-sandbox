@@ -1,64 +1,14 @@
-# HOMM2 Design System Operator Index - 2026-05-15
+# HOMM2 Current Operator Index - 2026-05-16
 
-## Status / Scope
+## Purpose
 
-Pass 7 documentation consolidation artifact for the HOMM2 design-system documentation program.
+This is the current entry point for humans and agents working on the HOMM2 design-system sandbox. It consolidates the Pass 1-7 documentation set, the first-tranche fixture proof, the host-bound support passes, the Fairy Journeys applied-page cycle, and the recent `reference.html` quick operator mode.
 
-This is an operator index, not a new theory pass. It does not reopen Pass 1-6 decisions, add fixture implementation, expand CSS/API/DOM contracts, or rewrite applied pages. Its job is to make the completed documentation set navigable for humans and agents.
+It is an index, not a new contract. If this file and a normative doc disagree, update the normative doc first, then this index.
 
-The ratified operating sequence is:
+## Read First Today
 
-1. constitution and system boundary
-2. recipe-family selection
-3. content budgets and downgrade rules
-4. canonical fixtures and proof surfaces
-5. generation gates
-6. acceptance QA
-7. this index
-
-Important consolidation note:
-
-- The earlier Pass 2 protective-layer-first sequencing was reviewed during the Pass 1-4 audit.
-- The corrective sync ratified the content-first proof tranche: `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` first.
-- `SideRailMetadataRecipe` remains critical support. Bounded host-bound proof now exists for dossier and feed hosts, and the final plus broad-readiness closeouts cover the canonical host fixture viewport matrix; broad reuse is still gated by support-only status, unrelated page-family gaps, and any future hero-host decision.
-- `SiteShellNavigationRecipe` now has a narrow host-bound proof fixture for persistent utility nav, breadcrumb context, local section nav and route shortcuts around dossier/feed primary hosts. This reduces shell-takeover ambiguity but does not create broad shell-heavy site readiness.
-- Future readers should not treat the old sequencing question as still open unless a later pass explicitly reopens it.
-
-## Documentation Set Overview
-
-Use this index as the entry point before jumping into individual docs.
-
-| Document | Role | Current operator status |
-| --- | --- | --- |
-| `docs/design-system-documentation-program-2026-05-15.md` | Program charter and pass plan | Normative for program shape and pass intent; partly historical after Pass 1-7 completion |
-| `docs/design-system-constitution-2026-05-15.md` | System identity, invariants, boundaries and rejection rules | Normative core |
-| `docs/recipe-family-map-2026-05-15.md` | Recipe taxonomy, dependency graph and family priority | Normative core after corrective sync; old protective-first notes are superseded by its ratified content-first section |
-| `docs/content-contracts-and-budgets-2026-05-15.md` | Per-family budgets, density modes, downgrade order and accessibility text obligations | Normative core for covered families; operational but not fixture proof |
-| `docs/fixture-strategy-2026-05-15.md` | Canonical fixture backlog, stress states and proof-surface rules | Normative operational plan; does not claim fixtures are implemented |
-| `docs/generation-playbook-2026-05-15.md` | How to assemble new sites from recipe families and gates | Normative operational playbook; broad generation remains gated by fixture and QA proof |
-| `docs/acceptance-qa-framework-2026-05-15.md` | Evidence classes, viewport matrix, blocker rules and QA checklists | Normative acceptance framework |
-| `docs/pass-1-4-audit-2026-05-15.md` | Audit that found priority drift and side-rail proof ambiguity | Historical/reference after corrective sync; useful to understand why later docs emphasize content-first and host-bound rail proof |
-| `docs/side-rail-host-bound-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded dossier+feed SideRail host-bound proof pass | Current implementation artifact; read with the broad-readiness acceptance pass for viewport/accessibility closure |
-| `docs/site-shell-navigation-pass-report-2026-05-15.md` | Implementation/evidence ledger for the bounded SiteShellNavigationRecipe narrow host-bound proof pass | Current implementation artifact for shell takeover guardrails; not broad shell-navigation readiness |
-| `docs/broad-readiness-acceptance-pass-2026-05-15.md` | Acceptance/accessibility closeout for the remaining tranche-1 viewport matrix | Current proof artifact for canonical host fixture broad-readiness scope; not proof for uncontracted page families |
-
-Related older or supporting docs remain useful but are not the Pass 7 core:
-
-- `docs/responsive-recipe-evidence-2026-05-15.md`
-- `docs/responsive-recipe-contracts-2026-05-15.md`
-- `docs/responsive-recipe-implementation-mapping-2026-05-15.md`
-- `docs/responsive-recipe-shared-hooks-pass4-2026-05-15.md`
-- `docs/responsive-recipe-viewport-qa-pass5-2026-05-15.md`
-- `docs/responsive-recipe-followup-pass6-2026-05-15.md`
-- `docs/screen-recipe-contracts-2026-05-14.md`
-- `docs/text-system-guidelines-2026-05.md`
-- `docs/design-system-research-plan-2026-05.md`
-
-Treat those as supporting evidence, earlier foundations, or MenuScreenRecipe-specific artifacts unless a current core doc explicitly points to them.
-
-## Normative Core Docs
-
-Read these in order when doing production-facing design-system work:
+For production-facing design-system work, read in this order:
 
 1. `docs/design-system-constitution-2026-05-15.md`
 2. `docs/recipe-family-map-2026-05-15.md`
@@ -66,199 +16,93 @@ Read these in order when doing production-facing design-system work:
 4. `docs/fixture-strategy-2026-05-15.md`
 5. `docs/generation-playbook-2026-05-15.md`
 6. `docs/acceptance-qa-framework-2026-05-15.md`
+7. This index
 
-Normative means these docs define what future work must obey unless a later explicit pass updates them. They are not equally specific:
+For a fast visual/manual orientation, open `reference.html#operator-mode` after reading the docs above. Quick mode is a shortcut for choosing a primary recipe, locking the responsive contract, running regression smoke, and promoting only proven patterns. It does not replace the normative docs or fixture proof.
 
-- The constitution owns identity, boundaries, invariants and rejection rules.
-- The recipe map owns family names, jobs, status and buildout priority.
-- The content contracts own budgets, density behavior and downgrade order for the covered families.
-- The fixture strategy owns what can count as canonical proof.
-- The generation playbook owns operator workflow and proof gates for new pages/sites.
-- The QA framework owns acceptance labels, viewport expectations, blockers and follow-up debt.
+## Document Roles
 
-When these docs appear to overlap, use the more specific newer doc for implementation detail, but do not violate the constitution's identity and boundary rules without revising it.
-
-## Supporting Operational Docs
-
-These docs are operational, but they support a narrower layer than the full Pass 1-6 core:
-
-| Document family | Use when | Caveat |
+| Role | Documents | Operator status |
 | --- | --- | --- |
-| Responsive recipe Pass 1-6 docs | Maintaining the proven `MenuScreenRecipe` slice, density hooks, frame-rank hooks and viewport evidence | They prove `MenuScreenRecipe`, not all recipe families |
-| `docs/screen-recipe-contracts-2026-05-14.md` | Looking up earlier screen-recipe language and pre-program contract framing | Older than the Pass 1-6 core; defer to current docs on conflicts |
-| `docs/text-system-guidelines-2026-05.md` | Editing copy, labels, summaries and text pressure | Supports content budgets but does not replace family contracts |
-| `README.md` | Repo orientation, file structure, local preview and deployment | Should be updated to point to this operator index as the doc entry point |
-| `reference.html` | Visual/manual reference and system specimens | Documentation surface only; does not define production proof |
-| `fixtures/menu-screen-recipe.html` | Canonical proof for `MenuScreenRecipe` | Does not prove hero, dossier, feed, teaser or side-rail families |
-| `fixtures/site-shell-navigation-recipe.html` | Narrow host-bound proof for `SiteShellNavigationRecipe` support behavior | Proves shell stays secondary only within its authored dossier/feed proof states |
+| Normative core | `docs/design-system-constitution-2026-05-15.md`, `docs/recipe-family-map-2026-05-15.md`, `docs/content-contracts-and-budgets-2026-05-15.md`, `docs/fixture-strategy-2026-05-15.md`, `docs/generation-playbook-2026-05-15.md`, `docs/acceptance-qa-framework-2026-05-15.md` | Source of current rules, budgets, proof gates, and rejection criteria |
+| Current proof / closeout | `docs/final-acceptance-closeout-2026-05-15.md`, `docs/broad-readiness-acceptance-pass-2026-05-15.md`, `docs/side-rail-host-bound-pass-report-2026-05-15.md`, `docs/article-hero-side-rail-host-bound-pass-report-2026-05-15.md`, `docs/site-shell-navigation-pass-report-2026-05-15.md` | Evidence ledgers for what has actually been checked |
+| Applied-page notes | `docs/fairy-journeys-*-pass-2026-05-16.md`, especially `docs/fairy-journeys-closeout-pass-2026-05-16.md` and `docs/fairy-journeys-bugcheck-pass-2026-05-16.md` | Page-local applied smoke evidence; useful pressure, not canonical proof |
+| Fixture / responsive history | `docs/responsive-recipe-*.md`, `docs/fixture-tranche1-viewport-notes-2026-05-15.md`, `docs/screen-recipe-contracts-2026-05-14.md` | Proven MenuScreenRecipe lineage and earlier contract/evidence trail; defer to current core on conflicts |
+| Reference/manual notes | `docs/reference-operator-mode-pass-2026-05-16.md`, `docs/reference-manual-optimization-pass-2026-05-16.md` | Documentation-surface improvements; not production recipe proof |
+| Research / visual strategy | `docs/design-system-research-plan-2026-05.md`, `docs/deep-design-pass-2026-05-14.md`, `docs/asset-layer-pilots-2026-05-14.md`, `docs/images-2-strategy-2026-05-14.md`, `docs/text-system-guidelines-2026-05.md` | Background, art direction, copy pressure, and future asset guidance |
+| Historical audit | `docs/pass-1-4-audit-2026-05-15.md`, older correction plans | Rationale for current sequencing; not an unresolved blocker list unless a later doc says so |
 
-## Historical / Audit / Reference Docs
+## Current Proof Status
 
-These docs answer why the system evolved, but they should not be used as the current decision source when the core docs disagree:
+Proven now, within limits:
 
-| Document | Classification | Operator note |
-| --- | --- | --- |
-| `docs/pass-1-4-audit-2026-05-15.md` | Historical audit/reference | Its findings were acted on by corrective sync and later Pass 5-6 wording; keep it for rationale, not as an unresolved blocker list |
-| `docs/design-system-documentation-program-2026-05-15.md` | Program charter plus partial history | Still useful for pass scope and non-goals; individual pass artifacts now carry the live rules |
-| `docs/design-system-research-plan-2026-05.md` | Earlier research plan | Context for why the system exists; not the active operator path |
-| `docs/deep-design-pass-2026-05-14.md` and visual-strategy docs | Research/reference | Use for evidence and visual background only |
-| `docs/responsive-recipe-*` | MenuScreenRecipe proof history | Normative only for that slice unless carried forward by Pass 1-6 docs |
+- `MenuScreenRecipe` has canonical fixture proof in `fixtures/menu-screen-recipe.html` and the responsive recipe evidence chain.
+- `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` have canonical fixtures with acceptance evidence at `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000`, with strict fixture typography sanity closed.
+- `SideRailMetadataRecipe` is proof-backed as support inside dossier, feed, and article-hero canonical host states. It remains support-only and is not a primary recipe.
+- `SiteShellNavigationRecipe` has narrow host-bound proof around dossier/feed hosts for persistent utility nav, breadcrumb context, local section nav, and route shortcuts. It remains support-only outside true menu/navigation primary screens.
+- `fairy-journeys.html` is a rebuilt applied smoke page using ArticleHero + DossierReading + FeedListing with page-local CSS. Its latest closeout verifies local/live parity, mobile nav no-wrap, stable feed index tracks, no checked page-level overflow, and a broader palette.
+- `reference.html` now has quick operator mode plus manual table/guardrail fixes. It is a documentation/manual surface, not a production proof surface.
 
-Do not point new operators first to audit or research docs. They are useful after the core path is understood.
+Limits that still matter:
 
-## Reading Order By Workflow
+- Proof is fixture-scope and pass-scope. Do not claim full site-generation readiness for arbitrary pages.
+- Applied pages and bridge targets reveal pressure but do not replace canonical fixtures.
+- No full WCAG, keyboard, screen-reader, legal accessibility, or compliance audit has been completed.
+- Promo-heavy, dashboard-heavy, search-heavy, ecommerce-like, form-heavy, regulated, and safety-critical screens remain outside current proof.
 
-### 1. New Site Generation
+## Canonical Surfaces
 
-Minimum reading path before starting:
+Current fixtures:
 
-1. `docs/design-system-constitution-2026-05-15.md`
-2. `docs/recipe-family-map-2026-05-15.md`
-3. `docs/content-contracts-and-budgets-2026-05-15.md`
-4. `docs/generation-playbook-2026-05-15.md`
-5. `docs/acceptance-qa-framework-2026-05-15.md`
+- `fixtures/menu-screen-recipe.html`
+- `fixtures/article-hero-recipe.html`
+- `fixtures/dossier-reading-recipe.html`
+- `fixtures/feed-listing-recipe.html`
+- `fixtures/site-shell-navigation-recipe.html`
 
-Add `docs/fixture-strategy-2026-05-15.md` before claiming any output is proof-backed or on-system.
+Current applied/manual surfaces:
 
-Operator rule:
+- `fairy-journeys.html`: applied smoke page, useful for integration pressure only.
+- `reference.html`: design-system manual and quick operator reference.
+- `index.html`: art-direction atmosphere board.
 
-- A new site may be conceptually assembled when one primary family, legal support families, budgets, downgrade order and proof status are named.
-- Broad hero/dossier/feed generation is proof-backed only within the canonical fixture states now covered by the full acceptance viewport matrix. Do not extend that claim to unrelated page archetypes, shell-navigation-heavy layouts, applied pages, or unproven support combinations.
-- Applied pages and bridge smoke targets can reveal pressure, but they do not replace canonical fixture proof.
+## Workflow Shortcuts
 
-### 2. System Maintenance / Extension
+New page or site generation:
 
-Minimum reading path before extending the system:
+1. Name exactly one primary recipe family.
+2. Name support recipes and proof tier.
+3. Check budgets and downgrade order.
+4. Compare against canonical fixtures.
+5. Run acceptance QA before calling the result on-system.
 
-1. `docs/design-system-constitution-2026-05-15.md`
-2. `docs/recipe-family-map-2026-05-15.md`
-3. `docs/content-contracts-and-budgets-2026-05-15.md`
-4. `docs/fixture-strategy-2026-05-15.md`
-5. `docs/acceptance-qa-framework-2026-05-15.md`
+Applied-page review:
 
-Add the relevant implementation/support docs:
+1. Classify the page as canonical fixture, bridge smoke, applied page, or documentation surface.
+2. Identify primary recipe and support recipes.
+3. Check first-screen hierarchy, overflow, compact/full-label carriers, and support demotion.
+4. Treat local visual success as pressure evidence unless a fixture pass promotes the pattern.
 
-- For `MenuScreenRecipe`, read the responsive recipe artifact chain and inspect `fixtures/menu-screen-recipe.html`, `css/tokens.css`, and `css/components.css`.
-- For copy or label changes, read `docs/text-system-guidelines-2026-05.md`.
-- For README, public preview or deployment changes, read `README.md` and `.github/workflows/deploy-pages.yml`.
+Reference/manual use:
 
-Operator rule:
+1. Use `reference.html#operator-mode` for a quick operator reminder.
+2. Use the full manual for token, specimen, and guardrail lookup.
+3. Return to the normative docs before changing recipes, proof claims, or acceptance language.
 
-- Extend an existing family only inside its documented budget and downgrade order.
-- If no family fits, document or contract the missing family before treating the page as production.
-- Promote repeated local fixes into shared hooks only when the recipe contract justifies them.
+## Remaining Work In Order
 
-### 3. Applied-Site Audit / Review
+1. Fixture debt: promote reusable patterns exposed by Fairy Journeys only through canonical fixtures, starting with the indexed FeedListing row/badge pattern if it should outlive the applied page.
+2. Host-bound support: keep SideRail and SiteShell support-only; add broader host mixes only when a real page need requires them and verify with fixture evidence.
+3. Prompt kit: turn the current recipe/budget/proof workflow into reusable generation prompts only after the fixture debt above is closed enough to avoid prompt-only claims.
+4. Regression harness: build a repeatable viewport/static harness for the canonical fixtures and selected smoke pages; current evidence is pass-ledger based, not a unified suite.
 
-Minimum reading path before auditing an applied page:
+## Maintenance Rules
 
-1. `docs/design-system-constitution-2026-05-15.md`
-2. `docs/generation-playbook-2026-05-15.md`
-3. `docs/acceptance-qa-framework-2026-05-15.md`
-4. The family-specific sections in `docs/content-contracts-and-budgets-2026-05-15.md`
-5. `docs/fixture-strategy-2026-05-15.md` if the page claims proof-backed or on-system status
+- Update the normative document that owns a rule before updating this index.
+- Keep old docs classified instead of letting every artifact look equally current.
+- Do not promote applied-page behavior into system claims without a fixture or explicit proof pass.
+- When proof expands, record fixture path, viewport matrix, evidence class, and remaining exclusions.
 
-Operator rule:
+## This Consolidation Pass
 
-- First identify the page's primary recipe family.
-- Then check legal support composition and proof tier.
-- Then apply the QA blocker checklist before writing aesthetic feedback.
-- If the page only has applied or bridge evidence, classify it as conceptual, bounded-experiment or bridge-smoke, not canonical-proof-backed.
-
-## Fast Entry Paths
-
-### Read This First: Humans
-
-If you are new to the repo, read in this order:
-
-1. This index.
-2. `docs/design-system-constitution-2026-05-15.md`.
-3. The workflow-specific path above.
-
-If you are only trying to understand what is currently proven, read:
-
-1. `docs/generation-playbook-2026-05-15.md`
-2. `docs/acceptance-qa-framework-2026-05-15.md`
-3. The responsive recipe artifact chain for `MenuScreenRecipe`
-
-### Read This First: Agents
-
-Before writing or auditing HOMM2 UI, an agent must establish:
-
-1. target workflow: generation, maintenance or audit
-2. primary recipe family
-3. support recipe families
-4. proof tier: conceptual, bounded-experiment, bridge-smoke, unit-proof, canonical-proof-backed or accepted
-5. required budgets and downgrade order
-6. required fixture and QA evidence
-
-Agents should not start from `reference.html`, a visual mood board, or an applied page. Those are evidence and pressure surfaces, not the current source of truth.
-
-## Question-To-Doc Map
-
-| Question | Start with | Then read |
-| --- | --- | --- |
-| What is this system allowed to be? | `docs/design-system-constitution-2026-05-15.md` | `docs/generation-playbook-2026-05-15.md` for operational limits |
-| What must never drift? | `docs/design-system-constitution-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` blocker rules |
-| Which recipe family fits this screen? | `docs/recipe-family-map-2026-05-15.md` | `docs/generation-playbook-2026-05-15.md` primary-family selection |
-| What content limits apply? | `docs/content-contracts-and-budgets-2026-05-15.md` | `docs/text-system-guidelines-2026-05.md` for copy pressure |
-| What should collapse or disappear first? | `docs/content-contracts-and-budgets-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` for failure checks |
-| Which fixtures are required? | `docs/fixture-strategy-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` proof expectations |
-| Can a generated page be accepted as on-system? | `docs/acceptance-qa-framework-2026-05-15.md` | `docs/generation-playbook-2026-05-15.md` gates |
-| Is `SideRailMetadataRecipe` ready for broad reuse? | `docs/generation-playbook-2026-05-15.md` | `docs/acceptance-qa-framework-2026-05-15.md` and `docs/side-rail-host-bound-pass-report-2026-05-15.md` |
-| Is the old priority-sequencing concern still open? | `docs/pass-1-4-audit-2026-05-15.md` for history | Current answer lives in `docs/recipe-family-map-2026-05-15.md`, `docs/content-contracts-and-budgets-2026-05-15.md`, `docs/fixture-strategy-2026-05-15.md`, and Pass 5-6 ratification language |
-| Where is current proof strongest? | Responsive recipe artifact chain, `fixtures/menu-screen-recipe.html`, and the canonical host fixture tranche now implemented for hero/dossier/feed | `docs/generation-playbook-2026-05-15.md` proof-status section plus `docs/side-rail-host-bound-pass-report-2026-05-15.md` |
-
-## Update / Maintenance Guidance
-
-When the system evolves, update docs in this order:
-
-1. `docs/design-system-constitution-2026-05-15.md` only if identity, invariant rules, applicability boundary or proof philosophy changes.
-2. `docs/recipe-family-map-2026-05-15.md` when a family is added, reclassified, reprioritized or promoted/demoted.
-3. `docs/content-contracts-and-budgets-2026-05-15.md` when budgets, density behavior, downgrade order or accessibility text obligations change.
-4. `docs/fixture-strategy-2026-05-15.md` when canonical fixture names, hostile states, proof classes or bridge/applied boundaries change.
-5. `docs/generation-playbook-2026-05-15.md` when page archetypes, support combinations, generation gates or proof-status language change.
-6. `docs/acceptance-qa-framework-2026-05-15.md` when evidence classes, viewport matrix, blocker rules or QA checklists change.
-7. This index when any document role, reading order, artifact path or operator status changes.
-8. `README.md` when the public repo entry path, live preview, file structure or deployment instructions change.
-
-Maintenance rules:
-
-- Update the most authoritative doc first, then downstream operator docs.
-- Do not leave old open questions active when a later pass has resolved or superseded them.
-- If a doc becomes partially historical, say so in this index instead of making every file appear equally current.
-- Keep proof claims tied to fixture and QA evidence, not to applied-page appearance.
-
-## README Update Recommendations
-
-Recommended README changes:
-
-1. Add a short "Documentation entry point" section near the top that links to `docs/design-system-operator-index-2026-05-15.md`.
-2. In "How to read the repo", point humans and agents to this index before `reference.html` when the goal is system generation, maintenance or audit.
-3. Add a "Current documentation core" list with the six normative docs: constitution, recipe map, content contracts, fixture strategy, generation playbook and acceptance QA framework.
-4. Clarify that `reference.html` is a documentation/manual surface, not the source of proof for production recipes.
-5. Clarify current proof status: `MenuScreenRecipe` is the proven canonical baseline; hero, dossier and feed now have tranche-1 canonical fixtures with `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000` evidence plus strict fixture typography sanity closure.
-
-No README edit is made by this Pass 7 artifact. These are repo-level recommendations for the next maintenance pass.
-
-## Open Questions Or Maintenance Notes
-
-- The first regression-critical host fixture tranche now exists:
-  - `fixtures/article-hero-recipe.html`
-  - `fixtures/dossier-reading-recipe.html`
-  - `fixtures/feed-listing-recipe.html`
-- The bounded final closeout artifact is `docs/final-acceptance-closeout-2026-05-15.md`; it records `1440x900` and `390x844` fixture evidence. The follow-on broad-readiness artifact is `docs/broad-readiness-acceptance-pass-2026-05-15.md`; it records `360x740`, `1024x640`, `1728x1000` and strict fixture typography sanity closure.
-- The bounded `SideRailMetadataRecipe` host-bound proof pass for dossier + feed now exists; further work should build on that artifact and the final closeout evidence rather than reopen a broad host-family rewrite.
-- `SideRailMetadataRecipe` remains support-only; bounded host-bound proof exists for dossier + feed across the acceptance matrix, but hero-hosted side rail behavior and unrelated page-family reuse remain outside current proof.
-- The bounded `SiteShellNavigationRecipe` narrow proof pass now exists for dossier + feed host states; further shell-heavy layouts still need their own proof and broad generated sites still cannot assume persistent headers/breadcrumbs are universally safe.
-- Promo-heavy, utility/dashboard, ecommerce-like, search-heavy, form-heavy, regulated or safety-critical screens remain outside current proof unless a future family contract and QA pass covers them.
-- Future consolidation should update this index whenever artifact names change. As of this pass, Pass 5 is `docs/generation-playbook-2026-05-15.md` and Pass 6 is `docs/acceptance-qa-framework-2026-05-15.md`.
-
-## Verification
-
-- Confirmed the current Pass 1-7 core artifact paths exist in `docs/`.
-- Confirmed Pass 5 artifact path is `docs/generation-playbook-2026-05-15.md`.
-- Confirmed Pass 6 artifact path is `docs/acceptance-qa-framework-2026-05-15.md`.
-- Re-read the current core docs and the Pass 1-4 audit to distinguish live normative decisions from historical audit findings.
-- Preserved the ratified content-first sequencing and proof gates.
-- Did not add fixture implementation, CSS/API/DOM expansion or applied-page rewrites.
+This update keeps `docs/design-system-operator-index-2026-05-15.md` as the canonical index path to avoid duplicate entry points. It refreshes the index through the 2026-05-16 Fairy Journeys and `reference.html` passes, shortens the operator path, and records current proof limits without adding CSS/HTML changes or new fixture implementation.

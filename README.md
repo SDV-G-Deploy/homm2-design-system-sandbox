@@ -78,16 +78,16 @@ So the current state should be treated as:
 
 ## Next logical pass
 
-The next phase is continued **applied-page rebuild and cleanup**: keep the ratified recipe system honest on real pages before expanding scope again.
+The next phase is **fixture debt + regression harness**: promote reusable patterns discovered in applied work only through canonical fixtures, then make the smoke checks repeatable.
 
-Primary plan:
-- `docs/design-system-research-plan-2026-05.md`
+Current priority order:
 
-Focused page backlog:
-- `docs/fairy-journeys-codex-task-list-v2.md`
+- promote the Fairy Journeys indexed FeedListing row / badge pattern into canonical fixture evidence if it should become reusable
+- keep SideRail and SiteShell support-only unless a new host-bound proof pass expands them
+- build a small repeatable viewport/static harness for canonical fixtures and selected smoke pages
 
-Text-system guidance:
-- `docs/text-system-guidelines-2026-05.md`
+Operator entry point:
+- `docs/design-system-operator-index-2026-05-15.md`
 
 ## Direction guardrails
 
@@ -129,7 +129,7 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild**.
+Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode**.
 
 Current entry point:
 
@@ -142,11 +142,13 @@ What now exists at the system level:
 - canonical fixtures for `menu-screen`, `article-hero`, `dossier-reading`, `feed-listing`, and narrow `site-shell-navigation`
 - proof and acceptance artifacts for the documented recipe slices
 - one rebuilt applied smoke page in `fairy-journeys.html`
+- reference quick operator mode in `reference.html#operator-mode`
 
 Current recommendation:
 
 - treat canonical fixtures and pass reports as the proof source of truth
 - treat applied pages as smoke/pressure surfaces unless a later pass explicitly promotes broader proof
+- use the operator index before long implementation or audit passes so older pass reports do not look equally current
 
 ## File structure
 
@@ -170,7 +172,8 @@ fairy-journeys.html    # bounded applied smoke page using article hero + dossier
 
 ## How to read the repo
 
-- Start with `reference.html` when you want the token contract and system specimens.
+- Start with `docs/design-system-operator-index-2026-05-15.md` when you need the current proof status, reading path, or next work order.
+- Use `reference.html` when you want the token contract, system specimens, and quick operator reminder.
 - Use `index.html` when you want the art-direction scenes and atmosphere pass.
 - Use `fixtures/*.html` when you want the canonical proof surfaces and regression fixtures.
 - Treat `tokens.css` as the override surface for future themes / factions.
