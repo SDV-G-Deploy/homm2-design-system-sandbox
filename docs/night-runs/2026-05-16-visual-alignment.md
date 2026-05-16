@@ -65,7 +65,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | 02 | launch + 25m | completed | \`9805102\` | mobile nav trailing rail budget on \`fairy-journeys.html\` shell | \`git diff --check\`; \`node tools/regression-smoke.js\`; targeted browser reproduction on live page at \`390x844\` showed nav rail \`348px\`, content \`379px\`, and \`Песочница\` ending at \`x=392\` before local CSS fix | pass 03 if clean |
 | 03 | launch + 50m | completed | \`56a86a3\` | tablet-safe stack breakpoint for reference manual tables | \`git diff --check\`; \`node tools/regression-smoke.js\`; source re-check showed wide table stack rules previously started only at \`560px\`, leaving desktop multi-column table grids active at \`768px\` | pass 04 if clean |
 | 04 | launch + 75m | completed | \`0f177f6\` | applied-copy cleanup for visible proof labels on \`fairy-journeys.html\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; source grep confirmed visible strings \`ArticleHeroRecipe ·\`, \`DossierReadingRecipe ·\`, \`FeedListingRecipe ·\`, and \`не канонический тест\` were removed from the applied page UI | pass 05 if clean |
-| 05 | launch + 100m | planned | - | Task 5 dramaturgy | - | pass 06 if clean |
+| 05 | launch + 100m | completed | pending | copy-only sequencing split between launch/read and later commit beat | \`git diff --check\`; \`node tools/regression-smoke.js\`; source check confirmed hero copy now frames reading first and the first route row now frames the later choice/price beat | pass 06 if clean |
 | 06 | launch + 125m | planned | - | alignment QA/docs sync | - | closeout |
 | closeout | launch + 150m | planned | - | closeout report | - | done |
 
@@ -107,3 +107,11 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 - Removed from visible UI: \`не канонический тест\`, \`ArticleHeroRecipe · вступительная запись\`, \`DossierReadingRecipe · поле чтения\`, and \`FeedListingRecipe · журнал маршрута\`.
 - Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports; source grep confirmed the targeted visible strings no longer appear in \`fairy-journeys.html\`.
 - Next best step: pass 05 Fairy Task 5 dramaturgy cleanup.
+
+## Pass 05 Notes
+
+- Result: separated the two beats through copy only. The hero now reads as entry/reading, while the first route row reads as the later commitment point where the decision gains a price.
+- Changed files: \`fairy-journeys.html\`, this ledger.
+- Applied changes: hero secondary link now points to where the choice starts; the handoff summary now says \`сначала чтение, затем выбор имени\`; the route summary, current-row badge, and current-row annotation now frame the first route step as the choice/price beat rather than another generic continuation cue.
+- Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports; source check confirmed the new sequencing strings in the hero and route sections.
+- Next best step: pass 06 alignment QA + minimal docs sync.

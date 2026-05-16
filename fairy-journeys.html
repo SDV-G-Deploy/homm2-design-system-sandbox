@@ -73,7 +73,7 @@
                   Читать досье
                 </a>
                 <a class="fairy-hero-route recipe-secondary-command" href="#route-feed">
-                  Сначала журнал маршрута
+                  Посмотреть, где начнётся выбор
                 </a>
               </div>
 
@@ -94,11 +94,11 @@
 
               <div class="recipe-support-summary fairy-handoff recipe-state-cue" aria-describedby="hero-handoff-full">
                 <span>Порядок</span>
-                <strong>сначала досье, затем журнал</strong>
+                <strong>сначала чтение, затем выбор имени</strong>
               </div>
               <p id="hero-handoff-full" class="visually-hidden">
-                После ArticleHeroRecipe страница переходит к DossierReadingRecipe, затем к
-                FeedListingRecipe. Навигация и боковые сведения остаются поддержкой.
+                Сначала страница открывает досье и вводит в маршрут. Выбор имени и цена решения
+                откладываются до журнала маршрута. Навигация и боковые сведения остаются поддержкой.
               </p>
             </div>
 
@@ -307,10 +307,11 @@
 
               <div class="recipe-support-summary fairy-feed-summary" aria-describedby="feed-summary-full">
                 <span>Журнал</span>
-                <strong>3 записи · текущая строка первая</strong>
+                <strong>3 записи · выбор начинается с первой строки</strong>
               </div>
               <p id="feed-summary-full" class="visually-hidden">
-                Журнал содержит три видимые записи; первая строка отмечена как текущая.
+                Журнал содержит три видимые записи; первая строка отмечена как место, где
+                начинается выбор и цена решения.
               </p>
 
               <div class="fairy-feed-list" id="feed-list-full">
@@ -318,14 +319,14 @@
                   <div class="fairy-feed-row-top">
                     <span class="fairy-feed-step" aria-hidden="true">01</span>
                     <h3 class="recipe-title">Проводник просит расписку за совет, который никто не просил.</h3>
-                    <span class="fairy-feed-badge">текущая</span>
+                    <span class="fairy-feed-badge">момент выбора</span>
                   </div>
                   <div class="fairy-feed-meta">
                     <span class="recipe-metadata">переправа</span>
                     <span class="recipe-metadata">2 свидетеля</span>
                     <span class="recipe-metadata recipe-compact-hidden">долг спорный</span>
                   </div>
-                  <p class="recipe-annotation">С этой строки начинается следующее решение.</p>
+                  <p class="recipe-annotation">С этой строки чтение заканчивается и начинается выбор, за который уже придётся платить.</p>
                 </article>
 
                 <article class="fairy-feed-row" data-row-rank="ordinary">
