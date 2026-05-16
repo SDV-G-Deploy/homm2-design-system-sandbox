@@ -63,7 +63,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | launch + 00m | completed | \`dc7c528\` | alias anchor on \`fairy-journeys.html#route-ledger\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; static anchor re-check for \`#field-dossier\`, \`#route-feed\`, \`#route-ledger\`; no \`#threshold\` target claimed on page | pass 02 if clean |
 | 02 | launch + 25m | completed | \`9805102\` | mobile nav trailing rail budget on \`fairy-journeys.html\` shell | \`git diff --check\`; \`node tools/regression-smoke.js\`; targeted browser reproduction on live page at \`390x844\` showed nav rail \`348px\`, content \`379px\`, and \`Песочница\` ending at \`x=392\` before local CSS fix | pass 03 if clean |
-| 03 | launch + 50m | planned | - | reference tablet overflow | - | pass 04 if clean |
+| 03 | launch + 50m | completed | pending | tablet-safe stack breakpoint for reference manual tables | \`git diff --check\`; \`node tools/regression-smoke.js\`; source re-check showed wide table stack rules previously started only at \`560px\`, leaving desktop multi-column table grids active at \`768px\` | pass 04 if clean |
 | 04 | launch + 75m | planned | - | applied proof-label copy | - | pass 05 if clean |
 | 05 | launch + 100m | planned | - | Task 5 dramaturgy | - | pass 06 if clean |
 | 06 | launch + 125m | planned | - | alignment QA/docs sync | - | closeout |
@@ -91,3 +91,11 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 - Bug evidence before fix: live browser check at \`390x844\` measured the nav rail at \`348px\` wide with \`379px\` of scroll content; the last item \`Песочница\` stayed one line but ended at \`x=392\`, past the viewport edge.
 - Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports; browser policy blocked loading the local \`127.0.0.1\` page in the host browser, so local browser re-measurement was not available in this wake.
 - Next best step: pass 03 reference tablet overflow at \`768px\`.
+
+## Pass 03 Notes
+
+- Result: moved the stacked-table treatment for \`.decision-table\`, \`.contract-table\`, \`.slot-table\`, and \`.responsive-contract-table\` from the old \`560px\` mobile-only range into a dedicated tablet-safe \`820px\` breakpoint, while keeping broader reference manual mobile collapse rules unchanged.
+- Changed files: \`css/reference.css\`, this ledger.
+- Bug evidence before fix: source re-check showed the problematic wide manual tables still used desktop multi-column grids until \`560px\`, which left the decision/contract surfaces exposed to tablet-width overflow at \`768px\`.
+- Verification after fix: \`git diff --check\` clean; \`node tools/regression-smoke.js\` passed across all 6 targets / 3 viewports. A separate local \`768px\` CDP probe was attempted during this wake, but the probe process returned no captured stdout in this environment, so the change was kept bounded to the explicit breakpoint defect rather than broadened further.
+- Next best step: pass 04 Fairy applied-copy/proof-label cleanup.
