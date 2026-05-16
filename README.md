@@ -78,13 +78,14 @@ So the current state should be treated as:
 
 ## Next logical pass
 
-The next phase is **fixture debt + regression harness**: promote reusable patterns discovered in applied work only through canonical fixtures, then make the smoke checks repeatable.
+The next phase is **new-session continuation**: start from the current operator index, keep documentation current, and only expand implementation when a proof gap is explicitly chosen.
 
 Current priority order:
 
-- promote the Fairy Journeys indexed FeedListing row / badge pattern into canonical fixture evidence if it should become reusable
+- use `docs/new-session-handoff-2026-05-16.md` as the `/new` bootstrap
+- keep docs aligned with the latest proof changes before adding new surface area
+- expand `tools/regression-smoke.js` with recipe-specific assertions when a new proof pass needs them
 - keep SideRail and SiteShell support-only unless a new host-bound proof pass expands them
-- build a small repeatable viewport/static harness for canonical fixtures and selected smoke pages
 
 Operator entry point:
 - `docs/design-system-operator-index-2026-05-15.md`
@@ -139,7 +140,7 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode**.
+Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness**.
 
 Current entry point:
 
@@ -153,6 +154,8 @@ What now exists at the system level:
 - proof and acceptance artifacts for the documented recipe slices
 - one rebuilt applied smoke page in `fairy-journeys.html`
 - reference quick operator mode in `reference.html#operator-mode`
+- indexed FeedListing row proof in `fixtures/feed-listing-recipe.html`
+- local regression smoke harness in `tools/regression-smoke.js`
 
 Current recommendation:
 

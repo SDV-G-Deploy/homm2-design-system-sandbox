@@ -37,11 +37,12 @@ For a fast visual/manual orientation, open `reference.html#operator-mode` after 
 Proven now, within limits:
 
 - `MenuScreenRecipe` has canonical fixture proof in `fixtures/menu-screen-recipe.html` and the responsive recipe evidence chain.
-- `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` have canonical fixtures with acceptance evidence at `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000`, with strict fixture typography sanity closed.
+- `ArticleHeroRecipe`, `DossierReadingRecipe`, and `FeedListingRecipe` have canonical fixtures with acceptance evidence at `1440x900`, `390x844`, `360x740`, `1024x640`, and `1728x1000`, with strict fixture typography sanity closed. `FeedListingRecipe` also has an indexed route-row state promoted from Fairy Journeys applied pressure.
 - `SideRailMetadataRecipe` is proof-backed as support inside dossier, feed, and article-hero canonical host states. It remains support-only and is not a primary recipe.
 - `SiteShellNavigationRecipe` has narrow host-bound proof around dossier/feed hosts for persistent utility nav, breadcrumb context, local section nav, and route shortcuts. It remains support-only outside true menu/navigation primary screens.
 - `fairy-journeys.html` is a rebuilt applied smoke page using ArticleHero + DossierReading + FeedListing with page-local CSS. Its latest closeout verifies local/live parity, mobile nav no-wrap, stable feed index tracks, no checked page-level overflow, and a broader palette.
 - `reference.html` now has quick operator mode plus manual table/guardrail fixes. It is a documentation/manual surface, not a production proof surface.
+- `tools/regression-smoke.js` is the first local static/viewport smoke harness for canonical fixtures and selected smoke pages.
 
 Limits that still matter:
 
@@ -91,10 +92,11 @@ Reference/manual use:
 
 ## Remaining Work In Order
 
-1. Fixture debt: continue promoting reusable patterns exposed by applied pages only through canonical fixtures. The Fairy Journeys indexed FeedListing row/badge pattern now has a canonical fixture state; keep looking for other applied-only behaviors before turning them into shared hooks.
-2. Host-bound support: keep SideRail and SiteShell support-only; add broader host mixes only when a real page need requires them and verify with fixture evidence.
-3. Prompt kit: turn the current recipe/budget/proof workflow into reusable generation prompts only after fixture debt is closed enough to avoid prompt-only claims.
-4. Regression harness: a first local smoke harness now exists at `tools/regression-smoke.js`; next step is expanding recipe-specific assertions or wiring it into CI when the signal stays stable.
+1. `/new` handoff: start the next session from `docs/new-session-handoff-2026-05-16.md`, this index, and the current README checkpoint.
+2. Documentation sync: keep current proof status and remaining work aligned after every proof or applied-page pass.
+3. Regression harness: expand `tools/regression-smoke.js` with recipe-specific assertions when a new proof pass needs them; CI wiring can wait until the local signal stays stable.
+4. Host-bound support: keep SideRail and SiteShell support-only; add broader host mixes only when a real page need requires them and verify with fixture evidence.
+5. Prompt kit: turn the current recipe/budget/proof workflow into reusable generation prompts only after fixture debt is closed enough to avoid prompt-only claims.
 
 ## Maintenance Rules
 
