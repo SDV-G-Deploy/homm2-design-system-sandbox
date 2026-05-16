@@ -63,7 +63,7 @@ Align the Fairy Journeys applied page and HOMM2 reference surface against the vi
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | launch + 00m | completed | \`dc7c528\` | alias anchor on \`fairy-journeys.html#route-ledger\` | \`git diff --check\`; \`node tools/regression-smoke.js\`; static anchor re-check for \`#field-dossier\`, \`#route-feed\`, \`#route-ledger\`; no \`#threshold\` target claimed on page | pass 02 if clean |
 | 02 | launch + 25m | completed | \`9805102\` | mobile nav trailing rail budget on \`fairy-journeys.html\` shell | \`git diff --check\`; \`node tools/regression-smoke.js\`; targeted browser reproduction on live page at \`390x844\` showed nav rail \`348px\`, content \`379px\`, and \`Песочница\` ending at \`x=392\` before local CSS fix | pass 03 if clean |
-| 03 | launch + 50m | completed | pending | tablet-safe stack breakpoint for reference manual tables | \`git diff --check\`; \`node tools/regression-smoke.js\`; source re-check showed wide table stack rules previously started only at \`560px\`, leaving desktop multi-column table grids active at \`768px\` | pass 04 if clean |
+| 03 | launch + 50m | completed | \`56a86a3\` | tablet-safe stack breakpoint for reference manual tables | \`git diff --check\`; \`node tools/regression-smoke.js\`; source re-check showed wide table stack rules previously started only at \`560px\`, leaving desktop multi-column table grids active at \`768px\` | pass 04 if clean |
 | 04 | launch + 75m | planned | - | applied proof-label copy | - | pass 05 if clean |
 | 05 | launch + 100m | planned | - | Task 5 dramaturgy | - | pass 06 if clean |
 | 06 | launch + 125m | planned | - | alignment QA/docs sync | - | closeout |
