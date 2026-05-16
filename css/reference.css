@@ -700,6 +700,57 @@
   background: rgb(var(--gold-700) / 0.16) !important;
 }
 
+.decision-table > div:not(.decision-head) > *,
+.contract-table > div:not(.contract-head) > *,
+.slot-table > div:not(.slot-head) > *,
+.responsive-contract-table > div:not(.responsive-contract-head) > *,
+.inventory-table > div:not(.inventory-head) > * {
+  position: relative;
+}
+
+.decision-table > div:not(.decision-head) > *::before,
+.contract-table > div:not(.contract-head) > *::before,
+.slot-table > div:not(.slot-head) > *::before,
+.responsive-contract-table > div:not(.responsive-contract-head) > *::before,
+.inventory-table > div:not(.inventory-head) > *::before {
+  display: none;
+  margin-bottom: 3px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--ink-on-night-mute);
+}
+
+.decision-table > div:not(.decision-head) > :nth-child(1)::before { content: "Recipe"; }
+.decision-table > div:not(.decision-head) > :nth-child(2)::before { content: "Purpose"; }
+.decision-table > div:not(.decision-head) > :nth-child(3)::before { content: "Required"; }
+.decision-table > div:not(.decision-head) > :nth-child(4)::before { content: "Optional"; }
+.decision-table > div:not(.decision-head) > :nth-child(5)::before { content: "Avoid when"; }
+.decision-table > div:not(.decision-head) > :nth-child(6)::before { content: "Mobile"; }
+.contract-table > div:not(.contract-head) > :nth-child(1)::before { content: "Class"; }
+.contract-table > div:not(.contract-head) > :nth-child(2)::before { content: "Role"; }
+.contract-table > div:not(.contract-head) > :nth-child(3)::before { content: "Neighbors"; }
+.contract-table > div:not(.contract-head) > :nth-child(4)::before { content: "Hierarchy"; }
+.contract-table > div:not(.contract-head) > :nth-child(5)::before { content: "Page-local"; }
+.slot-table > div:not(.slot-head) > :nth-child(1)::before { content: "Slot"; }
+.slot-table > div:not(.slot-head) > :nth-child(2)::before { content: "Owner"; }
+.slot-table > div:not(.slot-head) > :nth-child(3)::before { content: "Image job"; }
+.slot-table > div:not(.slot-head) > :nth-child(4)::before { content: "Fallback"; }
+.slot-table > div:not(.slot-head) > :nth-child(5)::before { content: "Responsive"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(1)::before { content: "Recipe"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(2)::before { content: "Budget"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(3)::before { content: "Above fold"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(4)::before { content: "Downgrade"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(5)::before { content: "Compresses"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(6)::before { content: "Never shrink"; }
+.responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(7)::before { content: "Floor"; }
+.inventory-table > div:not(.inventory-head) > :nth-child(1)::before { content: "Component"; }
+.inventory-table > div:not(.inventory-head) > :nth-child(2)::before { content: "Use when"; }
+.inventory-table > div:not(.inventory-head) > :nth-child(3)::before { content: "Avoid when"; }
+
 .contract-boundary-grid,
 .guardrail-strip {
   margin-top: var(--space-4);
@@ -1013,8 +1064,15 @@
     .slot-table > div,
     .responsive-contract-table > div {
       grid-template-columns: 1fr;
-      gap: 6px;
+      gap: 10px;
       padding: 13px;
+    }
+    .decision-table > div:not(.decision-head) > *::before,
+    .contract-table > div:not(.contract-head) > *::before,
+    .slot-table > div:not(.slot-head) > *::before,
+    .responsive-contract-table > div:not(.responsive-contract-head) > *::before,
+    .inventory-table > div:not(.inventory-head) > *::before {
+      display: block;
     }
     .decision-head,
     .contract-head,
