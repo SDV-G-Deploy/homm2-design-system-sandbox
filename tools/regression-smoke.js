@@ -103,6 +103,12 @@ function staticSanity(failures) {
     "fairy-journeys.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
+  const docFiles = [
+    "README.md",
+    "docs/design-system-operator-index-2026-05-15.md",
+    "docs/regression-smoke-harness-pass-2026-05-16.md",
+    "docs/reference-operator-link-sanity-pass-2026-05-18.md",
+  ];
 
   for (const file of htmlFiles) {
     const source = fs.readFileSync(path.join(ROOT, file), "utf8");
@@ -110,6 +116,32 @@ function staticSanity(failures) {
     const refs = [...source.matchAll(/\saria-(?:labelledby|describedby)="([^"]+)"/g)].flatMap((match) => match[1].split(/\s+/));
     for (const ref of refs) {
       if (!ids.has(ref)) failures.push(file + ": missing aria target #" + ref);
+    }
+    for (const href of [...source.matchAll(/\shref="([^"]+)"/g)].map((match) => match[1])) {
+      if (href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:")) continue;
+      if (href.startsWith("#")) {
+        if (!ids.has(href.slice(1))) failures.push(file + ": missing local href target " + href);
+        continue;
+      }
+      const [rawPath, fragment] = href.split("#");
+      const resolvedPath = resolveRepoPath(file, rawPath);
+      if (!resolvedPath || !fs.existsSync(path.join(ROOT, resolvedPath))) {
+        failures.push(file + ": missing local href path " + href);
+        continue;
+      }
+      if (fragment && resolvedPath.endsWith(".html")) {
+        const targetSource = fs.readFileSync(path.join(ROOT, resolvedPath), "utf8");
+        const targetIds = new Set([...targetSource.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
+        if (!targetIds.has(fragment)) failures.push(file + ": missing local href fragment " + href);
+      }
+    }
+  }
+
+  for (const file of docFiles) {
+    const source = fs.readFileSync(path.join(ROOT, file), "utf8");
+    for (const rawPath of [...source.matchAll(/\`((?:docs|fixtures|tools)\/[^\`]+\.(?:md|html|js))\`/g)].map((match) => match[1])) {
+      if (rawPath.includes("*")) continue;
+      if (!fs.existsSync(path.join(ROOT, rawPath))) failures.push(file + ": missing repo path " + rawPath);
     }
   }
 
@@ -120,6 +152,18 @@ function staticSanity(failures) {
   if ((feed.match(/class="feed-row-index"/g) || []).length !== 3) {
     failures.push("fixtures/feed-listing-recipe.html: expected exactly three feed-row-index markers");
   }
+}
+
+function resolveRepoPath(fromFile, hrefPath) {
+  if (!hrefPath) return normalizeRepoPath(fromFile);
+  if (hrefPath.startsWith("/")) return normalizeRepoPath(hrefPath.slice(1));
+  return normalizeRepoPath(path.join(path.dirname(fromFile), hrefPath));
+}
+
+function normalizeRepoPath(repoPath) {
+  const normalized = path.normalize(repoPath).replace(/\\/g, "/");
+  if (normalized.startsWith("../")) return null;
+  return normalized;
 }
 
 function reportMetric(label, check, viewportName, width, height, result, failures) {

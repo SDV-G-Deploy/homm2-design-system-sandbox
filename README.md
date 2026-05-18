@@ -134,7 +134,7 @@ Run the dependency-free smoke harness before/after recipe or applied-page layout
 node tools/regression-smoke.js
 ```
 
-It starts a local static server, launches headless Chromium, checks static ARIA references, page-level overflow, primary-surface placement, Fairy nav one-line labels, and the indexed FeedListing row track across `1440x900`, `390x844`, and `360x740`.
+It starts a local static server, launches headless Chromium, checks static ARIA references, local manual/fixture link integrity, page-level overflow, primary-surface placement, Fairy nav one-line labels, and the indexed FeedListing row track across `1440x900`, `390x844`, and `360x740`.
 
 ## Deploy status
 

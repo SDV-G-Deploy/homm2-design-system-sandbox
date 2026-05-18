@@ -31,6 +31,8 @@ Viewports:
 Checks:
 
 - static `aria-labelledby` / `aria-describedby` target sanity
+- static local HTML anchor / relative href sanity across checked manual, applied, and fixture surfaces
+- static repo-path sanity for critical proof/doc references in `README.md` and the operator index
 - FeedListing indexed route row state exists once
 - three FeedListing row index markers exist
 - no page-level horizontal overflow
