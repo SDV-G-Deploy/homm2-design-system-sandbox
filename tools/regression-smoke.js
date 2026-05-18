@@ -185,20 +185,24 @@ function reportMetric(label, check, viewportName, width, height, result, failure
   if (check === "fairy" && width <= 390 && !result.navOneLine) {
     failures.push(prefix + ": fairy utility nav labels are wrapping");
   }
+  if (check === "reference" && width <= 820) {
+    if (!result.referenceTableHeadersHidden) failures.push(prefix + ": reference table headers did not collapse");
+    if (!result.referenceTableLabelsVisible) failures.push(prefix + ": reference table inline labels are not visible");
+  }
   console.log(prefix + ": overflow=" + result.overflow + ", primaryTop=" + result.primaryTop);
 }
 
 function pageCheckExpression(check) {
   return "(() => {" +
     "const box=(selector)=>{const node=document.querySelector(selector);if(!node)return null;const rect=node.getBoundingClientRect();return{top:Math.round(rect.top),width:Math.round(rect.width),height:Math.round(rect.height)}};" +
-    "const common={overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,primaryTop:null,indexedRows:0,indexBoxes:[],navOneLine:true};" +
+    "const common={overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,primaryTop:null,indexedRows:0,indexBoxes:[],navOneLine:true,referenceTableHeadersHidden:true,referenceTableLabelsVisible:true};" +
     "const check=" + JSON.stringify(check) + ";" +
     "if(check==='articleHero') common.primaryTop=box('[data-primary-recipe=\"article-hero\"] [data-frame-rank=\"primary\"], [data-recipe=\"article-hero\"] [data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='dossier') common.primaryTop=box('[data-primary-recipe=\"dossier-reading\"] [data-frame-rank=\"primary\"], [data-recipe=\"dossier-reading\"] [data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='feed'){common.primaryTop=box('[data-primary-recipe=\"feed-listing\"] [data-frame-rank=\"primary\"], [data-recipe=\"feed-listing\"] [data-frame-rank=\"primary\"]')?.top??null;const rows=[...document.querySelectorAll('[data-fixture-state=\"indexed-route-rows\"] [data-row-indexed]')];common.indexedRows=rows.length;common.indexBoxes=rows.map((row)=>{const rect=row.querySelector('.feed-row-index').getBoundingClientRect();return{width:Math.round(rect.width),height:Math.round(rect.height)}});}" +
     "if(check==='siteShell') common.primaryTop=box('[data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='fairy'){common.primaryTop=box('.fairy-first-screen [data-frame-rank=\"primary\"]')?.top??null;common.navOneLine=[...document.querySelectorAll('.fairy-nav a')].every((link)=>link.getClientRects().length===1&&link.scrollWidth<=link.clientWidth+1);}" +
-    "if(check==='reference') common.primaryTop=box('#operator-mode')?.top??null;" +
+    "if(check==='reference'){common.primaryTop=box('#operator-mode')?.top??null;const headerNodes=[...document.querySelectorAll('.decision-head, .responsive-contract-head')];common.referenceTableHeadersHidden=headerNodes.every((node)=>getComputedStyle(node).display==='none');const labelNodes=[...document.querySelectorAll('.decision-table > div:not(.decision-head) > :first-child, .responsive-contract-table > div:not(.responsive-contract-head) > :first-child')].slice(0, 2);common.referenceTableLabelsVisible=labelNodes.length>0&&labelNodes.every((node)=>{const content=getComputedStyle(node,'::before').content;return content&&content!=='none'&&content!=='normal'&&content!=='\"\"';});}" +
     "return common;" +
   "})()";
 }
