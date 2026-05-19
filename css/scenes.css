@@ -19,6 +19,8 @@
   box-shadow: var(--shadow-elevated), var(--shadow-inset-edge);
   background:
     radial-gradient(circle at 48% 40%, rgb(var(--ink-950) / 0.76), transparent 12rem),
+    radial-gradient(circle at 63% 51%, rgb(var(--mana-200) / 0.22), transparent 8rem),
+    radial-gradient(circle at 66% 61%, rgb(var(--gold-300) / 0.16), transparent 12rem),
     linear-gradient(180deg, rgb(var(--mana-200) / 0.08), transparent 20%),
     repeating-linear-gradient(90deg, rgb(var(--parchment-50) / 0.02) 0 1px, transparent 1px 24px),
     linear-gradient(180deg, rgb(var(--ink-900) / 0.02) 0%, rgb(var(--ink-900) / 0.45) 52%, rgb(var(--ink-950) / 0.86) 100%),
@@ -51,13 +53,16 @@
 /* Gate mass — castle silhouette */
 .gate-mass {
   position: absolute;
-  z-index: 1;
-  left: 50%;
-  bottom: 4%;
-  width: min(620px, 70vw);
-  height: 76%;
+  z-index: 2;
+  left: 62%;
+  bottom: -1%;
+  width: min(760px, 72vw);
+  height: 82%;
   transform: translateX(-50%);
-  filter: drop-shadow(0 34px 42px rgb(0 0 0 / 0.52));
+  opacity: 0.96;
+  filter:
+    drop-shadow(0 36px 44px rgb(0 0 0 / 0.58))
+    drop-shadow(0 0 34px rgb(var(--mana-400) / 0.1));
   pointer-events: none;
 }
 .gate-arch,
@@ -65,12 +70,13 @@
   position: absolute;
   bottom: 0;
   background:
-    linear-gradient(90deg, rgb(var(--parchment-50) / 0.08), transparent 18%, transparent 82%, rgb(var(--parchment-50) / 0.05)),
-    linear-gradient(180deg, #504a43, #201c18 46%, #0a0807 100%);
-  border: 1px solid rgb(var(--stone-200) / 0.16);
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.14), transparent 16%, transparent 82%, rgb(var(--parchment-50) / 0.08)),
+    linear-gradient(180deg, #6b6256, #28221d 46%, #090706 100%);
+  border: 1px solid rgb(var(--stone-200) / 0.24);
   box-shadow:
-    inset 0 18px 0 rgb(var(--parchment-50) / 0.04),
-    inset 0 0 0 6px rgb(0 0 0 / 0.18);
+    inset 0 18px 0 rgb(var(--parchment-50) / 0.07),
+    inset 0 0 0 6px rgb(0 0 0 / 0.24),
+    0 0 0 1px rgb(var(--gold-300) / 0.08);
 }
 .gate-arch {
   left: 20%;
@@ -78,16 +84,32 @@
   height: 68%;
   clip-path: polygon(0 100%, 0 44%, 8% 32%, 18% 20%, 31% 10%, 45% 6%, 55% 6%, 69% 10%, 82% 20%, 92% 32%, 100% 44%, 100% 100%, 73% 100%, 73% 52%, 67% 38%, 57% 30%, 43% 30%, 33% 38%, 27% 52%, 27% 100%);
 }
+.gate-arch::before {
+  content: "";
+  position: absolute;
+  left: 31%;
+  right: 31%;
+  bottom: 0;
+  height: 53%;
+  border-radius: 999px 999px 0 0;
+  background:
+    radial-gradient(circle at 50% 22%, rgb(var(--parchment-50) / 0.58), transparent 2.4rem),
+    linear-gradient(180deg, rgb(var(--mana-200) / 0.42), rgb(var(--gold-300) / 0.17) 46%, rgb(var(--ink-950) / 0.84) 100%);
+  box-shadow:
+    0 0 46px rgb(var(--mana-300) / 0.34),
+    0 0 76px rgb(var(--gold-300) / 0.18),
+    inset 0 0 22px rgb(var(--parchment-50) / 0.12);
+}
 .gate-arch::after {
   content: "";
   position: absolute;
-  left: 45%;
-  top: 14%;
-  width: 10%;
-  height: 38%;
+  left: 43%;
+  top: 10%;
+  width: 14%;
+  height: 44%;
   border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, rgb(var(--mana-200) / 0.22), transparent);
-  box-shadow: 0 0 32px rgb(var(--mana-400) / 0.26);
+  background: linear-gradient(180deg, rgb(var(--mana-200) / 0.46), transparent);
+  box-shadow: 0 0 42px rgb(var(--mana-400) / 0.34);
 }
 .gate-spire {
   width: 22%;
@@ -103,6 +125,7 @@
   inset: auto -4% -2%;
   height: 36%;
   background:
+    linear-gradient(90deg, transparent 28%, rgb(var(--gold-300) / 0.18) 50%, transparent 72%),
     linear-gradient(180deg, transparent 0%, rgb(var(--ink-950) / 0.62) 54%, rgb(4 3 3 / 0.98) 100%),
     repeating-linear-gradient(96deg, rgb(var(--stone-200) / 0.14) 0 2px, transparent 3px 32px);
   clip-path: polygon(31% 0, 69% 0, 103% 100%, -3% 100%);
@@ -124,15 +147,15 @@
 .horizon { position: absolute; inset: 0; overflow: hidden; }
 .moon {
   position: absolute;
-  right: 15%;
-  top: 10%;
+  right: 14%;
+  top: 9%;
   width: 118px;
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 38% 32%, #fff9d8, rgb(var(--gold-300)) 54%, rgb(var(--gold-500) / 0.04) 70%);
   box-shadow:
-    0 0 44px rgb(var(--gold-300) / 0.44),
-    0 0 100px rgb(var(--gold-300) / 0.24);
+    0 0 54px rgb(var(--gold-300) / 0.5),
+    0 0 118px rgb(var(--gold-300) / 0.28);
 }
 .mountain {
   position: absolute;
@@ -163,17 +186,18 @@
   position: relative;
   z-index: 4;
   max-width: var(--measure-intro);
-  margin-top: clamp(74px, 10vh, 128px);
-  padding: 28px 26px 24px;
-  border: 1px solid rgb(var(--gold-300) / 0.22);
+  margin-top: clamp(48px, 7vh, 88px);
+  padding: 26px 26px 22px;
+  border: 1px solid rgb(var(--gold-300) / 0.28);
   clip-path: var(--shape-panel);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 28%),
-    linear-gradient(180deg, rgb(var(--ink-900) / 0.54), rgb(var(--ink-950) / 0.68));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.1), transparent 28%),
+    radial-gradient(circle at 18% 0%, rgb(var(--gold-300) / 0.08), transparent 12rem),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.58), rgb(var(--ink-950) / 0.72));
   box-shadow:
-    0 12px 0 rgb(var(--ink-950) / 0.14),
-    0 24px 44px rgb(0 0 0 / 0.24),
-    inset 0 1px 0 rgb(var(--parchment-50) / 0.08);
+    0 10px 0 rgb(var(--ink-950) / 0.16),
+    0 24px 46px rgb(0 0 0 / 0.3),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.1);
 }
 .hero-copy::before {
   content: "";
@@ -186,7 +210,7 @@
 .hero-copy h1 {
   max-width: 11ch;
   margin-bottom: 18px;
-  font-size: clamp(46px, 5.8vw, 82px);
+  font-size: clamp(46px, 5.45vw, 76px);
 }
 
 .hero-copy .lead {
@@ -202,21 +226,22 @@
   z-index: 5;
   right: auto;
   bottom: auto;
-  align-self: end;
+  align-self: center;
   justify-self: end;
   width: min(340px, 100%);
-  margin-top: clamp(88px, 12vh, 144px);
+  margin-top: clamp(28px, 5vh, 72px);
   padding: 22px;
   border-radius: var(--radius-lg);
   clip-path: var(--shape-panel);
   color: var(--ink-on-parchment);
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.06)),
+    radial-gradient(circle at 88% 8%, rgb(var(--gold-300) / 0.24), transparent 8rem),
+    linear-gradient(180deg, rgb(255 255 255 / 0.4), rgb(255 255 255 / 0.08)),
     repeating-linear-gradient(90deg, rgb(var(--gold-700) / 0.04) 0 1px, transparent 1px 16px),
     var(--surface-parchment);
   border: 1px solid var(--border-on-parchment);
   box-shadow:
-    var(--shadow-resting),
+    0 28px 46px rgb(0 0 0 / 0.34),
     inset 0 0 0 5px rgb(var(--gold-700) / 0.08),
     inset 0 -3px 0 rgb(var(--gold-700) / 0.14);
   transform: rotate(-1.2deg);
@@ -531,6 +556,13 @@
   .hero-frame { min-height: 600px; }
   .hero-frame { grid-template-columns: 1fr; align-items: start; }
   .hero-copy { padding-top: 50px; padding-left: 0; }
+  .gate-mass {
+    left: 58%;
+    bottom: 4%;
+    width: min(720px, 104vw);
+    height: 70%;
+    opacity: 0.72;
+  }
   .hero-copy::before,
   .scene-title-block::before,
   .ceremony-copy::before { display: none; }
@@ -539,6 +571,7 @@
     left: auto;
     right: auto;
     bottom: auto;
+    align-self: auto;
     width: auto;
     margin-top: 22px;
     transform: none;
@@ -555,6 +588,20 @@
   .desk-composition,
   .ceremony-shell { border-radius: var(--radius-xl); }
 
+  .gate-mass {
+    left: 53%;
+    bottom: 20%;
+    width: 90vw;
+    height: 48%;
+    opacity: 0.58;
+  }
+
+  .gate-arch::before {
+    left: 33%;
+    right: 33%;
+    height: 48%;
+  }
+
   .scene-title-block > p:not(.eyebrow),
   .ceremony-copy > p:not(.eyebrow),
   .ritual-panel > p:not(.archive-label):not(.consequence-line) {
@@ -566,6 +613,7 @@
     left: auto;
     right: auto;
     bottom: auto;
+    align-self: auto;
     width: auto;
     margin-top: 18px;
     transform: none;

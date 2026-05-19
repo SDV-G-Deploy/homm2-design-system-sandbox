@@ -136,6 +136,23 @@ node tools/regression-smoke.js
 
 It starts a local static server, launches headless Chromium, checks static ARIA references, local manual/fixture link integrity, page-level overflow, primary-surface placement, Fairy nav one-line labels, and the indexed FeedListing row track across `1440x900`, `390x844`, and `360x740`.
 
+## Visual capture / bounds evidence
+
+Use the CDP capture helper when a visual pass needs screenshot evidence plus element-level bounds, especially when raw `chromium --screenshot` or URL-hash screenshots might mislead lower-section or mobile clipping review:
+
+```sh
+node tools/visual-capture.js \
+  --target /fairy-journeys.html#journey-opening \
+  --out tmp/visual-capture/fairy \
+  --viewport mobile:390x844 \
+  --viewport narrow:360x740 \
+  --selector '.fairy-hero-copy .lead' \
+  --selector '.fairy-dossier-body' \
+  --selector '.fairy-feed-row'
+```
+
+The helper writes PNG screenshots plus `metrics.json` with `clientWidth`, `scrollWidth`, target position, and any selector whose bounds or internal scroll width exceed the viewport/container.
+
 ## Deploy status
 
 GitHub Pages deployment is live again on both:

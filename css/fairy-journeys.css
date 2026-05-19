@@ -266,11 +266,15 @@ body {
   gap: 10px;
   min-width: 0;
   padding: 13px;
-  border: 1px solid rgb(var(--gold-300) / 0.14);
+  border: 1px solid rgb(var(--gold-300) / 0.22);
   clip-path: var(--shape-panel);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.06), transparent 32%),
-    rgb(var(--ink-950) / 0.28);
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.09), transparent 34%),
+    radial-gradient(circle at 92% 0%, rgb(var(--mana-400) / 0.1), transparent 7rem),
+    rgb(var(--ink-950) / 0.32);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
+    0 12px 28px rgb(0 0 0 / 0.16);
 }
 
 .fairy-hero-rail h2,
@@ -295,9 +299,11 @@ body {
   min-height: var(--tap-target-compact);
   min-width: 0;
   padding: 10px;
-  border: 1px solid rgb(var(--gold-300) / 0.12);
+  border: 1px solid rgb(var(--gold-300) / 0.17);
   clip-path: var(--shape-interactive);
-  background: rgb(var(--ink-950) / 0.22);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.04), transparent 42%),
+    rgb(var(--ink-950) / 0.26);
 }
 
 .fairy-rail-row span,
@@ -323,20 +329,26 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 258px;
-  border: 1px solid rgb(var(--gold-300) / 0.13);
+  border: 1px solid rgb(var(--gold-300) / 0.24);
   clip-path: var(--shape-panel);
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 18%),
-    radial-gradient(circle at 50% 22%, rgb(var(--gold-300) / 0.26), transparent 5rem),
-    linear-gradient(180deg, #2e3f59 0%, #15243a 42%, #0c0b0b 100%);
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.11), transparent 18%),
+    radial-gradient(circle at 80% 20%, rgb(var(--gold-300) / 0.36), transparent 5.5rem),
+    radial-gradient(circle at 45% 58%, rgb(var(--mana-400) / 0.16), transparent 8.5rem),
+    linear-gradient(180deg, #354a66 0%, #182a42 42%, #0c0b0b 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.12),
+    inset 0 -18px 32px rgb(0 0 0 / 0.28),
+    0 16px 32px rgb(0 0 0 / 0.2);
 }
 
 .fairy-hero-art::before {
   content: "";
   position: absolute;
   inset: 12px;
-  border: 1px solid rgb(var(--parchment-50) / 0.13);
+  border: 1px solid rgb(var(--parchment-50) / 0.2);
   clip-path: var(--shape-panel);
+  box-shadow: inset 0 0 0 1px rgb(var(--gold-300) / 0.07);
 }
 
 .fairy-moon,
@@ -354,7 +366,9 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 34% 28%, #fff8d8, rgb(var(--gold-300)) 58%, rgb(var(--gold-700)) 100%);
-  box-shadow: 0 0 28px rgb(var(--gold-300) / 0.3);
+  box-shadow:
+    0 0 28px rgb(var(--gold-300) / 0.42),
+    0 0 70px rgb(var(--gold-300) / 0.16);
 }
 
 .fairy-road {
@@ -364,8 +378,8 @@ body {
   height: 43%;
   clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
   background:
-    linear-gradient(180deg, transparent 0%, rgb(var(--ink-950) / 0.48) 38%, rgb(var(--ink-950) / 0.94) 100%),
-    repeating-linear-gradient(100deg, rgb(var(--stone-200) / 0.16) 0 2px, transparent 2px 20px);
+    linear-gradient(180deg, transparent 0%, rgb(var(--ink-950) / 0.38) 38%, rgb(var(--ink-950) / 0.9) 100%),
+    repeating-linear-gradient(100deg, rgb(var(--stone-200) / 0.24) 0 2px, transparent 2px 20px);
 }
 
 .fairy-gate {
@@ -374,10 +388,12 @@ body {
   width: 88px;
   height: 118px;
   transform: translateX(-50%);
-  border: 10px solid rgb(var(--stone-200) / 0.24);
+  border: 10px solid rgb(var(--stone-200) / 0.34);
   border-bottom: 0;
   border-radius: 48px 48px 0 0;
-  box-shadow: inset 0 0 0 1px rgb(var(--gold-300) / 0.14);
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--gold-300) / 0.2),
+    0 0 32px rgb(var(--mana-400) / 0.1);
 }
 
 .fairy-tower {
@@ -385,10 +401,11 @@ body {
   width: 52px;
   height: 132px;
   background:
-    linear-gradient(90deg, rgb(var(--parchment-50) / 0.05), transparent 22%, transparent 78%, rgb(var(--parchment-50) / 0.04)),
-    linear-gradient(180deg, #6d6257, #27231f 70%, #0c0a09);
-  border: 1px solid rgb(var(--stone-200) / 0.12);
-  opacity: 0.5;
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.09), transparent 22%, transparent 78%, rgb(var(--parchment-50) / 0.06)),
+    linear-gradient(180deg, #746a5e, #2e2a25 70%, #0c0a09);
+  border: 1px solid rgb(var(--stone-200) / 0.18);
+  box-shadow: inset 0 1px 0 rgb(var(--parchment-50) / 0.08);
+  opacity: 0.62;
 }
 
 .fairy-tower-left {
