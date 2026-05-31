@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMM2 x Solarpunk · Flavour Proof</title>
+    <meta
+      name="description"
+      content="Solarpunk flavour proof for the HOMM2-inspired design system: sunlit vellum, solar brass, living canopy and water-focus UI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/solarpunk.css" />
+  </head>
+  <body class="solar-flavour">
+    <div class="solar-ambient solar-ambient-sun"></div>
+    <div class="solar-ambient solar-ambient-water"></div>
+
+    <header class="site-header solar-header" aria-label="Solarpunk proof header">
+      <a class="brand-mark" href="./index.html" aria-label="Back to HOMM2 sandbox">
+        <span class="brand-sigil solar-sigil">II</span>
+        <span>
+          <strong>HOMM2 x Solarpunk</strong>
+          <em>Flavour proof · living world UI</em>
+        </span>
+      </a>
+      <nav class="scene-nav solar-nav" aria-label="Solarpunk proof scenes">
+        <a href="#solar-hero" aria-current="page">Guild</a>
+        <a href="#solar-archive">Archive</a>
+        <a href="#solar-observatory">Observatory</a>
+        <a href="./reference.html">Reference</a>
+      </nav>
+    </header>
+
+    <main id="top" class="board-shell solar-board">
+      <section id="solar-hero" class="solar-section solar-hero" aria-labelledby="solar-hero-title">
+        <div class="solar-world-frame">
+          <div class="solar-chapter-plaque">Flavour 04 · Fantasy Solarpunk</div>
+
+          <div class="solar-citadel" aria-hidden="true">
+            <span class="solar-disc"></span>
+            <span class="citadel-dome"></span>
+            <span class="citadel-tower tower-left"></span>
+            <span class="citadel-tower tower-right"></span>
+            <span class="greenhouse-grid"></span>
+            <span class="canopy-bed"></span>
+          </div>
+
+          <article class="solar-hero-card" data-frame-rank="primary">
+            <p class="eyebrow">Solar guild hall</p>
+            <h1 id="solar-hero-title">Castle warmth, living light.</h1>
+            <p class="lead">
+              Та же HoMM2-грамматика: рамка, plaque, inner field, предметный UI.
+              Но золото стало солнечной латунью, мана стала водой и небом, а
+              крепость превратилась в живую инфраструктуру.
+            </p>
+            <div class="solar-actions" aria-label="Solarpunk proof actions">
+              <a class="solar-command primary" href="#solar-archive">Open seed ledger</a>
+              <a class="solar-command secondary" href="#solar-observatory">Tune observatory</a>
+            </div>
+          </article>
+
+          <aside class="solar-status-panel" aria-label="Living system status">
+            <p class="panel-kicker">Living system</p>
+            <div class="status-row">
+              <span>Charge</span>
+              <strong>Solar brass</strong>
+            </div>
+            <div class="status-row">
+              <span>Canopy</span>
+              <strong>Stable shade</strong>
+            </div>
+            <div class="status-row">
+              <span>Water lens</span>
+              <strong>Focus ready</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="solar-archive" class="solar-section solar-archive" aria-labelledby="solar-archive-title">
+        <div class="solar-title-block">
+          <div class="solar-chapter-plaque">Scene · Seed archive</div>
+          <p class="eyebrow">Dossier recipe shift</p>
+          <h2 id="solar-archive-title">Parchment becomes sun-vellum.</h2>
+          <p>
+            Dossier остаётся документом, но его роль меняется: это не royal archive,
+            а civic field manual, restoration ledger и seed catalogue.
+          </p>
+        </div>
+
+        <div class="solar-archive-grid">
+          <aside class="seed-rail" aria-label="Seed ledger navigation">
+            <a href="#solar-archive" class="seed-marker active">
+              <span>01</span>
+              <strong>Vellum field</strong>
+            </a>
+            <a href="#solar-hero" class="seed-marker">
+              <span>02</span>
+              <strong>Solar brass</strong>
+            </a>
+            <a href="#solar-observatory" class="seed-marker">
+              <span>03</span>
+              <strong>Water focus</strong>
+            </a>
+          </aside>
+
+          <article class="sun-vellum-object">
+            <header>
+              <p class="archive-label">Restoration ledger</p>
+              <h3>Material roles after the shift</h3>
+            </header>
+            <div class="material-map" aria-label="Solarpunk material mapping">
+              <div>
+                <span class="swatch vellum"></span>
+                <strong>Sun-vellum</strong>
+                <small>reading, planning, civic records</small>
+              </div>
+              <div>
+                <span class="swatch brass"></span>
+                <strong>Solar brass</strong>
+                <small>value, charge, primary command</small>
+              </div>
+              <div>
+                <span class="swatch canopy"></span>
+                <strong>Canopy shade</strong>
+                <small>world depth, shell, cool structure</small>
+              </div>
+              <div>
+                <span class="swatch water"></span>
+                <strong>Water lens</strong>
+                <small>focus, sensing, active insight</small>
+              </div>
+            </div>
+          </article>
+
+          <aside class="botanical-note" aria-label="Solarpunk guardrail">
+            <p class="archive-label">Guardrail</p>
+            <strong>No greenwashing.</strong>
+            <span>
+              Green is a living-system signal, not a global fill. Structure still comes
+              from HoMM2 frames, plaques and inset fields.
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section id="solar-observatory" class="solar-section solar-observatory" aria-labelledby="solar-observatory-title">
+        <div class="observatory-shell">
+          <div class="solar-chapter-plaque">Scene · Climate observatory</div>
+
+          <article class="observatory-copy">
+            <p class="eyebrow">Arcane-solar hybrid</p>
+            <h2 id="solar-observatory-title">Magic becomes instrumented ecology.</h2>
+            <p>
+              Arcane-сцена не исчезает. Она становится observatory: вода и небо
+              показывают focus, солнечная латунь показывает charge, зелёный показывает
+              рост, а crimson остаётся для drought / fire risk.
+            </p>
+          </article>
+
+          <div class="climate-instrument" aria-label="Climate instrument panel">
+            <div class="lens-orbit" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="water-lens">
+              <span>Focus</span>
+              <strong>Water lens</strong>
+            </div>
+            <div class="instrument-readouts">
+              <div>
+                <span>Solar charge</span>
+                <strong>74%</strong>
+              </div>
+              <div>
+                <span>Canopy cooling</span>
+                <strong>Stable</strong>
+              </div>
+              <div>
+                <span>Drought risk</span>
+                <strong>Low</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="board-footer solar-footer">
+      <p>
+        First proof: Fantasy Solarpunk as a flavour extension, not a replacement.
+        The baseline remains object-like HoMM2 UI; the shift is sunlight, living
+        infrastructure, water focus and solar brass.
+      </p>
+    </footer>
+  </body>
+</html>

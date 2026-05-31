@@ -10,6 +10,8 @@ North star: **Interface belongs to the world.**
 
 Current direction label: **Heraldic Menu** — an old-kingdom fantasy interface with modern readability.
 
+New proof surface: **Fantasy Solarpunk** in solarpunk.html, a flavour extension that keeps the HoMM2 object grammar while shifting colour, light and material roles toward sun-vellum, solar brass, living canopy and water-focus states. The same flavour layer is now applied to the main sandbox, Fairy Journeys applied page, and reference manual through `solarized-demo` page classes.
+
 ## Applied implementation target
 
 The live applied product site is `../YourInsideQuest`.
@@ -215,7 +217,8 @@ fixtures/
   feed-listing-recipe.html
   site-shell-navigation-recipe.html
 index.html             # atmosphere board / sandbox scenes
-reference.html         # living design-system reference page
+  reference.html         # living design-system reference page
+  solarpunk.html         # Fantasy Solarpunk flavour proof surface
 fairy-journeys.html    # bounded applied smoke page using article hero + dossier + feed stack
 ```
 

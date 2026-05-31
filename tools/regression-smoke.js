@@ -24,6 +24,7 @@ const TARGETS = [
   ["FeedListingRecipe fixture", "/fixtures/feed-listing-recipe.html", "feed"],
   ["SiteShellNavigationRecipe fixture", "/fixtures/site-shell-navigation-recipe.html", "siteShell"],
   ["Fairy Journeys applied smoke", "/fairy-journeys.html", "fairy"],
+  ["Solarpunk flavour proof", "/solarpunk.html", "solarpunk"],
   ["Reference manual smoke", "/reference.html#operator-mode", "reference"],
 ];
 
@@ -100,6 +101,7 @@ function staticSanity(failures) {
   const htmlFiles = [
     "index.html",
     "reference.html",
+    "solarpunk.html",
     "fairy-journeys.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
@@ -202,6 +204,7 @@ function pageCheckExpression(check) {
     "if(check==='feed'){common.primaryTop=box('[data-primary-recipe=\"feed-listing\"] [data-frame-rank=\"primary\"], [data-recipe=\"feed-listing\"] [data-frame-rank=\"primary\"]')?.top??null;const rows=[...document.querySelectorAll('[data-fixture-state=\"indexed-route-rows\"] [data-row-indexed]')];common.indexedRows=rows.length;common.indexBoxes=rows.map((row)=>{const rect=row.querySelector('.feed-row-index').getBoundingClientRect();return{width:Math.round(rect.width),height:Math.round(rect.height)}});}" +
     "if(check==='siteShell') common.primaryTop=box('[data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='fairy'){common.primaryTop=box('.fairy-first-screen [data-frame-rank=\"primary\"]')?.top??null;common.navOneLine=[...document.querySelectorAll('.fairy-nav a')].every((link)=>link.getClientRects().length===1&&link.scrollWidth<=link.clientWidth+1);}" +
+    "if(check==='solarpunk') common.primaryTop=box('.solar-hero-card[data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='reference'){common.primaryTop=box('#operator-mode')?.top??null;const headerNodes=[...document.querySelectorAll('.decision-head, .responsive-contract-head')];common.referenceTableHeadersHidden=headerNodes.every((node)=>getComputedStyle(node).display==='none');const labelNodes=[...document.querySelectorAll('.decision-table > div:not(.decision-head) > :first-child, .responsive-contract-table > div:not(.responsive-contract-head) > :first-child')].slice(0, 2);common.referenceTableLabelsVisible=labelNodes.length>0&&labelNodes.every((node)=>{const content=getComputedStyle(node,'::before').content;return content&&content!=='none'&&content!=='normal'&&content!=='\"\"';});}" +
     "return common;" +
   "})()";
