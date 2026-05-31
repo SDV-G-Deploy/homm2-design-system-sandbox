@@ -1,0 +1,375 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HoMM2 x Solarpunk System Map 0001</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f7efd5;
+    --fg: #1f261f;
+    --muted: #5f664f;
+    --line: #7a6d4e;
+    --core: #ead09a;
+    --solar: #dfe8be;
+    --material: #f3dfa9;
+    --state: #b9d6cf;
+    --recipe: #d8c2a0;
+    --page: #c8d6a8;
+    --gate: #f0c66f;
+    --risk: #e8b2a0;
+    --paper: #fff9e6;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 16px 42px;
+  }
+
+  header {
+    max-width: 920px;
+    margin: 0 0 22px;
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.02;
+    letter-spacing: 0;
+  }
+
+  .lede {
+    margin: 0;
+    color: var(--muted);
+    max-width: 72ch;
+  }
+
+  .map-card {
+    overflow-x: auto;
+    padding: 12px;
+    background: var(--paper);
+    border: 1px solid #d3bd7d;
+    border-radius: 8px;
+  }
+
+  svg {
+    width: 100%;
+    min-width: 980px;
+    height: auto;
+    display: block;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 750;
+    fill: var(--fg);
+  }
+
+  .subtitle {
+    font-size: 13px;
+    fill: var(--muted);
+  }
+
+  .zone-title {
+    font-size: 15px;
+    font-weight: 750;
+    fill: var(--fg);
+  }
+
+  .label {
+    font-size: 14px;
+    font-weight: 700;
+    fill: var(--fg);
+  }
+
+  .small {
+    font-size: 12px;
+    fill: var(--muted);
+  }
+
+  .tiny {
+    font-size: 11px;
+    fill: var(--muted);
+  }
+
+  .node {
+    stroke: var(--line);
+    stroke-width: 1.2;
+  }
+
+  .core { fill: var(--core); }
+  .solar { fill: var(--solar); }
+  .material { fill: var(--material); }
+  .state { fill: var(--state); }
+  .recipe { fill: var(--recipe); }
+  .page { fill: var(--page); }
+  .gate { fill: var(--gate); }
+  .risk { fill: var(--risk); }
+  .paper { fill: var(--paper); }
+
+  .zone {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1.2;
+    stroke-dasharray: 8 6;
+  }
+
+  .edge {
+    stroke: var(--line);
+    stroke-width: 1.5;
+    fill: none;
+    marker-end: url(#arrow);
+  }
+
+  .edge-soft {
+    stroke: var(--line);
+    stroke-width: 1.1;
+    fill: none;
+    stroke-dasharray: 5 5;
+    marker-end: url(#arrow);
+  }
+
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .legend div,
+  .next {
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid #d3bd7d;
+    border-radius: 8px;
+  }
+
+  .legend strong,
+  .next strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .legend span,
+  .next span {
+    color: var(--muted);
+  }
+
+  .next {
+    margin-top: 14px;
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 20px 10px 32px;
+    }
+
+    .map-card {
+      padding: 8px;
+    }
+  }
+</style>
+<main>
+  <header>
+    <h1>HoMM2 x Solarpunk System Map 0001</h1>
+    <p class="lede">
+      Working map for stabilizing Fantasy Solarpunk as a HoMM2 flavour: HoMM2 keeps the object grammar;
+      Solarpunk changes light, material roles, ecological state, and civic infrastructure before pages inherit it.
+    </p>
+  </header>
+
+  <section class="map-card" aria-label="HoMM2 x Solarpunk system map">
+    <svg viewBox="0 0 1400 1680" role="img" aria-labelledby="map-title map-desc">
+      <title id="map-title">HoMM2 x Solarpunk design-system map</title>
+      <desc id="map-desc">Layered system diagram showing HoMM2 core grammar, Solarpunk flavour layer, material and state contracts, recipe proof, applied pages, and next-pass flow.</desc>
+
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+          <path d="M 0 0 L 10 4 L 0 8 z" fill="#7a6d4e"></path>
+        </marker>
+      </defs>
+
+      <text class="title" x="42" y="48">System Flow</text>
+      <text class="subtitle" x="42" y="72">Promote rules from proof, then apply them to pages. Do not let broad skins become proof.</text>
+
+      <rect class="zone" x="36" y="100" width="1328" height="300" rx="16"></rect>
+      <text class="zone-title" x="60" y="132">1. Stable Core: HoMM2 Grammar</text>
+
+      <rect class="node core" x="72" y="160" width="230" height="96" rx="8"></rect>
+      <text class="label" x="96" y="194">World UI</text>
+      <text class="small" x="96" y="218">interface belongs to place</text>
+      <text class="small" x="96" y="238">not generic app chrome</text>
+
+      <rect class="node core" x="342" y="160" width="230" height="96" rx="8"></rect>
+      <text class="label" x="366" y="194">Object Grammar</text>
+      <text class="small" x="366" y="218">plaques, frames, bevels</text>
+      <text class="small" x="366" y="238">inner fields, ledgers</text>
+
+      <rect class="node core" x="612" y="160" width="230" height="96" rx="8"></rect>
+      <text class="label" x="636" y="194">Command Hierarchy</text>
+      <text class="small" x="636" y="218">one loud action</text>
+      <text class="small" x="636" y="238">gold/brass is earned</text>
+
+      <rect class="node core" x="882" y="160" width="230" height="96" rx="8"></rect>
+      <text class="label" x="906" y="194">Reading Surfaces</text>
+      <text class="small" x="906" y="218">parchment / vellum</text>
+      <text class="small" x="906" y="238">records, dossiers, notes</text>
+
+      <rect class="node core" x="1152" y="160" width="172" height="96" rx="8"></rect>
+      <text class="label" x="1176" y="194">Proof Gates</text>
+      <text class="small" x="1176" y="218">fixtures first</text>
+      <text class="small" x="1176" y="238">smoke before claims</text>
+
+      <path class="edge" d="M302 208 H342"></path>
+      <path class="edge" d="M572 208 H612"></path>
+      <path class="edge" d="M842 208 H882"></path>
+      <path class="edge" d="M1112 208 H1152"></path>
+
+      <rect class="zone" x="36" y="442" width="1328" height="338" rx="16"></rect>
+      <text class="zone-title" x="60" y="474">2. Solarpunk Flavour Layer: What May Change</text>
+
+      <rect class="node solar" x="72" y="510" width="250" height="112" rx="8"></rect>
+      <text class="label" x="96" y="544">Light Model</text>
+      <text class="small" x="96" y="568">directional daylight</text>
+      <text class="small" x="96" y="588">glass, cast shadows</text>
+
+      <rect class="node solar" x="372" y="510" width="250" height="112" rx="8"></rect>
+      <text class="label" x="396" y="544">Civic Ecology</text>
+      <text class="small" x="396" y="568">greenhouse, canal, seed</text>
+      <text class="small" x="396" y="588">repair, restoration</text>
+
+      <rect class="node solar" x="672" y="510" width="250" height="112" rx="8"></rect>
+      <text class="label" x="696" y="544">Material Shift</text>
+      <text class="small" x="696" y="568">gold -> solar brass</text>
+      <text class="small" x="696" y="588">mana -> water focus</text>
+
+      <rect class="node solar" x="972" y="510" width="250" height="112" rx="8"></rect>
+      <text class="label" x="996" y="544">Living State</text>
+      <text class="small" x="996" y="568">charged, irrigating</text>
+      <text class="small" x="996" y="588">growing, drought risk</text>
+
+      <rect class="node risk" x="236" y="668" width="928" height="70" rx="8"></rect>
+      <text class="label" x="260" y="698">Anti-pattern guardrail</text>
+      <text class="small" x="260" y="720">No green skin, no eco-SaaS, no generic climate dashboard, no dark castle with new labels.</text>
+
+      <path class="edge" d="M197 256 V510"></path>
+      <path class="edge" d="M457 256 V510"></path>
+      <path class="edge" d="M727 256 V510"></path>
+      <path class="edge" d="M1238 256 V510 H1222"></path>
+
+      <rect class="zone" x="36" y="824" width="1328" height="312" rx="16"></rect>
+      <text class="zone-title" x="60" y="856">3. Contracts To Add To Reference</text>
+
+      <rect class="node material" x="72" y="896" width="230" height="156" rx="8"></rect>
+      <text class="label" x="96" y="930">Sun-vellum</text>
+      <text class="small" x="96" y="954">reading, ledgers</text>
+      <text class="small" x="96" y="974">warm paper, dark ink</text>
+      <text class="tiny" x="96" y="1002">never: generic card dump</text>
+
+      <rect class="node material" x="332" y="896" width="230" height="156" rx="8"></rect>
+      <text class="label" x="356" y="930">Solar Brass</text>
+      <text class="small" x="356" y="954">commands, charge</text>
+      <text class="small" x="356" y="974">hardware, bevels</text>
+      <text class="tiny" x="356" y="1002">never: every border</text>
+
+      <rect class="node material" x="592" y="896" width="230" height="156" rx="8"></rect>
+      <text class="label" x="616" y="930">Water Lens</text>
+      <text class="small" x="616" y="954">focus, sensing</text>
+      <text class="small" x="616" y="974">inspection, irrigation</text>
+      <text class="tiny" x="616" y="1002">never: generic magic glow</text>
+
+      <rect class="node material" x="852" y="896" width="230" height="156" rx="8"></rect>
+      <text class="label" x="876" y="930">Canopy / Leaf</text>
+      <text class="small" x="876" y="954">growth, shade state</text>
+      <text class="small" x="876" y="974">living infrastructure</text>
+      <text class="tiny" x="876" y="1002">never: default background</text>
+
+      <rect class="node material" x="1112" y="896" width="212" height="156" rx="8"></rect>
+      <text class="label" x="1136" y="930">Warm Shadow</text>
+      <text class="small" x="1136" y="954">depth, inset wells</text>
+      <text class="small" x="1136" y="974">frame cuts</text>
+      <text class="tiny" x="1136" y="1002">never: whole world</text>
+
+      <path class="edge" d="M197 622 V896"></path>
+      <path class="edge" d="M797 622 V896"></path>
+      <path class="edge" d="M1097 622 V896"></path>
+
+      <rect class="node state" x="72" y="1078" width="1252" height="36" rx="8"></rect>
+      <text class="label" x="96" y="1102">State vocabulary: charged · irrigating · growing · shaded · drought-risk · maintenance · inspected · restored</text>
+
+      <rect class="zone" x="36" y="1180" width="1328" height="246" rx="16"></rect>
+      <text class="zone-title" x="60" y="1212">4. Recipe Proof Before Applied Pages</text>
+
+      <rect class="node recipe" x="72" y="1244" width="255" height="104" rx="8"></rect>
+      <text class="label" x="96" y="1278">Sunwell Menu</text>
+      <text class="small" x="96" y="1302">HoMM2 menu as civic</text>
+      <text class="small" x="96" y="1322">instrument board</text>
+
+      <rect class="node recipe" x="382" y="1244" width="255" height="104" rx="8"></rect>
+      <text class="label" x="406" y="1278">Greenhouse Dossier</text>
+      <text class="small" x="406" y="1302">archive as seed ledger</text>
+      <text class="small" x="406" y="1322">and field manual</text>
+
+      <rect class="node recipe" x="692" y="1244" width="255" height="104" rx="8"></rect>
+      <text class="label" x="716" y="1278">Canal Observatory</text>
+      <text class="small" x="716" y="1302">arcane threshold as</text>
+      <text class="small" x="716" y="1322">water/solar instrument</text>
+
+      <rect class="node gate" x="1002" y="1244" width="290" height="104" rx="8"></rect>
+      <text class="label" x="1026" y="1278">Promotion Gate</text>
+      <text class="small" x="1026" y="1302">screenshot + smoke + no overflow</text>
+      <text class="small" x="1026" y="1322">then add to reference</text>
+
+      <path class="edge" d="M327 1296 H382"></path>
+      <path class="edge" d="M637 1296 H692"></path>
+      <path class="edge" d="M947 1296 H1002"></path>
+
+      <rect class="zone" x="36" y="1470" width="1328" height="168" rx="16"></rect>
+      <text class="zone-title" x="60" y="1502">5. Current Page Status</text>
+
+      <rect class="node page" x="72" y="1534" width="270" height="74" rx="8"></rect>
+      <text class="label" x="96" y="1564">solarpunk.html</text>
+      <text class="small" x="96" y="1588">canonical proof direction</text>
+
+      <rect class="node risk" x="382" y="1534" width="270" height="74" rx="8"></rect>
+      <text class="label" x="406" y="1564">index.html</text>
+      <text class="small" x="406" y="1588">still night-world applied page</text>
+
+      <rect class="node risk" x="692" y="1534" width="270" height="74" rx="8"></rect>
+      <text class="label" x="716" y="1564">fairy-journeys.html</text>
+      <text class="small" x="716" y="1588">strong HoMM2, weak Solarpunk</text>
+
+      <rect class="node gate" x="1002" y="1534" width="290" height="74" rx="8"></rect>
+      <text class="label" x="1026" y="1564">reference.html</text>
+      <text class="small" x="1026" y="1588">next: material + state matrices</text>
+
+      <path class="edge-soft" d="M1147 1348 V1534"></path>
+      <path class="edge-soft" d="M199 1348 V1534"></path>
+      <path class="edge-soft" d="M510 1348 V1534"></path>
+      <path class="edge-soft" d="M820 1348 V1534"></path>
+    </svg>
+  </section>
+
+  <section class="legend" aria-label="Map legend">
+    <div><strong>Core</strong><span>HoMM2 rules that Solarpunk must not replace.</span></div>
+    <div><strong>Flavour</strong><span>Light, material, civic ecology, and living state changes.</span></div>
+    <div><strong>Contract</strong><span>Rules that should move into reference before broad application.</span></div>
+    <div><strong>Risk</strong><span>Pages or patterns that still read as skin or old-world carryover.</span></div>
+  </section>
+
+  <section class="next" aria-label="Recommended next pass">
+    <strong>Recommended next pass</strong>
+    <span>
+      Upgrade <code>reference.html</code> with the material matrix, state matrix, palette ratios,
+      good/bad examples, and canonical proof links shown in this map.
+    </span>
+  </section>
+</main>
+
