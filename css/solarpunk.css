@@ -1166,26 +1166,31 @@
 .reference-solarized .checklist-grid div,
 .reference-solarized .do-dont-grid div,
 .reference-solarized .guardrail-strip div,
-.reference-solarized .recipe-card {
+.reference-solarized .recipe-card,
+.reference-solarized .solar-rule-grid div,
+.reference-solarized .state-token {
   background:
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.16), rgb(var(--sunvellum-100) / 0.055)),
     rgb(var(--solar-shadow) / 0.34);
 }
 
 .reference-solarized .decision-table,
-.reference-solarized .responsive-contract-table {
+.reference-solarized .responsive-contract-table,
+.reference-solarized .matrix-table {
   background: rgb(var(--solar-shadow) / 0.2);
 }
 
 .reference-solarized .decision-table > div,
-.reference-solarized .responsive-contract-table > div {
+.reference-solarized .responsive-contract-table > div,
+.reference-solarized .matrix-table > div {
   background:
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.12), transparent 42%),
     rgb(var(--solar-shadow) / 0.28);
 }
 
 .reference-solarized .decision-head,
-.reference-solarized .responsive-contract-head {
+.reference-solarized .responsive-contract-head,
+.reference-solarized .matrix-head {
   background: rgb(var(--solar-shadow) / 0.44) !important;
 }
 
@@ -1204,6 +1209,88 @@
 
 .reference-solarized .ref-section {
   margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.reference-solarized .solar-rule-grid,
+.reference-solarized .state-token-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.reference-solarized .solar-rule-grid {
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+}
+
+.reference-solarized .state-token-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.reference-solarized .solar-rule-grid div,
+.reference-solarized .state-token {
+  padding: var(--space-4);
+  border: 1px solid rgb(var(--solar-400) / 0.24);
+  clip-path: var(--shape-panel);
+  box-shadow: var(--press-highlight-top), var(--press-shadow-bottom);
+}
+
+.reference-solarized .solar-rule-grid strong,
+.reference-solarized .solar-rule-grid span,
+.reference-solarized .state-token strong,
+.reference-solarized .state-token span {
+  display: block;
+}
+
+.reference-solarized .solar-rule-grid strong,
+.reference-solarized .state-token strong {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(var(--solar-400));
+}
+
+.reference-solarized .solar-rule-grid span,
+.reference-solarized .state-token span {
+  color: rgb(var(--sunvellum-50) / 0.8);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.reference-solarized .state-token {
+  position: relative;
+  padding-left: calc(var(--space-4) + 8px);
+}
+
+.reference-solarized .state-token::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 999px;
+  background: rgb(var(--solar-400));
+}
+
+.reference-solarized .state-token.irrigating::before,
+.reference-solarized .state-token.inspected::before {
+  background: rgb(var(--water-700));
+}
+
+.reference-solarized .state-token.growing::before,
+.reference-solarized .state-token.shaded::before,
+.reference-solarized .state-token.restored::before {
+  background: rgb(var(--leaf-400));
+}
+
+.reference-solarized .state-token.drought::before {
+  background: rgb(var(--state-drought));
+}
+
+.reference-solarized .state-token.maintenance::before {
+  background: rgb(var(--timber-700));
 }
 
 .reference-solarized .mode-strip::before {
@@ -1242,12 +1329,14 @@
   .reference-solarized .decision-table > div:not(.decision-head) > :nth-child(4),
   .reference-solarized .decision-table > div:not(.decision-head) > :nth-child(5),
   .reference-solarized .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(4),
-  .reference-solarized .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(5) {
+  .reference-solarized .responsive-contract-table > div:not(.responsive-contract-head) > :nth-child(5),
+  .reference-solarized .matrix-table > div:not(.matrix-head) > :nth-child(3) {
     display: none;
   }
 
   .reference-solarized .decision-table > div,
-  .reference-solarized .responsive-contract-table > div {
+  .reference-solarized .responsive-contract-table > div,
+  .reference-solarized .matrix-table > div {
     gap: 8px;
   }
 }
@@ -1308,6 +1397,17 @@
   .reference-solarized .ref-toc {
     position: relative;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reference-solarized .solar-rule-grid,
+  .reference-solarized .state-token-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-solarized .solar-rule-grid div,
+  .reference-solarized .state-token {
+    clip-path: none;
+    border-radius: var(--radius-sm);
   }
 }
 

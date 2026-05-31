@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOMM2 Design System · Reference</title>
+<title>HoMM2 x Solarpunk · Reference</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -54,26 +54,147 @@
         <span>01</span>
         <strong>Pick one recipe</strong>
         <p>Choose menu, dossier, ritual or route board before styling.</p>
-        <a href="#front-door">Open decision table</a>
+        <a href="#solarpunk-rules">Open rules</a>
       </article>
       <article class="operator-card">
         <span>02</span>
-        <strong>Lock mobile first</strong>
-        <p>Protect the primary task before adding rails, art or notes.</p>
-        <a href="#responsive-contracts">Open contracts</a>
+        <strong>Choose material roles</strong>
+        <p>Assign vellum, brass, water, canopy and shadow before styling.</p>
+        <a href="#material-matrix">Open matrix</a>
       </article>
       <article class="operator-card">
         <span>03</span>
-        <strong>Run smoke</strong>
-        <p>Check overflow, nav plaques, badges and semantic accent roles.</p>
-        <a href="#responsive-guardrails">Open checks</a>
+        <strong>Use living states</strong>
+        <p>Charged, irrigating and growing are system states, not decoration.</p>
+        <a href="#state-matrix">Open states</a>
       </article>
       <article class="operator-card">
         <span>04</span>
         <strong>Promote carefully</strong>
-        <p>Keep page fixes local until a fixture proves the behavior.</p>
-        <a href="#recipes">Open recipe map</a>
+        <p>Proof pages first; applied pages inherit only promoted patterns.</p>
+        <a href="#canonical-proof">Open proof</a>
       </article>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section solarpunk-spec-section" id="solarpunk-rules" aria-labelledby="solarpunk-rules-title">
+    <div class="ref-section-kicker">Fantasy Solarpunk spec</div>
+    <h2 id="solarpunk-rules-title">Solarpunk Rules</h2>
+    <p class="ref-note">
+      Solarpunk changes the world state, not the HoMM2 grammar. Keep plaques, frames, bevels,
+      ledgers and tactile commands; change light, material roles, civic infrastructure and ecological state.
+    </p>
+    <div class="solar-rule-grid" aria-label="Solarpunk design rules">
+      <div><strong>01 · HoMM2 owns form</strong><span>Plaques, framed fields, object UI, command hierarchy and readable ledgers stay intact.</span></div>
+      <div><strong>02 · Solarpunk owns condition</strong><span>Daylight, greenhouse systems, water sensing, civic repair and living status change the world.</span></div>
+      <div><strong>03 · Green is state</strong><span>Use leaf/canopy for growing, shade and living infrastructure; never as default page fill.</span></div>
+      <div><strong>04 · Water is focus</strong><span>Use water blue for sensing, inspection, irrigation and selected/focused state; not generic magic glow.</span></div>
+      <div><strong>05 · Brass is hardware</strong><span>Use solar brass for commands, charge, value, dials and bevelled craft; not every line.</span></div>
+      <div><strong>06 · Shadow is depth</strong><span>Use warm shadow for inset wells and frame cuts; never let it become the whole world again.</span></div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="material-matrix" aria-labelledby="material-matrix-title">
+    <div class="ref-section-kicker">Material contract</div>
+    <h2 id="material-matrix-title">Material Matrix</h2>
+    <div class="matrix-table material-matrix" aria-label="Solarpunk material matrix">
+      <div class="matrix-head">
+        <span>Material</span>
+        <span>Use for</span>
+        <span>Never use for</span>
+        <span>Physical cue</span>
+        <span>State cue</span>
+      </div>
+      <div>
+        <strong>Sun-vellum</strong>
+        <span>Reading fields, seed ledgers, civic records, field manuals.</span>
+        <span>Generic backing for every card or command.</span>
+        <span>Warm paper, fibre, ink, pressed edge, stamped route marks.</span>
+        <span>Stable, readable, archived, restored.</span>
+      </div>
+      <div>
+        <strong>Solar brass</strong>
+        <span>Primary commands, charge, dials, route value, hardware rims.</span>
+        <span>All borders, all headings, or decorative gold wash.</span>
+        <span>Bevels, inner highlight, cast shadow, crafted plate.</span>
+        <span>Charged, selected, unlocked, committed.</span>
+      </div>
+      <div>
+        <strong>Water lens</strong>
+        <span>Focus, inspection, sensing, canal/cistern state, secondary command.</span>
+        <span>Generic hover glow or old mana replacement everywhere.</span>
+        <span>Translucent edge, reflection, channel line, lens ring.</span>
+        <span>Inspected, irrigating, focused, flowing.</span>
+      </div>
+      <div>
+        <strong>Canopy / leaf</strong>
+        <span>Living systems, shade, growth, restoration and success marks.</span>
+        <span>Default background, broad gradients, generic eco skin.</span>
+        <span>Small leaf marks, shade edge, seed-bed indicator.</span>
+        <span>Growing, shaded, restored, healthy.</span>
+      </div>
+      <div>
+        <strong>Warm shadow</strong>
+        <span>Inset wells, frame cuts, disabled depth, old-world contrast.</span>
+        <span>Main first-viewport field or dominant page mood.</span>
+        <span>Recess, underside, cast shadow, carved groove.</span>
+        <span>Locked, inactive, maintenance, risk support.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="state-matrix" aria-labelledby="state-matrix-title">
+    <div class="ref-section-kicker">Living system states</div>
+    <h2 id="state-matrix-title">State Matrix</h2>
+    <p class="ref-note">
+      Solarpunk states should teach the system. A status row, route badge or command should read as
+      infrastructure, not just as a colored UI state.
+    </p>
+    <div class="state-token-grid" aria-label="Solarpunk state vocabulary">
+      <div class="state-token charged"><strong>Charged</strong><span>solar brass · active energy · primary readiness</span></div>
+      <div class="state-token irrigating"><strong>Irrigating</strong><span>water lens · flowing route · focused operation</span></div>
+      <div class="state-token growing"><strong>Growing</strong><span>leaf mark · restoration · healthy living system</span></div>
+      <div class="state-token shaded"><strong>Shaded</strong><span>canopy edge · cooling · environmental protection</span></div>
+      <div class="state-token drought"><strong>Drought risk</strong><span>warm warning · constrained water · action needed</span></div>
+      <div class="state-token maintenance"><strong>Maintenance</strong><span>warm shadow · repair queue · not failed yet</span></div>
+      <div class="state-token inspected"><strong>Inspected</strong><span>water ring · focused review · lens selected</span></div>
+      <div class="state-token restored"><strong>Restored</strong><span>vellum + leaf · completed recovery · civic value</span></div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="good-bad-patterns" aria-labelledby="good-bad-patterns-title">
+    <div class="ref-section-kicker">Pattern discipline</div>
+    <h2 id="good-bad-patterns-title">Good / Bad Patterns</h2>
+    <div class="do-dont-grid do-dont-grid-compact">
+      <div><strong>Good - sunlit instrument board</strong><span>Vellum field, brass command rail, water/cistern readout and small living-state marks.</span></div>
+      <div><strong>Bad - green fantasy skin</strong><span>Old dark castle layout with green gradients, plant words and unchanged component hierarchy.</span></div>
+      <div><strong>Good - civic nouns</strong><span>Seed ledger, charge vane, canal lens, cistern route, shade charter, greenhouse archive.</span></div>
+      <div><strong>Bad - abstract epic copy</strong><span>Generic fantasy slogans that do not name a place, object, system or action.</span></div>
+      <div><strong>Good - bounded assets</strong><span>Frame corners, vellum texture, glass pane, route badge and civic crest with CSS fallback.</span></div>
+      <div><strong>Bad - whole-page art dependency</strong><span>Background images that carry layout, labels or navigation meaning.</span></div>
+    </div>
+  </section>
+
+  <section class="ref-section ref-manual-section" id="canonical-proof" aria-labelledby="canonical-proof-title">
+    <div class="ref-section-kicker">Proof status</div>
+    <h2 id="canonical-proof-title">Canonical Proof Links</h2>
+    <div class="manual-grid proof-grid">
+      <div class="manual-card">
+        <strong>Canonical Solarpunk proof</strong>
+        <span><a href="./solarpunk.html">solarpunk.html</a> is the current Sunwell / civic instrument-board proof direction.</span>
+      </div>
+      <div class="manual-card">
+        <strong>System map</strong>
+        <span><a href="./docs/HOMM2_SOLARPUNK_SYSTEM_MAP_0001.html">HOMM2_SOLARPUNK_SYSTEM_MAP_0001.html</a> defines layer flow and promotion gates.</span>
+      </div>
+      <div class="manual-card">
+        <strong>System audit</strong>
+        <span><a href="./docs/SOLARPUNK_SYSTEM_AUDIT_0001.md">SOLARPUNK_SYSTEM_AUDIT_0001.md</a> records current risks and next pass sequence.</span>
+      </div>
+      <div class="manual-card">
+        <strong>Risky applied pages</strong>
+        <span><a href="./index.html">index.html</a> and <a href="./fairy-journeys.html">fairy-journeys.html</a> remain applied pages until recipe spikes promote patterns.</span>
+      </div>
     </div>
   </section>
 
@@ -130,11 +251,12 @@
 
   <nav class="ref-toc" aria-label="Design system contents">
     <a href="#operator-mode">Quick path</a>
+    <a href="#solarpunk-rules">Rules</a>
+    <a href="#material-matrix">Materials</a>
+    <a href="#state-matrix">States</a>
+    <a href="#canonical-proof">Proof</a>
     <a href="#front-door">Recipes</a>
     <a href="#responsive-contracts">Contracts</a>
-    <a href="#foundations">Tokens</a>
-    <a href="#component-inventory">Components</a>
-    <a href="#accessibility">Accessibility</a>
   </nav>
 
   <section class="ref-section ref-manual-section" id="source-of-truth" aria-labelledby="source-of-truth-title">
