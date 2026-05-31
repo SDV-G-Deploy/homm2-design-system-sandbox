@@ -225,6 +225,63 @@ body {
   color: rgb(var(--parchment-50) / 0.86);
 }
 
+.fairy-civic-instrument {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  max-width: 48rem;
+  padding: 10px 12px;
+  border: 1px solid rgb(var(--solar-400) / 0.24);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(90deg, rgb(var(--solar-400) / 0.12), transparent 52%),
+    linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.06), transparent 42%),
+    rgb(var(--solar-shadow) / 0.26);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--sunvellum-50) / 0.08),
+    0 8px 18px rgb(0 0 0 / 0.14);
+}
+
+.fairy-civic-instrument span,
+.fairy-lens-proof span,
+.fairy-route-instrument span {
+  color: rgb(var(--water-200) / 0.78);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.fairy-civic-instrument strong,
+.fairy-lens-proof strong,
+.fairy-route-instrument strong {
+  display: block;
+  margin-top: 2px;
+  color: rgb(var(--sunvellum-50) / 0.9);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.fairy-instrument-crest {
+  display: block;
+  width: 34px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--solar-400) / 0.48);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 34%, rgb(var(--sunvellum-50) / 0.76), transparent 22%),
+    conic-gradient(from 16deg, rgb(var(--solar-400)) 0 24%, rgb(var(--water-400)) 24% 48%, rgb(var(--leaf-400)) 48% 70%, rgb(var(--solar-600)) 70% 100%);
+  box-shadow:
+    inset 0 0 0 5px rgb(var(--solar-shadow) / 0.28),
+    0 0 18px rgb(var(--solar-400) / 0.2);
+}
+
 .fairy-hero-copy .hero-meta-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -354,7 +411,11 @@ body {
 .fairy-moon,
 .fairy-road,
 .fairy-gate,
-.fairy-tower {
+.fairy-tower,
+.fairy-solar-crest,
+.fairy-water-lens,
+.fairy-route-gauge,
+.fairy-seed-mark {
   position: absolute;
   pointer-events: none;
 }
@@ -369,6 +430,100 @@ body {
   box-shadow:
     0 0 28px rgb(var(--gold-300) / 0.42),
     0 0 70px rgb(var(--gold-300) / 0.16);
+}
+
+.fairy-solar-crest {
+  top: 44px;
+  left: 50%;
+  width: 86px;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border: 1px solid rgb(var(--solar-400) / 0.5);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 34%, rgb(var(--sunvellum-50) / 0.72), transparent 18%),
+    radial-gradient(circle, rgb(var(--solar-400) / 0.46) 0 46%, transparent 47%),
+    conic-gradient(from -18deg, transparent 0 8%, rgb(var(--solar-400) / 0.7) 8% 13%, transparent 13% 24%, rgb(var(--water-200) / 0.55) 24% 30%, transparent 30% 100%);
+  box-shadow:
+    inset 0 0 0 9px rgb(var(--solar-shadow) / 0.28),
+    0 0 42px rgb(var(--solar-400) / 0.26);
+}
+
+.fairy-water-lens {
+  left: 50%;
+  bottom: 32%;
+  width: 112px;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border: 1px solid rgb(var(--water-200) / 0.58);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 30%, rgb(var(--sunvellum-50) / 0.35), transparent 2rem),
+    radial-gradient(circle, rgb(var(--water-200) / 0.24), rgb(var(--water-700) / 0.32) 58%, rgb(var(--canopy-900) / 0.8) 100%);
+  box-shadow:
+    0 0 26px rgb(var(--water-200) / 0.22),
+    inset 0 0 22px rgb(var(--water-200) / 0.18);
+}
+
+.fairy-water-lens::before,
+.fairy-water-lens::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgb(var(--water-200) / 0.24);
+  border-radius: 50%;
+}
+
+.fairy-water-lens::before {
+  inset: 16px;
+}
+
+.fairy-water-lens::after {
+  inset: 33px;
+  border-color: rgb(var(--solar-400) / 0.3);
+}
+
+.fairy-route-gauge {
+  left: 14%;
+  right: 14%;
+  bottom: 15%;
+  height: 18px;
+  border: 1px solid rgb(var(--solar-400) / 0.34);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(90deg, rgb(var(--water-200) / 0.52) 0 34%, rgb(var(--leaf-400) / 0.48) 34% 67%, rgb(var(--solar-400) / 0.58) 67% 100%),
+    rgb(var(--solar-shadow) / 0.32);
+  box-shadow:
+    inset 0 -4px 0 rgb(var(--solar-shadow) / 0.18),
+    0 8px 0 rgb(var(--solar-shadow) / 0.14);
+}
+
+.fairy-seed-mark {
+  width: 16px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--leaf-400) / 0.42);
+  border-radius: 50% 50% 50% 4px;
+  background:
+    radial-gradient(circle at 34% 30%, rgb(var(--sunvellum-50) / 0.58), transparent 24%),
+    linear-gradient(135deg, rgb(var(--leaf-400)), rgb(var(--leaf-600)));
+  opacity: 0.72;
+}
+
+.fairy-seed-mark.one {
+  left: 24%;
+  bottom: 28%;
+}
+
+.fairy-seed-mark.two {
+  right: 28%;
+  bottom: 24%;
+  transform: rotate(28deg) scale(0.88);
+}
+
+.fairy-seed-mark.three {
+  right: 18%;
+  bottom: 42%;
+  transform: rotate(-18deg) scale(0.72);
+  opacity: 0.52;
 }
 
 .fairy-road {
@@ -481,6 +636,40 @@ body {
   margin-top: 0;
 }
 
+.fairy-lens-proof {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  margin-top: 2px;
+  padding: 11px 13px;
+  border: 1px solid rgb(var(--water-700) / 0.28);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(90deg, rgb(var(--water-200) / 0.2), transparent 64%),
+    rgb(var(--sunvellum-50) / 0.36);
+}
+
+.fairy-lens-proof span {
+  color: rgb(var(--water-700));
+}
+
+.fairy-lens-proof strong {
+  color: rgb(var(--canopy-900));
+}
+
+.fairy-lens-mark {
+  display: block;
+  width: 38px;
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--water-700) / 0.44);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 32%, rgb(var(--sunvellum-50) / 0.8), transparent 26%),
+    radial-gradient(circle, rgb(var(--water-200) / 0.7), rgb(var(--water-700) / 0.3) 62%, transparent 63%);
+  box-shadow: inset 0 0 0 6px rgb(var(--water-200) / 0.22);
+}
+
 .fairy-side-notes {
   grid-area: notes;
   display: grid;
@@ -542,6 +731,35 @@ body {
 
 .fairy-feed-summary {
   display: none;
+}
+
+.fairy-route-instrument {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fairy-route-instrument div {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgb(var(--solar-400) / 0.18);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.06), transparent 38%),
+    rgb(var(--solar-shadow) / 0.2);
+}
+
+.fairy-route-instrument div:first-child {
+  border-color: rgb(var(--water-200) / 0.24);
+  box-shadow: inset 4px 0 0 rgb(var(--water-400) / 0.44);
+}
+
+.fairy-route-instrument div:nth-child(2) {
+  box-shadow: inset 4px 0 0 rgb(var(--leaf-400) / 0.44);
+}
+
+.fairy-route-instrument div:nth-child(3) {
+  box-shadow: inset 4px 0 0 rgb(var(--solar-400) / 0.5);
 }
 
 .fairy-feed-list {
@@ -842,6 +1060,15 @@ body {
     grid-column: 1 / -1;
   }
 
+  .fairy-civic-instrument {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .fairy-civic-instrument .solar-route-badge {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
   .fairy-dossier-body .dossier-ledger-strip {
     grid-template-columns: 1fr;
   }
@@ -862,7 +1089,7 @@ body {
   }
 
   .fairy-hero-art {
-    min-height: 142px;
+    min-height: 168px;
   }
 
   .fairy-section {
@@ -898,6 +1125,11 @@ body {
   .fairy-feed-row-top {
     grid-template-columns: 40px minmax(0, 1fr);
     gap: 10px 12px;
+  }
+
+  .fairy-feed-row-top .solar-route-badge {
+    grid-column: 2;
+    justify-self: start;
   }
 
   .fairy-feed-step {
@@ -944,6 +1176,27 @@ body {
     right: 18px;
     width: 48px;
     box-shadow: 0 0 18px rgb(var(--gold-300) / 0.22);
+  }
+
+  .fairy-solar-crest {
+    top: 25px;
+    width: 62px;
+  }
+
+  .fairy-water-lens {
+    bottom: 26%;
+    width: 78px;
+  }
+
+  .fairy-route-gauge {
+    left: 18%;
+    right: 18%;
+    bottom: 14%;
+    height: 14px;
+  }
+
+  .fairy-seed-mark {
+    width: 12px;
   }
 
   .fairy-road {
@@ -1029,6 +1282,10 @@ body {
   .fairy-hero-route {
     justify-content: center;
     padding-top: 2px;
+  }
+
+  .fairy-route-instrument {
+    grid-template-columns: 1fr;
   }
 
   .fairy-shell .site-shell-topbar {

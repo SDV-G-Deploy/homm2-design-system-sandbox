@@ -1787,6 +1787,13 @@
   justify-self: end;
 }
 
+@media (max-width: 760px) {
+  .fairy-solarized .fairy-feed-row-top .solar-route-badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
 .reference-solarized .mode-strip::before {
   content: "Fantasy Solarpunk layer";
   grid-column: 1 / -1;
