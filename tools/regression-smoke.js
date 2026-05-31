@@ -25,7 +25,7 @@ const TARGETS = [
   ["SiteShellNavigationRecipe fixture", "/fixtures/site-shell-navigation-recipe.html", "siteShell"],
   ["Fairy Journeys applied smoke", "/fairy-journeys.html", "fairy"],
   ["Solarpunk flavour proof", "/solarpunk.html", "solarpunk"],
-  ["Reference manual smoke", "/reference.html#operator-mode", "reference"],
+  ["Reference manual smoke", "/reference.html#component-proof", "reference"],
 ];
 
 main().catch((error) => {
@@ -205,7 +205,7 @@ function pageCheckExpression(check) {
     "if(check==='siteShell') common.primaryTop=box('[data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='fairy'){common.primaryTop=box('.fairy-first-screen [data-frame-rank=\"primary\"]')?.top??null;common.navOneLine=[...document.querySelectorAll('.fairy-nav a')].every((link)=>link.getClientRects().length===1&&link.scrollWidth<=link.clientWidth+1);}" +
     "if(check==='solarpunk') common.primaryTop=box('.solar-hero-card[data-frame-rank=\"primary\"]')?.top??null;" +
-    "if(check==='reference'){common.primaryTop=box('#operator-mode')?.top??null;const headerNodes=[...document.querySelectorAll('.decision-head, .responsive-contract-head')];common.referenceTableHeadersHidden=headerNodes.every((node)=>getComputedStyle(node).display==='none');const labelNodes=[...document.querySelectorAll('.decision-table > div:not(.decision-head) > :first-child, .responsive-contract-table > div:not(.responsive-contract-head) > :first-child')].slice(0, 2);common.referenceTableLabelsVisible=labelNodes.length>0&&labelNodes.every((node)=>{const content=getComputedStyle(node,'::before').content;return content&&content!=='none'&&content!=='normal'&&content!=='\"\"';});}" +
+    "if(check==='reference'){common.primaryTop=box('#component-proof')?.top??null;const headerNodes=[...document.querySelectorAll('.decision-head, .responsive-contract-head')];common.referenceTableHeadersHidden=headerNodes.every((node)=>getComputedStyle(node).display==='none');const labelNodes=[...document.querySelectorAll('.decision-table > div:not(.decision-head) > :first-child, .responsive-contract-table > div:not(.responsive-contract-head) > :first-child')].slice(0, 2);common.referenceTableLabelsVisible=labelNodes.length>0&&labelNodes.every((node)=>{const content=getComputedStyle(node,'::before').content;return content&&content!=='none'&&content!=='normal'&&content!=='\"\"';});}" +
     "return common;" +
   "})()";
 }
