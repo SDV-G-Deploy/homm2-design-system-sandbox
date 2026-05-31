@@ -60,7 +60,7 @@
           <span class="proof-mast one"></span>
           <span class="proof-mast two"></span>
         </div>
-        <div class="solar-proof-ledger">
+        <div class="solar-vellum-ledger">
           <span>Seed ledger</span>
           <strong>Civic restoration route</strong>
         </div>
@@ -68,21 +68,21 @@
 
       <article class="solar-component-card">
         <span class="component-name">CommandPlate</span>
-        <a class="solar-command primary" href="#component-proof">Commit route</a>
-        <a class="solar-command secondary" href="#state-matrix">Inspect water</a>
+        <a class="solar-command-plate primary" href="#component-proof">Commit route</a>
+        <a class="solar-command-plate secondary" href="#state-matrix">Inspect water</a>
       </article>
 
       <article class="solar-component-card">
         <span class="component-name">StateRow</span>
-        <div class="status-row state-charged">
+        <div class="solar-state-row state-charged">
           <span>Charge vane</span>
           <strong>Ready</strong>
         </div>
-        <div class="status-row state-irrigating">
+        <div class="solar-state-row state-irrigating">
           <span>Canal route</span>
           <strong>Flowing</strong>
         </div>
-        <div class="status-row state-growing">
+        <div class="solar-state-row state-growing">
           <span>Seed beds</span>
           <strong>Growing</strong>
         </div>
@@ -91,10 +91,10 @@
       <article class="solar-component-card material-chip-board">
         <span class="component-name">MaterialSwatch</span>
         <div class="material-map" aria-label="Reference material chips">
-          <div><span class="swatch vellum"></span><strong>Vellum</strong><small>reading</small></div>
-          <div><span class="swatch brass"></span><strong>Brass</strong><small>charge</small></div>
-          <div><span class="swatch water"></span><strong>Water</strong><small>focus</small></div>
-          <div><span class="swatch canopy"></span><strong>Canopy</strong><small>depth</small></div>
+          <div><span class="solar-material-swatch vellum"></span><strong>Vellum</strong><small>reading</small></div>
+          <div><span class="solar-material-swatch brass"></span><strong>Brass</strong><small>charge</small></div>
+          <div><span class="solar-material-swatch water"></span><strong>Water</strong><small>focus</small></div>
+          <div><span class="solar-material-swatch canopy"></span><strong>Canopy</strong><small>depth</small></div>
         </div>
       </article>
     </div>
@@ -247,36 +247,42 @@
         <strong>World frame</strong>
         <p>HoMM2 owns the heavy boundary: frame, plaque, bevel, inset cut and threshold drama.</p>
         <small>Use for: first screen, civic board, archive shell.</small>
+        <code>.solar-world-frame</code>
       </article>
       <article class="solar-contract-card">
         <span class="contract-index">02</span>
         <strong>Sun-vellum ledger</strong>
         <p>The main reading field is warm paper with ruled texture, not a generic beige card.</p>
         <small>Use for: records, rules, seed ledgers, route notes.</small>
+        <code>.solar-vellum-ledger</code>
       </article>
       <article class="solar-contract-card">
         <span class="contract-index">03</span>
         <strong>Solar brass command</strong>
         <p>Primary actions feel like crafted hardware: charge, commit, unlock, route.</p>
         <small>Use for: one lead action, dials, command rail.</small>
+        <a class="solar-command-plate primary" href="#component-proof">Commit</a>
       </article>
       <article class="solar-contract-card">
         <span class="contract-index">04</span>
         <strong>Water lens focus</strong>
         <p>Blue means sensing and inspection. It is not the old magic glow recolored.</p>
         <small>Use for: focus, selected, irrigating, canal readout.</small>
+        <span class="solar-route-badge state-irrigating">water lens</span>
       </article>
       <article class="solar-contract-card">
         <span class="contract-index">05</span>
         <strong>Living state marks</strong>
         <p>Leaf/canopy appears as small system feedback: growing, shaded, restored.</p>
         <small>Use for: health, recovery, garden infrastructure.</small>
+        <div class="solar-state-row state-growing"><span>Seed bed</span><strong>Growing</strong></div>
       </article>
       <article class="solar-contract-card">
         <span class="contract-index">06</span>
         <strong>Civic nouns</strong>
         <p>Copy names objects and systems: cistern, seed vault, mirror, shade charter.</p>
         <small>Use for: labels, plaques, route states, empty states.</small>
+        <code>.solar-route-badge</code>
       </article>
     </div>
 

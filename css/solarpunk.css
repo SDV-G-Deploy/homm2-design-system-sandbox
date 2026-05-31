@@ -433,6 +433,7 @@
 .solar-hero-card,
 .solar-status-panel,
 .sun-vellum-object,
+.solar-vellum-ledger,
 .botanical-note,
 .seed-rail,
 .climate-instrument,
@@ -463,6 +464,7 @@
 
 .solar-hero-card::before,
 .sun-vellum-object::before,
+.solar-vellum-ledger::before,
 .climate-instrument::before {
   content: "";
   position: absolute;
@@ -536,7 +538,11 @@
   margin-top: var(--space-5);
 }
 
-.solar-command {
+.solar-command,
+.solar-command-plate {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: var(--tap-target-min);
   display: inline-flex;
   align-items: center;
@@ -549,20 +555,45 @@
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   box-shadow:
     inset 0 1px 0 rgb(var(--sunvellum-50) / 0.24),
     inset 0 -2px 0 rgb(var(--solar-shadow) / 0.24),
     0 6px 0 rgb(var(--solar-shadow) / 0.16);
 }
 
-.solar-command.primary {
+.solar-command-plate::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  z-index: -1;
+  border: 1px solid rgb(var(--sunvellum-50) / 0.18);
+  clip-path: var(--shape-interactive);
+  pointer-events: none;
+}
+
+.solar-command-plate:hover {
+  transform: translateY(-1px);
+}
+
+.solar-command-plate:active {
+  transform: translateY(1px);
+}
+
+.solar-command.primary,
+.solar-command-plate.primary,
+.solar-command-plate[data-solar-action="primary"] {
   color: rgb(var(--solar-shadow));
   background:
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.42), transparent 34%),
     linear-gradient(180deg, rgb(var(--solar-400)), rgb(var(--solar-600)));
 }
 
-.solar-command.secondary {
+.solar-command.secondary,
+.solar-command-plate.secondary,
+.solar-command-plate[data-solar-action="secondary"] {
   color: rgb(var(--water-700));
   border-color: rgb(var(--water-700) / 0.38);
   background:
@@ -609,7 +640,8 @@
   color: rgb(var(--canopy-900));
 }
 
-.status-row {
+.status-row,
+.solar-state-row {
   position: relative;
   display: grid;
   gap: 2px;
@@ -620,7 +652,8 @@
     linear-gradient(90deg, rgb(var(--solar-400) / 0.1), transparent 48%);
 }
 
-.status-row::after {
+.status-row::after,
+.solar-state-row::after {
   content: "";
   position: absolute;
   right: 13px;
@@ -639,15 +672,18 @@
 }
 
 .status-row span,
+.solar-state-row span,
 .material-map small,
 .botanical-note span,
 .water-lens span,
+.solar-water-lens span,
 .instrument-readouts span {
   color: rgb(var(--solar-shadow) / 0.62);
   font-size: var(--text-caption);
 }
 
-.status-row strong {
+.status-row strong,
+.solar-state-row strong {
   padding-right: 34px;
   color: rgb(var(--canopy-900));
   font-family: var(--font-display);
@@ -655,14 +691,16 @@
   text-transform: uppercase;
 }
 
-.status-row.state-irrigating {
+.status-row.state-irrigating,
+.solar-state-row.state-irrigating {
   border-left-color: rgb(var(--water-700));
   background:
     repeating-linear-gradient(90deg, rgb(var(--water-200) / 0.08) 0 20px, transparent 20px 42px),
     linear-gradient(90deg, rgb(var(--sunvellum-50) / 0.18), transparent 58%);
 }
 
-.status-row.state-irrigating::after {
+.status-row.state-irrigating::after,
+.solar-state-row.state-irrigating::after {
   border-radius: 4px;
   border-color: rgb(var(--water-700) / 0.48);
   background:
@@ -673,14 +711,16 @@
     0 0 14px rgb(var(--water-400) / 0.16);
 }
 
-.status-row.state-growing {
+.status-row.state-growing,
+.solar-state-row.state-growing {
   border-left-color: rgb(var(--leaf-600));
   background:
     radial-gradient(circle at 94% 50%, rgb(var(--leaf-400) / 0.12), transparent 34px),
     linear-gradient(90deg, rgb(var(--sunvellum-50) / 0.12), transparent 58%);
 }
 
-.status-row.state-growing::after {
+.status-row.state-growing::after,
+.solar-state-row.state-growing::after {
   border-radius: 50% 50% 50% 6px;
   border-color: rgb(var(--leaf-600) / 0.54);
   background:
@@ -699,7 +739,9 @@
 }
 
 .solar-ledger-states .status-row,
-.fairy-state-ledger .status-row {
+.solar-ledger-states .solar-state-row,
+.fairy-state-ledger .status-row,
+.fairy-state-ledger .solar-state-row {
   border-color: rgb(var(--solar-600) / 0.16);
   background-color: rgb(var(--sunvellum-50) / 0.06);
 }
@@ -767,7 +809,12 @@
   text-transform: uppercase;
 }
 
-.sun-vellum-object {
+.sun-vellum-object,
+.solar-vellum-ledger {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
   padding: clamp(24px, 4vw, 42px);
   border: 1px solid rgb(var(--solar-600) / 0.42);
   clip-path: var(--shape-hero);
@@ -781,7 +828,8 @@
     inset 0 1px 0 rgb(255 255 255 / 0.32);
 }
 
-.sun-vellum-object h3 {
+.sun-vellum-object h3,
+.solar-vellum-ledger h3 {
   margin-bottom: var(--space-5);
   color: rgb(var(--solar-shadow));
   font-size: clamp(26px, 3.2vw, 42px);
@@ -801,7 +849,8 @@
   background: rgb(var(--sunvellum-50) / 0.42);
 }
 
-.swatch {
+.material-map .swatch,
+.solar-material-swatch {
   display: block;
   width: 100%;
   height: 10px;
@@ -809,10 +858,14 @@
   border: 1px solid rgb(var(--solar-shadow) / 0.16);
 }
 
-.swatch.vellum { background: rgb(var(--sunvellum-50)); }
-.swatch.brass { background: rgb(var(--solar-400)); }
-.swatch.canopy { background: rgb(var(--canopy-700)); }
-.swatch.water { background: rgb(var(--water-200)); }
+.material-map .swatch.vellum,
+.solar-material-swatch.vellum { background: rgb(var(--sunvellum-50)); }
+.material-map .swatch.brass,
+.solar-material-swatch.brass { background: rgb(var(--solar-400)); }
+.material-map .swatch.canopy,
+.solar-material-swatch.canopy { background: rgb(var(--canopy-700)); }
+.material-map .swatch.water,
+.solar-material-swatch.water { background: rgb(var(--water-200)); }
 
 .material-map strong {
   display: block;
@@ -891,7 +944,8 @@
 .lens-orbit span:nth-child(2) { right: 18%; top: 18%; background: rgb(var(--water-200)); }
 .lens-orbit span:nth-child(3) { right: 24%; bottom: 14%; background: rgb(var(--leaf-400)); }
 
-.water-lens {
+.water-lens,
+.solar-water-lens {
   position: relative;
   width: min(260px, 62vw);
   aspect-ratio: 1;
@@ -910,7 +964,8 @@
     inset 0 0 32px rgb(var(--water-200) / 0.18);
 }
 
-.water-lens strong {
+.water-lens strong,
+.solar-water-lens strong {
   font-family: var(--font-display);
   font-size: clamp(22px, 3vw, 32px);
   letter-spacing: var(--tracking-wide);
@@ -1151,6 +1206,17 @@
     linear-gradient(180deg, rgb(var(--solar-400)), rgb(var(--solar-600)));
 }
 
+.solarized-demo .fairy-hero-actions .solar-command-plate {
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .solarized-demo .fairy-hero-actions .solar-command-plate {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .solarized-demo .btn-quiet,
 .solarized-demo .archive-rail-item,
 .solarized-demo .fairy-hero-route {
@@ -1352,6 +1418,12 @@
   font-family: var(--font-display);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+}
+
+.solar-mini-composition .solar-vellum-ledger {
+  align-self: end;
+  padding: 14px;
+  clip-path: var(--shape-panel);
 }
 
 .solar-component-card {
@@ -1622,6 +1694,23 @@
   line-height: 1.45;
 }
 
+.solar-contract-card code {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgb(var(--solar-400) / 0.24);
+  clip-path: var(--shape-interactive);
+  color: rgb(var(--sunvellum-50) / 0.84);
+  background: rgb(var(--solar-shadow) / 0.32);
+  white-space: normal;
+}
+
+.solar-contract-card .solar-command-plate,
+.solar-contract-card .solar-route-badge {
+  width: fit-content;
+  max-width: 100%;
+}
+
 .solar-application-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1653,16 +1742,30 @@
   line-height: 1.5;
 }
 
+.solar-route-badge,
 .solarized-demo .fairy-feed-badge.state-irrigating,
 .solarized-demo .fairy-feed-badge.state-growing,
 .solarized-demo .fairy-feed-badge.state-charged {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9px;
   border: 1px solid rgb(var(--water-700) / 0.36);
+  clip-path: var(--shape-interactive);
   color: rgb(var(--water-700));
   background:
     linear-gradient(180deg, rgb(255 255 255 / 0.46), transparent 42%),
     rgb(var(--water-200) / 0.28);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
+.solar-route-badge.state-growing,
 .solarized-demo .fairy-feed-badge.state-growing {
   border-color: rgb(var(--leaf-600) / 0.36);
   color: rgb(var(--canopy-900));
@@ -1671,12 +1774,17 @@
     rgb(var(--leaf-400) / 0.28);
 }
 
+.solar-route-badge.state-charged,
 .solarized-demo .fairy-feed-badge.state-charged {
   border-color: rgb(var(--solar-600) / 0.42);
   color: rgb(var(--solar-shadow));
   background:
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.42), transparent 42%),
     rgb(var(--solar-400) / 0.44);
+}
+
+.fairy-solarized .fairy-feed-row-top .solar-route-badge {
+  justify-self: end;
 }
 
 .reference-solarized .mode-strip::before {
