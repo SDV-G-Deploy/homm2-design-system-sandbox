@@ -12,6 +12,8 @@ Current direction label: **Heraldic Menu** — an old-kingdom fantasy interface 
 
 New proof surface: **Fantasy Solarpunk** in solarpunk.html, a flavour extension that keeps the HoMM2 object grammar while shifting colour, light and material roles toward sun-vellum, solar brass, living canopy and water-focus states. The same flavour layer is now applied to the main sandbox, Fairy Journeys applied page, and reference manual through `solarized-demo` page classes.
 
+Current workflow skill: `/root/.openclaw/workspace/skills/homm2-solarpunk-design/SKILL.md`. Use it for future HoMM2 x Solarpunk passes before making broad visual changes; the local pass report is `docs/homm2-solarpunk-skill-pass-0001-2026-05-31.md`.
+
 ## Applied implementation target
 
 The live applied product site is `../YourInsideQuest`.
@@ -178,7 +180,7 @@ Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
 
 ## Current system checkpoint
 
-Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness + Fairy/reference visual-alignment closeout**.
+Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness + Fairy/reference visual-alignment closeout + HoMM2 x Solarpunk component grammar and workflow skill**.
 
 Current entry point:
 
@@ -192,6 +194,7 @@ What now exists at the system level:
 - proof and acceptance artifacts for the documented recipe slices
 - one rebuilt applied smoke page in `fairy-journeys.html`
 - reference quick operator mode in `reference.html#operator-mode`
+- Fantasy Solarpunk system contract in `reference.html#system-contract`
 - indexed FeedListing row proof in `fixtures/feed-listing-recipe.html`
 - local regression smoke harness in `tools/regression-smoke.js`
 
