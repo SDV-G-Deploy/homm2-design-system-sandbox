@@ -22,6 +22,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/dossier.html` - applied dossier proof.
 - `v2/trial.html` - real page trial.
 - `v2/control.html` - operational board trial.
+- `v2/ant-school.html` - new-topic production trial.
 - `css/v2.css` - shared V2 styling layer.
 - `assets/v2/*` - bounded reusable asset motifs.
 - `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
@@ -65,6 +66,6 @@ This improves the acceptance status from one real page trial to two different ap
 
 ## Next Recommended Pass
 
-**V2 slice 08 - new-topic production trial.**
+**V2 slice 09 - product theming audit.**
 
-Build a real-world topic/product/service page from `docs/v2-starter-kit-2026-06-01.md` without sandbox vocabulary, proof chips, or demo navigation.
+Audit ANT School against the starter kit and split reusable V2 patterns from page-local styling if the class set is stable enough.

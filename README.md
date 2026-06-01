@@ -16,6 +16,7 @@ Live entry points:
 - V2 applied dossier: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/dossier.html
 - V2 real page trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
 - V2 control board trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
+- V2 ANT School production trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -39,6 +40,7 @@ Current V2 proof surfaces:
 - `v2/dossier.html` - applied dossier proof
 - `v2/trial.html` - real-page trial proving the system outside a reference board
 - `v2/control.html` - dense operational board proving V2 beyond a landing/product shape
+- `v2/ant-school.html` - new-topic production trial for ANT School / AI non-technical builders
 
 Shared V2 system files:
 
@@ -145,10 +147,16 @@ This is the first V2 proof that is closer to an app/work surface than to a prese
 
 Use `docs/v2-starter-kit-2026-06-01.md` before building the next applied page.
 
+## Latest Production Trial
+
+**V2 slice 08 - ANT School production trial** applies the starter kit to a real topic outside the sandbox vocabulary.
+
+It uses production chrome, short mobile routes, no proof chips, and page content for AI non-technical builders.
+
 ## Next Best Pass
 
-Recommended next step after this promotion boundary:
+Recommended next step after this production trial:
 
-**V2 slice 08 - new-topic production trial.**
+**V2 slice 09 - product theming audit.**
 
-Build one page for a real-world topic/product/service using the starter kit, not sandbox vocabulary.
+Compare ANT School against V2 starter kit and decide which classes are reusable, which are page-local, and whether `css/v2.css` should be split.

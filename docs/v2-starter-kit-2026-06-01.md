@@ -139,6 +139,8 @@ Structure:
 
 Reference: `v2/trial.html`.
 
+Additional production trial: `v2/ant-school.html`.
+
 ### Operational Board
 
 Use for dashboards, control rooms, queues, and agent/operator tools.
@@ -206,4 +208,3 @@ If V2 keeps growing, split `css/v2.css` into:
 - page-local trial styles.
 
 Do this only after another applied page proves the current class names are stable.
-

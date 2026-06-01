@@ -836,6 +836,125 @@ a {
   gap: 9px;
 }
 
+.v2-ant-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-ant-hero,
+.v2-ant-guild {
+  padding: 18px;
+  color: #fff2c1;
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 208, 106, .15), transparent 14rem),
+    linear-gradient(180deg, rgba(255, 229, 154, .1), transparent 46%),
+    linear-gradient(145deg, #21140f, #11271f);
+  border: 1px solid rgba(255, 220, 130, .42);
+  border-radius: var(--v2-radius);
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .05), 0 16px 34px rgba(45, 25, 12, .24);
+}
+
+.v2-ant-hero {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-ant-copy h1,
+.v2-ant-guild h2,
+.v2-ant-join h2 {
+  margin: 0;
+  max-width: 17ch;
+  font-family: Vollkorn, Georgia, serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.v2-ant-copy h1 {
+  color: #fff8d3;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+}
+
+.v2-ant-copy p {
+  margin: 16px 0 0;
+  max-width: 52ch;
+  color: #ead9a5;
+  font-size: 1.05rem;
+  line-height: 1.44;
+}
+
+.v2-ant-actions {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.v2-ant-map {
+  display: grid;
+  gap: 9px;
+  align-self: stretch;
+  padding: 12px;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .12), transparent 32%, rgba(213, 138, 44, .1)),
+    rgba(12, 34, 29, .68);
+  border: 1px solid rgba(136, 199, 189, .3);
+  border-radius: 7px;
+}
+
+.v2-ant-map div {
+  min-width: 0;
+  padding: 11px 12px;
+  background: rgba(255, 246, 211, .08);
+  border: 1px solid rgba(255, 231, 166, .22);
+  border-left: 4px solid var(--v2-brass);
+}
+
+.v2-ant-map span {
+  display: block;
+  color: #d5bc82;
+  font-size: .8rem;
+}
+
+.v2-ant-map strong {
+  display: block;
+  margin-top: 3px;
+  color: #fff6ce;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.08;
+}
+
+.v2-ant-program {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-ant-ledger,
+.v2-ant-signal {
+  margin-top: 0;
+}
+
+.v2-ant-signal h2 {
+  max-width: 15ch;
+}
+
+.v2-ant-guild {
+  display: grid;
+  gap: 16px;
+}
+
+.v2-ant-roles {
+  display: grid;
+  gap: 12px;
+}
+
+.v2-ant-join {
+  margin-top: 0;
+}
+
+.v2-ant-join .v2-command {
+  margin-top: 18px;
+}
+
 .v2-status-list a {
   color: inherit;
   text-decoration-color: rgba(123, 78, 30, .44);
@@ -994,6 +1113,35 @@ a {
   .v2-control-board {
     grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
     align-items: start;
+  }
+
+  .v2-ant-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-ant-actions {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .v2-ant-map {
+    align-content: end;
+  }
+
+  .v2-ant-program {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    align-items: start;
+  }
+
+  .v2-ant-guild {
+    grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+    align-items: start;
+    padding: 28px;
+  }
+
+  .v2-ant-roles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .v2-trial-proof {
