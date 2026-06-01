@@ -74,6 +74,15 @@ Target phrase: **solar-civic fantasy interface**.
 
 The system must not be solved with green gradients or palette changes alone. Every new pattern should preserve HoMM2 form and express Solarpunk as state, infrastructure, material, or behavior.
 
+## Production Chrome Rule
+
+V2 separates proof/demo chrome from production-like pages.
+
+- Technical proof labels such as RU/EN content-budget badges are allowed on reference and development proof pages.
+- Production-like pages use `v2-production-page`; their `data-proof-chrome="true"` labels are hidden from the first-viewport experience.
+- Mobile production navigation must be short and directly useful to the page. It must not require horizontal scrolling for core routes.
+- Sandbox routes such as Gate, Ref, Trial, and Control are allowed on demo/reference pages, but they are not a product navigation model.
+
 ## Local Preview
 
 Serve the folder with any static server:

@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="../css/v2.css" />
   </head>
-  <body>
+  <body class="v2-production-page">
     <header class="v2-topbar" aria-label="V2 navigation">
       <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
         <span class="v2-sigil">II</span>
@@ -26,17 +26,15 @@
         </span>
       </a>
       <nav class="v2-nav" aria-label="Sections">
-        <a href="./index.html">Gate</a>
-        <a href="./reference.html">Ref</a>
-        <a href="./trial.html">Trial</a>
+        <a href="#summary">Summary</a>
         <a href="#queue">Queue</a>
         <a href="#actions">Actions</a>
       </nav>
     </header>
 
     <main id="top" class="v2-shell v2-control-shell">
-      <section class="v2-control-hero" aria-labelledby="control-title" data-v2-primary>
-        <div class="v2-proofbar" aria-label="Content budget proof">
+      <section class="v2-control-hero" id="summary" aria-labelledby="control-title" data-v2-primary>
+        <div class="v2-proofbar" data-proof-chrome="true" aria-label="Content budget proof">
           <span>RU: Очередь маршрутов</span>
           <span>EN: Control board</span>
         </div>

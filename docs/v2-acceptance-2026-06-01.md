@@ -43,7 +43,18 @@ They can be used for comparison, archaeology, and pressure checks. New implement
 - no horizontal overflow
 - compact nav remains under the V2 topbar budget
 - no clipped or awkward RU/EN labels
+- production-like pages do not show proof/debug labels as first-viewport UI
+- production-like mobile navigation uses short page routes and does not depend on horizontal scrolling for core actions
 - Solarpunk appears as civic state, water focus, solar hardware, or living feedback, not as green decoration alone
+
+## Demo Chrome vs Production Chrome
+
+Technical labels are part of the design-system proof layer, not a permanent product requirement.
+
+- Reference/proof pages may show content-budget chips to demonstrate RU/EN fit.
+- Real product/service pages should convert those labels into actual product statuses or hide them.
+- Sandbox navigation is allowed to link between proof pages, but a real product should expose only its own core routes.
+- `v2-production-page` is the current class for this separation.
 
 ## Latest Added Proof
 

@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="../css/v2.css" />
   </head>
-  <body>
+  <body class="v2-production-page">
     <header class="v2-topbar" aria-label="V2 navigation">
       <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
         <span class="v2-sigil">II</span>
@@ -26,17 +26,15 @@
         </span>
       </a>
       <nav class="v2-nav" aria-label="Sections">
-        <a href="./index.html">Gate</a>
-        <a href="./reference.html">Ref</a>
-        <a href="./dossier.html">Dossier</a>
-        <a href="./control.html">Control</a>
+        <a href="#proof">Proof</a>
         <a href="#plans">Plans</a>
+        <a href="./control.html">Board</a>
       </nav>
     </header>
 
     <main id="top" class="v2-shell v2-trial-shell">
       <section class="v2-hero v2-trial-hero" aria-labelledby="trial-title" data-v2-primary>
-        <div class="v2-proofbar" aria-label="Content budget proof">
+        <div class="v2-proofbar" data-proof-chrome="true" aria-label="Content budget proof">
           <span>RU: Запуск за один день</span>
           <span>EN: Civic launch kit</span>
         </div>
