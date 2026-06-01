@@ -1035,25 +1035,25 @@ body {
   }
 
   .fairy-hero-copy {
-    gap: 10px;
-    padding: 16px;
+    gap: 8px;
+    padding: 14px;
   }
 
   .fairy-hero-copy h1 {
-    max-width: 11ch;
-    font-size: clamp(31px, 8.8vw, 44px);
-    line-height: 0.96;
+    max-width: 11.5ch;
+    font-size: clamp(29px, 8vw, 40px);
+    line-height: 0.94;
   }
 
   .fairy-hero-copy .lead {
-    max-width: 54ch;
-    font-size: 15px;
-    line-height: 1.4;
+    max-width: 50ch;
+    font-size: 14px;
+    line-height: 1.34;
   }
 
   .fairy-hero-copy .hero-meta-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 7px;
+    gap: 6px;
   }
 
   .fairy-hero-copy .hero-meta-cell:last-child {
@@ -1062,11 +1062,31 @@ body {
 
   .fairy-civic-instrument {
     grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px 10px;
   }
 
   .fairy-civic-instrument .solar-route-badge {
     grid-column: 1 / -1;
     justify-self: start;
+  }
+
+  .fairy-civic-instrument strong {
+    font-size: 12px;
+    line-height: 1.18;
+  }
+
+  .fairy-civic-instrument span {
+    font-size: 10px;
+  }
+
+  .fairy-instrument-crest {
+    width: 30px;
+  }
+
+  .fairy-hero-actions {
+    gap: 8px;
+    margin-top: 2px;
   }
 
   .fairy-dossier-body .dossier-ledger-strip {
@@ -1075,7 +1095,7 @@ body {
 
   .fairy-hero-copy .hero-meta-cell {
     min-height: 0;
-    padding: 7px 9px;
+    padding: 6px 8px;
   }
 
   .fairy-hero-copy .hero-meta-cell span {
@@ -1083,9 +1103,43 @@ body {
   }
 
   .fairy-hero-copy .hero-meta-cell strong {
-    margin-top: 3px;
-    font-size: 13px;
-    line-height: 1.3;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 1.22;
+  }
+
+  .fairy-state-ledger {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  .fairy-state-ledger .solar-state-row {
+    gap: 1px;
+    min-height: 0;
+    padding: 9px 28px 9px 10px;
+  }
+
+  .fairy-state-ledger .solar-state-row::after {
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .fairy-state-ledger .solar-state-row span {
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .fairy-state-ledger .solar-state-row strong {
+    padding-right: 18px;
+    font-size: 11px;
+    line-height: 1.12;
+    letter-spacing: 0.035em;
+  }
+
+  .fairy-handoff.recipe-support-summary {
+    padding: 7px 9px;
   }
 
   .fairy-hero-art {
@@ -1255,19 +1309,19 @@ body {
 
 @media (max-width: 430px) {
   .fairy-hero-copy {
-    gap: 9px;
-    padding: 14px;
+    gap: 7px;
+    padding: 13px;
   }
 
   .fairy-hero-copy h1 {
-    max-width: 10.8ch;
-    font-size: 29px;
-    line-height: 0.97;
+    max-width: 11.6ch;
+    font-size: 27px;
+    line-height: 0.95;
   }
 
   .fairy-hero-copy .lead {
-    font-size: 14px;
-    line-height: 1.36;
+    font-size: 13px;
+    line-height: 1.3;
   }
 
   .fairy-hero-actions .btn,
@@ -1306,11 +1360,28 @@ body {
   }
 
   .fairy-hero-copy .hero-meta-strip {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .fairy-hero-copy .hero-meta-cell:last-child {
-    grid-column: auto;
+    grid-column: 1 / -1;
+  }
+
+  .fairy-civic-instrument {
+    padding: 7px 9px;
+  }
+
+  .fairy-civic-instrument strong {
+    font-size: 11px;
+  }
+
+  .fairy-state-ledger {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .fairy-handoff.recipe-support-summary {
+    display: none;
   }
 
   .fairy-hero-art {
