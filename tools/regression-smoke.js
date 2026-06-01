@@ -119,6 +119,7 @@ function staticSanity(failures) {
   ];
   const docFiles = [
     "README.md",
+    "docs/v2-starter-kit-2026-06-01.md",
     "docs/design-system-operator-index-2026-05-15.md",
     "docs/regression-smoke-harness-pass-2026-05-16.md",
     "docs/reference-operator-link-sanity-pass-2026-05-18.md",

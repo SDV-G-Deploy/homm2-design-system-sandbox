@@ -24,6 +24,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/control.html` - operational board trial.
 - `css/v2.css` - shared V2 styling layer.
 - `assets/v2/*` - bounded reusable asset motifs.
+- `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
 
 ## Archive Boundary
 
@@ -64,6 +65,6 @@ This improves the acceptance status from one real page trial to two different ap
 
 ## Next Recommended Pass
 
-**V2 slice 07 - starter-kit extraction.**
+**V2 slice 08 - new-topic production trial.**
 
-Document the reusable recipes, class groups, and copy budgets needed to generate future V2 pages without reintroducing V1 drift.
+Build a real-world topic/product/service page from `docs/v2-starter-kit-2026-06-01.md` without sandbox vocabulary, proof chips, or demo navigation.

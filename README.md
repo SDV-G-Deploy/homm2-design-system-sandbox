@@ -51,6 +51,7 @@ Shared V2 system files:
 Current acceptance note:
 
 - `docs/v2-acceptance-2026-06-01.md`
+- `docs/v2-starter-kit-2026-06-01.md`
 
 ## Archive Boundary
 
@@ -133,10 +134,21 @@ The workflow is static-only:
 
 This is the first V2 proof that is closer to an app/work surface than to a presentation page.
 
+## Current Starter Kit
+
+**V2 slice 07 - starter-kit extraction** documents page modes, production chrome, content budgets, component inventory, and four page recipes:
+
+- Product Landing
+- Operational Board
+- Dossier / Article
+- Reference Board
+
+Use `docs/v2-starter-kit-2026-06-01.md` before building the next applied page.
+
 ## Next Best Pass
 
 Recommended next step after this promotion boundary:
 
-**V2 slice 07 - starter-kit extraction.**
+**V2 slice 08 - new-topic production trial.**
 
-Extract the stable V2 pieces into a short implementation recipe so future pages can be generated from roles and components instead of copying page markup.
+Build one page for a real-world topic/product/service using the starter kit, not sandbox vocabulary.
