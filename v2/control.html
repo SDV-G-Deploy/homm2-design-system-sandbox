@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Control Board · V2 Real Page Trial</title>
+    <meta
+      name="description"
+      content="A dense operational control-board page built from the HoMM2 x Solarpunk V2 primitive kit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 navigation">
+      <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">II</span>
+        <span>
+          <strong>Civic Control</strong>
+          <em>Board trial</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="./index.html">Gate</a>
+        <a href="./reference.html">Ref</a>
+        <a href="./trial.html">Trial</a>
+        <a href="#queue">Queue</a>
+        <a href="#actions">Actions</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-control-shell">
+      <section class="v2-control-hero" aria-labelledby="control-title" data-v2-primary>
+        <div class="v2-proofbar" aria-label="Content budget proof">
+          <span>RU: Очередь маршрутов</span>
+          <span>EN: Control board</span>
+        </div>
+        <div class="v2-control-title">
+          <div class="v2-section-label">Operational page trial</div>
+          <h1 id="control-title">Штаб следит за водой, солнцем и спорными маршрутами.</h1>
+        </div>
+        <div class="v2-control-summary" aria-label="Live civic summary">
+          <div>
+            <span>Flow</span>
+            <strong>74%</strong>
+          </div>
+          <div>
+            <span>Спорные</span>
+            <strong>2 routes</strong>
+          </div>
+          <div>
+            <span>State</span>
+            <strong>Irrigating</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-control-board" aria-label="Civic control board">
+        <article class="v2-ledger v2-control-queue" id="queue" aria-labelledby="queue-title">
+          <div class="v2-section-label">Sun-vellum queue</div>
+          <h2 id="queue-title">Рабочая очередь без карточной каши.</h2>
+          <div class="v2-control-filters" aria-label="Route filters">
+            <button type="button" aria-pressed="true">All</button>
+            <button type="button">Water</button>
+            <button type="button">Solar</button>
+            <button type="button">Risk</button>
+          </div>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Canal mirror alignment</strong>
+                <small>Water lens · stable · 18 min</small>
+              </div>
+              <em>Ready</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Seed archive export</strong>
+                <small>Sun-vellum · review needed</small>
+              </div>
+              <em>Check</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Brass route commitment</strong>
+                <small>Solar hardware · blocked by role</small>
+              </div>
+              <em>Risk</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-control-instrument" aria-labelledby="instrument-title">
+          <div class="v2-section-label">Water lens</div>
+          <h2 id="instrument-title">Фокус виден сразу.</h2>
+          <img
+            class="v2-meter-lens"
+            src="../assets/v2/water-lens.svg"
+            width="240"
+            height="240"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="v2-lens-module">
+            <div><span>Pressure</span><strong>Stable</strong></div>
+            <div><span>Route risk</span><strong>Low</strong></div>
+            <div><span>Next gate</span><strong>Role check</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-control-actions" id="actions" aria-labelledby="actions-title">
+        <div>
+          <div class="v2-section-label">Command rail</div>
+          <h2 id="actions-title">Команды отделены от чтения и состояния.</h2>
+        </div>
+        <div class="v2-control-command-grid">
+          <a class="v2-command v2-command-primary" href="./reference.html">Открыть primitive board</a>
+          <a class="v2-command v2-command-secondary" href="./dossier.html">Inspect dossier</a>
+          <a class="v2-command v2-command-secondary" href="./trial.html">Compare page trial</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

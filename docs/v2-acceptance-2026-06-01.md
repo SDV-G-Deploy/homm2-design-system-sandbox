@@ -12,7 +12,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - **Mobile navigation:** V2 uses a compact topbar and shorter route labels instead of large stacked command blocks.
 - **Graphic strength:** V2 uses bounded asset roles (`solar-civic-gate`, `solar-badge`, `water-lens`, `vellum-grain`) instead of relying only on weak CSS scenery.
 - **Content budget:** V2 proves Russian and English labels on narrow screens, including command text and status rows.
-- **System portability:** V2 has a gateway, primitive board, applied dossier, and real page trial. It is not only a hero proof.
+- **System portability:** V2 has a gateway, primitive board, applied dossier, real page trial, and dense control-board trial. It is not only a hero proof.
 
 ## Canonical V2 Surfaces
 
@@ -21,6 +21,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/reference.html` - primitive board and material-role proof.
 - `v2/dossier.html` - applied dossier proof.
 - `v2/trial.html` - real page trial.
+- `v2/control.html` - operational board trial.
 - `css/v2.css` - shared V2 styling layer.
 - `assets/v2/*` - bounded reusable asset motifs.
 
@@ -44,8 +45,14 @@ They can be used for comparison, archaeology, and pressure checks. New implement
 - no clipped or awkward RU/EN labels
 - Solarpunk appears as civic state, water focus, solar hardware, or living feedback, not as green decoration alone
 
+## Latest Added Proof
+
+**V2 slice 06 - control board trial** adds a dense operational page with route filters, queue rows, summary metrics, water-lens inspection, and a separate command rail.
+
+This improves the acceptance status from one real page trial to two different applied shapes: presentation/product and operational/tool.
+
 ## Next Recommended Pass
 
-**V2 slice 06 - second real page trial.**
+**V2 slice 07 - starter-kit extraction.**
 
-Build a second applied page with a different structure from `v2/trial.html`, then decide whether V2 is ready to become a reusable starter kit rather than a sandbox.
+Document the reusable recipes, class groups, and copy budgets needed to generate future V2 pages without reintroducing V1 drift.

@@ -15,6 +15,7 @@ Live entry points:
 - V2 primitive board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/reference.html
 - V2 applied dossier: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/dossier.html
 - V2 real page trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
+- V2 control board trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -37,6 +38,7 @@ Current V2 proof surfaces:
 - `v2/reference.html` - primitive board for material roles and reusable components
 - `v2/dossier.html` - applied dossier proof
 - `v2/trial.html` - real-page trial proving the system outside a reference board
+- `v2/control.html` - dense operational board proving V2 beyond a landing/product shape
 
 Shared V2 system files:
 
@@ -116,10 +118,16 @@ The workflow is static-only:
 - artifact upload is the repo contents
 - deploy target is GitHub Pages
 
+## Latest V2 Trial
+
+**V2 slice 06 - control board trial** adds a dense operational screen with route filters, queue rows, civic summaries, water-lens inspection, and separated command rail.
+
+This is the first V2 proof that is closer to an app/work surface than to a presentation page.
+
 ## Next Best Pass
 
 Recommended next step after this promotion boundary:
 
-**V2 slice 06 - second real page trial.**
+**V2 slice 07 - starter-kit extraction.**
 
-Build one more applied page with a different shape than `v2/trial.html` to prove V2 is portable beyond one product-page composition.
+Extract the stable V2 pieces into a short implementation recipe so future pages can be generated from roles and components instead of copying page markup.
