@@ -229,7 +229,33 @@ Verification:
 - no horizontal overflow observed on changed surfaces
 
 Commit / push / deploy:
-- pending
+- commit `fa98b72` — `style: test typography direction`
+- pushed to `origin/main`
+- GitHub workflow runs attached to this commit: none detected at check time
 
 Next recommendation:
 - run Pass 04 as a bounded token/component consistency pass, keeping the new type contract fixed while cleaning shared ownership
+
+### 2026-06-01 01:38 UTC — Pass 04 complete
+Status: complete
+
+Artifact:
+- `docs/night-runs/2026-06-01-pass-04-tokens-components.md`
+
+What happened:
+- normalized shared `.solar-command-plate` variants to component-level custom properties
+- normalized shared `.solar-state-row` variants to component-level custom properties
+- normalized shared `.solar-route-badge` variants to component-level custom properties
+- verified the same primitives across reference proof plus applied pages
+
+Verification:
+- visual evidence captured under `tmp/night-runs/pass-04/`
+- `git diff --check` clean
+- `node tools/regression-smoke.js` passed
+- no horizontal overflow observed on changed surfaces
+
+Commit / push / deploy:
+- pending
+
+Next recommendation:
+- run Pass 05 as a bounded optimization/polish pass, keeping the current shell and type direction stable while trimming remaining duplication
