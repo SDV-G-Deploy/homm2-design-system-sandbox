@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title desc">
+  <title id="title">Water inspection lens</title>
+  <desc id="desc">A reusable water lens motif for inspection and focus states.</desc>
+  <defs>
+    <radialGradient id="lens" cx=".42" cy=".35" r=".68">
+      <stop offset="0" stop-color="#effff8" stop-opacity=".95"/>
+      <stop offset=".28" stop-color="#9bd8cb" stop-opacity=".74"/>
+      <stop offset=".72" stop-color="#24584e" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#10231f" stop-opacity=".18"/>
+    </radialGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <circle cx="130" cy="130" r="116" fill="url(#lens)" stroke="#a9e2da" stroke-width="5"/>
+  <circle cx="130" cy="130" r="74" fill="none" stroke="#f8e7a7" stroke-width="4" opacity=".54"/>
+  <path d="M44 132c38-22 64-22 86 0s48 22 86 0" fill="none" stroke="#e9fff9" stroke-width="5" opacity=".62"/>
+  <path d="M74 54c64 56 99 104 114 166" fill="none" stroke="#e9fff9" stroke-width="4" opacity=".42"/>
+  <path d="M186 46c-52 68-83 120-96 172" fill="none" stroke="#153a35" stroke-width="4" opacity=".36"/>
+  <circle cx="91" cy="91" r="26" fill="#f8fff0" opacity=".4" filter="url(#blur)"/>
+</svg>
