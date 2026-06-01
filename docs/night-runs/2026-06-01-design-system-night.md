@@ -281,7 +281,34 @@ Verification:
 - no horizontal overflow observed on changed surfaces
 
 Commit / push / deploy:
-- pending
+- commit `2a531f7` — `style: polish visual weight`
+- pushed to `origin/main`
+- GitHub workflow runs attached to this commit: none detected at check time
 
 Next recommendation:
 - run Pass 06 as the independent review + closeout pass, comparing final state against Pass 01 evidence and calling out remaining cost/complexity honestly
+
+
+### 2026-06-01 02:29 UTC — Pass 06 complete
+Status: complete
+
+Artifact:
+- `docs/night-runs/2026-06-01-closeout.md`
+
+What happened:
+- read the ledger and Pass 01-05 artifacts
+- ran an independent closeout review against current rendered surfaces
+- re-ran final verification and captured closeout screenshots
+- wrote the final verdict, unresolved risks, and Russian morning report
+
+Verification:
+- closeout visual evidence captured under `tmp/night-runs/pass-06/`
+- `git diff --check` clean
+- `node tools/regression-smoke.js` passed
+- no horizontal overflow observed on captured closeout surfaces
+
+Commit / push / deploy:
+- pending
+
+Next recommendation:
+- if the sandbox continues, the best next bounded pass is `reference.html` operator compression so the canonical proof appears materially earlier on desktop and mobile
