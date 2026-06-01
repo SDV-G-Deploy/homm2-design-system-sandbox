@@ -26,6 +26,7 @@ const TARGETS = [
   ["Fairy Journeys applied smoke", "/fairy-journeys.html", "fairy"],
   ["Solarpunk flavour proof", "/solarpunk.html", "solarpunk"],
   ["Reference manual smoke", "/reference.html#component-proof", "reference"],
+  ["Root V2 gateway smoke", "/index.html", "v2"],
   ["V2 mobile gateway smoke", "/v2/index.html", "v2"],
   ["V2 primitive board smoke", "/v2/reference.html", "v2"],
   ["V2 applied dossier smoke", "/v2/dossier.html", "v2"],
@@ -104,6 +105,7 @@ async function main() {
 function staticSanity(failures) {
   const htmlFiles = [
     "index.html",
+    "v1-archive.html",
     "reference.html",
     "solarpunk.html",
     "fairy-journeys.html",

@@ -1085,6 +1085,34 @@
     0 0 14px rgb(var(--solar-400) / 0.14);
 }
 
+.v1-archive-banner {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-content: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(227, 178, 94, .42);
+  background: #1d150f;
+  color: #fff6d1;
+  font-size: 14px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.v1-archive-banner strong {
+  color: #efc36d;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.v1-archive-banner a {
+  color: #fff6d1;
+  text-decoration-color: rgba(239, 195, 109, .7);
+  text-underline-offset: 3px;
+}
+
 .solarized-demo .scene-nav a,
 .solarized-demo .site-shell-nav a,
 .solarized-demo .ref-toc a {

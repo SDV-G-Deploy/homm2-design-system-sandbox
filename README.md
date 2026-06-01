@@ -1,235 +1,125 @@
-# HOMM2 Art Direction Sandbox
+# HoMM2 x Solarpunk Design System Sandbox
 
-Public, project-agnostic HOMM2-inspired art-direction board and emerging design-system sandbox. Current state: **artifact-like scenes + token contract + living reference page + canonical fixtures, with Fairy Journeys kept as applied smoke/reference pressure after the latest visual-alignment run**.
+Public sandbox for a **solar-civic fantasy interface**: HoMM2 material weight, frames, plaques, bevels, ledgers, and object UI combined with solar civic infrastructure, water sensing, and living-state feedback.
 
-## What this is
+## Current Status
 
-A browser-first sandbox that now has two layers: an atmosphere board for art direction and a small production-facing system layer for tokens, surfaces, type scale, and interactive states. It explores how an interface can feel embedded in a fantasy world through scene composition, material hierarchy, restrained ornament, and consequence-based magic accents.
+**V2 is the current recommended design system.**
 
-North star: **Interface belongs to the world.**
+Use `/v2/` for new work, future passes, and agent handoffs. V1 is preserved as research/archive material only; do not extend V1 by default.
 
-Current direction label: **Heraldic Menu** — an old-kingdom fantasy interface with modern readability.
+Live entry points:
 
-New proof surface: **Fantasy Solarpunk** in solarpunk.html, a flavour extension that keeps the HoMM2 object grammar while shifting colour, light and material roles toward sun-vellum, solar brass, living canopy and water-focus states. The same flavour layer is now applied to the main sandbox, Fairy Journeys applied page, and reference manual through `solarized-demo` page classes.
+- Root gateway: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
+- V2 gateway: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/
+- V2 primitive board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/reference.html
+- V2 applied dossier: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/dossier.html
+- V2 real page trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
+- V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
-Current workflow skill: `/root/.openclaw/workspace/skills/homm2-solarpunk-design/SKILL.md`. Use it for future HoMM2 x Solarpunk passes before making broad visual changes; the local pass report is `docs/homm2-solarpunk-skill-pass-0001-2026-05-31.md`.
+## Why V2 Exists
 
-## Applied implementation target
+The V1/V1.1 passes proved useful ideas, but they mixed too many approaches:
 
-The live applied product site is `../YourInsideQuest`.
+- light text sometimes landed on light backgrounds;
+- mobile navigation was too large;
+- HTML graphics looked weak in several sections;
+- labels and multilingual text could wrap badly;
+- the old layer was not reliable enough for quickly generating new beautiful pages.
 
-This sandbox remains the upstream design-system/reference source. Changes here should be reconciled intentionally into `YourInsideQuest`; they are not automatically synced.
+V2 resets the system around portable primitives and acceptance gates rather than another decorative pass.
 
-## What was achieved
+## V2 Canon
 
-- Reframed the sandbox from component inventory into three scenes: gate, dossier, ceremony.
-- Added larger foreground / midground / background masses for a stronger sense of place.
-- Clarified material grammar: parchment for reading, stone for structure, gold for value, mana for rare consequence.
-- Reworked typography toward literary, legible, slightly formal tone without novelty fantasy fonts.
-- Added mobile rhythm polish so the scenes remain readable on narrow screens.
-- Shifted the shape language away from AI-round softness toward plaques, frames, bevels, and stronger panel anatomy.
-- Clarified the next stylistic move toward heraldic framing, menu-like controls, and stricter geometry rather than softer web-card language.
-- Refreshed the reference page so the demo-stand documents shape language and layout rhythm, not only colors/tokens.
-- Rebalanced scene composition and spacing so hero, archive, ceremony, and reference sections hold together more cleanly across desktop and mobile.
+Current V2 proof surfaces:
 
-## Still weak
+- `v2/index.html` - compact mobile-first gateway and navigation contract
+- `v2/reference.html` - primitive board for material roles and reusable components
+- `v2/dossier.html` - applied dossier proof
+- `v2/trial.html` - real-page trial proving the system outside a reference board
 
-- Reusable system layer is now seeded, but still incomplete: tokens and shared CSS are formalized, while broader component coverage is still partial.
-- Accessibility is improved but not production-audited across contrast, states, and interaction patterns.
-- Only one art-direction slice is represented; broader flows, empty states, errors, and dense content remain untested.
-- Some visual depth relies on CSS illustration tricks that would need refinement before product use.
+Shared V2 system files:
 
-## Latest UX / UI pass
+- `css/v2.css`
+- `assets/v2/solar-civic-gate.svg`
+- `assets/v2/solar-badge.svg`
+- `assets/v2/water-lens.svg`
+- `assets/v2/vellum-grain.svg`
 
-A focused layout cleanup pass tightened the demo in four places:
+Current acceptance note:
 
-- **Hero / Gate:** separated the copy block and ledger so they no longer feel glued together.
-- **Archive / Dossier:** improved spacing between rail, parchment dossier, and side notes; reduced oversized parchment weight.
-- **Ceremony:** rebalanced copy vs ritual panel so the CTA block feels important without overpowering the scene.
-- **Reference page:** tightened vertical rhythm and mobile specimen sizing to reduce dead space and overly tall blocks.
+- `docs/v2-acceptance-2026-06-01.md`
 
-## Latest applied-page rebuild
+## Archive Boundary
 
-The latest pass moved `fairy-journeys.html` away from the older menu-first bridge composition and rebuilt it as a bounded applied page on top of the current recipe stack.
+V1 remains available for comparison and archaeology:
 
-- First screen now uses **ArticleHeroRecipe** as the primary recipe.
-- Continuation sections use **DossierReadingRecipe** and **FeedListingRecipe**.
-- **SideRailMetadataRecipe** and **SiteShellNavigationRecipe** remain support-only.
-- The page keeps its own `css/fairy-journeys.css` and does not add new shared hooks.
+- `v1-archive.html`
+- `solarpunk.html`
+- `fairy-journeys.html`
+- legacy fixture/reference files
+- older reports under `docs/`
 
-Verified during the rebuild pass:
+Treat those as research, pressure tests, or historical evidence. The old pages are not the recommended starting point for new design-system work.
 
-- static recipe-hook sanity
-- targeted Chromium headless smoke at `390x844` and `1024x640`
-- `git diff --check` clean before commit
+## Working Rule
 
-Current regression baseline for ongoing doc/proof work:
+Use the workspace skill before broad visual changes:
 
-- dependency-free local smoke at `tools/regression-smoke.js`
-- 6 checked targets across `1440x900`, `390x844`, and `360x740`
-- page-level overflow, Fairy nav one-line labels, and indexed FeedListing row-track checks
+- `/root/.openclaw/workspace/skills/homm2-solarpunk-design/SKILL.md`
 
-## Latest visual-alignment closeout
+Target phrase: **solar-civic fantasy interface**.
 
-The latest sandbox night run closed at `9c57cb6` after bounded fixes to Fairy Journeys and the reference manual:
+The system must not be solved with green gradients or palette changes alone. Every new pattern should preserve HoMM2 form and express Solarpunk as state, infrastructure, material, or behavior.
 
-- `fairy-journeys.html#route-ledger` now resolves while preserving `#route-feed`
-- mobile Fairy nav no longer clips the final `Песочница` item in the checked narrow surface
-- reference manual tables stack safely at tablet width
-- visible internal recipe/proof labels were removed from the Fairy applied UI
-- launch/read copy is separated from the later commit/choose beat
+## Local Preview
 
-This did **not** promote Fairy Journeys to canonical proof. It remains an applied smoke/reference-pressure page; canonical evidence still comes from fixtures and pass reports.
-
-## Current reality after the documentation + proof program
-
-The repo now has a stronger split between canonical proof surfaces and applied pages.
-
-What is now true:
-- canonical fixtures exist for **ArticleHeroRecipe**, **DossierReadingRecipe**, **FeedListingRecipe**, and **MenuScreenRecipe**
-- bounded host-bound proof exists for **SideRailMetadataRecipe** and **SiteShellNavigationRecipe**
-- `fairy-journeys.html` has been rebuilt as an applied smoke page that follows the ratified content-first recipe stack
-- the only Fairy Journeys behavior promoted into canonical proof so far is the indexed FeedListing row state, and that promotion now lives in `fixtures/feed-listing-recipe.html`, not in `fairy-journeys.html` itself
-
-What is **not** true yet:
-- applied pages still do not replace canonical fixtures as proof
-- broad shell-heavy, dashboard-heavy, promo-heavy, or search-heavy page families are not generally proven
-- future applied pages can still drift if they ignore the documented recipe/budget rules
-
-So the current state should be treated as:
-**proof-backed for the covered fixture slices, with applied-page work now starting to align to that proof.**
-
-## Next logical pass
-
-The next phase is **new-session continuation**: start from the current operator index, keep documentation current, and only expand implementation when a proof gap is explicitly chosen.
-
-Current priority order:
-
-- use `docs/new-session-handoff-2026-05-16.md` as the `/new` bootstrap
-- keep docs aligned with the latest proof changes before adding new surface area
-- expand `tools/regression-smoke.js` with recipe-specific assertions when a new proof pass needs them
-- keep SideRail and SiteShell support-only unless a new host-bound proof pass expands them
-
-Operator entry point:
-- `docs/design-system-operator-index-2026-05-15.md`
-
-## Direction guardrails
-
-Preserve the fantasy-game menu pull, but do not drift into:
-
-- parody retro or literal pixel-art cosplay
-- glow on every interactive or premium surface
-- soft SaaS pills and over-rounded card silhouettes
-- decorative heraldry without hierarchy, state, or navigational purpose
-
-## Local preview
-
-Open `index.html` directly or serve the folder with any static server:
+Serve the folder with any static server:
 
 ```sh
 python3 -m http.server 4173
 ```
 
-## Regression smoke
+Then open:
 
-Run the dependency-free smoke harness before/after recipe or applied-page layout changes:
+```txt
+http://127.0.0.1:4173/
+http://127.0.0.1:4173/v2/
+```
+
+## Verification
+
+Run the dependency-free smoke harness before commits:
 
 ```sh
 node tools/regression-smoke.js
 ```
 
-It starts a local static server, launches headless Chromium, checks static ARIA references, local manual/fixture link integrity, page-level overflow, primary-surface placement, Fairy nav one-line labels, and the indexed FeedListing row track across `1440x900`, `390x844`, and `360x740`.
-
-## Visual capture / bounds evidence
-
-Use the CDP capture helper when a visual pass needs screenshot evidence plus element-level bounds, especially when raw `chromium --screenshot` or URL-hash screenshots might mislead lower-section or mobile clipping review:
+For visual passes, also capture changed pages:
 
 ```sh
 node tools/visual-capture.js \
-  --target /fairy-journeys.html#journey-opening \
-  --out tmp/visual-capture/fairy \
-  --viewport mobile:390x844 \
-  --viewport narrow:360x740 \
-  --selector '.fairy-hero-copy .lead' \
-  --selector '.fairy-dossier-body' \
-  --selector '.fairy-feed-row'
+  --target /v2/index.html \
+  --out tmp/v2-check \
+  --selector body \
+  --selector .v2-topbar \
+  --selector .v2-hero
 ```
 
-The helper writes PNG screenshots plus `metrics.json` with `clientWidth`, `scrollWidth`, target position, and any selector whose bounds or internal scroll width exceed the viewport/container.
+## Deployment
 
-## Deploy status
+Current default: push to `main` and wait for the GitHub Pages workflow.
 
-GitHub Pages deployment is live again on both:
-
-- `push` to `main`
-- manual `workflow_dispatch`
-
-The workflow stays static-only:
+The workflow is static-only:
 
 - no dependency install
 - artifact upload is the repo contents
 - deploy target is GitHub Pages
 
-If deployment policy changes again, update both `.github/workflows/deploy-pages.yml` and this section in the same commit.
+## Next Best Pass
 
-## Deployment
+Recommended next step after this promotion boundary:
 
-Current default: push to `main` and wait for the Pages workflow to publish.
+**V2 slice 06 - second real page trial.**
 
-Live URL: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
-
-## Current system checkpoint
-
-Latest completed checkpoint: **documentation consolidation + tranche-1 canonical host proof + bounded support proofs + first applied rebuild + reference operator mode + indexed FeedListing fixture proof + local regression smoke harness + Fairy/reference visual-alignment closeout + HoMM2 x Solarpunk component grammar and workflow skill**.
-
-Current entry point:
-
-- `docs/design-system-operator-index-2026-05-15.md`
-
-What now exists at the system level:
-
-- shared tokens in `css/tokens.css`
-- shared recipe hooks in `css/components.css`
-- canonical fixtures for `menu-screen`, `article-hero`, `dossier-reading`, `feed-listing`, and narrow `site-shell-navigation`
-- proof and acceptance artifacts for the documented recipe slices
-- one rebuilt applied smoke page in `fairy-journeys.html`
-- reference quick operator mode in `reference.html#operator-mode`
-- Fantasy Solarpunk system contract in `reference.html#system-contract`
-- indexed FeedListing row proof in `fixtures/feed-listing-recipe.html`
-- local regression smoke harness in `tools/regression-smoke.js`
-
-Current recommendation:
-
-- treat canonical fixtures and pass reports as the proof source of truth
-- treat applied pages as smoke/pressure surfaces unless a later pass explicitly promotes broader proof
-- use the operator index before long implementation or audit passes so older pass reports do not look equally current
-
-## File structure
-
-```txt
-css/
-  tokens.css           # canonical token contract (primitives / scales / semantic roles)
-  components.css       # shared global and reusable UI layer
-  scenes.css           # scene-specific art-direction compositions
-  reference.css        # reference-page-only specimen layout
-  fairy-journeys.css   # page-specific applied-page rules for the fairy-journeys smoke surface
-fixtures/
-  menu-screen-recipe.html  # canonical responsive recipe regression fixture
-  article-hero-recipe.html
-  dossier-reading-recipe.html
-  feed-listing-recipe.html
-  site-shell-navigation-recipe.html
-index.html             # atmosphere board / sandbox scenes
-  reference.html         # living design-system reference page
-  solarpunk.html         # Fantasy Solarpunk flavour proof surface
-fairy-journeys.html    # bounded applied smoke page using article hero + dossier + feed stack
-```
-
-## How to read the repo
-
-- Start with `docs/design-system-operator-index-2026-05-15.md` when you need the current proof status, reading path, or next work order.
-- Use `reference.html` when you want the token contract, system specimens, and quick operator reminder.
-- Use `index.html` when you want the art-direction scenes and atmosphere pass.
-- Use `fixtures/*.html` when you want the canonical proof surfaces and regression fixtures.
-- Treat `tokens.css` as the override surface for future themes / factions.
-- Treat `components.css` as the place for reusable rules; keep scene illustration logic out of it.
+Build one more applied page with a different shape than `v2/trial.html` to prove V2 is portable beyond one product-page composition.

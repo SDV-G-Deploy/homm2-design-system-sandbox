@@ -611,6 +611,20 @@ a {
   margin-top: 18px;
 }
 
+.v2-entry-shell {
+  padding-top: 18px;
+}
+
+.v2-entry-hero .v2-route-card h1 {
+  max-width: 15ch;
+}
+
+.v2-status-list a {
+  color: inherit;
+  text-decoration-color: rgba(123, 78, 30, .44);
+  text-underline-offset: 3px;
+}
+
 .v2-status-list {
   display: grid;
   gap: 8px;
