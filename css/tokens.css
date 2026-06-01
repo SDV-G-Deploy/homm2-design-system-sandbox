@@ -69,31 +69,31 @@
 
   /* Type — fluid by default */
   --text-eyebrow: 12px;
-  --text-caption: 13px;
-  --text-body:    clamp(17px, 1.45vw, 21px);
-  --text-lead:    clamp(18px, 1.65vw, 23px);
+  --text-caption: 12px;
+  --text-body:    clamp(16px, 1.34vw, 20px);
+  --text-lead:    clamp(17px, 1.52vw, 22px);
   --text-h3:      clamp(24px, 2.35vw, 36px);
   --text-h2:      clamp(32px, 4.4vw, 60px);
   --text-display: clamp(44px, 6.4vw, 92px);
 
   /* Tracking */
-  --tracking-display: -0.048em;
-  --tracking-h2:      -0.035em;
-  --tracking-h3:      -0.018em;
-  --tracking-wide:     0.045em;
-  --tracking-wider:    0.085em;
-  --tracking-eyebrow:  0.18em;
+  --tracking-display: -0.036em;
+  --tracking-h2:      -0.024em;
+  --tracking-h3:      -0.012em;
+  --tracking-wide:     0.03em;
+  --tracking-wider:    0.06em;
+  --tracking-eyebrow:  0.14em;
 
   /* Leading */
   --leading-display: 0.88;
   --leading-h2:      0.98;
   --leading-h3:      1.02;
-  --leading-body:    1.66;
-  --leading-prose:   1.72;
+  --leading-body:    1.62;
+  --leading-prose:   1.68;
 
   /* Faces */
-  --font-display: "Cinzel", Georgia, serif;
-  --font-body:    "Lora",   Georgia, serif;
+  --font-display: "Vollkorn", Georgia, serif;
+  --font-body:    "PT Serif", Georgia, serif;
 
   /* Motion */
   --duration-quick:      120ms;

@@ -203,7 +203,33 @@ Verification:
 - no horizontal overflow observed on changed surfaces
 
 Commit / push / deploy:
-- pending
+- commit `8ba3082` — `style: compress navigation shells`
+- pushed to `origin/main`
+- GitHub workflow runs attached to this commit: none detected at check time
 
 Next recommendation:
 - run Pass 03 as a bounded typography direction pass, using the new compact shell as the measurement baseline
+
+### 2026-06-01 01:15 UTC — Pass 03 complete
+Status: complete
+
+Artifact:
+- `docs/night-runs/2026-06-01-pass-03-typography.md`
+
+What happened:
+- shortlisted three practical font directions with Cyrillic support and load notes
+- chose a civic archive pairing: `Vollkorn` for display and `PT Serif` for body
+- updated shared page font requests and typography tokens
+- tightened caption/body/lead/tracking tokens to fit the denser serif texture
+
+Verification:
+- visual evidence captured under `tmp/night-runs/pass-03/`
+- `git diff --check` clean
+- `node tools/regression-smoke.js` passed
+- no horizontal overflow observed on changed surfaces
+
+Commit / push / deploy:
+- pending
+
+Next recommendation:
+- run Pass 04 as a bounded token/component consistency pass, keeping the new type contract fixed while cleaning shared ownership
