@@ -255,7 +255,33 @@ Verification:
 - no horizontal overflow observed on changed surfaces
 
 Commit / push / deploy:
-- pending
+- commit `e2eb93d` — `refactor: normalize solar primitives`
+- pushed to `origin/main`
+- GitHub workflow runs attached to this commit: none detected at check time
 
 Next recommendation:
 - run Pass 05 as a bounded optimization/polish pass, keeping the current shell and type direction stable while trimming remaining duplication
+
+### 2026-06-01 02:03 UTC — Pass 05 complete
+Status: complete
+
+Artifact:
+- `docs/night-runs/2026-06-01-pass-05-optimization.md`
+
+What happened:
+- reduced shared shell haze/shadow weight in `css/components.css`
+- reduced shadow heaviness on key solarpunk proof surfaces
+- reduced shadow depth on the fairy applied hero card
+- documented remaining stylesheet/effect density as the main performance risk
+
+Verification:
+- visual evidence captured under `tmp/night-runs/pass-05/`
+- `git diff --check` clean
+- `node tools/regression-smoke.js` passed
+- no horizontal overflow observed on changed surfaces
+
+Commit / push / deploy:
+- pending
+
+Next recommendation:
+- run Pass 06 as the independent review + closeout pass, comparing final state against Pass 01 evidence and calling out remaining cost/complexity honestly

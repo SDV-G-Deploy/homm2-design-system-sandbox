@@ -147,7 +147,7 @@ body {
     linear-gradient(120deg, rgb(var(--gold-700) / 0.16), transparent 38%),
     rgb(var(--ink-950) / 0.55);
   box-shadow:
-    0 18px 38px rgb(0 0 0 / 0.24),
+    0 14px 28px rgb(0 0 0 / 0.2),
     inset 0 0 0 1px rgb(var(--parchment-50) / 0.06);
 }
 
