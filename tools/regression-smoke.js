@@ -27,6 +27,8 @@ const TARGETS = [
   ["Solarpunk flavour proof", "/solarpunk.html", "solarpunk"],
   ["Reference manual smoke", "/reference.html#component-proof", "reference"],
   ["V2 mobile gateway smoke", "/v2/index.html", "v2"],
+  ["V2 primitive board smoke", "/v2/reference.html", "v2"],
+  ["V2 applied dossier smoke", "/v2/dossier.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -105,6 +107,8 @@ function staticSanity(failures) {
     "solarpunk.html",
     "fairy-journeys.html",
     "v2/index.html",
+    "v2/reference.html",
+    "v2/dossier.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

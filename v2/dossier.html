@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoMM2 x Solarpunk V2 · Applied Dossier</title>
+    <meta
+      name="description"
+      content="Second applied HoMM2 x Solarpunk V2 screen using the same mobile-first primitives."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 navigation">
+      <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">II</span>
+        <span>
+          <strong>Seed Dossier</strong>
+          <em>Applied screen</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="./index.html">Gate</a>
+        <a href="./reference.html">Ref</a>
+        <a href="#review">Review</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-dossier-shell">
+      <section class="v2-panel v2-dossier-head" aria-labelledby="dossier-title" data-v2-primary>
+        <div>
+          <div class="v2-section-label">Applied proof</div>
+          <h1 id="dossier-title">Досье держит чтение и показывает состояние маршрута.</h1>
+        </div>
+        <div class="v2-proofbar" aria-label="Content budget proof">
+          <span>RU: Проверка водного пути</span>
+          <span>EN: Dossier review</span>
+        </div>
+      </section>
+
+      <article class="v2-ledger v2-reading-card" id="review">
+        <div class="v2-section-label">Sun-vellum dossier</div>
+        <h2>Поля читаются спокойно, без декоративной борьбы за внимание.</h2>
+        <p>
+          Этот экран проверяет, что V2 primitives работают не только как герой,
+          но и как прикладная карточка: текст, статусы, команда и короткий отчёт.
+        </p>
+
+        <ul class="v2-status-list">
+          <li><span>Канал карты</span><strong>Течёт верно</strong></li>
+          <li><span>Имя</span><strong>Ещё растёт</strong></li>
+          <li><span>Сводка</span><strong>4 поля · 2 спорных · 1 скрыто на узком экране</strong></li>
+        </ul>
+
+        <a class="v2-command v2-command-primary" href="./reference.html">Открыть primitive board</a>
+      </article>
+
+      <aside class="v2-panel v2-dossier-meter" aria-label="Water state">
+        <div class="v2-section-label">Water inspection</div>
+        <div class="v2-lens-module">
+          <div><span>Flow</span><strong>74%</strong></div>
+          <div><span>Stable</span><strong>Да</strong></div>
+          <div><span>Risk</span><strong>Low</strong></div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

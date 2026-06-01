@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoMM2 x Solarpunk V2 · Primitive Board</title>
+    <meta
+      name="description"
+      content="Seven primitive reference board for the HoMM2 x Solarpunk V2 mobile-first kit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 navigation">
+      <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">II</span>
+        <span>
+          <strong>V2 Reference</strong>
+          <em>7 primitives</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="./index.html">Gate</a>
+        <a href="#primitives">Board</a>
+        <a href="./dossier.html">Dossier</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell">
+      <section class="v2-ledger v2-reference-hero" aria-labelledby="ref-title" data-v2-primary>
+        <div class="v2-section-label">Primitive board</div>
+        <h1 id="ref-title">Семь деталей, из которых можно собрать страницу.</h1>
+        <p>
+          V2 держится на малом наборе объектов: компактная навигация, vellum чтение,
+          brass команды, route rows, water module, badges и asset slot.
+        </p>
+      </section>
+
+      <section class="v2-reference-grid" id="primitives" aria-label="V2 primitive board">
+        <article class="v2-primitive-card">
+          <span>01</span>
+          <h2>Mobile shell</h2>
+          <p>Верхний bar компактный, sticky, без огромного меню-плаката.</p>
+          <div class="v2-mini-nav" aria-label="Mini nav proof">
+            <a href="./index.html">Gate</a>
+            <a href="./dossier.html">Dossier</a>
+          </div>
+        </article>
+
+        <article class="v2-primitive-card v2-primitive-vellum">
+          <span>02</span>
+          <h2>Reading vellum</h2>
+          <p>Тёмные чернила на светлой поверхности. Белый текст на светлом запрещён.</p>
+        </article>
+
+        <article class="v2-primitive-card">
+          <span>03</span>
+          <h2>Brass command</h2>
+          <a class="v2-command v2-command-primary" href="./dossier.html">Принять маршрут</a>
+        </article>
+
+        <article class="v2-primitive-card">
+          <span>04</span>
+          <h2>Route rows</h2>
+          <ul class="v2-status-list">
+            <li><span>Сводка</span><strong>4 поля · 2 спорных · 1 скрыто</strong></li>
+            <li><span>Route state</span><strong>Ready for review</strong></li>
+          </ul>
+        </article>
+
+        <article class="v2-primitive-card">
+          <span>05</span>
+          <h2>Water module</h2>
+          <div class="v2-lens-module">
+            <div><span>Flow</span><strong>74%</strong></div>
+            <div><span>Риск</span><strong>Низкий</strong></div>
+          </div>
+        </article>
+
+        <article class="v2-primitive-card">
+          <span>06</span>
+          <h2>Material badges</h2>
+          <div class="v2-proofbar">
+            <span>RU: Сводка маршрута</span>
+            <span>EN: Route status</span>
+          </div>
+        </article>
+
+        <article class="v2-primitive-card v2-primitive-art">
+          <span>07</span>
+          <h2>Asset slot</h2>
+          <img
+            src="../assets/v2/solar-civic-gate.svg"
+            width="720"
+            height="520"
+            alt="Solar civic gate asset proof"
+          />
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
