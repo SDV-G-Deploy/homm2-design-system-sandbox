@@ -1261,22 +1261,35 @@
 }
 
 .reference-solarized .ref-header {
-  padding: clamp(20px, 3vw, 34px);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(420px, 1.25fr);
+  gap: clamp(14px, 2.4vw, 28px);
+  align-items: end;
+  padding: clamp(14px, 2.1vw, 22px);
   border: 1px solid rgb(var(--solar-400) / 0.22);
   clip-path: var(--shape-panel);
   background:
-    radial-gradient(circle at 12% 0%, rgb(var(--solar-200) / 0.18), transparent 15rem),
+    radial-gradient(circle at 8% 0%, rgb(var(--solar-200) / 0.14), transparent 12rem),
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.12), transparent 36%),
     rgb(var(--solar-shadow) / 0.44);
 }
 
+.reference-solarized .ref-header .eyebrow,
+.reference-solarized .ref-header h1,
+.reference-solarized .ref-header p {
+  grid-column: 1;
+}
+
 .reference-solarized .ref-header h1 {
-  max-width: 13ch;
-  font-size: clamp(30px, 4.2vw, 48px);
+  max-width: none;
+  margin-bottom: 6px;
+  font-size: clamp(30px, 3.5vw, 42px);
 }
 
 .reference-solarized .ref-header p {
-  max-width: 52ch;
+  max-width: 36ch;
+  font-size: 14px;
+  line-height: 1.42;
 }
 
 .reference-solarized .ref-operator-mode {
@@ -1455,7 +1468,15 @@
 }
 
 .reference-solarized .mode-strip {
-  gap: 10px;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: end;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.reference-solarized .mode-strip::before {
+  display: none;
 }
 
 .reference-solarized .mode-chip,
@@ -1463,6 +1484,19 @@
   background:
     linear-gradient(180deg, rgb(var(--sunvellum-50) / 0.14), transparent 34%),
     rgb(var(--solar-shadow) / 0.36);
+}
+
+.reference-solarized .mode-chip {
+  padding: 9px 10px;
+}
+
+.reference-solarized .mode-chip span {
+  margin-bottom: 4px;
+}
+
+.reference-solarized .mode-chip strong {
+  font-size: 11px;
+  line-height: 1.22;
 }
 
 .reference-solarized .manual-card,
@@ -1810,21 +1844,6 @@
   }
 }
 
-.reference-solarized .mode-strip::before {
-  content: "Fantasy Solarpunk layer";
-  grid-column: 1 / -1;
-  width: fit-content;
-  padding: 7px 11px;
-  border: 1px solid rgb(var(--water-200) / 0.28);
-  clip-path: var(--shape-interactive);
-  color: rgb(var(--water-200));
-  font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  background: rgb(var(--canopy-900) / 0.34);
-}
-
 @media (min-width: 821px) {
   .reference-solarized .decision-table > div {
     grid-template-columns: minmax(150px, 0.9fr) minmax(220px, 1.15fr) minmax(240px, 1.2fr) minmax(210px, 1fr);
@@ -1866,18 +1885,20 @@
   }
 
   .reference-solarized .ref-header {
-    padding: 18px;
-    margin-bottom: 24px;
+    display: block;
+    padding: 14px;
+    margin-bottom: 16px;
   }
 
   .reference-solarized .ref-header h1 {
-    max-width: 12ch;
-    font-size: clamp(28px, 8vw, 34px);
+    max-width: none;
+    font-size: clamp(26px, 7.4vw, 32px);
   }
 
   .reference-solarized .ref-header p {
     max-width: none;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.38;
   }
 
   .reference-solarized .mode-strip::before {
@@ -1885,11 +1906,24 @@
   }
 
   .reference-solarized .mode-strip {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 10px;
   }
 
   .reference-solarized .mode-chip {
-    padding: 10px;
+    padding: 7px;
+  }
+
+  .reference-solarized .mode-chip span {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .reference-solarized .mode-chip strong {
+    font-size: 10px;
+    line-height: 1.15;
   }
 
   .reference-solarized .operator-grid {
