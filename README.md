@@ -14,9 +14,9 @@ Live entry points:
 - V2 gateway: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/
 - V2 primitive board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/reference.html
 - V2 applied dossier: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/dossier.html
-- V2 real page trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
-- V2 control board trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
-- V2 ANT School production trial: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
+- V2 launch page: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
+- V2 control board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
+- V2 ANT School production example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -38,9 +38,9 @@ Current V2 proof surfaces:
 - `v2/index.html` - compact mobile-first gateway and navigation contract
 - `v2/reference.html` - primitive board for material roles and reusable components
 - `v2/dossier.html` - applied dossier proof
-- `v2/trial.html` - real-page trial proving the system outside a reference board
+- `v2/trial.html` - launch/product page proving the system outside a reference board
 - `v2/control.html` - dense operational board proving V2 beyond a landing/product shape
-- `v2/ant-school.html` - new-topic production trial for ANT School / AI non-technical builders
+- `v2/ant-school.html` - new-topic production example for ANT School / AI non-technical builders
 
 Shared V2 system files:
 
@@ -85,6 +85,7 @@ V2 separates proof/demo chrome from production-like pages.
 - Production-like pages use `v2-production-page`; their `data-proof-chrome="true"` labels are hidden from the first-viewport experience.
 - Mobile production navigation must be short and directly useful to the page. It must not require horizontal scrolling for core routes.
 - Sandbox routes such as Gate, Ref, Trial, and Control are allowed on demo/reference pages, but they are not a product navigation model.
+- Production-like pages must not show proof/trial/reference vocabulary as customer-facing copy; use product words such as signal, route, desk, map, result, status, readiness, launch, and queue.
 
 ## Local Preview
 
@@ -130,9 +131,9 @@ The workflow is static-only:
 - artifact upload is the repo contents
 - deploy target is GitHub Pages
 
-## Latest V2 Trial
+## Latest V2 Surface
 
-**V2 slice 06 - control board trial** adds a dense operational screen with route filters, queue rows, civic summaries, water-lens inspection, and separated command rail.
+**V2 slice 06 - control board** adds a dense operational screen with route filters, queue rows, civic summaries, water-lens inspection, and separated command rail.
 
 This is the first V2 proof that is closer to an app/work surface than to a presentation page.
 
@@ -147,16 +148,16 @@ This is the first V2 proof that is closer to an app/work surface than to a prese
 
 Use `docs/v2-starter-kit-2026-06-01.md` before building the next applied page.
 
-## Latest Production Trial
+## Latest Production Example
 
-**V2 slice 08 - ANT School production trial** applies the starter kit to a real topic outside the sandbox vocabulary.
+**V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
 
 It uses production chrome, short mobile routes, no proof chips, and page content for AI non-technical builders.
 
-## Next Best Pass
+## Latest Boundary Pass
 
-Recommended next step after this production trial:
+**V2 slice 09 - production vocabulary and CSS boundary** removes visible demo/proof vocabulary from production-like pages and adds a CSS extraction map:
 
-**V2 slice 09 - product theming audit.**
+- `docs/v2-css-boundary-2026-06-01.md`
 
-Compare ANT School against V2 starter kit and decide which classes are reusable, which are page-local, and whether `css/v2.css` should be split.
+The next high-leverage step is one more real product recipe without sandbox vocabulary, then a physical CSS split if the shared class set stays stable.

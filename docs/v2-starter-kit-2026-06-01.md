@@ -41,7 +41,8 @@ Required:
 - hide proof-only chips with `data-proof-chrome="true"`;
 - use page-local navigation, not sandbox navigation;
 - keep mobile nav to 2-3 short routes;
-- avoid visible technical labels unless they are real product statuses.
+- avoid visible technical labels unless they are real product statuses;
+- replace system-building words such as `proof`, `trial`, `primitive board`, `reference`, and `content budget` with product words such as `signal`, `route`, `desk`, `map`, `result`, `status`, `readiness`, `launch`, or `queue`.
 
 Examples:
 
@@ -134,12 +135,12 @@ Structure:
 1. `body.v2-production-page`
 2. `.v2-topbar` with 2-3 product routes
 3. `.v2-hero` or product-specific hero
-4. proof/status section with real product claims
+4. signal/status section with real product claims
 5. plan/action section on `.v2-ledger`
 
 Reference: `v2/trial.html`.
 
-Additional production trial: `v2/ant-school.html`.
+Additional production example: `v2/ant-school.html`.
 
 ### Operational Board
 
@@ -193,6 +194,7 @@ Before a V2 page is considered done:
 - no horizontal overflow;
 - no clipped visible labels;
 - production-like pages have no first-viewport proof/debug chrome;
+- production-like pages have no visible proof/trial/reference vocabulary in customer-facing copy;
 - mobile production nav fits without horizontal scrolling;
 - first screen communicates page purpose without reading this document;
 - green/blue/gold usage maps to a role: state, water, solar hardware, vellum, or command.
@@ -205,6 +207,8 @@ If V2 keeps growing, split `css/v2.css` into:
 - shell/chrome;
 - surfaces;
 - controls/state;
-- page-local trial styles.
+- page-local recipe styles.
 
 Do this only after another applied page proves the current class names are stable.
+
+Current extraction map: `docs/v2-css-boundary-2026-06-01.md`.
