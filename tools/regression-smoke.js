@@ -29,6 +29,7 @@ const TARGETS = [
   ["V2 mobile gateway smoke", "/v2/index.html", "v2"],
   ["V2 primitive board smoke", "/v2/reference.html", "v2"],
   ["V2 applied dossier smoke", "/v2/dossier.html", "v2"],
+  ["V2 real page trial smoke", "/v2/trial.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -109,6 +110,7 @@ function staticSanity(failures) {
     "v2/index.html",
     "v2/reference.html",
     "v2/dossier.html",
+    "v2/trial.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

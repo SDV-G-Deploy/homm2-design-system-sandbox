@@ -562,6 +562,11 @@ a {
   gap: 18px;
 }
 
+.v2-trial-shell {
+  display: grid;
+  gap: 18px;
+}
+
 .v2-dossier-head {
   display: grid;
   gap: 16px;
@@ -590,6 +595,20 @@ a {
 
 .v2-dossier-meter {
   margin-top: 0;
+}
+
+.v2-trial-proof {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-trial-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.v2-trial-plans .v2-command {
+  margin-top: 18px;
 }
 
 .v2-status-list {
@@ -704,6 +723,15 @@ a {
   .v2-dossier-shell {
     grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
     align-items: start;
+  }
+
+  .v2-trial-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-trial-proof {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    align-items: end;
   }
 
   .v2-dossier-head,
