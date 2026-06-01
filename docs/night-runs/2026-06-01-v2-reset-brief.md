@@ -15,6 +15,7 @@ V2 should not continue as incremental polish on the current pages. Treat V1/V1.1
 - Several graphical motifs read as weak HTML decoration instead of intentional assets or component hardware.
 - Component boards explain the system with prose, but do not yet look strong enough as product UI.
 - Solarpunk and HoMM2 signals compete: dark fantasy panels, pale civic surfaces, glass circles, plaques, and prose blocks do not resolve into one crisp interface grammar.
+- Russian content exposes missing content budgets: short English labels fit, but longer Cyrillic strings break rows, wrap words badly, and make summaries unreadable on narrow screens.
 
 ## Target Direction
 
@@ -93,6 +94,7 @@ Assets can be generated or hand-built, but every asset slot must have a purpose 
 - Contrast first: no white or pale text on pale backgrounds.
 - Nav budget: top navigation must stay compact and must not dominate the first screen.
 - Copy-hidden proof: the visual system must make sense without reading paragraphs.
+- Multilingual content budget: every primitive must survive realistic RU and EN labels without broken words, clipped labels, or unreadable summary rows.
 - Component budget: no more than 7 primitives in the first V2 slice.
 - Asset seriousness: primary graphic elements cannot look like accidental HTML placeholders.
 - Screenshot proof: mobile and desktop captures before any claim of improvement.
@@ -117,6 +119,7 @@ Acceptance for that first slice:
 - 390px screenshot looks intentionally designed, not compressed from desktop.
 - Top nav is compact and legible.
 - No contrast failures in visible text.
+- RU and EN label variants pass without broken words or awkward one-letter wraps.
 - At least one asset-backed frame or motif replaces weak CSS-only decoration.
 - The page uses only the small V2 primitive set.
 - Desktop version follows after mobile is accepted.
