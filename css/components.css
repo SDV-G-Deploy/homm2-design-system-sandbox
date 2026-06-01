@@ -1862,7 +1862,7 @@ h3::first-letter {
     background-position: center;
   }
   .hero-frame::before { inset: 10px; border-radius: var(--radius-md); }
-  .hero-frame::after  { inset-inline: -8%; height: 32%; opacity: 0.5; }
+  .hero-frame::after  { inset-inline: 0; height: 32%; opacity: 0.5; }
   .hero-copy          { width: 100%; max-width: calc(100vw - 52px); margin-top: 48px; padding: 18px 16px 16px; }
   .eyebrow,
   .archive-label,
@@ -1889,7 +1889,7 @@ h3::first-letter {
   .moon { right: 9%; top: 8%; width: 68px; opacity: 0.78; }
   .mountain { bottom: 34%; width: 62%; height: 30%; opacity: 0.5; }
   .far-keep { bottom: 39%; width: 66px; height: 96px; opacity: 0.32; }
-  .gate-mass { bottom: 22%; width: 92vw; height: 46%; opacity: 0.82; }
+  .gate-mass { bottom: 22%; width: 88vw; height: 46%; opacity: 0.82; }
   .foreground-road { height: 28%; opacity: 0.74; }
   .material-ledger {
     position: relative;
