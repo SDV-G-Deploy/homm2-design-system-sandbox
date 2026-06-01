@@ -17,6 +17,7 @@ Live entry points:
 - V2 launch page: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/trial.html
 - V2 control board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
 - V2 ANT School production example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
+- V2 Canopy Clinic service example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/canopy-clinic.html
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -41,6 +42,7 @@ Current V2 proof surfaces:
 - `v2/trial.html` - launch/product page proving the system outside a reference board
 - `v2/control.html` - dense operational board proving V2 beyond a landing/product shape
 - `v2/ant-school.html` - new-topic production example for ANT School / AI non-technical builders
+- `v2/canopy-clinic.html` - compact service/booking page with care route and visit signal
 
 Shared V2 system files:
 
@@ -161,3 +163,9 @@ It uses production chrome, short mobile routes, no proof chips, and page content
 - `docs/v2-css-boundary-2026-06-01.md`
 
 The next high-leverage step is one more real product recipe without sandbox vocabulary, then a physical CSS split if the shared class set stays stable.
+
+## Latest Service Recipe
+
+**V2 slice 10 - Canopy Clinic service recipe** adds a compact service/booking page for yard water care.
+
+It proves a lighter first screen, page-local navigation, a care route, a visit signal, and a booking ledger without sandbox vocabulary.

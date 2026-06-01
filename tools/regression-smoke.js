@@ -33,6 +33,7 @@ const TARGETS = [
   ["V2 real page trial smoke", "/v2/trial.html", "v2"],
   ["V2 control board trial smoke", "/v2/control.html", "v2"],
   ["V2 ANT School production trial smoke", "/v2/ant-school.html", "v2"],
+  ["V2 Canopy Clinic service smoke", "/v2/canopy-clinic.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -117,6 +118,7 @@ function staticSanity(failures) {
     "v2/trial.html",
     "v2/control.html",
     "v2/ant-school.html",
+    "v2/canopy-clinic.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

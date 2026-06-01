@@ -29,7 +29,8 @@ The production kit should split into shared primitives first, then page recipes.
 
 5. **Page recipes**
    - `.v2-dossier-*`, `.v2-trial-*`, `.v2-control-*`, `.v2-ant-*`.
-   - Future files: `v2.recipe.dossier.css`, `v2.recipe.launch.css`, `v2.recipe.control.css`, `v2.recipe.ant-school.css`.
+   - `.v2-clinic-*` is the compact service/booking recipe added after this boundary note.
+   - Future files: `v2.recipe.dossier.css`, `v2.recipe.launch.css`, `v2.recipe.control.css`, `v2.recipe.ant-school.css`, `v2.recipe.service.css`.
 
 ## Production Copy Rule
 

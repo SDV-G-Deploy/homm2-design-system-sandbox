@@ -12,7 +12,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - **Mobile navigation:** V2 uses a compact topbar and shorter route labels instead of large stacked command blocks.
 - **Graphic strength:** V2 uses bounded asset roles (`solar-civic-gate`, `solar-badge`, `water-lens`, `vellum-grain`) instead of relying only on weak CSS scenery.
 - **Content budget:** V2 proves Russian and English labels on narrow screens, including command text and status rows.
-- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, and ANT School production example. It is not only a hero proof.
+- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, ANT School production example, and compact service/booking example. It is not only a hero proof.
 
 ## Canonical V2 Surfaces
 
@@ -23,6 +23,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/trial.html` - launch/product page recipe.
 - `v2/control.html` - operational board recipe.
 - `v2/ant-school.html` - new-topic production example.
+- `v2/canopy-clinic.html` - compact service/booking recipe.
 - `css/v2.css` - shared V2 styling layer.
 - `assets/v2/*` - bounded reusable asset motifs.
 - `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
@@ -71,3 +72,9 @@ This improves the acceptance status from one launch page to two different applie
 **V2 slice 09 - production vocabulary and CSS boundary.**
 
 This pass removes visible demo/proof vocabulary from production-like pages and adds `docs/v2-css-boundary-2026-06-01.md` as the extraction map for splitting `css/v2.css` after one more stable production recipe.
+
+## Latest Service Recipe
+
+**V2 slice 10 - Canopy Clinic service recipe.**
+
+This pass adds a lighter service/booking page with product-local navigation, compact first screen, care route, visit signal, and booking ledger. It is the first V2 recipe meant to test a local service flow rather than a school, launch page, dossier, or control board.

@@ -142,6 +142,8 @@ Reference: `v2/trial.html`.
 
 Additional production example: `v2/ant-school.html`.
 
+Additional service recipe: `v2/canopy-clinic.html`.
+
 ### Operational Board
 
 Use for dashboards, control rooms, queues, and agent/operator tools.
@@ -156,6 +158,21 @@ Structure:
 6. `.v2-control-actions` for commands
 
 Reference: `v2/control.html`.
+
+### Service Booking
+
+Use for compact service pages, appointment flows, local offers, audits, repair visits, or consultative products.
+
+Structure:
+
+- `body.v2-production-page`
+- `.v2-topbar` with 2-3 product routes
+- compact product hero with one primary booking action
+- `.v2-ledger` route list for what happens during service
+- `.v2-panel` signal/status module
+- `.v2-ledger` booking summary with one primary command
+
+Reference: `v2/canopy-clinic.html`.
 
 ### Dossier / Article
 
@@ -208,6 +225,8 @@ If V2 keeps growing, split `css/v2.css` into:
 - surfaces;
 - controls/state;
 - page-local recipe styles.
+
+Latest page-local recipe marker: `.v2-clinic-*` for compact service/booking pages.
 
 Do this only after another applied page proves the current class names are stable.
 

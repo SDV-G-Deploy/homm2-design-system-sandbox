@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canopy Clinic · Yard Water Care</title>
+    <meta
+      name="description"
+      content="Canopy Clinic is a solar-civic service page for yard water checks, shade plans, and repair routes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Canopy Clinic navigation">
+      <a class="v2-brand" href="#top" aria-label="Canopy Clinic">
+        <span class="v2-sigil">CC</span>
+        <span>
+          <strong>Canopy Clinic</strong>
+          <em>Yard care</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#care">Care</a>
+        <a href="#visit">Visit</a>
+        <a href="#book">Book</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-clinic-shell">
+      <section class="v2-clinic-hero" aria-labelledby="clinic-title" data-v2-primary>
+        <div class="v2-clinic-copy">
+          <div class="v2-section-label">Yard water care</div>
+          <h1 id="clinic-title">Двор лечат водой, тенью и понятным планом работ.</h1>
+          <p>
+            Canopy Clinic приезжает на участок, проверяет воду и перегрев,
+            собирает маршрут восстановления и оставляет хозяину короткую карту действий.
+          </p>
+          <div class="v2-clinic-actions">
+            <a class="v2-command v2-command-primary" href="#book">Заказать осмотр</a>
+            <a class="v2-command v2-command-secondary" href="#care">Что проверяем</a>
+          </div>
+        </div>
+
+        <aside class="v2-clinic-card" aria-label="Next visit state">
+          <div class="v2-clinic-orb" aria-hidden="true">
+            <span></span>
+          </div>
+          <div class="v2-section-label">Next visit</div>
+          <h2>45 минут на месте.</h2>
+          <ul class="v2-status-list">
+            <li><span>Water</span><strong>Pressure and pooling</strong></li>
+            <li><span>Shade</span><strong>Heat pockets</strong></li>
+            <li><span>Route</span><strong>Repair order</strong></li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-clinic-care" id="care" aria-labelledby="care-title">
+        <article class="v2-ledger v2-clinic-ledger">
+          <div class="v2-section-label">Care route</div>
+          <h2 id="care-title">Осмотр превращается в рабочую ведомость.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Water walk</strong>
+                <small>Где вода стоит, уходит или ломает дорожки.</small>
+              </div>
+              <em>Lens</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Shade reading</strong>
+                <small>Какие места перегреваются и где нужна живая тень.</small>
+              </div>
+              <em>Map</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Repair route</strong>
+                <small>Что чинить первым, что можно отложить, кто отвечает.</small>
+              </div>
+              <em>Plan</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-clinic-signal" id="visit" aria-labelledby="visit-title">
+          <div class="v2-section-label">Visit signal</div>
+          <h2 id="visit-title">Состояние видно до сметы.</h2>
+          <div class="v2-lens-module">
+            <div><span>Flow</span><strong>72%</strong></div>
+            <div><span>Heat</span><strong>Medium</strong></div>
+            <div><span>Work</span><strong>2 visits</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-ledger v2-clinic-book" id="book" aria-labelledby="book-title">
+        <div class="v2-section-label">Booking ledger</div>
+        <h2 id="book-title">Запись без формы на полэкрана.</h2>
+        <ul class="v2-status-list">
+          <li>
+            <span>Визит</span>
+            <strong>Осмотр двора и воды</strong>
+          </li>
+          <li>
+            <span>Итог</span>
+            <strong>Карта работ и порядок действий</strong>
+          </li>
+          <li>
+            <span>Срок</span>
+            <strong>Сегодня заявка · завтра маршрут</strong>
+          </li>
+        </ul>
+        <a class="v2-command v2-command-primary" href="#top">Выбрать ближайшее окно</a>
+      </section>
+    </main>
+  </body>
+</html>
