@@ -26,6 +26,7 @@ const TARGETS = [
   ["Fairy Journeys applied smoke", "/fairy-journeys.html", "fairy"],
   ["Solarpunk flavour proof", "/solarpunk.html", "solarpunk"],
   ["Reference manual smoke", "/reference.html#component-proof", "reference"],
+  ["V2 mobile gateway smoke", "/v2/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -103,6 +104,7 @@ function staticSanity(failures) {
     "reference.html",
     "solarpunk.html",
     "fairy-journeys.html",
+    "v2/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [
@@ -191,13 +193,17 @@ function reportMetric(label, check, viewportName, width, height, result, failure
     if (!result.referenceTableHeadersHidden) failures.push(prefix + ": reference table headers did not collapse");
     if (!result.referenceTableLabelsVisible) failures.push(prefix + ": reference table inline labels are not visible");
   }
+  if (check === "v2") {
+    if (result.navHeight > 72) failures.push(prefix + ": v2 topbar exceeds compact nav budget at " + result.navHeight + "px");
+    if (!result.v2LabelsReadable) failures.push(prefix + ": v2 RU/EN proof labels are clipped or wrapped");
+  }
   console.log(prefix + ": overflow=" + result.overflow + ", primaryTop=" + result.primaryTop);
 }
 
 function pageCheckExpression(check) {
   return "(() => {" +
     "const box=(selector)=>{const node=document.querySelector(selector);if(!node)return null;const rect=node.getBoundingClientRect();return{top:Math.round(rect.top),width:Math.round(rect.width),height:Math.round(rect.height)}};" +
-    "const common={overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,primaryTop:null,indexedRows:0,indexBoxes:[],navOneLine:true,referenceTableHeadersHidden:true,referenceTableLabelsVisible:true};" +
+    "const common={overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,primaryTop:null,indexedRows:0,indexBoxes:[],navOneLine:true,referenceTableHeadersHidden:true,referenceTableLabelsVisible:true,navHeight:0,v2LabelsReadable:true};" +
     "const check=" + JSON.stringify(check) + ";" +
     "if(check==='articleHero') common.primaryTop=box('[data-primary-recipe=\"article-hero\"] [data-frame-rank=\"primary\"], [data-recipe=\"article-hero\"] [data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='dossier') common.primaryTop=box('[data-primary-recipe=\"dossier-reading\"] [data-frame-rank=\"primary\"], [data-recipe=\"dossier-reading\"] [data-frame-rank=\"primary\"]')?.top??null;" +
@@ -206,6 +212,7 @@ function pageCheckExpression(check) {
     "if(check==='fairy'){common.primaryTop=box('.fairy-first-screen [data-frame-rank=\"primary\"]')?.top??null;common.navOneLine=[...document.querySelectorAll('.fairy-nav a')].every((link)=>link.getClientRects().length===1&&link.scrollWidth<=link.clientWidth+1);}" +
     "if(check==='solarpunk') common.primaryTop=box('.solar-hero-card[data-frame-rank=\"primary\"]')?.top??null;" +
     "if(check==='reference'){common.primaryTop=box('#component-proof')?.top??null;const headerNodes=[...document.querySelectorAll('.decision-head, .responsive-contract-head')];common.referenceTableHeadersHidden=headerNodes.every((node)=>getComputedStyle(node).display==='none');const labelNodes=[...document.querySelectorAll('.decision-table > div:not(.decision-head) > :first-child, .responsive-contract-table > div:not(.responsive-contract-head) > :first-child')].slice(0, 2);common.referenceTableLabelsVisible=labelNodes.length>0&&labelNodes.every((node)=>{const content=getComputedStyle(node,'::before').content;return content&&content!=='none'&&content!=='normal'&&content!=='\"\"';});}" +
+    "if(check==='v2'){common.primaryTop=box('[data-v2-primary]')?.top??null;common.navHeight=box('.v2-topbar')?.height??0;common.v2LabelsReadable=[...document.querySelectorAll('.v2-proofbar span,.v2-nav a')].every((node)=>node.getClientRects().length===1&&node.scrollWidth<=node.clientWidth+1);}" +
     "return common;" +
   "})()";
 }
@@ -242,6 +249,7 @@ function contentType(file) {
   if (file.endsWith(".css")) return "text/css; charset=utf-8";
   if (file.endsWith(".js")) return "text/javascript; charset=utf-8";
   if (file.endsWith(".png")) return "image/png";
+  if (file.endsWith(".svg")) return "image/svg+xml";
   if (file.endsWith(".md")) return "text/markdown; charset=utf-8";
   return "application/octet-stream";
 }

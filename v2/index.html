@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoMM2 x Solarpunk V2 · Mobile Gateway</title>
+    <meta
+      name="description"
+      content="Mobile-first HoMM2 x Solarpunk V2 slice: compact navigation, readable vellum, brass commands, water inspection, and multilingual content budget."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 navigation">
+      <a class="v2-brand" href="#top" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">II</span>
+        <span>
+          <strong>Solar Citadel</strong>
+          <em>V2 mobile kit</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#route">Gate</a>
+        <a href="#lens">Lens</a>
+        <a href="#ledger">Ledger</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell">
+      <section class="v2-hero" aria-labelledby="v2-title" data-v2-primary>
+        <div class="v2-proofbar" aria-label="Content budget proof">
+          <span>RU: Сводка маршрута</span>
+          <span>EN: Route status</span>
+        </div>
+
+        <div class="v2-artframe">
+          <img
+            src="../assets/v2/solar-civic-gate.svg"
+            width="720"
+            height="520"
+            alt="Solar civic gate with brass route hardware, water lens, and vellum mirrors"
+          />
+          <div class="v2-route-card" id="route">
+            <p>Маршрут восстановления</p>
+            <h1 id="v2-title">Солнечная цитадель открывает водный путь.</h1>
+          </div>
+        </div>
+
+        <div class="v2-command-row" aria-label="Primary commands">
+          <a class="v2-command v2-command-primary" href="#ledger">Открыть сводку</a>
+          <a class="v2-command v2-command-secondary" href="../reference.html">System notes</a>
+        </div>
+      </section>
+
+      <section class="v2-panel" id="lens" aria-labelledby="lens-title">
+        <div class="v2-section-label">Water inspection</div>
+        <h2 id="lens-title">Линза показывает состояние, а не украшает фон.</h2>
+        <div class="v2-lens-module" aria-label="Water route metrics">
+          <div>
+            <span>Flow</span>
+            <strong>74%</strong>
+          </div>
+          <div>
+            <span>Риск</span>
+            <strong>Низкий</strong>
+          </div>
+          <div>
+            <span>Сводка</span>
+            <strong>4 поля · 2 спорных · 1 скрыто</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger" id="ledger" aria-labelledby="ledger-title">
+        <div class="v2-section-label">Sun-vellum ledger</div>
+        <h2 id="ledger-title">Компоненты держат русский и английский текст.</h2>
+        <ul class="v2-status-list">
+          <li>
+            <span>Навигация</span>
+            <strong>Компактная</strong>
+          </li>
+          <li>
+            <span>Contrast gate</span>
+            <strong>Readable</strong>
+          </li>
+          <li>
+            <span>Материал</span>
+            <strong>Vellum · Brass · Water</strong>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

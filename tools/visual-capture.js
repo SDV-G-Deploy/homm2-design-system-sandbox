@@ -242,6 +242,7 @@ function contentType(file) {
   if (file.endsWith(".css")) return "text/css; charset=utf-8";
   if (file.endsWith(".js")) return "text/javascript; charset=utf-8";
   if (file.endsWith(".png")) return "image/png";
+  if (file.endsWith(".svg")) return "image/svg+xml";
   if (file.endsWith(".md")) return "text/markdown; charset=utf-8";
   return "application/octet-stream";
 }
