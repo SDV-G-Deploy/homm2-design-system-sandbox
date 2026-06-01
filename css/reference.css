@@ -11,33 +11,33 @@
   }
 
   .ref-header {
-    margin-bottom: var(--space-6);
-    padding-bottom: var(--space-4);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--border-thin);
   }
   .ref-header h1 {
-    margin: 0 0 var(--space-3);
-    font-size: clamp(34px, 5vw, 56px);
+    margin: 0 0 10px;
+    font-size: clamp(30px, 4.2vw, 48px);
     line-height: 1.05;
     letter-spacing: var(--tracking-h2);
     text-shadow: none;
   }
   .ref-header p {
-    max-width: 60ch;
+    max-width: 54ch;
     color: var(--ink-on-night-soft);
-    font-size: var(--text-body);
-    line-height: var(--leading-body);
+    font-size: 15px;
+    line-height: 1.55;
     margin: 0;
   }
 
   .mode-strip {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-3);
-    margin-top: var(--space-4);
+    gap: 10px;
+    margin-top: 12px;
   }
   .mode-chip {
-    padding: var(--space-4);
+    padding: 11px 12px;
     border: var(--menu-plaque-border) solid var(--border-thin-warm);
     clip-path: var(--shape-interactive);
     background:
@@ -62,8 +62,8 @@
   }
   .mode-chip strong {
     font-family: var(--font-display);
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.3;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
@@ -75,8 +75,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
-    margin: 0 0 var(--space-6);
-    padding: 10px;
+    margin: 0 0 24px;
+    padding: 8px;
     border: 1px solid var(--border-thin-warm);
     clip-path: var(--shape-panel);
     background:
@@ -87,15 +87,15 @@
   }
   .ref-toc a {
     flex: 1 1 150px;
-    min-height: 36px;
+    min-height: 32px;
     display: grid;
     place-items: center;
-    padding: 8px 10px;
+    padding: 7px 9px;
     border: 1px solid rgb(var(--gold-300) / 0.18);
     clip-path: var(--shape-interactive);
     background: rgb(var(--ink-950) / 0.24);
     font-family: var(--font-display);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: var(--ink-on-night-soft);
@@ -1036,17 +1036,17 @@
       max-width: calc(100vw - 20px);
       padding: 18px 10px 40px;
     }
-    .ref-header { margin-bottom: 30px; padding-bottom: 14px; }
+    .ref-header { margin-bottom: 22px; padding-bottom: 10px; }
     .ref-header h1 {
-      max-width: 9ch;
-      font-size: clamp(29px, 8.8vw, 38px);
+      max-width: 10ch;
+      font-size: clamp(26px, 7.8vw, 34px);
       line-height: 1;
       margin-bottom: 10px;
     }
     .ref-header p {
-      max-width: 34ch;
-      font-size: 15px;
-      line-height: 1.56;
+      max-width: 32ch;
+      font-size: 14px;
+      line-height: 1.48;
     }
     .ref-section > h2 {
       max-width: 100%;
@@ -1058,12 +1058,12 @@
     .ref-front-door .ref-note {
       max-width: 32ch;
     }
-    .mode-strip { margin-top: 14px; gap: 10px; }
-    .mode-chip { padding: 12px; }
+    .mode-strip { margin-top: 10px; gap: 8px; }
+    .mode-chip { padding: 10px; }
     .mode-chip strong {
       max-width: 100%;
-      font-size: 12px;
-      line-height: 1.35;
+      font-size: 11px;
+      line-height: 1.28;
       white-space: normal;
       overflow-wrap: anywhere;
     }
@@ -1100,10 +1100,10 @@
       position: relative;
       top: auto;
       gap: 7px;
-      margin-bottom: 28px;
-      padding: 8px;
+      margin-bottom: 20px;
+      padding: 7px;
     }
-    .ref-toc a { flex-basis: calc(50% - 7px); max-width: 100%; font-size: 10px; white-space: normal; overflow-wrap: anywhere; }
+    .ref-toc a { flex-basis: calc(50% - 7px); max-width: 100%; min-height: 30px; font-size: 9px; white-space: normal; overflow-wrap: anywhere; }
     .shadow-grid,
     .rhythm-grid,
     .surface-grid,

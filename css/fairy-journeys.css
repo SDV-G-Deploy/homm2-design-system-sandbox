@@ -11,14 +11,14 @@ body {
 
 .fairy-shell {
   width: min(1220px, calc(100vw - 28px));
-  margin: 14px auto 0;
+  margin: 10px auto 0;
   z-index: 10;
 }
 
 .fairy-shell .site-shell-topbar {
   position: relative;
-  gap: 10px;
-  padding-block: 10px 11px;
+  gap: 8px;
+  padding-block: 8px 9px;
   border-color: rgb(var(--gold-300) / 0.12);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 34%),
@@ -43,11 +43,11 @@ body {
 
 .fairy-shell .site-shell-nav a {
   flex: 0 0 auto;
-  min-height: var(--tap-target-compact);
-  padding: 8px 11px;
+  min-height: 34px;
+  padding: 7px 10px;
   border-color: rgb(var(--gold-300) / 0.12);
   color: rgb(var(--parchment-50) / 0.68);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.05em;
   white-space: nowrap;
   overflow-wrap: normal;
@@ -91,14 +91,14 @@ body {
 }
 
 .fairy-board {
-  padding: 16px 0 28px;
+  padding: 10px 0 28px;
 }
 
 .fairy-first-screen {
-  min-height: calc(100svh - 142px);
+  min-height: calc(100svh - 106px);
   display: grid;
   align-items: start;
-  padding: 16px 0 48px;
+  padding: 10px 0 48px;
 }
 
 .fairy-article-hero,
@@ -937,12 +937,12 @@ body {
 @media (max-width: 760px) {
   .fairy-shell {
     width: min(100vw - 18px, 1220px);
-    margin-top: 9px;
+    margin-top: 6px;
   }
 
   .fairy-shell .site-shell-topbar {
-    gap: 10px;
-    padding: 12px 12px 11px;
+    gap: 8px;
+    padding: 9px 10px 8px;
   }
 
   .fairy-shell .site-shell-brand {
@@ -961,29 +961,29 @@ body {
   }
 
   .fairy-shell .site-shell-nav {
-    gap: 8px;
-    padding-inline-end: 12px;
-    scroll-padding-inline-end: 12px;
-    padding-bottom: 4px;
+    gap: 6px;
+    padding-inline-end: 10px;
+    scroll-padding-inline-end: 10px;
+    padding-bottom: 2px;
   }
 
   .fairy-shell .site-shell-nav a {
-    min-height: 38px;
-    padding: 9px 12px;
-    font-size: 12px;
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 11px;
     letter-spacing: 0.04em;
   }
 
   .fairy-shell .site-shell-breadcrumb {
-    min-height: 36px;
-    padding: 9px 12px;
-    font-size: 12px;
+    min-height: 32px;
+    padding: 7px 10px;
+    font-size: 11px;
     line-height: 1.4;
   }
 
   .fairy-board {
     width: min(100vw - 18px, 1220px);
-    padding-top: 10px;
+    padding-top: 6px;
   }
 
   .fairy-first-screen {
@@ -1289,25 +1289,20 @@ body {
   }
 
   .fairy-shell .site-shell-topbar {
-    gap: 9px;
-    padding: 11px 11px 10px;
+    gap: 7px;
+    padding: 8px 9px 7px;
   }
 
   .fairy-shell .site-shell-nav {
-    gap: 7px;
-    padding-inline-end: 10px;
-    scroll-padding-inline-end: 10px;
+    gap: 5px;
+    padding-inline-end: 8px;
+    scroll-padding-inline-end: 8px;
   }
 
   .fairy-shell .site-shell-nav a {
-    min-height: 37px;
-    padding: 8px 11px;
-    font-size: 12px;
-  }
-
-  .fairy-shell .site-shell-breadcrumb {
-    width: 100%;
-    padding: 8px 11px;
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: 11px;
   }
 
   .fairy-hero-copy .hero-meta-strip {

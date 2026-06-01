@@ -173,9 +173,37 @@ Verification:
 - visual evidence captured under `tmp/night-runs/pass-01/`
 - no horizontal overflow observed on captured surfaces
 - no implementation edits beyond night-run docs in this pass
+- `git diff --check` clean
+- `node tools/regression-smoke.js` passed
+
+Commit / push / deploy:
+- commit `539858c` — `docs: add pass 01 design evidence`
+- pushed to `origin/main`
+- GitHub workflow runs attached to this commit: none detected at check time
+
+Next recommendation:
+- run Pass 2 as a bounded shared-shell compression pass focused on `css/components.css`, `index.html`, and `fairy-journeys.html`
+
+### 2026-06-01 00:52 UTC — Pass 02 complete
+Status: complete
+
+Artifact:
+- docs/night-runs/2026-06-01-pass-02-nav.md
+
+What happened:
+- compressed shared header/nav density in css/components.css
+- moved mobile scene and site-shell nav toward compact horizontal rails
+- reduced local over-sizing on fairy-journeys.html
+- tightened reference.html intro and TOC density so proof appears sooner
+
+Verification:
+- visual evidence captured under tmp/night-runs/pass-02/
+- git diff --check clean
+- node tools/regression-smoke.js passed
+- no horizontal overflow observed on changed surfaces
 
 Commit / push / deploy:
 - pending
 
 Next recommendation:
-- run Pass 2 as a bounded shared-shell compression pass focused on `css/components.css`, `index.html`, and `fairy-journeys.html`
+- run Pass 03 as a bounded typography direction pass, using the new compact shell as the measurement baseline
