@@ -47,6 +47,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-promotion-audit-v2-1.md` records the second narrow promotion: `.v2-status-mark` moved into shared components after two production surfaces repeated the same compact sprite marker role.
 - `docs/night-runs/2026-06-02-state-meter-strip-promotion.md` records the third narrow promotion: `.v2-state-meter-strip` moved the repeated `state-meter-readiness` image frame into shared components while keeping panels and signal wrappers local.
 - `docs/night-runs/2026-06-02-workshop-schedule-ledger.md` records the next production surface and bounded hero/detail visual slot: `sites/workshop-schedule-ledger/` plus `hero-detail-workshop-table`.
+- `docs/night-runs/2026-06-02-workshop-image2-asset-pass.md` records the follow-up pass that replaced the repo-native PNG output with a true OpenClaw Image 2.0 WebP while keeping the SVG fallback and HTML-owned meaning.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`

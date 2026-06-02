@@ -81,7 +81,7 @@ Current canonical V2 slots:
 - sprite-route-status - compact route/status marks, shipped as SVG source plus optimized WebP sprite sheet.
 - frame-corner-solar-brass - compact frame corner detail, shipped as SVG source plus optimized WebP.
 - state-meter-readiness - repeatable readiness/state meter strip, shipped as SVG source plus optimized WebP.
-- hero-detail-workshop-table - bounded hero/detail bitmap for schedule and seat-ledger surfaces, shipped as SVG source plus PNG output.
+- hero-detail-workshop-table - bounded hero/detail bitmap for schedule and seat-ledger surfaces, now shipped as an Image 2.0 WebP with SVG fallback and archived generated source.
 
 Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
 
@@ -459,7 +459,7 @@ Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrum
 
 `state-meter-readiness.svg` and optimized `state-meter-readiness.webp` are implemented as the first repeatable state meter strip and applied to `sites/build-brief-desk/index.html` as non-semantic readiness detail beside real state rows.
 
-`hero-detail-workshop-table.svg` and `hero-detail-workshop-table.png` are implemented as the first bounded hero/detail bitmap and applied to `sites/workshop-schedule-ledger/index.html` as a non-semantic schedule signal beside real route, seat, and reserve rows.
+`hero-detail-workshop-table-image2.webp` is implemented as the first true OpenClaw Image 2.0 hero/detail bitmap and applied to `sites/workshop-schedule-ledger/index.html` as a non-semantic schedule signal beside real route, seat, and reserve rows. `hero-detail-workshop-table.svg` remains the picture fallback, and `assets/v2/source/hero-detail-workshop-table-image2-source.png` preserves the generated source.
 
 ### Priority 2
 

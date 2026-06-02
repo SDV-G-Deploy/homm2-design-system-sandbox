@@ -252,7 +252,7 @@ It proves another fresh production-like page shape: a launch charter surface for
 
 **Workshop Schedule Ledger** lives in `sites/workshop-schedule-ledger/`.
 
-It proves a schedule/seat/reserve page shape for workshop offers and adds the bounded `hero-detail-workshop-table` visual slot as SVG source plus PNG output.
+It proves a schedule/seat/reserve page shape for workshop offers and adds the bounded `hero-detail-workshop-table` visual slot as an Image 2.0 WebP with SVG fallback.
 
 ## Current Checkpoint
 
