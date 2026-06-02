@@ -45,6 +45,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - `docs/night-runs/2026-06-02-promotion-audit-v2-1.md` records the second narrow promotion: `.v2-status-mark` moved into shared components after two production surfaces repeated the same compact sprite marker role.
+- `docs/night-runs/2026-06-02-state-meter-strip-promotion.md` records the third narrow promotion: `.v2-state-meter-strip` moved the repeated `state-meter-readiness` image frame into shared components while keeping panels and signal wrappers local.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -84,11 +85,11 @@ The best next pass is one of these, in order:
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page. Completed after this checkpoint with `sites/build-brief-desk/`.
 3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit. Completed after this checkpoint: keep recipe kit, defer npm/component package, run promotion audit next.
 
-The latest surface pass added `sites/site-charter-forge/`, giving the recipe kit another fresh production-like page shape and a third use of shared `.v2-status-mark`. The next useful pass is a narrow audit for state-meter/signaling wrappers after comparing the latest three surfaces.
+The latest surface pass added `sites/site-charter-forge/`, giving the recipe kit another fresh production-like page shape and a third use of shared `.v2-status-mark`. The state/signal audits are complete; the follow-up implementation promoted only `.v2-state-meter-strip` and kept signal wrappers deferred.
 
 After the first promotion, continue with two parallel lanes:
 
-1. Component promotion: consider only the compact signal/badge pattern next; keep hero shells, side instruments, action pairs, output rails, and CTA ledger endings deferred.
+1. Component promotion: consider only the compact signal/badge pattern next after another stable proof; keep hero shells, side instruments, meter panels, action pairs, output rails, and CTA ledger endings deferred.
 2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, state meter strips, and bounded PNG/WebP hero details.
 
 Latest production surface proof after the visual lane: `sites/site-charter-forge/`, recorded in `docs/night-runs/2026-06-02-site-charter-forge.md`.

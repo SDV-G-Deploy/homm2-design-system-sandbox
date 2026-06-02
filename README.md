@@ -207,7 +207,7 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 
 Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs. It now includes the canonical **V2 Images 2.0 Mode** contract for bitmap/image-assisted slots.
 
-Latest asset production pass: `assets/v2/state-meter-readiness.svg` and `assets/v2/state-meter-readiness.webp` are applied in `sites/build-brief-desk/` as the first repeatable state meter strip.
+Latest asset production pass: `assets/v2/state-meter-readiness.svg` and `assets/v2/state-meter-readiness.webp` are now applied across Build Brief Desk, Agent Readiness Ledger, and Site Charter Forge as a repeatable state meter strip.
 
 V2 now treats visual generation as a parallel lane to component promotion. Components move repeated HTML/CSS into `css/v2.components.css`; generated visual elements move through named Images 2.0 slots such as seals, badges, textures, instruments, transparent cutouts, compact sprites, frame corners, state meters, and bounded hero details.
 
@@ -216,6 +216,7 @@ Latest object cutout report: `docs/night-runs/2026-06-02-object-cutout-pass.md`.
 Latest sprite sheet report: `docs/night-runs/2026-06-02-sprite-route-status-pass.md`.
 Latest frame corner report: `docs/night-runs/2026-06-02-frame-corner-pass.md`.
 Latest state meter report: `docs/night-runs/2026-06-02-state-meter-pass.md`.
+Latest state meter helper report: `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`.
 Current visual lane wrap-up: `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md`.
 
 The visual slot gallery lives at `v2/assets.html`. It shows canonical Images 2.0 slots with role, use, format, and fallback so future surfaces can choose visual elements from a visible system inventory.
@@ -262,3 +263,4 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 
 - `docs/night-runs/2026-06-02-route-list-promotion.md`: `.v2-route-list` moved from recipe CSS into shared components after proving stable across three production surfaces.
 - `docs/night-runs/2026-06-02-promotion-audit-v2-1.md`: `.v2-status-mark` moved into shared components after Build Brief Desk and Agent Readiness Ledger repeated the same sprite/status marker role.
+- `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`: `.v2-state-meter-strip` moved the repeated `state-meter-readiness` image frame into shared components while keeping meter panels and signal wrappers local.

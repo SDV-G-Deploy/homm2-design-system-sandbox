@@ -901,22 +901,8 @@
 }
 
 .v2-brief-meter-strip {
-  display: grid;
-  place-items: center;
   margin: -2px 0 0;
-  padding: 8px;
-  background:
-    linear-gradient(90deg, rgba(136, 199, 189, .1), rgba(213, 138, 44, .1)),
-    rgba(6, 21, 18, .28);
-  border: 1px solid rgba(255, 225, 150, .18);
-  border-radius: 7px;
-}
-
-.v2-brief-meter-strip picture,
-.v2-brief-meter-strip img {
-  display: block;
-  width: min(100%, 260px);
-  height: auto;
+  --v2-state-meter-width: 260px;
 }
 
 .v2-brief-output h2 {
@@ -1092,8 +1078,6 @@
 
 .v2-agent-seal picture,
 .v2-agent-seal img,
-.v2-agent-meter picture,
-.v2-agent-meter img,
 .v2-agent-handoff picture,
 .v2-agent-handoff img {
   display: block;
@@ -1131,19 +1115,6 @@
   display: grid;
   gap: 14px;
   align-content: start;
-}
-
-.v2-agent-meter picture {
-  display: grid;
-  place-items: center;
-  padding: 8px;
-  background: rgba(6, 21, 18, .28);
-  border: 1px solid rgba(255, 225, 150, .18);
-  border-radius: 7px;
-}
-
-.v2-agent-meter img {
-  width: min(100%, 280px);
 }
 
 .v2-agent-proof h2 {
@@ -1274,7 +1245,6 @@
 }
 
 .v2-charter-signal picture,
-.v2-charter-meter picture,
 .v2-charter-object picture {
   display: grid;
   place-items: center;
@@ -1311,19 +1281,6 @@
   display: grid;
   gap: 14px;
   align-content: start;
-}
-
-.v2-charter-meter picture {
-  padding: 8px;
-  background: rgba(6, 21, 18, .28);
-  border: 1px solid rgba(255, 225, 150, .18);
-  border-radius: 7px;
-}
-
-.v2-charter-meter img {
-  display: block;
-  width: min(100%, 280px);
-  height: auto;
 }
 
 .v2-charter-proof h2 {

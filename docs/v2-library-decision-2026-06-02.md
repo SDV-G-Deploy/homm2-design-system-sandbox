@@ -177,4 +177,8 @@ After the Agent Readiness Ledger surface added a second production use for the s
 
 Report: `docs/night-runs/2026-06-02-promotion-audit-v2-1.md`.
 
-The next promotion candidate remains narrow: possibly a compact signal/badge pattern or state-meter wrapper after more surfaces prove a stable slot. Hero shells, side instruments, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.
+After the state/signal helper and critic audits, `.v2-state-meter-strip` was promoted as a narrow Images 2.0 asset-frame helper for the repeated `state-meter-readiness` slot across Build Brief Desk, Agent Readiness Ledger, and Site Charter Forge.
+
+Report: `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`.
+
+The next promotion candidate remains narrow: possibly a compact signal/badge pattern after more surfaces prove the same slot anatomy. Hero shells, side instruments, meter panels, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.
