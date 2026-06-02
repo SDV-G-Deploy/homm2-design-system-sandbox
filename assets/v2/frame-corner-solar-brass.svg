@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Solar brass frame corner">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFF0B8"/>
+      <stop offset=".48" stop-color="#D58A2C"/>
+      <stop offset="1" stop-color="#7D4417"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#C9F4E9"/>
+      <stop offset=".55" stop-color="#88C7BD"/>
+      <stop offset="1" stop-color="#2A756D"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="none"/>
+  <path d="M16 112V22c0-3 3-6 6-6h90v18H38c-3 0-5 2-5 5v73Z" fill="#10261F" stroke="#FFE1A0" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M26 104V35c0-5 4-9 9-9h69" fill="none" stroke="url(#brass)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M40 92V48c0-5 3-8 8-8h44" fill="none" stroke="#5A3920" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="38" cy="38" r="13" fill="url(#water)" stroke="#FFF6D3" stroke-width="4"/>
+  <circle cx="38" cy="38" r="5" fill="#10261F" stroke="#D58A2C" stroke-width="3"/>
+  <path d="M72 25 82 16 92 25 82 34Z" fill="url(#brass)" stroke="#FFF6D3" stroke-width="2"/>
+  <path d="M18 82c20-6 36-3 48 9" fill="none" stroke="#88C7BD" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+</svg>

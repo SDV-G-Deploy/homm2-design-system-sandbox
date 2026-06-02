@@ -29,6 +29,7 @@ Updated:
 - `texture-brief-grid`
 - `object-brief-desk`
 - `sprite-route-status`
+- `frame-corner-solar-brass`
 
 ## Boundary
 
@@ -39,8 +40,8 @@ It should not promote new components by itself. Its purpose is to make the visua
 ## Next Visual Candidates
 
 - bounded hero detail bitmap;
-- frame corner bitmap;
 - state meter strip.
+- ledger divider ornament.
 
 ## Verification
 

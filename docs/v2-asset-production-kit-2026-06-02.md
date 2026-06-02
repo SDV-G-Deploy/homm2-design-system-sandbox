@@ -79,6 +79,7 @@ Current canonical V2 slots:
 - texture-brief-grid - quiet repeatable brief-output texture, shipped as SVG source plus optimized WebP tile.
 - object-brief-desk - transparent work-object cutout, shipped as SVG source plus PNG alpha output.
 - sprite-route-status - compact route/status marks, shipped as SVG source plus optimized WebP sprite sheet.
+- frame-corner-solar-brass - compact frame corner detail, shipped as SVG source plus optimized WebP.
 
 Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
 
@@ -451,6 +452,8 @@ Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrum
 `seal-archive-reading.svg` and optimized `seal-archive-reading.webp` are implemented as the first SVG-to-WebP production asset pass and applied in `sites/product-map-field-note/index.html`.
 
 `sprite-route-status.svg` and optimized `sprite-route-status.webp` are implemented as the first compact sprite sheet and applied in `sites/build-brief-desk/index.html` as non-semantic output-card marks.
+
+`frame-corner-solar-brass.svg` and optimized `frame-corner-solar-brass.webp` are implemented as the first compact frame corner bitmap and applied to `sites/build-brief-desk/index.html` as non-semantic output-frame detail.
 
 ### Priority 2
 

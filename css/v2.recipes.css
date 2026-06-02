@@ -770,11 +770,42 @@
 }
 
 .v2-brief-output {
+  position: relative;
+  overflow: hidden;
   background:
     url("../assets/v2/texture-brief-grid.webp") center / 180px 180px,
     radial-gradient(circle at 82% 18%, rgba(136, 199, 189, .2), transparent 12rem),
     linear-gradient(180deg, rgba(255, 229, 154, .1), transparent 45%),
     linear-gradient(145deg, #20140f, #10261f);
+}
+
+.v2-brief-output::before,
+.v2-brief-output::after {
+  position: absolute;
+  z-index: 0;
+  width: 74px;
+  height: 74px;
+  content: "";
+  pointer-events: none;
+  background: url("../assets/v2/frame-corner-solar-brass.webp") center / contain no-repeat;
+  opacity: .9;
+}
+
+.v2-brief-output::before {
+  top: 10px;
+  right: 10px;
+  transform: rotate(90deg);
+}
+
+.v2-brief-output::after {
+  right: 10px;
+  bottom: 10px;
+  transform: rotate(180deg);
+}
+
+.v2-brief-output > * {
+  position: relative;
+  z-index: 1;
 }
 
 .v2-brief-copy h1,
@@ -1010,6 +1041,7 @@
   display: grid;
   gap: 14px;
   min-width: 0;
+  scroll-margin-top: 88px;
   padding: 14px;
   color: #fff2c1;
   background:
@@ -1053,6 +1085,27 @@
 
 .v2-asset-object-preview img {
   width: min(100%, 220px);
+}
+
+.v2-asset-frame-corner-preview {
+  background:
+    linear-gradient(135deg, rgba(255, 246, 211, .16), transparent 46%),
+    linear-gradient(145deg, #20140f, #10261f);
+}
+
+.v2-asset-frame-corner-preview img {
+  width: min(100%, 128px);
+}
+
+.v2-asset-frame-corner-preview::after {
+  width: 110px;
+  height: 110px;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 225, 150, .2), transparent 42%),
+    linear-gradient(180deg, rgba(255, 225, 150, .2), transparent 42%);
+  border-top: 1px solid rgba(255, 225, 150, .34);
+  border-left: 1px solid rgba(255, 225, 150, .34);
 }
 
 .v2-asset-sprite-preview {
