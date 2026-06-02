@@ -6,12 +6,12 @@ V2 is the current recommended HoMM2 x Solarpunk implementation path for new work
 
 The system is stable enough to build new static pages and small sites from the V2 starter/recipe kit. It should still be treated as a controlled sandbox and production recipe kit, not as an npm package or a formal component library.
 
-## Current Head
+## Baseline Head
 
-- Latest commit: `401ebac ci: update pages actions`
-- Latest design commit: `fe0b94c feat: add product map field note`
-- Latest Pages run: `26818185487`
-- Deploy status: success
+- Baseline infra commit before this checkpoint: `401ebac ci: update pages actions`
+- Baseline design commit: `fe0b94c feat: add product map field note`
+- Baseline Pages run: `26818185487`
+- Baseline deploy status: success
 
 ## Live Proofs
 
