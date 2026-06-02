@@ -209,6 +209,8 @@ Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/Web
 
 Latest asset production pass: `assets/v2/seal-archive-reading.svg` and `assets/v2/seal-archive-reading.webp` are applied in `sites/product-map-field-note/` as the first SVG-to-WebP dossier/article asset slot.
 
+V2 now treats visual generation as a parallel lane to component promotion. Components move repeated HTML/CSS into `css/v2.components.css`; generated visual elements move through named Images 2.0 slots such as seals, badges, textures, instruments, transparent cutouts, and bounded hero details.
+
 ## Latest Real Site Proof
 
 **ANT School landing v2** lives in `sites/ant-school-landing-v2/` and is the first separate real-site proof built from the V2 starter direction.
@@ -237,4 +239,4 @@ Use it before the next broad pass. It records current heads, live proofs, verifi
 
 V2 should remain a repo-native production recipe kit for now, not an npm package or formal component library.
 
-The decision record is `docs/v2-library-decision-2026-06-02.md`. The next useful engineering pass is a promotion audit: move only repeated stable patterns from page-local recipe classes into shared components.
+The decision record is `docs/v2-library-decision-2026-06-02.md`. The first promotion result is `docs/night-runs/2026-06-02-route-list-promotion.md`: `.v2-route-list` moved from recipe CSS into shared components after proving stable across three production surfaces.

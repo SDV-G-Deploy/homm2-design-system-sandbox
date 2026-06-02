@@ -21,6 +21,7 @@ The production kit is split into shared primitives first, then page recipes, wit
 3. **Shared surfaces and components**
    - `.v2-hero`, `.v2-panel`, `.v2-ledger`, `.v2-command`, `.v2-lens-module`, `.v2-status-list`, `.v2-route-list`.
    - File: `css/v2.components.css`.
+   - Note: `.v2-route-list` was physically promoted into this file on 2026-06-02 after repeated production use across three surfaces.
 
 4. **Reference / proof board**
    - `.v2-reference-*`, `.v2-primitive-*`, proof-only board composition.

@@ -35,6 +35,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/v2-starter-kit-2026-06-01.md` defines page modes, chrome, content budgets, components, and recipes.
 - `docs/v2-asset-production-kit-2026-06-02.md` defines the controlled path for SVG/PNG/WebP visual assets, including V2 Images 2.0 Mode.
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
+- `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -73,3 +74,8 @@ The best next pass is one of these, in order:
 3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit. Completed after this checkpoint: keep recipe kit, defer npm/component package, run promotion audit next.
 
 The next useful engineering pass is a promotion audit across recent production surfaces, moving only repeated stable patterns into shared components.
+
+After the first promotion, continue with two parallel lanes:
+
+1. Component promotion: consider only the compact signal/badge pattern next; keep hero shells, side instruments, action pairs, output rails, and CTA ledger endings deferred.
+2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, and bounded PNG/WebP hero details.

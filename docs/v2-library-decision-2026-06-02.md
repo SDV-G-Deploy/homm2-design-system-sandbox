@@ -104,6 +104,22 @@ Decision: keep local / promote to component / defer
 
 This prevents the CSS from becoming a pile of attractive exceptions.
 
+### Keep visual generation as a separate lane
+
+The component promotion track is not the same thing as the visual asset track.
+
+V2 should continue to grow generated or hand-produced visual elements through `docs/v2-asset-production-kit-2026-06-02.md`, especially:
+
+- threshold assets;
+- seals and badges;
+- water-lens instruments;
+- vellum, fiber, metal, and garden-civic textures;
+- transparent object cutouts;
+- bounded PNG/WebP hero details;
+- compact sprite-like UI ornaments.
+
+These assets should be produced for named slots with fallbacks and mobile checks. They should not become full-page screenshots, baked text, or uncontrolled decoration.
+
 ## Package Readiness Gates
 
 V2 can be reconsidered for an npm/component package when all of these are true:
@@ -151,3 +167,10 @@ The best next engineering pass is not package creation. It is a **promotion audi
 
 After that, package readiness can be judged with better evidence.
 
+## First Promotion Result
+
+After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.
+
+Report: `docs/night-runs/2026-06-02-route-list-promotion.md`.
+
+The next promotion candidate remains narrower: a compact signal/badge pattern. Hero shells, side instruments, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.
