@@ -215,3 +215,9 @@ It adds the first asset-pass motifs from the asset production kit: `threshold-an
 **Product Map Field Note** lives in `sites/product-map-field-note/`.
 
 It proves the V2 production dossier/article recipe on a real ANT-adjacent topic: a readable field note, product-map route rows, readiness lens, and one compact action path without sandbox vocabulary.
+
+## Current Checkpoint
+
+The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.
+
+Use it before the next broad pass. It records current heads, live proofs, verification, cleanliness, and the recommended next-pass order.
