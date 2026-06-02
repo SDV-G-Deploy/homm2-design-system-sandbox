@@ -71,6 +71,7 @@ Current acceptance note:
 - `docs/v2-acceptance-2026-06-01.md`
 - `docs/v2-starter-kit-2026-06-01.md`
 - `docs/v2-asset-production-kit-2026-06-02.md`
+- `docs/v2-library-decision-2026-06-02.md`
 
 ## Archive Boundary
 
@@ -231,3 +232,9 @@ It proves a compact production work surface for turning a product map into an ag
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.
 
 Use it before the next broad pass. It records current heads, live proofs, verification, cleanliness, and the recommended next-pass order.
+
+## Current Library Decision
+
+V2 should remain a repo-native production recipe kit for now, not an npm package or formal component library.
+
+The decision record is `docs/v2-library-decision-2026-06-02.md`. The next useful engineering pass is a promotion audit: move only repeated stable patterns from page-local recipe classes into shared components.

@@ -34,6 +34,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `starters/v2-site-starter/` is the current copyable plain-HTML starter.
 - `docs/v2-starter-kit-2026-06-01.md` defines page modes, chrome, content budgets, components, and recipes.
 - `docs/v2-asset-production-kit-2026-06-02.md` defines the controlled path for SVG/PNG/WebP visual assets, including V2 Images 2.0 Mode.
+- `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -69,6 +70,6 @@ The best next pass is one of these, in order:
 
 1. **Images 2.0 documentation pass:** formalize the V2 bitmap/image-assisted slot contract. Completed after this checkpoint in `docs/v2-asset-production-kit-2026-06-02.md`.
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page. Completed after this checkpoint with `sites/build-brief-desk/`.
-3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit.
+3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit. Completed after this checkpoint: keep recipe kit, defer npm/component package, run promotion audit next.
 
-The next decision can now evaluate packaging, but the default should still remain repo-native recipe kit unless repeated production work shows a concrete need for an npm/component library.
+The next useful engineering pass is a promotion audit across recent production surfaces, moving only repeated stable patterns into shared components.
