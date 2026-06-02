@@ -202,7 +202,7 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 
 **V2 asset production kit** defines how to create non-HTML visual elements for the system: threshold assets, textures, badges, seals, water-lens instruments, transparent object cutouts, bitmap hero details, naming, formats, optimization, and visual QA.
 
-Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs.
+Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs. It now includes the canonical **V2 Images 2.0 Mode** contract for bitmap/image-assisted slots.
 
 Latest asset production pass: `assets/v2/seal-archive-reading.svg` and `assets/v2/seal-archive-reading.webp` are applied in `sites/product-map-field-note/` as the first SVG-to-WebP dossier/article asset slot.
 

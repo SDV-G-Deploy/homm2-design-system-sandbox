@@ -22,6 +22,69 @@ Solarpunk owns the condition: civic infrastructure, solar hardware, water sensin
 
 Do not use generated images to compensate for weak page structure, unclear component grammar, or poor mobile layout.
 
+## V2 Images 2.0 Mode
+
+Images 2.0 is the official V2 workflow for adding bitmap or image-assisted visual elements without turning pages into static illustrations.
+
+It continues the older Art Asset Layer pilot in assets/README.md and assets/generated/, but V2 makes the contract stricter:
+
+- CSS owns layout, responsive behavior, states, typography, labels, and accessible text.
+- HTML owns semantic content and copy.
+- Images own only bounded material, object, texture, sprite, or atmosphere slots.
+- Every image slot must be named before production starts.
+- Every image slot must have a fallback: SVG fallback, CSS-only fallback, or a documented acceptable blank state.
+- No readable text, UI labels, buttons, prices, metrics, or navigation may live inside generated images.
+- Generated imagery may strengthen HoMM2 material presence and Solarpunk condition, but must not replace component grammar.
+
+Use Images 2.0 when one of these is true:
+
+- the page needs a real object, seal, scene detail, texture, or sprite that CSS/SVG alone would make too sterile;
+- the asset has a clear component or recipe slot;
+- the asset can be removed without breaking the page's layout or meaning;
+- the image improves first-screen identity, material credibility, or state readability.
+
+Do not use Images 2.0 for:
+
+- page layout;
+- text rendering;
+- buttons or interactive states;
+- decorative filler;
+- generic green scenery;
+- one-off art that has no owning component or recipe.
+
+### Images 2.0 Production Shape
+
+Each image pass should record these fields before production:
+
+~~~txt
+Slot name: [role-subject]
+Owning surface: [page/component/recipe]
+Asset type: [SVG source / generated PNG / WebP / sprite / texture]
+Meaning: [state, route, object, threshold, reading, inspection, restoration]
+Fallback: [CSS-only / SVG / blank acceptable / existing component]
+Size budget: [target KB and dimensions]
+Forbidden content: text, labels, buttons, fake UI, unrelated decoration
+Verification: smoke + changed-page visual capture + mobile crop check
+~~~
+
+### Canonical V2 Image Slots
+
+Current canonical V2 slots:
+
+- threshold-ant-guild - ANT School first-screen threshold motif.
+- badge-product-map - compact product-map route badge.
+- instrument-readiness-lens - water-lens readiness instrument.
+- seal-archive-reading - dossier/article archive-reading seal, shipped as SVG source plus optimized WebP.
+
+Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
+
+- menu-frame-corner
+- menu-frame-edge-x
+- menu-frame-edge-y
+- route-badge-sprite
+
+For new work, prefer the V2 slot contract in this document.
+
 ## Current Asset Baseline
 
 Existing V2 assets:

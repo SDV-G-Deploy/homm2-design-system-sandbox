@@ -32,7 +32,7 @@ The system is stable enough to build new static pages and small sites from the V
   - `css/v2.responsive.css`
 - `starters/v2-site-starter/` is the current copyable plain-HTML starter.
 - `docs/v2-starter-kit-2026-06-01.md` defines page modes, chrome, content budgets, components, and recipes.
-- `docs/v2-asset-production-kit-2026-06-02.md` defines the controlled path for SVG/PNG/WebP visual assets.
+- `docs/v2-asset-production-kit-2026-06-02.md` defines the controlled path for SVG/PNG/WebP visual assets, including V2 Images 2.0 Mode.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -65,7 +65,7 @@ The wider workspace root has unrelated memory/skill/doc artifacts. Do not delete
 
 The best next pass is one of these, in order:
 
-1. **Asset production pass:** add one controlled bitmap/SVG asset slot from `docs/v2-asset-production-kit-2026-06-02.md`, then optimize and verify it in a real page slot. Completed after this checkpoint with `seal-archive-reading.svg` + `seal-archive-reading.webp`.
+1. **Images 2.0 documentation pass:** formalize the V2 bitmap/image-assisted slot contract. Completed after this checkpoint in `docs/v2-asset-production-kit-2026-06-02.md`.
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page.
 3. **Library decision pass:** only after another asset or surface pass, decide whether V2 needs a formal component package or should remain a repo-native recipe kit.
 

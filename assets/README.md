@@ -2,6 +2,12 @@
 
 This directory holds bounded image-assisted assets for the HOMM2 / Fairy design system.
 
+For new HoMM2 x Solarpunk V2 work, use the stricter Images 2.0 contract in:
+
+- docs/v2-asset-production-kit-2026-06-02.md
+
+The assets documented below are the older pilot evidence for the same direction. They remain useful as examples of bounded image slots, CSS ownership, and fallback behavior, but they are not the canonical starting point for new V2 pages.
+
 Rules:
 
 - CSS owns layout, states, copy, localization and responsive behavior.
