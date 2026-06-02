@@ -182,3 +182,7 @@ After the state/signal helper and critic audits, `.v2-state-meter-strip` was pro
 Report: `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`.
 
 The next promotion candidate remains narrow: possibly a compact signal/badge pattern after more surfaces prove the same slot anatomy. Hero shells, side instruments, meter panels, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.
+
+After the Workshop Schedule Ledger added a third compact icon + label/value proof, `.v2-signal-badge` was promoted as a narrow helper. It shares only the compact badge anatomy; page-local classes still own background, border, icon size, and emphasis. Large signal wrappers remain deferred.
+
+Report: `docs/night-runs/2026-06-02-signal-badge-promotion.md`.

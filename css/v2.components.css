@@ -298,6 +298,41 @@
   border-radius: 999px;
 }
 
+.v2-signal-badge {
+  --v2-signal-badge-icon: 76px;
+  display: grid;
+  grid-template-columns: var(--v2-signal-badge-icon) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 7px;
+}
+
+.v2-signal-badge img {
+  display: block;
+  width: var(--v2-signal-badge-icon);
+  height: var(--v2-signal-badge-icon);
+}
+
+.v2-signal-badge span,
+.v2-signal-badge strong {
+  display: block;
+  min-width: 0;
+}
+
+.v2-signal-badge span {
+  color: #d5bc82;
+  font-size: .8rem;
+}
+
+.v2-signal-badge strong {
+  margin-top: 3px;
+  color: #fff6ce;
+  font-family: Vollkorn, Georgia, serif;
+  line-height: 1.08;
+}
+
 .v2-status-mark {
   --v2-status-mark-size: 36px;
   --v2-status-mark-sheet-width: 144px;
