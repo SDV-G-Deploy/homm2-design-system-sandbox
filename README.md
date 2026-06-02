@@ -209,3 +209,9 @@ Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/Web
 **ANT School landing v2** lives in `sites/ant-school-landing-v2/` and is the first separate real-site proof built from the V2 starter direction.
 
 It adds the first asset-pass motifs from the asset production kit: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrument-readiness-lens.svg`.
+
+## Latest Article / Dossier Site Proof
+
+**Product Map Field Note** lives in `sites/product-map-field-note/`.
+
+It proves the V2 production dossier/article recipe on a real ANT-adjacent topic: a readable field note, product-map route rows, readiness lens, and one compact action path without sandbox vocabulary.

@@ -190,6 +190,8 @@ Structure:
 
 Reference: `v2/dossier.html`.
 
+Production example: `sites/product-map-field-note/index.html`.
+
 ### Reference Board
 
 Use only for system documentation and internal proof.

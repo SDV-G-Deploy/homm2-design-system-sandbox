@@ -220,6 +220,23 @@
     align-items: start;
   }
 
+  .v2-note-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+    align-items: end;
+    padding: 28px;
+  }
+
+  .v2-note-body {
+    grid-template-columns: minmax(0, 1.14fr) minmax(280px, .86fr);
+    align-items: start;
+  }
+
+  .v2-note-map {
+    grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+    align-items: start;
+    padding: 28px;
+  }
+
   .v2-trial-proof {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     align-items: end;

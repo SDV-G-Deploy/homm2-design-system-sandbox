@@ -666,6 +666,124 @@
   text-underline-offset: 3px;
 }
 
+/* V2 page recipe: production dossier / article note. */
+.v2-note-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-note-hero,
+.v2-note-map {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  color: #fff2c1;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(136, 199, 189, .18), transparent 12rem),
+    linear-gradient(180deg, rgba(255, 229, 154, .11), transparent 45%),
+    linear-gradient(145deg, #21140f, #10271f);
+  border: 1px solid rgba(255, 220, 130, .42);
+  border-radius: var(--v2-radius);
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .05), 0 16px 34px rgba(45, 25, 12, .24);
+}
+
+.v2-note-copy h1,
+.v2-note-side h2,
+.v2-note-map h2,
+.v2-note-use h2 {
+  margin: 0;
+  max-width: 17ch;
+  font-family: Vollkorn, Georgia, serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.v2-note-copy h1 {
+  color: #fff8d3;
+  font-size: clamp(2rem, 8.6vw, 3.35rem);
+}
+
+.v2-note-copy p {
+  margin: 16px 0 0;
+  max-width: 56ch;
+  color: #ead9a5;
+  font-size: 1.06rem;
+  line-height: 1.46;
+}
+
+.v2-note-instrument {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .12), transparent 34%, rgba(213, 138, 44, .1)),
+    rgba(12, 34, 29, .7);
+  border: 1px solid rgba(136, 199, 189, .3);
+  border-radius: 7px;
+}
+
+.v2-note-instrument img {
+  width: 78px;
+  height: 78px;
+}
+
+.v2-note-instrument span {
+  display: block;
+  color: #d5bc82;
+  font-size: .8rem;
+}
+
+.v2-note-instrument strong {
+  display: block;
+  margin-top: 3px;
+  color: #fff6ce;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.04rem;
+  line-height: 1.08;
+}
+
+.v2-note-body {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-note-ledger,
+.v2-note-side,
+.v2-note-use {
+  margin-top: 0;
+}
+
+.v2-note-ledger h2 {
+  max-width: 18ch;
+}
+
+.v2-note-ledger p {
+  max-width: 62ch;
+}
+
+.v2-note-ledger .v2-command,
+.v2-note-use .v2-command {
+  margin-top: 18px;
+}
+
+.v2-note-side {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.v2-note-side img {
+  width: min(100%, 250px);
+  height: auto;
+  justify-self: center;
+}
+
+.v2-note-map .v2-route-list {
+  margin-top: 0;
+}
+
 .v2-status-list {
   display: grid;
   gap: 8px;

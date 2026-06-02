@@ -12,7 +12,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - **Mobile navigation:** V2 uses a compact topbar and shorter route labels instead of large stacked command blocks.
 - **Graphic strength:** V2 uses bounded asset roles (`solar-civic-gate`, `solar-badge`, `water-lens`, `vellum-grain`) instead of relying only on weak CSS scenery.
 - **Content budget:** V2 proves Russian and English labels on narrow screens, including command text and status rows.
-- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, ANT School production example, and compact service/booking example. It is not only a hero proof.
+- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, ANT School production example, compact service/booking example, and real article/dossier site. It is not only a hero proof.
 
 ## Canonical V2 Surfaces
 
@@ -26,6 +26,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/canopy-clinic.html` - compact service/booking recipe.
 - `starters/v2-site-starter/index.html` - copyable V2 landing starter.
 - `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path.
+- `sites/product-map-field-note/index.html` - production dossier/article proof for an ANT-adjacent field note.
 - `css/v2.css` - compatibility entrypoint for the split V2 styling layer.
 - `css/v2.tokens.css`, `css/v2.shell.css`, `css/v2.components.css`, `css/v2.reference.css`, `css/v2.recipes.css`, `css/v2.responsive.css` - authoring layers.
 - `assets/v2/*` - bounded reusable asset motifs.
@@ -96,3 +97,9 @@ This pass keeps `css/v2.css` as the stable page-facing URL and moves authoring i
 **V2 asset production kit.**
 
 This pass defines the controlled production path for non-HTML visual elements: threshold assets, surface textures, object UI motifs, water-lens instruments, page-recipe hero details, naming, format rules, optimization gates, and a first asset backlog.
+
+## Latest Article / Dossier Site
+
+**Product Map Field Note.**
+
+This pass adds a real production dossier/article page under `sites/product-map-field-note/`. It checks the reading-heavy recipe outside the sandbox path with short production navigation, a field-note article body, product-map route rows, readiness lens, and one action ledger.
