@@ -46,7 +46,13 @@ Current V2 proof surfaces:
 
 Shared V2 system files:
 
-- `css/v2.css`
+- `css/v2.css` - compatibility entrypoint
+- `css/v2.tokens.css`
+- `css/v2.shell.css`
+- `css/v2.components.css`
+- `css/v2.reference.css`
+- `css/v2.recipes.css`
+- `css/v2.responsive.css`
 - `assets/v2/solar-civic-gate.svg`
 - `assets/v2/solar-badge.svg`
 - `assets/v2/water-lens.svg`
@@ -169,3 +175,14 @@ The next high-leverage step is one more real product recipe without sandbox voca
 **V2 slice 10 - Canopy Clinic service recipe** adds a compact service/booking page for yard water care.
 
 It proves a lighter first screen, page-local navigation, a care route, a visit signal, and a booking ledger without sandbox vocabulary.
+
+## Latest CSS Split
+
+**V2 slice 11 - physical CSS split** turns `css/v2.css` into a compatibility entrypoint and moves V2 authoring into six ordered CSS layers:
+
+- tokens;
+- shell;
+- shared components;
+- reference-only styles;
+- page recipes;
+- responsive contracts.

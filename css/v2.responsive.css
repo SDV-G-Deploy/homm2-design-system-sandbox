@@ -1,0 +1,200 @@
+/* V2 boundary: responsive contracts for shared primitives and page recipes. */
+@media (min-width: 680px) {
+  .v2-topbar {
+    min-height: 72px;
+    padding-inline: 24px;
+  }
+
+  .v2-nav {
+    max-width: none;
+  }
+
+  .v2-production-page .v2-nav a {
+    padding-inline: 12px;
+  }
+
+  .v2-production-page .v2-brand {
+    grid-template-columns: 38px minmax(0, 1fr);
+    width: auto;
+  }
+
+  .v2-production-page .v2-brand > span:not(.v2-sigil) {
+    display: block;
+  }
+
+  .v2-shell {
+    width: min(100%, 1180px);
+    padding: 28px 24px 70px;
+  }
+
+  .v2-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+    grid-template-areas: "art rail";
+    gap: 16px;
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .v2-proofbar {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    z-index: 3;
+    max-width: calc(58% - 28px);
+    padding-bottom: 0;
+  }
+
+  .v2-artframe {
+    grid-area: art;
+  }
+
+  .v2-command-row {
+    grid-area: rail;
+    align-content: end;
+    margin-top: 0;
+  }
+
+  .v2-artframe {
+    min-height: 560px;
+  }
+
+  .v2-artframe img {
+    height: 384px;
+  }
+
+  .v2-route-card h1 {
+    max-width: 16ch;
+    font-size: clamp(3rem, 5vw, 4.9rem);
+  }
+
+  .v2-command {
+    min-height: 56px;
+  }
+
+  .v2-civic-rail {
+    align-self: end;
+  }
+
+  .v2-panel,
+  .v2-ledger {
+    padding: 28px;
+  }
+
+  .v2-lens-module,
+  .v2-status-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-lens-module div,
+  .v2-status-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .v2-reference-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-primitive-art {
+    grid-column: span 3;
+  }
+
+  .v2-dossier-shell {
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
+    align-items: start;
+  }
+
+  .v2-trial-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-control-hero,
+  .v2-control-actions {
+    grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+    align-items: end;
+    padding: 28px;
+  }
+
+  .v2-control-hero .v2-proofbar {
+    position: static;
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .v2-control-summary,
+  .v2-control-command-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-control-board {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+    align-items: start;
+  }
+
+  .v2-ant-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-ant-actions {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .v2-ant-map {
+    align-content: end;
+  }
+
+  .v2-ant-program {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    align-items: start;
+  }
+
+  .v2-ant-guild {
+    grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+    align-items: start;
+    padding: 28px;
+  }
+
+  .v2-ant-roles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-clinic-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-clinic-actions {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .v2-clinic-card {
+    display: grid;
+    align-content: end;
+    padding: 22px;
+  }
+
+  .v2-clinic-care {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    align-items: start;
+  }
+
+  .v2-trial-proof {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    align-items: end;
+  }
+
+  .v2-dossier-head,
+  .v2-reading-card {
+    grid-column: 1;
+  }
+
+  .v2-dossier-meter {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    position: sticky;
+    top: 92px;
+  }
+}

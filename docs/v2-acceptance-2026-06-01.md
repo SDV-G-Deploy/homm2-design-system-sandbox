@@ -24,7 +24,8 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/control.html` - operational board recipe.
 - `v2/ant-school.html` - new-topic production example.
 - `v2/canopy-clinic.html` - compact service/booking recipe.
-- `css/v2.css` - shared V2 styling layer.
+- `css/v2.css` - compatibility entrypoint for the split V2 styling layer.
+- `css/v2.tokens.css`, `css/v2.shell.css`, `css/v2.components.css`, `css/v2.reference.css`, `css/v2.recipes.css`, `css/v2.responsive.css` - authoring layers.
 - `assets/v2/*` - bounded reusable asset motifs.
 - `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
 
@@ -78,3 +79,9 @@ This pass removes visible demo/proof vocabulary from production-like pages and a
 **V2 slice 10 - Canopy Clinic service recipe.**
 
 This pass adds a lighter service/booking page with product-local navigation, compact first screen, care route, visit signal, and booking ledger. It is the first V2 recipe meant to test a local service flow rather than a school, launch page, dossier, or control board.
+
+## Latest CSS Split
+
+**V2 slice 11 - physical CSS split.**
+
+This pass keeps `css/v2.css` as the stable page-facing URL and moves authoring into six ordered files: tokens, shell, shared components, reference-only layer, page recipes, and responsive contracts.

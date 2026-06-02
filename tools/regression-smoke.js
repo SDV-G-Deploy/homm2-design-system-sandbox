@@ -30,9 +30,9 @@ const TARGETS = [
   ["V2 mobile gateway smoke", "/v2/index.html", "v2"],
   ["V2 primitive board smoke", "/v2/reference.html", "v2"],
   ["V2 applied dossier smoke", "/v2/dossier.html", "v2"],
-  ["V2 real page trial smoke", "/v2/trial.html", "v2"],
-  ["V2 control board trial smoke", "/v2/control.html", "v2"],
-  ["V2 ANT School production trial smoke", "/v2/ant-school.html", "v2"],
+  ["V2 launch page smoke", "/v2/trial.html", "v2"],
+  ["V2 control board smoke", "/v2/control.html", "v2"],
+  ["V2 ANT School production smoke", "/v2/ant-school.html", "v2"],
   ["V2 Canopy Clinic service smoke", "/v2/canopy-clinic.html", "v2"],
 ];
 

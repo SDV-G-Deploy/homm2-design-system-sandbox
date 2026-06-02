@@ -218,16 +218,17 @@ Before a V2 page is considered done:
 
 ## Next Extraction Target
 
-If V2 keeps growing, split `css/v2.css` into:
+V2 CSS is now split behind the compatibility entrypoint `css/v2.css`:
 
-- tokens;
-- shell/chrome;
-- surfaces;
-- controls/state;
-- page-local recipe styles.
+- `css/v2.tokens.css`;
+- `css/v2.shell.css`;
+- `css/v2.components.css`;
+- `css/v2.reference.css`;
+- `css/v2.recipes.css`;
+- `css/v2.responsive.css`.
 
 Latest page-local recipe marker: `.v2-clinic-*` for compact service/booking pages.
 
-Do this only after another applied page proves the current class names are stable.
+Keep page HTML linked to `css/v2.css` until there is a clear delivery reason to expose multiple stylesheet links.
 
 Current extraction map: `docs/v2-css-boundary-2026-06-01.md`.
