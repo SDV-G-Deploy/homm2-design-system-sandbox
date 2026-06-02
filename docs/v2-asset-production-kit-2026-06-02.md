@@ -381,6 +381,8 @@ Run these checks when adding or changing assets on a page:
 
 Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrument-readiness-lens.svg` are implemented as the first SVG asset pass and applied in `sites/ant-school-landing-v2/index.html`.
 
+`seal-archive-reading.svg` and optimized `seal-archive-reading.webp` are implemented as the first SVG-to-WebP production asset pass and applied in `sites/product-map-field-note/index.html`.
+
 ### Priority 2
 
 - seal-service-route - compact booking/service route seal.
@@ -391,7 +393,7 @@ Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrum
 ### Priority 3
 
 - threshold-canopy-clinic - service booking hero detail for local care/repair pages.
-- archive-reading-seal - dossier/article page seal.
+- archive-reading-seal - dossier/article page seal. Implemented as `seal-archive-reading.svg` + `seal-archive-reading.webp`.
 - control-board-dial - operational board instrument detail.
 - guild-desk-object - education/workshop object cutout for ANT-like pages.
 

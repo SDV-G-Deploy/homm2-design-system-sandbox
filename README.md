@@ -204,6 +204,8 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 
 Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs.
 
+Latest asset production pass: `assets/v2/seal-archive-reading.svg` and `assets/v2/seal-archive-reading.webp` are applied in `sites/product-map-field-note/` as the first SVG-to-WebP dossier/article asset slot.
+
 ## Latest Real Site Proof
 
 **ANT School landing v2** lives in `sites/ant-school-landing-v2/` and is the first separate real-site proof built from the V2 starter direction.

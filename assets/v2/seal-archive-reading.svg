@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Archive reading seal</title>
+  <desc id="desc">A solar-civic fantasy archive seal with brass frame, vellum ledger, water lens, and route markers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d120c"/>
+      <stop offset="0.48" stop-color="#123127"/>
+      <stop offset="1" stop-color="#26170d"/>
+    </linearGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.45" stop-color="#c7802a"/>
+      <stop offset="1" stop-color="#704018"/>
+    </linearGradient>
+    <linearGradient id="vellum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3ba"/>
+      <stop offset="0.62" stop-color="#e5b961"/>
+      <stop offset="1" stop-color="#b8752a"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="50%" cy="44%" r="52%">
+      <stop offset="0" stop-color="#e9fff2" stop-opacity="0.95"/>
+      <stop offset="0.28" stop-color="#b8efe5" stop-opacity="0.82"/>
+      <stop offset="0.62" stop-color="#4f9287" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#132c28"/>
+    </radialGradient>
+    <pattern id="grain" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M2 11c9-6 22-6 38 0M5 30c11 5 23 5 34 0" fill="none" stroke="#7a4b1d" stroke-opacity="0.16" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="720" height="520" rx="28" fill="url(#bg)"/>
+  <path d="M42 56h636v408H42z" fill="none" stroke="url(#brass)" stroke-width="10"/>
+  <path d="M70 84h580v352H70z" fill="none" stroke="#fff0a8" stroke-opacity="0.18" stroke-width="3"/>
+
+  <path d="M178 150h278l62 62v204H178z" fill="#090605" opacity="0.3"/>
+  <g>
+    <path d="M164 132h278l62 62v204H164z" fill="url(#vellum)" stroke="#5d3515" stroke-width="8"/>
+    <path d="M442 132v62h62" fill="#f6d685" stroke="#5d3515" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M191 178h210M191 218h250M191 258h214M191 298h170M191 338h236" fill="none" stroke="#6d4219" stroke-opacity="0.48" stroke-width="10" stroke-linecap="round"/>
+    <rect x="164" y="132" width="340" height="266" fill="url(#grain)" opacity="0.72"/>
+  </g>
+
+  <circle cx="496" cy="316" r="96" fill="#090605" opacity="0.32"/>
+  <g>
+    <circle cx="482" cy="302" r="96" fill="url(#lens)" stroke="url(#brass)" stroke-width="10"/>
+    <circle cx="482" cy="302" r="61" fill="none" stroke="#fff0a8" stroke-opacity="0.7" stroke-width="7"/>
+    <path d="M482 205v194M385 302h194M414 234l136 136M550 234L414 370" stroke="#e8fff0" stroke-opacity="0.42" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="482" cy="302" r="18" fill="#fff4ba" fill-opacity="0.82"/>
+  </g>
+
+  <g fill="url(#brass)" stroke="#fff0a8" stroke-opacity="0.52" stroke-width="4">
+    <path d="M42 56h66v24H66v42H42z"/>
+    <path d="M678 56h-66v24h42v42h24z"/>
+    <path d="M42 464h66v-24H66v-42H42z"/>
+    <path d="M678 464h-66v-24h42v-42h24z"/>
+  </g>
+
+  <g fill="#15362e" stroke="#f6c66d" stroke-width="6">
+    <circle cx="142" cy="116" r="18"/>
+    <circle cx="578" cy="116" r="18"/>
+    <circle cx="142" cy="404" r="18"/>
+    <circle cx="578" cy="404" r="18"/>
+  </g>
+
+  <path d="M126 416c83-38 176-40 279-7 62 20 118 18 169-6" fill="none" stroke="#83c7bd" stroke-opacity="0.38" stroke-width="9" stroke-linecap="round"/>
+</svg>

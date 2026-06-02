@@ -65,7 +65,7 @@ The wider workspace root has unrelated memory/skill/doc artifacts. Do not delete
 
 The best next pass is one of these, in order:
 
-1. **Asset production pass:** add one controlled bitmap/SVG asset slot from `docs/v2-asset-production-kit-2026-06-02.md`, then optimize and verify it in a real page slot.
+1. **Asset production pass:** add one controlled bitmap/SVG asset slot from `docs/v2-asset-production-kit-2026-06-02.md`, then optimize and verify it in a real page slot. Completed after this checkpoint with `seal-archive-reading.svg` + `seal-archive-reading.webp`.
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page.
 3. **Library decision pass:** only after another asset or surface pass, decide whether V2 needs a formal component package or should remain a repo-native recipe kit.
 

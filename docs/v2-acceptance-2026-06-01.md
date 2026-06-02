@@ -31,6 +31,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `css/v2.tokens.css`, `css/v2.shell.css`, `css/v2.components.css`, `css/v2.reference.css`, `css/v2.recipes.css`, `css/v2.responsive.css` - authoring layers.
 - `assets/v2/*` - bounded reusable asset motifs.
 - `assets/v2/threshold-ant-guild.svg`, `assets/v2/badge-product-map.svg`, `assets/v2/instrument-readiness-lens.svg` - first asset-pass motifs.
+- `assets/v2/seal-archive-reading.svg` and `assets/v2/seal-archive-reading.webp` - first SVG-to-WebP production asset applied to a dossier/article slot.
 - `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
 - `docs/v2-asset-production-kit-2026-06-02.md` - non-HTML asset roles, generation briefs, formats, optimization, and visual QA.
 
@@ -97,6 +98,12 @@ This pass keeps `css/v2.css` as the stable page-facing URL and moves authoring i
 **V2 asset production kit.**
 
 This pass defines the controlled production path for non-HTML visual elements: threshold assets, surface textures, object UI motifs, water-lens instruments, page-recipe hero details, naming, format rules, optimization gates, and a first asset backlog.
+
+## Latest Asset Production Pass
+
+**Archive Reading Seal.**
+
+This pass adds `assets/v2/seal-archive-reading.svg` as the source asset and `assets/v2/seal-archive-reading.webp` as the optimized bitmap production asset. It is applied in `sites/product-map-field-note/index.html` through a `picture` element, with the SVG retained as fallback/source.
 
 ## Latest Article / Dossier Site
 
