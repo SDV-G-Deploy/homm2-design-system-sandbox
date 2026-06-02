@@ -254,4 +254,7 @@ Use it before the next broad pass. It records current heads, live proofs, verifi
 
 V2 should remain a repo-native production recipe kit for now, not an npm package or formal component library.
 
-The decision record is `docs/v2-library-decision-2026-06-02.md`. The first promotion result is `docs/night-runs/2026-06-02-route-list-promotion.md`: `.v2-route-list` moved from recipe CSS into shared components after proving stable across three production surfaces.
+The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion results so far:
+
+- `docs/night-runs/2026-06-02-route-list-promotion.md`: `.v2-route-list` moved from recipe CSS into shared components after proving stable across three production surfaces.
+- `docs/night-runs/2026-06-02-promotion-audit-v2-1.md`: `.v2-status-mark` moved into shared components after Build Brief Desk and Agent Readiness Ledger repeated the same sprite/status marker role.

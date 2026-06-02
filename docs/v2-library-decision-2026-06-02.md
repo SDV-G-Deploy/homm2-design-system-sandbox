@@ -167,10 +167,14 @@ The best next engineering pass is not package creation. It is a **promotion audi
 
 After that, package readiness can be judged with better evidence.
 
-## First Promotion Result
+## Promotion Results
 
 After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.
 
 Report: `docs/night-runs/2026-06-02-route-list-promotion.md`.
 
-The next promotion candidate remains narrower: a compact signal/badge pattern. Hero shells, side instruments, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.
+After the Agent Readiness Ledger surface added a second production use for the same route/status sprite role, `.v2-status-mark` was promoted from duplicated page-local recipe CSS to `css/v2.components.css`.
+
+Report: `docs/night-runs/2026-06-02-promotion-audit-v2-1.md`.
+
+The next promotion candidate remains narrow: possibly a compact signal/badge pattern or state-meter wrapper after more surfaces prove a stable slot. Hero shells, side instruments, action pairs, output rails, and CTA ledger endings stay deferred until more surfaces prove stable slots.

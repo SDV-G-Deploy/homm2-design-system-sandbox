@@ -44,6 +44,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-agent-readiness-ledger.md` records the first fresh production surface proof after the visual lane: `sites/agent-readiness-ledger/`.
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
+- `docs/night-runs/2026-06-02-promotion-audit-v2-1.md` records the second narrow promotion: `.v2-status-mark` moved into shared components after two production surfaces repeated the same compact sprite marker role.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -82,7 +83,7 @@ The best next pass is one of these, in order:
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page. Completed after this checkpoint with `sites/build-brief-desk/`.
 3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit. Completed after this checkpoint: keep recipe kit, defer npm/component package, run promotion audit next.
 
-The next useful engineering pass is a promotion audit across recent production surfaces, moving only repeated stable patterns into shared components.
+The latest engineering pass promoted only the repeated `.v2-status-mark` sprite marker. The next useful pass is either a second fresh production surface or a narrower audit for state-meter/signaling wrappers after more evidence.
 
 After the first promotion, continue with two parallel lanes:
 

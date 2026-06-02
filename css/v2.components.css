@@ -297,3 +297,32 @@
   border: 1px solid rgba(35, 76, 70, .24);
   border-radius: 999px;
 }
+
+.v2-status-mark {
+  --v2-status-mark-size: 36px;
+  --v2-status-mark-sheet-width: 144px;
+  --v2-status-mark-position: 0 0;
+  display: inline-grid;
+  width: var(--v2-status-mark-size);
+  height: var(--v2-status-mark-size);
+  margin-right: 7px;
+  vertical-align: top;
+  background-image: url("../assets/v2/sprite-route-status.webp");
+  background-size: var(--v2-status-mark-sheet-width) var(--v2-status-mark-size);
+  background-position: var(--v2-status-mark-position);
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .22));
+}
+
+.v2-status-mark-task,
+.v2-status-mark-scope {
+  --v2-status-mark-position: 0 0;
+}
+
+.v2-status-mark-gate {
+  --v2-status-mark-position: -72px 0;
+}
+
+.v2-status-mark-note {
+  --v2-status-mark-position: -108px 0;
+}

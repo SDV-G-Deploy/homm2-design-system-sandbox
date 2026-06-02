@@ -957,30 +957,6 @@
   border-radius: 7px;
 }
 
-.v2-brief-status-mark {
-  display: inline-grid;
-  width: 36px;
-  height: 36px;
-  margin-right: 7px;
-  vertical-align: top;
-  background-image: url("../assets/v2/sprite-route-status.webp");
-  background-size: 144px 36px;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .22));
-}
-
-.v2-brief-status-task {
-  background-position: 0 0;
-}
-
-.v2-brief-status-gate {
-  background-position: -72px 0;
-}
-
-.v2-brief-status-note {
-  background-position: -108px 0;
-}
-
 .v2-brief-output-grid span {
   display: inline-grid;
   place-items: center;
@@ -1186,30 +1162,6 @@
   border: 1px solid rgba(255, 231, 166, .24);
   border-left: 4px solid var(--v2-brass);
   border-radius: 7px;
-}
-
-.v2-agent-step-mark {
-  display: inline-grid;
-  width: 34px;
-  height: 34px;
-  margin-right: 8px;
-  vertical-align: middle;
-  background-image: url("../assets/v2/sprite-route-status.webp");
-  background-size: 136px 34px;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .22));
-}
-
-.v2-agent-step-scope {
-  background-position: 0 0;
-}
-
-.v2-agent-step-gate {
-  background-position: -68px 0;
-}
-
-.v2-agent-step-note {
-  background-position: -102px 0;
 }
 
 .v2-agent-proof-grid span {
