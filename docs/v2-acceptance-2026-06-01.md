@@ -25,9 +25,11 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `v2/ant-school.html` - new-topic production example.
 - `v2/canopy-clinic.html` - compact service/booking recipe.
 - `starters/v2-site-starter/index.html` - copyable V2 landing starter.
+- `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path.
 - `css/v2.css` - compatibility entrypoint for the split V2 styling layer.
 - `css/v2.tokens.css`, `css/v2.shell.css`, `css/v2.components.css`, `css/v2.reference.css`, `css/v2.recipes.css`, `css/v2.responsive.css` - authoring layers.
 - `assets/v2/*` - bounded reusable asset motifs.
+- `assets/v2/threshold-ant-guild.svg`, `assets/v2/badge-product-map.svg`, `assets/v2/instrument-readiness-lens.svg` - first asset-pass motifs.
 - `docs/v2-starter-kit-2026-06-01.md` - production recipes and content budgets.
 - `docs/v2-asset-production-kit-2026-06-02.md` - non-HTML asset roles, generation briefs, formats, optimization, and visual QA.
 

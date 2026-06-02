@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" role="img" aria-labelledby="title desc">
+  <title id="title">Readiness lens instrument</title>
+  <desc id="desc">Water-lens readiness instrument with brass frame and civic signal ticks.</desc>
+  <defs>
+    <radialGradient id="water" cx="50%" cy="45%" r="56%">
+      <stop offset="0" stop-color="#dffff4" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#8fd3c6" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#10251f" stop-opacity="0.1"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#b46a24"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="20" width="224" height="180" rx="14" fill="#10231f" stroke="url(#brass)" stroke-width="6"/>
+  <rect x="32" y="34" width="196" height="152" rx="8" fill="#19362f" stroke="#fff1ad" stroke-width="2" opacity="0.72"/>
+  <circle cx="130" cy="104" r="66" fill="url(#water)" stroke="#9bd8cf" stroke-width="5"/>
+  <circle cx="130" cy="104" r="38" fill="none" stroke="#e6d987" stroke-width="4"/>
+  <path d="M66 104h128M130 40v128M84 58l92 92M176 58l-92 92" stroke="#bde9df" stroke-width="3" opacity="0.48"/>
+  <path d="M64 174h192" stroke="url(#brass)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M62 174l18-26h32l14 26M158 174l14-26h32l18 26" fill="#7b4a1d" stroke="#dda246" stroke-width="3"/>
+  <g fill="#fff0a8" font-family="Georgia, serif" font-size="18" font-weight="700">
+    <text x="42" y="64">MAP</text>
+    <text x="174" y="64">TASK</text>
+    <text x="94" y="194">READY</text>
+  </g>
+  <circle cx="64" cy="174" r="12" fill="#89b967" stroke="#ffe08a" stroke-width="4"/>
+  <circle cx="224" cy="174" r="12" fill="#89b967" stroke="#ffe08a" stroke-width="4"/>
+</svg>

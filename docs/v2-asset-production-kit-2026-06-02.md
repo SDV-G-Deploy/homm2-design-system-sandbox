@@ -379,6 +379,8 @@ Run these checks when adding or changing assets on a page:
 - instrument-readiness-lens - water-lens metric motif for service and control pages.
 - texture-vellum-fiber - richer but still readable vellum tile for ledgers.
 
+Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrument-readiness-lens.svg` are implemented as the first SVG asset pass and applied in `sites/ant-school-landing-v2/index.html`.
+
 ### Priority 2
 
 - seal-service-route - compact booking/service route seal.
@@ -405,4 +407,3 @@ Add assets only when they serve one of these outcomes:
 - clearer solar-civic Solarpunk condition.
 
 If the asset only makes the page feel more decorated, skip it.
-

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">ANT guild threshold</title>
+  <desc id="desc">Solar civic guild threshold with vellum desk, brass frame, and water lens route.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#174136"/>
+      <stop offset="0.55" stop-color="#24483c"/>
+      <stop offset="1" stop-color="#d29a3d"/>
+    </linearGradient>
+    <linearGradient id="vellum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff5bd"/>
+      <stop offset="1" stop-color="#d9ad58"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="50%" cy="42%" r="52%">
+      <stop offset="0" stop-color="#d8fff1" stop-opacity="0.92"/>
+      <stop offset="0.55" stop-color="#8ed1c4" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#15322b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0e0804" flood-opacity="0.42"/>
+    </filter>
+    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M2 3h1M11 6h1M7 14h1M15 12h1" stroke="#fff4c5" stroke-opacity="0.16"/>
+      <path d="M5 10h1M14 3h1" stroke="#0e251f" stroke-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="520" fill="#26170e"/>
+  <rect x="28" y="24" width="664" height="472" rx="10" fill="url(#sky)"/>
+  <rect x="28" y="24" width="664" height="472" rx="10" fill="url(#grain)"/>
+  <rect x="56" y="52" width="608" height="416" fill="none" stroke="#e8c16e" stroke-width="4" opacity="0.72"/>
+  <rect x="78" y="74" width="564" height="372" fill="none" stroke="#fff4bd" stroke-width="2" opacity="0.46"/>
+  <circle cx="575" cy="122" r="58" fill="#f4dd8c" opacity="0.94"/>
+  <path d="M96 388c58-94 112-137 167-129 52 8 99-42 145-115 41 77 94 127 159 150 39 14 76 44 111 91v54H96z" fill="#0f241f" opacity="0.76"/>
+  <g filter="url(#shadow)">
+    <path d="M158 360h404l-35 74H193z" fill="#152b25" stroke="#e1ad4a" stroke-width="4"/>
+    <path d="M204 362l44-136h34l-30 136zM466 362l-30-136h34l44 136z" fill="#915b20"/>
+    <path d="M230 220h126v74H230zM364 220h126v74H364z" fill="url(#vellum)" stroke="#e19f32" stroke-width="5" transform="rotate(-14 293 257)"/>
+    <path d="M420 220h126v74H420z" fill="url(#vellum)" stroke="#e19f32" stroke-width="5" transform="rotate(10 483 257)"/>
+    <rect x="254" y="276" width="212" height="118" rx="4" fill="#f5e49b" opacity="0.66" stroke="#d8b665" stroke-width="5"/>
+    <rect x="281" y="310" width="158" height="84" fill="#174238" opacity="0.7"/>
+    <circle cx="360" cy="259" r="106" fill="url(#lens)" stroke="#9dd5ce" stroke-width="5" opacity="0.95"/>
+    <circle cx="360" cy="259" r="62" fill="none" stroke="#e5d686" stroke-width="4" opacity="0.72"/>
+    <path d="M253 392h214M280 205l168 186M448 205L280 392" stroke="#a9e1d6" stroke-width="4" opacity="0.62"/>
+  </g>
+  <path d="M124 428h472" stroke="#f0b949" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="132" cy="428" r="22" fill="#92ba62" stroke="#ffe07c" stroke-width="5"/>
+  <circle cx="588" cy="428" r="22" fill="#92ba62" stroke="#ffe07c" stroke-width="5"/>
+</svg>

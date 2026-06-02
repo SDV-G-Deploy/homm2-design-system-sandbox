@@ -18,6 +18,7 @@ Live entry points:
 - V2 control board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/control.html
 - V2 ANT School production example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
 - V2 Canopy Clinic service example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/canopy-clinic.html
+- ANT School landing v2: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/ant-school-landing-v2/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -43,6 +44,7 @@ Current V2 proof surfaces:
 - `v2/control.html` - dense operational board proving V2 beyond a landing/product shape
 - `v2/ant-school.html` - new-topic production example for ANT School / AI non-technical builders
 - `v2/canopy-clinic.html` - compact service/booking page with care route and visit signal
+- `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path
 
 Shared V2 system files:
 
@@ -57,6 +59,9 @@ Shared V2 system files:
 - `assets/v2/solar-badge.svg`
 - `assets/v2/water-lens.svg`
 - `assets/v2/vellum-grain.svg`
+- `assets/v2/threshold-ant-guild.svg`
+- `assets/v2/badge-product-map.svg`
+- `assets/v2/instrument-readiness-lens.svg`
 - `starters/v2-site-starter/`
 
 Current acceptance note:
@@ -198,3 +203,9 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 **V2 asset production kit** defines how to create non-HTML visual elements for the system: threshold assets, textures, badges, seals, water-lens instruments, transparent object cutouts, bitmap hero details, naming, formats, optimization, and visual QA.
 
 Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs.
+
+## Latest Real Site Proof
+
+**ANT School landing v2** lives in `sites/ant-school-landing-v2/` and is the first separate real-site proof built from the V2 starter direction.
+
+It adds the first asset-pass motifs from the asset production kit: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrument-readiness-lens.svg`.

@@ -35,6 +35,7 @@ const TARGETS = [
   ["V2 ANT School production smoke", "/v2/ant-school.html", "v2"],
   ["V2 Canopy Clinic service smoke", "/v2/canopy-clinic.html", "v2"],
   ["V2 site starter smoke", "/starters/v2-site-starter/index.html", "v2"],
+  ["ANT School landing v2 smoke", "/sites/ant-school-landing-v2/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -121,6 +122,7 @@ function staticSanity(failures) {
     "v2/ant-school.html",
     "v2/canopy-clinic.html",
     "starters/v2-site-starter/index.html",
+    "sites/ant-school-landing-v2/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

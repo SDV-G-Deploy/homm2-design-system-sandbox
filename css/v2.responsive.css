@@ -169,6 +169,36 @@
     align-items: stretch;
   }
 
+  .v2-antv2-hero {
+    grid-template-columns: minmax(0, .92fr) minmax(300px, 1.08fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-antv2-actions {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .v2-antv2-gate > img {
+    height: 352px;
+  }
+
+  .v2-antv2-method,
+  .v2-antv2-format {
+    grid-template-columns: minmax(0, 1.1fr) minmax(290px, .9fr);
+    align-items: start;
+  }
+
+  .v2-antv2-fit {
+    grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr);
+    align-items: start;
+    padding: 28px;
+  }
+
+  .v2-antv2-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .v2-clinic-hero {
     grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
     align-items: stretch;
