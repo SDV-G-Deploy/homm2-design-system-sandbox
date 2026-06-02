@@ -217,6 +217,7 @@ Latest sprite sheet report: `docs/night-runs/2026-06-02-sprite-route-status-pass
 Latest frame corner report: `docs/night-runs/2026-06-02-frame-corner-pass.md`.
 Latest state meter report: `docs/night-runs/2026-06-02-state-meter-pass.md`.
 Latest state meter helper report: `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`.
+Latest hero detail report: `docs/night-runs/2026-06-02-workshop-schedule-ledger.md`.
 Current visual lane wrap-up: `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md`.
 
 The visual slot gallery lives at `v2/assets.html`. It shows canonical Images 2.0 slots with role, use, format, and fallback so future surfaces can choose visual elements from a visible system inventory.
@@ -248,6 +249,10 @@ It proves the current visual slot lane can move into a fresh production-like pag
 **Site Charter Forge** lives in `sites/site-charter-forge/`.
 
 It proves another fresh production-like page shape: a launch charter surface for turning a new landing/site request into audience, offer, proof route, recipe, and bounded visual asset slots before design work starts.
+
+**Workshop Schedule Ledger** lives in `sites/workshop-schedule-ledger/`.
+
+It proves a schedule/seat/reserve page shape for workshop offers and adds the bounded `hero-detail-workshop-table` visual slot as SVG source plus PNG output.
 
 ## Current Checkpoint
 

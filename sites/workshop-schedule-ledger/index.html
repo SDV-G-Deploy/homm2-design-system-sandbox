@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop Schedule Ledger · ANT School</title>
+    <meta
+      name="description"
+      content="Production-like V2 page for turning a workshop offer into a dated schedule, seat ledger, and proof route."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Workshop Schedule Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Workshop Schedule Ledger">
+        <span class="v2-sigil">WS</span>
+        <span>
+          <strong>Workshop</strong>
+          <em>Ledger</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#schedule">Schedule</a>
+        <a href="#seats">Seats</a>
+        <a href="#reserve">Reserve</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-workshop-shell">
+      <section class="v2-workshop-hero" aria-labelledby="workshop-title" data-v2-primary>
+        <div class="v2-workshop-copy">
+          <div class="v2-section-label">Workshop schedule</div>
+          <h1 id="workshop-title">Практикум держится не на обещании, а на расписании.</h1>
+          <p>
+            Workshop ledger превращает идею занятия в открытый набор: дата,
+            формат, кому есть место, что человек унесёт и чем докажем, что
+            встреча была не красивым разговором.
+          </p>
+          <div class="v2-workshop-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#reserve">Занять место</a>
+            <a class="v2-command v2-command-secondary" href="#schedule">Сверить маршрут</a>
+          </div>
+        </div>
+
+        <aside class="v2-workshop-signal" aria-label="Workshop signal">
+          <picture>
+            <source srcset="../../assets/v2/hero-detail-workshop-table.png" type="image/png" />
+            <img
+              src="../../assets/v2/hero-detail-workshop-table.svg"
+              width="640"
+              height="420"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Date</span><strong>Named</strong></div>
+            <div><span>Seats</span><strong>Counted</strong></div>
+            <div><span>Proof</span><strong>Visible</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-workshop-board" id="schedule" aria-label="Workshop schedule board">
+        <article class="v2-ledger v2-workshop-route" aria-labelledby="schedule-title">
+          <div class="v2-section-label">Schedule route</div>
+          <h2 id="schedule-title">Перед объявлением занятия нужны четыре строки.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Session date</strong>
+                <small>Один день, длительность, язык и часовой пояс без мелкого шрифта.</small>
+              </div>
+              <em>Time</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Seat ledger</strong>
+                <small>Сколько мест, кто подходит, кто не получит пользы прямо сейчас.</small>
+              </div>
+              <em>Fit</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Practice output</strong>
+                <small>Что участник сделает руками и сможет открыть после встречи.</small>
+              </div>
+              <em>Make</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Reserve rule</strong>
+                <small>Что происходит после заявки: оплата, письмо, материалы, напоминание.</small>
+              </div>
+              <em>Gate</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-workshop-seats" id="seats" aria-labelledby="seats-title">
+          <div class="v2-section-label">Seat signal</div>
+          <h2 id="seats-title">Место считается честным, если человек понимает цену входа.</h2>
+          <div class="v2-workshop-badge" aria-hidden="true">
+            <img src="../../assets/v2/solar-badge.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Open cohort</span>
+              <strong>12 seats</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Reader</span>
+              <strong>Видит дату, формат и результат</strong>
+            </li>
+            <li>
+              <span>Builder</span>
+              <strong>Получает материалы до занятия</strong>
+            </li>
+            <li>
+              <span>Owner</span>
+              <strong>Проверяет набор без ручного хаоса</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-workshop-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Workshop proof</div>
+          <h2 id="proof-title">Страница практикума должна продавать не настроение, а ясный вход.</h2>
+        </div>
+        <div class="v2-workshop-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+            <span>Before</span>
+            <strong>Короткая подготовка</strong>
+            <small>Один brief, один пример, один вопрос, который принесут на встречу.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>During</span>
+            <strong>Один собранный артефакт</strong>
+            <small>Не лекция ради лекции, а рабочий черновик, карту или brief.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>After</span>
+            <strong>Следующий ремесленный шаг</strong>
+            <small>Что участник делает сам, а где уже нужен отдельный заказ.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-workshop-reserve" id="reserve" aria-labelledby="reserve-title">
+        <div class="v2-section-label">Reserve writ</div>
+        <h2 id="reserve-title">Финальный блок закрывает путь: дата, место, действие.</h2>
+        <div class="v2-workshop-reserve-grid">
+          <div class="v2-workshop-date">
+            <span>Next session</span>
+            <strong>14 June · 18:00 CET</strong>
+            <small>Online, 90 minutes, working notes included.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Fit</span>
+              <strong>Для тех, кто уже пишет или собирает AI brief</strong>
+            </li>
+            <li>
+              <span>Output</span>
+              <strong>Один проверяемый workshop brief</strong>
+            </li>
+            <li>
+              <span>Limit</span>
+              <strong>Без обещания полного продукта за один вечер</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к расписанию</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -46,6 +46,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - `docs/night-runs/2026-06-02-promotion-audit-v2-1.md` records the second narrow promotion: `.v2-status-mark` moved into shared components after two production surfaces repeated the same compact sprite marker role.
 - `docs/night-runs/2026-06-02-state-meter-strip-promotion.md` records the third narrow promotion: `.v2-state-meter-strip` moved the repeated `state-meter-readiness` image frame into shared components while keeping panels and signal wrappers local.
+- `docs/night-runs/2026-06-02-workshop-schedule-ledger.md` records the next production surface and bounded hero/detail visual slot: `sites/workshop-schedule-ledger/` plus `hero-detail-workshop-table`.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`
@@ -54,6 +55,7 @@ The system is stable enough to build new static pages and small sites from the V
   - work surface: `sites/build-brief-desk/`
   - readiness audit: `sites/agent-readiness-ledger/`
   - site charter: `sites/site-charter-forge/`
+  - workshop schedule: `sites/workshop-schedule-ledger/`
 - GitHub Pages workflow was updated to current action majors and no longer emits the Node.js 20 deprecation annotation in the latest run.
 
 ## Verification Snapshot
@@ -92,4 +94,4 @@ After the first promotion, continue with two parallel lanes:
 1. Component promotion: consider only the compact signal/badge pattern next after another stable proof; keep hero shells, side instruments, meter panels, action pairs, output rails, and CTA ledger endings deferred.
 2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, state meter strips, and bounded PNG/WebP hero details.
 
-Latest production surface proof after the visual lane: `sites/site-charter-forge/`, recorded in `docs/night-runs/2026-06-02-site-charter-forge.md`.
+Latest production surface proof after the visual lane: `sites/workshop-schedule-ledger/`, recorded in `docs/night-runs/2026-06-02-workshop-schedule-ledger.md`.

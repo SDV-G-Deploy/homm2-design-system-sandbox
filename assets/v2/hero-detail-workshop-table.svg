@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Solar civic workshop table detail">
+  <defs>
+    <linearGradient id="bg" x1="68" y1="64" x2="572" y2="356" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17382f"/>
+      <stop offset="1" stop-color="#20140f"/>
+    </linearGradient>
+    <linearGradient id="brass" x1="116" y1="94" x2="532" y2="326" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe18a"/>
+      <stop offset=".45" stop-color="#d58a2c"/>
+      <stop offset="1" stop-color="#7a431b"/>
+    </linearGradient>
+    <linearGradient id="vellum" x1="170" y1="106" x2="474" y2="302" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff3bf"/>
+      <stop offset="1" stop-color="#d8b871"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(437 198) rotate(90) scale(64)">
+      <stop stop-color="#f9ffe6"/>
+      <stop offset=".42" stop-color="#96d8cb"/>
+      <stop offset="1" stop-color="#1e5c5d"/>
+    </radialGradient>
+    <filter id="shadow" x="76" y="50" width="490" height="316" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#000" flood-opacity=".32"/>
+    </filter>
+  </defs>
+  <rect width="640" height="420" fill="#10261f"/>
+  <rect x="24" y="24" width="592" height="372" rx="26" fill="url(#bg)" stroke="#7ecdc2" stroke-opacity=".28"/>
+  <path d="M72 78h496v264H72z" fill="#0b1c18" opacity=".38"/>
+  <g opacity=".18" stroke="#ffe8a6">
+    <path d="M104 118h432M104 166h432M104 214h432M104 262h432M104 310h432"/>
+    <path d="M150 90v252M226 90v252M302 90v252M378 90v252M454 90v252M530 90v252"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M132 92h376l34 34v184l-34 34H132l-34-34V126l34-34z" fill="#3a2414" stroke="url(#brass)" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M150 114h340l24 24v160l-24 24H150l-24-24V138l24-24z" fill="#132a23" stroke="#ffe18a" stroke-opacity=".58" stroke-width="3"/>
+    <rect x="164" y="132" width="220" height="154" rx="8" fill="url(#vellum)" stroke="#6d3b1a" stroke-opacity=".55" stroke-width="3"/>
+    <g stroke="#7a431b" stroke-width="7" stroke-linecap="round">
+      <path d="M200 174h126"/>
+      <path d="M200 208h110"/>
+      <path d="M200 242h142"/>
+    </g>
+    <g fill="#0f342d" stroke="#7ecdc2" stroke-width="3">
+      <rect x="190" y="150" width="24" height="24" rx="4"/>
+      <rect x="342" y="150" width="24" height="24" rx="4"/>
+      <rect x="190" y="264" width="24" height="24" rx="4"/>
+      <rect x="342" y="264" width="24" height="24" rx="4"/>
+    </g>
+    <g transform="translate(0 2)">
+      <circle cx="436" cy="200" r="58" fill="url(#lens)" stroke="#fff0a8" stroke-width="8"/>
+      <circle cx="436" cy="200" r="30" fill="none" stroke="#0f342d" stroke-opacity=".58" stroke-width="5"/>
+      <path d="M436 145v110M381 200h110" stroke="#fff8c8" stroke-width="4" stroke-linecap="round" opacity=".72"/>
+      <path d="M478 240l40 42" stroke="#d58a2c" stroke-width="12" stroke-linecap="round"/>
+      <path d="M478 240l40 42" stroke="#fff0a8" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g fill="#ffe18a" opacity=".72">
+    <circle cx="92" cy="78" r="5"/>
+    <circle cx="548" cy="78" r="5"/>
+    <circle cx="92" cy="342" r="5"/>
+    <circle cx="548" cy="342" r="5"/>
+  </g>
+</svg>
