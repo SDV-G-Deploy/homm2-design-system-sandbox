@@ -12,7 +12,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - **Mobile navigation:** V2 uses a compact topbar and shorter route labels instead of large stacked command blocks.
 - **Graphic strength:** V2 uses bounded asset roles (`solar-civic-gate`, `solar-badge`, `water-lens`, `vellum-grain`) instead of relying only on weak CSS scenery.
 - **Content budget:** V2 proves Russian and English labels on narrow screens, including command text and status rows.
-- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, ANT School production example, compact service/booking example, and real article/dossier site. It is not only a hero proof.
+- **System portability:** V2 has a gateway, primitive board, applied dossier, launch page, dense control board, ANT School production example, compact service/booking example, real article/dossier site, and a real work-surface site. It is not only a hero proof.
 
 ## Canonical V2 Surfaces
 
@@ -27,6 +27,7 @@ V1 and V1.1 remain useful research evidence, but they are no longer the canonica
 - `starters/v2-site-starter/index.html` - copyable V2 landing starter.
 - `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path.
 - `sites/product-map-field-note/index.html` - production dossier/article proof for an ANT-adjacent field note.
+- `sites/build-brief-desk/index.html` - compact production work surface for an agent-ready build brief.
 - `css/v2.css` - compatibility entrypoint for the split V2 styling layer.
 - `css/v2.tokens.css`, `css/v2.shell.css`, `css/v2.components.css`, `css/v2.reference.css`, `css/v2.recipes.css`, `css/v2.responsive.css` - authoring layers.
 - `assets/v2/*` - bounded reusable asset motifs.
@@ -110,3 +111,9 @@ This pass adds `assets/v2/seal-archive-reading.svg` as the source asset and `ass
 **Product Map Field Note.**
 
 This pass adds a real production dossier/article page under `sites/product-map-field-note/`. It checks the reading-heavy recipe outside the sandbox path with short production navigation, a field-note article body, product-map route rows, readiness lens, and one action ledger.
+
+## Latest Work Surface Site
+
+**Build Brief Desk.**
+
+This pass adds a compact production work surface under `sites/build-brief-desk/`. It checks a practical ANT-adjacent workflow outside the sandbox path: product map to agent-ready brief, with route queue, readiness lens, output rail, and short production navigation.

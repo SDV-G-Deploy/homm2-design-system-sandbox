@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Brief Desk · ANT School</title>
+    <meta
+      name="description"
+      content="Compact ANT School work surface for turning a product map into an agent-ready build brief."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Build Brief Desk navigation">
+      <a class="v2-brand" href="#top" aria-label="Build Brief Desk">
+        <span class="v2-sigil">BB</span>
+        <span>
+          <strong>Build Brief</strong>
+          <em>Agent desk</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#desk">Desk</a>
+        <a href="#queue">Queue</a>
+        <a href="#output">Output</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-brief-shell">
+      <section class="v2-brief-hero" id="desk" aria-labelledby="brief-title" data-v2-primary>
+        <div class="v2-brief-copy">
+          <div class="v2-section-label">ANT School work desk</div>
+          <h1 id="brief-title">Карта продукта становится приказом, который агент может выполнить.</h1>
+          <p>
+            Build brief desk режет замысел на один честный проход: что строим,
+            где границы, какие файлы трогать, чем проверить результат и где
+            остановиться, если путь пошёл криво.
+          </p>
+          <div class="v2-brief-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#output">Собрать brief</a>
+            <a class="v2-command v2-command-secondary" href="#queue">Сверить очередь</a>
+          </div>
+        </div>
+
+        <aside class="v2-brief-card" aria-label="Brief readiness">
+          <div class="v2-brief-seal">
+            <img
+              src="../../assets/v2/badge-product-map.svg"
+              width="180"
+              height="180"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div class="v2-lens-module">
+            <div><span>Map</span><strong>Known</strong></div>
+            <div><span>Scope</span><strong>Bounded</strong></div>
+            <div><span>Gate</span><strong>Visible</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-brief-board" aria-label="Build brief board">
+        <article class="v2-ledger v2-brief-queue" id="queue" aria-labelledby="queue-title">
+          <div class="v2-section-label">Brief queue</div>
+          <h2 id="queue-title">Перед агентом стоит не мечта, а ремесленный заказ.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Outcome clause</strong>
+                <small>Один проверяемый результат, без распухшей дорожной карты.</small>
+              </div>
+              <em>Result</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Work boundary</strong>
+                <small>Файлы, модули, запреты и область, куда агент не лезет.</small>
+              </div>
+              <em>Scope</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Proof gate</strong>
+                <small>Smoke, screenshot, diff или ручная проверка до сдачи.</small>
+              </div>
+              <em>Check</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Stop rule</strong>
+                <small>Когда агент пишет отчёт вместо того, чтобы ломать соседний слой.</small>
+              </div>
+              <em>Limit</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-brief-instrument" aria-labelledby="instrument-title">
+          <div class="v2-section-label">Readiness lens</div>
+          <h2 id="instrument-title">Brief готов, если его можно отдать без устного перевода.</h2>
+          <img
+            src="../../assets/v2/instrument-readiness-lens.svg"
+            width="260"
+            height="260"
+            alt=""
+            aria-hidden="true"
+          />
+          <ul class="v2-status-list">
+            <li>
+              <span>Читатель</span>
+              <strong>Поймёт цель за один экран</strong>
+            </li>
+            <li>
+              <span>Агент</span>
+              <strong>Видит границы работы</strong>
+            </li>
+            <li>
+              <span>Серж</span>
+              <strong>Получает проверяемый шаг</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-brief-output" id="output" aria-labelledby="output-title">
+        <div>
+          <div class="v2-section-label">Output</div>
+          <h2 id="output-title">На выходе brief, с которым можно запускать работу.</h2>
+        </div>
+        <div class="v2-brief-output-grid">
+          <div>
+            <span>01</span>
+            <strong>Agent task</strong>
+            <small>Короткая задача, ownership, expected files, stop conditions.</small>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Acceptance gate</strong>
+            <small>Проверка, которая доказывает, что проход не был декоративным.</small>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Handoff note</strong>
+            <small>Что изменилось, что осталось рискованным, куда идти дальше.</small>
+          </div>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Начать с карты</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -19,6 +19,7 @@ The system is stable enough to build new static pages and small sites from the V
 - V2 site starter: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/starters/v2-site-starter/
 - ANT School landing v2: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/ant-school-landing-v2/
 - Product Map Field Note: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/product-map-field-note/
+- Build Brief Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/build-brief-desk/
 
 ## What Is Closed
 
@@ -38,6 +39,7 @@ The system is stable enough to build new static pages and small sites from the V
   - service/booking: `v2/canopy-clinic.html`
   - article/dossier: `sites/product-map-field-note/`
   - operational board: `v2/control.html`
+  - work surface: `sites/build-brief-desk/`
 - GitHub Pages workflow was updated to current action majors and no longer emits the Node.js 20 deprecation annotation in the latest run.
 
 ## Verification Snapshot
@@ -66,7 +68,7 @@ The wider workspace root has unrelated memory/skill/doc artifacts. Do not delete
 The best next pass is one of these, in order:
 
 1. **Images 2.0 documentation pass:** formalize the V2 bitmap/image-assisted slot contract. Completed after this checkpoint in `docs/v2-asset-production-kit-2026-06-02.md`.
-2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page.
-3. **Library decision pass:** only after another asset or surface pass, decide whether V2 needs a formal component package or should remain a repo-native recipe kit.
+2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page. Completed after this checkpoint with `sites/build-brief-desk/`.
+3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit.
 
-Avoid starting an npm/component-library extraction now. The system has enough page proof, but the asset and repeated-production patterns should stabilize one step further first.
+The next decision can now evaluate packaging, but the default should still remain repo-native recipe kit unless repeated production work shows a concrete need for an npm/component library.

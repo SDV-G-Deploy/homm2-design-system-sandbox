@@ -19,6 +19,7 @@ Live entry points:
 - V2 ANT School production example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/ant-school.html
 - V2 Canopy Clinic service example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/canopy-clinic.html
 - ANT School landing v2: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/ant-school-landing-v2/
+- Build Brief Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/build-brief-desk/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -63,6 +64,7 @@ Shared V2 system files:
 - `assets/v2/badge-product-map.svg`
 - `assets/v2/instrument-readiness-lens.svg`
 - `starters/v2-site-starter/`
+- `sites/build-brief-desk/index.html`
 
 Current acceptance note:
 
@@ -217,6 +219,12 @@ It adds the first asset-pass motifs from the asset production kit: `threshold-an
 **Product Map Field Note** lives in `sites/product-map-field-note/`.
 
 It proves the V2 production dossier/article recipe on a real ANT-adjacent topic: a readable field note, product-map route rows, readiness lens, and one compact action path without sandbox vocabulary.
+
+## Latest Work Surface Proof
+
+**Build Brief Desk** lives in `sites/build-brief-desk/`.
+
+It proves a compact production work surface for turning a product map into an agent-ready build brief: bounded outcome, work boundary, proof gate, stop rule, readiness lens, and handoff output.
 
 ## Current Checkpoint
 

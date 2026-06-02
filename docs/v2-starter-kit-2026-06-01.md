@@ -64,6 +64,10 @@ Example:
 
 - `v2/control.html`
 
+Production example:
+
+- `sites/build-brief-desk/index.html`
+
 ## Production Chrome Contract
 
 Mobile production topbar:
@@ -160,6 +164,8 @@ Structure:
 6. `.v2-control-actions` for commands
 
 Reference: `v2/control.html`.
+
+Production example: `sites/build-brief-desk/index.html`.
 
 ### Service Booking
 

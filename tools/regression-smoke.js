@@ -37,6 +37,7 @@ const TARGETS = [
   ["V2 site starter smoke", "/starters/v2-site-starter/index.html", "v2"],
   ["ANT School landing v2 smoke", "/sites/ant-school-landing-v2/index.html", "v2"],
   ["Product Map field note smoke", "/sites/product-map-field-note/index.html", "v2"],
+  ["Build Brief Desk smoke", "/sites/build-brief-desk/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -125,6 +126,7 @@ function staticSanity(failures) {
     "starters/v2-site-starter/index.html",
     "sites/ant-school-landing-v2/index.html",
     "sites/product-map-field-note/index.html",
+    "sites/build-brief-desk/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [
