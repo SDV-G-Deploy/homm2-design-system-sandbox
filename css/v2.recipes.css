@@ -873,6 +873,26 @@
   color: #fff8d3;
 }
 
+.v2-brief-output-object {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 148px;
+  padding: 10px;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 246, 211, .12), transparent 58%),
+    rgba(6, 21, 18, .24);
+  border: 1px solid rgba(255, 225, 150, .18);
+  border-radius: 7px;
+}
+
+.v2-brief-output-object picture,
+.v2-brief-output-object img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+}
+
 .v2-brief-output-grid {
   display: grid;
   gap: 10px;
@@ -1005,6 +1025,10 @@
   width: min(100%, 180px);
   border: 1px solid rgba(255, 225, 150, .3);
   border-radius: 7px;
+}
+
+.v2-asset-object-preview img {
+  width: min(100%, 220px);
 }
 
 .v2-asset-slot-copy {

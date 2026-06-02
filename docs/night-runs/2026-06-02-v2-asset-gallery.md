@@ -27,6 +27,7 @@ Updated:
 - `seal-archive-reading`
 - `seal-build-brief`
 - `texture-brief-grid`
+- `object-brief-desk`
 
 ## Boundary
 
@@ -36,7 +37,6 @@ It should not promote new components by itself. Its purpose is to make the visua
 
 ## Next Visual Candidates
 
-- transparent object cutout;
 - compact sprite sheet;
 - bounded hero detail bitmap.
 
