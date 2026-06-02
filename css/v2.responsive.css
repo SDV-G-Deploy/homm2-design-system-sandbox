@@ -145,6 +145,10 @@
     align-content: end;
   }
 
+  .v2-ant-threshold img {
+    height: 300px;
+  }
+
   .v2-ant-program {
     grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
     align-items: start;
@@ -158,6 +162,11 @@
 
   .v2-ant-roles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-ant-proof {
+    grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+    align-items: stretch;
   }
 
   .v2-clinic-hero {

@@ -144,6 +144,8 @@ Additional production example: `v2/ant-school.html`.
 
 Additional service recipe: `v2/canopy-clinic.html`.
 
+Copyable starter: `starters/v2-site-starter/`.
+
 ### Operational Board
 
 Use for dashboards, control rooms, queues, and agent/operator tools.

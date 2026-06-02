@@ -317,6 +317,24 @@
   border-radius: 7px;
 }
 
+.v2-ant-threshold {
+  display: grid;
+  gap: 12px;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.v2-ant-threshold img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 40%;
+  background: #18322c;
+  border: 1px solid rgba(255, 225, 150, .36);
+  border-radius: 7px;
+}
+
 .v2-ant-map div {
   min-width: 0;
   padding: 11px 12px;
@@ -362,6 +380,16 @@
 .v2-ant-roles {
   display: grid;
   gap: 12px;
+}
+
+.v2-ant-proof {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-ant-proof .v2-panel,
+.v2-ant-proof .v2-ledger {
+  margin-top: 0;
 }
 
 .v2-ant-join {
@@ -523,4 +551,3 @@
 .v2-status-list strong {
   color: #24140a;
 }
-

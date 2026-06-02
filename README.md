@@ -57,11 +57,13 @@ Shared V2 system files:
 - `assets/v2/solar-badge.svg`
 - `assets/v2/water-lens.svg`
 - `assets/v2/vellum-grain.svg`
+- `starters/v2-site-starter/`
 
 Current acceptance note:
 
 - `docs/v2-acceptance-2026-06-01.md`
 - `docs/v2-starter-kit-2026-06-01.md`
+- `docs/v2-asset-production-kit-2026-06-02.md`
 
 ## Archive Boundary
 
@@ -156,11 +158,15 @@ This is the first V2 proof that is closer to an app/work surface than to a prese
 
 Use `docs/v2-starter-kit-2026-06-01.md` before building the next applied page.
 
+The copyable site starter lives in `starters/v2-site-starter/`. It is the recommended starting folder for new V2 landing pages before a component/npm package exists.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
 
 It uses production chrome, short mobile routes, no proof chips, and page content for AI non-technical builders.
+
+The current landing v1 strengthens this example with a solar-civic threshold asset, a clearer builder route, an output desk, and one focused final CTA.
 
 ## Latest Boundary Pass
 
@@ -186,3 +192,9 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 - reference-only styles;
 - page recipes;
 - responsive contracts.
+
+## Current Asset Production Kit
+
+**V2 asset production kit** defines how to create non-HTML visual elements for the system: threshold assets, textures, badges, seals, water-lens instruments, transparent object cutouts, bitmap hero details, naming, formats, optimization, and visual QA.
+
+Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs.
