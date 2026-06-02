@@ -39,6 +39,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-object-cutout-pass.md` records the first transparent object cutout slot: `object-brief-desk`.
 - `docs/night-runs/2026-06-02-sprite-route-status-pass.md` records the first compact route/status sprite sheet: `sprite-route-status`.
 - `docs/night-runs/2026-06-02-frame-corner-pass.md` records the first compact frame corner bitmap: `frame-corner-solar-brass`.
+- `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md` summarizes the proven visual slot lane and recommends `state meter strip` as the next visual pass.
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - Real production-like proofs now cover:
@@ -83,4 +84,4 @@ The next useful engineering pass is a promotion audit across recent production s
 After the first promotion, continue with two parallel lanes:
 
 1. Component promotion: consider only the compact signal/badge pattern next; keep hero shells, side instruments, action pairs, output rails, and CTA ledger endings deferred.
-2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, and bounded PNG/WebP hero details.
+2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, bounded PNG/WebP hero details, and state meter strips.

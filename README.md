@@ -215,6 +215,7 @@ Latest Images 2.0 practical report: `docs/night-runs/2026-06-02-images-2-practic
 Latest object cutout report: `docs/night-runs/2026-06-02-object-cutout-pass.md`.
 Latest sprite sheet report: `docs/night-runs/2026-06-02-sprite-route-status-pass.md`.
 Latest frame corner report: `docs/night-runs/2026-06-02-frame-corner-pass.md`.
+Current visual lane wrap-up: `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md`.
 
 The visual slot gallery lives at `v2/assets.html`. It shows canonical Images 2.0 slots with role, use, format, and fallback so future surfaces can choose visual elements from a visible system inventory.
 
