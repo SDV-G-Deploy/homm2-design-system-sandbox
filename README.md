@@ -213,6 +213,8 @@ V2 now treats visual generation as a parallel lane to component promotion. Compo
 
 Latest Images 2.0 practical report: `docs/night-runs/2026-06-02-images-2-practical-pass.md`.
 
+The visual slot gallery lives at `v2/assets.html`. It shows canonical Images 2.0 slots with role, use, format, and fallback so future surfaces can choose visual elements from a visible system inventory.
+
 ## Latest Real Site Proof
 
 **ANT School landing v2** lives in `sites/ant-school-landing-v2/` and is the first separate real-site proof built from the V2 starter direction.

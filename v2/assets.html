@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V2 Visual Slot Gallery · HoMM2 x Solarpunk</title>
+    <meta
+      name="description"
+      content="Visual asset slot gallery for the HoMM2 x Solarpunk V2 production recipe kit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 asset gallery navigation">
+      <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">AS</span>
+        <span>
+          <strong>Asset Slots</strong>
+          <em>Images 2.0</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="./index.html">Gate</a>
+        <a href="./reference.html">Ref</a>
+        <a href="./assets.html">Assets</a>
+        <a href="#seal">Seal</a>
+        <a href="#texture">Texture</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-asset-gallery-shell">
+      <section class="v2-hero v2-asset-gallery-hero" aria-labelledby="gallery-title" data-v2-primary>
+        <div class="v2-section-label">Images 2.0 registry</div>
+        <h1 id="gallery-title">Визуальные элементы живут как слоты, а не как случайные картинки.</h1>
+        <p>
+          Эта витрина фиксирует, какие SVG/WebP элементы уже принадлежат V2:
+          где их применять, какой у них fallback, и почему они не заменяют
+          HTML, CSS, состояния или текст.
+        </p>
+        <div class="v2-command-row" aria-label="Gallery routes">
+          <a class="v2-command v2-command-primary" href="#canonical">Смотреть слоты</a>
+          <a class="v2-command v2-command-secondary" href="../docs/v2-asset-production-kit-2026-06-02.md">Asset kit</a>
+        </div>
+      </section>
+
+      <section class="v2-panel v2-asset-gallery-rules" aria-labelledby="rules-title">
+        <div class="v2-section-label">Slot law</div>
+        <h2 id="rules-title">Изображение получает место только после роли.</h2>
+        <ul class="v2-status-list">
+          <li>
+            <span>Layout</span>
+            <strong>CSS owns structure, spacing, responsive behavior</strong>
+          </li>
+          <li>
+            <span>Meaning</span>
+            <strong>HTML owns copy, labels, commands, metrics</strong>
+          </li>
+          <li>
+            <span>Image</span>
+            <strong>Asset owns material, object, seal, texture, atmosphere</strong>
+          </li>
+        </ul>
+      </section>
+
+      <section class="v2-asset-slot-grid" id="canonical" aria-label="Canonical visual asset slots">
+        <article class="v2-asset-slot-card v2-asset-slot-wide">
+          <div class="v2-asset-preview">
+            <img src="../assets/v2/threshold-ant-guild.svg" width="220" height="220" alt="" aria-hidden="true" />
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>threshold-ant-guild</span>
+            <h2>Hero threshold</h2>
+            <p>Первый экран ANT School: вход, гильдия, солнечная инфраструктура, не фон.</p>
+            <dl>
+              <div><dt>Format</dt><dd>SVG</dd></div>
+              <div><dt>Fallback</dt><dd>blank acceptable</dd></div>
+              <div><dt>Use</dt><dd>landing threshold</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="v2-asset-slot-card">
+          <div class="v2-asset-preview">
+            <img src="../assets/v2/badge-product-map.svg" width="160" height="160" alt="" aria-hidden="true" />
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>badge-product-map</span>
+            <h2>Route badge</h2>
+            <p>Компактный знак product map для карточек, маршрутов и состояния готовности.</p>
+            <dl>
+              <div><dt>Format</dt><dd>SVG</dd></div>
+              <div><dt>Fallback</dt><dd>SVG source</dd></div>
+              <div><dt>Use</dt><dd>badge / mark</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="v2-asset-slot-card">
+          <div class="v2-asset-preview">
+            <img src="../assets/v2/instrument-readiness-lens.svg" width="220" height="190" alt="" aria-hidden="true" />
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>instrument-readiness-lens</span>
+            <h2>Readiness instrument</h2>
+            <p>Water-lens прибор для panels, где рядом есть реальные state rows.</p>
+            <dl>
+              <div><dt>Format</dt><dd>SVG</dd></div>
+              <div><dt>Fallback</dt><dd>blank acceptable</dd></div>
+              <div><dt>Use</dt><dd>side instrument</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="v2-asset-slot-card" id="seal">
+          <div class="v2-asset-preview">
+            <picture>
+              <source srcset="../assets/v2/seal-archive-reading.webp" type="image/webp" />
+              <img src="../assets/v2/seal-archive-reading.svg" width="180" height="180" alt="" aria-hidden="true" />
+            </picture>
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>seal-archive-reading</span>
+            <h2>Dossier seal</h2>
+            <p>Article/dossier seal для чтения, архива и sun-vellum документа.</p>
+            <dl>
+              <div><dt>Format</dt><dd>WebP + SVG</dd></div>
+              <div><dt>Fallback</dt><dd>SVG picture fallback</dd></div>
+              <div><dt>Use</dt><dd>article seal</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="v2-asset-slot-card">
+          <div class="v2-asset-preview">
+            <picture>
+              <source srcset="../assets/v2/seal-build-brief.webp" type="image/webp" />
+              <img src="../assets/v2/seal-build-brief.svg" width="192" height="192" alt="" aria-hidden="true" />
+            </picture>
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>seal-build-brief</span>
+            <h2>Brief seal</h2>
+            <p>Work-surface seal: заказ, brief, proof gate, bounded route hardware.</p>
+            <dl>
+              <div><dt>Format</dt><dd>WebP + SVG</dd></div>
+              <div><dt>Fallback</dt><dd>SVG picture fallback</dd></div>
+              <div><dt>Use</dt><dd>hero readiness</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="v2-asset-slot-card" id="texture">
+          <div class="v2-asset-preview v2-asset-texture-preview">
+            <img src="../assets/v2/texture-brief-grid.webp" width="180" height="180" alt="" aria-hidden="true" />
+          </div>
+          <div class="v2-asset-slot-copy">
+            <span>texture-brief-grid</span>
+            <h2>Brief texture</h2>
+            <p>Quiet tile для output surfaces: сетка, vellum, слабый water signal.</p>
+            <dl>
+              <div><dt>Format</dt><dd>WebP + SVG source</dd></div>
+              <div><dt>Fallback</dt><dd>CSS gradients</dd></div>
+              <div><dt>Use</dt><dd>repeatable surface</dd></div>
+            </dl>
+          </div>
+        </article>
+      </section>
+
+      <section class="v2-ledger v2-asset-gallery-ledger" aria-labelledby="next-title">
+        <div class="v2-section-label">Next slots</div>
+        <h2 id="next-title">Следующий visual pass должен доказать другой тип элемента.</h2>
+        <ol class="v2-route-list">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Transparent object cutout</strong>
+              <small>Объект с alpha для hero/detail slot, без текста и UI.</small>
+            </div>
+            <em>PNG</em>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Compact sprite sheet</strong>
+              <small>Набор маленьких route/status marks с одной общей грамматикой.</small>
+            </div>
+            <em>WebP</em>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Hero detail bitmap</strong>
+              <small>Ограниченный object/scene detail, не full-page illustration.</small>
+            </div>
+            <em>WebP</em>
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

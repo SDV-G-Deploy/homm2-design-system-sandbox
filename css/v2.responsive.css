@@ -267,6 +267,25 @@
     width: min(100%, 220px);
   }
 
+  .v2-asset-gallery-hero {
+    padding: 28px;
+  }
+
+  .v2-asset-slot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .v2-asset-slot-wide {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(260px, .48fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .v2-asset-slot-card:not(.v2-asset-slot-wide) {
+    grid-template-columns: minmax(150px, .55fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
   .v2-trial-proof {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     align-items: end;

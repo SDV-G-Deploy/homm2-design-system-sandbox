@@ -923,3 +923,161 @@
 .v2-brief-output .v2-command {
   margin-top: 0;
 }
+
+/* V2 system recipe: visual asset slot gallery. */
+.v2-asset-gallery-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-asset-gallery-hero {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.v2-asset-gallery-hero h1 {
+  margin: 0;
+  max-width: 17ch;
+  color: #fff8d3;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: clamp(2rem, 8.8vw, 3.35rem);
+  line-height: 1;
+}
+
+.v2-asset-gallery-hero p {
+  margin: 0;
+  max-width: 58ch;
+  color: #ead9a5;
+  font-size: 1.05rem;
+  line-height: 1.46;
+}
+
+.v2-asset-gallery-rules {
+  margin-top: 0;
+}
+
+.v2-asset-slot-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.v2-asset-slot-card {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  padding: 14px;
+  color: #fff2c1;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .12), transparent 36%, rgba(213, 138, 44, .1)),
+    linear-gradient(145deg, #20140f, #10261f);
+  border: 1px solid rgba(255, 220, 130, .34);
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .04);
+}
+
+.v2-asset-preview {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  padding: 14px;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 246, 211, .12), transparent 50%),
+    rgba(6, 21, 18, .34);
+  border: 1px solid rgba(255, 225, 150, .24);
+  border-radius: 7px;
+}
+
+.v2-asset-preview picture,
+.v2-asset-preview img {
+  display: block;
+  width: min(100%, 190px);
+  height: auto;
+}
+
+.v2-asset-texture-preview {
+  background:
+    url("../assets/v2/texture-brief-grid.webp") center / 180px 180px,
+    linear-gradient(145deg, #20140f, #10261f);
+}
+
+.v2-asset-texture-preview img {
+  width: min(100%, 180px);
+  border: 1px solid rgba(255, 225, 150, .3);
+  border-radius: 7px;
+}
+
+.v2-asset-slot-copy {
+  min-width: 0;
+}
+
+.v2-asset-slot-copy > span {
+  display: inline-grid;
+  max-width: 100%;
+  margin-bottom: 9px;
+  padding: 6px 8px;
+  overflow-wrap: anywhere;
+  color: #ffeab0;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: .8rem;
+  font-weight: 800;
+  background: rgba(15, 36, 31, .86);
+  border: 1px solid rgba(136, 199, 189, .42);
+  border-radius: 999px;
+}
+
+.v2-asset-slot-copy h2 {
+  margin: 0;
+  color: #fff8d3;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.v2-asset-slot-copy p {
+  margin: 9px 0 0;
+  color: #e6d29a;
+  line-height: 1.36;
+}
+
+.v2-asset-slot-copy dl {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 0;
+}
+
+.v2-asset-slot-copy dl div {
+  display: grid;
+  grid-template-columns: minmax(68px, .54fr) minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  min-width: 0;
+  padding: 8px 9px;
+  background: rgba(255, 246, 211, .08);
+  border: 1px solid rgba(255, 231, 166, .2);
+  border-left: 3px solid var(--v2-water);
+}
+
+.v2-asset-slot-copy dt,
+.v2-asset-slot-copy dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.v2-asset-slot-copy dt {
+  color: #d5bc82;
+  font-size: .78rem;
+}
+
+.v2-asset-slot-copy dd {
+  color: #fff6ce;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.v2-asset-gallery-ledger {
+  margin-top: 0;
+}
