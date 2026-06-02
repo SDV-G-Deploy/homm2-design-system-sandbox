@@ -308,6 +308,36 @@
     align-items: stretch;
   }
 
+  .v2-charter-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-charter-actions {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .v2-charter-board {
+    grid-template-columns: minmax(0, 1.14fr) minmax(280px, .86fr);
+    align-items: start;
+  }
+
+  .v2-charter-proof {
+    grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr);
+    align-items: end;
+    padding: 28px;
+  }
+
+  .v2-charter-proof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-charter-writ-grid {
+    grid-template-columns: minmax(260px, .45fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
   .v2-asset-gallery-hero {
     padding: 28px;
   }

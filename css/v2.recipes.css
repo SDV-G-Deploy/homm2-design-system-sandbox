@@ -1203,6 +1203,201 @@
   margin-top: 18px;
 }
 
+/* V2 page recipe: site charter production surface. */
+.v2-charter-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-charter-hero,
+.v2-charter-proof {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  color: #fff2c1;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(136, 199, 189, .18), transparent 13rem),
+    linear-gradient(180deg, rgba(255, 229, 154, .1), transparent 45%),
+    linear-gradient(145deg, #20140f, #11271f);
+  border: 1px solid rgba(255, 220, 130, .42);
+  border-radius: var(--v2-radius);
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .05), 0 16px 34px rgba(45, 25, 12, .22);
+}
+
+.v2-charter-hero {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-charter-copy h1,
+.v2-charter-route h2,
+.v2-charter-meter h2,
+.v2-charter-proof h2,
+.v2-charter-writ h2 {
+  margin: 0;
+  max-width: 17ch;
+  font-family: Vollkorn, Georgia, serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.v2-charter-copy h1 {
+  color: #fff8d3;
+  font-size: clamp(2rem, 8.7vw, 3.35rem);
+}
+
+.v2-charter-copy p {
+  margin: 16px 0 0;
+  max-width: 55ch;
+  color: #ead9a5;
+  font-size: 1.05rem;
+  line-height: 1.44;
+}
+
+.v2-charter-actions {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.v2-charter-signal {
+  display: grid;
+  gap: 14px;
+  align-content: end;
+  min-width: 0;
+  padding: 14px;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .14), transparent 34%, rgba(213, 138, 44, .12)),
+    rgba(12, 34, 29, .7);
+  border: 1px solid rgba(136, 199, 189, .3);
+  border-radius: 7px;
+}
+
+.v2-charter-signal picture,
+.v2-charter-meter picture,
+.v2-charter-object picture {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+
+.v2-charter-signal picture {
+  min-height: 160px;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 246, 211, .12), transparent 50%),
+    rgba(6, 21, 18, .32);
+  border: 1px solid rgba(255, 225, 150, .24);
+  border-radius: 7px;
+}
+
+.v2-charter-signal img {
+  display: block;
+  width: min(100%, 172px);
+  height: auto;
+}
+
+.v2-charter-board {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-charter-route,
+.v2-charter-meter,
+.v2-charter-writ {
+  margin-top: 0;
+}
+
+.v2-charter-meter {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.v2-charter-meter picture {
+  padding: 8px;
+  background: rgba(6, 21, 18, .28);
+  border: 1px solid rgba(255, 225, 150, .18);
+  border-radius: 7px;
+}
+
+.v2-charter-meter img {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+}
+
+.v2-charter-proof h2 {
+  color: #fff8d3;
+}
+
+.v2-charter-proof-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.v2-charter-proof-grid div {
+  min-width: 0;
+  padding: 12px;
+  background: rgba(255, 246, 211, .08);
+  border: 1px solid rgba(255, 231, 166, .24);
+  border-left: 4px solid var(--v2-brass);
+  border-radius: 7px;
+}
+
+.v2-charter-proof-grid span {
+  color: #d5bc82;
+  font-size: .8rem;
+}
+
+.v2-charter-proof-grid strong,
+.v2-charter-proof-grid small {
+  display: block;
+  min-width: 0;
+}
+
+.v2-charter-proof-grid strong {
+  margin-top: 9px;
+  color: #fff6ce;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.08;
+}
+
+.v2-charter-proof-grid small {
+  margin-top: 5px;
+  color: #d5bc82;
+  line-height: 1.22;
+}
+
+.v2-charter-writ-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.v2-charter-object {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 168px;
+  padding: 12px;
+  background:
+    url("../assets/v2/texture-brief-grid.webp") center / 180px 180px,
+    rgba(6, 21, 18, .24);
+  border: 1px solid rgba(98, 63, 24, .18);
+  border-radius: 7px;
+}
+
+.v2-charter-object img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+}
+
+.v2-charter-writ .v2-command {
+  margin-top: 18px;
+}
+
 /* V2 system recipe: visual asset slot gallery. */
 .v2-asset-gallery-shell {
   display: grid;

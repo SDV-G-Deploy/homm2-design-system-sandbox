@@ -52,6 +52,7 @@ The system is stable enough to build new static pages and small sites from the V
   - operational board: `v2/control.html`
   - work surface: `sites/build-brief-desk/`
   - readiness audit: `sites/agent-readiness-ledger/`
+  - site charter: `sites/site-charter-forge/`
 - GitHub Pages workflow was updated to current action majors and no longer emits the Node.js 20 deprecation annotation in the latest run.
 
 ## Verification Snapshot
@@ -83,11 +84,11 @@ The best next pass is one of these, in order:
 2. **New surface pass:** build one more production-like page shape from the starter, preferably a compact tool/workflow screen or case-study page. Completed after this checkpoint with `sites/build-brief-desk/`.
 3. **Library decision pass:** decide whether V2 needs a formal component package or should remain a repo-native recipe kit. Completed after this checkpoint: keep recipe kit, defer npm/component package, run promotion audit next.
 
-The latest engineering pass promoted only the repeated `.v2-status-mark` sprite marker. The next useful pass is either a second fresh production surface or a narrower audit for state-meter/signaling wrappers after more evidence.
+The latest surface pass added `sites/site-charter-forge/`, giving the recipe kit another fresh production-like page shape and a third use of shared `.v2-status-mark`. The next useful pass is a narrow audit for state-meter/signaling wrappers after comparing the latest three surfaces.
 
 After the first promotion, continue with two parallel lanes:
 
 1. Component promotion: consider only the compact signal/badge pattern next; keep hero shells, side instruments, action pairs, output rails, and CTA ledger endings deferred.
 2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, state meter strips, and bounded PNG/WebP hero details.
 
-Latest production surface proof after the visual lane: `sites/agent-readiness-ledger/`, recorded in `docs/night-runs/2026-06-02-agent-readiness-ledger.md`.
+Latest production surface proof after the visual lane: `sites/site-charter-forge/`, recorded in `docs/night-runs/2026-06-02-site-charter-forge.md`.

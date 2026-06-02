@@ -244,6 +244,10 @@ It proves a compact production work surface for turning a product map into an ag
 
 It proves the current visual slot lane can move into a fresh production-like page without inventing a new asset type: seal, state meter, sprite marks, frame corners, and texture support a task-readiness audit surface.
 
+**Site Charter Forge** lives in `sites/site-charter-forge/`.
+
+It proves another fresh production-like page shape: a launch charter surface for turning a new landing/site request into audience, offer, proof route, recipe, and bounded visual asset slots before design work starts.
+
 ## Current Checkpoint
 
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.

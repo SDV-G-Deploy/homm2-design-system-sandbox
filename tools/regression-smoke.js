@@ -40,6 +40,7 @@ const TARGETS = [
   ["Product Map field note smoke", "/sites/product-map-field-note/index.html", "v2"],
   ["Build Brief Desk smoke", "/sites/build-brief-desk/index.html", "v2"],
   ["Agent Readiness Ledger smoke", "/sites/agent-readiness-ledger/index.html", "v2"],
+  ["Site Charter Forge smoke", "/sites/site-charter-forge/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -131,6 +132,7 @@ function staticSanity(failures) {
     "sites/product-map-field-note/index.html",
     "sites/build-brief-desk/index.html",
     "sites/agent-readiness-ledger/index.html",
+    "sites/site-charter-forge/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Charter Forge · ANT School</title>
+    <meta
+      name="description"
+      content="Production-like V2 page for turning a new site request into a launch charter before design work starts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Site Charter Forge navigation">
+      <a class="v2-brand" href="#top" aria-label="Site Charter Forge">
+        <span class="v2-sigil">SC</span>
+        <span>
+          <strong>Site Charter</strong>
+          <em>Forge</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#charter">Charter</a>
+        <a href="#route">Route</a>
+        <a href="#writ">Writ</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-charter-shell">
+      <section class="v2-charter-hero" aria-labelledby="charter-title" data-v2-primary>
+        <div class="v2-charter-copy">
+          <div class="v2-section-label">New site charter</div>
+          <h1 id="charter-title">Сайт начинается не с экрана, а с ясного указа.</h1>
+          <p>
+            Charter forge превращает просьбу «сделай лендинг» в рабочую грамоту:
+            кому служит страница, какое обещание несёт, какие доказательства
+            нужны и какие визуальные слоты можно брать из V2 без новой магии.
+          </p>
+          <div class="v2-charter-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#charter">Собрать charter</a>
+            <a class="v2-command v2-command-secondary" href="#writ">Проверить writ</a>
+          </div>
+        </div>
+
+        <aside class="v2-charter-signal" aria-label="Charter readiness">
+          <picture>
+            <source srcset="../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/seal-archive-reading.svg"
+              width="192"
+              height="192"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Offer</span><strong>Named</strong></div>
+            <div><span>Route</span><strong>Visible</strong></div>
+            <div><span>Assets</span><strong>Bounded</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-charter-board" id="charter" aria-label="Site charter board">
+        <article class="v2-ledger v2-charter-route" id="route" aria-labelledby="route-title">
+          <div class="v2-section-label">Charter route</div>
+          <h2 id="route-title">Четыре записи перед тем, как открывать дизайн.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Audience oath</strong>
+                <small>Кто читатель, какой у него страх, и что он должен понять за первый экран.</small>
+              </div>
+              <em>People</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Offer clause</strong>
+                <small>Одна буквальная польза, без тумана, канцелярии и длинной процессии слов.</small>
+              </div>
+              <em>Value</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Proof route</strong>
+                <small>Какие факты, примеры, цены, сроки или артефакты докажут обещание.</small>
+              </div>
+              <em>Trust</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Visual slot writ</strong>
+                <small>Какие изображения нужны: seal, badge, texture, object, sprite, frame или meter.</small>
+              </div>
+              <em>Image</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-charter-meter" aria-labelledby="meter-title">
+          <div class="v2-section-label">Launch meter</div>
+          <h2 id="meter-title">Готовность страницы видна как состояние, а не как настроение.</h2>
+          <picture>
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <ul class="v2-status-list">
+            <li>
+              <span>Reader</span>
+              <strong>Понимает предложение до прокрутки</strong>
+            </li>
+            <li>
+              <span>Builder</span>
+              <strong>Знает рецепт страницы и слоты ассетов</strong>
+            </li>
+            <li>
+              <span>Owner</span>
+              <strong>Может принять результат по фактам</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-charter-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Forge proof</div>
+          <h2 id="proof-title">Если charter пустой, страница будет красивой, но бесхозной.</h2>
+        </div>
+        <div class="v2-charter-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Scope</span>
+            <strong>Один тип страницы</strong>
+            <small>Landing, dossier, work surface или service page, а не всё сразу.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Одна проверка первого экрана</strong>
+            <small>Читатель видит offer, route и следующий шаг без пояснений.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Asset note</span>
+            <strong>Один список визуальных слотов</strong>
+            <small>Изображения служат роли, а не закрывают дыру в смысле.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-charter-writ" id="writ" aria-labelledby="writ-title">
+        <div class="v2-section-label">Launch writ</div>
+        <h2 id="writ-title">На выходе не макетный туман, а грамота для сборки сайта.</h2>
+        <div class="v2-charter-writ-grid">
+          <figure class="v2-charter-object" aria-hidden="true">
+            <picture>
+              <source srcset="../../assets/v2/object-brief-desk.png" type="image/png" />
+              <img
+                src="../../assets/v2/object-brief-desk.svg"
+                width="320"
+                height="240"
+                alt=""
+              />
+            </picture>
+          </figure>
+          <ul class="v2-status-list">
+            <li>
+              <span>Page recipe</span>
+              <strong>Какой surface строим первым</strong>
+            </li>
+            <li>
+              <span>Copy truth</span>
+              <strong>Что должно быть сказано без украшений</strong>
+            </li>
+            <li>
+              <span>Visual order</span>
+              <strong>Какие ассеты нужны и зачем</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к charter</a>
+      </section>
+    </main>
+  </body>
+</html>
