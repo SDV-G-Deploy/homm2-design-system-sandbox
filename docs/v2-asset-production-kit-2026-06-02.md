@@ -80,6 +80,7 @@ Current canonical V2 slots:
 - object-brief-desk - transparent work-object cutout, shipped as SVG source plus PNG alpha output.
 - sprite-route-status - compact route/status marks, shipped as SVG source plus optimized WebP sprite sheet.
 - frame-corner-solar-brass - compact frame corner detail, shipped as SVG source plus optimized WebP.
+- state-meter-readiness - repeatable readiness/state meter strip, shipped as SVG source plus optimized WebP.
 
 Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
 
@@ -454,6 +455,8 @@ Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrum
 `sprite-route-status.svg` and optimized `sprite-route-status.webp` are implemented as the first compact sprite sheet and applied in `sites/build-brief-desk/index.html` as non-semantic output-card marks.
 
 `frame-corner-solar-brass.svg` and optimized `frame-corner-solar-brass.webp` are implemented as the first compact frame corner bitmap and applied to `sites/build-brief-desk/index.html` as non-semantic output-frame detail.
+
+`state-meter-readiness.svg` and optimized `state-meter-readiness.webp` are implemented as the first repeatable state meter strip and applied to `sites/build-brief-desk/index.html` as non-semantic readiness detail beside real state rows.
 
 ### Priority 2
 

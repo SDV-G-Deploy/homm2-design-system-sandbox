@@ -203,18 +203,19 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 
 ## Current Asset Production Kit
 
-**V2 asset production kit** defines how to create non-HTML visual elements for the system: threshold assets, textures, badges, seals, water-lens instruments, transparent object cutouts, compact sprite sheets, frame corner bitmaps, bitmap hero details, naming, formats, optimization, and visual QA.
+**V2 asset production kit** defines how to create non-HTML visual elements for the system: threshold assets, textures, badges, seals, water-lens instruments, transparent object cutouts, compact sprite sheets, frame corner bitmaps, state meter strips, bitmap hero details, naming, formats, optimization, and visual QA.
 
 Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs. It now includes the canonical **V2 Images 2.0 Mode** contract for bitmap/image-assisted slots.
 
-Latest asset production pass: `assets/v2/frame-corner-solar-brass.svg` and `assets/v2/frame-corner-solar-brass.webp` are applied in `sites/build-brief-desk/` as the first compact frame corner bitmap.
+Latest asset production pass: `assets/v2/state-meter-readiness.svg` and `assets/v2/state-meter-readiness.webp` are applied in `sites/build-brief-desk/` as the first repeatable state meter strip.
 
-V2 now treats visual generation as a parallel lane to component promotion. Components move repeated HTML/CSS into `css/v2.components.css`; generated visual elements move through named Images 2.0 slots such as seals, badges, textures, instruments, transparent cutouts, compact sprites, frame corners, and bounded hero details.
+V2 now treats visual generation as a parallel lane to component promotion. Components move repeated HTML/CSS into `css/v2.components.css`; generated visual elements move through named Images 2.0 slots such as seals, badges, textures, instruments, transparent cutouts, compact sprites, frame corners, state meters, and bounded hero details.
 
 Latest Images 2.0 practical report: `docs/night-runs/2026-06-02-images-2-practical-pass.md`.
 Latest object cutout report: `docs/night-runs/2026-06-02-object-cutout-pass.md`.
 Latest sprite sheet report: `docs/night-runs/2026-06-02-sprite-route-status-pass.md`.
 Latest frame corner report: `docs/night-runs/2026-06-02-frame-corner-pass.md`.
+Latest state meter report: `docs/night-runs/2026-06-02-state-meter-pass.md`.
 Current visual lane wrap-up: `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md`.
 
 The visual slot gallery lives at `v2/assets.html`. It shows canonical Images 2.0 slots with role, use, format, and fallback so future surfaces can choose visual elements from a visible system inventory.

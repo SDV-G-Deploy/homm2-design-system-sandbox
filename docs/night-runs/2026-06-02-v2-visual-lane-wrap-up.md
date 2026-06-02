@@ -15,6 +15,7 @@ It is not a general image library yet. It is a controlled set of named slots wit
 | Transparent object cutout | `object-brief-desk` | `assets/v2/object-brief-desk.svg`, `assets/v2/object-brief-desk.png` | `sites/build-brief-desk/index.html` |
 | Compact sprite sheet | `sprite-route-status` | `assets/v2/sprite-route-status.svg`, `assets/v2/sprite-route-status.webp` | `sites/build-brief-desk/index.html` |
 | Frame corner bitmap | `frame-corner-solar-brass` | `assets/v2/frame-corner-solar-brass.svg`, `assets/v2/frame-corner-solar-brass.webp` | `sites/build-brief-desk/index.html` |
+| State meter strip | `state-meter-readiness` | `assets/v2/state-meter-readiness.svg`, `assets/v2/state-meter-readiness.webp` | `sites/build-brief-desk/index.html` |
 
 The system gallery at `v2/assets.html` displays the current canonical inventory with role, format, fallback, and use.
 
@@ -28,13 +29,13 @@ The system gallery at `v2/assets.html` displays the current canonical inventory 
 
 ## Current Canonical Next Candidates
 
-1. `bounded hero/detail bitmap` - a restrained object or scene detail, not a full-page illustration.
-2. `state meter strip` - repeatable readiness/state detail for civic instruments.
+1. `production surface proof` - a new page built from the kit to test portability.
+2. `bounded hero/detail bitmap` - a restrained object or scene detail, not a full-page illustration.
 3. `ledger divider ornament` - thin repeatable divider for route lists and archive ledgers.
 
-Recommended next pass: `state meter strip`.
+Recommended next pass: `production surface proof`.
 
-Reason: it extends the system's state vocabulary more directly than a hero/detail bitmap and is less likely to become decorative.
+Reason: the visual lane now has enough asset types; the next useful proof is whether a fresh page can select and combine them without new one-off CSS.
 
 ## Verification Snapshot
 

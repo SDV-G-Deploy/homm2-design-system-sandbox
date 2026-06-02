@@ -900,6 +900,25 @@
   justify-self: center;
 }
 
+.v2-brief-meter-strip {
+  display: grid;
+  place-items: center;
+  margin: -2px 0 0;
+  padding: 8px;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .1), rgba(213, 138, 44, .1)),
+    rgba(6, 21, 18, .28);
+  border: 1px solid rgba(255, 225, 150, .18);
+  border-radius: 7px;
+}
+
+.v2-brief-meter-strip picture,
+.v2-brief-meter-strip img {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+}
+
 .v2-brief-output h2 {
   color: #fff8d3;
 }
@@ -1106,6 +1125,17 @@
     linear-gradient(180deg, rgba(255, 225, 150, .2), transparent 42%);
   border-top: 1px solid rgba(255, 225, 150, .34);
   border-left: 1px solid rgba(255, 225, 150, .34);
+}
+
+.v2-asset-state-meter-preview {
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .16), transparent 45%, rgba(213, 138, 44, .12)),
+    linear-gradient(145deg, #20140f, #10261f);
+}
+
+.v2-asset-state-meter-preview picture,
+.v2-asset-state-meter-preview img {
+  width: min(100%, 260px);
 }
 
 .v2-asset-sprite-preview {

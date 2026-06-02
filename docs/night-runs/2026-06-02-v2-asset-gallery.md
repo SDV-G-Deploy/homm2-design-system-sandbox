@@ -30,6 +30,7 @@ Updated:
 - `object-brief-desk`
 - `sprite-route-status`
 - `frame-corner-solar-brass`
+- `state-meter-readiness`
 
 ## Boundary
 
@@ -40,8 +41,8 @@ It should not promote new components by itself. Its purpose is to make the visua
 ## Next Visual Candidates
 
 - bounded hero detail bitmap;
-- state meter strip.
 - ledger divider ornament.
+- production surface proof.
 
 ## Verification
 
