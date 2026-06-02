@@ -907,6 +907,30 @@
   border-radius: 7px;
 }
 
+.v2-brief-status-mark {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  margin-right: 7px;
+  vertical-align: top;
+  background-image: url("../assets/v2/sprite-route-status.webp");
+  background-size: 144px 36px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .22));
+}
+
+.v2-brief-status-task {
+  background-position: 0 0;
+}
+
+.v2-brief-status-gate {
+  background-position: -72px 0;
+}
+
+.v2-brief-status-note {
+  background-position: -108px 0;
+}
+
 .v2-brief-output-grid span {
   display: inline-grid;
   place-items: center;
@@ -1029,6 +1053,47 @@
 
 .v2-asset-object-preview img {
   width: min(100%, 220px);
+}
+
+.v2-asset-sprite-preview {
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+}
+
+.v2-asset-sprite-preview picture,
+.v2-asset-sprite-preview img {
+  width: min(100%, 168px);
+}
+
+.v2-asset-sprite-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 32px);
+  gap: 7px;
+  padding: 8px;
+  background: rgba(255, 246, 211, .08);
+  border: 1px solid rgba(255, 225, 150, .2);
+  border-radius: 7px;
+}
+
+.v2-asset-sprite-cell {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/v2/sprite-route-status.webp");
+  background-size: 128px 32px;
+  background-repeat: no-repeat;
+}
+
+.v2-asset-sprite-cell:nth-child(2) {
+  background-position: -32px 0;
+}
+
+.v2-asset-sprite-cell:nth-child(3) {
+  background-position: -64px 0;
+}
+
+.v2-asset-sprite-cell:nth-child(4) {
+  background-position: -96px 0;
 }
 
 .v2-asset-slot-copy {

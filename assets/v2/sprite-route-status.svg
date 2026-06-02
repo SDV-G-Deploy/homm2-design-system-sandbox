@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="128" viewBox="0 0 512 128" role="img" aria-label="Route and status sprite sheet">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFE7A2"/>
+      <stop offset=".52" stop-color="#D58A2C"/>
+      <stop offset="1" stop-color="#7D4417"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#C9F4E9"/>
+      <stop offset=".5" stop-color="#88C7BD"/>
+      <stop offset="1" stop-color="#2A756D"/>
+    </linearGradient>
+    <linearGradient id="vellum" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFF6D3"/>
+      <stop offset="1" stop-color="#D8B66B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="128" fill="none"/>
+
+  <g transform="translate(16 16)">
+    <ellipse cx="48" cy="89" rx="31" ry="7" fill="#050706" opacity=".32"/>
+    <path d="M48 6 82 18 90 52 72 86H24L6 52l8-34Z" fill="#10261F" stroke="#FFE1A0" stroke-width="3"/>
+    <path d="M48 14 75 24 82 51 67 78H29L14 51l7-27Z" fill="#223B31" stroke="#5A3920" stroke-width="2"/>
+    <path d="M31 63 48 27 65 63Z" fill="url(#brass)" stroke="#FFF1B8" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M48 36 39 58h18Z" fill="#FFF6D3" opacity=".9"/>
+  </g>
+
+  <g transform="translate(144 16)">
+    <ellipse cx="48" cy="89" rx="31" ry="7" fill="#050706" opacity=".32"/>
+    <path d="M48 6 82 18 90 52 72 86H24L6 52l8-34Z" fill="#10261F" stroke="#FFE1A0" stroke-width="3"/>
+    <path d="M48 14 75 24 82 51 67 78H29L14 51l7-27Z" fill="#223B31" stroke="#5A3920" stroke-width="2"/>
+    <circle cx="48" cy="48" r="23" fill="url(#water)" stroke="#E9FFF7" stroke-width="4"/>
+    <circle cx="48" cy="48" r="11" fill="#10261F" stroke="#FFE1A0" stroke-width="3"/>
+    <path d="M25 48h14M57 48h14M48 25v14M48 57v14" stroke="#FFF6D3" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(272 16)">
+    <ellipse cx="48" cy="89" rx="31" ry="7" fill="#050706" opacity=".32"/>
+    <path d="M48 6 82 18 90 52 72 86H24L6 52l8-34Z" fill="#10261F" stroke="#FFE1A0" stroke-width="3"/>
+    <path d="M48 14 75 24 82 51 67 78H29L14 51l7-27Z" fill="#223B31" stroke="#5A3920" stroke-width="2"/>
+    <path d="M28 52 42 66 70 30" fill="none" stroke="url(#brass)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 52 42 66 70 30" fill="none" stroke="#FFF6D3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(400 16)">
+    <ellipse cx="48" cy="89" rx="31" ry="7" fill="#050706" opacity=".32"/>
+    <path d="M48 6 82 18 90 52 72 86H24L6 52l8-34Z" fill="#10261F" stroke="#FFE1A0" stroke-width="3"/>
+    <path d="M48 14 75 24 82 51 67 78H29L14 51l7-27Z" fill="#223B31" stroke="#5A3920" stroke-width="2"/>
+    <path d="M32 28h32v40H32z" fill="url(#vellum)" stroke="#7D4417" stroke-width="4"/>
+    <path d="M39 39h18M39 49h12M39 59h18" stroke="#5A3920" stroke-width="4" stroke-linecap="round"/>
+    <path d="M66 30 72 36v32l-6-6Z" fill="#88C7BD" stroke="#2A756D" stroke-width="2"/>
+  </g>
+</svg>

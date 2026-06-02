@@ -78,6 +78,7 @@ Current canonical V2 slots:
 - seal-build-brief - work-surface brief seal, shipped as SVG source plus optimized WebP.
 - texture-brief-grid - quiet repeatable brief-output texture, shipped as SVG source plus optimized WebP tile.
 - object-brief-desk - transparent work-object cutout, shipped as SVG source plus PNG alpha output.
+- sprite-route-status - compact route/status marks, shipped as SVG source plus optimized WebP sprite sheet.
 
 Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
 
@@ -448,6 +449,8 @@ Run these checks when adding or changing assets on a page:
 Current status: `threshold-ant-guild.svg`, `badge-product-map.svg`, and `instrument-readiness-lens.svg` are implemented as the first SVG asset pass and applied in `sites/ant-school-landing-v2/index.html`.
 
 `seal-archive-reading.svg` and optimized `seal-archive-reading.webp` are implemented as the first SVG-to-WebP production asset pass and applied in `sites/product-map-field-note/index.html`.
+
+`sprite-route-status.svg` and optimized `sprite-route-status.webp` are implemented as the first compact sprite sheet and applied in `sites/build-brief-desk/index.html` as non-semantic output-card marks.
 
 ### Priority 2
 

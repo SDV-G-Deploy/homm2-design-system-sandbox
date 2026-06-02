@@ -28,6 +28,7 @@ Updated:
 - `seal-build-brief`
 - `texture-brief-grid`
 - `object-brief-desk`
+- `sprite-route-status`
 
 ## Boundary
 
@@ -37,8 +38,9 @@ It should not promote new components by itself. Its purpose is to make the visua
 
 ## Next Visual Candidates
 
-- compact sprite sheet;
-- bounded hero detail bitmap.
+- bounded hero detail bitmap;
+- frame corner bitmap;
+- state meter strip.
 
 ## Verification
 
