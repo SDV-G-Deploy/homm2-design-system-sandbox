@@ -75,6 +75,8 @@ Current canonical V2 slots:
 - badge-product-map - compact product-map route badge.
 - instrument-readiness-lens - water-lens readiness instrument.
 - seal-archive-reading - dossier/article archive-reading seal, shipped as SVG source plus optimized WebP.
+- seal-build-brief - work-surface brief seal, shipped as SVG source plus optimized WebP.
+- texture-brief-grid - quiet repeatable brief-output texture, shipped as SVG source plus optimized WebP tile.
 
 Legacy pilot slots from the first Images 2.0 pass remain valid historical evidence, but are not the preferred starting point for new V2 pages:
 

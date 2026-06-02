@@ -207,9 +207,11 @@ It proves a lighter first screen, page-local navigation, a care route, a visit s
 
 Use `docs/v2-asset-production-kit-2026-06-02.md` before adding generated PNG/WebP/SVG assets beyond the existing V2 motifs. It now includes the canonical **V2 Images 2.0 Mode** contract for bitmap/image-assisted slots.
 
-Latest asset production pass: `assets/v2/seal-archive-reading.svg` and `assets/v2/seal-archive-reading.webp` are applied in `sites/product-map-field-note/` as the first SVG-to-WebP dossier/article asset slot.
+Latest asset production pass: `assets/v2/seal-build-brief.svg`, `assets/v2/seal-build-brief.webp`, `assets/v2/texture-brief-grid.svg`, and `assets/v2/texture-brief-grid.webp` are applied in `sites/build-brief-desk/` as the first two-slot Images 2.0 practical pass.
 
 V2 now treats visual generation as a parallel lane to component promotion. Components move repeated HTML/CSS into `css/v2.components.css`; generated visual elements move through named Images 2.0 slots such as seals, badges, textures, instruments, transparent cutouts, and bounded hero details.
+
+Latest Images 2.0 practical report: `docs/night-runs/2026-06-02-images-2-practical-pass.md`.
 
 ## Latest Real Site Proof
 

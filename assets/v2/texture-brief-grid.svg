@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Brief grid texture</title>
+  <desc id="desc">Quiet sun-vellum and water-line texture for readable brief output surfaces.</desc>
+  <defs>
+    <linearGradient id="vellum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6cf" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#d89c42" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#82c7bd" stop-opacity="0.1"/>
+    </linearGradient>
+    <pattern id="grain" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M0 18h36M18 0v36" stroke="#ffe2a0" stroke-width="1" opacity="0.16"/>
+      <path d="M0 0l36 36M36 0L0 36" stroke="#88c7bd" stroke-width="0.8" opacity="0.08"/>
+      <circle cx="18" cy="18" r="3" fill="#ffd872" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="180" height="180" fill="url(#vellum)"/>
+  <rect width="180" height="180" fill="url(#grain)"/>
+  <path d="M0 44c30-10 59 10 90 0s60 10 90 0M0 116c30 10 59-10 90 0s60-10 90 0" fill="none" stroke="#8fd4c8" stroke-width="1.4" opacity="0.1"/>
+</svg>

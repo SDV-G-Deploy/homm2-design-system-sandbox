@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">Build brief seal</title>
+  <desc id="desc">Solar-brass seal with vellum brief, water-lens proof gate, and bounded route hardware.</desc>
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.48" stop-color="#d69032"/>
+      <stop offset="1" stop-color="#8f4f1a"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173d34"/>
+      <stop offset="1" stop-color="#0c1d18"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="45%" cy="38%" r="62%">
+      <stop offset="0" stop-color="#e8fff6" stop-opacity="0.96"/>
+      <stop offset="0.48" stop-color="#8fd4c8" stop-opacity="0.68"/>
+      <stop offset="1" stop-color="#183a33" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+  <path d="M96 8l28 18 34 3 5 34 21 33-21 33-5 34-34 3-28 18-28-18-34-3-5-34L8 96l21-33 5-34 34-3z" fill="url(#brass)"/>
+  <path d="M96 22l23 15 28 3 4 28 17 28-17 28-4 28-28 3-23 15-23-15-28-3-4-28-17-28 17-28 4-28 28-3z" fill="url(#shadow)" stroke="#fff0ad" stroke-width="3"/>
+  <path d="M58 54h67l15 18v76H72L58 132z" fill="#fff3bb" stroke="#c4862f" stroke-width="5"/>
+  <path d="M126 55v20h20" fill="none" stroke="#8b541f" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M74 80h42M74 96h31M74 112h52" stroke="#75471e" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="128" cy="120" r="28" fill="url(#lens)" stroke="#b8e8de" stroke-width="5"/>
+  <circle cx="128" cy="120" r="13" fill="none" stroke="#ffe08a" stroke-width="4"/>
+  <path d="M43 96h21M128 40v22M128 164v-22M166 96h-21" stroke="#ffd872" stroke-width="5" stroke-linecap="round"/>
+  <path d="M51 48l20 20M145 48l-20 20M51 144l20-20M145 144l-20-20" stroke="#88c7bd" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+</svg>

@@ -34,6 +34,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `starters/v2-site-starter/` is the current copyable plain-HTML starter.
 - `docs/v2-starter-kit-2026-06-01.md` defines page modes, chrome, content budgets, components, and recipes.
 - `docs/v2-asset-production-kit-2026-06-02.md` defines the controlled path for SVG/PNG/WebP visual assets, including V2 Images 2.0 Mode.
+- `docs/night-runs/2026-06-02-images-2-practical-pass.md` records the first two-slot Images 2.0 practical pass on Build Brief Desk.
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - Real production-like proofs now cover:
