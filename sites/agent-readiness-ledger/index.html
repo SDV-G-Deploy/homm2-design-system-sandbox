@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Readiness Ledger · ANT School</title>
+    <meta
+      name="description"
+      content="Production-like V2 page for checking whether a task is ready to hand to an AI agent."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Agent Readiness Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Agent Readiness Ledger">
+        <span class="v2-sigil">AR</span>
+        <span>
+          <strong>Agent Readiness</strong>
+          <em>Ledger</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#audit">Audit</a>
+        <a href="#ledger">Ledger</a>
+        <a href="#handoff">Handoff</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-agent-shell">
+      <section class="v2-agent-hero" aria-labelledby="agent-title" data-v2-primary>
+        <div class="v2-agent-copy">
+          <div class="v2-section-label">ANT School readiness ledger</div>
+          <h1 id="agent-title">Задача готова к агенту, когда её можно проверить без гадания.</h1>
+          <p>
+            Ledger собирает цель, границы, доказательство и право остановки в
+            один лист. Агент получает не просьбу «сделай хорошо», а ремесленный
+            заказ с мерой успеха.
+          </p>
+          <div class="v2-agent-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#ledger">Сверить ledger</a>
+            <a class="v2-command v2-command-secondary" href="#handoff">Открыть handoff</a>
+          </div>
+        </div>
+
+        <aside class="v2-agent-seal" aria-label="Readiness summary">
+          <picture>
+            <source srcset="../../assets/v2/seal-build-brief.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/seal-build-brief.svg"
+              width="192"
+              height="192"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Goal</span><strong>Named</strong></div>
+            <div><span>Scope</span><strong>Bounded</strong></div>
+            <div><span>Proof</span><strong>Visible</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-agent-board" id="audit" aria-label="Readiness audit board">
+        <article class="v2-ledger v2-agent-route" aria-labelledby="audit-title">
+          <div class="v2-section-label">Audit route</div>
+          <h2 id="audit-title">Перед запуском проверяются четыре двери.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Outcome</strong>
+                <small>Один результат, который можно увидеть, открыть или прочитать.</small>
+              </div>
+              <em>Goal</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Boundary</strong>
+                <small>Какие файлы и решения принадлежат проходу, а какие остаются за стеной.</small>
+              </div>
+              <em>Scope</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Proof</strong>
+                <small>Smoke, screenshot, diff или ручная проверка, которую нельзя заменить обещанием.</small>
+              </div>
+              <em>Gate</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Stop</strong>
+                <small>Что делать, если путь упёрся в риск, чужой слой или недостающий контекст.</small>
+              </div>
+              <em>Rule</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-agent-meter" aria-labelledby="meter-title">
+          <div class="v2-section-label">State meter</div>
+          <h2 id="meter-title">Готовность видна рядом с настоящими строками состояния.</h2>
+          <picture>
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <ul class="v2-status-list">
+            <li>
+              <span>Reader</span>
+              <strong>Понимает задачу без устного довеска</strong>
+            </li>
+            <li>
+              <span>Agent</span>
+              <strong>Видит ownership и запреты</strong>
+            </li>
+            <li>
+              <span>Owner</span>
+              <strong>Знает, чем принять результат</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-agent-proof" id="ledger" aria-labelledby="ledger-title">
+        <div>
+          <div class="v2-section-label">Ledger proof</div>
+          <h2 id="ledger-title">Если строка не проверяема, она ещё не готова к агенту.</h2>
+        </div>
+        <div class="v2-agent-proof-grid">
+          <div>
+            <i class="v2-agent-step-mark v2-agent-step-scope" aria-hidden="true"></i>
+            <span>Scope</span>
+            <strong>Одна область работы</strong>
+          </div>
+          <div>
+            <i class="v2-agent-step-mark v2-agent-step-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Одна проверка до сдачи</strong>
+          </div>
+          <div>
+            <i class="v2-agent-step-mark v2-agent-step-note" aria-hidden="true"></i>
+            <span>Note</span>
+            <strong>Один handoff после прохода</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-agent-handoff" id="handoff" aria-labelledby="handoff-title">
+        <div class="v2-section-label">Handoff</div>
+        <h2 id="handoff-title">На выходе не настроение, а приказ с печатью проверки.</h2>
+        <div class="v2-agent-handoff-grid">
+          <picture>
+            <source srcset="../../assets/v2/object-brief-desk.png" type="image/png" />
+            <img
+              src="../../assets/v2/object-brief-desk.svg"
+              width="320"
+              height="240"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <ul class="v2-status-list">
+            <li>
+              <span>Task</span>
+              <strong>Что сделать и где границы</strong>
+            </li>
+            <li>
+              <span>Proof</span>
+              <strong>Как доказать, что работа завершена</strong>
+            </li>
+            <li>
+              <span>Risk</span>
+              <strong>Когда остановиться и написать отчёт</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к проверке</a>
+      </section>
+    </main>
+  </body>
+</html>

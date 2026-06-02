@@ -238,6 +238,12 @@ It proves the V2 production dossier/article recipe on a real ANT-adjacent topic:
 
 It proves a compact production work surface for turning a product map into an agent-ready build brief: bounded outcome, work boundary, proof gate, stop rule, readiness lens, and handoff output.
 
+## Latest Production Surface Proof
+
+**Agent Readiness Ledger** lives in `sites/agent-readiness-ledger/`.
+
+It proves the current visual slot lane can move into a fresh production-like page without inventing a new asset type: seal, state meter, sprite marks, frame corners, and texture support a task-readiness audit surface.
+
 ## Current Checkpoint
 
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.

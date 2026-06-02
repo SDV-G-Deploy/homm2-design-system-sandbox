@@ -29,13 +29,13 @@ The system gallery at `v2/assets.html` displays the current canonical inventory 
 
 ## Current Canonical Next Candidates
 
-1. `production surface proof` - a new page built from the kit to test portability.
+1. `production surface proof` - a new page built from the kit to test portability. Completed with `sites/agent-readiness-ledger/`.
 2. `bounded hero/detail bitmap` - a restrained object or scene detail, not a full-page illustration.
 3. `ledger divider ornament` - thin repeatable divider for route lists and archive ledgers.
 
-Recommended next pass: `production surface proof`.
+Recommended next pass: `promotion audit v2.1` or a second fresh production surface.
 
-Reason: the visual lane now has enough asset types; the next useful proof is whether a fresh page can select and combine them without new one-off CSS.
+Reason: the visual lane now has enough asset types, and `Agent Readiness Ledger` proves they can combine on a fresh page. The next useful decision is whether any repeated surface patterns deserve promotion.
 
 ## Verification Snapshot
 

@@ -40,7 +40,8 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-sprite-route-status-pass.md` records the first compact route/status sprite sheet: `sprite-route-status`.
 - `docs/night-runs/2026-06-02-frame-corner-pass.md` records the first compact frame corner bitmap: `frame-corner-solar-brass`.
 - `docs/night-runs/2026-06-02-state-meter-pass.md` records the first repeatable readiness/state meter strip: `state-meter-readiness`.
-- `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md` summarizes the proven visual slot lane and now recommends a new production surface proof as the next pass.
+- `docs/night-runs/2026-06-02-v2-visual-lane-wrap-up.md` summarizes the proven visual slot lane and now recommends promotion audit v2.1 or a second fresh production surface.
+- `docs/night-runs/2026-06-02-agent-readiness-ledger.md` records the first fresh production surface proof after the visual lane: `sites/agent-readiness-ledger/`.
 - `docs/v2-library-decision-2026-06-02.md` records the current package/library decision: keep V2 as a repo-native production recipe kit.
 - `docs/night-runs/2026-06-02-route-list-promotion.md` records the first post-decision promotion: `.v2-route-list` moved into shared components after stable use across three production surfaces.
 - Real production-like proofs now cover:
@@ -49,6 +50,7 @@ The system is stable enough to build new static pages and small sites from the V
   - article/dossier: `sites/product-map-field-note/`
   - operational board: `v2/control.html`
   - work surface: `sites/build-brief-desk/`
+  - readiness audit: `sites/agent-readiness-ledger/`
 - GitHub Pages workflow was updated to current action majors and no longer emits the Node.js 20 deprecation annotation in the latest run.
 
 ## Verification Snapshot
@@ -86,3 +88,5 @@ After the first promotion, continue with two parallel lanes:
 
 1. Component promotion: consider only the compact signal/badge pattern next; keep hero shells, side instruments, action pairs, output rails, and CTA ledger endings deferred.
 2. Visual generation: use Images 2.0 for named asset slots such as seals, badges, textures, transparent cutouts, instruments, compact sprites, frame corners, state meter strips, and bounded PNG/WebP hero details.
+
+Latest production surface proof after the visual lane: `sites/agent-readiness-ledger/`, recorded in `docs/night-runs/2026-06-02-agent-readiness-ledger.md`.
