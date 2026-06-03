@@ -247,7 +247,7 @@ After the post-promotion checkpoint, `v2/components.html` was added as the compa
 
 Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
 
-After the helper inventory existed, the package-readiness gates were reviewed again. V2 remains a repo-native production recipe kit, not an npm/package candidate, because the API, package examples, and consuming-project reason are still missing.
+After the helper inventory existed, the package-readiness gates were reviewed again. V2 remained a repo-native production recipe kit, not an npm/package candidate, because the API, package examples, and consuming-project reason were still missing at that point. The later CSS-entry fixture closed only the first fixture pressure; package extraction remains blocked because install value over starter-copy is still unproven.
 
 Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.
 

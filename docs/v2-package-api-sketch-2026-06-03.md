@@ -432,8 +432,8 @@ Before any npm/package scaffolding, complete these:
 
 1. Use this sketch during at least one new applied surface or starter-copy friction pass.
 2. Mark `WorkflowRows` and `PackageGrid` stable or keep them out of the first package.
-3. Add at least one package-example or import/build verification target.
-4. Identify a real consuming project or documented starter-copy friction.
+3. Strengthen the existing package-example into an import/build or real consumer fixture.
+4. Identify a real consuming project with package-install value beyond documented starter-copy friction.
 5. Decide framework posture: CSS-only package, HTML snippets, web components, or framework bindings. **Settled for current phase:** CSS-only entry + HTML snippets; web components/framework bindings deferred.
 
 Until then, the recommended delivery remains:
@@ -447,7 +447,7 @@ Starter-copy friction note:
 
 - docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md documents the first friction pass.
 - The starter now demonstrates RouteList, ActionPair, and SignalBadge directly in copyable HTML.
-- This reduces copy friction, but does not replace the need for a real consuming project or package-example verification.
+- This reduces copy friction, but does not replace the need for a real consuming project or stronger import/build verification.
 
 Package-example fixture note:
 

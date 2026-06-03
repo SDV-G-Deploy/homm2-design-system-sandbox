@@ -157,11 +157,11 @@ The workflow is static-only:
 - artifact upload is the repo contents
 - deploy target is GitHub Pages
 
-## Latest V2 Surface
+## Earlier V2 Surface
 
-**V2 slice 06 - control board** adds a dense operational screen with route filters, queue rows, civic summaries, water-lens inspection, and separated command rail.
+**V2 slice 06 - control board** added a dense operational screen with route filters, queue rows, civic summaries, water-lens inspection, and separated command rail.
 
-This is the first V2 proof that is closer to an app/work surface than to a presentation page.
+This remains the first V2 proof that is closer to an app/work surface than to a presentation page. Later surfaces and the current package-gate pause checkpoint are recorded below.
 
 ## Current Starter Kit
 
@@ -331,5 +331,5 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-v2-consumer-value-pass.md`: consumer-value gate check; install value is not proven, so package extraction remains blocked.
 - `docs/night-runs/2026-06-03-v2-named-consumer-spike.md`: named throwaway consumer comparison; CSS-entry works technically, but starter-copy remains the stronger consumer path, so package work pauses.
 - `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`: final package-gate отсечка before pause; V2 stays repo-native and package extraction remains blocked.
-- `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: current wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the next promoted-helper inventory-board pass.
+- `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: earlier wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the promoted-helper inventory-board pass.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: earlier wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and autonomous direction before the latest promotions.
