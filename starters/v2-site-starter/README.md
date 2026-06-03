@@ -5,16 +5,27 @@ Copy this folder when starting a new HoMM2 x Solarpunk V2 site.
 This starter is intentionally plain HTML. It is a production recipe starter, not an npm package or component library.
 
 For faster page assembly, start from `templates/` when the new site matches a
-known shape. The first available template is `templates/product-landing/`.
+known shape. The current quickstart is
+`../../docs/v2-site-kit-quickstart-2026-06-03.md`.
+
+Available page shapes:
+
+- `templates/product-landing/`
+- `templates/report-proof/`
+- `templates/dashboard-status/`
+- `templates/catalog-object-list/`
+- `templates/civic-route-map/`
 
 ## Use
 
-1. Copy starters/v2-site-starter/ into a new site folder.
-2. Keep body.v2-production-page.
-3. Keep mobile navigation to 2-3 short routes.
-4. Replace the page content before changing the system CSS.
-5. Add page-local recipe CSS only when shared V2 classes are not enough.
-6. Run the V2 gates before publishing.
+1. Choose a template when the page shape is known.
+2. Copy the selected template, or copy the whole starter when the shape is not
+   covered yet.
+3. Keep body.v2-production-page.
+4. Keep mobile navigation to 2-3 short routes.
+5. Replace the page content before changing the system CSS.
+6. Add page-local recipe CSS only when shared V2 classes are not enough.
+7. Run the V2 gates before publishing.
 
 ## Helper Selection
 

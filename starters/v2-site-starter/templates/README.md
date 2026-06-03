@@ -5,6 +5,8 @@ fast internal production, not package exports.
 
 The initial five-template set is complete. For the current evaluation and next
 lanes, read `../../../docs/night-runs/2026-06-03-v2-site-kit-wrap.md`.
+For a shorter start-from-zero path, read
+`../../../docs/v2-site-kit-quickstart-2026-06-03.md`.
 
 ## Available
 

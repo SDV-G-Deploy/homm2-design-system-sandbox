@@ -8,6 +8,14 @@ Public sandbox for a **solar-civic fantasy interface**: HoMM2 material weight, f
 
 Use `/v2/` for new work, future passes, and agent handoffs. V1 is preserved as research/archive material only; do not extend V1 by default.
 
+Start new small sites from `docs/v2-site-kit-quickstart-2026-06-03.md`.
+Current Site Kit checkpoint: `docs/night-runs/2026-06-03-v2-site-kit-wrap.md`.
+Current package pause checkpoint: `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
+
+Do not start npm, framework bindings, web components, build tooling, or a
+generator from the current state. V2 is a repo-native Site Kit until a named
+consumer proves template-copy is the bottleneck.
+
 Live entry points:
 
 - Root gateway: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/
@@ -88,6 +96,8 @@ Current acceptance note:
 
 - `docs/v2-acceptance-2026-06-01.md`
 - `docs/v2-starter-kit-2026-06-01.md`
+- `docs/v2-site-kit-quickstart-2026-06-03.md`
+- `docs/v2-site-kit-2026-06-03.md`
 - `docs/v2-asset-production-kit-2026-06-02.md`
 - `docs/v2-library-decision-2026-06-02.md`
 
@@ -237,6 +247,10 @@ Verdict: V2 is now a coherent repo-native kit for building small same-style
 sites from five templates, promoted helpers, and bounded asset slots. Continue
 with documentation cleanup or asset polish; do not reopen npm/package work from
 this checkpoint.
+
+Latest Site Kit cleanup: `docs/night-runs/2026-06-03-v2-site-kit-cleanup.md`.
+It adds `docs/v2-site-kit-quickstart-2026-06-03.md` as the short entry path for
+new small sites and keeps package work paused.
 
 ## Latest Production Example
 
