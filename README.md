@@ -23,6 +23,7 @@ Live entry points:
 - Build Brief Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/build-brief-desk/
 - Service Intake Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/service-intake-ledger/
 - Offer Readiness Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/offer-readiness-ledger/
+- Water Guild Field Kit: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/water-guild-field-kit/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -177,6 +178,8 @@ The copyable site starter lives in `starters/v2-site-starter/`. It is the recomm
 The starter now includes a small helper-selection map and demonstrates promoted helpers directly in copyable HTML: `RouteList`, `ActionPair`, and `SignalBadge`.
 
 Latest starter friction report: `docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md`.
+
+Latest starter API proof page: sites/water-guild-field-kit/index.html uses the updated starter and package API sketch on a fresh water-audit topic without package scaffolding.
 
 ## Latest Production Example
 

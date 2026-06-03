@@ -49,6 +49,7 @@ const TARGETS = [
   ["Service Tier Ledger smoke", "/sites/service-tier-ledger/index.html", "v2"],
   ["Client Work Queue smoke", "/sites/client-work-queue/index.html", "v2"],
   ["Delivery Review Board smoke", "/sites/delivery-review-board/index.html", "v2"],
+  ["Water Guild Field Kit smoke", "/sites/water-guild-field-kit/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -149,6 +150,7 @@ function staticSanity(failures) {
     "sites/service-tier-ledger/index.html",
     "sites/client-work-queue/index.html",
     "sites/delivery-review-board/index.html",
+    "sites/water-guild-field-kit/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [
