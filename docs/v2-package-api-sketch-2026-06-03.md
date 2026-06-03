@@ -469,6 +469,13 @@ Consumer-value note:
 - The starter still carries more practical value than the CSS entry because it includes markup anatomy, production chrome, helper-selection guidance, asset path assumptions, and local recipe rules.
 - Package extraction remains blocked until a named consumer spike shows concrete install value over copying the starter.
 
+Named consumer spike note:
+
+- docs/night-runs/2026-06-03-v2-named-consumer-spike.md records the Guild Repair Desk throwaway comparison.
+- Both copied-starter and CSS-entry versions rendered with 0 visual overflow offenders at desktop, mobile, and narrow viewports.
+- The CSS-entry path worked technically but did not reduce the need to know markup anatomy, production chrome rules, asset conventions, and helper composition.
+- Install value over starter-copy remains unproven; pause package work before adding any scaffolding.
+
 ## Verification
 
 Docs-only pass. Check before closeout:

@@ -195,6 +195,10 @@ Consumer value was checked in `docs/night-runs/2026-06-03-v2-consumer-value-pass
 
 Verdict: package install value is not proven yet. The starter currently carries more practical consumer value than the CSS-entry fixture because it includes markup anatomy, production chrome, helper-selection guidance, asset path assumptions, and local recipe rules. Package extraction remains blocked until a named consumer spike shows concrete install value over copying `starters/v2-site-starter/`.
 
+The named consumer spike is recorded in `docs/night-runs/2026-06-03-v2-named-consumer-spike.md`.
+
+It compared a throwaway Guild Repair Desk page built from copied starter versus CSS-entry import. Both rendered cleanly, but the CSS-entry path still required manual page anatomy, production chrome knowledge, asset-path rewrites, and helper composition. Install value over starter-copy remains unproven. Package work should pause here rather than continue into scaffolding.
+
 ## Promotion Results
 
 After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.
