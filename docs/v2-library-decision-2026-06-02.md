@@ -167,7 +167,11 @@ After the 2026-06-03 promotions, the next engineering pass was the **promoted-he
 
 Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
 
-The next useful pass is a package-readiness review against this visible helper inventory. Do not create an npm/component package unless the gates below are met by evidence. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
+The package-readiness review against this visible helper inventory is complete.
+
+Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.
+
+Decision remains: do not create an npm/component package yet. The next useful pass is a documentation-only package API sketch. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
 ## Promotion Results
 
@@ -212,3 +216,7 @@ Report: `docs/night-runs/2026-06-03-package-card-promotion.md`.
 After the post-promotion checkpoint, `v2/components.html` was added as the compact promoted-helper inventory board. It does not promote new helpers; it makes the existing shared contract visible and testable.
 
 Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
+
+After the helper inventory existed, the package-readiness gates were reviewed again. V2 remains a repo-native production recipe kit, not an npm/package candidate, because the API, package examples, and consuming-project reason are still missing.
+
+Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.

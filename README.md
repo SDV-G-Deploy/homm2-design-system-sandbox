@@ -292,6 +292,8 @@ Use it before the next broad pass. It records current promoted helpers, deferred
 
 V2 should remain a repo-native production recipe kit for now, not an npm package or formal component library.
 
+Latest package-readiness review: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`. Verdict: still no package; the right next pass is a documentation-only package API sketch, not scaffolding.
+
 The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion results so far:
 
 - `docs/night-runs/2026-06-02-route-list-promotion.md`: `.v2-route-list` moved from recipe CSS into shared components after proving stable across three production surfaces.
@@ -305,5 +307,6 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-workflow-row-promotion.md`: `.v2-workflow-rows` and `.v2-workflow-row` promoted only the app-like icon + text stack + state-chip row anatomy after Client Work Queue and Delivery Review Board repeated the same layout under different workflow pressure.
 - `docs/night-runs/2026-06-03-package-card-promotion.md`: `.v2-package-grid`, `.v2-package-card`, and `.v2-package-card-primary` promoted only the commercial comparison-card anatomy after Package Ledger and Service Tier Ledger repeated it under different buying pressure.
 - `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`: `v2/components.html` added as the compact visible board for every promoted helper, ownership boundary, non-scope warning, and mobile-safe example.
+- `docs/night-runs/2026-06-03-v2-package-readiness-review.md`: package-readiness gates reviewed against the helper inventory; verdict remains no npm/package until API, package examples, and a consuming-project reason exist.
 - `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: current wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the next promoted-helper inventory-board pass.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: earlier wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and autonomous direction before the latest promotions.
