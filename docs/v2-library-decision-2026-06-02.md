@@ -173,7 +173,7 @@ Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.
 
 Decision remains: do not create an npm/component package yet.
 
-The documentation-only package API sketch is now recorded in `docs/v2-package-api-sketch-2026-06-03.md`. It maps promoted helpers to possible component contracts and marks candidates as stable repo helpers, draft APIs, or blocked. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
+The documentation-only package API sketch is now recorded in `docs/v2-package-api-sketch-2026-06-03.md`. It maps promoted helpers to possible component contracts and marks candidates as stable repo helpers, draft APIs, or blocked. The latest package/workflow pause checkpoint is `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
 
 Starter-copy friction was checked in `docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md`.
 
@@ -198,6 +198,10 @@ Verdict: package install value is not proven yet. The starter currently carries 
 The named consumer spike is recorded in `docs/night-runs/2026-06-03-v2-named-consumer-spike.md`.
 
 It compared a throwaway Guild Repair Desk page built from copied starter versus CSS-entry import. Both rendered cleanly, but the CSS-entry path still required manual page anatomy, production chrome knowledge, asset-path rewrites, and helper composition. Install value over starter-copy remains unproven. Package work should pause here rather than continue into scaffolding.
+
+The final package-gate wrap before pause is `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
+
+Treat it as the current top-level checkpoint for package work. V2 remains repo-native; future work should resume from applied surfaces, the asset/visual lane, or a proven repeated component pressure. Do not resume by adding package scaffolding unless a new named consumer proves starter-copy pain.
 
 ## Promotion Results
 

@@ -476,6 +476,13 @@ Named consumer spike note:
 - The CSS-entry path worked technically but did not reduce the need to know markup anatomy, production chrome rules, asset conventions, and helper composition.
 - Install value over starter-copy remains unproven; pause package work before adding any scaffolding.
 
+Package gate wrap note:
+
+- docs/night-runs/2026-06-03-v2-package-gate-wrap.md is the current pause checkpoint.
+- V2 remains a repo-native production recipe kit.
+- Package extraction is blocked until a new named consumer proves install value over starter-copy.
+- Do not add npm package scaffolding, framework bindings, web components, versioning, or release flow from this sketch alone.
+
 ## Verification
 
 Docs-only pass. Check before closeout:

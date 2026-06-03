@@ -190,6 +190,8 @@ Latest consumer-value pass: `docs/night-runs/2026-06-03-v2-consumer-value-pass.m
 
 Latest named consumer spike: `docs/night-runs/2026-06-03-v2-named-consumer-spike.md` compared a throwaway Guild Repair Desk page via copied starter and CSS-entry import. Both rendered cleanly, but install value over starter-copy remains unproven. Pause package work here; do not add npm, framework bindings, web components, versioning, or release flow yet.
 
+Latest package gate wrap / pause checkpoint: `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`. It is the current top-level отсечка for package work: V2 remains a repo-native production recipe kit; package extraction stays blocked; next work should resume from applied, asset/visual, or proven component pressure, not from packaging.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
@@ -298,11 +300,9 @@ It proves a second app-like workflow surface for shipped artifacts, acceptance c
 
 ## Current Checkpoint
 
-The current promoted-helper inventory pass is `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
+The current package/workflow pause checkpoint is `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
 
-The latest system checkpoint before that pass is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
-
-Use it before the next broad pass. It records current promoted helpers, deferred recipe areas, package-readiness gates, risks, and the recommended next-pass order.
+Use it before the next broad pass. It records promoted helpers, package-gate results, blocked package work, and safe resume lanes after the pause.
 
 ## Current Library Decision
 
@@ -330,5 +330,6 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-v2-framework-posture-decision.md`: current framework posture decision; CSS-only entry + HTML snippets now, web components/framework bindings later only after consumer proof.
 - `docs/night-runs/2026-06-03-v2-consumer-value-pass.md`: consumer-value gate check; install value is not proven, so package extraction remains blocked.
 - `docs/night-runs/2026-06-03-v2-named-consumer-spike.md`: named throwaway consumer comparison; CSS-entry works technically, but starter-copy remains the stronger consumer path, so package work pauses.
+- `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`: final package-gate отсечка before pause; V2 stays repo-native and package extraction remains blocked.
 - `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: current wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the next promoted-helper inventory-board pass.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: earlier wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and autonomous direction before the latest promotions.
