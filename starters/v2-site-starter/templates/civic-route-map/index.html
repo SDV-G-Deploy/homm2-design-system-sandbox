@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Route Map Template · V2 Site Kit</title>
+    <meta
+      name="description"
+      content="Copyable V2 civic route/map-like template for routes, field kits, location notes, and state narratives."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Route navigation">
+      <a class="v2-brand" href="#top" aria-label="Route map title">
+        <span class="v2-sigil">RM</span>
+        <span>
+          <strong>Route Map</strong>
+          <em>Civic path</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#route">Route</a>
+        <a href="#checks">Checks</a>
+        <a href="#handoff">Writ</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-note-shell">
+      <section class="v2-note-hero" aria-labelledby="route-title" data-v2-primary>
+        <div class="v2-note-copy">
+          <div class="v2-section-label">Civic route</div>
+          <h1 id="route-title">Replace this with the route's useful destination.</h1>
+          <p>
+            Use this template when the page must explain a path through places,
+            checks, states, or handoff points without becoming a full map app.
+          </p>
+          <div class="v2-action-pair" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#route">Read route</a>
+            <a class="v2-command v2-command-secondary" href="#checks">Check states</a>
+          </div>
+        </div>
+
+        <aside class="v2-panel v2-note-side" aria-label="Route signal">
+          <picture>
+            <source srcset="../../../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              class="v2-state-meter-strip"
+              src="../../../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-signal-badge" aria-hidden="true">
+            <img src="../../../../assets/v2/water-lens.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Route</span>
+              <strong>Place + state</strong>
+            </div>
+          </div>
+          <div class="v2-lens-module">
+            <div><span>Start</span><strong>Known point</strong></div>
+            <div><span>Gate</span><strong>State check</strong></div>
+            <div><span>End</span><strong>Handoff</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-note-map" id="route" aria-labelledby="route-map-title">
+        <article class="v2-panel">
+          <div class="v2-section-label">Route ledger</div>
+          <h2 id="route-map-title">Turn the route into ordered checkpoints.</h2>
+        </article>
+        <ol class="v2-route-list">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Starting condition</strong>
+              <small>Name the place, owner, resource, and why the route begins here.</small>
+            </div>
+            <em>Start</em>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Water or gate reading</strong>
+              <small>Show the sensed condition before the reader moves forward.</small>
+            </div>
+            <em>Read</em>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Civic handoff point</strong>
+              <small>Name who receives the result and what record travels with it.</small>
+            </div>
+            <em>Pass</em>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <strong>Return or watch rule</strong>
+              <small>Close the map with the next check, risk, or repeat condition.</small>
+            </div>
+            <em>Watch</em>
+          </li>
+        </ol>
+      </section>
+
+      <section class="v2-note-body" id="checks" aria-labelledby="checks-title">
+        <article class="v2-ledger v2-note-ledger">
+          <div class="v2-section-label">State checks</div>
+          <h2 id="checks-title">A map-like page must say what changes along the path.</h2>
+          <p>
+            Replace this text with the route logic: which conditions are stable,
+            which gate is blocked, which water reading matters, and which point
+            can be used without another inspection.
+          </p>
+          <p>
+            Keep the geography practical. The reader should know where to start,
+            what to check, and when to stop.
+          </p>
+        </article>
+
+        <aside class="v2-panel v2-note-side" aria-labelledby="lens-title">
+          <picture>
+            <source srcset="../../../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              class="v2-note-seal"
+              src="../../../../assets/v2/seal-archive-reading.svg"
+              width="720"
+              height="520"
+              alt="Solar civic seal for route records"
+            />
+          </picture>
+          <div>
+            <div class="v2-section-label">Map lens</div>
+            <h2 id="lens-title">Use three checks before the route becomes usable.</h2>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Place</span>
+              <strong>Where the point sits</strong>
+            </li>
+            <li>
+              <span>State</span>
+              <strong>What the point currently allows</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>What travels to the next point</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-note-use" id="handoff" aria-labelledby="handoff-title">
+        <div class="v2-section-label">Route writ</div>
+        <h2 id="handoff-title">End with the one route packet that can be carried forward.</h2>
+        <div class="v2-closure-grid">
+          <div>
+            <span>Route packet</span>
+            <strong>Start · Reading · Handoff · Watch rule</strong>
+            <small>If one part is missing, the map is still a draft.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Move</span>
+              <strong>Start from the named point</strong>
+            </li>
+            <li>
+              <span>Read</span>
+              <strong>Confirm the route state</strong>
+            </li>
+            <li>
+              <span>Carry</span>
+              <strong>Pass the record to the next owner</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Return to route</a>
+      </section>
+    </main>
+  </body>
+</html>

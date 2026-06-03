@@ -28,6 +28,7 @@ Live entry points:
 - Aqueduct Audit Note: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/aqueduct-audit-note/
 - Harbor Readiness Board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/harbor-readiness-board/
 - Civic Tool Registry: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/civic-tool-registry/
+- Sunwell Route Map: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/sunwell-route-map/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -61,6 +62,7 @@ Current V2 proof surfaces:
 - `sites/aqueduct-audit-note/index.html` - first Site Kit report/proof page from the report template
 - `sites/harbor-readiness-board/index.html` - first Site Kit dashboard/status board from the dashboard template
 - `sites/civic-tool-registry/index.html` - first Site Kit catalog/object-list proof from the catalog template
+- `sites/sunwell-route-map/index.html` - first Site Kit civic route/map-like proof from the route template
 
 Shared V2 system files:
 
@@ -225,6 +227,11 @@ It adds `starters/v2-site-starter/templates/catalog-object-list/index.html` and
 `sites/civic-tool-registry/index.html`, proving a fourth Site Kit page type
 without shared CSS or package changes.
 
+Latest civic route template proof: `docs/night-runs/2026-06-03-v2-civic-route-template-proof.md`.
+It adds `starters/v2-site-starter/templates/civic-route-map/index.html` and
+`sites/sunwell-route-map/index.html`, completing the initial five-template
+Site Kit set without shared CSS or package changes.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
@@ -336,6 +343,12 @@ It proves a second app-like workflow surface for shipped artifacts, acceptance c
 It proves a catalog/object-list page shape for sorting repair tools by role,
 readiness, route state, and replacement rule while reusing existing row, proof,
 signal, meter, and closure helpers.
+
+**Sunwell Route Map** lives in `sites/sunwell-route-map/`.
+
+It proves a civic route/map-like page shape for ordered route checkpoints,
+water/gate readings, terrace handoff, and watch rules while reusing existing
+route, signal, meter, lens, and closure helpers.
 
 ## Current Checkpoint
 

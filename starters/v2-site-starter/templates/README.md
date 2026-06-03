@@ -9,10 +9,7 @@ fast internal production, not package exports.
 - `report-proof/` - field note, audit, case study, or result page template.
 - `dashboard-status/` - queue, readiness board, or compact operational surface template.
 - `catalog-object-list/` - object registry, route list, tool list, or asset catalog template.
-
-## Planned
-
-- `civic-route-map/`
+- `civic-route-map/` - route, field kit, location/status narrative, or map-like page template.
 
 ## Copy Rule
 
