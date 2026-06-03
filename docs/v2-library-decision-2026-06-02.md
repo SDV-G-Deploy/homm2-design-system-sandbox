@@ -186,3 +186,7 @@ The next promotion candidate remains narrow: possibly a compact signal/badge pat
 After the Workshop Schedule Ledger added a third compact icon + label/value proof, `.v2-signal-badge` was promoted as a narrow helper. It shares only the compact badge anatomy; page-local classes still own background, border, icon size, and emphasis. Large signal wrappers remain deferred.
 
 Report: `docs/night-runs/2026-06-02-signal-badge-promotion.md`.
+
+After Offer Readiness Ledger added a fourth production-like proof section, `.v2-production-proof` and `.v2-proof-grid` were promoted as narrow proof-section helpers. They share only the heading-plus-three-card anatomy and responsive grid behavior; page-local classes still own hero shells, side signal modules, final writ blocks, and semantic accents.
+
+Report: `docs/night-runs/2026-06-03-proof-grid-promotion.md`.
