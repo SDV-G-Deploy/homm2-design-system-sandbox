@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Tier Ledger · V2 Production Surface</title>
+    <meta
+      name="description"
+      content="Production-like V2 commercial surface for comparing service tiers, monthly scope, proof, exclusions, and upgrade rules."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Service Tier Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Service Tier Ledger">
+        <span class="v2-sigil">TR</span>
+        <span>
+          <strong>Service</strong>
+          <em>Tiers</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#tiers">Tiers</a>
+        <a href="#proof">Proof</a>
+        <a href="#start">Start</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-pricing-shell">
+      <section class="v2-pricing-hero" aria-labelledby="tier-title" data-v2-primary>
+        <div class="v2-pricing-copy">
+          <div class="v2-section-label">Service tier ledger</div>
+          <h1 id="tier-title">Retainer продаётся только тогда, когда виден месячный предел.</h1>
+          <p>
+            Tier ledger переводит постоянную работу в понятные уровни: сколько
+            decision time входит, какой артефакт закрывает месяц и где
+            начинается отдельный проект.
+          </p>
+          <div class="v2-action-pair v2-pricing-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#tiers">Сравнить уровни</a>
+            <a class="v2-command v2-command-secondary" href="#start">Зафиксировать вход</a>
+          </div>
+        </div>
+
+        <aside class="v2-pricing-signal" aria-label="Service tier signal">
+          <picture class="v2-pricing-seal">
+            <source srcset="../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/seal-archive-reading.svg"
+              width="240"
+              height="240"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Cadence</span><strong>Monthly</strong></div>
+            <div><span>Scope</span><strong>Capped</strong></div>
+            <div><span>Archive</span><strong>Written</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-pricing-board" id="tiers" aria-label="Service tier comparison">
+        <article class="v2-ledger v2-pricing-route" aria-labelledby="tier-route-title">
+          <div class="v2-section-label">Retainer route</div>
+          <h2 id="tier-route-title">Уровень выбирают по нагрузке на решения, а не по желанию быть рядом.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Pulse</strong>
+                <small>Один короткий decision pass в месяц для живого продукта или сайта.</small>
+              </div>
+              <em>Light</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Steward</strong>
+                <small>Регулярная проверка, polish pass и один handoff packet.</small>
+              </div>
+              <em>Core</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Workshop</strong>
+                <small>Месячный цикл с production surface, docs и verification trail.</small>
+              </div>
+              <em>Deep</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Overflow gate</strong>
+                <small>Новая feature, redesign или research run уходит в отдельный scope.</small>
+              </div>
+              <em>Guard</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-pricing-guard" aria-labelledby="tier-guard-title">
+          <div class="v2-section-label">Monthly guard</div>
+          <h2 id="tier-guard-title">Retainer без stop-rule превращается в бесконечную очередь.</h2>
+          <div class="v2-signal-badge v2-pricing-badge" aria-hidden="true">
+            <img src="../../assets/v2/solar-badge.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Month</span>
+              <strong>Closed</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Included</span>
+              <strong>Decision time, polish, handoff note</strong>
+            </li>
+            <li>
+              <span>Excluded</span>
+              <strong>New product direction, full rebuild, emergency support</strong>
+            </li>
+            <li>
+              <span>Archive</span>
+              <strong>Месяц закрывается written result, не ощущением занятости</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-pricing-packages" aria-labelledby="tiers-title">
+        <div>
+          <div class="v2-section-label">Tier board</div>
+          <h2 id="tiers-title">Три уровня повторяют package-card anatomy на другом коммерческом сценарии.</h2>
+        </div>
+        <div class="v2-package-grid">
+          <article class="v2-package-card">
+            <span>Pulse</span>
+            <strong>Monthly check</strong>
+            <em>from €260/mo</em>
+            <p>Один decision pass, короткий repair list и один written handoff.</p>
+          </article>
+          <article class="v2-package-card v2-package-card-primary">
+            <span>Steward</span>
+            <strong>Product care</strong>
+            <em>from €640/mo</em>
+            <p>Две проверки, один polish pass, archive note и route for next month.</p>
+          </article>
+          <article class="v2-package-card">
+            <span>Workshop</span>
+            <strong>Monthly build</strong>
+            <em>from €1180/mo</em>
+            <p>Один production artifact, docs trail, smoke proof and closeout board.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="v2-production-proof v2-pricing-proof" id="proof" aria-labelledby="tier-proof-title">
+        <div>
+          <div class="v2-section-label">Tier proof</div>
+          <h2 id="tier-proof-title">Постоянная работа должна оставлять видимый след каждый месяц.</h2>
+        </div>
+        <div class="v2-proof-grid v2-pricing-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Cap</span>
+            <strong>Месячный объём назван</strong>
+            <small>Tier держит предел часов, решений или production artifacts.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Inspection</span>
+            <strong>Нагрузка видна до следующего цикла</strong>
+            <small>Блокеры и overflow не прячутся внутри общего retainer слова.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Archive</span>
+            <strong>Месяц закрывается handoff packet</strong>
+            <small>Decision log, artifact link или proof board становятся концом цикла.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-pricing-buy" id="start" aria-labelledby="start-title">
+        <div class="v2-section-label">Start writ</div>
+        <h2 id="start-title">Старт фиксирует tier, cadence и первый проверяемый результат.</h2>
+        <div class="v2-closure-grid v2-pricing-buy-grid">
+          <div class="v2-pricing-note">
+            <span>Retainer entry</span>
+            <strong>Tier · Month · First gate</strong>
+            <small>Если первый gate шире tier, он становится отдельным project scope.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Choose</span>
+              <strong>Pulse, Steward или Workshop</strong>
+            </li>
+            <li>
+              <span>Open</span>
+              <strong>Первый artifact или decision queue</strong>
+            </li>
+            <li>
+              <span>Close</span>
+              <strong>Written monthly archive</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к уровням</a>
+      </section>
+    </main>
+  </body>
+</html>
+
