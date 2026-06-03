@@ -280,9 +280,9 @@ It proves a second app-like workflow surface for shipped artifacts, acceptance c
 
 ## Current Checkpoint
 
-The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.
+The current system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
-Use it before the next broad pass. It records current heads, live proofs, verification, cleanliness, and the recommended next-pass order.
+Use it before the next broad pass. It records current promoted helpers, deferred recipe areas, package-readiness gates, risks, and the recommended next-pass order.
 
 ## Current Library Decision
 
@@ -300,4 +300,5 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-local-pattern-independent-audit.md`: independent read-only audit keeps Package Ledger cards and Client Work Queue rows page-local until each pattern repeats on another distinct production surface.
 - `docs/night-runs/2026-06-03-workflow-row-promotion.md`: `.v2-workflow-rows` and `.v2-workflow-row` promoted only the app-like icon + text stack + state-chip row anatomy after Client Work Queue and Delivery Review Board repeated the same layout under different workflow pressure.
 - `docs/night-runs/2026-06-03-package-card-promotion.md`: `.v2-package-grid`, `.v2-package-card`, and `.v2-package-card-primary` promoted only the commercial comparison-card anatomy after Package Ledger and Service Tier Ledger repeated it under different buying pressure.
-- `docs/night-runs/2026-06-03-v2-wrap-around.md`: current wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and the next autonomous direction.
+- `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: current wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the next promoted-helper inventory-board pass.
+- `docs/night-runs/2026-06-03-v2-wrap-around.md`: earlier wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and autonomous direction before the latest promotions.

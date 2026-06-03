@@ -158,14 +158,14 @@ assets/v2/
 
 ## Next Practical Pass
 
-The best next engineering pass is not package creation. It is a **promotion audit**:
+The best next engineering pass is still not package creation. After the 2026-06-03 promotions, the best next pass is a **promoted-helper inventory board**:
 
-1. Compare `ant-school-landing-v2`, `product-map-field-note`, and `build-brief-desk`.
-2. Identify repeated structure that can move from `.v2-antv2-*`, `.v2-note-*`, and `.v2-brief-*` into shared `.v2-*` components.
-3. Move only 1-2 stable patterns.
-4. Run smoke and visual capture for all touched surfaces.
+1. Create or update a compact reference surface that displays every promoted helper.
+2. For each helper, show the class name, ownership boundary, one correct example, and one non-scope warning.
+3. Include mobile-safe examples for helpers with responsive behavior.
+4. Run smoke and focused visual capture for the reference surface.
 
-After that, package readiness can be judged with better evidence.
+After that, package readiness can be judged with clearer component evidence. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
 ## Promotion Results
 
