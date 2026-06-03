@@ -94,3 +94,18 @@ Status: PASS - completed a focused read-only production-surface audit.
   - git diff --check: PASS
 - Commit: 7745a91e47d5da3afcd94cffc1bf850dd88a1041
 - Next recommendation: keep compact hero shells, side signal modules, and final writ blocks local. Watch the proof grid and action pair as the only plausible next narrow candidates, but promote neither without one more unchanged production-surface proof or a targeted promotion pass.
+
+### Wake 3 - 2026-06-03 01:17 UTC
+
+Status: PASS - closed out the bounded night run.
+
+- Lock: acquired tmp/night-runs/2026-06-03.lock at 2026-06-03T01:17:51Z.
+- Dirty-tree gate: clean before edits.
+- Pass type: closeout docs sync, no page changes and no component promotion.
+- Files changed:
+  - docs/night-runs/2026-06-03-night-closeout.md
+  - docs/night-runs/2026-06-03-autonomous-ledger.md
+- Verification:
+  - git diff --check: PASS
+- Commit: pending final commit for this wake.
+- Next recommendation: stop the current night sequence cleanly. The next useful bounded pass is either one more distinct production surface that repeats the proof-grid anatomy unchanged, or a targeted proof-grid promotion pass only after four-surface evidence confirms exact behavior.
