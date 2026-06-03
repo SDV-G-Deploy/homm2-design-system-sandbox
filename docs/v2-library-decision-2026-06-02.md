@@ -190,3 +190,7 @@ Report: `docs/night-runs/2026-06-02-signal-badge-promotion.md`.
 After Offer Readiness Ledger added a fourth production-like proof section, `.v2-production-proof` and `.v2-proof-grid` were promoted as narrow proof-section helpers. They share only the heading-plus-three-card anatomy and responsive grid behavior; page-local classes still own hero shells, side signal modules, final writ blocks, and semantic accents.
 
 Report: `docs/night-runs/2026-06-03-proof-grid-promotion.md`.
+
+After the same four production-like surfaces repeated the two-command hero action pair, `.v2-action-pair` was promoted as a narrow layout helper. It shares only the grid, gap, and desktop two-column width for primary/secondary `.v2-command` links; page-local classes still own copy, anchors, hero shells, and signal modules.
+
+Report: `docs/night-runs/2026-06-03-action-pair-promotion.md`.

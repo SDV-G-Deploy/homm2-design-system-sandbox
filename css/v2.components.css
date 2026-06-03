@@ -125,6 +125,12 @@
   margin-top: 10px;
 }
 
+.v2-action-pair {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
 .v2-command {
   display: flex;
   align-items: center;

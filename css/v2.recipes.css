@@ -1183,12 +1183,6 @@
   line-height: 1.44;
 }
 
-.v2-charter-actions {
-  display: grid;
-  gap: 9px;
-  margin-top: 18px;
-}
-
 .v2-charter-signal {
   display: grid;
   gap: 14px;
@@ -1323,12 +1317,6 @@
   color: #ead9a5;
   font-size: 1.05rem;
   line-height: 1.44;
-}
-
-.v2-workshop-actions {
-  display: grid;
-  gap: 9px;
-  margin-top: 18px;
 }
 
 .v2-workshop-signal {
@@ -1508,12 +1496,6 @@
   line-height: 1.44;
 }
 
-.v2-intake-actions {
-  display: grid;
-  gap: 9px;
-  margin-top: 18px;
-}
-
 .v2-intake-signal {
   display: grid;
   gap: 14px;
@@ -1685,12 +1667,6 @@
   color: #ead9a5;
   font-size: 1.05rem;
   line-height: 1.44;
-}
-
-.v2-offer-actions {
-  display: grid;
-  gap: 9px;
-  margin-top: 18px;
 }
 
 .v2-offer-signal {

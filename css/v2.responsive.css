@@ -72,6 +72,10 @@
     min-height: 56px;
   }
 
+  .v2-action-pair {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
   .v2-civic-rail {
     align-self: end;
   }
@@ -324,10 +328,6 @@
     padding: 28px;
   }
 
-  .v2-charter-actions {
-    grid-template-columns: repeat(2, minmax(0, 220px));
-  }
-
   .v2-charter-board {
     grid-template-columns: minmax(0, 1.14fr) minmax(280px, .86fr);
     align-items: start;
@@ -342,10 +342,6 @@
     grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
     align-items: stretch;
     padding: 28px;
-  }
-
-  .v2-workshop-actions {
-    grid-template-columns: repeat(2, minmax(0, 220px));
   }
 
   .v2-workshop-board {
@@ -364,10 +360,6 @@
     padding: 28px;
   }
 
-  .v2-intake-actions {
-    grid-template-columns: repeat(2, minmax(0, 220px));
-  }
-
   .v2-intake-board {
     grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
     align-items: start;
@@ -382,10 +374,6 @@
     grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
     align-items: stretch;
     padding: 28px;
-  }
-
-  .v2-offer-actions {
-    grid-template-columns: repeat(2, minmax(0, 220px));
   }
 
   .v2-offer-board {
