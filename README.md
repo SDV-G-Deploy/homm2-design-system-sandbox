@@ -272,7 +272,7 @@ It proves a denser app-like portal surface for active client routes, blockers, i
 
 **Delivery Review Board** lives in `sites/delivery-review-board/`.
 
-It proves a second app-like workflow surface for shipped artifacts, acceptance checks, residual risk, and archive handoff while keeping row anatomy page-local for a later independent promotion audit.
+It proves a second app-like workflow surface for shipped artifacts, acceptance checks, residual risk, and archive handoff. Its repeated row anatomy promoted the narrow shared `.v2-workflow-row` helper after an independent audit.
 
 ## Current Checkpoint
 
@@ -294,4 +294,5 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-action-pair-promotion.md`: `.v2-action-pair` promoted only the two-command hero action layout after four production-like surfaces repeated the same primary/secondary command pair.
 - `docs/night-runs/2026-06-03-closure-grid-promotion.md`: `.v2-closure-ledger` and `.v2-closure-grid` promoted only the final-ledger layout and command spacing after four production-like surfaces repeated the same closure anatomy.
 - `docs/night-runs/2026-06-03-local-pattern-independent-audit.md`: independent read-only audit keeps Package Ledger cards and Client Work Queue rows page-local until each pattern repeats on another distinct production surface.
+- `docs/night-runs/2026-06-03-workflow-row-promotion.md`: `.v2-workflow-rows` and `.v2-workflow-row` promoted only the app-like icon + text stack + state-chip row anatomy after Client Work Queue and Delivery Review Board repeated the same layout under different workflow pressure.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: current wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and the next autonomous direction.

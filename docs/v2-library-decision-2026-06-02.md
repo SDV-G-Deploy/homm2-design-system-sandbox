@@ -198,3 +198,7 @@ Report: `docs/night-runs/2026-06-03-action-pair-promotion.md`.
 After the same four production-like surfaces repeated the final-ledger closure layout, `.v2-closure-ledger` and `.v2-closure-grid` were promoted as narrow helpers. They share only the ending-section command spacing and the left-record/status-list grid; page-local classes still own writ/reserve/send/publish semantics, left-slot card styling, objects, dates, notes, copy, and anchors.
 
 Report: `docs/night-runs/2026-06-03-closure-grid-promotion.md`.
+
+After Delivery Review Board supplied a second app-like workflow surface, `.v2-workflow-rows` and `.v2-workflow-row` were promoted as narrow helpers. They share only the icon + text stack + state-chip row anatomy and desktop/mobile chip placement; page-local classes still own Work Queue and Delivery semantics, state vocabulary, surrounding boards, note cards, proof/archive panels, copy, and actions.
+
+Report: `docs/night-runs/2026-06-03-workflow-row-promotion.md`.

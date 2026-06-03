@@ -81,8 +81,8 @@
         <article class="v2-ledger v2-delivery-list" aria-labelledby="review-title">
           <div class="v2-section-label">Review rows</div>
           <h2 id="review-title">Каждая сдача держит артефакт, проверку и остаточный риск.</h2>
-          <div class="v2-delivery-rows" role="list">
-            <div class="v2-delivery-row" role="listitem">
+          <div class="v2-workflow-rows v2-delivery-rows" role="list">
+            <div class="v2-workflow-row v2-delivery-row" role="listitem">
               <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
               <div>
                 <span>Live artifact</span>
@@ -91,7 +91,7 @@
               </div>
               <em>Shipped</em>
             </div>
-            <div class="v2-delivery-row" role="listitem">
+            <div class="v2-workflow-row v2-delivery-row" role="listitem">
               <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
               <div>
                 <span>Visual check</span>
@@ -100,7 +100,7 @@
               </div>
               <em>Passed</em>
             </div>
-            <div class="v2-delivery-row" role="listitem">
+            <div class="v2-workflow-row v2-delivery-row" role="listitem">
               <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
               <div>
                 <span>Acceptance gate</span>
@@ -109,7 +109,7 @@
               </div>
               <em>Guarded</em>
             </div>
-            <div class="v2-delivery-row" role="listitem">
+            <div class="v2-workflow-row v2-delivery-row" role="listitem">
               <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
               <div>
                 <span>Archive note</span>
@@ -204,4 +204,3 @@
     </main>
   </body>
 </html>
-

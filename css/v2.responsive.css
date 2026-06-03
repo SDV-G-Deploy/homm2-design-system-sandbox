@@ -397,12 +397,12 @@
     align-items: start;
   }
 
-  .v2-workqueue-row {
+  .v2-workflow-row {
     grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
   }
 
-  .v2-workqueue-row em {
+  .v2-workflow-row em {
     grid-column: 3;
     justify-self: end;
   }
@@ -416,16 +416,6 @@
   .v2-delivery-board {
     grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
     align-items: start;
-  }
-
-  .v2-delivery-row {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-  }
-
-  .v2-delivery-row em {
-    grid-column: 3;
-    justify-self: end;
   }
 
   .v2-asset-gallery-hero {
