@@ -430,7 +430,7 @@ Do not expose these as package components yet:
 
 Before any npm/package scaffolding, complete these:
 
-1. Use this sketch during at least one new applied surface.
+1. Use this sketch during at least one new applied surface or starter-copy friction pass.
 2. Mark `WorkflowRows` and `PackageGrid` stable or keep them out of the first package.
 3. Add at least one package-example or import/build verification target.
 4. Identify a real consuming project or documented starter-copy friction.
@@ -443,10 +443,15 @@ Until then, the recommended delivery remains:
 - choose helpers from `v2/components.html`;
 - keep page recipes local until they repeat under production pressure.
 
+Starter-copy friction note:
+
+- docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md documents the first friction pass.
+- The starter now demonstrates RouteList, ActionPair, and SignalBadge directly in copyable HTML.
+- This reduces copy friction, but does not replace the need for a real consuming project or package-example verification.
+
 ## Verification
 
 Docs-only pass. Check before closeout:
 
 - `git diff --check`
 - `rg -n "V2 Package API Sketch|RouteList|WorkflowRows|Explicitly Blocked Components|Package Preconditions" docs/v2-package-api-sketch-2026-06-03.md README.md docs/v2-library-decision-2026-06-02.md`
-

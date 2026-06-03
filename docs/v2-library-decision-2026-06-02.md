@@ -175,6 +175,12 @@ Decision remains: do not create an npm/component package yet.
 
 The documentation-only package API sketch is now recorded in `docs/v2-package-api-sketch-2026-06-03.md`. It maps promoted helpers to possible component contracts and marks candidates as stable repo helpers, draft APIs, or blocked. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
+Starter-copy friction was checked in `docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md`.
+
+The starter now points builders to the promoted helper inventory and demonstrates `RouteList`, `ActionPair`, and `SignalBadge` directly in `starters/v2-site-starter/index.html`.
+
+This reduces starter-copy friction, but does not change the library verdict: V2 remains a repo-native production recipe kit until a consuming project, import/build verification, and final framework posture exist.
+
 ## Promotion Results
 
 After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.

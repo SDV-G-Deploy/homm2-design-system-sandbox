@@ -13,6 +13,29 @@ This starter is intentionally plain HTML. It is a production recipe starter, not
 5. Add page-local recipe CSS only when shared V2 classes are not enough.
 6. Run the V2 gates before publishing.
 
+## Helper Selection
+
+Use the promoted helper inventory before adding page-local markup:
+
+- v2/components.html - visual examples and ownership boundaries.
+- docs/v2-package-api-sketch-2026-06-03.md - draft component contracts.
+
+Starter defaults:
+
+- .v2-route-list for ordered product steps.
+- .v2-action-pair for one primary and one secondary command.
+- .v2-signal-badge for compact icon + label/value state.
+- .v2-status-list for plain state rows when no icon slot is needed.
+
+Reach for these when the page needs them:
+
+- .v2-production-proof + .v2-proof-grid for a three-card proof section.
+- .v2-state-meter-strip for a named Images 2.0 readiness meter.
+- .v2-workflow-rows only for app-like task rows; it is still draft for package API.
+- .v2-package-grid only for commercial package/tier cards; it is still draft for package API.
+
+Avoid inventing generic cards, rows, hero shells, or pricing shells in the starter. Keep those page-local until they repeat under production pressure.
+
 ## V2 Gates
 
 - node tools/regression-smoke.js

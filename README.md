@@ -174,6 +174,10 @@ Use `docs/v2-starter-kit-2026-06-01.md` before building the next applied page.
 
 The copyable site starter lives in `starters/v2-site-starter/`. It is the recommended starting folder for new V2 landing pages before a component/npm package exists.
 
+The starter now includes a small helper-selection map and demonstrates promoted helpers directly in copyable HTML: `RouteList`, `ActionPair`, and `SignalBadge`.
+
+Latest starter friction report: `docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md`.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
