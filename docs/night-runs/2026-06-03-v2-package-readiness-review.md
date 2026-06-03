@@ -104,6 +104,8 @@ For each, record:
 
 This should be documentation only. It will show whether a package API can be written from existing evidence or whether another production surface is still needed.
 
+Follow-up completed: `docs/v2-package-api-sketch-2026-06-03.md` records the documentation-only sketch. It is not scaffolding and not an API commitment.
+
 ## Stop Rule
 
 Do not start package scaffolding until at least these are true:

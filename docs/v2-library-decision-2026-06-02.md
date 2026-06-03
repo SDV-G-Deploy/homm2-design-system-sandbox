@@ -171,7 +171,9 @@ The package-readiness review against this visible helper inventory is complete.
 
 Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.
 
-Decision remains: do not create an npm/component package yet. The next useful pass is a documentation-only package API sketch. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
+Decision remains: do not create an npm/component package yet.
+
+The documentation-only package API sketch is now recorded in `docs/v2-package-api-sketch-2026-06-03.md`. It maps promoted helpers to possible component contracts and marks candidates as stable repo helpers, draft APIs, or blocked. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
 ## Promotion Results
 
@@ -220,3 +222,7 @@ Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
 After the helper inventory existed, the package-readiness gates were reviewed again. V2 remains a repo-native production recipe kit, not an npm/package candidate, because the API, package examples, and consuming-project reason are still missing.
 
 Report: `docs/night-runs/2026-06-03-v2-package-readiness-review.md`.
+
+A documentation-only package API sketch now exists. It is not scaffolding and not an API commitment; it only tests whether current helper boundaries can be written without inventing package behavior.
+
+Sketch: `docs/v2-package-api-sketch-2026-06-03.md`.
