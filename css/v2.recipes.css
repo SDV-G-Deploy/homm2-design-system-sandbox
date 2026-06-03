@@ -1239,12 +1239,6 @@
   border-left-color: var(--v2-brass);
 }
 
-.v2-charter-writ-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: 16px;
-}
-
 .v2-charter-object {
   display: grid;
   place-items: center;
@@ -1262,10 +1256,6 @@
   display: block;
   width: min(100%, 220px);
   height: auto;
-}
-
-.v2-charter-writ .v2-command {
-  margin-top: 18px;
 }
 
 /* V2 production recipe: workshop schedule ledger surface. */
@@ -1392,12 +1382,6 @@
   line-height: 1;
 }
 
-.v2-workshop-reserve-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: 16px;
-}
-
 .v2-workshop-date {
   display: grid;
   align-content: center;
@@ -1439,10 +1423,6 @@
   margin-top: 8px;
   color: #d5bc82;
   line-height: 1.26;
-}
-
-.v2-workshop-reserve .v2-command {
-  margin-top: 18px;
 }
 
 /* V2 production recipe: service intake ledger surface. */
@@ -1565,12 +1545,6 @@
   line-height: 1;
 }
 
-.v2-intake-send-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: 16px;
-}
-
 .v2-intake-note {
   display: grid;
   align-content: center;
@@ -1612,10 +1586,6 @@
   margin-top: 8px;
   color: #d5bc82;
   line-height: 1.26;
-}
-
-.v2-intake-send .v2-command {
-  margin-top: 18px;
 }
 
 /* V2 production recipe: offer readiness ledger surface. */
@@ -1738,12 +1708,6 @@
   line-height: 1;
 }
 
-.v2-offer-publish-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: 16px;
-}
-
 .v2-offer-note {
   display: grid;
   align-content: center;
@@ -1785,10 +1749,6 @@
   margin-top: 8px;
   color: #d5bc82;
   line-height: 1.26;
-}
-
-.v2-offer-publish .v2-command {
-  margin-top: 18px;
 }
 
 /* V2 system recipe: visual asset slot gallery. */

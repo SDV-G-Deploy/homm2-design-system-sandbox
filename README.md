@@ -280,4 +280,5 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-02-signal-badge-promotion.md`: `.v2-signal-badge` promoted only the compact icon + label/value badge anatomy after ANT School Landing V2, Product Map Field Note, and Workshop Schedule Ledger repeated the same slot.
 - `docs/night-runs/2026-06-03-proof-grid-promotion.md`: `.v2-production-proof` and `.v2-proof-grid` promoted only the proof heading plus three-card evidence anatomy after four production-like surfaces repeated it.
 - `docs/night-runs/2026-06-03-action-pair-promotion.md`: `.v2-action-pair` promoted only the two-command hero action layout after four production-like surfaces repeated the same primary/secondary command pair.
+- `docs/night-runs/2026-06-03-closure-grid-promotion.md`: `.v2-closure-ledger` and `.v2-closure-grid` promoted only the final-ledger layout and command spacing after four production-like surfaces repeated the same closure anatomy.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: current wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and the next autonomous direction.

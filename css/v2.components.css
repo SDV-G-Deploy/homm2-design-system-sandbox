@@ -131,6 +131,16 @@
   margin-top: 18px;
 }
 
+.v2-closure-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.v2-closure-ledger .v2-command {
+  margin-top: 18px;
+}
+
 .v2-command {
   display: flex;
   align-items: center;

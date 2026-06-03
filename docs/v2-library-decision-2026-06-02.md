@@ -194,3 +194,7 @@ Report: `docs/night-runs/2026-06-03-proof-grid-promotion.md`.
 After the same four production-like surfaces repeated the two-command hero action pair, `.v2-action-pair` was promoted as a narrow layout helper. It shares only the grid, gap, and desktop two-column width for primary/secondary `.v2-command` links; page-local classes still own copy, anchors, hero shells, and signal modules.
 
 Report: `docs/night-runs/2026-06-03-action-pair-promotion.md`.
+
+After the same four production-like surfaces repeated the final-ledger closure layout, `.v2-closure-ledger` and `.v2-closure-grid` were promoted as narrow helpers. They share only the ending-section command spacing and the left-record/status-list grid; page-local classes still own writ/reserve/send/publish semantics, left-slot card styling, objects, dates, notes, copy, and anchors.
+
+Report: `docs/night-runs/2026-06-03-closure-grid-promotion.md`.

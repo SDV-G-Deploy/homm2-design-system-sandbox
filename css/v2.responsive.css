@@ -333,7 +333,7 @@
     align-items: start;
   }
 
-  .v2-charter-writ-grid {
+  .v2-closure-grid {
     grid-template-columns: minmax(260px, .45fr) minmax(0, 1fr);
     align-items: stretch;
   }
@@ -349,11 +349,6 @@
     align-items: start;
   }
 
-  .v2-workshop-reserve-grid {
-    grid-template-columns: minmax(260px, .45fr) minmax(0, 1fr);
-    align-items: stretch;
-  }
-
   .v2-intake-hero {
     grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
     align-items: stretch;
@@ -365,11 +360,6 @@
     align-items: start;
   }
 
-  .v2-intake-send-grid {
-    grid-template-columns: minmax(260px, .45fr) minmax(0, 1fr);
-    align-items: stretch;
-  }
-
   .v2-offer-hero {
     grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
     align-items: stretch;
@@ -379,11 +369,6 @@
   .v2-offer-board {
     grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
     align-items: start;
-  }
-
-  .v2-offer-publish-grid {
-    grid-template-columns: minmax(260px, .45fr) minmax(0, 1fr);
-    align-items: stretch;
   }
 
   .v2-asset-gallery-hero {
