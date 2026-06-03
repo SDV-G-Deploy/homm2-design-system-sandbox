@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offer Readiness Ledger · ANT School</title>
+    <meta
+      name="description"
+      content="Production-like V2 page for checking whether a service or workshop offer is ready to publish."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Offer Readiness Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Offer Readiness Ledger">
+        <span class="v2-sigil">OR</span>
+        <span>
+          <strong>Offer</strong>
+          <em>Ledger</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#route">Route</a>
+        <a href="#signal">Signal</a>
+        <a href="#publish">Publish</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-offer-shell">
+      <section class="v2-offer-hero" aria-labelledby="offer-title" data-v2-primary>
+        <div class="v2-offer-copy">
+          <div class="v2-section-label">Offer readiness</div>
+          <h1 id="offer-title">Оффер можно выпускать, когда его не надо объяснять голосом.</h1>
+          <p>
+            Offer ledger собирает обещание, кому оно подходит, какой первый
+            результат человек получит и какой сигнал докажет, что страница
+            готова к публикации.
+          </p>
+          <div class="v2-offer-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#publish">Проверить выпуск</a>
+            <a class="v2-command v2-command-secondary" href="#route">Сверить маршрут</a>
+          </div>
+        </div>
+
+        <aside class="v2-offer-signal" aria-label="Offer signal">
+          <div class="v2-offer-instrument" aria-hidden="true">
+            <img src="../../assets/v2/instrument-readiness-lens.svg" width="220" height="220" alt="" />
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Audience</span><strong>Named</strong></div>
+            <div><span>Promise</span><strong>Bounded</strong></div>
+            <div><span>Proof</span><strong>Ready</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-offer-board" id="route" aria-label="Offer readiness route">
+        <article class="v2-ledger v2-offer-route" aria-labelledby="route-title">
+          <div class="v2-section-label">Publish route</div>
+          <h2 id="route-title">Перед запуском оффера нужны четыре проверяемые строки.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Named reader</strong>
+                <small>Кто узнает себя за первый экран, а кто честно не целевой.</small>
+              </div>
+              <em>Who</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Bounded promise</strong>
+                <small>Один результат после первого шага, без скрытого полного проекта.</small>
+              </div>
+              <em>What</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Visible proof</strong>
+                <small>Пример, артефакт, дата, карта или сигнал, который можно проверить.</small>
+              </div>
+              <em>Proof</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Next gate</strong>
+                <small>Что человек делает дальше: заявка, бриф, звонок, оплата или письмо.</small>
+              </div>
+              <em>Gate</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-offer-readiness" id="signal" aria-labelledby="signal-title">
+          <div class="v2-section-label">Readiness signal</div>
+          <h2 id="signal-title">Если нельзя назвать стоп-условие, оффер ещё сырой.</h2>
+          <div class="v2-signal-badge v2-offer-badge" aria-hidden="true">
+            <img src="../../assets/v2/instrument-readiness-lens.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Launch state</span>
+              <strong>Almost ready</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Reader</span>
+              <strong>Понимает цену входа и первый результат</strong>
+            </li>
+            <li>
+              <span>Builder</span>
+              <strong>Видит, какие блоки страницы нужны</strong>
+            </li>
+            <li>
+              <span>Owner</span>
+              <strong>Знает, что не обещать в тексте</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-offer-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Offer proof</div>
+          <h2 id="proof-title">Готовый оффер держится на фактах, границе и следующем действии.</h2>
+        </div>
+        <div class="v2-offer-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Scope</span>
+            <strong>Один покупательский сценарий</strong>
+            <small>Не смешиваем консультацию, курс, агентскую работу и подписку в один вход.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Один честный следующий шаг</strong>
+            <small>Заявка, brief или дата с понятным результатом, а не абстрактный контакт.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Proof note</span>
+            <strong>Один видимый артефакт</strong>
+            <small>Карта, чеклист, пример результата или публичная дата подтверждают обещание.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-offer-publish" id="publish" aria-labelledby="publish-title">
+        <div class="v2-section-label">Publish writ</div>
+        <h2 id="publish-title">Финальный выпуск фиксирует, что говорим, кому и где останавливаемся.</h2>
+        <div class="v2-offer-publish-grid">
+          <div class="v2-offer-note">
+            <span>Release note</span>
+            <strong>Ready after one copy pass</strong>
+            <small>Уточнить цену входа, убрать лишние обещания, оставить один следующий шаг.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Keep</span>
+              <strong>Кому подходит, результат, proof, gate</strong>
+            </li>
+            <li>
+              <span>Cut</span>
+              <strong>Общие преимущества без проверяемого действия</strong>
+            </li>
+            <li>
+              <span>Watch</span>
+              <strong>Слова, которые расширяют работу без цены</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к офферу</a>
+      </section>
+    </main>
+  </body>
+</html>

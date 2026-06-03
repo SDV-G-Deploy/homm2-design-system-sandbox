@@ -21,6 +21,7 @@ Live entry points:
 - ANT School landing v2: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/ant-school-landing-v2/
 - Build Brief Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/build-brief-desk/
 - Service Intake Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/service-intake-ledger/
+- Offer Readiness Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/offer-readiness-ledger/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -48,6 +49,7 @@ Current V2 proof surfaces:
 - `v2/canopy-clinic.html` - compact service/booking page with care route and visit signal
 - `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path
 - `sites/service-intake-ledger/index.html` - diagnostic intake surface for service requests
+- `sites/offer-readiness-ledger/index.html` - publication readiness surface for offer pages
 
 Shared V2 system files:
 
@@ -255,6 +257,10 @@ It proves another fresh production-like page shape: a launch charter surface for
 **Workshop Schedule Ledger** lives in `sites/workshop-schedule-ledger/`.
 
 It proves a schedule/seat/reserve page shape for workshop offers and adds the bounded `hero-detail-workshop-table` visual slot as an Image 2.0 WebP with SVG fallback.
+
+**Offer Readiness Ledger** lives in `sites/offer-readiness-ledger/`.
+
+It proves a publication-readiness page shape for checking an offer's audience, promise, proof, gate, and stop-rule before release while repeating the proof-grid anatomy unchanged for future promotion evidence.
 
 ## Current Checkpoint
 
