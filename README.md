@@ -71,6 +71,7 @@ Shared V2 system files:
 - `assets/v2/badge-product-map.svg`
 - `assets/v2/instrument-readiness-lens.svg`
 - `starters/v2-site-starter/`
+- `package-examples/v2-css-entry/`
 - `sites/build-brief-desk/index.html`
 
 Current acceptance note:
@@ -180,6 +181,8 @@ The starter now includes a small helper-selection map and demonstrates promoted 
 Latest starter friction report: `docs/night-runs/2026-06-03-v2-starter-api-friction-pass.md`.
 
 Latest starter API proof page: sites/water-guild-field-kit/index.html uses the updated starter and package API sketch on a fresh water-audit topic without package scaffolding.
+
+Latest package-example fixture: `package-examples/v2-css-entry/` validates a static CSS-entry delivery shape without npm scaffolding or publishing.
 
 ## Latest Production Example
 

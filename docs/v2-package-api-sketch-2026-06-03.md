@@ -449,6 +449,12 @@ Starter-copy friction note:
 - The starter now demonstrates RouteList, ActionPair, and SignalBadge directly in copyable HTML.
 - This reduces copy friction, but does not replace the need for a real consuming project or package-example verification.
 
+Package-example fixture note:
+
+- package-examples/v2-css-entry/ validates a static CSS-entry import shape.
+- It is not npm scaffolding, not a build output, and not a package API commitment.
+- It satisfies the first verification-fixture pressure, but does not settle framework posture or consuming-project value.
+
 ## Verification
 
 Docs-only pass. Check before closeout:

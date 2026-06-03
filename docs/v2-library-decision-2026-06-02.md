@@ -181,6 +181,10 @@ The starter now points builders to the promoted helper inventory and demonstrate
 
 This reduces starter-copy friction, but does not change the library verdict: V2 remains a repo-native production recipe kit until a consuming project, import/build verification, and final framework posture exist.
 
+The first package-example fixture is now package-examples/v2-css-entry/.
+
+It validates a static CSS-entry import shape through the normal smoke and visual harness, without npm scaffolding, build output, or publishing. This adds verification pressure, but does not change the no-package verdict because framework posture and consuming-project value remain open.
+
 ## Promotion Results
 
 After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.

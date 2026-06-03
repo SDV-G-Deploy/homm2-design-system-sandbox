@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V2 CSS Entry Fixture</title>
+    <meta name="description" content="Static package-example fixture for validating a future V2 CSS entry delivery shape without npm publishing." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./v2-entry.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="V2 CSS entry fixture navigation">
+      <a class="v2-brand" href="#top" aria-label="V2 CSS entry fixture">
+        <span class="v2-sigil">FX</span>
+        <span>
+          <strong>CSS Entry</strong>
+          <em>Fixture</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#route">Route</a>
+        <a href="#signal">Signal</a>
+        <a href="#close">Close</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-trial-shell">
+      <section class="v2-hero v2-trial-hero" aria-labelledby="fixture-title" data-v2-primary>
+        <div class="v2-artframe">
+          <img src="../../assets/v2/solar-civic-gate.svg" width="720" height="520" alt="Solar civic gate for the CSS entry fixture" />
+          <div class="v2-route-card">
+            <p>Entry check</p>
+            <h1 id="fixture-title">A small page can load V2 from one CSS entry.</h1>
+          </div>
+        </div>
+
+        <div class="v2-command-row">
+          <div class="v2-action-pair" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#route">Inspect route</a>
+            <a class="v2-command v2-command-secondary" href="#signal">Read signal</a>
+          </div>
+          <div class="v2-civic-rail" aria-label="Fixture status">
+            <img src="../../assets/v2/solar-badge.svg" width="220" height="220" alt="" aria-hidden="true" />
+            <div>
+              <span>CSS</span>
+              <strong>Entry imported</strong>
+            </div>
+            <div>
+              <span>Assets</span>
+              <strong>Relative paths intact</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger" id="route" aria-labelledby="route-title">
+        <div class="v2-section-label">Route</div>
+        <h2 id="route-title">The fixture checks stable helpers, not package semantics.</h2>
+        <ol class="v2-route-list">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Load one entry</strong>
+              <small>The page links only to the fixture CSS entry, which imports the current V2 stack.</small>
+            </div>
+            <em>CSS</em>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Render shared helpers</strong>
+              <small>Route rows, command pair, signal badge, and proof grid must survive the entry boundary.</small>
+            </div>
+            <em>UI</em>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Keep package blocked</strong>
+              <small>The fixture validates a delivery shape without adding package tooling or publish flow.</small>
+            </div>
+            <em>Gate</em>
+          </li>
+        </ol>
+      </section>
+
+      <section class="v2-panel v2-trial-proof" id="signal" aria-labelledby="signal-title">
+        <div>
+          <div class="v2-section-label">Signal</div>
+          <h2 id="signal-title">A compact signal proves icon, label, and value layout.</h2>
+        </div>
+        <div class="v2-signal-badge" aria-label="CSS entry signal">
+          <img src="../../assets/v2/water-lens.svg" width="220" height="220" alt="" aria-hidden="true" />
+          <div>
+            <span>Fixture state</span>
+            <strong>CSS entry, asset URLs, and helper classes resolve together.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-production-proof" id="close" aria-labelledby="close-title">
+        <div>
+          <div class="v2-section-label">Close</div>
+          <h2 id="close-title">The first delivery shape is static and reversible.</h2>
+        </div>
+        <div class="v2-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Scope</span>
+            <strong>No package files</strong>
+            <small>No npm manifest, no build output, and no registry promise.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Smoke target added</strong>
+            <small>The fixture must pass the same desktop, mobile, and narrow checks.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Next</span>
+            <strong>Framework still undecided</strong>
+            <small>CSS-only, snippets, web components, or bindings remain open.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
