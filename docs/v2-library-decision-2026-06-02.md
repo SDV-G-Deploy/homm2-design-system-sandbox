@@ -156,16 +156,18 @@ assets/v2/
   *.svg *.webp            named Images 2.0 slots
 ~~~
 
-## Next Practical Pass
+## Latest Practical Pass
 
-The best next engineering pass is still not package creation. After the 2026-06-03 promotions, the best next pass is a **promoted-helper inventory board**:
+After the 2026-06-03 promotions, the next engineering pass was the **promoted-helper inventory board**:
 
-1. Create or update a compact reference surface that displays every promoted helper.
-2. For each helper, show the class name, ownership boundary, one correct example, and one non-scope warning.
-3. Include mobile-safe examples for helpers with responsive behavior.
-4. Run smoke and focused visual capture for the reference surface.
+1. `v2/components.html` displays every promoted helper.
+2. Each helper shows the class name, ownership boundary, one correct example, and one non-scope warning.
+3. Responsive helpers have mobile-safe examples.
+4. The page is part of the smoke harness and has focused visual capture.
 
-After that, package readiness can be judged with clearer component evidence. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
+Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.
+
+The next useful pass is a package-readiness review against this visible helper inventory. Do not create an npm/component package unless the gates below are met by evidence. The latest system checkpoint is `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`.
 
 ## Promotion Results
 
@@ -206,3 +208,7 @@ Report: `docs/night-runs/2026-06-03-workflow-row-promotion.md`.
 After Service Tier Ledger supplied a second commercial surface, `.v2-package-grid`, `.v2-package-card`, and `.v2-package-card-primary` were promoted as narrow helpers. They share only the comparison-card grid, shell, text stack, price line styling, and primary-card emphasis; page-local classes still own package/tier semantics, prices, purchase/start routes, included/excluded rules, proof sections, and commercial copy.
 
 Report: `docs/night-runs/2026-06-03-package-card-promotion.md`.
+
+After the post-promotion checkpoint, `v2/components.html` was added as the compact promoted-helper inventory board. It does not promote new helpers; it makes the existing shared contract visible and testable.
+
+Report: `docs/night-runs/2026-06-03-v2-promoted-helper-inventory.md`.

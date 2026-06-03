@@ -117,6 +117,21 @@
     grid-column: span 3;
   }
 
+  .v2-helper-board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v2-helper-section-head,
+  .v2-helper-card-wide {
+    grid-column: 1 / -1;
+  }
+
+  .v2-helper-card-wide .v2-production-proof,
+  .v2-helper-card-wide .v2-closure-grid {
+    grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+    align-items: start;
+  }
+
   .v2-dossier-shell {
     grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
     align-items: start;

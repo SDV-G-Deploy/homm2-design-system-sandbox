@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HoMM2 x Solarpunk V2 · Promoted Helper Inventory</title>
+    <meta
+      name="description"
+      content="Promoted helper inventory for the HoMM2 x Solarpunk V2 production recipe kit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/v2.css" />
+  </head>
+  <body>
+    <header class="v2-topbar" aria-label="V2 navigation">
+      <a class="v2-brand" href="./index.html" aria-label="HoMM2 x Solarpunk V2">
+        <span class="v2-sigil">II</span>
+        <span>
+          <strong>V2 Helpers</strong>
+          <em>promoted inventory</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="./index.html">Gate</a>
+        <a href="./reference.html">Ref</a>
+        <a href="./assets.html">Assets</a>
+        <a href="#route">Route</a>
+        <a href="#proof">Proof</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#package">Package</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell">
+      <section class="v2-ledger v2-reference-hero v2-helper-hero" aria-labelledby="helper-title" data-v2-primary>
+        <div class="v2-section-label">Promoted helper inventory</div>
+        <h1 id="helper-title">Проверяемый список готовых helpers.</h1>
+        <p>
+          Эта доска фиксирует границы shared helpers: что класс владеет, чего не должен
+          решать, и как выглядит корректный минимальный пример.
+        </p>
+      </section>
+
+      <section class="v2-helper-board" id="route" aria-labelledby="route-title">
+        <div class="v2-helper-section-head">
+          <span>01</span>
+          <h2 id="route-title">Route, Marks, Meter</h2>
+        </div>
+
+        <article class="v2-helper-card">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-route-list</span>
+            <h3>Ordered route / queue rows</h3>
+            <p><strong>Owns:</strong> ordered row anatomy, index badge, text stack, trailing status pill.</p>
+            <p><strong>Not scope:</strong> route meaning, count, copy, surrounding ledger, page action.</p>
+          </div>
+          <ol class="v2-route-list" aria-label="Route list helper example">
+            <li>
+              <span>1</span>
+              <div>
+                <strong>Brief boundary</strong>
+                <small>One task, one output, one stop rule.</small>
+              </div>
+              <em>set</em>
+            </li>
+            <li>
+              <span>2</span>
+              <div>
+                <strong>Water inspection</strong>
+                <small>Risk and missing input checked before build.</small>
+              </div>
+              <em>live</em>
+            </li>
+          </ol>
+        </article>
+
+        <article class="v2-helper-card">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-status-mark</span>
+            <h3>Sprite-backed status mark</h3>
+            <p><strong>Owns:</strong> compact icon slot and sprite coordinate variants.</p>
+            <p><strong>Not scope:</strong> row semantics, label text, alert severity, data state.</p>
+          </div>
+          <div class="v2-helper-status-row" aria-label="Status mark helper example">
+            <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+          </div>
+        </article>
+
+        <article class="v2-helper-card">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-state-meter-strip</span>
+            <h3>Readiness meter asset frame</h3>
+            <p><strong>Owns:</strong> bounded state-meter image frame, max width, responsive fit.</p>
+            <p><strong>Not scope:</strong> panel meaning, metric copy, readiness calculation, hero layout.</p>
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../assets/v2/state-meter-readiness.svg"
+              width="560"
+              height="180"
+              alt="Readiness state meter helper example"
+            />
+          </picture>
+        </article>
+      </section>
+
+      <section class="v2-helper-board" id="proof" aria-labelledby="proof-title">
+        <div class="v2-helper-section-head">
+          <span>02</span>
+          <h2 id="proof-title">Badges, Proof, Actions</h2>
+        </div>
+
+        <article class="v2-helper-card">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-signal-badge</span>
+            <h3>Compact signal badge anatomy</h3>
+            <p><strong>Owns:</strong> icon + label/value grid and text fit.</p>
+            <p><strong>Not scope:</strong> outer signal panel, emphasis color, actual metric.</p>
+          </div>
+          <div class="v2-signal-badge v2-helper-signal">
+            <img src="../assets/v2/solar-badge.svg" width="220" height="220" alt="" aria-hidden="true" />
+            <div>
+              <span>Archive signal</span>
+              <strong>Written proof before release</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="v2-helper-card v2-helper-card-wide">
+          <section class="v2-production-proof v2-helper-proof-example" aria-labelledby="proof-example-title">
+            <div class="v2-helper-copy">
+              <span class="v2-helper-class">.v2-production-proof + .v2-proof-grid</span>
+              <h3 id="proof-example-title">Heading plus three-card evidence grid</h3>
+              <p><strong>Owns:</strong> proof-section layout and three-card responsive grid.</p>
+              <p><strong>Not scope:</strong> hero shell, proof semantics, card icons, acceptance policy.</p>
+            </div>
+            <div class="v2-proof-grid">
+              <div>
+                <span>Scope</span>
+                <strong>One surface</strong>
+                <small>Helper does not decide what the surface means.</small>
+              </div>
+              <div>
+                <span>Inspection</span>
+                <strong>Mobile fit</strong>
+                <small>Cards compress without horizontal overflow.</small>
+              </div>
+              <div>
+                <span>Archive</span>
+                <strong>Report linked</strong>
+                <small>Promotion evidence stays in docs.</small>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="v2-helper-card">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-action-pair</span>
+            <h3>Two-command action pair</h3>
+            <p><strong>Owns:</strong> compact action spacing and desktop two-column command width.</p>
+            <p><strong>Not scope:</strong> CTA copy, destination, hero hierarchy, conversion rules.</p>
+          </div>
+          <div class="v2-action-pair" aria-label="Action pair helper example">
+            <a class="v2-command v2-command-primary" href="#top">Primary route</a>
+            <a class="v2-command v2-command-secondary" href="./reference.html">Reference note</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="v2-helper-board" id="workflow" aria-labelledby="workflow-title">
+        <div class="v2-helper-section-head">
+          <span>03</span>
+          <h2 id="workflow-title">Closure and Workflow</h2>
+        </div>
+
+        <article class="v2-helper-card v2-helper-card-wide">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-closure-ledger + .v2-closure-grid</span>
+            <h3>Final ledger command layout</h3>
+            <p><strong>Owns:</strong> ending-section spacing, command margin, two-column closure grid.</p>
+            <p><strong>Not scope:</strong> send/publish/reserve semantics, dates, objects, proof copy.</p>
+          </div>
+          <section class="v2-ledger v2-closure-ledger v2-helper-closure-example" aria-label="Closure helper example">
+            <div class="v2-closure-grid">
+              <div>
+                <span class="v2-helper-mini-label">Written record</span>
+                <strong>Archive packet is ready for handoff.</strong>
+              </div>
+              <ul class="v2-status-list">
+                <li><span>Owner</span><strong>Assigned</strong></li>
+                <li><span>Gate</span><strong>Closed</strong></li>
+              </ul>
+            </div>
+            <a class="v2-command v2-command-primary" href="#top">Close route</a>
+          </section>
+        </article>
+
+        <article class="v2-helper-card v2-helper-card-wide">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-workflow-rows + .v2-workflow-row</span>
+            <h3>App-like workflow rows</h3>
+            <p><strong>Owns:</strong> icon + text stack + state-chip row anatomy and responsive chip placement.</p>
+            <p><strong>Not scope:</strong> task states, delivery meaning, board shell, archive policy.</p>
+          </div>
+          <div class="v2-workflow-rows" role="list" aria-label="Workflow row helper example">
+            <div class="v2-workflow-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+              <div>
+                <span>Task route</span>
+                <strong>Landing copy accepted</strong>
+                <small>Scope and proof are recorded before final publish.</small>
+              </div>
+              <em>ready</em>
+            </div>
+            <div class="v2-workflow-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>Inspection</span>
+                <strong>Mobile capture clean</strong>
+                <small>No clipped labels across narrow viewports.</small>
+              </div>
+              <em>clear</em>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="v2-helper-board" id="package" aria-labelledby="package-title">
+        <div class="v2-helper-section-head">
+          <span>04</span>
+          <h2 id="package-title">Commercial Cards</h2>
+        </div>
+
+        <article class="v2-helper-card v2-helper-card-wide">
+          <div class="v2-helper-copy">
+            <span class="v2-helper-class">.v2-package-grid + .v2-package-card</span>
+            <h3>Comparison-card grid</h3>
+            <p><strong>Owns:</strong> three-card commercial anatomy, text stack, price line, primary emphasis.</p>
+            <p><strong>Not scope:</strong> tier/package meaning, prices, purchase route, included/excluded rules.</p>
+          </div>
+          <div class="v2-package-grid" aria-label="Package card helper example">
+            <article class="v2-package-card">
+              <span>Small route</span>
+              <strong>Signal</strong>
+              <em>from 1 ledger</em>
+              <p>One bounded review with written output.</p>
+            </article>
+            <article class="v2-package-card v2-package-card-primary">
+              <span>Main route</span>
+              <strong>Build</strong>
+              <em>from 3 ledgers</em>
+              <p>Primary card emphasis without owning offer semantics.</p>
+            </article>
+            <article class="v2-package-card">
+              <span>Long route</span>
+              <strong>Care</strong>
+              <em>monthly</em>
+              <p>Same anatomy under a different buying pressure.</p>
+            </article>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
