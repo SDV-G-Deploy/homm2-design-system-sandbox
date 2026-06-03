@@ -79,3 +79,18 @@ Status: PASS - implemented one bounded production-like surface.
   - node tools/visual-capture.js --target /sites/service-intake-ledger/index.html --out tmp/service-intake-ledger-2026-06-03 --selector body --selector .v2-topbar --selector .v2-intake-hero --selector .v2-intake-board --selector .v2-intake-proof --selector .v2-intake-send: PASS, offenders 0 at 1440x900, 390x844, 360x740
 - Commit: f947b2d787cbfa29aebdd9f27bdae538653ed9ea
 - Next recommendation: do not promote more components from this pass alone; next useful work is a focused audit across newest production surfaces or another distinct surface if the night run continues.
+
+### Wake 2 - 2026-06-03 00:52 UTC
+
+Status: PASS - completed a focused read-only production-surface audit.
+
+- Lock: acquired tmp/night-runs/2026-06-03.lock at 2026-06-03T00:52:46Z.
+- Dirty-tree gate: clean before edits.
+- Pass type: audit/docs evidence, no component promotion and no page changes.
+- Files changed:
+  - docs/night-runs/2026-06-03-production-surface-audit.md
+  - docs/night-runs/2026-06-03-autonomous-ledger.md
+- Verification:
+  - git diff --check: PASS
+- Commit: pending final commit for this wake.
+- Next recommendation: keep compact hero shells, side signal modules, and final writ blocks local. Watch the proof grid and action pair as the only plausible next narrow candidates, but promote neither without one more unchanged production-surface proof or a targeted promotion pass.
