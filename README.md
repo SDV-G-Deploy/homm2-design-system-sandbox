@@ -270,6 +270,10 @@ It proves a commercial pricing/package page shape for bounded service offers: pa
 
 It proves a denser app-like portal surface for active client routes, blockers, inspection reasons, and handoff packets while reusing existing Images 2.0 slots instead of adding new graphics.
 
+**Delivery Review Board** lives in `sites/delivery-review-board/`.
+
+It proves a second app-like workflow surface for shipped artifacts, acceptance checks, residual risk, and archive handoff while keeping row anatomy page-local for a later independent promotion audit.
+
 ## Current Checkpoint
 
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.

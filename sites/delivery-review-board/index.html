@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery Review Board · V2 Production Surface</title>
+    <meta
+      name="description"
+      content="Production-like V2 delivery review board for shipped artifacts, acceptance checks, residual risk, and archive handoff."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Delivery Review Board navigation">
+      <a class="v2-brand" href="#top" aria-label="Delivery Review Board">
+        <span class="v2-sigil">DR</span>
+        <span>
+          <strong>Delivery</strong>
+          <em>Review</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#review">Review</a>
+        <a href="#accept">Accept</a>
+        <a href="#archive">Archive</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-delivery-shell">
+      <section class="v2-delivery-hero" aria-labelledby="delivery-title" data-v2-primary>
+        <div class="v2-delivery-copy">
+          <div class="v2-section-label">Delivery review</div>
+          <h1 id="delivery-title">Сданная работа закрывается проверкой, а не красивым сообщением.</h1>
+          <p>
+            Delivery board собирает опубликованный артефакт, acceptance checks,
+            остаточный риск и архивную запись, чтобы handoff был проверяемым
+            после того, как переписка закончилась.
+          </p>
+          <div class="v2-action-pair v2-delivery-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#archive">Открыть архив</a>
+            <a class="v2-command v2-command-secondary" href="#review">Проверить сдачу</a>
+          </div>
+        </div>
+
+        <aside class="v2-delivery-signal" aria-label="Delivery signal">
+          <picture class="v2-delivery-seal">
+            <source srcset="../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/seal-archive-reading.svg"
+              width="240"
+              height="240"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Ship</span><strong>Live</strong></div>
+            <div><span>Checks</span><strong>Passed</strong></div>
+            <div><span>Risk</span><strong>Named</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-delivery-board" id="review" aria-label="Delivery review board">
+        <article class="v2-ledger v2-delivery-list" aria-labelledby="review-title">
+          <div class="v2-section-label">Review rows</div>
+          <h2 id="review-title">Каждая сдача держит артефакт, проверку и остаточный риск.</h2>
+          <div class="v2-delivery-rows" role="list">
+            <div class="v2-delivery-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+              <div>
+                <span>Live artifact</span>
+                <strong>Published URL returns 200</strong>
+                <small>Public page opens after deploy and cache-busted check.</small>
+              </div>
+              <em>Shipped</em>
+            </div>
+            <div class="v2-delivery-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>Visual check</span>
+                <strong>Desktop and mobile captures are clean</strong>
+                <small>No overflow offenders across 1440, 390 and 360 viewport proofs.</small>
+              </div>
+              <em>Passed</em>
+            </div>
+            <div class="v2-delivery-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+              <div>
+                <span>Acceptance gate</span>
+                <strong>Scope did not expand during handoff</strong>
+                <small>Follow-up work is named as next risk, not hidden inside delivery.</small>
+              </div>
+              <em>Guarded</em>
+            </div>
+            <div class="v2-delivery-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+              <div>
+                <span>Archive note</span>
+                <strong>Report and commit are written down</strong>
+                <small>Next session can recover from the artifact, not from memory.</small>
+              </div>
+              <em>Recorded</em>
+            </div>
+          </div>
+        </article>
+
+        <aside class="v2-panel v2-delivery-accept" id="accept" aria-labelledby="accept-title">
+          <div class="v2-section-label">Acceptance lens</div>
+          <h2 id="accept-title">Если риск не назван, сдача ещё не закончена.</h2>
+          <div class="v2-signal-badge v2-delivery-badge" aria-hidden="true">
+            <img src="../../assets/v2/solar-badge.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Closeout</span>
+              <strong>Ready</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Artifact</span>
+              <strong>Где посмотреть результат</strong>
+            </li>
+            <li>
+              <span>Evidence</span>
+              <strong>Какая проверка была пройдена</strong>
+            </li>
+            <li>
+              <span>Residual</span>
+              <strong>Что остаётся не решённым намеренно</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-production-proof v2-delivery-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Delivery proof</div>
+          <h2 id="proof-title">Хороший handoff можно проверить без автора.</h2>
+        </div>
+        <div class="v2-proof-grid v2-delivery-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Artifact</span>
+            <strong>Результат имеет адрес</strong>
+            <small>URL, файл, report или commit названы как точка восстановления.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Acceptance</span>
+            <strong>Проверка отделена от обещания</strong>
+            <small>Smoke, screenshot, diff или review подтверждают фактическое состояние.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Archive</span>
+            <strong>Следующий риск записан</strong>
+            <small>Продолжение начинается с known issue, а не с повторного разбора.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-delivery-archive" id="archive" aria-labelledby="archive-title">
+        <div class="v2-section-label">Archive writ</div>
+        <h2 id="archive-title">Финальная архивная строка оставляет проверяемый след.</h2>
+        <div class="v2-closure-grid v2-delivery-archive-grid">
+          <div class="v2-delivery-note">
+            <span>Archive packet</span>
+            <strong>Commit · URL · Residual risk</strong>
+            <small>Этого достаточно, чтобы следующий агент продолжил без устного контекста.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Commit</span>
+              <strong>Изменение найдено в истории</strong>
+            </li>
+            <li>
+              <span>Live</span>
+              <strong>Публичная страница или артефакт открывается</strong>
+            </li>
+            <li>
+              <span>Next</span>
+              <strong>Следующий шаг назван как отдельная работа</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к review board</a>
+      </section>
+    </main>
+  </body>
+</html>
+
