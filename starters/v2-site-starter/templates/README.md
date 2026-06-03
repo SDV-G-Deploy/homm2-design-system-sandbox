@@ -3,6 +3,9 @@
 Copy one template when the new page has a known shape. These templates are for
 fast internal production, not package exports.
 
+The initial five-template set is complete. For the current evaluation and next
+lanes, read `../../../docs/night-runs/2026-06-03-v2-site-kit-wrap.md`.
+
 ## Available
 
 - `product-landing/` - first reusable offer/landing template.

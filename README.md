@@ -232,6 +232,12 @@ It adds `starters/v2-site-starter/templates/civic-route-map/index.html` and
 `sites/sunwell-route-map/index.html`, completing the initial five-template
 Site Kit set without shared CSS or package changes.
 
+Current Site Kit wrap: `docs/night-runs/2026-06-03-v2-site-kit-wrap.md`.
+Verdict: V2 is now a coherent repo-native kit for building small same-style
+sites from five templates, promoted helpers, and bounded asset slots. Continue
+with documentation cleanup or asset polish; do not reopen npm/package work from
+this checkpoint.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
@@ -352,9 +358,13 @@ route, signal, meter, lens, and closure helpers.
 
 ## Current Checkpoint
 
-The current package/workflow pause checkpoint is `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
+The current Site Kit checkpoint is `docs/night-runs/2026-06-03-v2-site-kit-wrap.md`.
 
-Use it before the next broad pass. It records promoted helpers, package-gate results, blocked package work, and safe resume lanes after the pause.
+The current package/workflow pause checkpoint remains `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`.
+
+Use the Site Kit checkpoint before the next broad applied pass. Use the package
+checkpoint only when reconsidering npm, framework bindings, build tooling, or
+external library extraction.
 
 ## Current Library Decision
 
