@@ -49,6 +49,7 @@ The system is stable enough to build new static pages and small sites from the V
 - `docs/night-runs/2026-06-02-workshop-schedule-ledger.md` records the next production surface and bounded hero/detail visual slot: `sites/workshop-schedule-ledger/` plus `hero-detail-workshop-table`.
 - `docs/night-runs/2026-06-02-workshop-image2-asset-pass.md` records the follow-up pass that replaced the repo-native PNG output with a true OpenClaw Image 2.0 WebP while keeping the SVG fallback and HTML-owned meaning.
 - `docs/night-runs/2026-06-02-signal-badge-promotion.md` records the fourth narrow promotion: `.v2-signal-badge` now owns the compact icon + label/value badge anatomy while larger signal wrappers remain local.
+- `docs/night-runs/2026-06-03-v2-wrap-around.md` records the current wrap-around checkpoint before the overnight autonomous run.
 - Real production-like proofs now cover:
   - landing/school: `sites/ant-school-landing-v2/`
   - service/booking: `v2/canopy-clinic.html`

@@ -270,3 +270,4 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-02-promotion-audit-v2-1.md`: `.v2-status-mark` moved into shared components after Build Brief Desk and Agent Readiness Ledger repeated the same sprite/status marker role.
 - `docs/night-runs/2026-06-02-state-meter-strip-promotion.md`: `.v2-state-meter-strip` moved the repeated `state-meter-readiness` image frame into shared components while keeping meter panels and signal wrappers local.
 - `docs/night-runs/2026-06-02-signal-badge-promotion.md`: `.v2-signal-badge` promoted only the compact icon + label/value badge anatomy after ANT School Landing V2, Product Map Field Note, and Workshop Schedule Ledger repeated the same slot.
+- `docs/night-runs/2026-06-03-v2-wrap-around.md`: current wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and the next autonomous direction.
