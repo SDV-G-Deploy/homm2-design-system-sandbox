@@ -202,3 +202,7 @@ Report: `docs/night-runs/2026-06-03-closure-grid-promotion.md`.
 After Delivery Review Board supplied a second app-like workflow surface, `.v2-workflow-rows` and `.v2-workflow-row` were promoted as narrow helpers. They share only the icon + text stack + state-chip row anatomy and desktop/mobile chip placement; page-local classes still own Work Queue and Delivery semantics, state vocabulary, surrounding boards, note cards, proof/archive panels, copy, and actions.
 
 Report: `docs/night-runs/2026-06-03-workflow-row-promotion.md`.
+
+After Service Tier Ledger supplied a second commercial surface, `.v2-package-grid`, `.v2-package-card`, and `.v2-package-card-primary` were promoted as narrow helpers. They share only the comparison-card grid, shell, text stack, price line styling, and primary-card emphasis; page-local classes still own package/tier semantics, prices, purchase/start routes, included/excluded rules, proof sections, and commercial copy.
+
+Report: `docs/night-runs/2026-06-03-package-card-promotion.md`.
