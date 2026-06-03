@@ -187,4 +187,3 @@ The next safe implementation pass should either:
 
 1. build one more distinct production surface that uses the same proof-grid anatomy unchanged; or
 2. run a targeted proof-grid promotion pass only if the implementer first confirms identical HTML, mobile behavior, and asset dependency across four surfaces.
-

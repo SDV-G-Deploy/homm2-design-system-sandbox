@@ -109,3 +109,24 @@ Status: PASS - closed out the bounded night run.
   - git diff --check: PASS
 - Commit: bb98bb8fff1bba4e0a2f9a1aaa9ef3c658482bc3
 - Next recommendation: stop the current night sequence cleanly. The next useful bounded pass is either one more distinct production surface that repeats the proof-grid anatomy unchanged, or a targeted proof-grid promotion pass only after four-surface evidence confirms exact behavior.
+
+### Morning Closeout - 2026-06-03 05:30 UTC
+
+Status: PASS - repo synced, morning report written.
+
+- Repo status: clean after fetch; `main` and `origin/main` both at `7b049cc8f2c369b83066a26251d989c0caa32b6d` before morning-report commit.
+- Commits after `29c3176` inspected:
+  - `f947b2d` feat: add service intake ledger surface
+  - `4617cf4` docs: record wake service intake commit
+  - `7745a91` docs: audit v2 production surface patterns
+  - `409260c` docs: record wake production audit commit
+  - `bb98bb8` docs: close out v2 night run
+  - `7b049cc` docs: record wake closeout commit
+- Morning edits:
+  - fixed trailing EOF blank lines in two night-run markdown reports so range diff-check passes;
+  - added `docs/night-runs/2026-06-03-morning-report.md`;
+  - updated this ledger closeout entry.
+- Verification:
+  - `git diff --check 29c3176..HEAD`: initially failed on trailing blank EOF lines in two night-run reports; fixed in morning closeout.
+  - `node tools/regression-smoke.js`: rerun during morning closeout; no overflow reported in captured output.
+- Next recommendation: one more distinct production surface that repeats proof-grid anatomy unchanged, then consider a targeted proof-grid promotion only if the evidence stays exact.

@@ -75,4 +75,3 @@ Keep these deferred:
 ## Morning Summary Draft
 
 Night run completed cleanly. It shipped one new V2 production surface, Service Intake Ledger, then audited the newest repeated recipe patterns. Verification passed, commits were pushed, and no component promotion was made. The system direction remains healthy: build evidence through production recipes, promote only narrow repeated anatomy, and keep V2 as a repo-native production recipe kit.
-
