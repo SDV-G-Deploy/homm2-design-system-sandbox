@@ -24,6 +24,7 @@ Live entry points:
 - Service Intake Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/service-intake-ledger/
 - Offer Readiness Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/offer-readiness-ledger/
 - Water Guild Field Kit: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/water-guild-field-kit/
+- Canal Signal Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/canal-signal-desk/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -53,6 +54,7 @@ Current V2 proof surfaces:
 - `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path
 - `sites/service-intake-ledger/index.html` - diagnostic intake surface for service requests
 - `sites/offer-readiness-ledger/index.html` - publication readiness surface for offer pages
+- `sites/canal-signal-desk/index.html` - first one-hour Site Kit product landing proof
 
 Shared V2 system files:
 
@@ -197,6 +199,10 @@ phase as fast internal site assembly from starter templates, promoted helpers,
 and bounded asset slots. The first copyable template is
 `starters/v2-site-starter/templates/product-landing/index.html`; it is for
 one-hour small-site proof work and does not reopen package extraction.
+
+Latest one-hour Site Kit proof: `docs/night-runs/2026-06-03-v2-one-hour-site-proof-canal-signal.md`.
+It adds `sites/canal-signal-desk/index.html` from the product landing
+template without shared CSS or package changes.
 
 ## Latest Production Example
 

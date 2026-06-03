@@ -52,6 +52,7 @@ const TARGETS = [
   ["Client Work Queue smoke", "/sites/client-work-queue/index.html", "v2"],
   ["Delivery Review Board smoke", "/sites/delivery-review-board/index.html", "v2"],
   ["Water Guild Field Kit smoke", "/sites/water-guild-field-kit/index.html", "v2"],
+  ["Canal Signal Desk smoke", "/sites/canal-signal-desk/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -155,6 +156,7 @@ function staticSanity(failures) {
     "sites/client-work-queue/index.html",
     "sites/delivery-review-board/index.html",
     "sites/water-guild-field-kit/index.html",
+    "sites/canal-signal-desk/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [
