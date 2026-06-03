@@ -6,10 +6,10 @@ fast internal production, not package exports.
 ## Available
 
 - `product-landing/` - first reusable offer/landing template.
+- `report-proof/` - field note, audit, case study, or result page template.
 
 ## Planned
 
-- `report-proof/`
 - `dashboard-status/`
 - `catalog-object-list/`
 - `civic-route-map/`

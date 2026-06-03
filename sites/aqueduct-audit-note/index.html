@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aqueduct Audit Note · V2 report proof</title>
+    <meta
+      name="description"
+      content="A compact V2 report page for a small aqueduct audit: observed state, finding route, and next repair move."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Aqueduct Audit Note navigation">
+      <a class="v2-brand" href="#top" aria-label="Aqueduct Audit Note">
+        <span class="v2-sigil">AQ</span>
+        <span>
+          <strong>Aqueduct Audit</strong>
+          <em>Field note</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#note">Note</a>
+        <a href="#map">Map</a>
+        <a href="#use">Use</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-note-shell">
+      <section class="v2-note-hero" aria-labelledby="report-title" data-v2-primary>
+        <div class="v2-note-copy">
+          <div class="v2-section-label">Water route report</div>
+          <h1 id="report-title">Three dry beds share one broken morning route.</h1>
+          <p>
+            A small audit of the north garden channel found that the plants are
+            not failing from heat alone. The first repair is a route problem:
+            water reaches the stone trough, then disappears before the shaded beds.
+          </p>
+        </div>
+
+        <aside class="v2-signal-badge v2-note-instrument" aria-label="Aqueduct audit signal">
+          <img
+            src="../../assets/v2/water-lens.svg"
+            width="180"
+            height="180"
+            alt=""
+            aria-hidden="true"
+          />
+          <div>
+            <span>Signal</span>
+            <strong>Leak path, dry beds, repair route</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-note-body" id="note" aria-labelledby="body-title">
+        <article class="v2-ledger v2-note-ledger">
+          <div class="v2-section-label">Note</div>
+          <h2 id="body-title">The visible damage is plant stress, but the cause is a missing handoff.</h2>
+          <p>
+            The first trough fills normally, yet the lower run stays dry by late
+            morning. Soil near the brass marker is damp, while the third bed is
+            powder dry. That pattern points to a small leak or blocked gate
+            between the marker and the shaded run.
+          </p>
+          <p>
+            The useful move is not a full garden rebuild. Mark the handoff,
+            clear the gate, and run one seven-day water check before adding new
+            planters or changing the planting schedule.
+          </p>
+          <a class="v2-command v2-command-primary" href="#use">Use repair note</a>
+        </article>
+
+        <aside class="v2-panel v2-note-side" aria-labelledby="side-title">
+          <picture>
+            <source srcset="../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              class="v2-note-seal"
+              src="../../assets/v2/seal-archive-reading.svg"
+              width="720"
+              height="520"
+              alt="Solar civic archive seal for the aqueduct audit"
+            />
+          </picture>
+          <div>
+            <div class="v2-section-label">Lens</div>
+            <h2 id="side-title">The note stays useful because each claim has a field check.</h2>
+          </div>
+          <div class="v2-lens-module">
+            <div><span>State</span><strong>Dry lower run</strong></div>
+            <div><span>Cause</span><strong>Broken handoff</strong></div>
+            <div><span>Next</span><strong>Seven-day check</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-note-map" id="map" aria-labelledby="map-title">
+        <article class="v2-panel">
+          <div class="v2-section-label">Finding map</div>
+          <h2 id="map-title">The repair route is short enough to test before changing the whole garden.</h2>
+        </article>
+        <ol class="v2-route-list">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Mark the handoff</strong>
+              <small>Flag the point where the upper trough should feed the shaded lower run.</small>
+            </div>
+            <em>Read</em>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Clear the gate</strong>
+              <small>Remove silt and check whether morning water reaches the third bed.</small>
+            </div>
+            <em>Repair</em>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Watch one week</strong>
+              <small>Log damp soil, leaf lift, and refill timing before buying new material.</small>
+            </div>
+            <em>Check</em>
+          </li>
+        </ol>
+      </section>
+
+      <section class="v2-ledger v2-note-use" id="use" aria-labelledby="use-title">
+        <div class="v2-section-label">Use it</div>
+        <h2 id="use-title">Take the small repair route first. Escalate only if the check fails.</h2>
+        <ul class="v2-status-list">
+          <li>
+            <span>Input</span>
+            <strong>Morning water path, three bed states, one marked handoff</strong>
+          </li>
+          <li>
+            <span>Work</span>
+            <strong>Gate clearing, damp-soil log, leaf-state check, refill timing</strong>
+          </li>
+          <li>
+            <span>Output</span>
+            <strong>Repair decision before new planting or heavier work</strong>
+          </li>
+        </ul>
+        <a class="v2-command v2-command-primary" href="#top">Start water check</a>
+      </section>
+    </main>
+  </body>
+</html>

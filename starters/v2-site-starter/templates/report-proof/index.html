@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Proof Template · V2 Site Kit</title>
+    <meta
+      name="description"
+      content="Copyable V2 report/proof template for field notes, audits, case studies, and result pages."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Report navigation">
+      <a class="v2-brand" href="#top" aria-label="Report title">
+        <span class="v2-sigil">RP</span>
+        <span>
+          <strong>Report Name</strong>
+          <em>Field note</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#note">Note</a>
+        <a href="#map">Map</a>
+        <a href="#use">Use</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-note-shell">
+      <section class="v2-note-hero" aria-labelledby="report-title" data-v2-primary>
+        <div class="v2-note-copy">
+          <div class="v2-section-label">Field report</div>
+          <h1 id="report-title">Replace this with the inspected result.</h1>
+          <p>
+            Use this first screen for the human summary: what was inspected,
+            what changed, why the finding matters, and what the reader can do
+            with the report.
+          </p>
+        </div>
+
+        <aside class="v2-signal-badge v2-note-instrument" aria-label="Report signal">
+          <img
+            src="../../../../assets/v2/badge-product-map.svg"
+            width="180"
+            height="180"
+            alt=""
+            aria-hidden="true"
+          />
+          <div>
+            <span>Signal</span>
+            <strong>Finding, route, next step</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-note-body" id="note" aria-labelledby="body-title">
+        <article class="v2-ledger v2-note-ledger">
+          <div class="v2-section-label">Note</div>
+          <h2 id="body-title">Use the main ledger for the finding and its practical meaning.</h2>
+          <p>
+            Replace this paragraph with the core observation. Keep it concrete:
+            who was affected, what was visible, what pattern repeated, and what
+            became easier to decide after the inspection.
+          </p>
+          <p>
+            Use a second paragraph for judgment. Name the limit, the caveat, the
+            strongest evidence, or the reason this report should not become a
+            larger project before the next step is tried.
+          </p>
+          <a class="v2-command v2-command-primary" href="#use">Use this report</a>
+        </article>
+
+        <aside class="v2-panel v2-note-side" aria-labelledby="side-title">
+          <picture>
+            <source srcset="../../../../assets/v2/seal-archive-reading.webp" type="image/webp" />
+            <img
+              class="v2-note-seal"
+              src="../../../../assets/v2/seal-archive-reading.svg"
+              width="720"
+              height="520"
+              alt="Solar civic archive seal for the report template"
+            />
+          </picture>
+          <div>
+            <div class="v2-section-label">Lens</div>
+            <h2 id="side-title">Keep the report inspectable through three checks.</h2>
+          </div>
+          <div class="v2-lens-module">
+            <div><span>State</span><strong>What changed</strong></div>
+            <div><span>Cause</span><strong>Why it matters</strong></div>
+            <div><span>Next</span><strong>What to do</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-note-map" id="map" aria-labelledby="map-title">
+        <article class="v2-panel">
+          <div class="v2-section-label">Finding map</div>
+          <h2 id="map-title">Turn the result into a short route the reader can follow.</h2>
+        </article>
+        <ol class="v2-route-list">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Observed state</strong>
+              <small>Name the visible condition, defect, opportunity, or result.</small>
+            </div>
+            <em>Read</em>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Useful interpretation</strong>
+              <small>Explain the pattern without hiding behind generic praise.</small>
+            </div>
+            <em>Judge</em>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Next practical move</strong>
+              <small>Close with one action, test, repair, page update, or follow-up.</small>
+            </div>
+            <em>Act</em>
+          </li>
+        </ol>
+      </section>
+
+      <section class="v2-ledger v2-note-use" id="use" aria-labelledby="use-title">
+        <div class="v2-section-label">Use it</div>
+        <h2 id="use-title">End with what the reader can take from the report.</h2>
+        <ul class="v2-status-list">
+          <li>
+            <span>Input</span>
+            <strong>Source material, inspection notes, screen, route, or field state</strong>
+          </li>
+          <li>
+            <span>Work</span>
+            <strong>Observation, interpretation, evidence, and one clear next move</strong>
+          </li>
+          <li>
+            <span>Output</span>
+            <strong>Readable report page that can guide a decision</strong>
+          </li>
+        </ul>
+        <a class="v2-command v2-command-primary" href="#top">Replace with report CTA</a>
+      </section>
+    </main>
+  </body>
+</html>
