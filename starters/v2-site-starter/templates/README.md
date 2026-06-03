@@ -7,10 +7,10 @@ fast internal production, not package exports.
 
 - `product-landing/` - first reusable offer/landing template.
 - `report-proof/` - field note, audit, case study, or result page template.
+- `dashboard-status/` - queue, readiness board, or compact operational surface template.
 
 ## Planned
 
-- `dashboard-status/`
 - `catalog-object-list/`
 - `civic-route-map/`
 

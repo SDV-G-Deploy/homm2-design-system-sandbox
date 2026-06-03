@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harbor Readiness Board · V2 dashboard proof</title>
+    <meta
+      name="description"
+      content="A compact V2 status board for harbor route readiness, blocked inputs, and handoff checks."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Harbor Readiness Board navigation">
+      <a class="v2-brand" href="#top" aria-label="Harbor Readiness Board">
+        <span class="v2-sigil">HB</span>
+        <span>
+          <strong>Harbor Board</strong>
+          <em>Readiness</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#queue">Queue</a>
+        <a href="#inspect">Inspect</a>
+        <a href="#handoff">Close</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-workqueue-shell">
+      <section class="v2-workqueue-hero" aria-labelledby="dashboard-title" data-v2-primary>
+        <div class="v2-workqueue-copy">
+          <div class="v2-section-label">Status board</div>
+          <h1 id="dashboard-title">Harbor routes are ready when water, crews, and handoff records line up.</h1>
+          <p>
+            This board tracks a small harbor repair morning: which routes are
+            active, which gate is blocked, and what can be handed off before
+            the tide window closes.
+          </p>
+          <div class="v2-action-pair v2-workqueue-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#handoff">Open writ</a>
+            <a class="v2-command v2-command-secondary" href="#queue">Check routes</a>
+          </div>
+        </div>
+
+        <aside class="v2-workqueue-signal" aria-label="Board signal">
+          <div class="v2-workqueue-instrument" aria-hidden="true">
+            <img src="../../assets/v2/water-lens.svg" width="220" height="220" alt="" />
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Active</span><strong>4 routes</strong></div>
+            <div><span>Blocked</span><strong>1 gate</strong></div>
+            <div><span>Next</span><strong>Writ</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-workqueue-board" id="queue" aria-label="Harbor readiness queue">
+        <article class="v2-ledger v2-workqueue-list" aria-labelledby="queue-title">
+          <div class="v2-section-label">Route queue</div>
+          <h2 id="queue-title">Each row names a dock route, its current state, and the next gate before departure.</h2>
+          <div class="v2-workflow-rows v2-workqueue-rows" role="list">
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+              <div>
+                <span>North canal</span>
+                <strong>Water lens clear</strong>
+                <small>Morning inspection can proceed before the cargo crew arrives.</small>
+              </div>
+              <em>Today</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>West gate</span>
+                <strong>Waiting for silt clearing</strong>
+                <small>One blocked gate keeps the lower route from opening.</small>
+              </div>
+              <em>Blocked</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+              <div>
+                <span>Beacon route</span>
+                <strong>Signal check ready</strong>
+                <small>Lamp, route note, and operator mark are ready to inspect.</small>
+              </div>
+              <em>Next</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+              <div>
+                <span>Dock writ</span>
+                <strong>Ready for handoff</strong>
+                <small>Route note, gate state, and next tide risk are named.</small>
+              </div>
+              <em>Ready</em>
+            </div>
+          </div>
+        </article>
+
+        <aside class="v2-panel v2-workqueue-inspect" id="inspect" aria-labelledby="inspect-title">
+          <div class="v2-section-label">Inspection lens</div>
+          <h2 id="inspect-title">A harbor board must show the field reason, not only a bright status.</h2>
+          <div class="v2-signal-badge v2-workqueue-badge" aria-hidden="true">
+            <img src="../../assets/v2/instrument-readiness-lens.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Review</span>
+              <strong>One blocker</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Owner</span>
+              <strong>Which crew makes the next move</strong>
+            </li>
+            <li>
+              <span>Input</span>
+              <strong>Which gate or record unblocks the route</strong>
+            </li>
+            <li>
+              <span>Exit</span>
+              <strong>When the route can leave the board</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-production-proof v2-workqueue-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Board facts</div>
+          <h2 id="proof-title">The board reduces dock chatter by showing route, blockage, and closure in one place.</h2>
+        </div>
+        <div class="v2-proof-grid v2-workqueue-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Queue</span>
+            <strong>Active routes visible</strong>
+            <small>Rows show route, water state, crew state, and gate.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Inspection</span>
+            <strong>Blocked gate visible</strong>
+            <small>The west gate is blocked by silt, not a vague delay.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Writ</span>
+            <strong>Handoff writ visible</strong>
+            <small>The final row carries route note, cleared gate, tide check, and watch risk.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-workqueue-handoff" id="handoff" aria-labelledby="handoff-title">
+        <div class="v2-section-label">Harbor writ</div>
+        <h2 id="handoff-title">Close the harbor board with one route that can be checked on the dock.</h2>
+        <div class="v2-closure-grid v2-workqueue-handoff-grid">
+          <div class="v2-workqueue-note">
+            <span>Harbor packet</span>
+            <strong>Route · Gate · Tide risk</strong>
+            <small>If one of these is empty, the route stays on the board.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Ship</span>
+              <strong>Route note checked at the dock</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>Gate state is readable for the next crew</strong>
+            </li>
+            <li>
+              <span>Watch</span>
+              <strong>Tide-window risk named plainly</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Return to harbor</a>
+      </section>
+    </main>
+  </body>
+</html>

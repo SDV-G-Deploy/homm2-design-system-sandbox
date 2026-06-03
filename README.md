@@ -26,6 +26,7 @@ Live entry points:
 - Water Guild Field Kit: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/water-guild-field-kit/
 - Canal Signal Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/canal-signal-desk/
 - Aqueduct Audit Note: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/aqueduct-audit-note/
+- Harbor Readiness Board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/harbor-readiness-board/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -57,6 +58,7 @@ Current V2 proof surfaces:
 - `sites/offer-readiness-ledger/index.html` - publication readiness surface for offer pages
 - `sites/canal-signal-desk/index.html` - first one-hour Site Kit product landing proof
 - `sites/aqueduct-audit-note/index.html` - first Site Kit report/proof page from the report template
+- `sites/harbor-readiness-board/index.html` - first Site Kit dashboard/status board from the dashboard template
 
 Shared V2 system files:
 
@@ -209,6 +211,11 @@ template without shared CSS or package changes.
 Latest report template proof: `docs/night-runs/2026-06-03-v2-report-template-proof.md`.
 It adds `starters/v2-site-starter/templates/report-proof/index.html` and
 `sites/aqueduct-audit-note/index.html`, proving a second Site Kit page type
+without shared CSS or package changes.
+
+Latest dashboard template proof: `docs/night-runs/2026-06-03-v2-dashboard-template-proof.md`.
+It adds `starters/v2-site-starter/templates/dashboard-status/index.html` and
+`sites/harbor-readiness-board/index.html`, proving a third Site Kit page type
 without shared CSS or package changes.
 
 ## Latest Production Example

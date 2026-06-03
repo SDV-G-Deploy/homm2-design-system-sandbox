@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Status Template · V2 Site Kit</title>
+    <meta
+      name="description"
+      content="Copyable V2 dashboard/status board template for queues, readiness boards, and operational surfaces."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Dashboard navigation">
+      <a class="v2-brand" href="#top" aria-label="Dashboard title">
+        <span class="v2-sigil">DB</span>
+        <span>
+          <strong>Dashboard</strong>
+          <em>Status board</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#queue">Queue</a>
+        <a href="#inspect">Inspect</a>
+        <a href="#handoff">Close</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-workqueue-shell">
+      <section class="v2-workqueue-hero" aria-labelledby="dashboard-title" data-v2-primary>
+        <div class="v2-workqueue-copy">
+          <div class="v2-section-label">Status board</div>
+          <h1 id="dashboard-title">Replace this with the board's current operating state.</h1>
+          <p>
+            Use this screen when the page must show active work, blocked input,
+            inspection reasons, and the next handoff without becoming a full app.
+          </p>
+          <div class="v2-action-pair v2-workqueue-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#handoff">Open handoff</a>
+            <a class="v2-command v2-command-secondary" href="#queue">Check queue</a>
+          </div>
+        </div>
+
+        <aside class="v2-workqueue-signal" aria-label="Board signal">
+          <div class="v2-workqueue-instrument" aria-hidden="true">
+            <img src="../../../../assets/v2/water-lens.svg" width="220" height="220" alt="" />
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Active</span><strong>3 routes</strong></div>
+            <div><span>Blocked</span><strong>1 input</strong></div>
+            <div><span>Next</span><strong>Handoff</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-workqueue-board" id="queue" aria-label="Dashboard queue">
+        <article class="v2-ledger v2-workqueue-list" aria-labelledby="queue-title">
+          <div class="v2-section-label">Route queue</div>
+          <h2 id="queue-title">Use rows for active work, state, owner, and next gate.</h2>
+          <div class="v2-workflow-rows v2-workqueue-rows" role="list">
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+              <div>
+                <span>Route name</span>
+                <strong>Current useful state</strong>
+                <small>One reason this row matters right now.</small>
+              </div>
+              <em>Today</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>Blocked item</span>
+                <strong>Waiting for one input</strong>
+                <small>Name the smallest artifact that unlocks work.</small>
+              </div>
+              <em>Blocked</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+              <div>
+                <span>Review route</span>
+                <strong>Ready for inspection</strong>
+                <small>Keep the check visible before handoff.</small>
+              </div>
+              <em>Next</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+              <div>
+                <span>Delivery note</span>
+                <strong>Ready to close</strong>
+                <small>Record, link, gate, and next risk are named.</small>
+              </div>
+              <em>Ready</em>
+            </div>
+          </div>
+        </article>
+
+        <aside class="v2-panel v2-workqueue-inspect" id="inspect" aria-labelledby="inspect-title">
+          <div class="v2-section-label">Inspection lens</div>
+          <h2 id="inspect-title">A status board must show the reason, not only the color.</h2>
+          <div class="v2-signal-badge v2-workqueue-badge" aria-hidden="true">
+            <img src="../../../../assets/v2/instrument-readiness-lens.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Review</span>
+              <strong>One blocker</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Owner</span>
+              <strong>Who makes the next move</strong>
+            </li>
+            <li>
+              <span>Input</span>
+              <strong>Which artifact unblocks the row</strong>
+            </li>
+            <li>
+              <span>Exit</span>
+              <strong>When the row leaves the queue</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-production-proof v2-workqueue-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Board facts</div>
+          <h2 id="proof-title">Use fact cards to prove the board reduces status guessing.</h2>
+        </div>
+        <div class="v2-proof-grid v2-workqueue-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Queue</span>
+            <strong>Active work visible</strong>
+            <small>Rows show the route, current state, and next gate.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Inspection</span>
+            <strong>Blocker reason visible</strong>
+            <small>The board names one missing input rather than vague waiting.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Handoff</span>
+            <strong>Closure packet visible</strong>
+            <small>The final row carries link, report, verification, and residual risk.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-workqueue-handoff" id="handoff" aria-labelledby="handoff-title">
+        <div class="v2-section-label">Handoff writ</div>
+        <h2 id="handoff-title">Close the board with one verifiable result.</h2>
+        <div class="v2-closure-grid v2-workqueue-handoff-grid">
+          <div class="v2-workqueue-note">
+            <span>Delivery packet</span>
+            <strong>URL · Record · Next risk</strong>
+            <small>If one of these is empty, the row is not ready to close.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Ship</span>
+              <strong>Public or local link checked</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>Closure record is readable for the next operator</strong>
+            </li>
+            <li>
+              <span>Watch</span>
+              <strong>Remaining risk named plainly</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Return to board</a>
+      </section>
+    </main>
+  </body>
+</html>
