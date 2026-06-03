@@ -192,6 +192,12 @@ Latest named consumer spike: `docs/night-runs/2026-06-03-v2-named-consumer-spike
 
 Latest package gate wrap / pause checkpoint: `docs/night-runs/2026-06-03-v2-package-gate-wrap.md`. It is the current top-level отсечка for package work: V2 remains a repo-native production recipe kit; package extraction stays blocked; next work should resume from applied, asset/visual, or proven component pressure, not from packaging.
 
+Latest site kit direction: `docs/v2-site-kit-2026-06-03.md` reframes the next
+phase as fast internal site assembly from starter templates, promoted helpers,
+and bounded asset slots. The first copyable template is
+`starters/v2-site-starter/templates/product-landing/index.html`; it is for
+one-hour small-site proof work and does not reopen package extraction.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.

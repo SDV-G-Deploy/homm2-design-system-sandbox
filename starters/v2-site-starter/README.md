@@ -4,6 +4,9 @@ Copy this folder when starting a new HoMM2 x Solarpunk V2 site.
 
 This starter is intentionally plain HTML. It is a production recipe starter, not an npm package or component library.
 
+For faster page assembly, start from `templates/` when the new site matches a
+known shape. The first available template is `templates/product-landing/`.
+
 ## Use
 
 1. Copy starters/v2-site-starter/ into a new site folder.
@@ -49,6 +52,7 @@ Avoid inventing generic cards, rows, hero shells, or pricing shells in the start
 ## Files
 
 - index.html - starter landing page.
+- templates/ - copyable page archetypes for fast internal site production.
 - assets/README.md - reserved place for site-local assets.
 
 Keep shared motifs in the root assets/v2/ system folder when they become reusable.
