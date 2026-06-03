@@ -179,11 +179,17 @@ Starter-copy friction was checked in `docs/night-runs/2026-06-03-v2-starter-api-
 
 The starter now points builders to the promoted helper inventory and demonstrates `RouteList`, `ActionPair`, and `SignalBadge` directly in `starters/v2-site-starter/index.html`.
 
-This reduces starter-copy friction, but does not change the library verdict: V2 remains a repo-native production recipe kit until a consuming project, import/build verification, and final framework posture exist.
+This reduced starter-copy friction, but did not change the library verdict: at that point V2 still needed a consuming project, import/build verification, and a framework posture decision.
 
 The first package-example fixture is now package-examples/v2-css-entry/.
 
-It validates a static CSS-entry import shape through the normal smoke and visual harness, without npm scaffolding, build output, or publishing. This adds verification pressure, but does not change the no-package verdict because framework posture and consuming-project value remain open.
+It validates a static CSS-entry import shape through the normal smoke and visual harness, without npm scaffolding, build output, or publishing. This adds verification pressure, but does not change the no-package verdict because framework posture and consuming-project value were still open at that point.
+
+Framework posture is now decided for the current phase.
+
+Report: `docs/night-runs/2026-06-03-v2-framework-posture-decision.md`.
+
+V2 should continue as CSS-only entry + HTML snippets and starter recipes. Web components, React/Vue/Svelte bindings, npm publishing, build tooling, and release flow remain deferred until a named consumer proves package installation is better than copying the starter. This closes the framework-posture planning blocker, but the no-package verdict remains because consuming-project value, asset delivery outside repo paths, draft helper scope, and versioning policy remain open.
 
 ## Promotion Results
 

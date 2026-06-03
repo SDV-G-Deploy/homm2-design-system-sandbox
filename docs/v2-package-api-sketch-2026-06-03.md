@@ -434,7 +434,7 @@ Before any npm/package scaffolding, complete these:
 2. Mark `WorkflowRows` and `PackageGrid` stable or keep them out of the first package.
 3. Add at least one package-example or import/build verification target.
 4. Identify a real consuming project or documented starter-copy friction.
-5. Decide framework posture: CSS-only package, HTML snippets, web components, or framework bindings.
+5. Decide framework posture: CSS-only package, HTML snippets, web components, or framework bindings. **Settled for current phase:** CSS-only entry + HTML snippets; web components/framework bindings deferred.
 
 Until then, the recommended delivery remains:
 
@@ -453,11 +453,18 @@ Package-example fixture note:
 
 - package-examples/v2-css-entry/ validates a static CSS-entry import shape.
 - It is not npm scaffolding, not a build output, and not a package API commitment.
-- It satisfies the first verification-fixture pressure, but does not settle framework posture or consuming-project value.
+- It satisfies the first verification-fixture pressure, but did not by itself settle framework posture or consuming-project value.
+
+Framework posture note:
+
+- docs/night-runs/2026-06-03-v2-framework-posture-decision.md records the current delivery posture.
+- Current phase: CSS-only entrypoint plus HTML snippets and starter recipes.
+- Web components, React, Vue, Svelte, and npm publishing are deferred until a named consumer proves install value over copying the starter.
+- This closes the framework-posture blocker for planning, but V2 is still not package-ready because consuming-project value, asset delivery, draft helper scope, and release/version policy remain open.
 
 ## Verification
 
 Docs-only pass. Check before closeout:
 
 - `git diff --check`
-- `rg -n "V2 Package API Sketch|RouteList|WorkflowRows|Explicitly Blocked Components|Package Preconditions" docs/v2-package-api-sketch-2026-06-03.md README.md docs/v2-library-decision-2026-06-02.md`
+- `rg -n "V2 Package API Sketch|RouteList|WorkflowRows|Explicitly Blocked Components|Package Preconditions|Framework posture" docs/v2-package-api-sketch-2026-06-03.md README.md docs/v2-library-decision-2026-06-02.md`
