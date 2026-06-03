@@ -462,6 +462,13 @@ Framework posture note:
 - Web components, React, Vue, Svelte, and npm publishing are deferred until a named consumer proves install value over copying the starter.
 - This closes the framework-posture blocker for planning, but V2 is still not package-ready because consuming-project value, asset delivery, draft helper scope, and release/version policy remain open.
 
+Consumer-value note:
+
+- docs/night-runs/2026-06-03-v2-consumer-value-pass.md compares starter-copy value against the CSS-entry fixture.
+- Verdict: consumer install value is not proven yet.
+- The starter still carries more practical value than the CSS entry because it includes markup anatomy, production chrome, helper-selection guidance, asset path assumptions, and local recipe rules.
+- Package extraction remains blocked until a named consumer spike shows concrete install value over copying the starter.
+
 ## Verification
 
 Docs-only pass. Check before closeout:

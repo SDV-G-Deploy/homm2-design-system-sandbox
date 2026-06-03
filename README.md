@@ -186,6 +186,8 @@ Latest package-example fixture: `package-examples/v2-css-entry/` validates a sta
 
 Latest framework posture decision: V2 stays CSS-only entry + HTML snippets and starter recipes for the current phase. Web components, framework bindings, npm publishing, build tooling, and release flow are deferred until a named consumer proves install value over copying the starter.
 
+Latest consumer-value pass: `docs/night-runs/2026-06-03-v2-consumer-value-pass.md` keeps package extraction blocked. The starter currently carries more value than the CSS-entry fixture because it includes markup anatomy, production chrome, helper-selection guidance, asset path assumptions, and local recipe rules.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
@@ -324,5 +326,6 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-v2-package-readiness-review.md`: package-readiness gates reviewed against the helper inventory; verdict remains no npm/package until API, package examples, and a consuming-project reason exist.
 - `docs/v2-package-api-sketch-2026-06-03.md`: documentation-only sketch mapping promoted helpers to possible package contracts and marking stable, draft, and blocked candidates.
 - `docs/night-runs/2026-06-03-v2-framework-posture-decision.md`: current framework posture decision; CSS-only entry + HTML snippets now, web components/framework bindings later only after consumer proof.
+- `docs/night-runs/2026-06-03-v2-consumer-value-pass.md`: consumer-value gate check; install value is not proven, so package extraction remains blocked.
 - `docs/night-runs/2026-06-03-v2-system-checkpoint-after-promotions.md`: current wrap-around checkpoint for promoted helpers, still-local recipes, package-readiness gates, risks, and the next promoted-helper inventory-board pass.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: earlier wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and autonomous direction before the latest promotions.

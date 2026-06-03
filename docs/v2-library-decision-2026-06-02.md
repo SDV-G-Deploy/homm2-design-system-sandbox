@@ -191,6 +191,10 @@ Report: `docs/night-runs/2026-06-03-v2-framework-posture-decision.md`.
 
 V2 should continue as CSS-only entry + HTML snippets and starter recipes. Web components, React/Vue/Svelte bindings, npm publishing, build tooling, and release flow remain deferred until a named consumer proves package installation is better than copying the starter. This closes the framework-posture planning blocker, but the no-package verdict remains because consuming-project value, asset delivery outside repo paths, draft helper scope, and versioning policy remain open.
 
+Consumer value was checked in `docs/night-runs/2026-06-03-v2-consumer-value-pass.md`.
+
+Verdict: package install value is not proven yet. The starter currently carries more practical consumer value than the CSS-entry fixture because it includes markup anatomy, production chrome, helper-selection guidance, asset path assumptions, and local recipe rules. Package extraction remains blocked until a named consumer spike shows concrete install value over copying `starters/v2-site-starter/`.
+
 ## Promotion Results
 
 After the independent audit in `docs/night-runs/2026-06-02-promotion-audit-alt.md`, `.v2-route-list` was promoted from `css/v2.recipes.css` to `css/v2.components.css`.
