@@ -107,5 +107,5 @@ Status: PASS - closed out the bounded night run.
   - docs/night-runs/2026-06-03-autonomous-ledger.md
 - Verification:
   - git diff --check: PASS
-- Commit: pending final commit for this wake.
+- Commit: bb98bb8fff1bba4e0a2f9a1aaa9ef3c658482bc3
 - Next recommendation: stop the current night sequence cleanly. The next useful bounded pass is either one more distinct production surface that repeats the proof-grid anatomy unchanged, or a targeted proof-grid promotion pass only after four-surface evidence confirms exact behavior.
