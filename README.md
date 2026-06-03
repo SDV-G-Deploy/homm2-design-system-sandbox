@@ -289,4 +289,5 @@ The decision record is `docs/v2-library-decision-2026-06-02.md`. Promotion resul
 - `docs/night-runs/2026-06-03-proof-grid-promotion.md`: `.v2-production-proof` and `.v2-proof-grid` promoted only the proof heading plus three-card evidence anatomy after four production-like surfaces repeated it.
 - `docs/night-runs/2026-06-03-action-pair-promotion.md`: `.v2-action-pair` promoted only the two-command hero action layout after four production-like surfaces repeated the same primary/secondary command pair.
 - `docs/night-runs/2026-06-03-closure-grid-promotion.md`: `.v2-closure-ledger` and `.v2-closure-grid` promoted only the final-ledger layout and command spacing after four production-like surfaces repeated the same closure anatomy.
+- `docs/night-runs/2026-06-03-local-pattern-independent-audit.md`: independent read-only audit keeps Package Ledger cards and Client Work Queue rows page-local until each pattern repeats on another distinct production surface.
 - `docs/night-runs/2026-06-03-v2-wrap-around.md`: current wrap-around checkpoint for promoted/deferred primitives, Images 2.0 lane, and the next autonomous direction.
