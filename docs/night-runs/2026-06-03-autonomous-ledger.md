@@ -92,5 +92,5 @@ Status: PASS - completed a focused read-only production-surface audit.
   - docs/night-runs/2026-06-03-autonomous-ledger.md
 - Verification:
   - git diff --check: PASS
-- Commit: pending final commit for this wake.
+- Commit: 7745a91e47d5da3afcd94cffc1bf850dd88a1041
 - Next recommendation: keep compact hero shells, side signal modules, and final writ blocks local. Watch the proof grid and action pair as the only plausible next narrow candidates, but promote neither without one more unchanged production-surface proof or a targeted promotion pass.
