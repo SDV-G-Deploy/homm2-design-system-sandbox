@@ -45,6 +45,7 @@ const TARGETS = [
   ["Service Intake Ledger smoke", "/sites/service-intake-ledger/index.html", "v2"],
   ["Offer Readiness Ledger smoke", "/sites/offer-readiness-ledger/index.html", "v2"],
   ["Package Ledger smoke", "/sites/package-ledger/index.html", "v2"],
+  ["Client Work Queue smoke", "/sites/client-work-queue/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -141,6 +142,7 @@ function staticSanity(failures) {
     "sites/service-intake-ledger/index.html",
     "sites/offer-readiness-ledger/index.html",
     "sites/package-ledger/index.html",
+    "sites/client-work-queue/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [

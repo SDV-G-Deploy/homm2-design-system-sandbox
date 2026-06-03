@@ -386,6 +386,27 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .v2-workqueue-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-workqueue-board {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    align-items: start;
+  }
+
+  .v2-workqueue-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .v2-workqueue-row em {
+    grid-column: 3;
+    justify-self: end;
+  }
+
   .v2-asset-gallery-hero {
     padding: 28px;
   }

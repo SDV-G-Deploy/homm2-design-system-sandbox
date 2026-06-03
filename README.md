@@ -266,6 +266,10 @@ It proves a publication-readiness page shape for checking an offer's audience, p
 
 It proves a commercial pricing/package page shape for bounded service offers: package scope, starting price, included/excluded boundary, upgrade rule, proof requirement, and one purchase route without adding a new visual asset slot.
 
+**Client Work Queue** lives in `sites/client-work-queue/`.
+
+It proves a denser app-like portal surface for active client routes, blockers, inspection reasons, and handoff packets while reusing existing Images 2.0 slots instead of adding new graphics.
+
 ## Current Checkpoint
 
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.
