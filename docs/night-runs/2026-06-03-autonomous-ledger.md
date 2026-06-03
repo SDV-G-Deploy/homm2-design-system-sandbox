@@ -56,3 +56,26 @@ Planned wakes:
 - Wake 1: inspect state, choose the safest next pass, write early report.
 - Wake 2: implement or continue only if Wake 1 left a safe next step.
 - Wake 3: verify, close out, and prepare morning report.
+
+### Wake 1 - 2026-06-03 00:24 UTC
+
+Status: PASS - implemented one bounded production-like surface.
+
+- Lock: acquired tmp/night-runs/2026-06-03.lock at 2026-06-03T00:25:27Z.
+- Dirty-tree gate: clean before edits.
+- Pass type: applied production-surface evidence, no component promotion.
+- Surface: sites/service-intake-ledger/.
+- Files changed:
+  - README.md
+  - css/v2.recipes.css
+  - css/v2.responsive.css
+  - tools/regression-smoke.js
+  - sites/service-intake-ledger/index.html
+  - docs/night-runs/2026-06-03-service-intake-ledger.md
+  - docs/night-runs/2026-06-03-autonomous-ledger.md
+- Verification:
+  - git diff --check: PASS
+  - node tools/regression-smoke.js: PASS, 24 targets across desktop/mobile/narrow
+  - node tools/visual-capture.js --target /sites/service-intake-ledger/index.html --out tmp/service-intake-ledger-2026-06-03 --selector body --selector .v2-topbar --selector .v2-intake-hero --selector .v2-intake-board --selector .v2-intake-proof --selector .v2-intake-send: PASS, offenders 0 at 1440x900, 390x844, 360x740
+- Commit: pending final commit for this wake.
+- Next recommendation: do not promote more components from this pass alone; next useful work is a focused audit across newest production surfaces or another distinct surface if the night run continues.

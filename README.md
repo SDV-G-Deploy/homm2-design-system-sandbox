@@ -20,6 +20,7 @@ Live entry points:
 - V2 Canopy Clinic service example: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v2/canopy-clinic.html
 - ANT School landing v2: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/ant-school-landing-v2/
 - Build Brief Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/build-brief-desk/
+- Service Intake Ledger: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/service-intake-ledger/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -46,6 +47,7 @@ Current V2 proof surfaces:
 - `v2/ant-school.html` - new-topic production example for ANT School / AI non-technical builders
 - `v2/canopy-clinic.html` - compact service/booking page with care route and visit signal
 - `sites/ant-school-landing-v2/index.html` - first real-site proof built from the V2 starter path
+- `sites/service-intake-ledger/index.html` - diagnostic intake surface for service requests
 
 Shared V2 system files:
 

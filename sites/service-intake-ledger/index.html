@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Intake Ledger · V2 Production Surface</title>
+    <meta
+      name="description"
+      content="Production-like V2 intake page for turning a service request into a diagnostic route, fit signal, and next action."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Service Intake Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Service Intake Ledger">
+        <span class="v2-sigil">IN</span>
+        <span>
+          <strong>Intake</strong>
+          <em>Ledger</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#route">Route</a>
+        <a href="#fit">Fit</a>
+        <a href="#send">Send</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-intake-shell">
+      <section class="v2-intake-hero" aria-labelledby="intake-title" data-v2-primary>
+        <div class="v2-intake-copy">
+          <div class="v2-section-label">Service intake</div>
+          <h1 id="intake-title">Заявка становится маршрутом до первого созвона.</h1>
+          <p>
+            Intake ledger принимает сырую просьбу, показывает недостающие
+            вводные, отделяет срочность от желания и возвращает человеку
+            понятный следующий шаг без длинной анкеты.
+          </p>
+          <div class="v2-intake-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#send">Собрать заявку</a>
+            <a class="v2-command v2-command-secondary" href="#route">Проверить маршрут</a>
+          </div>
+        </div>
+
+        <aside class="v2-intake-signal" aria-label="Intake signal">
+          <div class="v2-intake-instrument" aria-hidden="true">
+            <img src="../../assets/v2/water-lens.svg" width="220" height="220" alt="" />
+          </div>
+          <div class="v2-lens-module">
+            <div><span>Urgency</span><strong>Named</strong></div>
+            <div><span>Budget</span><strong>Bounded</strong></div>
+            <div><span>Owner</span><strong>Visible</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-intake-board" id="route" aria-label="Service intake route">
+        <article class="v2-ledger v2-intake-route" aria-labelledby="route-title">
+          <div class="v2-section-label">Diagnostic route</div>
+          <h2 id="route-title">До ответа нужны четыре проверяемые строки.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Need</strong>
+                <small>Что должно измениться после работы: страница, процесс, запуск, аудит.</small>
+              </div>
+              <em>Why</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Current state</strong>
+                <small>Что уже есть: ссылка, черновик, команда, ограничение, дедлайн.</small>
+              </div>
+              <em>Now</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Risk</strong>
+                <small>Что нельзя сломать: приватность, бренд, бюджет, публичный запуск.</small>
+              </div>
+              <em>Guard</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Reply gate</strong>
+                <small>Каким будет первый ответ: оценка, вопросы, отказ или короткий план.</small>
+              </div>
+              <em>Next</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-intake-fit" id="fit" aria-labelledby="fit-title">
+          <div class="v2-section-label">Fit signal</div>
+          <h2 id="fit-title">Хороший вход показывает, где услуга подходит, а где нет.</h2>
+          <div class="v2-signal-badge v2-intake-badge" aria-hidden="true">
+            <img src="../../assets/v2/solar-badge.svg" width="128" height="128" alt="" />
+            <div>
+              <span>First reply</span>
+              <strong>24h</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Strong fit</span>
+              <strong>Есть цель, контекст и владелец решения</strong>
+            </li>
+            <li>
+              <span>Weak fit</span>
+              <strong>Нужен полный продукт без рамки и материалов</strong>
+            </li>
+            <li>
+              <span>Care</span>
+              <strong>Приватные данные не уходят в публичный brief</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-intake-proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Intake proof</div>
+          <h2 id="proof-title">Форма не выглядит как форма, если она уже ведёт работу.</h2>
+        </div>
+        <div class="v2-intake-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-task" aria-hidden="true"></i>
+            <span>Signal</span>
+            <strong>Короткое описание запроса</strong>
+            <small>Не больше двух абзацев, чтобы владелец мог ответить без раскопок.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Lens</span>
+            <strong>Ссылка или артефакт</strong>
+            <small>Один объект для проверки: сайт, документ, макет, репозиторий или скрин.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Честное ограничение</strong>
+            <small>Срок, бюджет, приватность или причина, по которой работу лучше не начинать.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-intake-send" id="send" aria-labelledby="send-title">
+        <div class="v2-section-label">Send writ</div>
+        <h2 id="send-title">Финальный блок оставляет человеку одну понятную отправку.</h2>
+        <div class="v2-intake-send-grid">
+          <div class="v2-intake-note">
+            <span>Minimum packet</span>
+            <strong>Need · Link · Deadline</strong>
+            <small>Everything else can be clarified after the first diagnostic reply.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Private</span>
+              <strong>Секреты и доступы не нужны на первом шаге</strong>
+            </li>
+            <li>
+              <span>Reply</span>
+              <strong>Ответ начинается с решения: делать, уточнить или отложить</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>Заявка превращается в route note, а не теряется в чате</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к входу</a>
+      </section>
+    </main>
+  </body>
+</html>
