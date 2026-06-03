@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Package Ledger · V2 Production Surface</title>
+    <meta
+      name="description"
+      content="Production-like V2 pricing page for turning service packages into bounded scope, proof, exclusions, and one purchase route."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Package Ledger navigation">
+      <a class="v2-brand" href="#top" aria-label="Package Ledger">
+        <span class="v2-sigil">PK</span>
+        <span>
+          <strong>Package</strong>
+          <em>Ledger</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#packages">Packs</a>
+        <a href="#proof">Proof</a>
+        <a href="#buy">Buy</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-pricing-shell">
+      <section class="v2-pricing-hero" aria-labelledby="pricing-title" data-v2-primary>
+        <div class="v2-pricing-copy">
+          <div class="v2-section-label">Package ledger</div>
+          <h1 id="pricing-title">Цена работает, когда видно границу работы.</h1>
+          <p>
+            Package ledger превращает услугу в три покупаемых входа: что входит,
+            что не входит, какой артефакт человек получает и где начинается
+            отдельный проект.
+          </p>
+          <div class="v2-action-pair v2-pricing-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#buy">Выбрать пакет</a>
+            <a class="v2-command v2-command-secondary" href="#packages">Сравнить рамки</a>
+          </div>
+        </div>
+
+        <aside class="v2-pricing-signal" aria-label="Package signal">
+          <picture class="v2-pricing-seal">
+            <source srcset="../../assets/v2/seal-build-brief.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/seal-build-brief.svg"
+              width="240"
+              height="240"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Scope</span><strong>Bounded</strong></div>
+            <div><span>Price</span><strong>Named</strong></div>
+            <div><span>Exit</span><strong>Visible</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-pricing-board" id="packages" aria-label="Package comparison">
+        <article class="v2-ledger v2-pricing-route" aria-labelledby="route-title">
+          <div class="v2-section-label">Buying route</div>
+          <h2 id="route-title">Сначала выбирают рамку, потом уже формат работы.</h2>
+          <ol class="v2-route-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Diagnostic</strong>
+                <small>Быстрая проверка страницы, оффера или brief перед решением.</small>
+              </div>
+              <em>Check</em>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Build pass</strong>
+                <small>Один законченный экран, карта, документ или production surface.</small>
+              </div>
+              <em>Make</em>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>System pass</strong>
+                <small>Повторяемый компонент, правила, docs и проверка на нескольких местах.</small>
+              </div>
+              <em>Scale</em>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Stop rule</strong>
+                <small>Если задача шире пакета, она уходит в отдельный scope note.</small>
+              </div>
+              <em>Guard</em>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="v2-panel v2-pricing-guard" aria-labelledby="guard-title">
+          <div class="v2-section-label">Scope guard</div>
+          <h2 id="guard-title">Пакет обязан сказать, что он не продаёт.</h2>
+          <div class="v2-signal-badge v2-pricing-badge" aria-hidden="true">
+            <img src="../../assets/v2/solar-badge.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Decision</span>
+              <strong>One gate</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Included</span>
+              <strong>Один видимый результат и короткий handoff</strong>
+            </li>
+            <li>
+              <span>Excluded</span>
+              <strong>Бесконечная стратегия, поддержка и скрытый redesign</strong>
+            </li>
+            <li>
+              <span>Upgrade</span>
+              <strong>Новая рамка пишется до начала работы</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-pricing-packages" aria-labelledby="packages-title">
+        <div>
+          <div class="v2-section-label">Package board</div>
+          <h2 id="packages-title">Три входа держат разную глубину, но один способ проверки.</h2>
+        </div>
+        <div class="v2-package-grid">
+          <article class="v2-package-card">
+            <span>Audit</span>
+            <strong>Diagnostic pass</strong>
+            <em>from €180</em>
+            <p>Проверка одной страницы, оффера или brief с коротким repair list.</p>
+          </article>
+          <article class="v2-package-card v2-package-card-primary">
+            <span>Build</span>
+            <strong>Production surface</strong>
+            <em>from €480</em>
+            <p>Один законченный экран или site section с docs, smoke и visual proof.</p>
+          </article>
+          <article class="v2-package-card">
+            <span>System</span>
+            <strong>Reusable pattern</strong>
+            <em>from €720</em>
+            <p>Компонентная грамматика, extraction report и проверка на повторе.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="v2-production-proof v2-pricing-proof" id="proof" aria-labelledby="proof-title">
+        <div>
+          <div class="v2-section-label">Price proof</div>
+          <h2 id="proof-title">Коммерческий блок не должен прятать риск за красивой карточкой.</h2>
+        </div>
+        <div class="v2-proof-grid v2-pricing-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Boundary</span>
+            <strong>Что входит видно до разговора</strong>
+            <small>Каждый пакет имеет один результат, один handoff и одну точку остановки.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+            <span>Gate</span>
+            <strong>Следующий шаг не меняет цену тайно</strong>
+            <small>Если нужен новый объем, он становится отдельной строкой, а не сюрпризом.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Proof note</span>
+            <strong>Результат можно показать</strong>
+            <small>Скрин, diff, карта, report или published URL закрывают пакет.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-pricing-buy" id="buy" aria-labelledby="buy-title">
+        <div class="v2-section-label">Purchase writ</div>
+        <h2 id="buy-title">Финальный выбор фиксирует пакет, входные данные и стоп-условие.</h2>
+        <div class="v2-closure-grid v2-pricing-buy-grid">
+          <div class="v2-pricing-note">
+            <span>Minimum order</span>
+            <strong>Package · Link · Deadline</strong>
+            <small>После этого можно ответить scope note, датой старта или честным отказом.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Pick</span>
+              <strong>Один пакет и один результат</strong>
+            </li>
+            <li>
+              <span>Send</span>
+              <strong>Ссылка, контекст и ограничение</strong>
+            </li>
+            <li>
+              <span>Stop</span>
+              <strong>Что не входит в этот вход</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Вернуться к пакетам</a>
+      </section>
+    </main>
+  </body>
+</html>
+

@@ -262,6 +262,10 @@ It proves a schedule/seat/reserve page shape for workshop offers and adds the bo
 
 It proves a publication-readiness page shape for checking an offer's audience, promise, proof, gate, and stop-rule before release while repeating the proof-grid anatomy unchanged for future promotion evidence.
 
+**Package Ledger** lives in `sites/package-ledger/`.
+
+It proves a commercial pricing/package page shape for bounded service offers: package scope, starting price, included/excluded boundary, upgrade rule, proof requirement, and one purchase route without adding a new visual asset slot.
+
 ## Current Checkpoint
 
 The current closeout checkpoint is `docs/v2-closeout-checkpoint-2026-06-02.md`.

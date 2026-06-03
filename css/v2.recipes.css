@@ -1751,6 +1751,227 @@
   line-height: 1.26;
 }
 
+/* V2 production recipe: package ledger pricing surface. */
+.v2-pricing-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-pricing-hero,
+.v2-pricing-proof,
+.v2-pricing-packages {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  color: #fff2c1;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(136, 199, 189, .2), transparent 13rem),
+    linear-gradient(180deg, rgba(255, 229, 154, .1), transparent 45%),
+    linear-gradient(145deg, #20140f, #10281f);
+  border: 1px solid rgba(255, 220, 130, .42);
+  border-radius: var(--v2-radius);
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .05), 0 16px 34px rgba(45, 25, 12, .22);
+}
+
+.v2-pricing-hero {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-pricing-copy h1,
+.v2-pricing-route h2,
+.v2-pricing-guard h2,
+.v2-pricing-packages h2,
+.v2-pricing-proof h2,
+.v2-pricing-buy h2 {
+  margin: 0;
+  max-width: 17ch;
+  font-family: Vollkorn, Georgia, serif;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.v2-pricing-copy h1 {
+  color: #fff8d3;
+  font-size: clamp(2rem, 8.7vw, 3.35rem);
+}
+
+.v2-pricing-copy p {
+  margin: 16px 0 0;
+  max-width: 56ch;
+  color: #ead9a5;
+  font-size: 1.05rem;
+  line-height: 1.44;
+}
+
+.v2-pricing-signal {
+  display: grid;
+  gap: 14px;
+  align-content: end;
+  min-width: 0;
+  padding: 14px;
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .16), transparent 36%, rgba(213, 138, 44, .12)),
+    rgba(12, 34, 29, .72);
+  border: 1px solid rgba(136, 199, 189, .32);
+  border-radius: 7px;
+}
+
+.v2-pricing-seal {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 176px;
+  padding: 12px;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 246, 211, .12), transparent 56%),
+    rgba(6, 21, 18, .32);
+  border: 1px solid rgba(255, 225, 150, .24);
+  border-radius: 7px;
+}
+
+.v2-pricing-seal img {
+  display: block;
+  width: min(100%, 188px);
+  height: auto;
+}
+
+.v2-pricing-board {
+  display: grid;
+  gap: 18px;
+}
+
+.v2-pricing-route,
+.v2-pricing-guard,
+.v2-pricing-buy {
+  margin-top: 0;
+}
+
+.v2-pricing-guard {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.v2-pricing-badge {
+  background:
+    linear-gradient(90deg, rgba(136, 199, 189, .14), transparent 48%, rgba(213, 138, 44, .12)),
+    rgba(6, 21, 18, .28);
+  border: 1px solid rgba(255, 225, 150, .18);
+}
+
+.v2-pricing-badge span {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.v2-pricing-badge strong {
+  margin-top: 4px;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.v2-pricing-packages {
+  display: grid;
+  gap: 16px;
+}
+
+.v2-package-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.v2-package-card {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 16px;
+  color: #f5e5ad;
+  background:
+    url("../assets/v2/texture-brief-grid.webp") center / 180px 180px,
+    linear-gradient(145deg, rgba(22, 48, 39, .86), rgba(28, 18, 12, .92));
+  border: 1px solid rgba(255, 225, 150, .2);
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .04);
+}
+
+.v2-package-card-primary {
+  border-color: rgba(255, 220, 130, .48);
+  box-shadow: inset 0 0 0 4px rgba(255, 244, 198, .06), 0 12px 24px rgba(45, 25, 12, .18);
+}
+
+.v2-package-card span {
+  color: #d5bc82;
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.v2-package-card strong {
+  color: #fff8d3;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.v2-package-card em {
+  color: #9ddbd1;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.v2-package-card p {
+  margin: 0;
+  color: #d5bc82;
+  line-height: 1.34;
+}
+
+.v2-pricing-note {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+  min-height: 168px;
+  padding: 18px;
+  color: #fff2c1;
+  background:
+    url("../assets/v2/texture-brief-grid.webp") center / 180px 180px,
+    linear-gradient(145deg, #20140f, #10261f);
+  border: 1px solid rgba(98, 63, 24, .18);
+  border-radius: 7px;
+}
+
+.v2-pricing-note span,
+.v2-pricing-note strong,
+.v2-pricing-note small {
+  display: block;
+  min-width: 0;
+}
+
+.v2-pricing-note span {
+  color: #d5bc82;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.v2-pricing-note strong {
+  margin-top: 10px;
+  color: #fff8d3;
+  font-family: Vollkorn, Georgia, serif;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.v2-pricing-note small {
+  margin-top: 8px;
+  color: #d5bc82;
+  line-height: 1.26;
+}
+
 /* V2 system recipe: visual asset slot gallery. */
 .v2-asset-gallery-shell {
   display: grid;

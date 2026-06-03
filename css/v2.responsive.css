@@ -371,6 +371,21 @@
     align-items: start;
   }
 
+  .v2-pricing-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .82fr);
+    align-items: stretch;
+    padding: 28px;
+  }
+
+  .v2-pricing-board {
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    align-items: start;
+  }
+
+  .v2-package-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .v2-asset-gallery-hero {
     padding: 28px;
   }
