@@ -77,5 +77,5 @@ Status: PASS - implemented one bounded production-like surface.
   - git diff --check: PASS
   - node tools/regression-smoke.js: PASS, 24 targets across desktop/mobile/narrow
   - node tools/visual-capture.js --target /sites/service-intake-ledger/index.html --out tmp/service-intake-ledger-2026-06-03 --selector body --selector .v2-topbar --selector .v2-intake-hero --selector .v2-intake-board --selector .v2-intake-proof --selector .v2-intake-send: PASS, offenders 0 at 1440x900, 390x844, 360x740
-- Commit: pending final commit for this wake.
+- Commit: f947b2d787cbfa29aebdd9f27bdae538653ed9ea
 - Next recommendation: do not promote more components from this pass alone; next useful work is a focused audit across newest production surfaces or another distinct surface if the night run continues.
