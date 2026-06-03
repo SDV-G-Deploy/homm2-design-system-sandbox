@@ -8,10 +8,10 @@ fast internal production, not package exports.
 - `product-landing/` - first reusable offer/landing template.
 - `report-proof/` - field note, audit, case study, or result page template.
 - `dashboard-status/` - queue, readiness board, or compact operational surface template.
+- `catalog-object-list/` - object registry, route list, tool list, or asset catalog template.
 
 ## Planned
 
-- `catalog-object-list/`
 - `civic-route-map/`
 
 ## Copy Rule

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Civic Tool Registry · V2 Site Kit</title>
+    <meta
+      name="description"
+      content="A V2 catalog/object-list proof for sorting civic repair tools by role, readiness, and next use."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Tool registry navigation">
+      <a class="v2-brand" href="#top" aria-label="Civic Tool Registry">
+        <span class="v2-sigil">TR</span>
+        <span>
+          <strong>Civic Tool Registry</strong>
+          <em>Repair object list</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#objects">Tools</a>
+        <a href="#filter">Lens</a>
+        <a href="#use">Use</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-workqueue-shell">
+      <section class="v2-workqueue-hero" aria-labelledby="registry-title" data-v2-primary>
+        <div class="v2-workqueue-copy">
+          <div class="v2-section-label">Tool registry</div>
+          <h1 id="registry-title">A repair kit is useful only when every tool has a state.</h1>
+          <p>
+            The registry keeps civic repair objects readable: what each tool
+            does, whether it is ready, and which route can use it next.
+          </p>
+          <div class="v2-action-pair v2-workqueue-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#objects">Open tools</a>
+            <a class="v2-command v2-command-secondary" href="#filter">Check lens</a>
+          </div>
+        </div>
+
+        <aside class="v2-workqueue-signal" aria-label="Registry signal">
+          <div class="v2-workqueue-instrument" aria-hidden="true">
+            <img src="../../assets/v2/solar-civic-gate.svg" width="220" height="220" alt="" />
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Listed</span><strong>6 tools</strong></div>
+            <div><span>Ready</span><strong>3 routes</strong></div>
+            <div><span>Review</span><strong>2 readings</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-workqueue-board" id="objects" aria-label="Registry tools">
+        <article class="v2-ledger v2-workqueue-list" aria-labelledby="objects-title">
+          <div class="v2-section-label">Repair ledger</div>
+          <h2 id="objects-title">Tools are sorted by civic role, water state, and next route.</h2>
+          <div class="v2-workflow-rows v2-workqueue-rows" role="list">
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+              <div>
+                <span>Sun brass clamp</span>
+                <strong>Locks canal signs to the morning rail</strong>
+                <small>Ready for Route A; last torque note is attached.</small>
+              </div>
+              <em>Ready</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>Water lens gauge</span>
+                <strong>Reads overflow depth before gate handoff</strong>
+                <small>Needs one clean noon reading before field use.</small>
+              </div>
+              <em>Review</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+              <div>
+                <span>Canopy shade pin</span>
+                <strong>Marks repaired beds after the soil pass</strong>
+                <small>Assigned to the west terrace crew for tomorrow.</small>
+              </div>
+              <em>Assigned</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+              <div>
+                <span>Old sluice key</span>
+                <strong>Kept only for archive comparison</strong>
+                <small>Replace after the new lock plate is verified.</small>
+              </div>
+              <em>Archive</em>
+            </div>
+          </div>
+        </article>
+
+        <aside class="v2-panel v2-workqueue-inspect" id="filter" aria-labelledby="filter-title">
+          <div class="v2-section-label">Sorting lens</div>
+          <h2 id="filter-title">The registry filters by function first, then readiness.</h2>
+          <div class="v2-signal-badge v2-workqueue-badge" aria-hidden="true">
+            <img src="../../assets/v2/badge-product-map.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Lens</span>
+              <strong>Role + state</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Role</span>
+              <strong>Clamp, gauge, marker, or key</strong>
+            </li>
+            <li>
+              <span>State</span>
+              <strong>Ready, review, assigned, or archive</strong>
+            </li>
+            <li>
+              <span>Route</span>
+              <strong>Where the tool can move next</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-production-proof v2-workqueue-proof" aria-labelledby="catalog-proof-title">
+        <div>
+          <div class="v2-section-label">Registry facts</div>
+          <h2 id="catalog-proof-title">The list prevents beautiful objects from becoming loose props.</h2>
+        </div>
+        <div class="v2-proof-grid v2-workqueue-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Compare</span>
+            <strong>Every tool has one anatomy</strong>
+            <small>Name, civic role, route state, and next use stay aligned.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Inspect</span>
+            <strong>Missing readings stay visible</strong>
+            <small>Review state names the exact reading needed before use.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Reuse</span>
+            <strong>Archive has a replacement rule</strong>
+            <small>Old tools remain only when their next decision is named.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-workqueue-handoff" id="use" aria-labelledby="use-title">
+        <div class="v2-section-label">Use rule</div>
+        <h2 id="use-title">Select the tool only after its route state is readable.</h2>
+        <div class="v2-closure-grid v2-workqueue-handoff-grid">
+          <div class="v2-workqueue-note">
+            <span>Selection packet</span>
+            <strong>Tool · State · Route</strong>
+            <small>If route or state is blank, the object stays in review.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Select</span>
+              <strong>Choose by repair role first</strong>
+            </li>
+            <li>
+              <span>Check</span>
+              <strong>Confirm water or gate reading</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>Keep replacement rule visible</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Return to registry</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -27,6 +27,7 @@ Live entry points:
 - Canal Signal Desk: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/canal-signal-desk/
 - Aqueduct Audit Note: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/aqueduct-audit-note/
 - Harbor Readiness Board: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/harbor-readiness-board/
+- Civic Tool Registry: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/sites/civic-tool-registry/
 - V1 archive: https://sdv-g-deploy.github.io/homm2-design-system-sandbox/v1-archive.html
 
 ## Why V2 Exists
@@ -59,6 +60,7 @@ Current V2 proof surfaces:
 - `sites/canal-signal-desk/index.html` - first one-hour Site Kit product landing proof
 - `sites/aqueduct-audit-note/index.html` - first Site Kit report/proof page from the report template
 - `sites/harbor-readiness-board/index.html` - first Site Kit dashboard/status board from the dashboard template
+- `sites/civic-tool-registry/index.html` - first Site Kit catalog/object-list proof from the catalog template
 
 Shared V2 system files:
 
@@ -218,6 +220,11 @@ It adds `starters/v2-site-starter/templates/dashboard-status/index.html` and
 `sites/harbor-readiness-board/index.html`, proving a third Site Kit page type
 without shared CSS or package changes.
 
+Latest catalog template proof: `docs/night-runs/2026-06-03-v2-catalog-template-proof.md`.
+It adds `starters/v2-site-starter/templates/catalog-object-list/index.html` and
+`sites/civic-tool-registry/index.html`, proving a fourth Site Kit page type
+without shared CSS or package changes.
+
 ## Latest Production Example
 
 **V2 slice 08 - ANT School production example** applies the starter kit to a real topic outside the sandbox vocabulary.
@@ -323,6 +330,12 @@ It proves a denser app-like portal surface for active client routes, blockers, i
 **Delivery Review Board** lives in `sites/delivery-review-board/`.
 
 It proves a second app-like workflow surface for shipped artifacts, acceptance checks, residual risk, and archive handoff. Its repeated row anatomy promoted the narrow shared `.v2-workflow-row` helper after an independent audit.
+
+**Civic Tool Registry** lives in `sites/civic-tool-registry/`.
+
+It proves a catalog/object-list page shape for sorting repair tools by role,
+readiness, route state, and replacement rule while reusing existing row, proof,
+signal, meter, and closure helpers.
 
 ## Current Checkpoint
 

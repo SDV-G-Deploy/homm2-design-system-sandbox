@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog Object List Template · V2 Site Kit</title>
+    <meta
+      name="description"
+      content="Copyable V2 catalog/object-list template for offers, tools, routes, assets, and civic records."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../../css/v2.css" />
+  </head>
+  <body class="v2-production-page">
+    <header class="v2-topbar" aria-label="Catalog navigation">
+      <a class="v2-brand" href="#top" aria-label="Catalog title">
+        <span class="v2-sigil">CL</span>
+        <span>
+          <strong>Catalog</strong>
+          <em>Object list</em>
+        </span>
+      </a>
+      <nav class="v2-nav" aria-label="Sections">
+        <a href="#objects">Objects</a>
+        <a href="#filter">Filter</a>
+        <a href="#use">Use</a>
+      </nav>
+    </header>
+
+    <main id="top" class="v2-shell v2-workqueue-shell">
+      <section class="v2-workqueue-hero" aria-labelledby="catalog-title" data-v2-primary>
+        <div class="v2-workqueue-copy">
+          <div class="v2-section-label">Object catalog</div>
+          <h1 id="catalog-title">Replace this with the catalog's sorting promise.</h1>
+          <p>
+            Use this screen when the page must compare objects, tools, routes,
+            offers, or assets by state, role, and next action.
+          </p>
+          <div class="v2-action-pair v2-workqueue-actions" aria-label="Primary actions">
+            <a class="v2-command v2-command-primary" href="#objects">Open list</a>
+            <a class="v2-command v2-command-secondary" href="#filter">Check filter</a>
+          </div>
+        </div>
+
+        <aside class="v2-workqueue-signal" aria-label="Catalog signal">
+          <div class="v2-workqueue-instrument" aria-hidden="true">
+            <img src="../../../../assets/v2/solar-civic-gate.svg" width="220" height="220" alt="" />
+          </div>
+          <picture class="v2-state-meter-strip">
+            <source srcset="../../../../assets/v2/state-meter-readiness.webp" type="image/webp" />
+            <img
+              src="../../../../assets/v2/state-meter-readiness.svg"
+              width="480"
+              height="72"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
+          <div class="v2-lens-module">
+            <div><span>Listed</span><strong>6 objects</strong></div>
+            <div><span>Ready</span><strong>3 usable</strong></div>
+            <div><span>Review</span><strong>2 records</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="v2-workqueue-board" id="objects" aria-label="Catalog objects">
+        <article class="v2-ledger v2-workqueue-list" aria-labelledby="objects-title">
+          <div class="v2-section-label">Object ledger</div>
+          <h2 id="objects-title">Use rows for object name, material role, state, and next use.</h2>
+          <div class="v2-workflow-rows v2-workqueue-rows" role="list">
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+              <div>
+                <span>Object name</span>
+                <strong>Primary role and useful state</strong>
+                <small>One concrete reason this object belongs in the catalog.</small>
+              </div>
+              <em>Ready</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+              <div>
+                <span>Inspection item</span>
+                <strong>Needs one reading before use</strong>
+                <small>Name the missing check, input, or owner.</small>
+              </div>
+              <em>Review</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-gate" aria-hidden="true"></i>
+              <div>
+                <span>Route object</span>
+                <strong>Assigned to the next handoff</strong>
+                <small>Keep route, destination, and condition visible.</small>
+              </div>
+              <em>Assigned</em>
+            </div>
+            <div class="v2-workflow-row v2-workqueue-row" role="listitem">
+              <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+              <div>
+                <span>Archive object</span>
+                <strong>Kept for reference only</strong>
+                <small>Say why it remains visible and when to replace it.</small>
+              </div>
+              <em>Archive</em>
+            </div>
+          </div>
+        </article>
+
+        <aside class="v2-panel v2-workqueue-inspect" id="filter" aria-labelledby="filter-title">
+          <div class="v2-section-label">Sorting lens</div>
+          <h2 id="filter-title">A catalog must explain why an object is shown.</h2>
+          <div class="v2-signal-badge v2-workqueue-badge" aria-hidden="true">
+            <img src="../../../../assets/v2/badge-product-map.svg" width="128" height="128" alt="" />
+            <div>
+              <span>Filter</span>
+              <strong>Role + state</strong>
+            </div>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Role</span>
+              <strong>What the object does</strong>
+            </li>
+            <li>
+              <span>State</span>
+              <strong>Ready, review, assigned, or archive</strong>
+            </li>
+            <li>
+              <span>Use</span>
+              <strong>The next practical action</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="v2-production-proof v2-workqueue-proof" aria-labelledby="catalog-proof-title">
+        <div>
+          <div class="v2-section-label">Catalog facts</div>
+          <h2 id="catalog-proof-title">Use fact cards to show what the list makes easier.</h2>
+        </div>
+        <div class="v2-proof-grid v2-workqueue-proof-grid">
+          <div>
+            <i class="v2-status-mark v2-status-mark-scope" aria-hidden="true"></i>
+            <span>Compare</span>
+            <strong>Objects share one anatomy</strong>
+            <small>Name, role, state, and next action stay in the same place.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-water" aria-hidden="true"></i>
+            <span>Inspect</span>
+            <strong>Review items are visible</strong>
+            <small>The catalog does not hide missing readings or owner gaps.</small>
+          </div>
+          <div>
+            <i class="v2-status-mark v2-status-mark-note" aria-hidden="true"></i>
+            <span>Reuse</span>
+            <strong>Archive stays useful</strong>
+            <small>Old objects keep reason, replacement rule, and known risk.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-ledger v2-closure-ledger v2-workqueue-handoff" id="use" aria-labelledby="use-title">
+        <div class="v2-section-label">Use rule</div>
+        <h2 id="use-title">Close the catalog with one clear selection rule.</h2>
+        <div class="v2-closure-grid v2-workqueue-handoff-grid">
+          <div class="v2-workqueue-note">
+            <span>Selection packet</span>
+            <strong>Object · State · Next action</strong>
+            <small>If one of these is missing, the item is not ready for use.</small>
+          </div>
+          <ul class="v2-status-list">
+            <li>
+              <span>Select</span>
+              <strong>Choose by role first</strong>
+            </li>
+            <li>
+              <span>Check</span>
+              <strong>Confirm state before handoff</strong>
+            </li>
+            <li>
+              <span>Record</span>
+              <strong>Keep the replacement rule visible</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="v2-command v2-command-primary" href="#top">Return to catalog</a>
+      </section>
+    </main>
+  </body>
+</html>

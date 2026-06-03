@@ -40,6 +40,7 @@ const TARGETS = [
   ["V2 product landing template smoke", "/starters/v2-site-starter/templates/product-landing/index.html", "v2"],
   ["V2 report proof template smoke", "/starters/v2-site-starter/templates/report-proof/index.html", "v2"],
   ["V2 dashboard status template smoke", "/starters/v2-site-starter/templates/dashboard-status/index.html", "v2"],
+  ["V2 catalog object list template smoke", "/starters/v2-site-starter/templates/catalog-object-list/index.html", "v2"],
   ["V2 CSS entry fixture smoke", "/package-examples/v2-css-entry/index.html", "v2"],
   ["ANT School landing v2 smoke", "/sites/ant-school-landing-v2/index.html", "v2"],
   ["Product Map field note smoke", "/sites/product-map-field-note/index.html", "v2"],
@@ -57,6 +58,7 @@ const TARGETS = [
   ["Canal Signal Desk smoke", "/sites/canal-signal-desk/index.html", "v2"],
   ["Aqueduct Audit Note smoke", "/sites/aqueduct-audit-note/index.html", "v2"],
   ["Harbor Readiness Board smoke", "/sites/harbor-readiness-board/index.html", "v2"],
+  ["Civic Tool Registry smoke", "/sites/civic-tool-registry/index.html", "v2"],
 ];
 
 main().catch((error) => {
@@ -148,6 +150,7 @@ function staticSanity(failures) {
     "starters/v2-site-starter/templates/product-landing/index.html",
     "starters/v2-site-starter/templates/report-proof/index.html",
     "starters/v2-site-starter/templates/dashboard-status/index.html",
+    "starters/v2-site-starter/templates/catalog-object-list/index.html",
     "package-examples/v2-css-entry/index.html",
     "sites/ant-school-landing-v2/index.html",
     "sites/product-map-field-note/index.html",
@@ -165,6 +168,7 @@ function staticSanity(failures) {
     "sites/canal-signal-desk/index.html",
     "sites/aqueduct-audit-note/index.html",
     "sites/harbor-readiness-board/index.html",
+    "sites/civic-tool-registry/index.html",
     ...fs.readdirSync(path.join(ROOT, "fixtures")).filter((name) => name.endsWith(".html")).map((name) => "fixtures/" + name),
   ];
   const docFiles = [
